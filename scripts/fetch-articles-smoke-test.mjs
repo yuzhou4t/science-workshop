@@ -3,10 +3,54 @@ import { readFile, writeFile } from "node:fs/promises";
 import vm from "node:vm";
 import { promisify } from "node:util";
 
+import { addDays, buildRecentWorkflow, dateOnly } from "./recent-workflow-lib.mjs";
+
 const execFileAsync = promisify(execFile);
 const registryPath = new URL("../data/adapter-profiles.json", import.meta.url);
 const registry = JSON.parse(await readFile(registryPath, "utf8"));
 const profileById = new Map(registry.platform_profiles.map((profile) => [profile.id, profile]));
+
+function parseCliOptions(argv) {
+  const options = { workflow: false, articleLimit: 8, recentDays: 30 };
+  for (const arg of argv) {
+    if (arg === "--workflow") options.workflow = true;
+    else if (arg === "--ignore-state") {
+      options.workflow = true;
+      options.ignoreState = true;
+    }
+    else if (arg.startsWith("--since=")) {
+      options.workflow = true;
+      options.since = arg.slice("--since=".length);
+    } else if (arg.startsWith("--until=")) {
+      options.workflow = true;
+      options.until = arg.slice("--until=".length);
+    } else if (arg.startsWith("--recent-days=")) {
+      options.workflow = true;
+      options.recentDays = Number(arg.slice("--recent-days=".length));
+    }
+  }
+
+  options.until ||= dateOnly(new Date());
+  options.since ||= addDays(options.until, -options.recentDays);
+  if (options.workflow) options.articleLimit = 50;
+
+  for (const [name, value] of [["since", options.since], ["until", options.until]]) {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) throw new Error(`Invalid --${name} date: ${value}. Use YYYY-MM-DD.`);
+  }
+  if (options.since > options.until) throw new Error(`Invalid window: --since ${options.since} is after --until ${options.until}.`);
+  return options;
+}
+
+async function readJsonIfExists(url) {
+  try {
+    return JSON.parse(await readFile(url, "utf8"));
+  } catch (error) {
+    if (error.code === "ENOENT") return {};
+    throw error;
+  }
+}
+
+const cliOptions = parseCliOptions(process.argv.slice(2));
 
 const headers = {
   "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/126 Safari/537.36 ScienceWorkshopProbe/0.2",
@@ -185,7 +229,7 @@ function parseXmlFeed(text, baseUrl) {
     const rssLink = stripTags(block.match(/<link[^>]*>([\s\S]*?)<\/link>/i)?.[1] || "");
     const atomLink = block.match(/<link\b[^>]*href=["']([^"']+)["'][^>]*>/i)?.[1] || "";
     const guid = stripTags(block.match(/<guid[^>]*>([\s\S]*?)<\/guid>/i)?.[1] || "");
-    const date = stripTags(block.match(/<(pubDate|updated|published)[^>]*>([\s\S]*?)<\/\1>/i)?.[2] || "");
+    const date = stripTags(block.match(/<(?:[\w.-]+:)?(?:pubDate|updated|published|date|publicationDate)[^>]*>([\s\S]*?)<\/(?:[\w.-]+:)?(?:pubDate|updated|published|date|publicationDate)>/i)?.[1] || "");
     const link = cleanArticleUrl(normalizeUrl(rssLink || atomLink || guid, baseUrl));
     if (title && link) items.push({ title, url: link, date });
   }
@@ -252,6 +296,7 @@ function looksLikeArticleTitle(title) {
 function isNonArticleTitle(title) {
   return /^(announcements?|frontmatter|front matter|backmatter|back matter|contents?|cover|masthead|issue information)$/i.test(title)
     || /^(front|back)\s?matter\b/i.test(title)
+    || /^american finance association$/i.test(title)
     || /annual report of the editor/i.test(title)
     || /election of fellows/i.test(title)
     || /^front matter$/i.test(title);
@@ -855,7 +900,8 @@ async function runPool(items, concurrency, worker) {
 async function testDirectFeed(feed) {
   const response = await fetchText(feed.feed_url, 10000);
   const allArticles = response.ok ? parseXmlFeed(response.text, response.finalUrl) : [];
-  const articles = allArticles.filter((article) => looksLikeArticleTitle(article.title) && !isNonArticleTitle(article.title)).slice(0, 8);
+  const filteredArticles = allArticles.filter((article) => looksLikeArticleTitle(article.title) && !isNonArticleTitle(article.title));
+  const articles = filteredArticles.slice(0, cliOptions.articleLimit);
   return {
     type: "direct_rss",
     journal_id: feed.journal_id,
@@ -871,8 +917,9 @@ async function testDirectFeed(feed) {
     usable_as_data_source: articles.length > 0,
     article_count: articles.length,
     candidate_count: allArticles.length,
+    articles,
     samples: articles.slice(0, 3),
-    notes: allArticles.length !== articles.length ? [`filtered_non_article:${allArticles.length - articles.length}`] : [],
+    notes: allArticles.length !== filteredArticles.length ? [`filtered_non_article:${allArticles.length - filteredArticles.length}`] : [],
     error: response.error || response.fetch_error || "",
   };
 }
@@ -881,7 +928,8 @@ async function testAdapterSource(item) {
   const profile = profileById.get(item.platform_id);
   try {
     const extraction = await extractAdapterArticles(item);
-    const articles = extraction.articles.filter((article) => looksLikeArticleTitle(article.title) && !isNonArticleTitle(article.title)).slice(0, 8);
+    const filteredArticles = extraction.articles.filter((article) => looksLikeArticleTitle(article.title) && !isNonArticleTitle(article.title));
+    const articles = filteredArticles.slice(0, cliOptions.articleLimit);
     return {
       type: "adapter_source",
       journal_id: item.journal_id,
@@ -899,6 +947,7 @@ async function testAdapterSource(item) {
       usable_as_data_source: articles.length > 0,
       article_count: articles.length,
       candidate_count: extraction.candidate_count || articles.length,
+      articles,
       samples: articles.slice(0, 3),
       notes: extraction.notes || [],
       error: extraction.response?.error || extraction.response?.fetch_error || "",
@@ -945,7 +994,30 @@ const summary = {
 const result = { summary, results: allResults };
 await writeFile(new URL("../data/fetch-smoke-results.json", import.meta.url), JSON.stringify(result, null, 2));
 
+let workflow = null;
+if (cliOptions.workflow) {
+  const previousState = cliOptions.ignoreState ? {} : await readJsonIfExists(new URL("../data/source-state.json", import.meta.url));
+  workflow = buildRecentWorkflow(allResults, {
+    since: cliOptions.since,
+    until: cliOptions.until,
+    checkedAt: summary.checked_at,
+    previousState,
+  });
+  const recentPath = new URL(`../data/recent-articles-${cliOptions.since}_${cliOptions.until}.json`, import.meta.url);
+  const statePath = new URL("../data/source-state.json", import.meta.url);
+  await writeFile(recentPath, JSON.stringify(workflow, null, 2));
+  await writeFile(statePath, JSON.stringify(workflow.source_state, null, 2));
+}
+
 console.log(JSON.stringify(summary, null, 2));
+if (workflow) {
+  console.log(JSON.stringify({
+    workflow: "recent_articles",
+    output: `data/recent-articles-${cliOptions.since}_${cliOptions.until}.json`,
+    state: "data/source-state.json",
+    ...workflow.summary,
+  }, null, 2));
+}
 for (const item of allResults) {
   const mark = item.usable_as_data_source ? "READY" : "BLOCKED";
   const sample = item.samples[0]?.title || item.notes?.join(",") || item.error || item.content_type || "";

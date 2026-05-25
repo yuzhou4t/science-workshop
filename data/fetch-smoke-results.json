@@ -1,6 +1,6 @@
 {
   "summary": {
-    "checked_at": "2026-05-25T11:21:09.328Z",
+    "checked_at": "2026-05-25T11:43:22.534Z",
     "direct_feeds_total": 5,
     "direct_feeds_ok": 5,
     "adapter_sources_total": 17,
@@ -19,31 +19,281 @@
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1784,
+      "fetch_ms": 2147,
       "ok": true,
       "usable_as_data_source": true,
-      "article_count": 8,
+      "article_count": 50,
       "candidate_count": 79,
-      "samples": [
+      "articles": [
         {
           "title": "How to R.E.S.P.O.N.D.: A Framework for Thoughtful Revisions and Scholarly Dialogue",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2026.0147",
-          "date": ""
+          "date": "2026-03-24T02:32:31Z"
         },
         {
           "title": "2025 Presidential Address: Activism, Impact, and Science: Management Scholarship in a Challenging Era",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0742",
-          "date": ""
+          "date": "2025-12-16T06:35:46Z"
         },
         {
           "title": "From the Evaluator’s Perspective: A Functional Approach to Social Judgments",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2020.0405",
-          "date": ""
+          "date": "2025-02-14T09:07:41Z"
+        },
+        {
+          "title": "Beyond Backlash: Advancing Dominant-Group Employees’ Learning, Allyship, and Growth through Social Identity Threat",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2021.0521",
+          "date": "2024-10-30T05:39:08Z"
+        },
+        {
+          "title": "Taming Artificial Intelligence: A Theory of Control-Accountability Alignment among AI Developers and Users",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2023.0117",
+          "date": "2024-10-30T05:30:57Z"
+        },
+        {
+          "title": "Theorizing Routine Enactment from a Pragmatist Perspective: Agency, Experience, and Situational Novelty",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2022.0518",
+          "date": "2025-01-27T04:43:59Z"
+        },
+        {
+          "title": "Achieving Holism: Narrating Multiple Identities in the Moment and over Time",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2023.0215",
+          "date": "2025-03-05T06:48:03Z"
+        },
+        {
+          "title": "It Takes Two to Untangle: Illuminating How and Why Some Workplace Relationships Adapt while Others Deteriorate after a Workplace Microaggression",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2022.0355",
+          "date": "2025-03-10T08:20:13Z"
+        },
+        {
+          "title": "A Theory of the Start-Up Workforce",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2023.0174",
+          "date": "2025-03-06T02:41:15Z"
+        },
+        {
+          "title": "Awe-Driven Venturing: Identifying and Pursuing Transformational Opportunities",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2023.0247",
+          "date": "2025-08-07T04:10:17Z"
+        },
+        {
+          "title": "Co-Constructive Start-Up Illusions: An Extension of Bort’s “A Theory of the Start-Up Workforce”",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0144",
+          "date": "2025-10-16T03:26:17Z"
+        },
+        {
+          "title": "The Promise and Perils of Co-Construction: A Reply to “Co-Constructive Start-Up Illusions”",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0698",
+          "date": "2026-02-09T06:05:07Z"
+        },
+        {
+          "title": "The Origins and Evolution of Red, Blue, and Purple Employee Populations: A Theory of How Organizations Become Ideologically Skewed",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0229",
+          "date": "2026-05-18T04:51:35Z"
+        },
+        {
+          "title": "Coleman’s Boat and Complex Cross-Level Aggregation in Interinstitutional Systems: An Extension of Almandoz and Thornton’s “Understanding Institutional Environments: An Institutional Logics Model of Societal Evolution”",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2026.0224",
+          "date": "2026-05-06T06:46:15Z"
+        },
+        {
+          "title": "Moral Ambiguity and Judgment: A Reply to “Acting to Know”",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2026.0465",
+          "date": "2026-05-06T06:44:36Z"
+        },
+        {
+          "title": "A Reply to “Adversity Reveals Character: A Virtue Ethics-Based Contingency Theory Extension of Yan et al.’s ‘How Underdogs Succeed and Fail’”",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2026.0385",
+          "date": "2026-05-05T02:27:32Z"
+        },
+        {
+          "title": "How AI Reshapes Multimodal Theorization: An Extension of Kuric and Höllerer’s “Theorization as a Prerequisite for Diffusion”",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2026.0095",
+          "date": "2026-04-27T04:23:29Z"
+        },
+        {
+          "title": "Copying the Wrong Winner? When Noisy Attribution Reverses Mutual Learning Prescriptions in Denrell, Christensen, Knudsen, and Liu’s “The Impact of Learning Mode and Speed on Mutual Learning”",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0682",
+          "date": "2026-04-22T05:25:27Z"
+        },
+        {
+          "title": "Boundary Conditions and the Juxtaposition of Externalities: An Extension to Anand et al.’s “Competitive Externalities in Acquisitions”",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2026.0341",
+          "date": "2026-04-22T05:23:48Z"
+        },
+        {
+          "title": "Competitive Dynamics are Alive with the Sound of Music: A Reply to “Time to Face the Music”",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.1029",
+          "date": "2026-04-10T02:04:56Z"
+        },
+        {
+          "title": "Leaders on the Other Side of Voice: Extending Black et al.’s Integrative Theory of Collective Voice",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0769",
+          "date": "2026-04-09T03:11:35Z"
+        },
+        {
+          "title": "Understanding Inclusion: The Role of Organization Member Prototypes",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2023.0010",
+          "date": "2026-03-31T06:41:14Z"
+        },
+        {
+          "title": "Adversity Reveals Character: A Virtue Ethics-Based Contingency Theory Extension of Yan et al.’s “How Underdogs Succeed and Fail”",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0762",
+          "date": "2026-03-30T08:18:34Z"
+        },
+        {
+          "title": "Necessity Entrepreneurship as a Process: A Response to “Beyond the Individual,” “Feedback as a Mechanism,” and “Toward Communalism”",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0914",
+          "date": "2026-03-30T08:21:34Z"
+        },
+        {
+          "title": "Acting to Know: Extending Vorholzer and Brattström’s Theory of Moral Ambiguity in Entrepreneurial Action through Externalized Moral Resolution",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.1031",
+          "date": "2026-03-30T08:20:07Z"
+        },
+        {
+          "title": "When Compassion Constricts: Identity Threat and Organizational Responses to Suffering",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2024.0068",
+          "date": "2026-03-26T01:27:31Z"
+        },
+        {
+          "title": "Defending the Hoax: A Commentary on Willmott’s “Management Theory: Jungle, Myth, or Hoax?”",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0753",
+          "date": "2026-03-26T01:44:40Z"
+        },
+        {
+          "title": "Institutional Resilience for Institutional Diversity: An Extension of Almandoz and Thornton’s “Understanding Institutional Environments: An Institutional Logics Model of Societal Evolution”",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0956",
+          "date": "2026-03-26T05:51:12Z"
+        },
+        {
+          "title": "From Hoax to Kayfabe: Reframing Willmott’s Metaphor for Management Theory",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0758",
+          "date": "2026-03-19T05:58:03Z"
+        },
+        {
+          "title": "The Writer’s Room: An Extension to Willmott’s “Management Theory: Jungle, Myth, or Hoax?”",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0886",
+          "date": "2026-03-19T05:59:02Z"
+        },
+        {
+          "title": "Syncing Minds and Machines: Hybrid Cognitive Alignment as an Emergent Coordination Mechanism in Human–AI Collaboration",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2024.0546",
+          "date": "2026-03-18T02:13:11Z"
+        },
+        {
+          "title": "Corrective Governance in the Boardroom: A Negotiated Order Perspective",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2023.0238",
+          "date": "2026-03-13T03:02:23Z"
+        },
+        {
+          "title": "Construct Fallacies and Construct Validation in Theories of Management and Organization",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2024.0235",
+          "date": "2026-03-10T05:06:31Z"
+        },
+        {
+          "title": "In Defense of Objectivity: Beyond False Binaries and Manufactured Divides",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0871",
+          "date": "2026-03-10T05:09:59Z"
+        },
+        {
+          "title": "Asymmetric Jeopardy through Dissonant Ties: An Extension of Brands and Kilduff’s “Multiplex Jeopardy”",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0499",
+          "date": "2026-02-24T05:04:37Z"
+        },
+        {
+          "title": "Reimagining Management Theory as Theater Rather than Hoax: A Commentary on Willmott’s “Management Theory: Jungle, Myth, or Hoax?”",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0637",
+          "date": "2026-02-12T06:31:49Z"
+        },
+        {
+          "title": "The Role of Deliberate Silence in Institutional Change",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2022.0145",
+          "date": "2026-02-09T06:06:27Z"
+        },
+        {
+          "title": "Transaction Governance: Firm-Level Influences and the Organizational Identity Paradox",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2023.0064",
+          "date": "2026-02-09T06:07:27Z"
+        },
+        {
+          "title": "Competitive Externalities in Acquisitions",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2023.0120",
+          "date": "2026-02-09T06:05:27Z"
+        },
+        {
+          "title": "Designing Dual-Purpose Organizations: The Role of Soft Governance",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2023.0226",
+          "date": "2026-02-09T05:23:47Z"
+        },
+        {
+          "title": "Fading Memories: The Role of Machine Learning in Organizational Knowledge Depreciation",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2024.0408",
+          "date": "2026-02-03T04:08:48Z"
+        },
+        {
+          "title": "Corporate Strategy and the Portfolio-Based View of CSR: Toward a Theory of Optimal CSR Diversification",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2023.0416",
+          "date": "2026-01-22T07:12:53Z"
+        },
+        {
+          "title": "Tackling the Complexity Challenge: When and How to Engage in Configurational and Hybrid Theorizing",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2024.0187",
+          "date": "2026-01-09T09:13:30Z"
+        },
+        {
+          "title": "Empirically Based Response Strategies: When and How Empirical Debate Allows Firms to Resist Stakeholders",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2024.0294",
+          "date": "2026-01-09T09:13:35Z"
+        },
+        {
+          "title": "Feedback as a Mechanism: An Extension of Coffman et al.’s “Leaving Necessity Entrepreneurship Behind”",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0494",
+          "date": "2026-01-09T09:13:30Z"
+        },
+        {
+          "title": "Moral Conviction as a Distinct Pathway in Resistance to Burdensome Role Expectations: An Extension of Yagil’s “I Don’t Want To: The Violation of Burdensome Role Expectations”",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0586",
+          "date": "2026-01-09T09:13:34Z"
+        },
+        {
+          "title": "Beyond Dangling Carrots: The Effect of Policy Maker Motives on Their Response to Corporate Political Activity",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2023.0033",
+          "date": "2025-12-16T06:36:05Z"
+        },
+        {
+          "title": "Rethinking Necessity Entrepreneurship Beyond Binaries and Toward Communalism: A Commentary on Coffman et al.’s “Leaving Necessity Entrepreneurship Behind”",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0446",
+          "date": "2025-11-11T04:35:02Z"
+        },
+        {
+          "title": "Theorization as a Prerequisite for Diffusion: How and Why Multimodal Expression Matters",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2023.0193",
+          "date": "2025-11-10T04:07:36Z"
+        },
+        {
+          "title": "Understanding Institutional Environments: An Institutional Logics Model of Societal Evolution",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2023.0056",
+          "date": "2025-11-07T05:03:37Z"
         }
       ],
-      "notes": [
-        "filtered_non_article:71"
+      "samples": [
+        {
+          "title": "How to R.E.S.P.O.N.D.: A Framework for Thoughtful Revisions and Scholarly Dialogue",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2026.0147",
+          "date": "2026-03-24T02:32:31Z"
+        },
+        {
+          "title": "2025 Presidential Address: Activism, Impact, and Science: Management Scholarship in a Challenging Era",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0742",
+          "date": "2025-12-16T06:35:46Z"
+        },
+        {
+          "title": "From the Evaluator’s Perspective: A Functional Approach to Social Judgments",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2020.0405",
+          "date": "2025-02-14T09:07:41Z"
+        }
       ],
+      "notes": [],
       "error": ""
     },
     {
@@ -56,11 +306,128 @@
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1119,
+      "fetch_ms": 1760,
       "ok": true,
       "usable_as_data_source": true,
-      "article_count": 8,
+      "article_count": 23,
       "candidate_count": 27,
+      "articles": [
+        {
+          "title": "Hedger of Last Resort: Evidence from Brazilian FX Interventions, Local Credit, and Global Financial Cycles",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70054",
+          "date": "Fri, 22 May 2026 23:38:25 -0700"
+        },
+        {
+          "title": "Quote Competition in Corporate Bonds",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70048",
+          "date": "Fri, 22 May 2026 23:37:08 -0700"
+        },
+        {
+          "title": "Model Ambiguity versus Model Misspecification in Dynamic Portfolio Choice",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70027",
+          "date": "Fri, 22 May 2026 20:54:22 -0700"
+        },
+        {
+          "title": "Competition Enforcement and Accounting for Intangible Capital",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70028",
+          "date": "Fri, 22 May 2026 20:54:22 -0700"
+        },
+        {
+          "title": "Consumer Choice and Corporate Bankruptcy",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70030",
+          "date": "Fri, 22 May 2026 20:54:22 -0700"
+        },
+        {
+          "title": "Leader‐Follower Dynamics in Shareholder Activism",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70033",
+          "date": "Fri, 22 May 2026 20:54:22 -0700"
+        },
+        {
+          "title": "Deposit Franchise Runs",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70034",
+          "date": "Fri, 22 May 2026 20:54:22 -0700"
+        },
+        {
+          "title": "Corporate M&As and Labor Market Concentration: Efficiency Gains or Power Grabs?",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70035",
+          "date": "Fri, 22 May 2026 20:54:22 -0700"
+        },
+        {
+          "title": "Size, Returns, and Value: Do Private Equity Firms Allocate Capital According to Manager Skill?",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70036",
+          "date": "Fri, 22 May 2026 20:54:22 -0700"
+        },
+        {
+          "title": "The Voting Premium",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70037",
+          "date": "Fri, 22 May 2026 20:54:22 -0700"
+        },
+        {
+          "title": "The (Missing) Relation between Acquisition Announcement Returns and Value Creation",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70038",
+          "date": "Fri, 22 May 2026 20:54:22 -0700"
+        },
+        {
+          "title": "Funding Black High‐Growth Startups",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70039",
+          "date": "Fri, 22 May 2026 20:54:22 -0700"
+        },
+        {
+          "title": "The Effect of Advisors' Incentives on Clients' Investments",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70041",
+          "date": "Fri, 22 May 2026 20:54:22 -0700"
+        },
+        {
+          "title": "Pricing of Climate Risk Insurance: Regulation and Cross‐Subsidies",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70029",
+          "date": "Fri, 22 May 2026 20:54:22 -0700"
+        },
+        {
+          "title": "Investing with Purpose: Evidence from Private Foundations",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70055",
+          "date": "Wed, 20 May 2026 01:29:04 -0700"
+        },
+        {
+          "title": "Why Have CEO Pay Levels Become Less Diverse?",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70050",
+          "date": "Tue, 19 May 2026 00:06:23 -0700"
+        },
+        {
+          "title": "Bank Competition Amid Digital Disruption: Implications for Financial Inclusion",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70051",
+          "date": "Sun, 17 May 2026 23:54:38 -0700"
+        },
+        {
+          "title": "Consumption in Asset Returns",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70044",
+          "date": "Fri, 15 May 2026 00:21:22 -0700"
+        },
+        {
+          "title": "The Drivers and Implications of Retail Margin Trading",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70049",
+          "date": "Fri, 15 May 2026 00:15:18 -0700"
+        },
+        {
+          "title": "Risk‐Free Rates and Convenience Yields around the World",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70045",
+          "date": "Mon, 11 May 2026 01:52:04 -0700"
+        },
+        {
+          "title": "The Equilibrium Effects of Eviction Policies",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70046",
+          "date": "Mon, 11 May 2026 01:50:43 -0700"
+        },
+        {
+          "title": "Partisan Entrepreneurship",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70042",
+          "date": "Fri, 08 May 2026 05:16:34 -0700"
+        },
+        {
+          "title": "Learning in the Limit: Income Inference from Credit Extensions",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70040",
+          "date": "Thu, 07 May 2026 01:10:18 -0700"
+        }
+      ],
       "samples": [
         {
           "title": "Hedger of Last Resort: Evidence from Brazilian FX Interventions, Local Credit, and Global Financial Cycles",
@@ -73,13 +440,13 @@
           "date": "Fri, 22 May 2026 23:37:08 -0700"
         },
         {
-          "title": "AMERICAN FINANCE ASSOCIATION",
-          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.13350",
+          "title": "Model Ambiguity versus Model Misspecification in Dynamic Portfolio Choice",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70027",
           "date": "Fri, 22 May 2026 20:54:22 -0700"
         }
       ],
       "notes": [
-        "filtered_non_article:19"
+        "filtered_non_article:4"
       ],
       "error": ""
     },
@@ -93,30 +460,127 @@
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1142,
+      "fetch_ms": 1250,
       "ok": true,
       "usable_as_data_source": true,
-      "article_count": 8,
+      "article_count": 19,
       "candidate_count": 20,
-      "samples": [
+      "articles": [
         {
           "title": "A Model of Social Duties",
           "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/739834",
-          "date": ""
+          "date": "2026-03-31T02:53:39Z"
         },
         {
           "title": "Private Private Information",
           "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/739833",
-          "date": ""
+          "date": "2026-03-27T02:44:47Z"
         },
         {
           "title": "Algorithm Design: A Fairness-Accuracy Frontier",
           "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/739826",
-          "date": ""
+          "date": "2026-04-13T03:54:32Z"
+        },
+        {
+          "title": "Booms, Busts, and Mismatch in Capital Markets: Evidence from the Offshore Oil and Gas Industry",
+          "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/739827",
+          "date": "2026-03-25T03:56:24Z"
+        },
+        {
+          "title": "The Causal Effects of Youth Cigarette Addiction and Education",
+          "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/739828",
+          "date": "2026-03-19T04:21:38Z"
+        },
+        {
+          "title": "US Public Debt and Safe Asset Market Power",
+          "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/739824",
+          "date": "2026-03-19T04:21:39Z"
+        },
+        {
+          "title": "Recent Referees",
+          "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/742103",
+          "date": "2026-04-30T08:20:30Z"
+        },
+        {
+          "title": "JPE Turnaround Times",
+          "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/741685",
+          "date": "2026-04-30T08:20:38Z"
+        },
+        {
+          "title": "The Gas Trap: Outcompeting Coal versus Renewables",
+          "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/740172",
+          "date": "2026-05-05T02:02:24Z"
+        },
+        {
+          "title": "Ever since Allais",
+          "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/739829",
+          "date": "2026-04-15T03:36:46Z"
+        },
+        {
+          "title": "On the Nature of Entrepreneurship",
+          "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/739823",
+          "date": "2026-04-21T04:22:40Z"
+        },
+        {
+          "title": "Linking Social and Personal Preferences: Theory and Experiment",
+          "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/739832",
+          "date": "2026-04-23T02:57:42Z"
+        },
+        {
+          "title": "The Zero-Beta Interest Rate",
+          "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/740220",
+          "date": "2026-04-30T04:29:26Z"
+        },
+        {
+          "title": "Health Shocks, Health Insurance, Human Capital, and the Dynamics of Earnings and Health",
+          "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/739831",
+          "date": "2026-05-01T04:03:39Z"
+        },
+        {
+          "title": "Glass Walls: Experimental Evidence on Constraints Faced by Women in Accessing Valuable Skilling Opportunities",
+          "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/739830",
+          "date": "2026-05-07T04:04:56Z"
+        },
+        {
+          "title": "The Origin of the State: Land Productivity or Appropriability? Comment",
+          "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/740225",
+          "date": "2026-05-08T04:00:41Z"
+        },
+        {
+          "title": "The Macroeconomic Consequences of Early Childhood Development Policies",
+          "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/740224",
+          "date": "2026-01-07T05:52:51Z"
+        },
+        {
+          "title": "A Method to Estimate Discrete Choice Models That Is Robust to Consumer Search",
+          "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/740223",
+          "date": "2026-01-07T05:52:56Z"
+        },
+        {
+          "title": "Revolutionary Transition: Inheritance Change and Fertility Decline",
+          "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/739821",
+          "date": "2026-04-29T03:34:05Z"
+        }
+      ],
+      "samples": [
+        {
+          "title": "A Model of Social Duties",
+          "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/739834",
+          "date": "2026-03-31T02:53:39Z"
+        },
+        {
+          "title": "Private Private Information",
+          "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/739833",
+          "date": "2026-03-27T02:44:47Z"
+        },
+        {
+          "title": "Algorithm Design: A Fairness-Accuracy Frontier",
+          "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/739826",
+          "date": "2026-04-13T03:54:32Z"
         }
       ],
       "notes": [
-        "filtered_non_article:12"
+        "filtered_non_article:1"
       ],
       "error": ""
     },
@@ -130,11 +594,68 @@
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1007,
+      "fetch_ms": 1217,
       "ok": true,
       "usable_as_data_source": true,
-      "article_count": 8,
+      "article_count": 11,
       "candidate_count": 14,
+      "articles": [
+        {
+          "title": "Spatial Economics for Granular Settings",
+          "url": "https://onlinelibrary.wiley.com/doi/10.3982/ECTA19350",
+          "date": "Wed, 01 Apr 2026 05:25:22 -0700"
+        },
+        {
+          "title": "Trade and Domestic Distortions: The Case of Informality",
+          "url": "https://onlinelibrary.wiley.com/doi/10.3982/ECTA19378",
+          "date": "Wed, 01 Apr 2026 05:25:22 -0700"
+        },
+        {
+          "title": "Optimal Shrinkage Estimation of Fixed Effects in Linear Panel Data Models",
+          "url": "https://onlinelibrary.wiley.com/doi/10.3982/ECTA22386",
+          "date": "Wed, 01 Apr 2026 05:25:22 -0700"
+        },
+        {
+          "title": "Optimally‐Transported Generalized Method of Moments",
+          "url": "https://onlinelibrary.wiley.com/doi/10.3982/ECTA22486",
+          "date": "Wed, 01 Apr 2026 05:25:22 -0700"
+        },
+        {
+          "title": "Empirical Bayes When Estimation Precision Predicts Parameters",
+          "url": "https://onlinelibrary.wiley.com/doi/10.3982/ECTA22935",
+          "date": "Wed, 01 Apr 2026 05:25:22 -0700"
+        },
+        {
+          "title": "The Complexity of Multidimensional Learning in Agriculture",
+          "url": "https://onlinelibrary.wiley.com/doi/10.3982/ECTA22974",
+          "date": "Wed, 01 Apr 2026 05:25:22 -0700"
+        },
+        {
+          "title": "Food Policy in a Warming World",
+          "url": "https://onlinelibrary.wiley.com/doi/10.3982/ECTA23125",
+          "date": "Wed, 01 Apr 2026 05:25:22 -0700"
+        },
+        {
+          "title": "Dynamic Incentives in Incompletely Specified Environments",
+          "url": "https://onlinelibrary.wiley.com/doi/10.3982/ECTA23373",
+          "date": "Wed, 01 Apr 2026 05:25:22 -0700"
+        },
+        {
+          "title": "Monotonicity and Robust Implementation Under Forward‐Induction Reasoning",
+          "url": "https://onlinelibrary.wiley.com/doi/10.3982/ECTA23709",
+          "date": "Wed, 01 Apr 2026 05:25:22 -0700"
+        },
+        {
+          "title": "An Experimental Evaluation of Deferred Acceptance: Evidence From Over 100 Army Officer Labor Markets",
+          "url": "https://onlinelibrary.wiley.com/doi/10.3982/ECTA22160",
+          "date": "Wed, 01 Apr 2026 00:00:00 -0700"
+        },
+        {
+          "title": "Firm Accommodation After Workplace Disability: Labor Market Impacts and Implications for Subsidy Design",
+          "url": "https://onlinelibrary.wiley.com/doi/10.3982/ECTA22565",
+          "date": "Wed, 01 Apr 2026 00:00:00 -0700"
+        }
+      ],
       "samples": [
         {
           "title": "Spatial Economics for Granular Settings",
@@ -153,7 +674,7 @@
         }
       ],
       "notes": [
-        "filtered_non_article:6"
+        "filtered_non_article:3"
       ],
       "error": ""
     },
@@ -167,31 +688,281 @@
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1152,
+      "fetch_ms": 1927,
       "ok": true,
       "usable_as_data_source": true,
-      "article_count": 8,
+      "article_count": 50,
       "candidate_count": 58,
-      "samples": [
+      "articles": [
         {
           "title": "Artificial Intelligence and Responsible Research at AMJ",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2026.4002",
-          "date": ""
+          "date": "2026-04-15T07:48:58Z"
         },
         {
           "title": "Violence and Competition: The Effect of Mass Shootings and Domestic Terrorism on Organizational Risk-Taking in Response to Performance Shortfalls",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.0306",
-          "date": ""
+          "date": "2025-08-05T05:31:45Z"
         },
         {
           "title": "How Employees Who Have Made Upward Social Class Transitions Get Heard in the Workplace",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.0042",
-          "date": ""
+          "date": "2025-11-04T04:05:38Z"
+        },
+        {
+          "title": "Woulda, Shoulda, Coulda? The Impact of Predictive, Prescriptive, and Prospective Expectations on Stakeholder Reactions",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0135",
+          "date": "2025-09-08T04:17:25Z"
+        },
+        {
+          "title": "Siloed Sustainability: How Paradox Management Unravels in Integrative Practice Implementation",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.0548",
+          "date": "2025-10-30T05:28:10Z"
+        },
+        {
+          "title": "Deeply Rooted and Versatile? Knowledge Scouts and External Knowledge Integration in Multidivisional Firms",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0276",
+          "date": "2025-10-08T02:47:25Z"
+        },
+        {
+          "title": "Who Avoids Punishment? How Discretion and Psychopathy Shape Leaders’ Responses to Misconduct",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0229",
+          "date": "2025-11-04T04:05:41Z"
+        },
+        {
+          "title": "The Ties That Nurture: Expressive Simmelian Ties, Instrumental Brokerage, and Individual Performance",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0234",
+          "date": "2025-11-07T05:00:37Z"
+        },
+        {
+          "title": "From Paralysis to Publicization: How Victims of the UK Post Office Horizon IT Scandal Experienced and Confronted Organizational Harm",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.1166",
+          "date": "2025-12-11T03:33:19Z"
+        },
+        {
+          "title": "Polyphonic Career Scripting: Political and Relational Dynamics in the Construction of Promotion Norms",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2022.1039",
+          "date": "2026-05-08T04:32:15Z"
+        },
+        {
+          "title": "Innovating More Formally: How Resistance-Led Participation Drives Expansion and Integration in Innovation Control Configuration",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0722",
+          "date": "2026-04-27T06:06:11Z"
+        },
+        {
+          "title": "“We’re Not Designing with the Same Brain”: How Tattoo Artists Navigate Authority-Expertise Asymmetry to Sustain Creator-Client Co-Creation",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.1212",
+          "date": "2026-04-22T05:21:18Z"
+        },
+        {
+          "title": "Listen to Your Users? Self-Selection in User Community Feedback and Commercial Impact",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0178",
+          "date": "2026-04-09T03:21:08Z"
+        },
+        {
+          "title": "A Prosocial Perspective on Advice Seeking and Networking: How Focusing on What Advice Givers Can Gain Motivates Advice Seekers to Reach Out More",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0635",
+          "date": "2026-04-09T03:21:06Z"
+        },
+        {
+          "title": "Time the Surge: Theorizing and Examining Team Pacing in Multiple-Membership Contexts",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0522",
+          "date": "2026-04-08T05:35:13Z"
+        },
+        {
+          "title": "Algorithmic Facial Expression Analysis: A Novel Methodology to Advance Management Research on Emotions",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0826",
+          "date": "2026-04-08T05:34:34Z"
+        },
+        {
+          "title": "The Resource Insecurity Mindset: Why CEOs from Lower-Class Origins Are Both Greedier and More Generous",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0347",
+          "date": "2026-04-01T03:46:56Z"
+        },
+        {
+          "title": "From Founders to Funders: Generalized Reciprocity and Embeddedness in Founders’ Transition to Angel Investing",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.1097",
+          "date": "2026-03-24T02:11:39Z"
+        },
+        {
+          "title": "Relationship Splintering and Repair: The Dynamics of Marginalization in Organizations",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2022.1042",
+          "date": "2026-03-19T07:45:14Z"
+        },
+        {
+          "title": "Movin’ and Groovin’! Increased Prior Mobility Facilitates Newcomers’ Transitions Into Organizations",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0138",
+          "date": "2026-03-19T07:45:12Z"
+        },
+        {
+          "title": "Short-Term Demands and Long-Term Commitments: A Temporal Model of Stakeholder Governance",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.1164",
+          "date": "2026-03-18T02:18:51Z"
+        },
+        {
+          "title": "Bricolage as Enacted Sensemaking in Emergent Response Groups: Organizing in Conditions of Extreme Equivocality",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0486",
+          "date": "2026-03-18T02:18:32Z"
+        },
+        {
+          "title": "How Mega-threats Influence Workplace Cooperation: Effect of #BlackLivesMatter Salience on Cooperation among and between Black and White Coworkers",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0457",
+          "date": "2026-03-16T08:09:20Z"
+        },
+        {
+          "title": "Dynamic Demands versus Durable Skills: Career Dilemmas in Pharmaceutical R&D",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0338",
+          "date": "2026-03-13T03:17:23Z"
+        },
+        {
+          "title": "Constructing Agency Under Persistent Precarity: Shame, Anger, and Compassion in the Self-Narratives of Thai Sex Workers",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.1415",
+          "date": "2026-03-12T02:29:31Z"
+        },
+        {
+          "title": "Cultivating a Climate for Work–Life Inclusion by Implementing Human Resource Practices: Reducing Personal Life Stigma to Enhance Gender Career Equality",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.0979",
+          "date": "2026-03-10T04:26:16Z"
+        },
+        {
+          "title": "Being the Change: Prefiguration and Moral Exclusion in a Refugee Relief Organization",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.0411",
+          "date": "2026-03-09T04:36:00Z"
+        },
+        {
+          "title": "Spacing Bodies: The Interplay between Focal and Subsidiary Coordinating",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0300",
+          "date": "2026-03-09T04:36:19Z"
+        },
+        {
+          "title": "Hostile Frame Takeover: Co-opting the Security Frame in the Nuclear Energy Debate",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0656",
+          "date": "2026-03-03T05:45:49Z"
+        },
+        {
+          "title": "Pipelines and Sprinkler Systems: Documenting the Speed–Flexibility Tradeoff in How Jobs Shape Promotion",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0582",
+          "date": "2026-03-02T06:44:38Z"
+        },
+        {
+          "title": "They Saw It Coming: Executive Experience and Foresight in Competitor Identification",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0463",
+          "date": "2026-02-20T06:27:31Z"
+        },
+        {
+          "title": "To Be or Not To Be (Aligned with Elites): Navigating Systemic Power within Informal Institutions",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.0515",
+          "date": "2026-02-19T07:03:36Z"
+        },
+        {
+          "title": "Knowledge Bridging: How Acquirers Leverage the Knowledge of Their Targets’ Prior Alliance Partners",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.1203",
+          "date": "2026-02-17T04:56:48Z"
+        },
+        {
+          "title": "Market-Stigmatized Groups and the Effectiveness of Stigma Management Strategies: Evidence from Washington’s Marijuana Market",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.0995",
+          "date": "2026-02-13T04:36:46Z"
+        },
+        {
+          "title": "Role Rectification: How Hybrid Entrepreneurship Turns Entrepreneur Roles from Liability to Advantage in Hiring",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.1071",
+          "date": "2026-02-09T06:07:24Z"
+        },
+        {
+          "title": "Tied in or Tied Up? The Contrasting Effects of Social Ties on Employee Turnover",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0641",
+          "date": "2026-02-09T06:07:21Z"
+        },
+        {
+          "title": "Understanding Why and When Coworkers Undermine Employees Who Have Friends in High Places",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2022.1306",
+          "date": "2026-02-04T03:21:00Z"
+        },
+        {
+          "title": "When Women Stick Together: Network Dynamics and Shared Resources Following Disruptive Events",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0199",
+          "date": "2026-01-30T08:29:06Z"
+        },
+        {
+          "title": "Reckoning With the Ideal Worker Body: A Qualitative Study of Workers in Chronic Pain",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.0511",
+          "date": "2026-01-22T03:36:52Z"
+        },
+        {
+          "title": "When the Moon is Jealous of the Stars: Implications of Informal Leadership for Supervisor Downward Jealousy and Their Treatment of Other Subordinates",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.0646",
+          "date": "2026-01-22T03:34:55Z"
+        },
+        {
+          "title": "Point Break? The Efficacy of Creative Differences as a Protective Label for Future Work",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.0759",
+          "date": "2026-01-16T08:50:54Z"
+        },
+        {
+          "title": "CEO Regulatory Focus as an Interpretive Frame: An Empirical Examination of Investor Perceptions in the Context of Earning Deviations",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.0896",
+          "date": "2026-01-16T08:50:57Z"
+        },
+        {
+          "title": "Political Segregation in the Labor Market and the Persistence of Pay Gaps",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.0371",
+          "date": "2026-01-14T07:17:10Z"
+        },
+        {
+          "title": "Seeking Greener Pastures: Employee Turnover Following Corporate Stakeholder Violations",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0243",
+          "date": "2026-01-09T04:54:30Z"
+        },
+        {
+          "title": "Who I Am Not: Enhancing Self-Clarity through Cultivating Not-Me Identities",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0530",
+          "date": "2026-01-09T04:54:33Z"
+        },
+        {
+          "title": "Are You Looking at Me? Orchestrating Voyeuristic Events to Add Value for Those Being Observed",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.1385",
+          "date": "2026-01-09T04:54:32Z"
+        },
+        {
+          "title": "Stakeholder Political Ideology, Purpose of Business Beliefs, and Responses to CEO Activism: Introducing an Asymmetry Model",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.0510",
+          "date": "2025-12-22T02:31:41Z"
+        },
+        {
+          "title": "We’re Not in Kansas Anymore: Pragmatic Adaptation in Large-Scale Creative Projects with Underspecified Product Concepts",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0418",
+          "date": "2025-12-22T02:31:36Z"
+        },
+        {
+          "title": "Moderately Fast and Furious: A Screening and Behavioral Theory of New CEO Strategic Action Speed",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0829",
+          "date": "2025-12-12T06:48:03Z"
+        },
+        {
+          "title": "Team Hierarchical Adaptability: Benefits for Team Coordination and Performance",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.1308",
+          "date": "2025-12-11T03:44:51Z"
         }
       ],
-      "notes": [
-        "filtered_non_article:50"
+      "samples": [
+        {
+          "title": "Artificial Intelligence and Responsible Research at AMJ",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2026.4002",
+          "date": "2026-04-15T07:48:58Z"
+        },
+        {
+          "title": "Violence and Competition: The Effect of Mass Shootings and Domestic Terrorism on Organizational Risk-Taking in Response to Performance Shortfalls",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.0306",
+          "date": "2025-08-05T05:31:45Z"
+        },
+        {
+          "title": "How Employees Who Have Made Upward Social Class Transitions Get Heard in the Workplace",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.0042",
+          "date": "2025-11-04T04:05:38Z"
+        }
       ],
+      "notes": [],
       "error": ""
     },
     {
@@ -206,11 +977,79 @@
       "status": 200,
       "content_type": "application/json; charset=utf-8",
       "transport": "fetch",
-      "fetch_ms": 1648,
+      "fetch_ms": 1969,
       "ok": true,
       "usable_as_data_source": true,
-      "article_count": 8,
+      "article_count": 11,
       "candidate_count": 11,
+      "articles": [
+        {
+          "title": "构建中国经济学自主知识体系丨中国经济学的继承性、民族性问题探讨——学习贯彻习近平总书记在哲学社会科学工作座谈会上的重要讲话精神",
+          "url": "https://erj.ajcass.com/#/issueDetail?id=122885",
+          "date": "2026-04",
+          "authors": "裴长洪"
+        },
+        {
+          "title": "产业结构变化机制及其对经济增长的影响——兼论保持制造业合理比重的必要性",
+          "url": "https://erj.ajcass.com/#/issueDetail?id=122886",
+          "date": "2026-04",
+          "authors": "王弟海，吴茂华，潘士远"
+        },
+        {
+          "title": "社会资本参与、市场承诺与应用基础研究创新",
+          "url": "https://erj.ajcass.com/#/issueDetail?id=122887",
+          "date": "2026-04",
+          "authors": "冷萱，钟诗宇，曾宪聚，朱田恬"
+        },
+        {
+          "title": "中国碳排放权交易市场价格波动机制及实证——基于双层演化博弈视角的研究",
+          "url": "https://erj.ajcass.com/#/issueDetail?id=122888",
+          "date": "2026-04",
+          "authors": "王杰铖，高文武，陈诗一"
+        },
+        {
+          "title": "税收征管数字化升级与上市公司所得税费用偏差",
+          "url": "https://erj.ajcass.com/#/issueDetail?id=122889",
+          "date": "2026-04",
+          "authors": "储德银，刘文龙，张同斌，储旭捷"
+        },
+        {
+          "title": "中间品贸易自由化、共同投资者持股与核心技术突破",
+          "url": "https://erj.ajcass.com/#/issueDetail?id=122890",
+          "date": "2026-04",
+          "authors": "魏浩，孙全刚"
+        },
+        {
+          "title": "大国科技竞争下的前沿技术路线布局与研发资助策略",
+          "url": "https://erj.ajcass.com/#/issueDetail?id=122891",
+          "date": "2026-04",
+          "authors": "陈茁，赵艺璇，刘运"
+        },
+        {
+          "title": "中国新能源汽车发展和世界碳减排——基于量化贸易模型的研究",
+          "url": "https://erj.ajcass.com/#/issueDetail?id=122892",
+          "date": "2026-04",
+          "authors": "段玉婉，高远，张礼卿"
+        },
+        {
+          "title": "分配改善的增长:一种检验政策共同富裕效应的新框架",
+          "url": "https://erj.ajcass.com/#/issueDetail?id=122893",
+          "date": "2026-04",
+          "authors": "张征宇，陈浩文，邵黎娜，曹思力，朱平芳"
+        },
+        {
+          "title": "网络平台位置资源的分配机制与福利效应",
+          "url": "https://erj.ajcass.com/#/issueDetail?id=122894",
+          "date": "2026-04",
+          "authors": "王大中，宫汝凯，戴逸菲"
+        },
+        {
+          "title": "经济发展差异、财政制度变迁与县级财力均衡：1953—2019年的量化分析",
+          "url": "https://erj.ajcass.com/#/issueDetail?id=122895",
+          "date": "2026-04",
+          "authors": "汪德华，邹杰，吴涵"
+        }
+      ],
       "samples": [
         {
           "title": "构建中国经济学自主知识体系丨中国经济学的继承性、民族性问题探讨——学习贯彻习近平总书记在哲学社会科学工作座谈会上的重要讲话精神",
@@ -245,12 +1084,264 @@
       "extraction_rule": "cie-legacy-html",
       "status": 200,
       "content_type": "text/html; charset=utf-8",
-      "transport": "fetch",
-      "fetch_ms": 12960,
+      "transport": "curl",
+      "fetch_ms": 40212,
       "ok": true,
       "usable_as_data_source": true,
-      "article_count": 8,
-      "candidate_count": 276,
+      "article_count": 50,
+      "candidate_count": 244,
+      "articles": [
+        {
+          "title": "贸易政策不确定性、供应链暴露网络与全球违约风险——来自异质性空间自回归模型的新证据",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=122793",
+          "date": ""
+        },
+        {
+          "title": "工业智能化与收入分配格局演变：经济发展机遇背后的分配失衡隐忧",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=122794",
+          "date": ""
+        },
+        {
+          "title": "迈向全球共享繁荣：偏向性技术进步适宜性如何缓解收入不平等",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=122795",
+          "date": ""
+        },
+        {
+          "title": "产业链人才链融合的劳动生产率提升效应——基于地理空间的产业链人才链测度",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=122796",
+          "date": ""
+        },
+        {
+          "title": "头部企业数字化转型、创造性破坏与制造业生产率",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=122797",
+          "date": ""
+        },
+        {
+          "title": "制度型开放创新与企业碳负担——来自自由贸易试验区的经验证据",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=122798",
+          "date": ""
+        },
+        {
+          "title": "数据要素市场化、数商发展与实数融合",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=122799",
+          "date": ""
+        },
+        {
+          "title": "企业参与电商平台的就业效应及其机理",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=122800",
+          "date": ""
+        },
+        {
+          "title": "ESG合成谬误的生成与破解：从强还原论范式转向弱整体论范式",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=122801",
+          "date": ""
+        },
+        {
+          "title": "人工智能技术应用如何影响企业创新",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=97509",
+          "date": ""
+        },
+        {
+          "title": "数字化转型能否提升中国跨国企业海外投资效率",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=89908",
+          "date": ""
+        },
+        {
+          "title": "企业数字化转型、碳排放与供应链溢出",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=96263",
+          "date": ""
+        },
+        {
+          "title": "数据资产化能否缓解“专精特新”中小企业融资约束",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=97005",
+          "date": ""
+        },
+        {
+          "title": "金融科技与技术创新路径——基于绿色转型的视角",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=90031",
+          "date": ""
+        },
+        {
+          "title": "人才引进政策、劳动力优化配置与制造业智能化",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=96500",
+          "date": ""
+        },
+        {
+          "title": "数据要素规模效应、产业结构转型与生产率提升",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=96997",
+          "date": ""
+        },
+        {
+          "title": "人工智能、产业融合与产业结构转型升级",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=118068",
+          "date": ""
+        },
+        {
+          "title": "数字产业集群政策与关键核心技术突破式创新",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=117851",
+          "date": ""
+        },
+        {
+          "title": "供应商ESG评级分歧何以影响企业运营韧性",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=108830",
+          "date": ""
+        },
+        {
+          "title": "数字经济政策与传统企业跨界数字创新",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=118073",
+          "date": ""
+        },
+        {
+          "title": "地方隐性债务、银行风险感知与企业信贷可得性",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=89906",
+          "date": ""
+        },
+        {
+          "title": "国家级大数据综合试验区设立与就业增长",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=117612",
+          "date": ""
+        },
+        {
+          "title": "新型实体企业促进数实融合提升发展质量",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=90027",
+          "date": ""
+        },
+        {
+          "title": "供应链持股与企业高质量发展——基于全要素生产率视角",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=97309",
+          "date": ""
+        },
+        {
+          "title": "数字技术创新的价值——基于并购视角和机器学习方法的分析",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=90035",
+          "date": ""
+        },
+        {
+          "title": "“耐心资本”赋能新创企业韧性：企业风险投资和独立风险投资的差异化作用",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=119654",
+          "date": ""
+        },
+        {
+          "title": "银行监管处罚如何影响企业创新",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=96830",
+          "date": ""
+        },
+        {
+          "title": "算力部署、数据跨域流动与企业全要素生产率——来自智算中心的证据",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=118422",
+          "date": ""
+        },
+        {
+          "title": "数字金融发展与跨境贸易人民币结算——来自省级—国家跨境贸易人民币结算数据的经验证据",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=96676",
+          "date": ""
+        },
+        {
+          "title": "公共数据开放如何提振企业有效投资——基于产能利用视角",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=97004",
+          "date": ""
+        },
+        {
+          "title": "耐心资本与企业颠覆性创新——基于企业机构投资者视角",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=121325",
+          "date": ""
+        },
+        {
+          "title": "自由贸易试验区建设与地区经济安全水平——基于地级市的经验证据",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=90309",
+          "date": ""
+        },
+        {
+          "title": "高管股权激励与企业碳排放：绿色发展背景下的企业激励机制研究",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=120420",
+          "date": ""
+        },
+        {
+          "title": "工业智能化、劳动力技能结构与行业收入差距",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=117849",
+          "date": ""
+        },
+        {
+          "title": "气候金融风险的冲击影响、风险感知与政策应对",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=118419",
+          "date": ""
+        },
+        {
+          "title": "金融开放、货币政策与企业出口",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=117846",
+          "date": ""
+        },
+        {
+          "title": "全球绿色贸易、环境规则治理与中国路径选择",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=89901",
+          "date": ""
+        },
+        {
+          "title": "企业数字化转型与颠覆性技术创新——来自专利网络与SBERT模型的微观证据",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=97508",
+          "date": ""
+        },
+        {
+          "title": "产业数字化如何化解全球供应链风险——基于深度学习自动工具变量法的实证研究",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=120844",
+          "date": ""
+        },
+        {
+          "title": "中国上市公司分红的动因研究——基于机器学习的证据",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=96502",
+          "date": ""
+        },
+        {
+          "title": "人工智能时代的中国产业链“延链补链”——基于制造业企业智能设备进口的微观证据",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=89903",
+          "date": ""
+        },
+        {
+          "title": "科技创新政策、研发投入与关键核心技术攻坚",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=120846",
+          "date": ""
+        },
+        {
+          "title": "人工智能供给约束、技术异质性与国际比较优势",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=97302",
+          "date": ""
+        },
+        {
+          "title": "客户数字化转型、供应商碳减排与碳信息披露迎合",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=97002",
+          "date": ""
+        },
+        {
+          "title": "老龄化对财政支出政策有效性的影响研究——基于政府债务的视角",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=118731",
+          "date": ""
+        },
+        {
+          "title": "地方政府债务与债券信用利差：影响与机制",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=90311",
+          "date": ""
+        },
+        {
+          "title": "公共科研机构绿色研发介入与企业绿色创新——基于环境外部性视角",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=97306",
+          "date": ""
+        },
+        {
+          "title": "实体企业金融资产投资动机：货币政策异质性影响与数字金融调节效应",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=90034",
+          "date": ""
+        },
+        {
+          "title": "企业人工智能技术水平的分层测度及其创新效应——基于全球知识网络视角",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=118943",
+          "date": ""
+        },
+        {
+          "title": "论数字经济与社会主义市场经济的深度融合",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=96494",
+          "date": ""
+        }
+      ],
       "samples": [
         {
           "title": "贸易政策不确定性、供应链暴露网络与全球违约风险——来自异质性空间自回归模型的新证据",
@@ -269,7 +1360,7 @@
         }
       ],
       "notes": [],
-      "error": ""
+      "error": "curl: (28) Operation timed out after 23178 milliseconds with 458406 out of 530438 bytes received"
     },
     {
       "type": "adapter_source",
@@ -283,11 +1374,67 @@
       "status": 200,
       "content_type": "application/json; charset=utf-8",
       "transport": "fetch",
-      "fetch_ms": 1529,
+      "fetch_ms": 4009,
       "ok": true,
       "usable_as_data_source": true,
-      "article_count": 8,
+      "article_count": 9,
       "candidate_count": 9,
+      "articles": [
+        {
+          "title": "论巩固和完善农村基本经营制度",
+          "url": "https://zgncjj.ajcass.com/#/issueDetail?id=122803",
+          "date": "2026-05",
+          "authors": "胡凌啸"
+        },
+        {
+          "title": "县域城乡融合发展的理论逻辑与实践模式——基于中国特色实践的一般性分析框架",
+          "url": "https://zgncjj.ajcass.com/#/issueDetail?id=122824",
+          "date": "2026-05",
+          "authors": "钟苏娟 黄贤金 贾铠阳"
+        },
+        {
+          "title": "高素质农民培育何以驱动县域经济发展——基于新型职业农民培育示范政策的实证研究",
+          "url": "https://zgncjj.ajcass.com/#/issueDetail?id=122825",
+          "date": "2026-05",
+          "authors": "徐卓君 吴贾 吴顺利"
+        },
+        {
+          "title": "返乡创业试点政策实施如何助推城乡融合发展",
+          "url": "https://zgncjj.ajcass.com/#/issueDetail?id=122826",
+          "date": "2026-05",
+          "authors": "肖霞 徐成铭 黄亮雄"
+        },
+        {
+          "title": "超越结构与行动：政府赋能农村集体经济发展的可持续机制",
+          "url": "https://zgncjj.ajcass.com/#/issueDetail?id=122827",
+          "date": "2026-05",
+          "authors": "李小艺 佟健 任利刚"
+        },
+        {
+          "title": "中国农村信用发展水平测度、演变及其影响因素的组态分析",
+          "url": "https://zgncjj.ajcass.com/#/issueDetail?id=122828",
+          "date": "2026-05",
+          "authors": "田侃 温国强 贾万颖"
+        },
+        {
+          "title": "环境规制对空气污染城乡分布的影响研究——以国家环境空气监测站的建立为例",
+          "url": "https://zgncjj.ajcass.com/#/issueDetail?id=122829",
+          "date": "2026-05",
+          "authors": "王玉泽 张诗怡 杨开忠"
+        },
+        {
+          "title": "绿色算力基础设施建设对包容性绿色发展效率的影响",
+          "url": "https://zgncjj.ajcass.com/#/issueDetail?id=122830",
+          "date": "2026-05",
+          "authors": "刘传明 朱凯"
+        },
+        {
+          "title": "林牧渔草业转型升级与“十五五”时期发展思路——中国林牧渔业经济学会2025年年会综述",
+          "url": "https://zgncjj.ajcass.com/#/issueDetail?id=122831",
+          "date": "2026-05",
+          "authors": "张强强 刘芳 王术坤"
+        }
+      ],
       "samples": [
         {
           "title": "论巩固和完善农村基本经营制度",
@@ -323,11 +1470,53 @@
       "status": 200,
       "content_type": "text/html;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1786,
+      "fetch_ms": 3821,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 8,
       "candidate_count": 8,
+      "articles": [
+        {
+          "title": "极端天气、贸易信贷传导与供应链稳定",
+          "url": "https://sjjj.magtech.com.cn/CN/Y2026/V49/I5/3",
+          "date": ""
+        },
+        {
+          "title": "新闻情绪与人民币汇率预期",
+          "url": "https://sjjj.magtech.com.cn/CN/Y2026/V49/I5/39",
+          "date": ""
+        },
+        {
+          "title": "科技赋能司法与全国统一大市场的形成",
+          "url": "https://sjjj.magtech.com.cn/CN/Y2026/V49/I5/77",
+          "date": ""
+        },
+        {
+          "title": "线上商家“标题党”行为与内卷式竞争",
+          "url": "https://sjjj.magtech.com.cn/CN/Y2026/V49/I5/108",
+          "date": ""
+        },
+        {
+          "title": "政府产业基金支持企业创新的最优投资模式研究",
+          "url": "https://sjjj.magtech.com.cn/CN/Y2026/V49/I5/139",
+          "date": ""
+        },
+        {
+          "title": "平台垄断、监管取向与全要素生产率：生态位视角的证据",
+          "url": "https://sjjj.magtech.com.cn/CN/Y2026/V49/I5/172",
+          "date": ""
+        },
+        {
+          "title": "人工智能技术进步与人口增长",
+          "url": "https://sjjj.magtech.com.cn/CN/Y2026/V49/I5/208",
+          "date": ""
+        },
+        {
+          "title": "基础教育结果均等化改革的效应评估：以上海市为例",
+          "url": "https://sjjj.magtech.com.cn/CN/Y2026/V49/I5/238",
+          "date": ""
+        }
+      ],
       "samples": [
         {
           "title": "极端天气、贸易信贷传导与供应链稳定",
@@ -360,11 +1549,168 @@
       "status": 200,
       "content_type": "text/html;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 2733,
+      "fetch_ms": 6211,
       "ok": true,
       "usable_as_data_source": true,
-      "article_count": 8,
+      "article_count": 31,
       "candidate_count": 31,
+      "articles": [
+        {
+          "title": "中国的利率体系与利率市场化改革",
+          "url": "http://www.jryj.org.cn/CN/Y2021/V495/I9/1",
+          "date": ""
+        },
+        {
+          "title": "公众预期、政策协调与房地产金融宏观审慎政策有效性",
+          "url": "http://www.jryj.org.cn/CN/abstract/abstract1596.shtml",
+          "date": ""
+        },
+        {
+          "title": "关税冲击与人民币货币锚地位调整——来自2018—2020年中美贸易摩擦的经验证据",
+          "url": "http://www.jryj.org.cn/CN/abstract/abstract1597.shtml",
+          "date": ""
+        },
+        {
+          "title": "金融分权、信贷错配与地方中小银行风险",
+          "url": "http://www.jryj.org.cn/CN/abstract/abstract1598.shtml",
+          "date": ""
+        },
+        {
+          "title": "地方隐性担保破除对域内中小银行风险的影响",
+          "url": "http://www.jryj.org.cn/CN/abstract/abstract1599.shtml",
+          "date": ""
+        },
+        {
+          "title": "媒体负面报道与银行信贷——基于信息中介和外部监督的双重视角",
+          "url": "http://www.jryj.org.cn/CN/abstract/abstract1600.shtml",
+          "date": ""
+        },
+        {
+          "title": "要素市场一体化背景下的政府引导基金跨区域流动——来自国家级城市群规划的证据",
+          "url": "http://www.jryj.org.cn/CN/abstract/abstract1601.shtml",
+          "date": ""
+        },
+        {
+          "title": "供应链网络中创新与企业全要素生产率提升:供应商创新视角",
+          "url": "http://www.jryj.org.cn/CN/abstract/abstract1602.shtml",
+          "date": ""
+        },
+        {
+          "title": "个人破产制度与地区创业活力——基于中国个人破产试点的经验证据",
+          "url": "http://www.jryj.org.cn/CN/abstract/abstract1603.shtml",
+          "date": ""
+        },
+        {
+          "title": "碳减排政策、绿色技术采用与转型风险",
+          "url": "http://www.jryj.org.cn/CN/abstract/abstract1604.shtml",
+          "date": ""
+        },
+        {
+          "title": "基层医疗资源下沉与农村家庭贫困脆弱性——来自紧密型医共体建设的证据",
+          "url": "http://www.jryj.org.cn/CN/abstract/abstract1605.shtml",
+          "date": ""
+        },
+        {
+          "title": "分析师跟踪对企业产品质量违规的影响研究",
+          "url": "http://www.jryj.org.cn/CN/abstract/abstract1606.shtml",
+          "date": ""
+        },
+        {
+          "title": "技术封锁与企业供应链调整——基于美对华实体清单的实证研究",
+          "url": "http://www.jryj.org.cn/CN/Y2025/V544/I10/115",
+          "date": ""
+        },
+        {
+          "title": "双边本币互换与国际货币格局演变——来自人民币的证据",
+          "url": "http://www.jryj.org.cn/CN/Y2025/V542/I8/56",
+          "date": ""
+        },
+        {
+          "title": "绿色金融能否促进经济“脱虚向实”——基于绿色金融改革创新试验区的经验证据",
+          "url": "http://www.jryj.org.cn/CN/Y2025/V546/I12/20",
+          "date": ""
+        },
+        {
+          "title": "通胀预期如何影响债券信用利差？",
+          "url": "http://www.jryj.org.cn/CN/Y2025/V544/I10/1",
+          "date": ""
+        },
+        {
+          "title": "金融科技、货币政策传导与消费——来自大科技平台个人用户的微观证据",
+          "url": "http://www.jryj.org.cn/CN/Y2025/V545/I11/1",
+          "date": ""
+        },
+        {
+          "title": "人民币清算行设立能推动跨境贸易人民币结算吗？——兼论CIPS的协同效应",
+          "url": "http://www.jryj.org.cn/CN/Y2025/V546/I12/1",
+          "date": ""
+        },
+        {
+          "title": "网络安全风险治理与企业创新——基于大语言模型的识别与发现",
+          "url": "http://www.jryj.org.cn/CN/Y2026/V547/I1/76",
+          "date": ""
+        },
+        {
+          "title": "退市制度改革能够提高定价效率吗？——基于壳资源的视角",
+          "url": "http://www.jryj.org.cn/CN/Y2025/V543/I9/170",
+          "date": ""
+        },
+        {
+          "title": "供应链不确定性与中国企业创新——基于中美供应链微观企业数据的分析",
+          "url": "http://www.jryj.org.cn/CN/Y2025/V542/I8/75",
+          "date": ""
+        },
+        {
+          "title": "算力基础设施建设是否抑制了企业“脱实向虚”?——来自中国地级及以上城市数据中心建设的经验证据",
+          "url": "http://www.jryj.org.cn/CN/Y2025/V541/I7/95",
+          "date": ""
+        },
+        {
+          "title": "清代官绅家庭资产结构一般特征初探——以抄产档案为中心的研究",
+          "url": "http://www.jryj.org.cn/CN/Y2018/V452/I2/61",
+          "date": ""
+        },
+        {
+          "title": "中国历史上的国际收支估算:1550—1948",
+          "url": "http://www.jryj.org.cn/CN/Y2023/V513/I3/188",
+          "date": ""
+        },
+        {
+          "title": "绿色金融、绿色创新与经济高质量发展",
+          "url": "http://www.jryj.org.cn/CN/Y2022/V506/I8/1",
+          "date": ""
+        },
+        {
+          "title": "跨境金融:驱动因素、结构特征与未来路径",
+          "url": "http://www.jryj.org.cn/CN/Y2022/V500/I2/1",
+          "date": ""
+        },
+        {
+          "title": "中国历史上白银大规模跨境流动研究",
+          "url": "http://www.jryj.org.cn/CN/Y2023/V517/I7/193",
+          "date": ""
+        },
+        {
+          "title": "批发业外资开放、供应链整合与消费福利——基于微观视角的理论与经验分析",
+          "url": "http://www.jryj.org.cn/CN/Y2024/V532/I10/113",
+          "date": ""
+        },
+        {
+          "title": "分层制度提升新三板流动性了吗？——来自多维断点回归的经验证据",
+          "url": "http://www.jryj.org.cn/CN/Y2019/V467/I5/170",
+          "date": ""
+        },
+        {
+          "title": "《巴塞尔III最终方案》的影响及应对",
+          "url": "http://www.jryj.org.cn/CN/Y2018/V452/I2/30",
+          "date": ""
+        },
+        {
+          "title": "首日涨停板制度与IPO解禁效应——基于投机泡沫视角的分析",
+          "url": "http://www.jryj.org.cn/CN/Y2020/V478/I4/186",
+          "date": ""
+        }
+      ],
       "samples": [
         {
           "title": "中国的利率体系与利率市场化改革",
@@ -397,11 +1743,79 @@
       "status": 200,
       "content_type": "text/html; charset=utf-8",
       "transport": "fetch",
-      "fetch_ms": 1467,
+      "fetch_ms": 1850,
       "ok": true,
       "usable_as_data_source": true,
-      "article_count": 8,
+      "article_count": 11,
       "candidate_count": 24,
+      "articles": [
+        {
+          "title": "科技强国建设中的双重创新动力源——一个知识流创新链分析框架及其考证",
+          "url": "https://www.macrodatas.cn/article/1779681420#directory-01",
+          "date": "2026-05-25",
+          "authors": "易先忠，潘锐，张亚斌"
+        },
+        {
+          "title": "构建中国公共管理自主知识体系的系统性思维和建构性路径",
+          "url": "https://www.macrodatas.cn/article/1779681420#directory-02",
+          "date": "2026-05-25",
+          "authors": "薛澜，赵静"
+        },
+        {
+          "title": "工程管理基础理论：建构管理学中国自主知识体系的学理表征",
+          "url": "https://www.macrodatas.cn/article/1779681420#directory-03",
+          "date": "2026-05-25",
+          "authors": "盛昭瀚"
+        },
+        {
+          "title": "从“三农”术语革命迈向三农学——中国式现代化的“三农”经验与自主理论创新",
+          "url": "https://www.macrodatas.cn/article/1779681420#directory-04",
+          "date": "2026-05-25",
+          "authors": "朱信凯，陈家炜，高原"
+        },
+        {
+          "title": "构建中国化时代化的中国管理学自主知识体系",
+          "url": "https://www.macrodatas.cn/article/1779681420#directory-05",
+          "date": "2026-05-25",
+          "authors": "易靖韬"
+        },
+        {
+          "title": "增值税大规模留抵退税的宏观效应估计",
+          "url": "https://www.macrodatas.cn/article/1779681420#directory-06",
+          "date": "2026-05-25",
+          "authors": "聂海峰，刘怡"
+        },
+        {
+          "title": "数字经济的空间效应——基于贸易成本的视角",
+          "url": "https://www.macrodatas.cn/article/1779681420#directory-07",
+          "date": "2026-05-25",
+          "authors": "刘琳，蔡宏波，毛健"
+        },
+        {
+          "title": "超越经济激励：平台经济中的评论激励机制、市场交易行为与社会福利",
+          "url": "https://www.macrodatas.cn/article/1779681420#directory-08",
+          "date": "2026-05-25",
+          "authors": "罗俊，潘佳艺，邹乐豪"
+        },
+        {
+          "title": "AI协作系统、智能定制惯例与智能制造企业数字创新——一个复杂中介模型",
+          "url": "https://www.macrodatas.cn/article/1779681420#directory-09",
+          "date": "2026-05-25",
+          "authors": "马鸿佳，等"
+        },
+        {
+          "title": "从业务主导到技术主导的制度逻辑变革——基于圆通数字化转型的案例研究",
+          "url": "https://www.macrodatas.cn/article/1779681420#directory-10",
+          "date": "2026-05-25",
+          "authors": "董静，吕孟丽，王诗翔"
+        },
+        {
+          "title": "数智管理模式：概念界定、理论框架与未来展望",
+          "url": "https://www.macrodatas.cn/article/1779681420#directory-11",
+          "date": "2026-05-25",
+          "authors": "孙新波，何志伟，李俊悦"
+        }
+      ],
       "samples": [
         {
           "title": "科技强国建设中的双重创新动力源——一个知识流创新链分析框架及其考证",
@@ -441,11 +1855,73 @@
       "status": 200,
       "content_type": "text/html;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 3343,
+      "fetch_ms": 4584,
       "ok": true,
       "usable_as_data_source": true,
-      "article_count": 8,
+      "article_count": 12,
       "candidate_count": 12,
+      "articles": [
+        {
+          "title": "治理刚性与发展韧性之间的张力如何催生治理创新？——乡村振兴战略下制度张力的调适机制",
+          "url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/96f94922a46fa9e15ab6abc22eae2c55",
+          "date": ""
+        },
+        {
+          "title": "资源约束型乡村产业新内源发展的过程与机制——基于“政府-市场-集体”协同视角的案例研究",
+          "url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/01a4f4e944c9700d3740488523d53e88",
+          "date": ""
+        },
+        {
+          "title": "何以落地生根：乡村治理积分制有效实施的影响因素与机制——基于多案例比较的计算扎根分析",
+          "url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/4c409240451fb151f0c90f04366a69a6",
+          "date": ""
+        },
+        {
+          "title": "复杂网络演化博弈视角下区域政策网络的联盟互动与策略演化——基于成渝地区的经验解释",
+          "url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/4f6eddc81debcdcc0a1a401bc1de9b8f",
+          "date": ""
+        },
+        {
+          "title": "制度化共治：经开区与行政区空间协同治理的演进逻辑——基于C经济技术开发区的过程追踪研究",
+          "url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/7a027071dc6c590cd2a3dcf682189ae8",
+          "date": ""
+        },
+        {
+          "title": "政策文献量化研究:公共政策研究的新方向",
+          "url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/b6ee50f4cacaa4ab8711d8e729b7c71e",
+          "date": ""
+        },
+        {
+          "title": "以公共价值为基础的政府绩效治理——源起、架构与研究问题",
+          "url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/d79d1af464dd99db301857f3c4202b18",
+          "date": ""
+        },
+        {
+          "title": "网络治理:公共管理的新框架",
+          "url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/788b9d590a93de9b5e4797526c02eb61",
+          "date": ""
+        },
+        {
+          "title": "用文献计量研究重塑政策文本数据分析——政策文献计量的起源、迁移与方法创新",
+          "url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/d9146b8716eeeb8b7e4a3c717763380e",
+          "date": ""
+        },
+        {
+          "title": "城市居民垃圾分类的影响因素研究",
+          "url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/466fea9b60d22ef094ec2459206a81f3",
+          "date": ""
+        },
+        {
+          "title": "共享单车:互联网技术与公共服务中的协同治理",
+          "url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/9cb42fa7075e5ea7d5e122134f264d3d",
+          "date": ""
+        },
+        {
+          "title": "国家治理体系与治理能力研究:回顾与前瞻",
+          "url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/b88c98e5d51b4a1b928b541405891773",
+          "date": ""
+        }
+      ],
       "samples": [
         {
           "title": "治理刚性与发展韧性之间的张力如何催生治理创新？——乡村振兴战略下制度张力的调适机制",
@@ -478,11 +1954,115 @@
       "status": 200,
       "content_type": "text/html; charset=utf-8",
       "transport": "fetch",
-      "fetch_ms": 1270,
+      "fetch_ms": 1266,
       "ok": true,
       "usable_as_data_source": true,
-      "article_count": 8,
+      "article_count": 17,
       "candidate_count": 6,
+      "articles": [
+        {
+          "title": "卖萌还是搞怪：智能客服可爱沟通风格与品牌个性对消费者宽恕的影响",
+          "url": "https://www.macrodatas.cn/article/1776651960#directory-01",
+          "date": "2026-04-20",
+          "authors": "张硕，梁璐琪，于春玲"
+        },
+        {
+          "title": "大股东支持行为的融资效应研究：从控股股东股权质押到独特监督型资本",
+          "url": "https://www.macrodatas.cn/article/1776651960#directory-02",
+          "date": "2026-04-20",
+          "authors": "李志伟，马连福，高媛"
+        },
+        {
+          "title": "松-紧文化如何影响消费者突破式和渐进式创造力：心理适应视角",
+          "url": "https://www.macrodatas.cn/article/1776651960#directory-03",
+          "date": "2026-04-20",
+          "authors": "黄晓治，等"
+        },
+        {
+          "title": "字正腔圆还是南腔北调？农民主播语言类型、在线绿色互动模式对消费者绿色农产品品牌偏好的影响",
+          "url": "https://www.macrodatas.cn/article/1776651960#directory-04",
+          "date": "2026-04-20",
+          "authors": "郭锐，赵成祥，周敏"
+        },
+        {
+          "title": "人工智能虚拟助手参与线索对用户享受的影响",
+          "url": "https://www.macrodatas.cn/article/1776651960#directory-05",
+          "date": "2026-04-20",
+          "authors": "靳菲，曾喆妮，廖俊云"
+        },
+        {
+          "title": "战略差异下的公司并购行为研究：基于母公司报表视角的战略划分",
+          "url": "https://www.macrodatas.cn/article/1776651960#directory-06",
+          "date": "2026-04-20",
+          "authors": "张新民，彭皎，杨道广"
+        },
+        {
+          "title": "员工流失风险感知与企业劳动节约型创新",
+          "url": "https://www.macrodatas.cn/article/1776651960#directory-07",
+          "date": "2026-04-20",
+          "authors": "皮淑雯，等"
+        },
+        {
+          "title": "财务智能化提升了企业投资效率吗？ ——基于智能化财务人员招聘的证据",
+          "url": "https://www.macrodatas.cn/article/1776651960#directory-08",
+          "date": "2026-04-20",
+          "authors": "陈俊，李永康，龚启辉"
+        },
+        {
+          "title": "企业社交工作平台发展模式迭代的机理研究——基于标准化与定制化悖论视角的钉钉案例研究",
+          "url": "https://www.macrodatas.cn/article/1776651960#directory-09",
+          "date": "2026-04-20",
+          "authors": "孙元，等"
+        },
+        {
+          "title": "三元要素协同编排视角下复杂手工制造业的后发追赶研究——以珠江钢琴为例",
+          "url": "https://www.macrodatas.cn/article/1776651960#directory-10",
+          "date": "2026-04-20",
+          "authors": "周延风，李梅"
+        },
+        {
+          "title": "生僻字品牌名称的效果研究：何时好？为何好？",
+          "url": "https://www.macrodatas.cn/article/1776651960#directory-11",
+          "date": "2026-04-20",
+          "authors": "周志民，张绍杰，麦睿颖"
+        },
+        {
+          "title": "劳动力市场流动性的公司治理效应——来自我国户籍制度的经验证据",
+          "url": "https://www.macrodatas.cn/article/1776651960#directory-12",
+          "date": "2026-04-20",
+          "authors": "陆瑶，彭章，牛美龄"
+        },
+        {
+          "title": "新三板公司在多层次资本市场层级变动因何不同？ ——基于机器学习重要因素挖掘与动态QCA因果关系分析",
+          "url": "https://www.macrodatas.cn/article/1776651960#directory-13",
+          "date": "2026-04-20",
+          "authors": "孙洁，梅静怡"
+        },
+        {
+          "title": "非计划决策：基于数智赋能的企业即兴能力构建",
+          "url": "https://www.macrodatas.cn/article/1776651960#directory-14",
+          "date": "2026-04-20",
+          "authors": "王琳，周昕怡，刘锡禄"
+        },
+        {
+          "title": "同频共振：政企资源联动视角下企业融通发展研究",
+          "url": "https://www.macrodatas.cn/article/1776651960#directory-15",
+          "date": "2026-04-20",
+          "authors": "李晓翔，李颖"
+        },
+        {
+          "title": "数字产品架构创新与组织学习的适配机制——双案例探索研究",
+          "url": "https://www.macrodatas.cn/article/1776651960#directory-16",
+          "date": "2026-04-20",
+          "authors": "王立扬，等"
+        },
+        {
+          "title": "中国基础设施企业海外商业生态系统构建机制研究 ——制度创业视角下的单案例分析",
+          "url": "https://www.macrodatas.cn/article/1776651960#directory-17",
+          "date": "2026-04-20",
+          "authors": "冯永春，等"
+        }
+      ],
       "samples": [
         {
           "title": "卖萌还是搞怪：智能客服可爱沟通风格与品牌个性对消费者宽恕的影响",
@@ -522,11 +2102,63 @@
       "status": 200,
       "content_type": "text/html; charset=utf-8",
       "transport": "fetch",
-      "fetch_ms": 656,
+      "fetch_ms": 765,
       "ok": true,
       "usable_as_data_source": true,
-      "article_count": 8,
+      "article_count": 10,
       "candidate_count": 253,
+      "articles": [
+        {
+          "title": "异质性环境规制、绿色创新与企业绿色形象的关系研究",
+          "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260401?st=article_issue",
+          "date": ""
+        },
+        {
+          "title": "区域一体化推进的工业污染集聚效应——来自长三角边界效应与扩容影响的证据",
+          "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260402?st=article_issue",
+          "date": ""
+        },
+        {
+          "title": "数字金融的治理效应研究——基于盈余管理的视角",
+          "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260403?st=article_issue",
+          "date": ""
+        },
+        {
+          "title": "基于高维因子模型的A股市场系统性风险研究",
+          "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260404?st=article_issue",
+          "date": ""
+        },
+        {
+          "title": "考虑偏差修正的Bootstrap假设检验及大规模关键质量因子筛选研究",
+          "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260405?st=article_issue",
+          "date": ""
+        },
+        {
+          "title": "自动化码头AGV无死锁在线路径规划算法",
+          "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260406?st=article_issue",
+          "date": ""
+        },
+        {
+          "title": "考虑农户损失规避的平台型供应链融资模式选择",
+          "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260407?st=article_issue",
+          "date": ""
+        },
+        {
+          "title": "折价出售传染与货币市场基金行业系统性风险——基于“基金-资产”二分网络视角",
+          "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260408?st=article_issue",
+          "date": ""
+        },
+        {
+          "title": "动态批量与预测时阈：研究现状与展望",
+          "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260409?st=article_issue",
+          "date": ""
+        },
+        {
+          "title": "评论操控：概念解析、理论发展和未来展望",
+          "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260410?st=article_issue",
+          "date": ""
+        }
+      ],
       "samples": [
         {
           "title": "异质性环境规制、绿色创新与企业绿色形象的关系研究",
@@ -561,27 +2193,143 @@
       "status": 200,
       "content_type": "text/html; charset=utf-8",
       "transport": "fetch",
-      "fetch_ms": 6013,
+      "fetch_ms": 5804,
       "ok": true,
       "usable_as_data_source": true,
-      "article_count": 8,
+      "article_count": 19,
       "candidate_count": 19,
-      "samples": [
+      "articles": [
         {
           "title": "以制度建设为主线统筹发展和安全",
-          "url": "https://www.cqvip.com/doc/journal/7203343026?sign=1cc66c7e4a6d0c9f1f166e60fe1b4afd818dc6981f3fdd5b4aeacfff1e9e7fb7&expireTime=1795260062057&resourceId=7203343026&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343026?sign=5e528c291a75831aa242496a4de4ca765d3f43b5df86ee34864de0ec601d9b75&expireTime=1795261377615&resourceId=7203343026&type=1",
           "date": "2026-03",
           "authors": "王浦劬, 连雨欣"
         },
         {
           "title": "“钉钉子”的技术:重大决策落实的工作机制",
-          "url": "https://www.cqvip.com/doc/journal/7203343027?sign=e2d374ab92c1357557fcc8911a58c5f7d149f629753905ec7f843c1c38458c8a&expireTime=1795260062057&resourceId=7203343027&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343027?sign=af58986aad3dccbd70a2499b933ce6512f229d32a937c070da300380c92d1fe9&expireTime=1795261377615&resourceId=7203343027&type=1",
           "date": "2026-03",
           "authors": "庞明礼, 郭雯斐"
         },
         {
           "title": "从制度到行动:基层减负的层级传导与长效机制",
-          "url": "https://www.cqvip.com/doc/journal/7203343028?sign=f2e17142453ee68c832a5768d7a58ed087e2c9f53bec8a6e87e82be8b717ed4b&expireTime=1795260062057&resourceId=7203343028&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343028?sign=cf87ea0d8de23fb288b0a1e3f9b2ae3394ec22ce4dd645e5d5e2c3d4953e11f5&expireTime=1795261377615&resourceId=7203343028&type=1",
+          "date": "2026-03",
+          "authors": "王锐, 倪星"
+        },
+        {
+          "title": "政府数字平台何以走出难以为继困境?——基于生态系统视角的对比案例研究",
+          "url": "https://www.cqvip.com/doc/journal/7203343029?sign=046e9f5323d98786cbb0a040ea640650f37f15a3ec590249d01e14919a38b382&expireTime=1795261377615&resourceId=7203343029&type=1",
+          "date": "2026-03",
+          "authors": "付宁, 林婕, 祝哲"
+        },
+        {
+          "title": "人工智能的科林格里奇困境与安全监管的敏捷性调适",
+          "url": "https://www.cqvip.com/doc/journal/7203343030?sign=4a9a9b0a883d64e5fe0cdf1ef5f040b487a3c2f65ed6366c2e09a563a4f62ed5&expireTime=1795261377615&resourceId=7203343030&type=1",
+          "date": "2026-03",
+          "authors": "张乐, 赵爽爽"
+        },
+        {
+          "title": "“数字帕金森”:数字治理中的任务冗余再生产",
+          "url": "https://www.cqvip.com/doc/journal/7203343031?sign=4865b980dfea87f422c5207fcd4899455ea8aabf832a3c786d396114fda0d314&expireTime=1795261377615&resourceId=7203343031&type=1",
+          "date": "2026-03",
+          "authors": "邓崧, 杨迪"
+        },
+        {
+          "title": "把公共性带回来:社区慈善事业治理的路径选择",
+          "url": "https://www.cqvip.com/doc/journal/7203343032?sign=e2ccb5f8756e28b792bb77e3bdeb8e48f372ebb0376dcd076d1e62324f3e2636&expireTime=1795261377615&resourceId=7203343032&type=1",
+          "date": "2026-03",
+          "authors": "舒文, 郑功成"
+        },
+        {
+          "title": "“选择式自主”:社会组织可持续发展的新范式",
+          "url": "https://www.cqvip.com/doc/journal/7203343033?sign=58c54045f4fee092c1e001c6fb10320306e803a85427a608c162a61c921e7ea4&expireTime=1795261377615&resourceId=7203343033&type=1",
+          "date": "2026-03",
+          "authors": "刘蕾, 何书仪"
+        },
+        {
+          "title": "基层“信用积分制”运行的实践错位与优化路径",
+          "url": "https://www.cqvip.com/doc/journal/7203343034?sign=7e15e986bcd7ab86a30f3fb1262a3395282b785bd41661892397d478eda21e76&expireTime=1795261377615&resourceId=7203343034&type=1",
+          "date": "2026-03",
+          "authors": "朱博宇, 沈圣兰, 黄璜"
+        },
+        {
+          "title": "建构基于“有效的政府治理”标识性概念的中国政府治理理论框架",
+          "url": "https://www.cqvip.com/doc/journal/7203343035?sign=0143891b6631ea663ea1eeb51151a86ff85f3c5fc2ff024fd55d69ca9a4b3f3f&expireTime=1795261377615&resourceId=7203343035&type=1",
+          "date": "2026-03",
+          "authors": "李瑞昌"
+        },
+        {
+          "title": "重新发现治理:评价理论的视角",
+          "url": "https://www.cqvip.com/doc/journal/7203343036?sign=8f3276409e1e01d13ba9a04ecbe14ee04faf9b6b2c69238382b5e92c605b50d2&expireTime=1795261377615&resourceId=7203343036&type=1",
+          "date": "2026-03",
+          "authors": "张乾友"
+        },
+        {
+          "title": "数字技术驱动乡村公共服务共同生产的影响因素与实践逻辑",
+          "url": "https://www.cqvip.com/doc/journal/7203343037?sign=088d86e4a0dd8984fc3d6d6a3d500e7576cdd6b609bd5d5613a848ebca1e05d9&expireTime=1795261377615&resourceId=7203343037&type=1",
+          "date": "2026-03",
+          "authors": "王洛忠, 徐成铭"
+        },
+        {
+          "title": "数字生态何以影响乡村韧性治理绩效",
+          "url": "https://www.cqvip.com/doc/journal/7203343038?sign=d9fb313cff7bfeb8f1a42e9145f42a0aa87191062efd63c086a6e0cfbfea5bbe&expireTime=1795261377615&resourceId=7203343038&type=1",
+          "date": "2026-03",
+          "authors": "陈浩天, 肖延玉"
+        },
+        {
+          "title": "复合型公共空间:社交平台驱动的乡村公共空间新样态",
+          "url": "https://www.cqvip.com/doc/journal/7203343039?sign=bd60d712ee73920a65f86fe6ba0774724c1aff606620761ab5a0bd17d9db4930&expireTime=1795261377615&resourceId=7203343039&type=1",
+          "date": "2026-03",
+          "authors": "王承禹, 张旋"
+        },
+        {
+          "title": "以科技人才集聚促进京津冀城市群高质量协同发展",
+          "url": "https://www.cqvip.com/doc/journal/7203343040?sign=3574d5529d23f3d64273b5487b2b41b89c83acff07636394ec1ac6f2cce44e93&expireTime=1795261377615&resourceId=7203343040&type=1",
+          "date": "2026-03",
+          "authors": "魏华颖, 李子昂, 孙宏皓"
+        },
+        {
+          "title": "数字赋能乡村治理现代化的优化路径",
+          "url": "https://www.cqvip.com/doc/journal/7203343041?sign=77d8b06322f10e321c81bbd5b7b017141a6bc4ec63f98dc9e14213bbd95bbf24&expireTime=1795261377615&resourceId=7203343041&type=1",
+          "date": "2026-03",
+          "authors": "李俊清, 毋世扬"
+        },
+        {
+          "title": "以全生命周期服务改革推动营商环境优化",
+          "url": "https://www.cqvip.com/doc/journal/7203343042?sign=c8840ffbc540c7907dac82dfbf42d545428ef7a1b2686b9fb1fa60c2072acd80&expireTime=1795261377615&resourceId=7203343042&type=1",
+          "date": "2026-03",
+          "authors": "杨畅, 彭伟, 黄凌筱"
+        },
+        {
+          "title": "内蒙古大学公共管理学院简介",
+          "url": "https://www.cqvip.com/doc/journal/7203343025?sign=bba12a2cf3246b7b8080d5bbe5955c5f0cbf7ac2cf85a0932a3b8b72f5c2fee8&expireTime=1795261377615&resourceId=7203343025&type=1",
+          "date": "2026-03",
+          "authors": "白维军"
+        },
+        {
+          "title": "中国银联积极服务政府促消费 双轮驱动激活市场新动能",
+          "url": "https://www.cqvip.com/doc/journal/7203343043?sign=57b58a2c8cfe320cdaf3eecff639ba2d50ab3c13afcd258cac004a7720057acc&expireTime=1795261377615&resourceId=7203343043&type=1",
+          "date": "2026-03",
+          "authors": "韩永琛"
+        }
+      ],
+      "samples": [
+        {
+          "title": "以制度建设为主线统筹发展和安全",
+          "url": "https://www.cqvip.com/doc/journal/7203343026?sign=5e528c291a75831aa242496a4de4ca765d3f43b5df86ee34864de0ec601d9b75&expireTime=1795261377615&resourceId=7203343026&type=1",
+          "date": "2026-03",
+          "authors": "王浦劬, 连雨欣"
+        },
+        {
+          "title": "“钉钉子”的技术:重大决策落实的工作机制",
+          "url": "https://www.cqvip.com/doc/journal/7203343027?sign=af58986aad3dccbd70a2499b933ce6512f229d32a937c070da300380c92d1fe9&expireTime=1795261377615&resourceId=7203343027&type=1",
+          "date": "2026-03",
+          "authors": "庞明礼, 郭雯斐"
+        },
+        {
+          "title": "从制度到行动:基层减负的层级传导与长效机制",
+          "url": "https://www.cqvip.com/doc/journal/7203343028?sign=cf87ea0d8de23fb288b0a1e3f9b2ae3394ec22ce4dd645e5d5e2c3d4953e11f5&expireTime=1795261377615&resourceId=7203343028&type=1",
           "date": "2026-03",
           "authors": "王锐, 倪星"
         }
@@ -604,11 +2352,78 @@
       "status": 200,
       "content_type": "text/html;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 710,
+      "fetch_ms": 1105,
       "ok": true,
       "usable_as_data_source": true,
-      "article_count": 8,
+      "article_count": 13,
       "candidate_count": 13,
+      "articles": [
+        {
+          "title": "劳动力市场势力如何影响分析师盈余预测准确性?———基于证券公...",
+          "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=0EB713F2-A67B-4D41-858D-33AA14CAE36F&ID=A3ED3197-6D0F-4E67-944A-FA5C00C7CD77",
+          "date": ""
+        },
+        {
+          "title": "耐心资本与企业盈余管理：基于失败容忍度的研究",
+          "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=8BF9AA05-F099-4254-8E78-35850228415C&ID=A3ED3197-6D0F-4E67-944A-FA5C00C7CD77",
+          "date": ""
+        },
+        {
+          "title": "银行关联、信贷周期与债务违约风险",
+          "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=5C457CA7-246B-4C2C-A3DA-59E0A1079ED1&ID=A3ED3197-6D0F-4E67-944A-FA5C00C7CD77",
+          "date": ""
+        },
+        {
+          "title": "财务数智化转型的逻辑体系与实现路径：一个理论框架",
+          "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=6AB54C2A-3493-488A-818A-8FD4ED6AB6E9&ID=A3ED3197-6D0F-4E67-944A-FA5C00C7CD77",
+          "date": ""
+        },
+        {
+          "title": "打破业务藩篱：环保税征管、税种联动与企业所得税遵从",
+          "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=7E6A9D5B-5A89-4806-BF98-92CCC68AB590&ID=A3ED3197-6D0F-4E67-944A-FA5C00C7CD77",
+          "date": ""
+        },
+        {
+          "title": "企业数据资产信息披露同群效应研究",
+          "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=4186276E-B31D-4704-97DE-96745DC5E9DA&ID=A3ED3197-6D0F-4E67-944A-FA5C00C7CD77",
+          "date": ""
+        },
+        {
+          "title": "国有企业经营投资问责会影响客户企业真实盈余管理吗",
+          "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=5E400AE6-1102-4271-8E3F-9C6F9ED20A7D&ID=A3ED3197-6D0F-4E67-944A-FA5C00C7CD77",
+          "date": ""
+        },
+        {
+          "title": "职工董事与资本市场稳定：基于股价崩盘风险的视角",
+          "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=3560B744-9569-4B80-B443-B66335BFF097&ID=A3ED3197-6D0F-4E67-944A-FA5C00C7CD77",
+          "date": ""
+        },
+        {
+          "title": "双边政治关系与跨国企业审计收费",
+          "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=D33DD869-EF81-46E8-BF10-BB5D55CE265D&ID=A3ED3197-6D0F-4E67-944A-FA5C00C7CD77",
+          "date": ""
+        },
+        {
+          "title": "乘风逐绿：央企双碳考核如何驱动供应链绿色转型",
+          "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=E2271787-D102-4298-9C6E-BFC3076B312E&ID=A3ED3197-6D0F-4E67-944A-FA5C00C7CD77",
+          "date": ""
+        },
+        {
+          "title": "《中小企业促进法》与企业投资",
+          "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=3BB8045E-0B48-46BF-820C-C1D8A7C3BEA9&ID=A3ED3197-6D0F-4E67-944A-FA5C00C7CD77",
+          "date": ""
+        },
+        {
+          "title": "公司劳务外包与经营风险———基于实物期权视角",
+          "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=CB29DF6F-1F4A-4E34-B900-C6B7F5D88F6D&ID=A3ED3197-6D0F-4E67-944A-FA5C00C7CD77",
+          "date": ""
+        },
+        {
+          "title": "机构纵向持股对供应链长鞭效应的治理研究",
+          "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=6C48B6EC-BCEA-4DA5-958C-EBBEE75ADB0B&ID=A3ED3197-6D0F-4E67-944A-FA5C00C7CD77",
+          "date": ""
+        }
+      ],
       "samples": [
         {
           "title": "劳动力市场势力如何影响分析师盈余预测准确性?———基于证券公...",
@@ -643,11 +2458,85 @@
       "status": 200,
       "content_type": "application/json",
       "transport": "fetch",
-      "fetch_ms": 2283,
+      "fetch_ms": 1432,
       "ok": true,
       "usable_as_data_source": true,
-      "article_count": 8,
+      "article_count": 12,
       "candidate_count": 12,
+      "articles": [
+        {
+          "title": "Modern Privacy Regulation, Internal Information Quality, and Operational Efficiency: Evidence from the General Data Protection Regulation",
+          "url": "https://doi.org/10.2308/tar-2022-0542",
+          "date": "2026-05-08",
+          "authors": "Steven A. Maex"
+        },
+        {
+          "title": "Financial Reporting and Detection of Labor Union Misconduct",
+          "url": "https://doi.org/10.2308/tar-2024-0710",
+          "date": "2026-05-04",
+          "authors": "Danye Wang"
+        },
+        {
+          "title": "Market Leaders’ Tax-Motivated Income Shifting and U.S. Domestic Firms’ Investment Efficiency",
+          "url": "https://doi.org/10.2308/tar-2024-0328",
+          "date": "2026-05-12",
+          "authors": "Michelle L. Nessa, Xinjie Tang, Ryan J. Wilson"
+        },
+        {
+          "title": "The Impact of the SEC’s Office of Minority and Women Inclusion: Evidence from the Filing Review Process",
+          "url": "https://doi.org/10.2308/tar-2023-0649",
+          "date": "2026-05-07",
+          "authors": "Bret A. Johnson, Matthew Kubic, Ling Lei Lisic, Mengmeng Wang"
+        },
+        {
+          "title": "The Rich Get Richer: An Examination of Tax Haven Concentration and the New “Top 7”",
+          "url": "https://doi.org/10.2308/tar-2025-0139",
+          "date": "2026-05-12",
+          "authors": "Frank Murphy, Mary E. Vernon"
+        },
+        {
+          "title": "Contractual Private Disclosures in Supply Chains and Managerial Learning from Financial Markets",
+          "url": "https://doi.org/10.2308/tar-2024-0472",
+          "date": "2026-05-11",
+          "authors": "Vivek Pandey"
+        },
+        {
+          "title": "Transparency and Bank Liability Structure",
+          "url": "https://doi.org/10.2308/tar-2024-0705",
+          "date": "2026-05-12",
+          "authors": "Xu Jiang, Lucas Mahieux"
+        },
+        {
+          "title": "Burn It or Return It? The Effects of the Possibility to Return Budget Surplus and the Moderating Role of Uncertainty on Capital Budgeting",
+          "url": "https://doi.org/10.2308/tar-2023-0727",
+          "date": "2026-05-22",
+          "authors": "Markus C. Arnold, Kai A. Bauch, Florian Elsinger"
+        },
+        {
+          "title": "AI-Augmented Design and the Expertise Bias in Subjective Evaluations of Creative Output",
+          "url": "https://doi.org/10.2308/tar-2024-0592",
+          "date": "2026-05-11",
+          "authors": "Jordan A. Samet, Michael G. Williamson, Michael A. Yip"
+        },
+        {
+          "title": "Year-to-Year Adjustments of Performance Measure Weights: The Relevance of Prior Target Achievement",
+          "url": "https://doi.org/10.2308/tar-2021-0511",
+          "date": "2026-05-18",
+          "authors": "Maximilian Margolin, Matthias D. Mahlendorf, Utz Schäffer"
+        },
+        {
+          "title": "Economic Consequences of Political Polarization: Evidence from an SEC Shutdown and Its Effect on Insider Trading",
+          "url": "https://doi.org/10.2308/tar-2025-0007",
+          "date": "2026-04-16",
+          "authors": "Daniel A. Bens, Gavin Cassar, Ying Huang, Thomas Keusch"
+        },
+        {
+          "title": "The 2003 U.S. Dividend Tax Cut, Small Business Loan Supply, and the Real Economy",
+          "url": "https://doi.org/10.2308/tar-2023-0444",
+          "date": "2026-04-16",
+          "authors": "Oliver Zhen Li, Yupeng Lin, Keyuan Zhang"
+        }
+      ],
       "samples": [
         {
           "title": "Modern Privacy Regulation, Internal Information Quality, and Operational Efficiency: Evidence from the General Data Protection Regulation",
@@ -686,11 +2575,183 @@
       "status": 200,
       "content_type": "text/html; charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1596,
+      "fetch_ms": 1820,
       "ok": true,
       "usable_as_data_source": true,
-      "article_count": 8,
+      "article_count": 34,
       "candidate_count": 34,
+      "articles": [
+        {
+          "title": "Remote Work and City Structure",
+          "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20231414",
+          "date": ""
+        },
+        {
+          "title": "A Theory of Price Caps on Non-Renewable Resources",
+          "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20250064",
+          "date": ""
+        },
+        {
+          "title": "Talent Hoarding in Organizations",
+          "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20220264",
+          "date": ""
+        },
+        {
+          "title": "Optimal Public Transportation Networks: Evidence from the World’s Largest Bus Rapid Transit System in Jakarta",
+          "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20230768",
+          "date": ""
+        },
+        {
+          "title": "Risk Sharing Tests and Covariate Shocks: Drought, Floods, and Pests in Uganda",
+          "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20240664",
+          "date": ""
+        },
+        {
+          "title": "Manipulation-Robust Prediction",
+          "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20241087",
+          "date": ""
+        },
+        {
+          "title": "Merger Effects and Antitrust Enforcement: Evidence from US Consumer Packaged Goods",
+          "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20240497",
+          "date": ""
+        },
+        {
+          "title": "Designing Dynamic Reassignment Mechanisms: Evidence from GP Allocation",
+          "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20240617",
+          "date": ""
+        },
+        {
+          "title": "Community Engagement and Public Safety: Evidence from Crime Enforcement Targeting Immigrants",
+          "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20250305",
+          "date": ""
+        },
+        {
+          "title": "The Effect of Omitted Variables on the Sign of Regression Coefficients",
+          "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20230242",
+          "date": ""
+        },
+        {
+          "title": "The Effect of High-Tech Clusters on the Productivity of Top Inventors: Comment",
+          "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20231415",
+          "date": ""
+        },
+        {
+          "title": "The Aggregate Costs of Uninsurable Business Risk",
+          "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20230849",
+          "date": ""
+        },
+        {
+          "title": "Additionality and Asymmetric Information in Environmental Markets: Evidence from Conservation Auctions",
+          "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20250295",
+          "date": ""
+        },
+        {
+          "title": "Professional Motivations in the Public Sector: Evidence from Police Officers",
+          "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20231696",
+          "date": ""
+        },
+        {
+          "title": "Understanding High-Wage Firms: Monopoly, Monopsony, and Bargaining Power",
+          "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20230344",
+          "date": ""
+        },
+        {
+          "title": "Self-Fulfilling Fluctuations in HANK Economies",
+          "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20240642",
+          "date": ""
+        },
+        {
+          "title": "Ideological Alignment and Evidence-Based Policy Adoption",
+          "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20240673",
+          "date": ""
+        },
+        {
+          "title": "Energy Transitions in Regulated Markets",
+          "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20240094",
+          "date": ""
+        },
+        {
+          "title": "Market Opacity and Fragility: Why Liquidity Evaporates When It Is Most Needed",
+          "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20231613",
+          "date": ""
+        },
+        {
+          "title": "Identifying Preference for Early Resolution from Asset Prices",
+          "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20221351",
+          "date": ""
+        },
+        {
+          "title": "Germs in the Family: The Short- and Long-Term Consequences of Intra-Household Disease Spread",
+          "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20231521",
+          "date": ""
+        },
+        {
+          "title": "Friendship Networks and Political Opinions",
+          "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20231344",
+          "date": ""
+        },
+        {
+          "title": "Monetary Policy without Commitment",
+          "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20241925",
+          "date": ""
+        },
+        {
+          "title": "Contextually Private Mechanisms",
+          "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20240576",
+          "date": ""
+        },
+        {
+          "title": "The Productivity of Professions: Evidence from the Emergency Department",
+          "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20241007",
+          "date": ""
+        },
+        {
+          "title": "Spatial Spillovers of Conflict in Somalia",
+          "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20231699",
+          "date": ""
+        },
+        {
+          "title": "Uncertainty and Change: Survey Evidence of Firms’ Subjective Beliefs",
+          "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20240056",
+          "date": ""
+        },
+        {
+          "title": "Random Utility with Unobservable Alternatives",
+          "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20240712",
+          "date": ""
+        },
+        {
+          "title": "Quality Adjustment at Scale: Hedonic vs. Exact Demand-Based Price Indices",
+          "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20230766",
+          "date": ""
+        },
+        {
+          "title": "Elite Universities and the Intergenerational Transmission of Human and Social Capital",
+          "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20230802",
+          "date": ""
+        },
+        {
+          "title": "Mergers, Foreign Competition, and Jobs: Evidence from the U.S. Appliance Industry",
+          "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20230017",
+          "date": ""
+        },
+        {
+          "title": "The Private Provision of Public Services: Evidence from Random Assignment in Medicaid",
+          "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20230541",
+          "date": ""
+        },
+        {
+          "title": "Quota vs. Quality? Long-Term Gains from an Unusual Gender Quota",
+          "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20230376",
+          "date": ""
+        },
+        {
+          "title": "A Welfare Analysis of Policies Impacting Climate Change",
+          "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20250166",
+          "date": ""
+        }
+      ],
       "samples": [
         {
           "title": "Remote Work and City Structure",
@@ -723,11 +2784,85 @@
       "status": 200,
       "content_type": "application/json",
       "transport": "fetch",
-      "fetch_ms": 1248,
+      "fetch_ms": 820,
       "ok": true,
       "usable_as_data_source": true,
-      "article_count": 8,
+      "article_count": 12,
       "candidate_count": 12,
+      "articles": [
+        {
+          "title": "Public Services Under Private Management",
+          "url": "https://doi.org/10.1093/qje/qjag028",
+          "date": "2026-05-12",
+          "authors": "MaÍra Coube, Luiz Felipe Fontes, Rudi Rocha"
+        },
+        {
+          "title": "The Power of Proximity to Coworkers",
+          "url": "https://doi.org/10.1093/qje/qjag027",
+          "date": "2026-05-12",
+          "authors": "Natalia Emanuel, Emma Harrington, Amanda Pallais"
+        },
+        {
+          "title": "International Reserve Management Under Rollover Crises",
+          "url": "https://doi.org/10.1093/qje/qjag025",
+          "date": "2026-05-12",
+          "authors": "Mauricio Barbosa-Alves, Javier Bianchi, César Sosa-Padilla"
+        },
+        {
+          "title": "Praying for Rain",
+          "url": "https://doi.org/10.1093/qje/qjag026",
+          "date": "2026-05-11",
+          "authors": "José-Antonio Espín-Sánchez, Salvador Gil-Guirado, Nicholas Ryan"
+        },
+        {
+          "title": "Why Doesn’t the United States Have National Health Insurance? The Political Role of the American Medical Association",
+          "url": "https://doi.org/10.1093/qje/qjag024",
+          "date": "2026-05-05",
+          "authors": "Marcella Alsan, Yousra Neberai"
+        },
+        {
+          "title": "The Effects of Mandatory Profit-Sharing on Workers and Firms: Evidence from France",
+          "url": "https://doi.org/10.1093/qje/qjag022",
+          "date": "2026-04-24",
+          "authors": "Elio Nimier-David, David Sraer, David Thesmar"
+        },
+        {
+          "title": "Collusion with Optimal Information Disclosure",
+          "url": "https://doi.org/10.1093/qje/qjag020",
+          "date": "2026-04-11",
+          "authors": "Takuo Sugaya, Alexander Wolitzky"
+        },
+        {
+          "title": "Codification, Technology Absorption, and The Globalization of the Industrial Revolution",
+          "url": "https://doi.org/10.1093/qje/qjag021",
+          "date": "2026-04-10",
+          "authors": "Réka Juhász, Shogo Sakabe, David E Weinstein"
+        },
+        {
+          "title": "“Compensate the Losers?” Economic Policy and the Origins of U.S. Partisan Realignment",
+          "url": "https://doi.org/10.1093/qje/qjag019",
+          "date": "2026-04-01",
+          "authors": "Ilyana Kuziemko, Nicolas Longuet-Marx, Suresh Naidu"
+        },
+        {
+          "title": "The Effects of Gender Integration on Men: Evidence from the U.S. Military",
+          "url": "https://doi.org/10.1093/qje/qjag016",
+          "date": "2026-03-27",
+          "authors": "Kyle Greenberg, Melanie Wasserman, E Anna Weber"
+        },
+        {
+          "title": "Technology Sophistication Across Establishments",
+          "url": "https://doi.org/10.1093/qje/qjag018",
+          "date": "2026-03-23",
+          "authors": "Xavier Cirera, Diego Comin, Marcio Cruz"
+        },
+        {
+          "title": "Making the Invisible Hand Visible: Managers and the Allocation of Workers to Jobs",
+          "url": "https://doi.org/10.1093/qje/qjag017",
+          "date": "2026-03-23",
+          "authors": "Virginia Minni"
+        }
+      ],
       "samples": [
         {
           "title": "Public Services Under Private Management",
@@ -766,11 +2901,85 @@
       "status": 200,
       "content_type": "application/json",
       "transport": "fetch",
-      "fetch_ms": 1758,
+      "fetch_ms": 1696,
       "ok": true,
       "usable_as_data_source": true,
-      "article_count": 8,
+      "article_count": 12,
       "candidate_count": 12,
+      "articles": [
+        {
+          "title": "Monopsony Makes Firms Not Only Small but Also Unproductive: Why East Germany has Not Converged",
+          "url": "https://doi.org/10.1093/restud/rdag033",
+          "date": "2026-05-22",
+          "authors": "Rüdiger Bachmann, Christian Bayer, Heiko Stüber, Felix Wellschmied"
+        },
+        {
+          "title": "Eliciting Multiple Prior Beliefs",
+          "url": "https://doi.org/10.1093/restud/rdag043",
+          "date": "2026-05-21",
+          "authors": "Mohammed Abdellaoui, Philippe Colo, Brian Hill"
+        },
+        {
+          "title": "Money Markets, Collateral and Monetary Policy",
+          "url": "https://doi.org/10.1093/restud/rdag041",
+          "date": "2026-05-21",
+          "authors": "Fiorella De Fiore, Marie Hoerova, Ciaran Rogers, Harald Uhlig"
+        },
+        {
+          "title": "Technology Transfer and Early Industrial Development: Evidence from the Sino-Soviet Alliance",
+          "url": "https://doi.org/10.1093/restud/rdag047",
+          "date": "2026-05-21",
+          "authors": "Michela Giorcelli, Bo Li"
+        },
+        {
+          "title": "Closing Gender Gaps through Workplace Diversity: The Intergenerational Effects of World War I",
+          "url": "https://doi.org/10.1093/restud/rdag048",
+          "date": "2026-05-20",
+          "authors": "Abhay Aneja, Silvia Farina, Guo Xu"
+        },
+        {
+          "title": "The Dynamics of Internal Migration: A New Fact and its Implications",
+          "url": "https://doi.org/10.1093/restud/rdag049",
+          "date": "2026-05-19",
+          "authors": "Greg Howard, Hansen Shao"
+        },
+        {
+          "title": "Jackknife Standard Errors for Clustered Regression",
+          "url": "https://doi.org/10.1093/restud/rdag050",
+          "date": "2026-05-19",
+          "authors": "Bruce E Hansen"
+        },
+        {
+          "title": "Catastrophes, Delays, and Learning",
+          "url": "https://doi.org/10.1093/restud/rdag025",
+          "date": "2026-05-18",
+          "authors": "Matti Liski, François Salanié"
+        },
+        {
+          "title": "Financial Intermediation and Aggregate Demand: A Sufficient Statistics Approach",
+          "url": "https://doi.org/10.1093/restud/rdag032",
+          "date": "2026-05-15",
+          "authors": "Yu-Ting Chiang, Piotr Zoch"
+        },
+        {
+          "title": "Monetary Policy and Endogenous Financial Crises",
+          "url": "https://doi.org/10.1093/restud/rdag042",
+          "date": "2026-05-15",
+          "authors": "F Boissay, F Collard, J Galí, C Manea"
+        },
+        {
+          "title": "Loose Monetary Policy and Financial Instability",
+          "url": "https://doi.org/10.1093/restud/rdag044",
+          "date": "2026-05-15",
+          "authors": "Maximilian Grimm, Òscar Jordà, Moritz Schularick, Alan M Taylor"
+        },
+        {
+          "title": "A Model of Multiple Hypothesis Testing",
+          "url": "https://doi.org/10.1093/restud/rdag026",
+          "date": "2026-05-14",
+          "authors": "Davide Viviano, Kaspar Wüthrich, Paul Niehaus"
+        }
+      ],
       "samples": [
         {
           "title": "Monopsony Makes Firms Not Only Small but Also Unproductive: Why East Germany has Not Converged",
@@ -809,11 +3018,68 @@
       "status": 200,
       "content_type": "text/html; charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1565,
+      "fetch_ms": 2157,
       "ok": true,
       "usable_as_data_source": true,
-      "article_count": 8,
+      "article_count": 11,
       "candidate_count": 11,
+      "articles": [
+        {
+          "title": "Quote Competition in Corporate Bonds",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70048",
+          "date": ""
+        },
+        {
+          "title": "Hedger of Last Resort: Evidence from Brazilian FX Interventions, Local Credit, and Global Financial Cycles",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70054",
+          "date": ""
+        },
+        {
+          "title": "Investing with Purpose: Evidence from Private Foundations",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70055",
+          "date": ""
+        },
+        {
+          "title": "Why Have CEO Pay Levels Become Less Diverse?",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70050",
+          "date": ""
+        },
+        {
+          "title": "Bank Competition Amid Digital Disruption: Implications for Financial Inclusion",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70051",
+          "date": ""
+        },
+        {
+          "title": "Consumption in Asset Returns",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70044",
+          "date": ""
+        },
+        {
+          "title": "The Drivers and Implications of Retail Margin Trading",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70049",
+          "date": ""
+        },
+        {
+          "title": "Risk‐Free Rates and Convenience Yields around the World",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70045",
+          "date": ""
+        },
+        {
+          "title": "The Equilibrium Effects of Eviction Policies",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70046",
+          "date": ""
+        },
+        {
+          "title": "Partisan Entrepreneurship",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70042",
+          "date": ""
+        },
+        {
+          "title": "Learning in the Limit: Income Inference from Credit Extensions",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70040",
+          "date": ""
+        }
+      ],
       "samples": [
         {
           "title": "Quote Competition in Corporate Bonds",
@@ -846,11 +3112,78 @@
       "status": 200,
       "content_type": "text/html; charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1159,
+      "fetch_ms": 2448,
       "ok": true,
       "usable_as_data_source": true,
-      "article_count": 8,
+      "article_count": 13,
       "candidate_count": 13,
+      "articles": [
+        {
+          "title": "Unequal in the Spotlight: Gender Differences in How Serving on Prominent Firms Affects Directors’ New Board Appointments",
+          "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251405843",
+          "date": ""
+        },
+        {
+          "title": "Interpreting Violence: How Community Context Shapes Corporate Responses to Street Protests",
+          "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261419416",
+          "date": ""
+        },
+        {
+          "title": "Democratic Deviations: How Organizations Sustain Decentralization Commitments in the Face of Centralization Pressures",
+          "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261421927",
+          "date": ""
+        },
+        {
+          "title": "Occupational Identity Formation in Unsaturated Spaces: The Layered Accretion of the American Astronaut’s Identity",
+          "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261427746",
+          "date": ""
+        },
+        {
+          "title": "A Curation Approach to Identity Management: The Costs of Combining Identity Expression and Suppression",
+          "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261431827",
+          "date": ""
+        },
+        {
+          "title": "David Lingelbach and Valentina Rodríguez Guerra. The Oligarchs’ Grip: Fusing Wealth and Power",
+          "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251396889",
+          "date": ""
+        },
+        {
+          "title": "Daniel Susskind. Growth: A History and a Reckoning",
+          "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251401212",
+          "date": ""
+        },
+        {
+          "title": "Andrew J. Hoffman. Business School and the Noble Purpose of the Market: Correcting the Systemic Failures of Shareholder Capitalism",
+          "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251406234",
+          "date": ""
+        },
+        {
+          "title": "Alessandro Gerosa. The Hipster Economy: Taste and Authenticity in Late Modern Capitalism",
+          "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251411308",
+          "date": ""
+        },
+        {
+          "title": "Timothy Kuhn. What Do Corporations Want? Communicative Capitalism, Corporate Purpose, and a New Theory of the Firm",
+          "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251414373",
+          "date": ""
+        },
+        {
+          "title": "Alberto Galasso. The Management of Innovation: Managing and Creating Technology Capital",
+          "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261417678",
+          "date": ""
+        },
+        {
+          "title": "Jeffrey Funk. Unicorns, Hype, and Bubbles: A Guide to Spotting, Avoiding, and Exploiting Investment Bubbles in Tech",
+          "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261421932",
+          "date": ""
+        },
+        {
+          "title": "Kalpita Bhar Paul. Ecophenomenology and the Environmental Crisis in the Sundarbans: Towards a Community-Based Ethic",
+          "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261428471",
+          "date": ""
+        }
+      ],
       "samples": [
         {
           "title": "Unequal in the Spotlight: Gender Differences in How Serving on Prominent Firms Affects Directors’ New Board Appointments",
