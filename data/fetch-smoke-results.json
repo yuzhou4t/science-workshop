@@ -1,0 +1,465 @@
+{
+  "summary": {
+    "checked_at": "2026-05-25T02:17:04.985Z",
+    "direct_feeds_total": 5,
+    "direct_feeds_ok": 5,
+    "adapter_sources_total": 17,
+    "adapter_sources_with_candidates": 7,
+    "adapter_sources_need_rules": 10
+  },
+  "results": [
+    {
+      "type": "direct_rss",
+      "journal_id": "j13",
+      "journal_name": "ACADEMY OF MANAGEMENT REVIEW",
+      "source_url": "https://journals.aom.org/action/showFeed?jc=amr&type=etoc&feed=rss",
+      "status": 200,
+      "content_type": "application/xml;charset=UTF-8",
+      "ok": true,
+      "article_count": 8,
+      "samples": [
+        {
+          "title": "How to R.E.S.P.O.N.D.: A Framework for Thoughtful Revisions and Scholarly Dialogue",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2026.0147?af=R",
+          "date": ""
+        },
+        {
+          "title": "2025 Presidential Address: Activism, Impact, and Science: Management Scholarship in a Challenging Era",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0742?af=R",
+          "date": ""
+        },
+        {
+          "title": "From the Evaluator’s Perspective: A Functional Approach to Social Judgments",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2020.0405?af=R",
+          "date": ""
+        }
+      ],
+      "error": ""
+    },
+    {
+      "type": "direct_rss",
+      "journal_id": "j14",
+      "journal_name": "JOURNAL OF FINANCE",
+      "source_url": "https://onlinelibrary.wiley.com/action/showFeed?jc=15406261&type=etoc&feed=rss",
+      "status": 200,
+      "content_type": "application/xml;charset=UTF-8",
+      "ok": true,
+      "article_count": 8,
+      "samples": [
+        {
+          "title": "Hedger of Last Resort: Evidence from Brazilian FX Interventions, Local Credit, and Global Financial Cycles",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70054?af=R",
+          "date": "Fri, 22 May 2026 23:38:25 -0700"
+        },
+        {
+          "title": "Quote Competition in Corporate Bonds",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70048?af=R",
+          "date": "Fri, 22 May 2026 23:37:08 -0700"
+        },
+        {
+          "title": "ANNOUNCEMENTS",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70017?af=R",
+          "date": "Fri, 22 May 2026 20:54:22 -0700"
+        }
+      ],
+      "error": ""
+    },
+    {
+      "type": "direct_rss",
+      "journal_id": "j17",
+      "journal_name": "JOURNAL OF POLITICAL ECONOMY",
+      "source_url": "https://www.journals.uchicago.edu/action/showFeed?jc=jpe&type=etoc&feed=rss",
+      "status": 200,
+      "content_type": "application/xml;charset=UTF-8",
+      "ok": true,
+      "article_count": 8,
+      "samples": [
+        {
+          "title": "A Model of Social Duties",
+          "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/739834?af=R",
+          "date": ""
+        },
+        {
+          "title": "Private Private Information",
+          "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/739833?af=R",
+          "date": ""
+        },
+        {
+          "title": "Algorithm Design: A Fairness-Accuracy Frontier",
+          "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/739826?af=R",
+          "date": ""
+        }
+      ],
+      "error": ""
+    },
+    {
+      "type": "direct_rss",
+      "journal_id": "j20",
+      "journal_name": "ECONOMETRICA",
+      "source_url": "https://onlinelibrary.wiley.com/action/showFeed?jc=14680262&type=etoc&feed=rss",
+      "status": 200,
+      "content_type": "application/xml;charset=UTF-8",
+      "ok": true,
+      "article_count": 8,
+      "samples": [
+        {
+          "title": "Backmatter of Econometrica Vol. 94 Iss. 2",
+          "url": "https://onlinelibrary.wiley.com/doi/10.3982/ECTA942BM?af=R",
+          "date": "Wed, 01 Apr 2026 05:25:22 -0700"
+        },
+        {
+          "title": "Frontmatter of Econometrica 94 Iss. 2",
+          "url": "https://onlinelibrary.wiley.com/doi/10.3982/ECTA942FM?af=R",
+          "date": "Wed, 01 Apr 2026 05:25:22 -0700"
+        },
+        {
+          "title": "2025 Election of Fellows to the Econometric Society",
+          "url": "https://onlinelibrary.wiley.com/doi/10.3982/ECTA942EF?af=R",
+          "date": "Wed, 01 Apr 2026 05:25:22 -0700"
+        }
+      ],
+      "error": ""
+    },
+    {
+      "type": "direct_rss",
+      "journal_id": "j21",
+      "journal_name": "ACADEMY OF MANAGEMENT JOURNAL",
+      "source_url": "https://journals.aom.org/action/showFeed?jc=amj&type=etoc&feed=rss",
+      "status": 200,
+      "content_type": "application/xml;charset=UTF-8",
+      "ok": true,
+      "article_count": 8,
+      "samples": [
+        {
+          "title": "Artificial Intelligence and Responsible Research at AMJ",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2026.4002?af=R",
+          "date": ""
+        },
+        {
+          "title": "Violence and Competition: The Effect of Mass Shootings and Domestic Terrorism on Organizational Risk-Taking in Response to Performance Shortfalls",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.0306?af=R",
+          "date": ""
+        },
+        {
+          "title": "How Employees Who Have Made Upward Social Class Transitions Get Heard in the Workplace",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.0042?af=R",
+          "date": ""
+        }
+      ],
+      "error": ""
+    },
+    {
+      "type": "adapter_source",
+      "journal_id": "j2",
+      "journal_name": "经济研究",
+      "platform_id": "ajcass",
+      "source_url": "https://erj.ajcass.com/#/index",
+      "status": 200,
+      "content_type": "text/html",
+      "ok": false,
+      "article_count": 0,
+      "samples": [],
+      "error": ""
+    },
+    {
+      "type": "adapter_source",
+      "journal_id": "j4",
+      "journal_name": "中国工业经济",
+      "platform_id": "ajcass",
+      "source_url": "https://ciejournal.ajcass.com/",
+      "status": "ERR",
+      "content_type": "",
+      "ok": false,
+      "article_count": 0,
+      "samples": [],
+      "error": "timeout"
+    },
+    {
+      "type": "adapter_source",
+      "journal_id": "j12",
+      "journal_name": "中国农村经济",
+      "platform_id": "ajcass",
+      "source_url": "https://zgncjj.ajcass.com/#/",
+      "status": 200,
+      "content_type": "text/html",
+      "ok": false,
+      "article_count": 0,
+      "samples": [],
+      "error": ""
+    },
+    {
+      "type": "adapter_source",
+      "journal_id": "j3",
+      "journal_name": "世界经济",
+      "platform_id": "cn-journal-cms",
+      "source_url": "https://sjjj.magtech.com.cn/CN/archive_by_years",
+      "status": 200,
+      "content_type": "text/html;charset=UTF-8",
+      "ok": false,
+      "article_count": 0,
+      "samples": [],
+      "error": ""
+    },
+    {
+      "type": "adapter_source",
+      "journal_id": "j5",
+      "journal_name": "金融研究",
+      "platform_id": "cn-journal-cms",
+      "source_url": "http://www.jryj.org.cn/CN/article/showOldVolumnList.do",
+      "status": 200,
+      "content_type": "text/html;charset=UTF-8",
+      "ok": true,
+      "article_count": 5,
+      "samples": [
+        {
+          "title": "中国金融论坛·第十七届《金融研究》论坛征文启事",
+          "url": "http://www.jryj.org.cn/CN/column/item87.shtml",
+          "date": ""
+        },
+        {
+          "title": "《金融研究》2024年度优秀论文公示",
+          "url": "http://www.jryj.org.cn/CN/column/item86.shtml",
+          "date": ""
+        },
+        {
+          "title": "中国金融论坛·第十六届《金融研究》论坛征文启事",
+          "url": "http://www.jryj.org.cn/CN/column/item85.shtml",
+          "date": ""
+        }
+      ],
+      "error": ""
+    },
+    {
+      "type": "adapter_source",
+      "journal_id": "j6",
+      "journal_name": "管理世界",
+      "platform_id": "cnki-cbpt",
+      "source_url": "https://glsj.cbpt.cnki.net/WKB/WebPublication/wkTextContent.aspx?colType=4&tp=gklb&mid=glsj",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "ok": false,
+      "article_count": 0,
+      "samples": [],
+      "error": ""
+    },
+    {
+      "type": "adapter_source",
+      "journal_id": "j8",
+      "journal_name": "公共管理学报",
+      "platform_id": "cnki-cbpt",
+      "source_url": "https://gggl.cbpt.cnki.net/portal",
+      "status": 200,
+      "content_type": "text/html;charset=UTF-8",
+      "ok": true,
+      "article_count": 8,
+      "samples": [
+        {
+          "title": "作者投稿入口 投稿 跟踪查询您的稿件的信息 与编辑部交流 查询稿件缴费情况",
+          "url": "https://gggl.cbpt.cnki.net/editor",
+          "date": ""
+        },
+        {
+          "title": "编辑办公入口 采、编、审等事务办公 管理稿件 管理作者信息和外审专家信息",
+          "url": "https://gggl.cbpt.cnki.net/editor",
+          "date": ""
+        },
+        {
+          "title": "专家办公入口 在线审稿 与编辑部在线交流",
+          "url": "https://gggl.cbpt.cnki.net/editor",
+          "date": ""
+        }
+      ],
+      "error": ""
+    },
+    {
+      "type": "adapter_source",
+      "journal_id": "j7",
+      "journal_name": "南开管理评论",
+      "platform_id": "university-custom",
+      "source_url": "https://nbr.nankai.edu.cn/nkglpl/home",
+      "status": 412,
+      "content_type": "text/html; charset=utf-8",
+      "ok": false,
+      "article_count": 0,
+      "samples": [],
+      "error": ""
+    },
+    {
+      "type": "adapter_source",
+      "journal_id": "j9",
+      "journal_name": "管理科学学报",
+      "platform_id": "university-custom",
+      "source_url": "https://jmsc.tju.edu.cn/jmsc/issue/browser",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "ok": true,
+      "article_count": 6,
+      "samples": [
+        {
+          "title": "《管理科学学报》严正声明（2026）",
+          "url": "https://jmsc.tju.edu.cn/jmsc/issue/jmsc/news/view/20260405224040001",
+          "date": ""
+        },
+        {
+          "title": "《管理科学学报》严正声明",
+          "url": "https://jmsc.tju.edu.cn/jmsc/issue/jmsc/news/view/20251201163215001",
+          "date": ""
+        },
+        {
+          "title": "关于新投稿上传匿名稿件的通知",
+          "url": "https://jmsc.tju.edu.cn/jmsc/issue/jmsc/news/view/20230116102947001",
+          "date": ""
+        }
+      ],
+      "error": ""
+    },
+    {
+      "type": "adapter_source",
+      "journal_id": "j10",
+      "journal_name": "中国行政管理",
+      "platform_id": "association-custom",
+      "source_url": "https://www.cpaj.com.cn/",
+      "status": "ERR",
+      "content_type": "",
+      "ok": false,
+      "article_count": 0,
+      "samples": [],
+      "error": "fetch failed"
+    },
+    {
+      "type": "adapter_source",
+      "journal_id": "j11",
+      "journal_name": "会计研究",
+      "platform_id": "association-custom",
+      "source_url": "http://www.asc.org.cn/AccountingResearch/BrowsePeriodical.aspx",
+      "status": 200,
+      "content_type": "text/html; charset=gb2312",
+      "ok": true,
+      "article_count": 1,
+      "samples": [
+        {
+          "title": "重点文章 最新目录",
+          "url": "http://www.asc.org.cn/AccountingResearch/ArticleList.aspx",
+          "date": ""
+        }
+      ],
+      "error": ""
+    },
+    {
+      "type": "adapter_source",
+      "journal_id": "j15",
+      "journal_name": "ACCOUNTING REVIEW",
+      "platform_id": "publisher-html",
+      "source_url": "https://publications.aaahq.org/accounting-review/issue/101/3",
+      "status": 403,
+      "content_type": "text/html; charset=UTF-8",
+      "ok": false,
+      "article_count": 0,
+      "samples": [],
+      "error": ""
+    },
+    {
+      "type": "adapter_source",
+      "journal_id": "j16",
+      "journal_name": "AMERICAN ECONOMIC REVIEW",
+      "platform_id": "publisher-html",
+      "source_url": "https://www.aeaweb.org/journals/aer",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "ok": true,
+      "article_count": 3,
+      "samples": [
+        {
+          "title": "Annual Report of the Editor",
+          "url": "https://pubs.aeaweb.org/doi/pdfplus/10.1257/pandp.115.743",
+          "date": ""
+        },
+        {
+          "title": "Accepted Article Guidelines",
+          "url": "https://www.aeaweb.org/journals/aer/accepted-article-guidelines",
+          "date": ""
+        },
+        {
+          "title": "Back Issues",
+          "url": "https://www.aeaweb.org/journals/subscriptions/backissues",
+          "date": ""
+        }
+      ],
+      "error": ""
+    },
+    {
+      "type": "adapter_source",
+      "journal_id": "j18",
+      "journal_name": "QUARTERLY JOURNAL OF ECONOMICS",
+      "platform_id": "publisher-html",
+      "source_url": "https://academic.oup.com/qje",
+      "status": 403,
+      "content_type": "text/html; charset=UTF-8",
+      "ok": false,
+      "article_count": 0,
+      "samples": [],
+      "error": ""
+    },
+    {
+      "type": "adapter_source",
+      "journal_id": "j19",
+      "journal_name": "REVIEW OF ECONOMIC STUDIES",
+      "platform_id": "publisher-html",
+      "source_url": "https://academic.oup.com/restud",
+      "status": 403,
+      "content_type": "text/html; charset=UTF-8",
+      "ok": false,
+      "article_count": 0,
+      "samples": [],
+      "error": ""
+    },
+    {
+      "type": "adapter_source",
+      "journal_id": "j1",
+      "journal_name": "JOURNAL OF FINANCE",
+      "platform_id": "non-article-feed",
+      "source_url": "https://afajof.org/forthcoming-articles/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "ok": true,
+      "article_count": 1,
+      "samples": [
+        {
+          "title": "Call for Papers Calendar",
+          "url": "https://afajof.org/call-for-papers-calendar/",
+          "date": ""
+        }
+      ],
+      "error": ""
+    },
+    {
+      "type": "adapter_source",
+      "journal_id": "j22",
+      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
+      "platform_id": "non-article-feed",
+      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "ok": true,
+      "article_count": 8,
+      "samples": [
+        {
+          "title": "Unequal in the Spotlight: Gender Differences in How Serving on Prominent Firms Affects Directors’ New Board Appointments",
+          "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251405843?_gl=1*1utitty*_up*MQ..*_ga*MTE4MzI5MzM2OS4xNzc2MDkzMzAw*_ga_60R758KFDG*czE3NzYwOTMzMDAkbzEkZzAkdDE3NzYwOTMzMDAkajYwJGwwJGgxOTg5MzU1Nzkz",
+          "date": ""
+        },
+        {
+          "title": "Interpreting Violence: How Community Context Shapes Corporate Responses to Street Protests",
+          "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261419416?_gl=1*8f4goz*_up*MQ..*_ga*MTE4MzI5MzM2OS4xNzc2MDkzMzAw*_ga_60R758KFDG*czE3NzYwOTMzMDAkbzEkZzEkdDE3NzYwOTMzMzckajIzJGwwJGgxOTg5MzU1Nzkz",
+          "date": ""
+        },
+        {
+          "title": "Democratic Deviations: How Organizations Sustain Decentralization Commitments in the Face of Centralization Pressures",
+          "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261421927?_gl=1*trnk6x*_up*MQ..*_ga*MTE4MzI5MzM2OS4xNzc2MDkzMzAw*_ga_60R758KFDG*czE3NzYwOTMzMDAkbzEkZzEkdDE3NzYwOTMzNjgkajYwJGwwJGgxOTg5MzU1Nzkz",
+          "date": ""
+        }
+      ],
+      "error": ""
+    }
+  ]
+}

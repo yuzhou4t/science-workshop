@@ -19,6 +19,9 @@ A static prototype for a journal workshop intelligence dashboard.
 
 ```bash
 node scripts/adapter-smoke-test.mjs
+node scripts/fetch-articles-smoke-test.mjs
 ```
+
+`adapter-smoke-test.mjs` validates the adapter registry shape. `fetch-articles-smoke-test.mjs` runs a live fetch against direct RSS feeds and adapter source pages, then writes `data/fetch-smoke-results.json`.
 
 For a quick browser preview, open `index.html` directly or serve the directory with a local static server.
