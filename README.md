@@ -39,10 +39,10 @@ To run the lightweight workflow for a date window:
 node scripts/fetch-articles-smoke-test.mjs --since=2026-04-25 --until=2026-05-25
 ```
 
-This writes `data/recent-articles-2026-04-25_2026-05-25.json` and updates `data/source-state.json`. Add `--ignore-state` for a trial run where every article in the window is marked as newly discovered.
+This writes `data/recent-articles-2026-04-25_2026-05-25.json` and updates `data/source-state.json`. Add `--ignore-state` for a trial run where every article in the window is marked as newly discovered. Add `--baseline` when first deploying a source set so existing no-date articles are recorded but not pushed as new.
 
 Latest smoke test result: 22 article-ready sources out of 22 total sources. This includes 5 direct RSS feeds and 17 adapter-based sources. No source is currently blocked in the live smoke test, though several Chinese journals now depend on fallback issue indexes rather than their protected primary pages.
 
-Latest lightweight workflow trial for 2026-04-25 to 2026-05-25: 111 recent articles from 22 ready sources, plus 182 undated candidates that need stronger publication-date extraction before automatic push.
+Latest lightweight workflow trial for 2026-04-25 to 2026-05-25: 111 date-window articles from 22 ready sources, plus 182 no-date first-seen articles. The generated push queue contains 293 articles: 111 pushed by publication date and 182 pushed by first-seen detection so no-date sources do not get silently dropped.
 
 For a quick browser preview, open `index.html` directly or serve the directory with a local static server.

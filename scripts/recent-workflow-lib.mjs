@@ -86,9 +86,17 @@ function toWorkflowArticle(source, article, options, previousIds) {
   const dateInfo = normalizeWorkflowDate(article.date);
   const id = stableArticleId(source, article);
   const inWindow = isInsideWindow(dateInfo.normalized, dateInfo.precision, options.since, options.until);
+  const isNew = !options.baseline && !previousIds.has(id);
   const inclusionReason = inWindow
     ? dateInfo.precision === "month" ? "month_overlaps_window" : "date_within_window"
     : dateInfo.status === "unknown" ? "undated_latest_candidate" : "outside_window";
+  const pushBasis = !isNew
+    ? ""
+    : inWindow
+      ? "published_date"
+      : dateInfo.status === "unknown"
+        ? "first_seen"
+        : "";
 
   return {
     id,
@@ -106,8 +114,9 @@ function toWorkflowArticle(source, article, options, previousIds) {
     date_precision: dateInfo.precision,
     date_status: dateInfo.status,
     inclusion_reason: inclusionReason,
+    push_basis: pushBasis,
     observed_at: options.checkedAt,
-    is_new: !previousIds.has(id),
+    is_new: isNew,
   };
 }
 
@@ -146,13 +155,21 @@ export function buildRecentWorkflow(results, options) {
   };
   const recent = [];
   const undated = [];
+  const pushQueue = [];
 
   for (const source of readySources) {
-    const sourceItems = sourceArticles(source).map((article) => toWorkflowArticle(source, article, { since, until, checkedAt }, seenBefore));
+    const sourceItems = sourceArticles(source).map((article) => toWorkflowArticle(source, article, {
+      since,
+      until,
+      checkedAt,
+      baseline: Boolean(options.baseline),
+    }, seenBefore));
     const sourceRecent = sourceItems.filter((article) => ["date_within_window", "month_overlaps_window"].includes(article.inclusion_reason));
     const sourceUndated = sourceItems.filter((article) => article.inclusion_reason === "undated_latest_candidate");
+    const sourcePushQueue = sourceItems.filter((article) => Boolean(article.push_basis));
     recent.push(...sourceRecent);
     undated.push(...sourceUndated);
+    pushQueue.push(...sourcePushQueue);
     sourceState.sources[source.journal_id] = {
       journal_name: source.journal_name,
       source_url: source.source_url,
@@ -161,9 +178,11 @@ export function buildRecentWorkflow(results, options) {
       article_ids: sourceItems.map((article) => article.id),
       recent_article_ids: sourceRecent.map((article) => article.id),
       undated_article_ids: sourceUndated.map((article) => article.id),
+      push_article_ids: sourcePushQueue.map((article) => article.id),
       article_count: sourceItems.length,
       recent_count: sourceRecent.length,
       undated_count: sourceUndated.length,
+      push_count: sourcePushQueue.length,
       last_success_at: checkedAt,
     };
   }
@@ -171,6 +190,7 @@ export function buildRecentWorkflow(results, options) {
   sourceState.article_ids = Object.values(sourceState.sources).flatMap((source) => source.article_ids);
   const recentArticles = sortArticles(dedupeById(recent));
   const undatedCandidates = sortArticles(dedupeById(undated));
+  const pushArticles = sortArticles(dedupeById(pushQueue));
 
   return {
     summary: {
@@ -181,10 +201,13 @@ export function buildRecentWorkflow(results, options) {
       sources_ready: readySources.length,
       recent_articles: recentArticles.length,
       new_recent_articles: recentArticles.filter((article) => article.is_new).length,
+      new_undated_articles: undatedCandidates.filter((article) => article.is_new).length,
       undated_candidates: undatedCandidates.length,
+      push_queue_articles: pushArticles.length,
     },
     recent_articles: recentArticles,
     undated_candidates: undatedCandidates,
+    push_queue: pushArticles,
     source_state: sourceState,
   };
 }

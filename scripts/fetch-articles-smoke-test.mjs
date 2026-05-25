@@ -17,6 +17,9 @@ function parseCliOptions(argv) {
     else if (arg === "--ignore-state") {
       options.workflow = true;
       options.ignoreState = true;
+    } else if (arg === "--baseline") {
+      options.workflow = true;
+      options.baseline = true;
     }
     else if (arg.startsWith("--since=")) {
       options.workflow = true;
@@ -1002,6 +1005,7 @@ if (cliOptions.workflow) {
     until: cliOptions.until,
     checkedAt: summary.checked_at,
     previousState,
+    baseline: cliOptions.baseline,
   });
   const recentPath = new URL(`../data/recent-articles-${cliOptions.since}_${cliOptions.until}.json`, import.meta.url);
   const statePath = new URL("../data/source-state.json", import.meta.url);
@@ -1015,6 +1019,7 @@ if (workflow) {
     workflow: "recent_articles",
     output: `data/recent-articles-${cliOptions.since}_${cliOptions.until}.json`,
     state: "data/source-state.json",
+    baseline: Boolean(cliOptions.baseline),
     ...workflow.summary,
   }, null, 2));
 }

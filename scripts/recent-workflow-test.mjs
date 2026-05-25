@@ -49,10 +49,14 @@ assert.deepEqual(firstRun.summary, {
   sources_ready: 1,
   recent_articles: 2,
   new_recent_articles: 2,
+  new_undated_articles: 1,
   undated_candidates: 1,
+  push_queue_articles: 3,
 });
 assert.deepEqual(firstRun.recent_articles.map((article) => article.title), ["窗口内文章", "月份级文章"]);
 assert.deepEqual(firstRun.undated_candidates.map((article) => article.title), ["无日期文章"]);
+assert.deepEqual(firstRun.push_queue.map((article) => article.title), ["窗口内文章", "月份级文章", "无日期文章"]);
+assert.equal(firstRun.push_queue.find((article) => article.title === "无日期文章").push_basis, "first_seen");
 
 const secondRun = buildRecentWorkflow(probeResults, {
   since: "2026-04-25",
@@ -62,6 +66,21 @@ const secondRun = buildRecentWorkflow(probeResults, {
 });
 
 assert.equal(secondRun.summary.new_recent_articles, 0);
+assert.equal(secondRun.summary.new_undated_articles, 0);
+assert.equal(secondRun.summary.push_queue_articles, 0);
 assert.ok(secondRun.recent_articles.every((article) => article.is_new === false));
+
+const baselineRun = buildRecentWorkflow(probeResults, {
+  since: "2026-04-25",
+  until: "2026-05-25",
+  checkedAt: "2026-05-25T12:45:00.000Z",
+  previousState: {},
+  baseline: true,
+});
+
+assert.equal(baselineRun.summary.new_recent_articles, 0);
+assert.equal(baselineRun.summary.new_undated_articles, 0);
+assert.equal(baselineRun.summary.push_queue_articles, 0);
+assert.ok(baselineRun.source_state.article_ids.length > 0);
 
 console.log("recent workflow rules ok");
