@@ -1,12 +1,12 @@
 {
   "summary": {
-    "checked_at": "2026-05-25T02:43:35.915Z",
+    "checked_at": "2026-05-25T11:21:09.328Z",
     "direct_feeds_total": 5,
     "direct_feeds_ok": 5,
     "adapter_sources_total": 17,
-    "adapter_sources_article_ready": 10,
-    "adapter_sources_blocked": 7,
-    "article_ready_total": 15
+    "adapter_sources_article_ready": 17,
+    "adapter_sources_blocked": 0,
+    "article_ready_total": 22
   },
   "results": [
     {
@@ -19,7 +19,7 @@
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1357,
+      "fetch_ms": 1784,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 8,
@@ -55,8 +55,8 @@
       "extraction_rule": "wiley-etoc",
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
-      "transport": "curl",
-      "fetch_ms": 7027,
+      "transport": "fetch",
+      "fetch_ms": 1119,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 8,
@@ -81,7 +81,7 @@
       "notes": [
         "filtered_non_article:19"
       ],
-      "error": "fetch failed"
+      "error": ""
     },
     {
       "type": "direct_rss",
@@ -93,7 +93,7 @@
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1888,
+      "fetch_ms": 1142,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 8,
@@ -130,7 +130,7 @@
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1183,
+      "fetch_ms": 1007,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 8,
@@ -167,7 +167,7 @@
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1132,
+      "fetch_ms": 1152,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 8,
@@ -206,7 +206,7 @@
       "status": 200,
       "content_type": "application/json; charset=utf-8",
       "transport": "fetch",
-      "fetch_ms": 1780,
+      "fetch_ms": 1648,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 8,
@@ -245,12 +245,12 @@
       "extraction_rule": "cie-legacy-html",
       "status": 200,
       "content_type": "text/html; charset=utf-8",
-      "transport": "curl",
-      "fetch_ms": 40124,
+      "transport": "fetch",
+      "fetch_ms": 12960,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 8,
-      "candidate_count": 253,
+      "candidate_count": 276,
       "samples": [
         {
           "title": "贸易政策不确定性、供应链暴露网络与全球违约风险——来自异质性空间自回归模型的新证据",
@@ -269,7 +269,7 @@
         }
       ],
       "notes": [],
-      "error": "curl: (28) Operation timed out after 23092 milliseconds with 474575 out of 530438 bytes received"
+      "error": ""
     },
     {
       "type": "adapter_source",
@@ -283,7 +283,7 @@
       "status": 200,
       "content_type": "application/json; charset=utf-8",
       "transport": "fetch",
-      "fetch_ms": 1928,
+      "fetch_ms": 1529,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 8,
@@ -323,7 +323,7 @@
       "status": 200,
       "content_type": "text/html;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 3252,
+      "fetch_ms": 1786,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 8,
@@ -360,7 +360,7 @@
       "status": 200,
       "content_type": "text/html;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 7017,
+      "fetch_ms": 2733,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 8,
@@ -392,19 +392,40 @@
       "platform_id": "cnki-cbpt",
       "platform_name": "CNKI / 采编平台",
       "source_url": "https://glsj.cbpt.cnki.net/WKB/WebPublication/wkTextContent.aspx?colType=4&tp=gklb&mid=glsj",
-      "probe_url": "https://glsj.cbpt.cnki.net/WKB/WebPublication/wkTextContent.aspx?colType=4&tp=gklb&mid=glsj",
-      "extraction_rule": "cnki-captcha-check",
+      "probe_url": "https://www.macrodatas.cn/article/1779681420",
+      "extraction_rule": "macrodatas-issue-list",
       "status": 200,
       "content_type": "text/html; charset=utf-8",
       "transport": "fetch",
-      "fetch_ms": 4663,
-      "ok": false,
-      "usable_as_data_source": false,
-      "article_count": 0,
-      "candidate_count": 0,
-      "samples": [],
+      "fetch_ms": 1467,
+      "ok": true,
+      "usable_as_data_source": true,
+      "article_count": 8,
+      "candidate_count": 24,
+      "samples": [
+        {
+          "title": "科技强国建设中的双重创新动力源——一个知识流创新链分析框架及其考证",
+          "url": "https://www.macrodatas.cn/article/1779681420#directory-01",
+          "date": "2026-05-25",
+          "authors": "易先忠，潘锐，张亚斌"
+        },
+        {
+          "title": "构建中国公共管理自主知识体系的系统性思维和建构性路径",
+          "url": "https://www.macrodatas.cn/article/1779681420#directory-02",
+          "date": "2026-05-25",
+          "authors": "薛澜，赵静"
+        },
+        {
+          "title": "工程管理基础理论：建构管理学中国自主知识体系的学理表征",
+          "url": "https://www.macrodatas.cn/article/1779681420#directory-03",
+          "date": "2026-05-25",
+          "authors": "盛昭瀚"
+        }
+      ],
       "notes": [
-        "captcha_required"
+        "fallback_source:macrodatas",
+        "issue_candidates:24",
+        "issue:2026年第5期"
       ],
       "error": ""
     },
@@ -420,7 +441,7 @@
       "status": 200,
       "content_type": "text/html;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 7188,
+      "fetch_ms": 3343,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 8,
@@ -452,21 +473,42 @@
       "platform_id": "university-custom",
       "platform_name": "高校自建站",
       "source_url": "https://nbr.nankai.edu.cn/nkglpl/home",
-      "probe_url": "https://nbr.nankai.edu.cn/nkglpl/home",
-      "extraction_rule": "nankai-protected-html",
-      "status": 412,
+      "probe_url": "https://www.macrodatas.cn/article/1776651960",
+      "extraction_rule": "macrodatas-issue-list",
+      "status": 200,
       "content_type": "text/html; charset=utf-8",
-      "transport": "curl",
-      "fetch_ms": 7537,
-      "ok": false,
-      "usable_as_data_source": false,
-      "article_count": 0,
-      "candidate_count": 0,
-      "samples": [],
-      "notes": [
-        "client_challenge_or_page_protection"
+      "transport": "fetch",
+      "fetch_ms": 1270,
+      "ok": true,
+      "usable_as_data_source": true,
+      "article_count": 8,
+      "candidate_count": 6,
+      "samples": [
+        {
+          "title": "卖萌还是搞怪：智能客服可爱沟通风格与品牌个性对消费者宽恕的影响",
+          "url": "https://www.macrodatas.cn/article/1776651960#directory-01",
+          "date": "2026-04-20",
+          "authors": "张硕，梁璐琪，于春玲"
+        },
+        {
+          "title": "大股东支持行为的融资效应研究：从控股股东股权质押到独特监督型资本",
+          "url": "https://www.macrodatas.cn/article/1776651960#directory-02",
+          "date": "2026-04-20",
+          "authors": "李志伟，马连福，高媛"
+        },
+        {
+          "title": "松-紧文化如何影响消费者突破式和渐进式创造力：心理适应视角",
+          "url": "https://www.macrodatas.cn/article/1776651960#directory-03",
+          "date": "2026-04-20",
+          "authors": "黄晓治，等"
+        }
       ],
-      "error": "fetch failed"
+      "notes": [
+        "fallback_source:macrodatas",
+        "issue_candidates:6",
+        "issue:2026年第4期"
+      ],
+      "error": ""
     },
     {
       "type": "adapter_source",
@@ -480,7 +522,7 @@
       "status": 200,
       "content_type": "text/html; charset=utf-8",
       "transport": "fetch",
-      "fetch_ms": 667,
+      "fetch_ms": 656,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 8,
@@ -513,20 +555,42 @@
       "journal_name": "中国行政管理",
       "platform_id": "association-custom",
       "platform_name": "协会 / 自建系统",
-      "source_url": "https://www.cpaj.com.cn/",
-      "probe_url": "https://www.cpaj.com.cn/",
-      "extraction_rule": "missing-entry-url",
-      "status": "ERR",
-      "content_type": "",
-      "transport": "curl",
-      "fetch_ms": 6105,
-      "ok": false,
-      "usable_as_data_source": false,
-      "article_count": 0,
-      "candidate_count": 0,
-      "samples": [],
-      "notes": [],
-      "error": "curl: (60) SSL certificate problem: certificate has expired More details here: https://curl.se/docs/sslcerts.html "
+      "source_url": "https://www.cqvip.com/journal/81961X",
+      "probe_url": "https://www.cqvip.com/journal/81961X",
+      "extraction_rule": "cqvip-journal-html",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "transport": "fetch",
+      "fetch_ms": 6013,
+      "ok": true,
+      "usable_as_data_source": true,
+      "article_count": 8,
+      "candidate_count": 19,
+      "samples": [
+        {
+          "title": "以制度建设为主线统筹发展和安全",
+          "url": "https://www.cqvip.com/doc/journal/7203343026?sign=1cc66c7e4a6d0c9f1f166e60fe1b4afd818dc6981f3fdd5b4aeacfff1e9e7fb7&expireTime=1795260062057&resourceId=7203343026&type=1",
+          "date": "2026-03",
+          "authors": "王浦劬, 连雨欣"
+        },
+        {
+          "title": "“钉钉子”的技术:重大决策落实的工作机制",
+          "url": "https://www.cqvip.com/doc/journal/7203343027?sign=e2d374ab92c1357557fcc8911a58c5f7d149f629753905ec7f843c1c38458c8a&expireTime=1795260062057&resourceId=7203343027&type=1",
+          "date": "2026-03",
+          "authors": "庞明礼, 郭雯斐"
+        },
+        {
+          "title": "从制度到行动:基层减负的层级传导与长效机制",
+          "url": "https://www.cqvip.com/doc/journal/7203343028?sign=f2e17142453ee68c832a5768d7a58ed087e2c9f53bec8a6e87e82be8b717ed4b&expireTime=1795260062057&resourceId=7203343028&type=1",
+          "date": "2026-03",
+          "authors": "王锐, 倪星"
+        }
+      ],
+      "notes": [
+        "issue:2026年3期",
+        "fallback_source:cqvip"
+      ],
+      "error": ""
     },
     {
       "type": "adapter_source",
@@ -534,20 +598,36 @@
       "journal_name": "会计研究",
       "platform_id": "association-custom",
       "platform_name": "协会 / 自建系统",
-      "source_url": "http://www.asc.org.cn/AccountingResearch/NewestArticleList.aspx",
-      "probe_url": "http://www.asc.org.cn/AccountingResearch/ArticleList.aspx?year=2026&issue=5",
-      "extraction_rule": "asc-issue-list",
+      "source_url": "https://www.asc.net.cn/AccountingResearch/NewestArticleListCS.aspx",
+      "probe_url": "https://www.asc.net.cn/AccountingResearch/NewestArticleListCS.aspx?issue=4&year=2026",
+      "extraction_rule": "asc-current-issue-html",
       "status": 200,
-      "content_type": "text/html; charset=gb2312",
+      "content_type": "text/html;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1866,
-      "ok": false,
-      "usable_as_data_source": false,
-      "article_count": 0,
-      "candidate_count": 5,
-      "samples": [],
+      "fetch_ms": 710,
+      "ok": true,
+      "usable_as_data_source": true,
+      "article_count": 8,
+      "candidate_count": 13,
+      "samples": [
+        {
+          "title": "劳动力市场势力如何影响分析师盈余预测准确性?———基于证券公...",
+          "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=0EB713F2-A67B-4D41-858D-33AA14CAE36F&ID=A3ED3197-6D0F-4E67-944A-FA5C00C7CD77",
+          "date": ""
+        },
+        {
+          "title": "耐心资本与企业盈余管理：基于失败容忍度的研究",
+          "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=8BF9AA05-F099-4254-8E78-35850228415C&ID=A3ED3197-6D0F-4E67-944A-FA5C00C7CD77",
+          "date": ""
+        },
+        {
+          "title": "银行关联、信贷周期与债务违约风险",
+          "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=5C457CA7-246B-4C2C-A3DA-59E0A1079ED1&ID=A3ED3197-6D0F-4E67-944A-FA5C00C7CD77",
+          "date": ""
+        }
+      ],
       "notes": [
-        "issue_page_has_no_article_links"
+        "issue:2026-04"
       ],
       "error": ""
     },
@@ -557,19 +637,41 @@
       "journal_name": "ACCOUNTING REVIEW",
       "platform_id": "publisher-html",
       "platform_name": "英文出版平台页面",
-      "source_url": "https://publications.aaahq.org/accounting-review/issue/101/3",
-      "probe_url": "https://publications.aaahq.org/accounting-review/issue/101/3",
-      "extraction_rule": "aaahq-issue-html",
-      "status": 403,
-      "content_type": "text/html; charset=UTF-8",
+      "source_url": "https://publications.aaahq.org/accounting-review",
+      "probe_url": "https://api.crossref.org/journals/0001-4826/works?filter=type:journal-article&sort=published&order=desc&rows=12",
+      "extraction_rule": "open-metadata-works",
+      "status": 200,
+      "content_type": "application/json",
       "transport": "fetch",
-      "fetch_ms": 1309,
-      "ok": false,
-      "usable_as_data_source": false,
-      "article_count": 0,
-      "candidate_count": 0,
-      "samples": [],
-      "notes": [],
+      "fetch_ms": 2283,
+      "ok": true,
+      "usable_as_data_source": true,
+      "article_count": 8,
+      "candidate_count": 12,
+      "samples": [
+        {
+          "title": "Modern Privacy Regulation, Internal Information Quality, and Operational Efficiency: Evidence from the General Data Protection Regulation",
+          "url": "https://doi.org/10.2308/tar-2022-0542",
+          "date": "2026-05-08",
+          "authors": "Steven A. Maex"
+        },
+        {
+          "title": "Financial Reporting and Detection of Labor Union Misconduct",
+          "url": "https://doi.org/10.2308/tar-2024-0710",
+          "date": "2026-05-04",
+          "authors": "Danye Wang"
+        },
+        {
+          "title": "Market Leaders’ Tax-Motivated Income Shifting and U.S. Domestic Firms’ Investment Efficiency",
+          "url": "https://doi.org/10.2308/tar-2024-0328",
+          "date": "2026-05-12",
+          "authors": "Michelle L. Nessa, Xinjie Tang, Ryan J. Wilson"
+        }
+      ],
+      "notes": [
+        "metadata_service:crossref",
+        "metadata_candidates:12"
+      ],
       "error": ""
     },
     {
@@ -584,7 +686,7 @@
       "status": 200,
       "content_type": "text/html; charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 2205,
+      "fetch_ms": 1596,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 8,
@@ -615,19 +717,41 @@
       "journal_name": "QUARTERLY JOURNAL OF ECONOMICS",
       "platform_id": "publisher-html",
       "platform_name": "英文出版平台页面",
-      "source_url": "https://academic.oup.com/qje/advance-articles",
-      "probe_url": "https://academic.oup.com/qje/advance-articles",
-      "extraction_rule": "oup-advance-html",
-      "status": 403,
-      "content_type": "text/html; charset=UTF-8",
+      "source_url": "https://academic.oup.com/qje",
+      "probe_url": "https://api.crossref.org/journals/0033-5533/works?filter=type:journal-article&sort=published&order=desc&rows=12",
+      "extraction_rule": "open-metadata-works",
+      "status": 200,
+      "content_type": "application/json",
       "transport": "fetch",
-      "fetch_ms": 910,
-      "ok": false,
-      "usable_as_data_source": false,
-      "article_count": 0,
-      "candidate_count": 0,
-      "samples": [],
-      "notes": [],
+      "fetch_ms": 1248,
+      "ok": true,
+      "usable_as_data_source": true,
+      "article_count": 8,
+      "candidate_count": 12,
+      "samples": [
+        {
+          "title": "Public Services Under Private Management",
+          "url": "https://doi.org/10.1093/qje/qjag028",
+          "date": "2026-05-12",
+          "authors": "MaÍra Coube, Luiz Felipe Fontes, Rudi Rocha"
+        },
+        {
+          "title": "The Power of Proximity to Coworkers",
+          "url": "https://doi.org/10.1093/qje/qjag027",
+          "date": "2026-05-12",
+          "authors": "Natalia Emanuel, Emma Harrington, Amanda Pallais"
+        },
+        {
+          "title": "International Reserve Management Under Rollover Crises",
+          "url": "https://doi.org/10.1093/qje/qjag025",
+          "date": "2026-05-12",
+          "authors": "Mauricio Barbosa-Alves, Javier Bianchi, César Sosa-Padilla"
+        }
+      ],
+      "notes": [
+        "metadata_service:crossref",
+        "metadata_candidates:12"
+      ],
       "error": ""
     },
     {
@@ -636,19 +760,41 @@
       "journal_name": "REVIEW OF ECONOMIC STUDIES",
       "platform_id": "publisher-html",
       "platform_name": "英文出版平台页面",
-      "source_url": "https://academic.oup.com/restud/advance-articles",
-      "probe_url": "https://academic.oup.com/restud/advance-articles",
-      "extraction_rule": "oup-advance-html",
-      "status": 403,
-      "content_type": "text/html; charset=UTF-8",
+      "source_url": "https://academic.oup.com/restud",
+      "probe_url": "https://api.crossref.org/journals/0034-6527/works?filter=type:journal-article&sort=published&order=desc&rows=12",
+      "extraction_rule": "open-metadata-works",
+      "status": 200,
+      "content_type": "application/json",
       "transport": "fetch",
-      "fetch_ms": 989,
-      "ok": false,
-      "usable_as_data_source": false,
-      "article_count": 0,
-      "candidate_count": 0,
-      "samples": [],
-      "notes": [],
+      "fetch_ms": 1758,
+      "ok": true,
+      "usable_as_data_source": true,
+      "article_count": 8,
+      "candidate_count": 12,
+      "samples": [
+        {
+          "title": "Monopsony Makes Firms Not Only Small but Also Unproductive: Why East Germany has Not Converged",
+          "url": "https://doi.org/10.1093/restud/rdag033",
+          "date": "2026-05-22",
+          "authors": "Rüdiger Bachmann, Christian Bayer, Heiko Stüber, Felix Wellschmied"
+        },
+        {
+          "title": "Eliciting Multiple Prior Beliefs",
+          "url": "https://doi.org/10.1093/restud/rdag043",
+          "date": "2026-05-21",
+          "authors": "Mohammed Abdellaoui, Philippe Colo, Brian Hill"
+        },
+        {
+          "title": "Money Markets, Collateral and Monetary Policy",
+          "url": "https://doi.org/10.1093/restud/rdag041",
+          "date": "2026-05-21",
+          "authors": "Fiorella De Fiore, Marie Hoerova, Ciaran Rogers, Harald Uhlig"
+        }
+      ],
+      "notes": [
+        "metadata_service:crossref",
+        "metadata_candidates:12"
+      ],
       "error": ""
     },
     {
@@ -663,7 +809,7 @@
       "status": 200,
       "content_type": "text/html; charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1702,
+      "fetch_ms": 1565,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 8,
@@ -700,7 +846,7 @@
       "status": 200,
       "content_type": "text/html; charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1442,
+      "fetch_ms": 1159,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 8,

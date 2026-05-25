@@ -1,5 +1,6 @@
 import { execFile } from "node:child_process";
 import { readFile, writeFile } from "node:fs/promises";
+import vm from "node:vm";
 import { promisify } from "node:util";
 
 const execFileAsync = promisify(execFile);
@@ -67,7 +68,7 @@ function cleanArticleUrl(url) {
   const fixed = url.replace(/\?&/, "?").replace(/&&/g, "&");
   try {
     const parsed = new URL(fixed);
-    if (!parsed.hash.startsWith("#/issueDetail")) parsed.hash = "";
+    if (!parsed.hash.startsWith("#/issueDetail") && !/^#directory-\d+$/i.test(parsed.hash)) parsed.hash = "";
     for (const key of [...parsed.searchParams.keys()]) {
       if (/^utm_/i.test(key) || key === "af" || key === "from" || key === "_gl") parsed.searchParams.delete(key);
     }
@@ -269,6 +270,37 @@ function dedupeArticles(items) {
   return deduped;
 }
 
+function compactText(value = "") {
+  return stripTags(value).replace(/\s+/g, "");
+}
+
+function issueSortKey(value = "") {
+  const compact = compactText(value);
+  const match = compact.match(/(20\d{2})年第?(\d{1,2})期/);
+  return match ? Number(match[1]) * 100 + Number(match[2]) : 0;
+}
+
+function datePartsToIso(dateParts) {
+  const parts = dateParts?.["date-parts"]?.[0] || [];
+  if (!parts.length) return "";
+  const [year, month, day] = parts;
+  if (!year) return "";
+  if (!month) return String(year);
+  if (!day) return `${year}-${String(month).padStart(2, "0")}`;
+  return `${year}-${String(month).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+}
+
+function doiToUrl(doi = "") {
+  const clean = doi.replace(/^https?:\/\/(dx\.)?doi\.org\//i, "").trim();
+  return clean ? `https://doi.org/${clean}` : "";
+}
+
+function matchesDoiPrefix(doi = "", prefixes = []) {
+  if (!prefixes.length) return true;
+  const normalized = doi.replace(/^https?:\/\/(dx\.)?doi\.org\//i, "").toLowerCase();
+  return prefixes.some((prefix) => normalized.startsWith(String(prefix).toLowerCase()));
+}
+
 function originFromSource(sourceUrl) {
   try {
     const parsed = new URL(sourceUrl);
@@ -349,6 +381,105 @@ async function extractCnkiCaptchaCheck(item) {
   return { response, probe_url: item.source_url, articles, candidate_count: articles.length, notes };
 }
 
+async function extractOpenMetadataWorks(item) {
+  const rule = item.adapter_rule || {};
+  const issns = rule.issns || [];
+  const services = rule.fallback_services || ["crossref", "openalex"];
+  const doiPrefixes = rule.doi_prefixes || (rule.doi_prefix ? [rule.doi_prefix] : []);
+  const articles = [];
+  const notes = [];
+  let firstResponse = null;
+  let selectedProbeUrl = item.source_url;
+  let candidateCount = 0;
+
+  const maybeReturn = (service, probeUrl, response) => {
+    const usable = dedupeArticles(articles).filter((article) => looksLikeArticleTitle(article.title) && !isNonArticleTitle(article.title));
+    if (!usable.length) return null;
+    return {
+      response,
+      probe_url: probeUrl,
+      articles: usable,
+      candidate_count: candidateCount,
+      notes: [`metadata_service:${service}`, `metadata_candidates:${candidateCount}`],
+    };
+  };
+
+  for (const service of services) {
+    for (const issn of issns) {
+      if (service === "crossref") {
+        const probeUrl = `https://api.crossref.org/journals/${encodeURIComponent(issn)}/works?filter=type:journal-article&sort=published&order=desc&rows=12`;
+        const response = await fetchText(probeUrl, 15000, { Accept: "application/json,*/*" });
+        firstResponse ||= response;
+        selectedProbeUrl = probeUrl;
+        if (!response.ok) {
+          notes.push(`crossref_${issn}:status_${response.status}`);
+          continue;
+        }
+        try {
+          const payload = JSON.parse(response.text);
+          const works = payload.message?.items || [];
+          candidateCount += works.length;
+          for (const work of works) {
+            const title = stripTags(Array.isArray(work.title) ? work.title[0] : work.title || "");
+            const doi = work.DOI || "";
+            if (!title || !matchesDoiPrefix(doi, doiPrefixes)) continue;
+            articles.push({
+              title,
+              url: doiToUrl(doi) || work.URL || item.source_url,
+              date: datePartsToIso(work["published-online"] || work["published-print"] || work.published || work.created),
+              authors: (work.author || []).slice(0, 5).map((author) => [author.given, author.family].filter(Boolean).join(" ")).filter(Boolean).join(", "),
+            });
+          }
+        } catch (error) {
+          notes.push(`crossref_parse_failed:${error.message}`);
+        }
+
+        const ready = maybeReturn("crossref", probeUrl, response);
+        if (ready) return ready;
+      }
+
+      if (service === "openalex") {
+        const probeUrl = `https://api.openalex.org/works?filter=primary_location.source.issn:${encodeURIComponent(issn)}&sort=publication_date:desc&per-page=12`;
+        const response = await fetchText(probeUrl, 15000, { Accept: "application/json,*/*" });
+        firstResponse ||= response;
+        selectedProbeUrl = probeUrl;
+        if (!response.ok) {
+          notes.push(`openalex_${issn}:status_${response.status}`);
+          continue;
+        }
+        try {
+          const payload = JSON.parse(response.text);
+          const works = payload.results || [];
+          candidateCount += works.length;
+          for (const work of works) {
+            const doi = work.doi || "";
+            if (!work.display_name || !matchesDoiPrefix(doi, doiPrefixes)) continue;
+            articles.push({
+              title: stripTags(work.display_name),
+              url: doiToUrl(doi) || work.primary_location?.landing_page_url || work.id || item.source_url,
+              date: work.publication_date || "",
+              authors: (work.authorships || []).slice(0, 5).map((author) => author.author?.display_name).filter(Boolean).join(", "),
+            });
+          }
+        } catch (error) {
+          notes.push(`openalex_parse_failed:${error.message}`);
+        }
+
+        const ready = maybeReturn("openalex", probeUrl, response);
+        if (ready) return ready;
+      }
+    }
+  }
+
+  return {
+    response: firstResponse,
+    probe_url: selectedProbeUrl,
+    articles: [],
+    candidate_count: candidateCount,
+    notes: notes.length ? notes : ["metadata_no_articles"],
+  };
+}
+
 async function extractJmscIssueHtml(item) {
   const indexResponse = await fetchText(item.source_url, 12000);
   const notes = [];
@@ -388,6 +519,40 @@ async function extractJmscIssueHtml(item) {
   };
 }
 
+async function extractAscCurrentIssueHtml(item) {
+  const now = new Date();
+  const currentYear = now.getFullYear();
+  const yearSpan = item.adapter_rule?.year_span || 2;
+  let lastResponse = null;
+  const notes = [];
+
+  for (let year = currentYear; year > currentYear - yearSpan; year -= 1) {
+    for (let issue = 12; issue >= 1; issue -= 1) {
+      const probeUrl = `${item.source_url}?issue=${issue}&year=${year}`;
+      const response = await fetchText(probeUrl, 12000);
+      lastResponse = response;
+      if (!response.ok) continue;
+
+      const articles = parseAnchorsMatching(response.text, response.finalUrl, {
+        include: [/\/AccountingResearch\/BrowseDetail\.aspx/i, /BrowseDetail\.aspx\?/i],
+        exclude: [/Login|User|Download/i],
+      });
+      if (articles.length) {
+        return {
+          response,
+          probe_url: probeUrl,
+          articles,
+          candidate_count: articles.length,
+          notes: [`issue:${year}-${String(issue).padStart(2, "0")}`],
+        };
+      }
+    }
+  }
+
+  notes.push("published_issue_not_found");
+  return { response: lastResponse, probe_url: item.source_url, articles: [], candidate_count: 0, notes };
+}
+
 async function extractAscIssueList(item) {
   const response = await fetchText(item.source_url, 12000);
   const notes = [];
@@ -416,6 +581,167 @@ async function extractAscIssueList(item) {
     articles,
     candidate_count: issueLinks.length,
     notes,
+  };
+}
+
+function parseNuxtPayload(html) {
+  const match = html.match(/<script>window\.__NUXT__=([\s\S]*?)<\/script>/);
+  if (!match) return null;
+  const context = { window: {} };
+  vm.runInNewContext(`window.__NUXT__=${match[1].replace(/;$/, "")}`, context, { timeout: 1000 });
+  return context.window.__NUXT__;
+}
+
+function flattenCatalogRecords(records = []) {
+  const articles = [];
+  const walk = (entries) => {
+    for (const entry of entries || []) {
+      if (entry?.children?.length) walk(entry.children);
+      else if (entry?.title || entry?.name) articles.push(entry);
+    }
+  };
+  walk(records);
+  return articles;
+}
+
+async function extractCqvipJournalHtml(item) {
+  const response = await fetchText(item.source_url, 16000);
+  const notes = [];
+  if (!response.ok) return { response, probe_url: item.source_url, articles: [], candidate_count: 0, notes };
+
+  let payload = null;
+  try {
+    payload = parseNuxtPayload(response.text);
+  } catch (error) {
+    notes.push(`nuxt_parse_failed:${error.message}`);
+  }
+
+  const fetchData = payload ? Object.values(payload.fetch || {})[0] : null;
+  const records = fetchData?.catalog?.records || [];
+  const issueLabel = stripTags(response.text).match(/20\d{2}年\d{1,2}期/)?.[0] || "";
+  const issueDate = issueLabel.replace(/年(\d{1,2})期/, (_, issue) => `-${String(issue).padStart(2, "0")}`);
+  const articles = flattenCatalogRecords(records).map((row) => {
+    const signInfo = row.signInfo || {};
+    const url = new URL(`/doc/journal/${row.id || signInfo.resourceId}`, response.finalUrl);
+    for (const key of ["sign", "expireTime", "resourceId", "type"]) {
+      if (signInfo[key]) url.searchParams.set(key, signInfo[key]);
+    }
+    return {
+      title: stripTags(row.title || row.name || ""),
+      url: cleanArticleUrl(url.toString()),
+      date: issueDate,
+      authors: (row.authorInfo || []).map((author) => author.name).filter(Boolean).join(", "),
+    };
+  }).filter((article) => looksLikeArticleTitle(article.title));
+
+  if (!articles.length) notes.push("catalog_records_not_found");
+  return {
+    response,
+    probe_url: item.source_url,
+    articles: dedupeArticles(articles),
+    candidate_count: fetchData?.catalog?.count || articles.length,
+    notes: issueLabel ? [`issue:${issueLabel}`, "fallback_source:cqvip"] : ["fallback_source:cqvip", ...notes],
+  };
+}
+
+function expandMacrodatasSearchTerms(rule) {
+  const currentYear = new Date().getFullYear();
+  const terms = rule.search_terms?.length ? rule.search_terms : [`${rule.journal_title} {year}年第`];
+  return terms.map((term) => term
+    .replace(/\{journal\}/g, rule.journal_title || "")
+    .replace(/\{year\}/g, String(currentYear))
+    .replace(/\{previous_year\}/g, String(currentYear - 1)));
+}
+
+function parseMacrodatasIssueLinks(html, baseUrl, journalTitle) {
+  const exactJournal = `《${journalTitle}》`;
+  return dedupeArticles(parseRawAnchors(html, baseUrl)
+    .filter((anchor) => /\/article\/\d+/i.test(anchor.url))
+    .filter((anchor) => compactText(anchor.title).includes(compactText(exactJournal)))
+    .filter((anchor) => issueSortKey(anchor.title) > 0)
+    .map((anchor) => ({
+      title: anchor.title,
+      url: cleanArticleUrl(anchor.url),
+      date: "",
+      issue_key: issueSortKey(anchor.title),
+    })))
+    .sort((a, b) => b.issue_key - a.issue_key);
+}
+
+function parseMacrodatasDirectoryArticles(html, pageUrl) {
+  const releaseDate = html.match(/document\.write\("([^"]{10})/)?.[1] || "";
+  const articles = [];
+  const entryRegex = /<p[^>]*>\s*(\d{2})\s+([\s\S]*?)<\/p>\s*<p[^>]*style=["'][^"']*color:[^"']*["'][^>]*>([\s\S]*?)<\/p>/gi;
+  for (const match of html.matchAll(entryRegex)) {
+    const title = stripTags(match[2]);
+    if (!looksLikeArticleTitle(title)) continue;
+    articles.push({
+      title,
+      url: `${cleanArticleUrl(pageUrl)}#directory-${match[1]}`,
+      date: releaseDate,
+      authors: stripTags(match[3]),
+    });
+  }
+
+  if (articles.length) return dedupeArticles(articles);
+
+  const text = stripTags(html);
+  let directory = text.slice(Math.max(0, text.indexOf("目录")));
+  const firstItemIndex = directory.search(/\b01\s+/);
+  if (firstItemIndex >= 0) directory = directory.slice(firstItemIndex);
+  const firstDetailIndex = directory.search(/#\s*01\s*#/);
+  if (firstDetailIndex > 0) directory = directory.slice(0, firstDetailIndex);
+  const fallbackRegex = /(?:^|\s)(\d{2})\s+(.+?)(?=\s+\d{2}\s+|$)/g;
+  for (const match of directory.matchAll(fallbackRegex)) {
+    const title = match[2].trim();
+    if (!looksLikeArticleTitle(title)) continue;
+    articles.push({
+      title,
+      url: `${cleanArticleUrl(pageUrl)}#directory-${match[1]}`,
+      date: releaseDate,
+    });
+  }
+  return dedupeArticles(articles);
+}
+
+async function extractMacrodatasIssueList(item) {
+  const rule = item.adapter_rule || {};
+  const listBaseUrl = rule.list_base_url || "https://www.macrodatas.cn/list/1/0/0/";
+  const discoveryUrls = [
+    ...expandMacrodatasSearchTerms(rule).map((term) => `${listBaseUrl}${encodeURIComponent(term)}`),
+    ...(rule.discovery_urls || []),
+  ];
+  const notes = ["fallback_source:macrodatas"];
+  let lastResponse = null;
+  let issueLinks = [];
+
+  for (const discoveryUrl of discoveryUrls) {
+    const response = await fetchText(discoveryUrl, 15000);
+    lastResponse = response;
+    if (!response.ok) {
+      notes.push(`discovery_status:${response.status}`);
+      continue;
+    }
+    issueLinks = parseMacrodatasIssueLinks(response.text, response.finalUrl, rule.journal_title || item.journal_name);
+    if (issueLinks.length) break;
+  }
+
+  if (!issueLinks.length) {
+    notes.push("issue_link_not_found");
+    return { response: lastResponse, probe_url: discoveryUrls[0] || item.source_url, articles: [], candidate_count: 0, notes };
+  }
+
+  const selectedIssue = issueLinks[0];
+  const issueResponse = await fetchText(selectedIssue.url, 15000);
+  const articles = issueResponse.ok ? parseMacrodatasDirectoryArticles(issueResponse.text, issueResponse.finalUrl) : [];
+  if (!articles.length) notes.push("directory_not_found");
+
+  return {
+    response: issueResponse,
+    probe_url: selectedIssue.url,
+    articles,
+    candidate_count: issueLinks.length,
+    notes: [...notes, `issue_candidates:${issueLinks.length}`, `issue:${compactText(selectedIssue.title).match(/20\d{2}年第?\d{1,2}期/)?.[0] || selectedIssue.title}`],
   };
 }
 
@@ -465,6 +791,8 @@ async function extractAdapterArticles(item) {
       });
     case "cnki-captcha-check":
       return extractCnkiCaptchaCheck(item);
+    case "macrodatas-issue-list":
+      return extractMacrodatasIssueList(item);
     case "cnki-portal-paper":
       return extractHtmlByPatterns(item, {
         include: [/\/portal\/journal\/portal\/client\/paper\/[a-z0-9-]+/i],
@@ -474,8 +802,14 @@ async function extractAdapterArticles(item) {
       return extractNankaiProtectedHtml(item);
     case "jmsc-issue-html":
       return extractJmscIssueHtml(item);
+    case "cqvip-journal-html":
+      return extractCqvipJournalHtml(item);
+    case "asc-current-issue-html":
+      return extractAscCurrentIssueHtml(item);
     case "asc-issue-list":
       return extractAscIssueList(item);
+    case "open-metadata-works":
+      return extractOpenMetadataWorks(item);
     case "aaahq-issue-html":
       return extractHtmlByPatterns(item, {
         include: [/\/accounting-review\/article\//i, /\/doi\/10\.2308\//i],
