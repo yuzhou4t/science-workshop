@@ -38,10 +38,11 @@
     {
       "id": "ajcass",
       "name": "AJCass 社科院平台",
-      "strategy": "接口优先，Playwright 兜底",
+      "strategy": "公开 JSON 接口优先，旧版站点走静态 HTML",
       "render_required": true,
       "fields": ["title", "url", "issue", "year", "authors", "abstract"],
-      "next_action": "先修正中国工业经济 URL，再抓包确认期号接口。"
+      "article_url_patterns": ["#/issueDetail?id=", "/Magazine/Show?id="],
+      "next_action": "经济研究、中国农村经济可走 api.ajcass.com 当期目录；中国工业经济走 /Magazine/Show 静态条目。"
     },
     {
       "id": "cn-journal-cms",
@@ -49,7 +50,8 @@
       "strategy": "CSS/XPath 静态抽取",
       "render_required": false,
       "fields": ["title", "url", "issue", "date", "authors"],
-      "next_action": "用过刊页定位条目容器，先产出 CSS selector 规则。"
+      "article_url_patterns": ["/CN/Y{year}/V{volume}/I{issue}/{article}", "/CN/abstract/abstract{id}.shtml"],
+      "next_action": "抓主页或当期目录页，只保留文章详情 URL，排除公告、栏目和期号页。"
     },
     {
       "id": "cnki-cbpt",
@@ -57,7 +59,8 @@
       "strategy": "动态渲染 + 接口嗅探",
       "render_required": true,
       "fields": ["title", "url", "issue", "authors", "abstract"],
-      "next_action": "检查页面请求，能走接口就不跑浏览器渲染。"
+      "article_url_patterns": ["/portal/journal/portal/client/paper/{paperId}"],
+      "next_action": "公共管理学报可直接抓 paper 页面；管理世界出现验证码，先列入人工/浏览器兜底。"
     },
     {
       "id": "university-custom",
@@ -65,7 +68,8 @@
       "strategy": "CSS/XPath，单刊参数化",
       "render_required": false,
       "fields": ["title", "url", "issue", "date", "authors"],
-      "next_action": "分别确认目录页列表结构和翻页规则。"
+      "article_url_patterns": ["/jmsc/article/abstract/{id}", "/article/{id}", "/paper/{id}"],
+      "next_action": "管理科学学报先从 issue/browser 找最新期，再进入期号页抽 article/abstract。"
     },
     {
       "id": "association-custom",
@@ -73,7 +77,8 @@
       "strategy": "先修 URL，再静态抽取",
       "render_required": false,
       "fields": ["title", "url", "issue", "date"],
-      "next_action": "中国行政管理缺少有效过刊入口，会计研究需处理 gb2312 编码。"
+      "article_url_patterns": ["ArticleList.aspx?year={year}&issue={issue}", "ArticleDetail.aspx?id={id}", "BrowseDetail.aspx?id={id}"],
+      "next_action": "会计研究目前能定位期号但页面没有公开文章链接；中国行政管理需补有效入口。"
     },
     {
       "id": "publisher-html",
@@ -81,7 +86,8 @@
       "strategy": "出版平台模板 + 反爬兜底",
       "render_required": true,
       "fields": ["title", "url", "doi", "issue", "date", "authors"],
-      "next_action": "AAAHQ、AEA、Oxford 先找隐藏 JSON 或 citation 元数据。"
+      "article_url_patterns": ["/articles?id=10.1257/aer.", "/doi/10.2308/", "/doi/10.1093/"],
+      "next_action": "AEA 可直接抽取 forthcoming/current issue；AAAHQ/OUP 当前 403，需要浏览器、代理或官方 feed 替代。"
     },
     {
       "id": "non-article-feed",
@@ -89,26 +95,27 @@
       "strategy": "排除公告/评论 RSS，改抓文章页",
       "render_required": false,
       "fields": ["title", "url", "issue", "date", "authors"],
-      "next_action": "AFA 和 ASQ 的已有 RSS 不作为论文推送源，只保留为参考信号。"
+      "article_url_patterns": ["javascript:viewDoc('10.1111/jofi.", "journals.sagepub.com/doi/full/10.1177/"],
+      "next_action": "AFA forthcoming 可由 DOI 反推 Wiley 文章页；ASQ 可从 Cornell 页抽 Sage DOI。"
     }
   ],
   "adapter_queue": [
-    { "journal_id": "j2", "journal_name": "经济研究", "platform_id": "ajcass", "status": "规则待写", "source_url": "https://erj.ajcass.com/#/index" },
-    { "journal_id": "j4", "journal_name": "中国工业经济", "platform_id": "ajcass", "status": "先修 URL", "source_url": "https://ciejournal.ajcass.com/" },
-    { "journal_id": "j12", "journal_name": "中国农村经济", "platform_id": "ajcass", "status": "规则待写", "source_url": "https://zgncjj.ajcass.com/#/" },
-    { "journal_id": "j3", "journal_name": "世界经济", "platform_id": "cn-journal-cms", "status": "规则待写", "source_url": "https://sjjj.magtech.com.cn/CN/archive_by_years" },
-    { "journal_id": "j5", "journal_name": "金融研究", "platform_id": "cn-journal-cms", "status": "规则待写", "source_url": "http://www.jryj.org.cn/CN/article/showOldVolumnList.do" },
-    { "journal_id": "j6", "journal_name": "管理世界", "platform_id": "cnki-cbpt", "status": "规则待写", "source_url": "https://glsj.cbpt.cnki.net/WKB/WebPublication/wkTextContent.aspx?colType=4&tp=gklb&mid=glsj" },
-    { "journal_id": "j8", "journal_name": "公共管理学报", "platform_id": "cnki-cbpt", "status": "规则待写", "source_url": "https://gggl.cbpt.cnki.net/portal" },
-    { "journal_id": "j7", "journal_name": "南开管理评论", "platform_id": "university-custom", "status": "规则待写", "source_url": "https://nbr.nankai.edu.cn/nkglpl/home" },
-    { "journal_id": "j9", "journal_name": "管理科学学报", "platform_id": "university-custom", "status": "规则待写", "source_url": "https://jmsc.tju.edu.cn/jmsc/issue/browser" },
-    { "journal_id": "j10", "journal_name": "中国行政管理", "platform_id": "association-custom", "status": "先修 URL", "source_url": "https://www.cpaj.com.cn/" },
-    { "journal_id": "j11", "journal_name": "会计研究", "platform_id": "association-custom", "status": "规则待写", "source_url": "http://www.asc.org.cn/AccountingResearch/BrowsePeriodical.aspx" },
-    { "journal_id": "j15", "journal_name": "ACCOUNTING REVIEW", "platform_id": "publisher-html", "status": "未发现论文 RSS", "source_url": "https://publications.aaahq.org/accounting-review/issue/101/3" },
-    { "journal_id": "j16", "journal_name": "AMERICAN ECONOMIC REVIEW", "platform_id": "publisher-html", "status": "未发现论文 RSS", "source_url": "https://www.aeaweb.org/journals/aer" },
-    { "journal_id": "j18", "journal_name": "QUARTERLY JOURNAL OF ECONOMICS", "platform_id": "publisher-html", "status": "未发现论文 RSS", "source_url": "https://academic.oup.com/qje" },
-    { "journal_id": "j19", "journal_name": "REVIEW OF ECONOMIC STUDIES", "platform_id": "publisher-html", "status": "未发现论文 RSS", "source_url": "https://academic.oup.com/restud" },
-    { "journal_id": "j1", "journal_name": "JOURNAL OF FINANCE", "platform_id": "non-article-feed", "status": "非论文 RSS", "source_url": "https://afajof.org/forthcoming-articles/" },
-    { "journal_id": "j22", "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY", "platform_id": "non-article-feed", "status": "非论文 RSS", "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/" }
+    { "journal_id": "j2", "journal_name": "经济研究", "platform_id": "ajcass", "status": "接口规则", "source_url": "https://erj.ajcass.com/#/index", "adapter_rule": { "kind": "ajcass-current-api", "journal_platform_id": 201803050001 } },
+    { "journal_id": "j4", "journal_name": "中国工业经济", "platform_id": "ajcass", "status": "静态规则", "source_url": "http://ciejournal.ajcass.com/", "adapter_rule": { "kind": "cie-legacy-html" } },
+    { "journal_id": "j12", "journal_name": "中国农村经济", "platform_id": "ajcass", "status": "接口规则", "source_url": "https://zgncjj.ajcass.com/#/", "adapter_rule": { "kind": "ajcass-current-api", "journal_platform_id": 201606270007 } },
+    { "journal_id": "j3", "journal_name": "世界经济", "platform_id": "cn-journal-cms", "status": "静态规则", "source_url": "https://sjjj.magtech.com.cn/CN/home", "adapter_rule": { "kind": "magtech-cn-html" } },
+    { "journal_id": "j5", "journal_name": "金融研究", "platform_id": "cn-journal-cms", "status": "静态规则", "source_url": "http://www.jryj.org.cn/CN/1002-7246/home.shtml", "adapter_rule": { "kind": "jryj-html" } },
+    { "journal_id": "j6", "journal_name": "管理世界", "platform_id": "cnki-cbpt", "status": "验证码阻断", "source_url": "https://glsj.cbpt.cnki.net/WKB/WebPublication/wkTextContent.aspx?colType=4&tp=gklb&mid=glsj", "adapter_rule": { "kind": "cnki-captcha-check" } },
+    { "journal_id": "j8", "journal_name": "公共管理学报", "platform_id": "cnki-cbpt", "status": "静态规则", "source_url": "https://gggl.cbpt.cnki.net/portal", "adapter_rule": { "kind": "cnki-portal-paper" } },
+    { "journal_id": "j7", "journal_name": "南开管理评论", "platform_id": "university-custom", "status": "待绕过页面防护", "source_url": "https://nbr.nankai.edu.cn/nkglpl/home", "adapter_rule": { "kind": "nankai-protected-html" } },
+    { "journal_id": "j9", "journal_name": "管理科学学报", "platform_id": "university-custom", "status": "期号规则", "source_url": "https://jmsc.tju.edu.cn/jmsc/issue/browser", "adapter_rule": { "kind": "jmsc-issue-html" } },
+    { "journal_id": "j10", "journal_name": "中国行政管理", "platform_id": "association-custom", "status": "先修 URL", "source_url": "https://www.cpaj.com.cn/", "adapter_rule": { "kind": "missing-entry-url" } },
+    { "journal_id": "j11", "journal_name": "会计研究", "platform_id": "association-custom", "status": "期号可见但无文章链接", "source_url": "http://www.asc.org.cn/AccountingResearch/NewestArticleList.aspx", "adapter_rule": { "kind": "asc-issue-list" } },
+    { "journal_id": "j15", "journal_name": "ACCOUNTING REVIEW", "platform_id": "publisher-html", "status": "403 阻断", "source_url": "https://publications.aaahq.org/accounting-review/issue/101/3", "adapter_rule": { "kind": "aaahq-issue-html" } },
+    { "journal_id": "j16", "journal_name": "AMERICAN ECONOMIC REVIEW", "platform_id": "publisher-html", "status": "静态规则", "source_url": "https://www.aeaweb.org/journals/aer/forthcoming", "adapter_rule": { "kind": "aea-forthcoming-html" } },
+    { "journal_id": "j18", "journal_name": "QUARTERLY JOURNAL OF ECONOMICS", "platform_id": "publisher-html", "status": "403 阻断", "source_url": "https://academic.oup.com/qje/advance-articles", "adapter_rule": { "kind": "oup-advance-html" } },
+    { "journal_id": "j19", "journal_name": "REVIEW OF ECONOMIC STUDIES", "platform_id": "publisher-html", "status": "403 阻断", "source_url": "https://academic.oup.com/restud/advance-articles", "adapter_rule": { "kind": "oup-advance-html" } },
+    { "journal_id": "j1", "journal_name": "JOURNAL OF FINANCE", "platform_id": "non-article-feed", "status": "DOI 反推规则", "source_url": "https://afajof.org/forthcoming-articles/", "adapter_rule": { "kind": "afa-forthcoming-doi" } },
+    { "journal_id": "j22", "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY", "platform_id": "non-article-feed", "status": "静态规则", "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/", "adapter_rule": { "kind": "asq-sage-links" } }
   ]
 }

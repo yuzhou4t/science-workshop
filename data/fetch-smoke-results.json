@@ -1,11 +1,12 @@
 {
   "summary": {
-    "checked_at": "2026-05-25T02:17:04.985Z",
+    "checked_at": "2026-05-25T02:43:35.915Z",
     "direct_feeds_total": 5,
     "direct_feeds_ok": 5,
     "adapter_sources_total": 17,
-    "adapter_sources_with_candidates": 7,
-    "adapter_sources_need_rules": 10
+    "adapter_sources_article_ready": 10,
+    "adapter_sources_blocked": 7,
+    "article_ready_total": 15
   },
   "results": [
     {
@@ -13,26 +14,35 @@
       "journal_id": "j13",
       "journal_name": "ACADEMY OF MANAGEMENT REVIEW",
       "source_url": "https://journals.aom.org/action/showFeed?jc=amr&type=etoc&feed=rss",
+      "probe_url": "https://journals.aom.org/action/showFeed?jc=amr&type=etoc&feed=rss",
+      "extraction_rule": "atypon-etoc",
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
+      "transport": "fetch",
+      "fetch_ms": 1357,
       "ok": true,
+      "usable_as_data_source": true,
       "article_count": 8,
+      "candidate_count": 79,
       "samples": [
         {
           "title": "How to R.E.S.P.O.N.D.: A Framework for Thoughtful Revisions and Scholarly Dialogue",
-          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2026.0147?af=R",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2026.0147",
           "date": ""
         },
         {
           "title": "2025 Presidential Address: Activism, Impact, and Science: Management Scholarship in a Challenging Era",
-          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0742?af=R",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0742",
           "date": ""
         },
         {
           "title": "From the Evaluator’s Perspective: A Functional Approach to Social Judgments",
-          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2020.0405?af=R",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amr.2020.0405",
           "date": ""
         }
+      ],
+      "notes": [
+        "filtered_non_article:71"
       ],
       "error": ""
     },
@@ -41,54 +51,72 @@
       "journal_id": "j14",
       "journal_name": "JOURNAL OF FINANCE",
       "source_url": "https://onlinelibrary.wiley.com/action/showFeed?jc=15406261&type=etoc&feed=rss",
+      "probe_url": "https://onlinelibrary.wiley.com/action/showFeed?jc=15406261&type=etoc&feed=rss",
+      "extraction_rule": "wiley-etoc",
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
+      "transport": "curl",
+      "fetch_ms": 7027,
       "ok": true,
+      "usable_as_data_source": true,
       "article_count": 8,
+      "candidate_count": 27,
       "samples": [
         {
           "title": "Hedger of Last Resort: Evidence from Brazilian FX Interventions, Local Credit, and Global Financial Cycles",
-          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70054?af=R",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70054",
           "date": "Fri, 22 May 2026 23:38:25 -0700"
         },
         {
           "title": "Quote Competition in Corporate Bonds",
-          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70048?af=R",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70048",
           "date": "Fri, 22 May 2026 23:37:08 -0700"
         },
         {
-          "title": "ANNOUNCEMENTS",
-          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70017?af=R",
+          "title": "AMERICAN FINANCE ASSOCIATION",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.13350",
           "date": "Fri, 22 May 2026 20:54:22 -0700"
         }
       ],
-      "error": ""
+      "notes": [
+        "filtered_non_article:19"
+      ],
+      "error": "fetch failed"
     },
     {
       "type": "direct_rss",
       "journal_id": "j17",
       "journal_name": "JOURNAL OF POLITICAL ECONOMY",
       "source_url": "https://www.journals.uchicago.edu/action/showFeed?jc=jpe&type=etoc&feed=rss",
+      "probe_url": "https://www.journals.uchicago.edu/action/showFeed?jc=jpe&type=etoc&feed=rss",
+      "extraction_rule": "atypon-etoc",
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
+      "transport": "fetch",
+      "fetch_ms": 1888,
       "ok": true,
+      "usable_as_data_source": true,
       "article_count": 8,
+      "candidate_count": 20,
       "samples": [
         {
           "title": "A Model of Social Duties",
-          "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/739834?af=R",
+          "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/739834",
           "date": ""
         },
         {
           "title": "Private Private Information",
-          "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/739833?af=R",
+          "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/739833",
           "date": ""
         },
         {
           "title": "Algorithm Design: A Fairness-Accuracy Frontier",
-          "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/739826?af=R",
+          "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/739826",
           "date": ""
         }
+      ],
+      "notes": [
+        "filtered_non_article:12"
       ],
       "error": ""
     },
@@ -97,26 +125,35 @@
       "journal_id": "j20",
       "journal_name": "ECONOMETRICA",
       "source_url": "https://onlinelibrary.wiley.com/action/showFeed?jc=14680262&type=etoc&feed=rss",
+      "probe_url": "https://onlinelibrary.wiley.com/action/showFeed?jc=14680262&type=etoc&feed=rss",
+      "extraction_rule": "wiley-etoc",
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
+      "transport": "fetch",
+      "fetch_ms": 1183,
       "ok": true,
+      "usable_as_data_source": true,
       "article_count": 8,
+      "candidate_count": 14,
       "samples": [
         {
-          "title": "Backmatter of Econometrica Vol. 94 Iss. 2",
-          "url": "https://onlinelibrary.wiley.com/doi/10.3982/ECTA942BM?af=R",
+          "title": "Spatial Economics for Granular Settings",
+          "url": "https://onlinelibrary.wiley.com/doi/10.3982/ECTA19350",
           "date": "Wed, 01 Apr 2026 05:25:22 -0700"
         },
         {
-          "title": "Frontmatter of Econometrica 94 Iss. 2",
-          "url": "https://onlinelibrary.wiley.com/doi/10.3982/ECTA942FM?af=R",
+          "title": "Trade and Domestic Distortions: The Case of Informality",
+          "url": "https://onlinelibrary.wiley.com/doi/10.3982/ECTA19378",
           "date": "Wed, 01 Apr 2026 05:25:22 -0700"
         },
         {
-          "title": "2025 Election of Fellows to the Econometric Society",
-          "url": "https://onlinelibrary.wiley.com/doi/10.3982/ECTA942EF?af=R",
+          "title": "Optimal Shrinkage Estimation of Fixed Effects in Linear Panel Data Models",
+          "url": "https://onlinelibrary.wiley.com/doi/10.3982/ECTA22386",
           "date": "Wed, 01 Apr 2026 05:25:22 -0700"
         }
+      ],
+      "notes": [
+        "filtered_non_article:6"
       ],
       "error": ""
     },
@@ -125,26 +162,35 @@
       "journal_id": "j21",
       "journal_name": "ACADEMY OF MANAGEMENT JOURNAL",
       "source_url": "https://journals.aom.org/action/showFeed?jc=amj&type=etoc&feed=rss",
+      "probe_url": "https://journals.aom.org/action/showFeed?jc=amj&type=etoc&feed=rss",
+      "extraction_rule": "atypon-etoc",
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
+      "transport": "fetch",
+      "fetch_ms": 1132,
       "ok": true,
+      "usable_as_data_source": true,
       "article_count": 8,
+      "candidate_count": 58,
       "samples": [
         {
           "title": "Artificial Intelligence and Responsible Research at AMJ",
-          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2026.4002?af=R",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2026.4002",
           "date": ""
         },
         {
           "title": "Violence and Competition: The Effect of Mass Shootings and Domestic Terrorism on Organizational Risk-Taking in Response to Performance Shortfalls",
-          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.0306?af=R",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.0306",
           "date": ""
         },
         {
           "title": "How Employees Who Have Made Upward Social Class Transitions Get Heard in the Workplace",
-          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.0042?af=R",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.0042",
           "date": ""
         }
+      ],
+      "notes": [
+        "filtered_non_article:50"
       ],
       "error": ""
     },
@@ -153,12 +199,39 @@
       "journal_id": "j2",
       "journal_name": "经济研究",
       "platform_id": "ajcass",
+      "platform_name": "AJCass 社科院平台",
       "source_url": "https://erj.ajcass.com/#/index",
+      "probe_url": "https://api.ajcass.com/api/SiteWebApi/GetCurrentPeriodMutiChannel?JournalID=201803050001",
+      "extraction_rule": "ajcass-current-api",
       "status": 200,
-      "content_type": "text/html",
-      "ok": false,
-      "article_count": 0,
-      "samples": [],
+      "content_type": "application/json; charset=utf-8",
+      "transport": "fetch",
+      "fetch_ms": 1780,
+      "ok": true,
+      "usable_as_data_source": true,
+      "article_count": 8,
+      "candidate_count": 11,
+      "samples": [
+        {
+          "title": "构建中国经济学自主知识体系丨中国经济学的继承性、民族性问题探讨——学习贯彻习近平总书记在哲学社会科学工作座谈会上的重要讲话精神",
+          "url": "https://erj.ajcass.com/#/issueDetail?id=122885",
+          "date": "2026-04",
+          "authors": "裴长洪"
+        },
+        {
+          "title": "产业结构变化机制及其对经济增长的影响——兼论保持制造业合理比重的必要性",
+          "url": "https://erj.ajcass.com/#/issueDetail?id=122886",
+          "date": "2026-04",
+          "authors": "王弟海，吴茂华，潘士远"
+        },
+        {
+          "title": "社会资本参与、市场承诺与应用基础研究创新",
+          "url": "https://erj.ajcass.com/#/issueDetail?id=122887",
+          "date": "2026-04",
+          "authors": "冷萱，钟诗宇，曾宪聚，朱田恬"
+        }
+      ],
+      "notes": [],
       "error": ""
     },
     {
@@ -166,25 +239,76 @@
       "journal_id": "j4",
       "journal_name": "中国工业经济",
       "platform_id": "ajcass",
-      "source_url": "https://ciejournal.ajcass.com/",
-      "status": "ERR",
-      "content_type": "",
-      "ok": false,
-      "article_count": 0,
-      "samples": [],
-      "error": "timeout"
+      "platform_name": "AJCass 社科院平台",
+      "source_url": "http://ciejournal.ajcass.com/",
+      "probe_url": "http://ciejournal.ajcass.com/",
+      "extraction_rule": "cie-legacy-html",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "transport": "curl",
+      "fetch_ms": 40124,
+      "ok": true,
+      "usable_as_data_source": true,
+      "article_count": 8,
+      "candidate_count": 253,
+      "samples": [
+        {
+          "title": "贸易政策不确定性、供应链暴露网络与全球违约风险——来自异质性空间自回归模型的新证据",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=122793",
+          "date": ""
+        },
+        {
+          "title": "工业智能化与收入分配格局演变：经济发展机遇背后的分配失衡隐忧",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=122794",
+          "date": ""
+        },
+        {
+          "title": "迈向全球共享繁荣：偏向性技术进步适宜性如何缓解收入不平等",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=122795",
+          "date": ""
+        }
+      ],
+      "notes": [],
+      "error": "curl: (28) Operation timed out after 23092 milliseconds with 474575 out of 530438 bytes received"
     },
     {
       "type": "adapter_source",
       "journal_id": "j12",
       "journal_name": "中国农村经济",
       "platform_id": "ajcass",
+      "platform_name": "AJCass 社科院平台",
       "source_url": "https://zgncjj.ajcass.com/#/",
+      "probe_url": "https://api.ajcass.com/api/SiteWebApi/GetCurrentPeriodMutiChannel?JournalID=201606270007",
+      "extraction_rule": "ajcass-current-api",
       "status": 200,
-      "content_type": "text/html",
-      "ok": false,
-      "article_count": 0,
-      "samples": [],
+      "content_type": "application/json; charset=utf-8",
+      "transport": "fetch",
+      "fetch_ms": 1928,
+      "ok": true,
+      "usable_as_data_source": true,
+      "article_count": 8,
+      "candidate_count": 9,
+      "samples": [
+        {
+          "title": "论巩固和完善农村基本经营制度",
+          "url": "https://zgncjj.ajcass.com/#/issueDetail?id=122803",
+          "date": "2026-05",
+          "authors": "胡凌啸"
+        },
+        {
+          "title": "县域城乡融合发展的理论逻辑与实践模式——基于中国特色实践的一般性分析框架",
+          "url": "https://zgncjj.ajcass.com/#/issueDetail?id=122824",
+          "date": "2026-05",
+          "authors": "钟苏娟 黄贤金 贾铠阳"
+        },
+        {
+          "title": "高素质农民培育何以驱动县域经济发展——基于新型职业农民培育示范政策的实证研究",
+          "url": "https://zgncjj.ajcass.com/#/issueDetail?id=122825",
+          "date": "2026-05",
+          "authors": "徐卓君 吴贾 吴顺利"
+        }
+      ],
+      "notes": [],
       "error": ""
     },
     {
@@ -192,12 +316,36 @@
       "journal_id": "j3",
       "journal_name": "世界经济",
       "platform_id": "cn-journal-cms",
-      "source_url": "https://sjjj.magtech.com.cn/CN/archive_by_years",
+      "platform_name": "中文期刊 CMS / Magtech",
+      "source_url": "https://sjjj.magtech.com.cn/CN/home",
+      "probe_url": "https://sjjj.magtech.com.cn/CN/home",
+      "extraction_rule": "magtech-cn-html",
       "status": 200,
       "content_type": "text/html;charset=UTF-8",
-      "ok": false,
-      "article_count": 0,
-      "samples": [],
+      "transport": "fetch",
+      "fetch_ms": 3252,
+      "ok": true,
+      "usable_as_data_source": true,
+      "article_count": 8,
+      "candidate_count": 8,
+      "samples": [
+        {
+          "title": "极端天气、贸易信贷传导与供应链稳定",
+          "url": "https://sjjj.magtech.com.cn/CN/Y2026/V49/I5/3",
+          "date": ""
+        },
+        {
+          "title": "新闻情绪与人民币汇率预期",
+          "url": "https://sjjj.magtech.com.cn/CN/Y2026/V49/I5/39",
+          "date": ""
+        },
+        {
+          "title": "科技赋能司法与全国统一大市场的形成",
+          "url": "https://sjjj.magtech.com.cn/CN/Y2026/V49/I5/77",
+          "date": ""
+        }
+      ],
+      "notes": [],
       "error": ""
     },
     {
@@ -205,28 +353,36 @@
       "journal_id": "j5",
       "journal_name": "金融研究",
       "platform_id": "cn-journal-cms",
-      "source_url": "http://www.jryj.org.cn/CN/article/showOldVolumnList.do",
+      "platform_name": "中文期刊 CMS / Magtech",
+      "source_url": "http://www.jryj.org.cn/CN/1002-7246/home.shtml",
+      "probe_url": "http://www.jryj.org.cn/CN/1002-7246/home.shtml",
+      "extraction_rule": "jryj-html",
       "status": 200,
       "content_type": "text/html;charset=UTF-8",
+      "transport": "fetch",
+      "fetch_ms": 7017,
       "ok": true,
-      "article_count": 5,
+      "usable_as_data_source": true,
+      "article_count": 8,
+      "candidate_count": 31,
       "samples": [
         {
-          "title": "中国金融论坛·第十七届《金融研究》论坛征文启事",
-          "url": "http://www.jryj.org.cn/CN/column/item87.shtml",
+          "title": "中国的利率体系与利率市场化改革",
+          "url": "http://www.jryj.org.cn/CN/Y2021/V495/I9/1",
           "date": ""
         },
         {
-          "title": "《金融研究》2024年度优秀论文公示",
-          "url": "http://www.jryj.org.cn/CN/column/item86.shtml",
+          "title": "公众预期、政策协调与房地产金融宏观审慎政策有效性",
+          "url": "http://www.jryj.org.cn/CN/abstract/abstract1596.shtml",
           "date": ""
         },
         {
-          "title": "中国金融论坛·第十六届《金融研究》论坛征文启事",
-          "url": "http://www.jryj.org.cn/CN/column/item85.shtml",
+          "title": "关税冲击与人民币货币锚地位调整——来自2018—2020年中美贸易摩擦的经验证据",
+          "url": "http://www.jryj.org.cn/CN/abstract/abstract1597.shtml",
           "date": ""
         }
       ],
+      "notes": [],
       "error": ""
     },
     {
@@ -234,12 +390,22 @@
       "journal_id": "j6",
       "journal_name": "管理世界",
       "platform_id": "cnki-cbpt",
+      "platform_name": "CNKI / 采编平台",
       "source_url": "https://glsj.cbpt.cnki.net/WKB/WebPublication/wkTextContent.aspx?colType=4&tp=gklb&mid=glsj",
+      "probe_url": "https://glsj.cbpt.cnki.net/WKB/WebPublication/wkTextContent.aspx?colType=4&tp=gklb&mid=glsj",
+      "extraction_rule": "cnki-captcha-check",
       "status": 200,
       "content_type": "text/html; charset=utf-8",
+      "transport": "fetch",
+      "fetch_ms": 4663,
       "ok": false,
+      "usable_as_data_source": false,
       "article_count": 0,
+      "candidate_count": 0,
       "samples": [],
+      "notes": [
+        "captcha_required"
+      ],
       "error": ""
     },
     {
@@ -247,28 +413,36 @@
       "journal_id": "j8",
       "journal_name": "公共管理学报",
       "platform_id": "cnki-cbpt",
+      "platform_name": "CNKI / 采编平台",
       "source_url": "https://gggl.cbpt.cnki.net/portal",
+      "probe_url": "https://gggl.cbpt.cnki.net/portal",
+      "extraction_rule": "cnki-portal-paper",
       "status": 200,
       "content_type": "text/html;charset=UTF-8",
+      "transport": "fetch",
+      "fetch_ms": 7188,
       "ok": true,
+      "usable_as_data_source": true,
       "article_count": 8,
+      "candidate_count": 12,
       "samples": [
         {
-          "title": "作者投稿入口 投稿 跟踪查询您的稿件的信息 与编辑部交流 查询稿件缴费情况",
-          "url": "https://gggl.cbpt.cnki.net/editor",
+          "title": "治理刚性与发展韧性之间的张力如何催生治理创新？——乡村振兴战略下制度张力的调适机制",
+          "url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/96f94922a46fa9e15ab6abc22eae2c55",
           "date": ""
         },
         {
-          "title": "编辑办公入口 采、编、审等事务办公 管理稿件 管理作者信息和外审专家信息",
-          "url": "https://gggl.cbpt.cnki.net/editor",
+          "title": "资源约束型乡村产业新内源发展的过程与机制——基于“政府-市场-集体”协同视角的案例研究",
+          "url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/01a4f4e944c9700d3740488523d53e88",
           "date": ""
         },
         {
-          "title": "专家办公入口 在线审稿 与编辑部在线交流",
-          "url": "https://gggl.cbpt.cnki.net/editor",
+          "title": "何以落地生根：乡村治理积分制有效实施的影响因素与机制——基于多案例比较的计算扎根分析",
+          "url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/4c409240451fb151f0c90f04366a69a6",
           "date": ""
         }
       ],
+      "notes": [],
       "error": ""
     },
     {
@@ -276,40 +450,60 @@
       "journal_id": "j7",
       "journal_name": "南开管理评论",
       "platform_id": "university-custom",
+      "platform_name": "高校自建站",
       "source_url": "https://nbr.nankai.edu.cn/nkglpl/home",
+      "probe_url": "https://nbr.nankai.edu.cn/nkglpl/home",
+      "extraction_rule": "nankai-protected-html",
       "status": 412,
       "content_type": "text/html; charset=utf-8",
+      "transport": "curl",
+      "fetch_ms": 7537,
       "ok": false,
+      "usable_as_data_source": false,
       "article_count": 0,
+      "candidate_count": 0,
       "samples": [],
-      "error": ""
+      "notes": [
+        "client_challenge_or_page_protection"
+      ],
+      "error": "fetch failed"
     },
     {
       "type": "adapter_source",
       "journal_id": "j9",
       "journal_name": "管理科学学报",
       "platform_id": "university-custom",
+      "platform_name": "高校自建站",
       "source_url": "https://jmsc.tju.edu.cn/jmsc/issue/browser",
+      "probe_url": "https://jmsc.tju.edu.cn/jmsc/article/issue/2026_4",
+      "extraction_rule": "jmsc-issue-html",
       "status": 200,
       "content_type": "text/html; charset=utf-8",
+      "transport": "fetch",
+      "fetch_ms": 667,
       "ok": true,
-      "article_count": 6,
+      "usable_as_data_source": true,
+      "article_count": 8,
+      "candidate_count": 253,
       "samples": [
         {
-          "title": "《管理科学学报》严正声明（2026）",
-          "url": "https://jmsc.tju.edu.cn/jmsc/issue/jmsc/news/view/20260405224040001",
+          "title": "异质性环境规制、绿色创新与企业绿色形象的关系研究",
+          "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260401?st=article_issue",
           "date": ""
         },
         {
-          "title": "《管理科学学报》严正声明",
-          "url": "https://jmsc.tju.edu.cn/jmsc/issue/jmsc/news/view/20251201163215001",
+          "title": "区域一体化推进的工业污染集聚效应——来自长三角边界效应与扩容影响的证据",
+          "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260402?st=article_issue",
           "date": ""
         },
         {
-          "title": "关于新投稿上传匿名稿件的通知",
-          "url": "https://jmsc.tju.edu.cn/jmsc/issue/jmsc/news/view/20230116102947001",
+          "title": "数字金融的治理效应研究——基于盈余管理的视角",
+          "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260403?st=article_issue",
           "date": ""
         }
+      ],
+      "notes": [
+        "issue_candidates:253"
       ],
       "error": ""
     },
@@ -318,30 +512,42 @@
       "journal_id": "j10",
       "journal_name": "中国行政管理",
       "platform_id": "association-custom",
+      "platform_name": "协会 / 自建系统",
       "source_url": "https://www.cpaj.com.cn/",
+      "probe_url": "https://www.cpaj.com.cn/",
+      "extraction_rule": "missing-entry-url",
       "status": "ERR",
       "content_type": "",
+      "transport": "curl",
+      "fetch_ms": 6105,
       "ok": false,
+      "usable_as_data_source": false,
       "article_count": 0,
+      "candidate_count": 0,
       "samples": [],
-      "error": "fetch failed"
+      "notes": [],
+      "error": "curl: (60) SSL certificate problem: certificate has expired More details here: https://curl.se/docs/sslcerts.html "
     },
     {
       "type": "adapter_source",
       "journal_id": "j11",
       "journal_name": "会计研究",
       "platform_id": "association-custom",
-      "source_url": "http://www.asc.org.cn/AccountingResearch/BrowsePeriodical.aspx",
+      "platform_name": "协会 / 自建系统",
+      "source_url": "http://www.asc.org.cn/AccountingResearch/NewestArticleList.aspx",
+      "probe_url": "http://www.asc.org.cn/AccountingResearch/ArticleList.aspx?year=2026&issue=5",
+      "extraction_rule": "asc-issue-list",
       "status": 200,
       "content_type": "text/html; charset=gb2312",
-      "ok": true,
-      "article_count": 1,
-      "samples": [
-        {
-          "title": "重点文章 最新目录",
-          "url": "http://www.asc.org.cn/AccountingResearch/ArticleList.aspx",
-          "date": ""
-        }
+      "transport": "fetch",
+      "fetch_ms": 1866,
+      "ok": false,
+      "usable_as_data_source": false,
+      "article_count": 0,
+      "candidate_count": 5,
+      "samples": [],
+      "notes": [
+        "issue_page_has_no_article_links"
       ],
       "error": ""
     },
@@ -350,12 +556,20 @@
       "journal_id": "j15",
       "journal_name": "ACCOUNTING REVIEW",
       "platform_id": "publisher-html",
+      "platform_name": "英文出版平台页面",
       "source_url": "https://publications.aaahq.org/accounting-review/issue/101/3",
+      "probe_url": "https://publications.aaahq.org/accounting-review/issue/101/3",
+      "extraction_rule": "aaahq-issue-html",
       "status": 403,
       "content_type": "text/html; charset=UTF-8",
+      "transport": "fetch",
+      "fetch_ms": 1309,
       "ok": false,
+      "usable_as_data_source": false,
       "article_count": 0,
+      "candidate_count": 0,
       "samples": [],
+      "notes": [],
       "error": ""
     },
     {
@@ -363,28 +577,36 @@
       "journal_id": "j16",
       "journal_name": "AMERICAN ECONOMIC REVIEW",
       "platform_id": "publisher-html",
-      "source_url": "https://www.aeaweb.org/journals/aer",
+      "platform_name": "英文出版平台页面",
+      "source_url": "https://www.aeaweb.org/journals/aer/forthcoming",
+      "probe_url": "https://www.aeaweb.org/journals/aer/forthcoming",
+      "extraction_rule": "aea-forthcoming-html",
       "status": 200,
       "content_type": "text/html; charset=UTF-8",
+      "transport": "fetch",
+      "fetch_ms": 2205,
       "ok": true,
-      "article_count": 3,
+      "usable_as_data_source": true,
+      "article_count": 8,
+      "candidate_count": 34,
       "samples": [
         {
-          "title": "Annual Report of the Editor",
-          "url": "https://pubs.aeaweb.org/doi/pdfplus/10.1257/pandp.115.743",
+          "title": "Remote Work and City Structure",
+          "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20231414",
           "date": ""
         },
         {
-          "title": "Accepted Article Guidelines",
-          "url": "https://www.aeaweb.org/journals/aer/accepted-article-guidelines",
+          "title": "A Theory of Price Caps on Non-Renewable Resources",
+          "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20250064",
           "date": ""
         },
         {
-          "title": "Back Issues",
-          "url": "https://www.aeaweb.org/journals/subscriptions/backissues",
+          "title": "Talent Hoarding in Organizations",
+          "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20220264",
           "date": ""
         }
       ],
+      "notes": [],
       "error": ""
     },
     {
@@ -392,12 +614,20 @@
       "journal_id": "j18",
       "journal_name": "QUARTERLY JOURNAL OF ECONOMICS",
       "platform_id": "publisher-html",
-      "source_url": "https://academic.oup.com/qje",
+      "platform_name": "英文出版平台页面",
+      "source_url": "https://academic.oup.com/qje/advance-articles",
+      "probe_url": "https://academic.oup.com/qje/advance-articles",
+      "extraction_rule": "oup-advance-html",
       "status": 403,
       "content_type": "text/html; charset=UTF-8",
+      "transport": "fetch",
+      "fetch_ms": 910,
       "ok": false,
+      "usable_as_data_source": false,
       "article_count": 0,
+      "candidate_count": 0,
       "samples": [],
+      "notes": [],
       "error": ""
     },
     {
@@ -405,12 +635,20 @@
       "journal_id": "j19",
       "journal_name": "REVIEW OF ECONOMIC STUDIES",
       "platform_id": "publisher-html",
-      "source_url": "https://academic.oup.com/restud",
+      "platform_name": "英文出版平台页面",
+      "source_url": "https://academic.oup.com/restud/advance-articles",
+      "probe_url": "https://academic.oup.com/restud/advance-articles",
+      "extraction_rule": "oup-advance-html",
       "status": 403,
       "content_type": "text/html; charset=UTF-8",
+      "transport": "fetch",
+      "fetch_ms": 989,
       "ok": false,
+      "usable_as_data_source": false,
       "article_count": 0,
+      "candidate_count": 0,
       "samples": [],
+      "notes": [],
       "error": ""
     },
     {
@@ -418,18 +656,36 @@
       "journal_id": "j1",
       "journal_name": "JOURNAL OF FINANCE",
       "platform_id": "non-article-feed",
+      "platform_name": "非论文 RSS 来源",
       "source_url": "https://afajof.org/forthcoming-articles/",
+      "probe_url": "https://afajof.org/forthcoming-articles/",
+      "extraction_rule": "afa-forthcoming-doi",
       "status": 200,
       "content_type": "text/html; charset=UTF-8",
+      "transport": "fetch",
+      "fetch_ms": 1702,
       "ok": true,
-      "article_count": 1,
+      "usable_as_data_source": true,
+      "article_count": 8,
+      "candidate_count": 11,
       "samples": [
         {
-          "title": "Call for Papers Calendar",
-          "url": "https://afajof.org/call-for-papers-calendar/",
+          "title": "Quote Competition in Corporate Bonds",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70048",
+          "date": ""
+        },
+        {
+          "title": "Hedger of Last Resort: Evidence from Brazilian FX Interventions, Local Credit, and Global Financial Cycles",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70054",
+          "date": ""
+        },
+        {
+          "title": "Investing with Purpose: Evidence from Private Foundations",
+          "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70055",
           "date": ""
         }
       ],
+      "notes": [],
       "error": ""
     },
     {
@@ -437,28 +693,36 @@
       "journal_id": "j22",
       "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
       "platform_id": "non-article-feed",
+      "platform_name": "非论文 RSS 来源",
       "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "extraction_rule": "asq-sage-links",
       "status": 200,
       "content_type": "text/html; charset=UTF-8",
+      "transport": "fetch",
+      "fetch_ms": 1442,
       "ok": true,
+      "usable_as_data_source": true,
       "article_count": 8,
+      "candidate_count": 13,
       "samples": [
         {
           "title": "Unequal in the Spotlight: Gender Differences in How Serving on Prominent Firms Affects Directors’ New Board Appointments",
-          "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251405843?_gl=1*1utitty*_up*MQ..*_ga*MTE4MzI5MzM2OS4xNzc2MDkzMzAw*_ga_60R758KFDG*czE3NzYwOTMzMDAkbzEkZzAkdDE3NzYwOTMzMDAkajYwJGwwJGgxOTg5MzU1Nzkz",
+          "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251405843",
           "date": ""
         },
         {
           "title": "Interpreting Violence: How Community Context Shapes Corporate Responses to Street Protests",
-          "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261419416?_gl=1*8f4goz*_up*MQ..*_ga*MTE4MzI5MzM2OS4xNzc2MDkzMzAw*_ga_60R758KFDG*czE3NzYwOTMzMDAkbzEkZzEkdDE3NzYwOTMzMzckajIzJGwwJGgxOTg5MzU1Nzkz",
+          "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261419416",
           "date": ""
         },
         {
           "title": "Democratic Deviations: How Organizations Sustain Decentralization Commitments in the Face of Centralization Pressures",
-          "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261421927?_gl=1*trnk6x*_up*MQ..*_ga*MTE4MzI5MzM2OS4xNzc2MDkzMzAw*_ga_60R758KFDG*czE3NzYwOTMzMDAkbzEkZzEkdDE3NzYwOTMzNjgkajYwJGwwJGgxOTg5MzU1Nzkz",
+          "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261421927",
           "date": ""
         }
       ],
+      "notes": [],
       "error": ""
     }
   ]
