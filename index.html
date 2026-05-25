@@ -520,7 +520,7 @@
 
       .date-filter-grid {
         display: grid;
-        grid-template-columns: minmax(150px, 1fr) minmax(150px, 1fr) auto auto auto;
+        grid-template-columns: minmax(170px, 280px) auto auto;
         gap: 8px;
         align-items: center;
       }
@@ -659,17 +659,8 @@
         padding-bottom: 10px;
       }
 
-      .timeline-time {
-        padding-top: calc(var(--tl-dot-top) - 6px);
-        padding-right: 10px;
-        color: var(--text-0);
-        font-family: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
-        font-size: 18px;
-        font-weight: 800;
-        letter-spacing: -0.05em;
-        line-height: 1.1;
-        text-align: right;
-        white-space: nowrap;
+      .timeline-spacer {
+        min-height: 1px;
       }
 
       .timeline-rail {
@@ -1548,11 +1539,6 @@
           --tl-rail-w: 18px;
         }
 
-        .timeline-time {
-          font-size: 13px;
-          letter-spacing: -0.02em;
-        }
-
         .timeline-card {
           padding: 12px;
           border-radius: 14px;
@@ -1660,12 +1646,10 @@
                   <div class="segmented" id="languageFilters" aria-label="语言筛选"></div>
                 </div>
                 <div class="filter-row">
-                  <div class="filter-row-head"><span>Date</span><span>按具体日期或日期段筛选</span></div>
+                  <div class="filter-row-head"><span>Date</span><span>按单日筛选推送</span></div>
                   <div class="date-filter-grid">
-                    <input class="field" id="dateFromInput" type="date" aria-label="开始日期" />
-                    <input class="field" id="dateToInput" type="date" aria-label="结束日期" />
+                    <input class="field" id="dateInput" type="date" aria-label="筛选日期" />
                     <button class="btn btn-ghost" id="todayDateRange" type="button">今天</button>
-                    <button class="btn btn-ghost" id="monthDateRange" type="button">本月</button>
                     <button class="btn btn-ghost" id="clearDateRange" type="button">清空</button>
                   </div>
                 </div>
@@ -2158,7 +2142,6 @@
             dateStart: range.start,
             dateEnd: range.end,
             datePrecision: range.precision,
-            time: row.push_basis === "published_date" ? "09:30" : row.push_basis === "issue_date" ? "10:00" : "10:30",
             kind,
             title: row.title,
             summary: `${authorText} · ${dateText} · ${row.extraction_rule}`,
@@ -2170,7 +2153,7 @@
             tags: [journal.subject, journal.lang, journal.rating, kind],
             status: row.push_basis === "first_seen" ? "warn" : journal.rating === "A+" ? "priority" : "normal"
           };
-        }).sort((a, b) => `${b.dateStart} ${b.time}`.localeCompare(`${a.dateStart} ${a.time}`));
+        }).sort((a, b) => b.dateStart.localeCompare(a.dateStart) || a.title.localeCompare(b.title, "zh-Hans-CN"));
       }
 
       function buildFallbackArticles() {
@@ -2183,7 +2166,6 @@
             dateStart: "2026-05-25",
             dateEnd: "2026-05-25",
             datePrecision: "day",
-            time: "10:05",
             kind: "数据源样例",
             title: `${journal.name} 数据源样例`,
             summary: "尚未加载 recent-front-data.js，当前显示期刊数据源样例。",
@@ -2204,8 +2186,7 @@
       let activeLanguage = "全部";
       let activeJournalId = "";
       let query = "";
-      let activeDateFrom = workflowData.summary?.since || "";
-      let activeDateTo = workflowData.summary?.until || "";
+      let activeDate = "";
       let selectedArticleId = articles[0].id;
       let selectedJournalId = articles[0].journalId;
 
@@ -2235,9 +2216,8 @@
       }
 
       function matchesDateRange(article) {
-        const from = activeDateFrom || "0000-01-01";
-        const to = activeDateTo || "9999-12-31";
-        return article.dateEnd >= from && article.dateStart <= to;
+        if (!activeDate) return true;
+        return article.dateStart <= activeDate && article.dateEnd >= activeDate;
       }
 
       function renderStats() {
@@ -2287,11 +2267,7 @@
         if (activeLanguage !== "全部") parts.push(activeLanguage);
         if (activeSubject !== "全部") parts.push(activeSubject);
         if (activeJournalId) parts.push(journalById(activeJournalId).name);
-        if (activeDateFrom || activeDateTo) {
-          const fromLabel = activeDateFrom ? formatDateLabel(activeDateFrom) : "开始";
-          const toLabel = activeDateTo ? formatDateLabel(activeDateTo) : "结束";
-          parts.push(`日期: ${fromLabel} 至 ${toLabel}`);
-        }
+        if (activeDate) parts.push(`日期: ${formatDateLabel(activeDate)}`);
         if (query.trim()) parts.push(`搜索: ${query.trim()}`);
         $("#activeFilterSummary").textContent = parts.length ? parts.join(" / ") : "先选中文或英文，再展开学科和期刊";
       }
@@ -2335,7 +2311,7 @@
         const scoreClass = article.status === "warn" ? "warn" : journal.rating === "A+" ? "aplus" : "";
         return `
           <article class="timeline-item">
-            <div class="timeline-time">${escapeHtml(article.time)}</div>
+            <div class="timeline-spacer" aria-hidden="true"></div>
             <div class="timeline-rail" aria-hidden="true"><span class="timeline-dot" style="--dot:${dotColor}"></span></div>
             <div class="timeline-card ${article.id === selectedArticleId ? "selected" : ""}" data-article-id="${article.id}">
               <div class="timeline-card-head">
@@ -2345,7 +2321,10 @@
               <a class="timeline-title" href="${validUrl(article.url) ? escapeHtml(article.url) : "#"}" target="_blank" rel="noopener noreferrer">${escapeHtml(article.title)}</a>
               <p class="timeline-summary">${escapeHtml(article.summary)}</p>
               <div class="tags">
-                ${article.tags.map((tag) => `<span class="tag ${tag === "中文" || tag === "英文" ? "cyan" : tag === "A+" ? "emerald" : ""}">${escapeHtml(tag)}</span>`).join("")}
+                ${article.tags.map((tag) => {
+                  const label = tag === journal.rating ? `刊物${tag}` : tag;
+                  return `<span class="tag ${tag === "中文" || tag === "英文" ? "cyan" : tag === "A+" ? "emerald" : ""}">${escapeHtml(label)}</span>`;
+                }).join("")}
               </div>
             </div>
           </article>
@@ -2377,7 +2356,7 @@
               ${recent.map((item) => `
                 <div class="mini-item">
                   <p class="mini-title">${escapeHtml(item.title)}</p>
-                  <div class="mini-meta">${formatDate(item.date)} ${escapeHtml(item.time)} · ${escapeHtml(item.kind)}</div>
+                  <div class="mini-meta">${formatDateLabel(item.datePrecision === "month" ? item.date.slice(0, 7) : item.date)} · ${escapeHtml(item.kind)}</div>
                 </div>
               `).join("")}
             </div>
@@ -2417,18 +2396,12 @@
         return workflowData.summary?.until || new Date().toISOString().slice(0, 10);
       }
 
-      function currentMonthStart() {
-        return `${workflowToday().slice(0, 7)}-01`;
-      }
-
       function syncDateInputs() {
-        $("#dateFromInput").value = activeDateFrom;
-        $("#dateToInput").value = activeDateTo;
+        $("#dateInput").value = activeDate;
       }
 
-      function applyDateRange(from, to) {
-        activeDateFrom = from;
-        activeDateTo = to;
+      function applyDateFilter(date) {
+        activeDate = date;
         syncDateInputs();
         renderTimeline();
       }
@@ -2634,27 +2607,17 @@
         renderTimeline();
       });
 
-      $("#dateFromInput").addEventListener("change", (event) => {
-        activeDateFrom = event.target.value;
-        renderTimeline();
-      });
-
-      $("#dateToInput").addEventListener("change", (event) => {
-        activeDateTo = event.target.value;
+      $("#dateInput").addEventListener("change", (event) => {
+        activeDate = event.target.value;
         renderTimeline();
       });
 
       $("#todayDateRange").addEventListener("click", () => {
-        const today = workflowToday();
-        applyDateRange(today, today);
-      });
-
-      $("#monthDateRange").addEventListener("click", () => {
-        applyDateRange(currentMonthStart(), workflowToday());
+        applyDateFilter(workflowToday());
       });
 
       $("#clearDateRange").addEventListener("click", () => {
-        applyDateRange("", "");
+        applyDateFilter("");
       });
 
       $("#timeline").addEventListener("click", (event) => {
