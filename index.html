@@ -518,6 +518,17 @@
         font-size: 12px;
       }
 
+      .date-filter-grid {
+        display: grid;
+        grid-template-columns: minmax(150px, 1fr) minmax(150px, 1fr) auto auto auto;
+        gap: 8px;
+        align-items: center;
+      }
+
+      .date-filter-grid .btn {
+        min-height: 40px;
+      }
+
       .field {
         min-height: 40px;
         width: 100%;
@@ -1511,6 +1522,7 @@
 
         .header-actions,
         .search-row,
+        .date-filter-grid,
         .ingest-grid,
         .ingest-form,
         .rss-pipeline,
@@ -1646,6 +1658,16 @@
                 <div class="filter-row">
                   <div class="filter-row-head"><span>Language</span><span>优先级 1</span></div>
                   <div class="segmented" id="languageFilters" aria-label="语言筛选"></div>
+                </div>
+                <div class="filter-row">
+                  <div class="filter-row-head"><span>Date</span><span>按具体日期或日期段筛选</span></div>
+                  <div class="date-filter-grid">
+                    <input class="field" id="dateFromInput" type="date" aria-label="开始日期" />
+                    <input class="field" id="dateToInput" type="date" aria-label="结束日期" />
+                    <button class="btn btn-ghost" id="todayDateRange" type="button">今天</button>
+                    <button class="btn btn-ghost" id="monthDateRange" type="button">本月</button>
+                    <button class="btn btn-ghost" id="clearDateRange" type="button">清空</button>
+                  </div>
                 </div>
                 <div id="classificationStage"></div>
               </div>
@@ -1873,6 +1895,7 @@
       </main>
     </div>
 
+    <script src="data/recent-front-data.js"></script>
     <script>
       const rawJournals = [
         ["1", "JOURNAL OF FINANCE", "BUSINESS,FINANCE", "", "0022-1082", "https://afajof.org/journal-of-finance/", "https://afajof.org/journal-of-finance/", "https://afajof.org/forthcoming-articles/", "A"],
@@ -2090,38 +2113,99 @@
         };
       }));
 
-      const articleTemplates = [
-        ["2026-05-25", "09:20", "新刊目录", "目录页进入监测队列，后续可解析标题、作者、摘要、发布日期与 DOI。"],
-        ["2026-05-25", "08:45", "样例文章", "样例文章 URL 已登记，可作为抓取规则和字段映射的第一条测试样本。"],
-        ["2026-05-24", "18:10", "来源校验", "官网、过刊入口、样例文章三类链接完成初步归档。"],
-        ["2026-05-24", "15:35", "更新节奏", "当前先按建议监测节奏执行，真实周期等待自动探测或人工确认。"]
-      ];
+      const workflowData = window.RECENT_WORKFLOW_DATA || { summary: null, push_queue: [] };
 
-      const articles = journals.map((journal, index) => {
-        const template = articleTemplates[index % articleTemplates.length];
-        const url = validUrl(journal.sample) ? journal.sample : validUrl(journal.archive) ? journal.archive : validUrl(journal.homepage) ? journal.homepage : "";
-        const isWarning = journal.health !== "ok";
-        return {
-          id: `a-${journal.id}`,
-          journalId: journal.id,
-          date: isWarning ? "2026-05-25" : template[0],
-          time: isWarning ? "10:05" : template[1],
-          kind: isWarning ? "异常提示" : template[2],
-          title: isWarning ? `${journal.name} 数据源需要人工复核` : `${journal.name} ${template[2]}推送`,
-          summary: isWarning ? `${journal.issues.join("、")}。建议先修复数据源，再进入自动追踪。` : template[3],
-          url,
-          subject: journal.subject,
-          lang: journal.lang,
-          rating: journal.rating,
-          tags: [journal.subject, journal.lang, journal.rating, journal.monitorPlan],
-          status: isWarning ? "warn" : journal.rating === "A+" ? "priority" : "normal"
-        };
-      }).sort((a, b) => `${b.date} ${b.time}`.localeCompare(`${a.date} ${a.time}`));
+      function isoDateOnly(value) {
+        return String(value || "").slice(0, 10);
+      }
+
+      function monthEnd(monthText) {
+        const [year, month] = String(monthText).split("-").map(Number);
+        return new Date(Date.UTC(year, month, 0)).toISOString().slice(0, 10);
+      }
+
+      function articleRange(row) {
+        if (row.published_at) return { start: isoDateOnly(row.published_at), end: isoDateOnly(row.published_at), precision: "day" };
+        if (row.issue_date) return { start: `${row.issue_date}-01`, end: monthEnd(row.issue_date), precision: "month" };
+        const firstSeen = isoDateOnly(row.first_seen_at || workflowData.summary?.checked_at || "2026-05-25");
+        return { start: firstSeen, end: firstSeen, precision: "day" };
+      }
+
+      function pushBasisLabel(value) {
+        if (value === "published_date") return "真实日期";
+        if (value === "issue_date") return "期号日期";
+        return "首次发现";
+      }
+
+      function dateBasisLabel(value) {
+        if (value === "published_at") return "发布日期";
+        if (value === "issue_date") return "期号";
+        return "首次发现";
+      }
+
+      function buildWorkflowArticles() {
+        return workflowData.push_queue.map((row) => {
+          const journal = journalById(row.journal_id);
+          const range = articleRange(row);
+          const date = range.precision === "month" ? range.start : isoDateOnly(row.display_date || range.start);
+          const kind = pushBasisLabel(row.push_basis);
+          const authorText = row.authors ? `作者：${row.authors}` : "作者信息待补全";
+          const dateText = `${dateBasisLabel(row.display_date_basis)}：${formatDateLabel(row.display_date || row.issue_date || range.start)}`;
+          return {
+            id: `wf-${row.id}`,
+            journalId: row.journal_id,
+            date,
+            dateStart: range.start,
+            dateEnd: range.end,
+            datePrecision: range.precision,
+            time: row.push_basis === "published_date" ? "09:30" : row.push_basis === "issue_date" ? "10:00" : "10:30",
+            kind,
+            title: row.title,
+            summary: `${authorText} · ${dateText} · ${row.extraction_rule}`,
+            url: row.url,
+            subject: journal.subject,
+            lang: journal.lang,
+            rating: journal.rating,
+            pushBasis: row.push_basis,
+            tags: [journal.subject, journal.lang, journal.rating, kind],
+            status: row.push_basis === "first_seen" ? "warn" : journal.rating === "A+" ? "priority" : "normal"
+          };
+        }).sort((a, b) => `${b.dateStart} ${b.time}`.localeCompare(`${a.dateStart} ${a.time}`));
+      }
+
+      function buildFallbackArticles() {
+        return journals.map((journal) => {
+          const url = validUrl(journal.sample) ? journal.sample : validUrl(journal.archive) ? journal.archive : validUrl(journal.homepage) ? journal.homepage : "";
+          return {
+            id: `a-${journal.id}`,
+            journalId: journal.id,
+            date: "2026-05-25",
+            dateStart: "2026-05-25",
+            dateEnd: "2026-05-25",
+            datePrecision: "day",
+            time: "10:05",
+            kind: "数据源样例",
+            title: `${journal.name} 数据源样例`,
+            summary: "尚未加载 recent-front-data.js，当前显示期刊数据源样例。",
+            url,
+            subject: journal.subject,
+            lang: journal.lang,
+            rating: journal.rating,
+            pushBasis: "sample",
+            tags: [journal.subject, journal.lang, journal.rating, journal.monitorPlan],
+            status: journal.health !== "ok" ? "warn" : journal.rating === "A+" ? "priority" : "normal"
+          };
+        });
+      }
+
+      const articles = (workflowData.push_queue?.length ? buildWorkflowArticles() : buildFallbackArticles());
 
       let activeSubject = "全部";
       let activeLanguage = "全部";
       let activeJournalId = "";
       let query = "";
+      let activeDateFrom = workflowData.summary?.since || "";
+      let activeDateTo = workflowData.summary?.until || "";
       let selectedArticleId = articles[0].id;
       let selectedJournalId = articles[0].journalId;
 
@@ -2143,22 +2227,31 @@
           const matchesSubject = activeSubject === "全部" || article.subject === activeSubject;
           const matchesLanguage = activeLanguage === "全部" || article.lang === activeLanguage;
           const matchesJournal = !activeJournalId || article.journalId === activeJournalId;
+          const matchesDate = matchesDateRange(article);
           const haystack = [article.title, article.summary, article.subject, article.lang, journal.name, journal.issn, journal.homepage, journal.archive, journal.sample].join(" ").toLowerCase();
           const matchesText = !text || haystack.includes(text);
-          return matchesSubject && matchesLanguage && matchesJournal && matchesText;
+          return matchesSubject && matchesLanguage && matchesJournal && matchesDate && matchesText;
         });
+      }
+
+      function matchesDateRange(article) {
+        const from = activeDateFrom || "0000-01-01";
+        const to = activeDateTo || "9999-12-31";
+        return article.dateEnd >= from && article.dateStart <= to;
       }
 
       function renderStats() {
         const visible = filteredArticles();
-        const abnormal = journals.filter((journal) => journal.health !== "ok").length;
-        const cn = journals.filter((journal) => journal.lang === "中文").length;
-        const en = journals.length - cn;
+        const realDate = visible.filter((article) => article.pushBasis === "published_date").length;
+        const issueDate = visible.filter((article) => article.pushBasis === "issue_date").length;
+        const firstSeen = visible.filter((article) => article.pushBasis === "first_seen").length;
+        const workflowTotal = workflowData.summary?.push_queue_articles || articles.length;
         $("#trackingStats").innerHTML = [
           ["推送条目", visible.length],
-          ["数据源", journals.length],
-          ["中文 / 英文", `${cn}/${en}`],
-          ["待复核", abnormal]
+          ["真实日期", realDate],
+          ["期号日期", issueDate],
+          ["首次发现", firstSeen],
+          ["工作流总量", workflowTotal]
         ].map(([label, value]) => `<span class="metric-inline">${label}<strong>${value}</strong></span>`).join("");
       }
 
@@ -2194,6 +2287,11 @@
         if (activeLanguage !== "全部") parts.push(activeLanguage);
         if (activeSubject !== "全部") parts.push(activeSubject);
         if (activeJournalId) parts.push(journalById(activeJournalId).name);
+        if (activeDateFrom || activeDateTo) {
+          const fromLabel = activeDateFrom ? formatDateLabel(activeDateFrom) : "开始";
+          const toLabel = activeDateTo ? formatDateLabel(activeDateTo) : "结束";
+          parts.push(`日期: ${fromLabel} 至 ${toLabel}`);
+        }
         if (query.trim()) parts.push(`搜索: ${query.trim()}`);
         $("#activeFilterSummary").textContent = parts.length ? parts.join(" / ") : "先选中文或英文，再展开学科和期刊";
       }
@@ -2212,10 +2310,12 @@
           return acc;
         }, {});
 
-        $("#timeline").innerHTML = Object.entries(grouped).map(([date, dayItems]) => `
+        $("#timeline").innerHTML = Object.entries(grouped).map(([date, dayItems]) => {
+          const dateLabel = dayItems.every((item) => item.datePrecision === "month") ? formatDateLabel(date.slice(0, 7)) : formatDate(date);
+          return `
           <div class="timeline-day">
             <div class="timeline-day-head">
-              <div class="timeline-date">${formatDate(date)}</div>
+              <div class="timeline-date">${dateLabel}</div>
               <span></span>
               <div class="timeline-day-rule"></div>
             </div>
@@ -2223,7 +2323,8 @@
               ${dayItems.map(renderTimelineItem).join("")}
             </div>
           </div>
-        `).join("");
+        `;
+        }).join("");
         renderStats();
         renderFilterSummary();
       }
@@ -2300,6 +2401,36 @@
       function formatDate(date) {
         const [, month, day] = date.split("-");
         return `${Number(month)}月${Number(day)}日`;
+      }
+
+      function formatDateLabel(value) {
+        if (!value) return "待补全";
+        if (/^\d{4}-\d{2}-\d{2}$/.test(value)) return formatDate(value);
+        if (/^\d{4}-\d{2}$/.test(value)) {
+          const [, month] = value.split("-");
+          return `${Number(month)}月`;
+        }
+        return value;
+      }
+
+      function workflowToday() {
+        return workflowData.summary?.until || new Date().toISOString().slice(0, 10);
+      }
+
+      function currentMonthStart() {
+        return `${workflowToday().slice(0, 7)}-01`;
+      }
+
+      function syncDateInputs() {
+        $("#dateFromInput").value = activeDateFrom;
+        $("#dateToInput").value = activeDateTo;
+      }
+
+      function applyDateRange(from, to) {
+        activeDateFrom = from;
+        activeDateTo = to;
+        syncDateInputs();
+        renderTimeline();
       }
 
       function renderSourceSummary() {
@@ -2448,6 +2579,7 @@
 
       function renderAll() {
         renderFilters();
+        syncDateInputs();
         renderTimeline();
         renderSourceSummary();
         renderSourceRows();
@@ -2500,6 +2632,29 @@
       $("#searchButton").addEventListener("click", () => {
         query = $("#searchInput").value;
         renderTimeline();
+      });
+
+      $("#dateFromInput").addEventListener("change", (event) => {
+        activeDateFrom = event.target.value;
+        renderTimeline();
+      });
+
+      $("#dateToInput").addEventListener("change", (event) => {
+        activeDateTo = event.target.value;
+        renderTimeline();
+      });
+
+      $("#todayDateRange").addEventListener("click", () => {
+        const today = workflowToday();
+        applyDateRange(today, today);
+      });
+
+      $("#monthDateRange").addEventListener("click", () => {
+        applyDateRange(currentMonthStart(), workflowToday());
+      });
+
+      $("#clearDateRange").addEventListener("click", () => {
+        applyDateRange("", "");
       });
 
       $("#timeline").addEventListener("click", (event) => {

@@ -3,6 +3,7 @@ import { readFile, writeFile } from "node:fs/promises";
 import vm from "node:vm";
 import { promisify } from "node:util";
 
+import { extractDateHints } from "./date-enhancement-lib.mjs";
 import { addDays, buildRecentWorkflow, dateOnly } from "./recent-workflow-lib.mjs";
 
 const execFileAsync = promisify(execFile);
@@ -250,6 +251,7 @@ function parseRawAnchors(text, baseUrl) {
       rawHref: decodeEntities(href),
       title: stripTags(match[2]),
       url: normalizeUrl(decodeEntities(href), baseUrl),
+      context: stripTags(text.slice(Math.max(0, match.index - 700), Math.min(text.length, match.index + match[0].length + 700))),
     });
   }
   return anchors;
@@ -279,7 +281,8 @@ function parseAnchorsMatching(text, baseUrl, options = {}) {
     if (exclude.length && matchesAny(haystack, exclude)) continue;
     if (requireArticleTitle && !looksLikeArticleTitle(anchor.title)) continue;
 
-    articles.push({ title: anchor.title, url, date: "" });
+    const dateHints = extractDateHints({ url, context: anchor.context });
+    articles.push({ title: anchor.title, url, date: dateHints.published_at || "", ...dateHints });
   }
   return dedupeArticles(articles);
 }
@@ -584,7 +587,11 @@ async function extractAscCurrentIssueHtml(item) {
       const articles = parseAnchorsMatching(response.text, response.finalUrl, {
         include: [/\/AccountingResearch\/BrowseDetail\.aspx/i, /BrowseDetail\.aspx\?/i],
         exclude: [/Login|User|Download/i],
-      });
+      }).map((article) => ({
+        ...article,
+        issue_date: article.issue_date || `${year}-${String(issue).padStart(2, "0")}`,
+        date_source: article.date_source || "issue_loop",
+      }));
       if (articles.length) {
         return {
           response,

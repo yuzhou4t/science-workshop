@@ -9,12 +9,47 @@ assert.deepEqual(normalizeWorkflowDate("Fri, 22 May 2026 23:38:25 -0700"), {
   status: "known",
 });
 
+assert.deepEqual(normalizeWorkflowDate("2026-05-25T12:24:41.616Z"), {
+  raw: "2026-05-25T12:24:41.616Z",
+  normalized: "2026-05-25",
+  precision: "day",
+  status: "known",
+});
+
 assert.deepEqual(normalizeWorkflowDate("2026-05"), {
   raw: "2026-05",
   normalized: "2026-05",
   precision: "month",
   status: "known",
 });
+
+const issueDatedRun = buildRecentWorkflow([
+  {
+    journal_id: "j-issue",
+    journal_name: "期号期刊",
+    type: "adapter_source",
+    source_url: "https://example.test/issue",
+    probe_url: "https://example.test/issue",
+    extraction_rule: "issue-rule",
+    usable_as_data_source: true,
+    articles: [
+      { title: "只有期号日期的文章", url: "https://example.test/i1", issue_date: "2026-04", date_source: "url_issue" },
+    ],
+  },
+], {
+  since: "2026-04-25",
+  until: "2026-05-25",
+  checkedAt: "2026-05-25T11:00:00.000Z",
+  previousState: {},
+});
+
+assert.equal(issueDatedRun.summary.recent_articles, 1);
+assert.equal(issueDatedRun.summary.issue_dated_articles, 1);
+assert.equal(issueDatedRun.summary.undated_candidates, 0);
+assert.equal(issueDatedRun.push_queue[0].push_basis, "issue_date");
+assert.equal(issueDatedRun.push_queue[0].issue_date, "2026-04");
+assert.equal(issueDatedRun.push_queue[0].display_date, "2026-04");
+assert.equal(issueDatedRun.push_queue[0].display_date_basis, "issue_date");
 
 const probeResults = [
   {
@@ -28,7 +63,7 @@ const probeResults = [
     articles: [
       { title: "窗口内文章", url: "https://example.test/a1", date: "2026-05-10", authors: "A" },
       { title: "月份级文章", url: "https://example.test/a2", date: "2026-05", authors: "B" },
-      { title: "窗口外文章", url: "https://example.test/a3", date: "2026-03-01", authors: "C" },
+      { title: "窗口外文章", url: "https://example.test/a3", published_at: "2026-03-01", authors: "C" },
       { title: "无日期文章", url: "https://example.test/a4", date: "", authors: "D" },
     ],
   },
@@ -49,14 +84,18 @@ assert.deepEqual(firstRun.summary, {
   sources_ready: 1,
   recent_articles: 2,
   new_recent_articles: 2,
+  issue_dated_articles: 1,
   new_undated_articles: 1,
   undated_candidates: 1,
   push_queue_articles: 3,
 });
 assert.deepEqual(firstRun.recent_articles.map((article) => article.title), ["窗口内文章", "月份级文章"]);
 assert.deepEqual(firstRun.undated_candidates.map((article) => article.title), ["无日期文章"]);
-assert.deepEqual(firstRun.push_queue.map((article) => article.title), ["窗口内文章", "月份级文章", "无日期文章"]);
+assert.deepEqual(new Set(firstRun.push_queue.map((article) => article.title)), new Set(["窗口内文章", "月份级文章", "无日期文章"]));
+assert.equal(firstRun.push_queue.find((article) => article.title === "窗口内文章").push_basis, "published_date");
+assert.equal(firstRun.push_queue.find((article) => article.title === "月份级文章").push_basis, "issue_date");
 assert.equal(firstRun.push_queue.find((article) => article.title === "无日期文章").push_basis, "first_seen");
+assert.equal(firstRun.push_queue.find((article) => article.title === "窗口外文章"), undefined);
 
 const secondRun = buildRecentWorkflow(probeResults, {
   since: "2026-04-25",

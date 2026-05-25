@@ -1,6 +1,6 @@
 {
   "summary": {
-    "checked_at": "2026-05-25T11:58:48.667Z",
+    "checked_at": "2026-05-25T12:24:41.616Z",
     "direct_feeds_total": 5,
     "direct_feeds_ok": 5,
     "adapter_sources_total": 17,
@@ -19,7 +19,7 @@
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1088,
+      "fetch_ms": 1248,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 50,
@@ -306,7 +306,7 @@
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1016,
+      "fetch_ms": 1128,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 23,
@@ -460,7 +460,7 @@
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 958,
+      "fetch_ms": 1023,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 19,
@@ -594,7 +594,7 @@
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1483,
+      "fetch_ms": 1006,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 11,
@@ -688,7 +688,7 @@
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1236,
+      "fetch_ms": 1087,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 50,
@@ -977,7 +977,7 @@
       "status": 200,
       "content_type": "application/json; charset=utf-8",
       "transport": "fetch",
-      "fetch_ms": 3301,
+      "fetch_ms": 1614,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 11,
@@ -1085,282 +1085,388 @@
       "status": 200,
       "content_type": "text/html; charset=utf-8",
       "transport": "curl",
-      "fetch_ms": 40222,
+      "fetch_ms": 26822,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 50,
-      "candidate_count": 209,
+      "candidate_count": 276,
       "articles": [
         {
           "title": "贸易政策不确定性、供应链暴露网络与全球违约风险——来自异质性空间自回归模型的新证据",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=122793",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-04",
+          "date_source": "context_issue"
         },
         {
           "title": "工业智能化与收入分配格局演变：经济发展机遇背后的分配失衡隐忧",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=122794",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-04",
+          "date_source": "context_issue"
         },
         {
           "title": "迈向全球共享繁荣：偏向性技术进步适宜性如何缓解收入不平等",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=122795",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-04",
+          "date_source": "context_issue"
         },
         {
           "title": "产业链人才链融合的劳动生产率提升效应——基于地理空间的产业链人才链测度",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=122796",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-04",
+          "date_source": "context_issue"
         },
         {
           "title": "头部企业数字化转型、创造性破坏与制造业生产率",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=122797",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-04",
+          "date_source": "context_issue"
         },
         {
           "title": "制度型开放创新与企业碳负担——来自自由贸易试验区的经验证据",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=122798",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-04",
+          "date_source": "context_issue"
         },
         {
           "title": "数据要素市场化、数商发展与实数融合",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=122799",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-04",
+          "date_source": "context_issue"
         },
         {
           "title": "企业参与电商平台的就业效应及其机理",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=122800",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-04",
+          "date_source": "context_issue"
         },
         {
           "title": "ESG合成谬误的生成与破解：从强还原论范式转向弱整体论范式",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=122801",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-04",
+          "date_source": "context_issue"
         },
         {
           "title": "人工智能技术应用如何影响企业创新",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=97509",
-          "date": ""
+          "date": "",
+          "issue_date": "2024-10",
+          "date_source": "context_issue"
         },
         {
           "title": "数字化转型能否提升中国跨国企业海外投资效率",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=89908",
-          "date": ""
+          "date": "",
+          "issue_date": "2024-01",
+          "date_source": "context_issue"
         },
         {
           "title": "企业数字化转型、碳排放与供应链溢出",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=96263",
-          "date": ""
+          "date": "",
+          "issue_date": "2024-04",
+          "date_source": "context_issue"
         },
         {
           "title": "数据资产化能否缓解“专精特新”中小企业融资约束",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=97005",
-          "date": ""
+          "date": "",
+          "issue_date": "2024-08",
+          "date_source": "context_issue"
         },
         {
           "title": "金融科技与技术创新路径——基于绿色转型的视角",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=90031",
-          "date": ""
+          "date": "",
+          "issue_date": "2024-02",
+          "date_source": "context_issue"
         },
         {
           "title": "人才引进政策、劳动力优化配置与制造业智能化",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=96500",
-          "date": ""
+          "date": "",
+          "issue_date": "2024-05",
+          "date_source": "context_issue"
         },
         {
           "title": "数据要素规模效应、产业结构转型与生产率提升",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=96997",
-          "date": ""
+          "date": "",
+          "issue_date": "2024-08",
+          "date_source": "context_issue"
         },
         {
           "title": "人工智能、产业融合与产业结构转型升级",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=118068",
-          "date": ""
+          "date": "",
+          "issue_date": "2025-02",
+          "date_source": "context_issue"
         },
         {
           "title": "数字产业集群政策与关键核心技术突破式创新",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=117851",
-          "date": ""
+          "date": "",
+          "issue_date": "2025-01",
+          "date_source": "context_issue"
         },
         {
           "title": "供应商ESG评级分歧何以影响企业运营韧性",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=108830",
-          "date": ""
+          "date": "",
+          "issue_date": "2024-11",
+          "date_source": "context_issue"
         },
         {
           "title": "数字经济政策与传统企业跨界数字创新",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=118073",
-          "date": ""
+          "date": "",
+          "issue_date": "2025-02",
+          "date_source": "context_issue"
         },
         {
           "title": "地方隐性债务、银行风险感知与企业信贷可得性",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=89906",
-          "date": ""
+          "date": "",
+          "issue_date": "2024-01",
+          "date_source": "context_issue"
         },
         {
           "title": "国家级大数据综合试验区设立与就业增长",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=117612",
-          "date": ""
+          "date": "",
+          "issue_date": "2024-12",
+          "date_source": "context_issue"
         },
         {
           "title": "新型实体企业促进数实融合提升发展质量",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=90027",
-          "date": ""
+          "date": "",
+          "issue_date": "2024-02",
+          "date_source": "context_issue"
         },
         {
           "title": "供应链持股与企业高质量发展——基于全要素生产率视角",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=97309",
-          "date": ""
+          "date": "",
+          "issue_date": "2024-09",
+          "date_source": "context_issue"
         },
         {
           "title": "数字技术创新的价值——基于并购视角和机器学习方法的分析",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=90035",
-          "date": ""
+          "date": "",
+          "issue_date": "2024-02",
+          "date_source": "context_issue"
         },
         {
           "title": "“耐心资本”赋能新创企业韧性：企业风险投资和独立风险投资的差异化作用",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=119654",
-          "date": ""
+          "date": "",
+          "issue_date": "2025-07",
+          "date_source": "context_issue"
         },
         {
           "title": "银行监管处罚如何影响企业创新",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=96830",
-          "date": ""
+          "date": "",
+          "issue_date": "2024-07",
+          "date_source": "context_issue"
         },
         {
           "title": "算力部署、数据跨域流动与企业全要素生产率——来自智算中心的证据",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=118422",
-          "date": ""
+          "date": "",
+          "issue_date": "2025-04",
+          "date_source": "context_issue"
         },
         {
           "title": "数字金融发展与跨境贸易人民币结算——来自省级—国家跨境贸易人民币结算数据的经验证据",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=96676",
-          "date": ""
+          "date": "",
+          "issue_date": "2024-06",
+          "date_source": "context_issue"
         },
         {
           "title": "公共数据开放如何提振企业有效投资——基于产能利用视角",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=97004",
-          "date": ""
+          "date": "",
+          "issue_date": "2024-08",
+          "date_source": "context_issue"
         },
         {
           "title": "耐心资本与企业颠覆性创新——基于企业机构投资者视角",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=121325",
-          "date": ""
+          "date": "",
+          "issue_date": "2025-10",
+          "date_source": "context_issue"
         },
         {
           "title": "自由贸易试验区建设与地区经济安全水平——基于地级市的经验证据",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=90309",
-          "date": ""
+          "date": "",
+          "issue_date": "2024-03",
+          "date_source": "context_issue"
         },
         {
           "title": "高管股权激励与企业碳排放：绿色发展背景下的企业激励机制研究",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=120420",
-          "date": ""
+          "date": "",
+          "issue_date": "2025-08",
+          "date_source": "context_issue"
         },
         {
           "title": "工业智能化、劳动力技能结构与行业收入差距",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=117849",
-          "date": ""
+          "date": "",
+          "issue_date": "2025-01",
+          "date_source": "context_issue"
         },
         {
           "title": "气候金融风险的冲击影响、风险感知与政策应对",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=118419",
-          "date": ""
+          "date": "",
+          "issue_date": "2025-04",
+          "date_source": "context_issue"
         },
         {
           "title": "金融开放、货币政策与企业出口",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=117846",
-          "date": ""
+          "date": "",
+          "issue_date": "2025-01",
+          "date_source": "context_issue"
         },
         {
           "title": "全球绿色贸易、环境规则治理与中国路径选择",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=89901",
-          "date": ""
+          "date": "",
+          "issue_date": "2024-01",
+          "date_source": "context_issue"
         },
         {
           "title": "企业数字化转型与颠覆性技术创新——来自专利网络与SBERT模型的微观证据",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=97508",
-          "date": ""
+          "date": "",
+          "issue_date": "2024-10",
+          "date_source": "context_issue"
         },
         {
           "title": "产业数字化如何化解全球供应链风险——基于深度学习自动工具变量法的实证研究",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=120844",
-          "date": ""
+          "date": "",
+          "issue_date": "2025-09",
+          "date_source": "context_issue"
         },
         {
           "title": "中国上市公司分红的动因研究——基于机器学习的证据",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=96502",
-          "date": ""
+          "date": "",
+          "issue_date": "2024-05",
+          "date_source": "context_issue"
         },
         {
           "title": "人工智能时代的中国产业链“延链补链”——基于制造业企业智能设备进口的微观证据",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=89903",
-          "date": ""
+          "date": "",
+          "issue_date": "2024-01",
+          "date_source": "context_issue"
         },
         {
           "title": "科技创新政策、研发投入与关键核心技术攻坚",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=120846",
-          "date": ""
+          "date": "",
+          "issue_date": "2025-09",
+          "date_source": "context_issue"
         },
         {
           "title": "人工智能供给约束、技术异质性与国际比较优势",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=97302",
-          "date": ""
+          "date": "",
+          "issue_date": "2024-09",
+          "date_source": "context_issue"
         },
         {
           "title": "客户数字化转型、供应商碳减排与碳信息披露迎合",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=97002",
-          "date": ""
+          "date": "",
+          "issue_date": "2024-08",
+          "date_source": "context_issue"
         },
         {
           "title": "老龄化对财政支出政策有效性的影响研究——基于政府债务的视角",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=118731",
-          "date": ""
+          "date": "",
+          "issue_date": "2025-05",
+          "date_source": "context_issue"
         },
         {
           "title": "地方政府债务与债券信用利差：影响与机制",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=90311",
-          "date": ""
+          "date": "",
+          "issue_date": "2024-03",
+          "date_source": "context_issue"
         },
         {
           "title": "公共科研机构绿色研发介入与企业绿色创新——基于环境外部性视角",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=97306",
-          "date": ""
+          "date": "",
+          "issue_date": "2024-09",
+          "date_source": "context_issue"
         },
         {
           "title": "实体企业金融资产投资动机：货币政策异质性影响与数字金融调节效应",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=90034",
-          "date": ""
+          "date": "",
+          "issue_date": "2024-02",
+          "date_source": "context_issue"
         },
         {
           "title": "企业人工智能技术水平的分层测度及其创新效应——基于全球知识网络视角",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=118943",
-          "date": ""
+          "date": "",
+          "issue_date": "2025-06",
+          "date_source": "context_issue"
         },
         {
           "title": "论数字经济与社会主义市场经济的深度融合",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=96494",
-          "date": ""
+          "date": "",
+          "issue_date": "2024-05",
+          "date_source": "context_issue"
         }
       ],
       "samples": [
         {
           "title": "贸易政策不确定性、供应链暴露网络与全球违约风险——来自异质性空间自回归模型的新证据",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=122793",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-04",
+          "date_source": "context_issue"
         },
         {
           "title": "工业智能化与收入分配格局演变：经济发展机遇背后的分配失衡隐忧",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=122794",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-04",
+          "date_source": "context_issue"
         },
         {
           "title": "迈向全球共享繁荣：偏向性技术进步适宜性如何缓解收入不平等",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=122795",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-04",
+          "date_source": "context_issue"
         }
       ],
       "notes": [],
-      "error": "curl: (28) Operation timed out after 23193 milliseconds with 392658 out of 530439 bytes received"
+      "error": "timeout"
     },
     {
       "type": "adapter_source",
@@ -1374,7 +1480,7 @@
       "status": 200,
       "content_type": "application/json; charset=utf-8",
       "transport": "fetch",
-      "fetch_ms": 1695,
+      "fetch_ms": 5584,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 9,
@@ -1469,8 +1575,8 @@
       "extraction_rule": "magtech-cn-html",
       "status": 200,
       "content_type": "text/html;charset=UTF-8",
-      "transport": "curl",
-      "fetch_ms": 12591,
+      "transport": "fetch",
+      "fetch_ms": 2878,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 8,
@@ -1479,63 +1585,85 @@
         {
           "title": "极端天气、贸易信贷传导与供应链稳定",
           "url": "https://sjjj.magtech.com.cn/CN/Y2026/V49/I5/3",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-05",
+          "date_source": "url_issue"
         },
         {
           "title": "新闻情绪与人民币汇率预期",
           "url": "https://sjjj.magtech.com.cn/CN/Y2026/V49/I5/39",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-05",
+          "date_source": "url_issue"
         },
         {
           "title": "科技赋能司法与全国统一大市场的形成",
           "url": "https://sjjj.magtech.com.cn/CN/Y2026/V49/I5/77",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-05",
+          "date_source": "url_issue"
         },
         {
           "title": "线上商家“标题党”行为与内卷式竞争",
           "url": "https://sjjj.magtech.com.cn/CN/Y2026/V49/I5/108",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-05",
+          "date_source": "url_issue"
         },
         {
           "title": "政府产业基金支持企业创新的最优投资模式研究",
           "url": "https://sjjj.magtech.com.cn/CN/Y2026/V49/I5/139",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-05",
+          "date_source": "url_issue"
         },
         {
           "title": "平台垄断、监管取向与全要素生产率：生态位视角的证据",
           "url": "https://sjjj.magtech.com.cn/CN/Y2026/V49/I5/172",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-05",
+          "date_source": "url_issue"
         },
         {
           "title": "人工智能技术进步与人口增长",
           "url": "https://sjjj.magtech.com.cn/CN/Y2026/V49/I5/208",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-05",
+          "date_source": "url_issue"
         },
         {
           "title": "基础教育结果均等化改革的效应评估：以上海市为例",
           "url": "https://sjjj.magtech.com.cn/CN/Y2026/V49/I5/238",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-05",
+          "date_source": "url_issue"
         }
       ],
       "samples": [
         {
           "title": "极端天气、贸易信贷传导与供应链稳定",
           "url": "https://sjjj.magtech.com.cn/CN/Y2026/V49/I5/3",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-05",
+          "date_source": "url_issue"
         },
         {
           "title": "新闻情绪与人民币汇率预期",
           "url": "https://sjjj.magtech.com.cn/CN/Y2026/V49/I5/39",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-05",
+          "date_source": "url_issue"
         },
         {
           "title": "科技赋能司法与全国统一大市场的形成",
           "url": "https://sjjj.magtech.com.cn/CN/Y2026/V49/I5/77",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-05",
+          "date_source": "url_issue"
         }
       ],
       "notes": [],
-      "error": "fetch failed"
+      "error": ""
     },
     {
       "type": "adapter_source",
@@ -1548,17 +1676,19 @@
       "extraction_rule": "jryj-html",
       "status": 200,
       "content_type": "text/html;charset=UTF-8",
-      "transport": "fetch",
-      "fetch_ms": 2860,
+      "transport": "curl",
+      "fetch_ms": 23739,
       "ok": true,
       "usable_as_data_source": true,
-      "article_count": 31,
-      "candidate_count": 31,
+      "article_count": 23,
+      "candidate_count": 23,
       "articles": [
         {
           "title": "中国的利率体系与利率市场化改革",
           "url": "http://www.jryj.org.cn/CN/Y2021/V495/I9/1",
-          "date": ""
+          "date": "",
+          "issue_date": "2021-09",
+          "date_source": "url_issue"
         },
         {
           "title": "公众预期、政策协调与房地产金融宏观审慎政策有效性",
@@ -1618,104 +1748,88 @@
         {
           "title": "技术封锁与企业供应链调整——基于美对华实体清单的实证研究",
           "url": "http://www.jryj.org.cn/CN/Y2025/V544/I10/115",
-          "date": ""
+          "date": "",
+          "issue_date": "2025-10",
+          "date_source": "url_issue"
         },
         {
           "title": "双边本币互换与国际货币格局演变——来自人民币的证据",
           "url": "http://www.jryj.org.cn/CN/Y2025/V542/I8/56",
-          "date": ""
+          "date": "",
+          "issue_date": "2025-08",
+          "date_source": "url_issue"
         },
         {
           "title": "绿色金融能否促进经济“脱虚向实”——基于绿色金融改革创新试验区的经验证据",
           "url": "http://www.jryj.org.cn/CN/Y2025/V546/I12/20",
-          "date": ""
+          "date": "",
+          "issue_date": "2025-12",
+          "date_source": "url_issue"
         },
         {
           "title": "通胀预期如何影响债券信用利差？",
           "url": "http://www.jryj.org.cn/CN/Y2025/V544/I10/1",
-          "date": ""
+          "date": "",
+          "issue_date": "2025-10",
+          "date_source": "url_issue"
         },
         {
           "title": "金融科技、货币政策传导与消费——来自大科技平台个人用户的微观证据",
           "url": "http://www.jryj.org.cn/CN/Y2025/V545/I11/1",
-          "date": ""
+          "date": "",
+          "issue_date": "2025-11",
+          "date_source": "url_issue"
         },
         {
           "title": "人民币清算行设立能推动跨境贸易人民币结算吗？——兼论CIPS的协同效应",
           "url": "http://www.jryj.org.cn/CN/Y2025/V546/I12/1",
-          "date": ""
+          "date": "",
+          "issue_date": "2025-12",
+          "date_source": "url_issue"
         },
         {
           "title": "网络安全风险治理与企业创新——基于大语言模型的识别与发现",
           "url": "http://www.jryj.org.cn/CN/Y2026/V547/I1/76",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-01",
+          "date_source": "url_issue"
         },
         {
           "title": "退市制度改革能够提高定价效率吗？——基于壳资源的视角",
           "url": "http://www.jryj.org.cn/CN/Y2025/V543/I9/170",
-          "date": ""
+          "date": "",
+          "issue_date": "2025-09",
+          "date_source": "url_issue"
         },
         {
           "title": "供应链不确定性与中国企业创新——基于中美供应链微观企业数据的分析",
           "url": "http://www.jryj.org.cn/CN/Y2025/V542/I8/75",
-          "date": ""
+          "date": "",
+          "issue_date": "2025-08",
+          "date_source": "url_issue"
         },
         {
           "title": "算力基础设施建设是否抑制了企业“脱实向虚”?——来自中国地级及以上城市数据中心建设的经验证据",
           "url": "http://www.jryj.org.cn/CN/Y2025/V541/I7/95",
-          "date": ""
+          "date": "",
+          "issue_date": "2025-07",
+          "date_source": "url_issue"
         },
         {
           "title": "清代官绅家庭资产结构一般特征初探——以抄产档案为中心的研究",
           "url": "http://www.jryj.org.cn/CN/Y2018/V452/I2/61",
-          "date": ""
-        },
-        {
-          "title": "中国历史上的国际收支估算:1550—1948",
-          "url": "http://www.jryj.org.cn/CN/Y2023/V513/I3/188",
-          "date": ""
-        },
-        {
-          "title": "绿色金融、绿色创新与经济高质量发展",
-          "url": "http://www.jryj.org.cn/CN/Y2022/V506/I8/1",
-          "date": ""
-        },
-        {
-          "title": "跨境金融:驱动因素、结构特征与未来路径",
-          "url": "http://www.jryj.org.cn/CN/Y2022/V500/I2/1",
-          "date": ""
-        },
-        {
-          "title": "中国历史上白银大规模跨境流动研究",
-          "url": "http://www.jryj.org.cn/CN/Y2023/V517/I7/193",
-          "date": ""
-        },
-        {
-          "title": "批发业外资开放、供应链整合与消费福利——基于微观视角的理论与经验分析",
-          "url": "http://www.jryj.org.cn/CN/Y2024/V532/I10/113",
-          "date": ""
-        },
-        {
-          "title": "分层制度提升新三板流动性了吗？——来自多维断点回归的经验证据",
-          "url": "http://www.jryj.org.cn/CN/Y2019/V467/I5/170",
-          "date": ""
-        },
-        {
-          "title": "《巴塞尔III最终方案》的影响及应对",
-          "url": "http://www.jryj.org.cn/CN/Y2018/V452/I2/30",
-          "date": ""
-        },
-        {
-          "title": "首日涨停板制度与IPO解禁效应——基于投机泡沫视角的分析",
-          "url": "http://www.jryj.org.cn/CN/Y2020/V478/I4/186",
-          "date": ""
+          "date": "",
+          "issue_date": "2018-02",
+          "date_source": "url_issue"
         }
       ],
       "samples": [
         {
           "title": "中国的利率体系与利率市场化改革",
           "url": "http://www.jryj.org.cn/CN/Y2021/V495/I9/1",
-          "date": ""
+          "date": "",
+          "issue_date": "2021-09",
+          "date_source": "url_issue"
         },
         {
           "title": "公众预期、政策协调与房地产金融宏观审慎政策有效性",
@@ -1729,7 +1843,7 @@
         }
       ],
       "notes": [],
-      "error": ""
+      "error": "curl: (28) Operation timed out after 17002 milliseconds with 215562 bytes received"
     },
     {
       "type": "adapter_source",
@@ -1743,7 +1857,7 @@
       "status": 200,
       "content_type": "text/html; charset=utf-8",
       "transport": "fetch",
-      "fetch_ms": 1560,
+      "fetch_ms": 1873,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 11,
@@ -1855,7 +1969,7 @@
       "status": 200,
       "content_type": "text/html;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 4044,
+      "fetch_ms": 4955,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 12,
@@ -1864,32 +1978,44 @@
         {
           "title": "治理刚性与发展韧性之间的张力如何催生治理创新？——乡村振兴战略下制度张力的调适机制",
           "url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/96f94922a46fa9e15ab6abc22eae2c55",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-02",
+          "date_source": "context_issue"
         },
         {
           "title": "资源约束型乡村产业新内源发展的过程与机制——基于“政府-市场-集体”协同视角的案例研究",
           "url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/01a4f4e944c9700d3740488523d53e88",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-02",
+          "date_source": "context_issue"
         },
         {
           "title": "何以落地生根：乡村治理积分制有效实施的影响因素与机制——基于多案例比较的计算扎根分析",
           "url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/4c409240451fb151f0c90f04366a69a6",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-02",
+          "date_source": "context_issue"
         },
         {
           "title": "复杂网络演化博弈视角下区域政策网络的联盟互动与策略演化——基于成渝地区的经验解释",
           "url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/4f6eddc81debcdcc0a1a401bc1de9b8f",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-02",
+          "date_source": "context_issue"
         },
         {
           "title": "制度化共治：经开区与行政区空间协同治理的演进逻辑——基于C经济技术开发区的过程追踪研究",
           "url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/7a027071dc6c590cd2a3dcf682189ae8",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-02",
+          "date_source": "context_issue"
         },
         {
           "title": "政策文献量化研究:公共政策研究的新方向",
           "url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/b6ee50f4cacaa4ab8711d8e729b7c71e",
-          "date": ""
+          "date": "",
+          "issue_date": "2015-02",
+          "date_source": "context_issue"
         },
         {
           "title": "以公共价值为基础的政府绩效治理——源起、架构与研究问题",
@@ -1919,24 +2045,32 @@
         {
           "title": "国家治理体系与治理能力研究:回顾与前瞻",
           "url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/b88c98e5d51b4a1b928b541405891773",
-          "date": ""
+          "date": "",
+          "issue_date": "2015-03",
+          "date_source": "context_issue"
         }
       ],
       "samples": [
         {
           "title": "治理刚性与发展韧性之间的张力如何催生治理创新？——乡村振兴战略下制度张力的调适机制",
           "url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/96f94922a46fa9e15ab6abc22eae2c55",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-02",
+          "date_source": "context_issue"
         },
         {
           "title": "资源约束型乡村产业新内源发展的过程与机制——基于“政府-市场-集体”协同视角的案例研究",
           "url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/01a4f4e944c9700d3740488523d53e88",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-02",
+          "date_source": "context_issue"
         },
         {
           "title": "何以落地生根：乡村治理积分制有效实施的影响因素与机制——基于多案例比较的计算扎根分析",
           "url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/4c409240451fb151f0c90f04366a69a6",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-02",
+          "date_source": "context_issue"
         }
       ],
       "notes": [],
@@ -1954,7 +2088,7 @@
       "status": 200,
       "content_type": "text/html; charset=utf-8",
       "transport": "fetch",
-      "fetch_ms": 2616,
+      "fetch_ms": 1561,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 17,
@@ -2102,7 +2236,7 @@
       "status": 200,
       "content_type": "text/html; charset=utf-8",
       "transport": "fetch",
-      "fetch_ms": 1115,
+      "fetch_ms": 684,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 10,
@@ -2111,69 +2245,95 @@
         {
           "title": "异质性环境规制、绿色创新与企业绿色形象的关系研究",
           "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260401?st=article_issue",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-04",
+          "date_source": "url_issue"
         },
         {
           "title": "区域一体化推进的工业污染集聚效应——来自长三角边界效应与扩容影响的证据",
           "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260402?st=article_issue",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-04",
+          "date_source": "url_issue"
         },
         {
           "title": "数字金融的治理效应研究——基于盈余管理的视角",
           "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260403?st=article_issue",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-04",
+          "date_source": "url_issue"
         },
         {
           "title": "基于高维因子模型的A股市场系统性风险研究",
           "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260404?st=article_issue",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-04",
+          "date_source": "url_issue"
         },
         {
           "title": "考虑偏差修正的Bootstrap假设检验及大规模关键质量因子筛选研究",
           "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260405?st=article_issue",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-04",
+          "date_source": "url_issue"
         },
         {
           "title": "自动化码头AGV无死锁在线路径规划算法",
           "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260406?st=article_issue",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-04",
+          "date_source": "url_issue"
         },
         {
           "title": "考虑农户损失规避的平台型供应链融资模式选择",
           "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260407?st=article_issue",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-04",
+          "date_source": "url_issue"
         },
         {
           "title": "折价出售传染与货币市场基金行业系统性风险——基于“基金-资产”二分网络视角",
           "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260408?st=article_issue",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-04",
+          "date_source": "url_issue"
         },
         {
           "title": "动态批量与预测时阈：研究现状与展望",
           "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260409?st=article_issue",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-04",
+          "date_source": "url_issue"
         },
         {
           "title": "评论操控：概念解析、理论发展和未来展望",
           "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260410?st=article_issue",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-04",
+          "date_source": "url_issue"
         }
       ],
       "samples": [
         {
           "title": "异质性环境规制、绿色创新与企业绿色形象的关系研究",
           "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260401?st=article_issue",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-04",
+          "date_source": "url_issue"
         },
         {
           "title": "区域一体化推进的工业污染集聚效应——来自长三角边界效应与扩容影响的证据",
           "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260402?st=article_issue",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-04",
+          "date_source": "url_issue"
         },
         {
           "title": "数字金融的治理效应研究——基于盈余管理的视角",
           "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260403?st=article_issue",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-04",
+          "date_source": "url_issue"
         }
       ],
       "notes": [
@@ -2193,7 +2353,7 @@
       "status": 200,
       "content_type": "text/html; charset=utf-8",
       "transport": "fetch",
-      "fetch_ms": 7149,
+      "fetch_ms": 8044,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 19,
@@ -2201,115 +2361,115 @@
       "articles": [
         {
           "title": "以制度建设为主线统筹发展和安全",
-          "url": "https://www.cqvip.com/doc/journal/7203343026?sign=021279e4605bfd660bbfe7a623648d888f4f0acc61a5459bf720fee400acbc38&expireTime=1795262306477&resourceId=7203343026&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343026?sign=42f24c030a25eed0027b9b9793a86fce420958a0bea0053a94408bd2175cb961&expireTime=1795263875057&resourceId=7203343026&type=1",
           "date": "2026-03",
           "authors": "王浦劬, 连雨欣"
         },
         {
           "title": "“钉钉子”的技术:重大决策落实的工作机制",
-          "url": "https://www.cqvip.com/doc/journal/7203343027?sign=e712e9b4779d7937554081624a0d565cd88f5b95a4a9f55a6b5acffbdfa4f5f7&expireTime=1795262306477&resourceId=7203343027&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343027?sign=4e2512d9b44e15a36f494a267b2d8eab92783058e7f820f32b03a0041f02bbb2&expireTime=1795263875057&resourceId=7203343027&type=1",
           "date": "2026-03",
           "authors": "庞明礼, 郭雯斐"
         },
         {
           "title": "从制度到行动:基层减负的层级传导与长效机制",
-          "url": "https://www.cqvip.com/doc/journal/7203343028?sign=40d46181b9d66e6460c0f81d581b83268dd68d183d103fa9711cc5d0510540a0&expireTime=1795262306477&resourceId=7203343028&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343028?sign=b6016b238a8a5fe89e289f8214a5386241a1811f3c1103fa840936760b2b9066&expireTime=1795263875057&resourceId=7203343028&type=1",
           "date": "2026-03",
           "authors": "王锐, 倪星"
         },
         {
           "title": "政府数字平台何以走出难以为继困境?——基于生态系统视角的对比案例研究",
-          "url": "https://www.cqvip.com/doc/journal/7203343029?sign=5626ba3a9621c0ae70edfe0727f17ddd9138179fe94b75027a9b46de043b23bf&expireTime=1795262306477&resourceId=7203343029&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343029?sign=9f76ebffea3c67f3f0bc7eaeec4c80a1b2316d8a56b9da8d97d045e776b016f0&expireTime=1795263875057&resourceId=7203343029&type=1",
           "date": "2026-03",
           "authors": "付宁, 林婕, 祝哲"
         },
         {
           "title": "人工智能的科林格里奇困境与安全监管的敏捷性调适",
-          "url": "https://www.cqvip.com/doc/journal/7203343030?sign=2aa9cad63075431f75c6c6395a6946485c6ee3205208340c5e5e52354067fd5d&expireTime=1795262306477&resourceId=7203343030&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343030?sign=26e8db5f62414f45983fe36c734302a73439ee1353df4edc86ac7057b0d2e578&expireTime=1795263875057&resourceId=7203343030&type=1",
           "date": "2026-03",
           "authors": "张乐, 赵爽爽"
         },
         {
           "title": "“数字帕金森”:数字治理中的任务冗余再生产",
-          "url": "https://www.cqvip.com/doc/journal/7203343031?sign=886e7bcdb916c704ad9b28b3a03237bfe06eae683024279bf0a5bbaab830742d&expireTime=1795262306477&resourceId=7203343031&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343031?sign=d98751a49979857f51c88ed547949e410fac3166a9e7772ed5ea6ae5c69db70a&expireTime=1795263875057&resourceId=7203343031&type=1",
           "date": "2026-03",
           "authors": "邓崧, 杨迪"
         },
         {
           "title": "把公共性带回来:社区慈善事业治理的路径选择",
-          "url": "https://www.cqvip.com/doc/journal/7203343032?sign=6c2d8d084ef7b7584f7c47ab5164d1e0ed97ca98b96c86aae1aa5194b554c71a&expireTime=1795262306477&resourceId=7203343032&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343032?sign=2b4103838b3396debc810eb8385188f0de76b2fbac691a39dd8485f62151d511&expireTime=1795263875057&resourceId=7203343032&type=1",
           "date": "2026-03",
           "authors": "舒文, 郑功成"
         },
         {
           "title": "“选择式自主”:社会组织可持续发展的新范式",
-          "url": "https://www.cqvip.com/doc/journal/7203343033?sign=1fefb7052716e90391b3589eafa4907b16fd2a33a20e0653f3a8a25bf6db0035&expireTime=1795262306477&resourceId=7203343033&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343033?sign=64ff20d4ccc504434c8cd83a06543fca9bdced8194b72bd4a5a4183378b5cc45&expireTime=1795263875057&resourceId=7203343033&type=1",
           "date": "2026-03",
           "authors": "刘蕾, 何书仪"
         },
         {
           "title": "基层“信用积分制”运行的实践错位与优化路径",
-          "url": "https://www.cqvip.com/doc/journal/7203343034?sign=5c8b37a903696c2901c3ba479c769c252fb0c8c39c856908b0697029bddb1502&expireTime=1795262306477&resourceId=7203343034&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343034?sign=c73d793bce8c7498e32f4253773a08a3e34b849635dbc790f7f60c0339a96dc1&expireTime=1795263875057&resourceId=7203343034&type=1",
           "date": "2026-03",
           "authors": "朱博宇, 沈圣兰, 黄璜"
         },
         {
           "title": "建构基于“有效的政府治理”标识性概念的中国政府治理理论框架",
-          "url": "https://www.cqvip.com/doc/journal/7203343035?sign=fb8e38558fe8aa83c0d7741ad8663be60933ecdccbb465620efa8a741b1a6abb&expireTime=1795262306477&resourceId=7203343035&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343035?sign=fda65022645035b1eacd289fe74eaea98d56c02309e0fbc1de27f0d09fb99a9a&expireTime=1795263875057&resourceId=7203343035&type=1",
           "date": "2026-03",
           "authors": "李瑞昌"
         },
         {
           "title": "重新发现治理:评价理论的视角",
-          "url": "https://www.cqvip.com/doc/journal/7203343036?sign=377b557ef94432c9dde56c79bdfcae6f9fcb03acd49d5d4a4387f9f7c68bed04&expireTime=1795262306477&resourceId=7203343036&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343036?sign=cee1013fa0f0082bffbee7f71fe7f6c1a89875c89b677d923c0cbf4eb133e0de&expireTime=1795263875057&resourceId=7203343036&type=1",
           "date": "2026-03",
           "authors": "张乾友"
         },
         {
           "title": "数字技术驱动乡村公共服务共同生产的影响因素与实践逻辑",
-          "url": "https://www.cqvip.com/doc/journal/7203343037?sign=96a812f67de608ef526544927ff1a96e38026c8019805263a0924783cd465e86&expireTime=1795262306477&resourceId=7203343037&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343037?sign=170f965a6207438cc28e612b8bb4a6574f58c38affd46dd98963a555869ed6fd&expireTime=1795263875057&resourceId=7203343037&type=1",
           "date": "2026-03",
           "authors": "王洛忠, 徐成铭"
         },
         {
           "title": "数字生态何以影响乡村韧性治理绩效",
-          "url": "https://www.cqvip.com/doc/journal/7203343038?sign=2782a752dc90b57bcc6283368eb78ad078bb765f5254d8cfaa86f99bac2ec4c0&expireTime=1795262306477&resourceId=7203343038&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343038?sign=b11c5788ecc8bcc999bc1718e2ea643200a07890e1e864c4e619ccea7abd94dd&expireTime=1795263875057&resourceId=7203343038&type=1",
           "date": "2026-03",
           "authors": "陈浩天, 肖延玉"
         },
         {
           "title": "复合型公共空间:社交平台驱动的乡村公共空间新样态",
-          "url": "https://www.cqvip.com/doc/journal/7203343039?sign=414c6e5a9bc55dd92cdefcf40d6c112e65dbb49d6bc5ab1be106d41412af13a7&expireTime=1795262306477&resourceId=7203343039&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343039?sign=1da44fa9c756262f629bcd90e3f751d4ffa5c57421944ea26bd1b675fa58487f&expireTime=1795263875057&resourceId=7203343039&type=1",
           "date": "2026-03",
           "authors": "王承禹, 张旋"
         },
         {
           "title": "以科技人才集聚促进京津冀城市群高质量协同发展",
-          "url": "https://www.cqvip.com/doc/journal/7203343040?sign=9ed36211bad341b2feae99be794249a42e927e5c3764d596ade35093dc82ac94&expireTime=1795262306477&resourceId=7203343040&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343040?sign=552439613e8d1694cbd1fbb0bc5bbb7aa436fda487e6519fea64bc726af661da&expireTime=1795263875057&resourceId=7203343040&type=1",
           "date": "2026-03",
           "authors": "魏华颖, 李子昂, 孙宏皓"
         },
         {
           "title": "数字赋能乡村治理现代化的优化路径",
-          "url": "https://www.cqvip.com/doc/journal/7203343041?sign=804f71da8ce8ada1d81aa87c77465fb340173cf2c2d2f3b6acb6a71d425b75b2&expireTime=1795262306477&resourceId=7203343041&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343041?sign=275c99c7cbda073814760a16c82aaad07b44c0c38748ab6674602143cc32bf3b&expireTime=1795263875057&resourceId=7203343041&type=1",
           "date": "2026-03",
           "authors": "李俊清, 毋世扬"
         },
         {
           "title": "以全生命周期服务改革推动营商环境优化",
-          "url": "https://www.cqvip.com/doc/journal/7203343042?sign=8dd35d03af13ba5fa86a53bc18e0d469218ffaee8488675f3b26d579d11e0360&expireTime=1795262306477&resourceId=7203343042&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343042?sign=128bd7ff18c9a6483aaba4097829960eb13e48e486bfb2990836c1c87cfaec60&expireTime=1795263875057&resourceId=7203343042&type=1",
           "date": "2026-03",
           "authors": "杨畅, 彭伟, 黄凌筱"
         },
         {
           "title": "内蒙古大学公共管理学院简介",
-          "url": "https://www.cqvip.com/doc/journal/7203343025?sign=90c905d669983fafc2d6695d3f26bc1bbee16a6e32420ae6fbf357d927eecdf0&expireTime=1795262306477&resourceId=7203343025&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343025?sign=4479ffbe6f4723dd4204cabff281bc1ef5defca3fe3ab082591a9f047c9bffa4&expireTime=1795263875057&resourceId=7203343025&type=1",
           "date": "2026-03",
           "authors": "白维军"
         },
         {
           "title": "中国银联积极服务政府促消费 双轮驱动激活市场新动能",
-          "url": "https://www.cqvip.com/doc/journal/7203343043?sign=d2b1f5f5a1cd545d3f67a34705a1f8db81091a30ccca0baf82bd240d9bc24659&expireTime=1795262306477&resourceId=7203343043&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343043?sign=751e04f75fed0e02b9991740e813924a1caba1b8ef1e588818c817ef97607c8a&expireTime=1795263875057&resourceId=7203343043&type=1",
           "date": "2026-03",
           "authors": "韩永琛"
         }
@@ -2317,19 +2477,19 @@
       "samples": [
         {
           "title": "以制度建设为主线统筹发展和安全",
-          "url": "https://www.cqvip.com/doc/journal/7203343026?sign=021279e4605bfd660bbfe7a623648d888f4f0acc61a5459bf720fee400acbc38&expireTime=1795262306477&resourceId=7203343026&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343026?sign=42f24c030a25eed0027b9b9793a86fce420958a0bea0053a94408bd2175cb961&expireTime=1795263875057&resourceId=7203343026&type=1",
           "date": "2026-03",
           "authors": "王浦劬, 连雨欣"
         },
         {
           "title": "“钉钉子”的技术:重大决策落实的工作机制",
-          "url": "https://www.cqvip.com/doc/journal/7203343027?sign=e712e9b4779d7937554081624a0d565cd88f5b95a4a9f55a6b5acffbdfa4f5f7&expireTime=1795262306477&resourceId=7203343027&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343027?sign=4e2512d9b44e15a36f494a267b2d8eab92783058e7f820f32b03a0041f02bbb2&expireTime=1795263875057&resourceId=7203343027&type=1",
           "date": "2026-03",
           "authors": "庞明礼, 郭雯斐"
         },
         {
           "title": "从制度到行动:基层减负的层级传导与长效机制",
-          "url": "https://www.cqvip.com/doc/journal/7203343028?sign=40d46181b9d66e6460c0f81d581b83268dd68d183d103fa9711cc5d0510540a0&expireTime=1795262306477&resourceId=7203343028&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343028?sign=b6016b238a8a5fe89e289f8214a5386241a1811f3c1103fa840936760b2b9066&expireTime=1795263875057&resourceId=7203343028&type=1",
           "date": "2026-03",
           "authors": "王锐, 倪星"
         }
@@ -2352,7 +2512,7 @@
       "status": 200,
       "content_type": "text/html;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1500,
+      "fetch_ms": 1097,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 13,
@@ -2361,84 +2521,116 @@
         {
           "title": "劳动力市场势力如何影响分析师盈余预测准确性?———基于证券公...",
           "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=0EB713F2-A67B-4D41-858D-33AA14CAE36F&ID=A3ED3197-6D0F-4E67-944A-FA5C00C7CD77",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-04",
+          "date_source": "context_issue"
         },
         {
           "title": "耐心资本与企业盈余管理：基于失败容忍度的研究",
           "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=8BF9AA05-F099-4254-8E78-35850228415C&ID=A3ED3197-6D0F-4E67-944A-FA5C00C7CD77",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-04",
+          "date_source": "issue_loop"
         },
         {
           "title": "银行关联、信贷周期与债务违约风险",
           "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=5C457CA7-246B-4C2C-A3DA-59E0A1079ED1&ID=A3ED3197-6D0F-4E67-944A-FA5C00C7CD77",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-04",
+          "date_source": "issue_loop"
         },
         {
           "title": "财务数智化转型的逻辑体系与实现路径：一个理论框架",
           "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=6AB54C2A-3493-488A-818A-8FD4ED6AB6E9&ID=A3ED3197-6D0F-4E67-944A-FA5C00C7CD77",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-04",
+          "date_source": "issue_loop"
         },
         {
           "title": "打破业务藩篱：环保税征管、税种联动与企业所得税遵从",
           "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=7E6A9D5B-5A89-4806-BF98-92CCC68AB590&ID=A3ED3197-6D0F-4E67-944A-FA5C00C7CD77",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-04",
+          "date_source": "issue_loop"
         },
         {
           "title": "企业数据资产信息披露同群效应研究",
           "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=4186276E-B31D-4704-97DE-96745DC5E9DA&ID=A3ED3197-6D0F-4E67-944A-FA5C00C7CD77",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-04",
+          "date_source": "issue_loop"
         },
         {
           "title": "国有企业经营投资问责会影响客户企业真实盈余管理吗",
           "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=5E400AE6-1102-4271-8E3F-9C6F9ED20A7D&ID=A3ED3197-6D0F-4E67-944A-FA5C00C7CD77",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-04",
+          "date_source": "issue_loop"
         },
         {
           "title": "职工董事与资本市场稳定：基于股价崩盘风险的视角",
           "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=3560B744-9569-4B80-B443-B66335BFF097&ID=A3ED3197-6D0F-4E67-944A-FA5C00C7CD77",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-04",
+          "date_source": "issue_loop"
         },
         {
           "title": "双边政治关系与跨国企业审计收费",
           "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=D33DD869-EF81-46E8-BF10-BB5D55CE265D&ID=A3ED3197-6D0F-4E67-944A-FA5C00C7CD77",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-04",
+          "date_source": "issue_loop"
         },
         {
           "title": "乘风逐绿：央企双碳考核如何驱动供应链绿色转型",
           "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=E2271787-D102-4298-9C6E-BFC3076B312E&ID=A3ED3197-6D0F-4E67-944A-FA5C00C7CD77",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-04",
+          "date_source": "issue_loop"
         },
         {
           "title": "《中小企业促进法》与企业投资",
           "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=3BB8045E-0B48-46BF-820C-C1D8A7C3BEA9&ID=A3ED3197-6D0F-4E67-944A-FA5C00C7CD77",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-04",
+          "date_source": "issue_loop"
         },
         {
           "title": "公司劳务外包与经营风险———基于实物期权视角",
           "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=CB29DF6F-1F4A-4E34-B900-C6B7F5D88F6D&ID=A3ED3197-6D0F-4E67-944A-FA5C00C7CD77",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-04",
+          "date_source": "issue_loop"
         },
         {
           "title": "机构纵向持股对供应链长鞭效应的治理研究",
           "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=6C48B6EC-BCEA-4DA5-958C-EBBEE75ADB0B&ID=A3ED3197-6D0F-4E67-944A-FA5C00C7CD77",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-04",
+          "date_source": "issue_loop"
         }
       ],
       "samples": [
         {
           "title": "劳动力市场势力如何影响分析师盈余预测准确性?———基于证券公...",
           "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=0EB713F2-A67B-4D41-858D-33AA14CAE36F&ID=A3ED3197-6D0F-4E67-944A-FA5C00C7CD77",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-04",
+          "date_source": "context_issue"
         },
         {
           "title": "耐心资本与企业盈余管理：基于失败容忍度的研究",
           "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=8BF9AA05-F099-4254-8E78-35850228415C&ID=A3ED3197-6D0F-4E67-944A-FA5C00C7CD77",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-04",
+          "date_source": "issue_loop"
         },
         {
           "title": "银行关联、信贷周期与债务违约风险",
           "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=5C457CA7-246B-4C2C-A3DA-59E0A1079ED1&ID=A3ED3197-6D0F-4E67-944A-FA5C00C7CD77",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-04",
+          "date_source": "issue_loop"
         }
       ],
       "notes": [
@@ -2458,7 +2650,7 @@
       "status": 200,
       "content_type": "application/json",
       "transport": "fetch",
-      "fetch_ms": 1582,
+      "fetch_ms": 1660,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 12,
@@ -2531,10 +2723,10 @@
           "authors": "Daniel A. Bens, Gavin Cassar, Ying Huang, Thomas Keusch"
         },
         {
-          "title": "The 2003 U.S. Dividend Tax Cut, Small Business Loan Supply, and the Real Economy",
-          "url": "https://doi.org/10.2308/tar-2023-0444",
+          "title": "Current Expected Credit Losses (CECL) Standard and Banks’ Information Production",
+          "url": "https://doi.org/10.2308/tar-2022-0314",
           "date": "2026-04-16",
-          "authors": "Oliver Zhen Li, Yupeng Lin, Keyuan Zhang"
+          "authors": "Sehwa Kim, Seil Kim, Anya Kleymenova, Rongchen Li"
         }
       ],
       "samples": [
@@ -2575,7 +2767,7 @@
       "status": 200,
       "content_type": "text/html; charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1621,
+      "fetch_ms": 1736,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 34,
@@ -2784,7 +2976,7 @@
       "status": 200,
       "content_type": "application/json",
       "transport": "fetch",
-      "fetch_ms": 630,
+      "fetch_ms": 802,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 12,
@@ -2901,7 +3093,7 @@
       "status": 200,
       "content_type": "application/json",
       "transport": "fetch",
-      "fetch_ms": 947,
+      "fetch_ms": 691,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 12,
@@ -3018,7 +3210,7 @@
       "status": 200,
       "content_type": "text/html; charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1605,
+      "fetch_ms": 1649,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 11,
@@ -3027,74 +3219,102 @@
         {
           "title": "Quote Competition in Corporate Bonds",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70048",
-          "date": ""
+          "date": "2026-05-22",
+          "published_at": "2026-05-22",
+          "date_source": "context_published"
         },
         {
           "title": "Hedger of Last Resort: Evidence from Brazilian FX Interventions, Local Credit, and Global Financial Cycles",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70054",
-          "date": ""
+          "date": "2026-05-22",
+          "published_at": "2026-05-22",
+          "date_source": "context_published"
         },
         {
           "title": "Investing with Purpose: Evidence from Private Foundations",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70055",
-          "date": ""
+          "date": "2026-05-20",
+          "published_at": "2026-05-20",
+          "date_source": "context_published"
         },
         {
           "title": "Why Have CEO Pay Levels Become Less Diverse?",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70050",
-          "date": ""
+          "date": "2026-05-19",
+          "published_at": "2026-05-19",
+          "date_source": "context_published"
         },
         {
           "title": "Bank Competition Amid Digital Disruption: Implications for Financial Inclusion",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70051",
-          "date": ""
+          "date": "2026-05-17",
+          "published_at": "2026-05-17",
+          "date_source": "context_published"
         },
         {
           "title": "Consumption in Asset Returns",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70044",
-          "date": ""
+          "date": "2026-05-15",
+          "published_at": "2026-05-15",
+          "date_source": "context_published"
         },
         {
           "title": "The Drivers and Implications of Retail Margin Trading",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70049",
-          "date": ""
+          "date": "2026-05-15",
+          "published_at": "2026-05-15",
+          "date_source": "context_published"
         },
         {
           "title": "Risk‐Free Rates and Convenience Yields around the World",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70045",
-          "date": ""
+          "date": "2026-05-11",
+          "published_at": "2026-05-11",
+          "date_source": "context_published"
         },
         {
           "title": "The Equilibrium Effects of Eviction Policies",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70046",
-          "date": ""
+          "date": "2026-05-11",
+          "published_at": "2026-05-11",
+          "date_source": "context_published"
         },
         {
           "title": "Partisan Entrepreneurship",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70042",
-          "date": ""
+          "date": "2026-05-08",
+          "published_at": "2026-05-08",
+          "date_source": "context_published"
         },
         {
           "title": "Learning in the Limit: Income Inference from Credit Extensions",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70040",
-          "date": ""
+          "date": "2026-05-07",
+          "published_at": "2026-05-07",
+          "date_source": "context_published"
         }
       ],
       "samples": [
         {
           "title": "Quote Competition in Corporate Bonds",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70048",
-          "date": ""
+          "date": "2026-05-22",
+          "published_at": "2026-05-22",
+          "date_source": "context_published"
         },
         {
           "title": "Hedger of Last Resort: Evidence from Brazilian FX Interventions, Local Credit, and Global Financial Cycles",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70054",
-          "date": ""
+          "date": "2026-05-22",
+          "published_at": "2026-05-22",
+          "date_source": "context_published"
         },
         {
           "title": "Investing with Purpose: Evidence from Private Foundations",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70055",
-          "date": ""
+          "date": "2026-05-20",
+          "published_at": "2026-05-20",
+          "date_source": "context_published"
         }
       ],
       "notes": [],
@@ -3112,7 +3332,7 @@
       "status": 200,
       "content_type": "text/html; charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 2055,
+      "fetch_ms": 1257,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 13,
@@ -3121,12 +3341,16 @@
         {
           "title": "Unequal in the Spotlight: Gender Differences in How Serving on Prominent Firms Affects Directors’ New Board Appointments",
           "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251405843",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-06",
+          "date_source": "context_issue"
         },
         {
           "title": "Interpreting Violence: How Community Context Shapes Corporate Responses to Street Protests",
           "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261419416",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-06",
+          "date_source": "context_issue"
         },
         {
           "title": "Democratic Deviations: How Organizations Sustain Decentralization Commitments in the Face of Centralization Pressures",
@@ -3188,12 +3412,16 @@
         {
           "title": "Unequal in the Spotlight: Gender Differences in How Serving on Prominent Firms Affects Directors’ New Board Appointments",
           "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251405843",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-06",
+          "date_source": "context_issue"
         },
         {
           "title": "Interpreting Violence: How Community Context Shapes Corporate Responses to Street Protests",
           "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261419416",
-          "date": ""
+          "date": "",
+          "issue_date": "2026-06",
+          "date_source": "context_issue"
         },
         {
           "title": "Democratic Deviations: How Organizations Sustain Decentralization Commitments in the Face of Centralization Pressures",

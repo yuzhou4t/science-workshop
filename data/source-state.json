@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "checked_at": "2026-05-25T11:58:48.667Z",
+  "checked_at": "2026-05-25T12:24:41.616Z",
   "since": "2026-04-25",
   "until": "2026-05-25",
   "article_ids": [
@@ -258,14 +258,6 @@
     "57868b41e3311d4a",
     "762e4281812d328e",
     "c660b459a0b0b38b",
-    "fd732dcda4a4f969",
-    "cc30248bc3591d21",
-    "e4cff9df2dae2889",
-    "1f2fb031d10858bb",
-    "5ac0a5df0ca923c9",
-    "025d8377774b2df6",
-    "086c88543dc32534",
-    "5758ea4ac952fc03",
     "45ba45507e055438",
     "e62c017b79e652ef",
     "bbd65826fae2a979",
@@ -316,25 +308,25 @@
     "74ddb6d55ebaa077",
     "2dd1e736f3e362e5",
     "ef3fb9a3717c7ea4",
-    "d264f74a93f52139",
-    "8df6b936b08a64df",
-    "c91c6386e2831c5f",
-    "3ec6d41f5107e64c",
-    "1a42daa6cb672115",
-    "7b59aa63008fb820",
-    "218a4ab898f600c8",
-    "a3018020f73424e5",
-    "f7a7b4c5add88387",
-    "c3ba034837d238c4",
-    "293afd220cf38023",
-    "f4c70551f5d0aaab",
-    "73adffe65214cd91",
-    "3c23926b6129f4d6",
-    "6216a1acf657b9a6",
-    "d346657b48e2ebd1",
-    "faf57644da0e7b88",
-    "a8e51da7ec206da8",
-    "56729d7e1d6d9ae9",
+    "0e9ccf272e37b432",
+    "cac9df5aea66de31",
+    "e5379f3db3cb432e",
+    "eaaed2c247e41960",
+    "f267f80411b3fa65",
+    "c927679217f3507b",
+    "0f4f5a1ba52e538a",
+    "df9c2ed36d785633",
+    "a611f06306dca13a",
+    "2f50f89885a6591f",
+    "815e6d53723d2b1f",
+    "03cd66b3ce62422e",
+    "6ffed0b6eb85ade4",
+    "61bf1ee59765edff",
+    "b73879fea2c22cc9",
+    "3b44401874d7029c",
+    "e5b2c23964f4340c",
+    "c0f82bd0db9ca602",
+    "c9d7b584bbc38455",
     "a4f79c1ff3f1ced8",
     "5f502677b8a39495",
     "27d00d44a9b715db",
@@ -359,7 +351,7 @@
     "546593dc3f3e7625",
     "dd49e2dd1623ff6a",
     "194f3e27fb51fbcc",
-    "4c9890f589e8c265",
+    "710f5dfac6c1a88a",
     "6129537ae9707362",
     "d08f03d3fe31f8cf",
     "4b74666a2fc642fd",
@@ -418,17 +410,17 @@
     "be0b0a86613cd7ba",
     "2c34c1d4acdbdc10",
     "55193b18ac02a9c6",
-    "d4c31e70ee085130",
-    "a7954768f20cd59b",
-    "a771c2c6367701ea",
-    "78f1cc07d35ac2e3",
-    "ad05112d46b1a926",
-    "29abeaa744c2fa32",
-    "cd199905e6bf9194",
-    "9eb44facf0e487a1",
-    "331723b4bf8f2470",
-    "49c0bbf8282bc42a",
-    "efb336d19e28ddcb",
+    "5878a39a80e8263a",
+    "5fe26b6cb52837db",
+    "3b198cb2f5e22bb5",
+    "9ebd39ee536837bc",
+    "5cc8bdb1c2bf118f",
+    "8743d76175f99862",
+    "82467e3344097df9",
+    "81bfc35d8203fcbe",
+    "9d89e42864db7cdd",
+    "606db2b34f5fd4a9",
+    "951cbb696f3edfa2",
     "d5457cdc96ba7322",
     "8fe57208ef31fd07",
     "8539c679b49127f8",
@@ -506,11 +498,7 @@
         "f8e5ea4e41719d27",
         "4fd46b1d9c7a4f9f",
         "6ce3f4699c8f5562",
-        "43bbf9b92c9a56fd",
-        "e0075b158f01a839",
-        "931a5d99f36ab654",
-        "eb1a2d8896cac87d",
-        "46832bb324e85b83"
+        "43bbf9b92c9a56fd"
       ],
       "undated_article_ids": [],
       "push_article_ids": [
@@ -518,17 +506,14 @@
         "f8e5ea4e41719d27",
         "4fd46b1d9c7a4f9f",
         "6ce3f4699c8f5562",
-        "43bbf9b92c9a56fd",
-        "e0075b158f01a839",
-        "931a5d99f36ab654",
-        "eb1a2d8896cac87d",
-        "46832bb324e85b83"
+        "43bbf9b92c9a56fd"
       ],
       "article_count": 50,
-      "recent_count": 9,
+      "recent_count": 5,
       "undated_count": 0,
-      "push_count": 9,
-      "last_success_at": "2026-05-25T11:58:48.667Z"
+      "issue_dated_count": 0,
+      "push_count": 5,
+      "last_success_at": "2026-05-25T12:24:41.616Z"
     },
     "j14": {
       "journal_name": "JOURNAL OF FINANCE",
@@ -614,8 +599,9 @@
       "article_count": 23,
       "recent_count": 23,
       "undated_count": 0,
+      "issue_dated_count": 0,
       "push_count": 23,
-      "last_success_at": "2026-05-25T11:58:48.667Z"
+      "last_success_at": "2026-05-25T12:24:41.616Z"
     },
     "j17": {
       "journal_name": "JOURNAL OF POLITICAL ECONOMY",
@@ -644,13 +630,9 @@
         "2bcc77ed913e78ad"
       ],
       "recent_article_ids": [
-        "dd9dad416f6eecd2",
         "9455a8c3e35198b6",
         "f3444d5905a3f4fb",
         "f17c61c4b7b479a3",
-        "0d2f331eb74b9150",
-        "55ec5687a7ba156a",
-        "6122d38ca41b36ed",
         "fb9fe5979f0b0815",
         "6aaffcad27959a09",
         "0af79c96f25203a8",
@@ -659,13 +641,9 @@
       ],
       "undated_article_ids": [],
       "push_article_ids": [
-        "dd9dad416f6eecd2",
         "9455a8c3e35198b6",
         "f3444d5905a3f4fb",
         "f17c61c4b7b479a3",
-        "0d2f331eb74b9150",
-        "55ec5687a7ba156a",
-        "6122d38ca41b36ed",
         "fb9fe5979f0b0815",
         "6aaffcad27959a09",
         "0af79c96f25203a8",
@@ -673,10 +651,11 @@
         "2bcc77ed913e78ad"
       ],
       "article_count": 19,
-      "recent_count": 12,
+      "recent_count": 8,
       "undated_count": 0,
-      "push_count": 12,
-      "last_success_at": "2026-05-25T11:58:48.667Z"
+      "issue_dated_count": 0,
+      "push_count": 8,
+      "last_success_at": "2026-05-25T12:24:41.616Z"
     },
     "j20": {
       "journal_name": "ECONOMETRICA",
@@ -702,8 +681,9 @@
       "article_count": 11,
       "recent_count": 0,
       "undated_count": 0,
+      "issue_dated_count": 0,
       "push_count": 0,
-      "last_success_at": "2026-05-25T11:58:48.667Z"
+      "last_success_at": "2026-05-25T12:24:41.616Z"
     },
     "j21": {
       "journal_name": "ACADEMY OF MANAGEMENT JOURNAL",
@@ -763,33 +743,20 @@
         "d9230c8446d9c96b"
       ],
       "recent_article_ids": [
-        "bfd126579571aef9",
         "1404262631148340",
-        "b9c4732af340591d",
-        "fffb936ca9fb8bee",
-        "06c59f0b22eb5219",
-        "e572d7056400d4a4",
-        "b04bde384d393483",
-        "290f41dfbe73cb5f",
-        "f3de517e2f362d63"
+        "b9c4732af340591d"
       ],
       "undated_article_ids": [],
       "push_article_ids": [
-        "bfd126579571aef9",
         "1404262631148340",
-        "b9c4732af340591d",
-        "fffb936ca9fb8bee",
-        "06c59f0b22eb5219",
-        "e572d7056400d4a4",
-        "b04bde384d393483",
-        "290f41dfbe73cb5f",
-        "f3de517e2f362d63"
+        "b9c4732af340591d"
       ],
       "article_count": 50,
-      "recent_count": 9,
+      "recent_count": 2,
       "undated_count": 0,
-      "push_count": 9,
-      "last_success_at": "2026-05-25T11:58:48.667Z"
+      "issue_dated_count": 0,
+      "push_count": 2,
+      "last_success_at": "2026-05-25T12:24:41.616Z"
     },
     "j2": {
       "journal_name": "经济研究",
@@ -839,8 +806,9 @@
       "article_count": 11,
       "recent_count": 11,
       "undated_count": 0,
+      "issue_dated_count": 11,
       "push_count": 11,
-      "last_success_at": "2026-05-25T11:58:48.667Z"
+      "last_success_at": "2026-05-25T12:24:41.616Z"
     },
     "j4": {
       "journal_name": "中国工业经济",
@@ -899,8 +867,7 @@
         "b68545b229f5dcb6",
         "2517394f889adc59"
       ],
-      "recent_article_ids": [],
-      "undated_article_ids": [
+      "recent_article_ids": [
         "be078c0dc094af61",
         "af225938923aa64e",
         "69ddd773fd5d66b4",
@@ -909,49 +876,9 @@
         "2519ed04b33f983c",
         "28bcde53880900f7",
         "f0b5a25e84a9a81a",
-        "922530fbca68665c",
-        "4d4363bb6408f839",
-        "bd7723b614a03577",
-        "77eee48b38094ac5",
-        "8277734619d4e3de",
-        "5a13d964de471bc8",
-        "75133f96ddbd27c0",
-        "3ce1bd6ec7b34216",
-        "2d53a0b7c95ddc6a",
-        "a974b366a3555d12",
-        "f19f194b158f84fc",
-        "045a7f422754f9ef",
-        "375ab857af19375e",
-        "3b0998f6c77e3752",
-        "8e90e9fe15a0c8b9",
-        "ac27b5affc9f3e4b",
-        "bfd04a6d7e10f401",
-        "a62e3c316e022fdb",
-        "76e97634555857b8",
-        "20f3e6b72ec4aa4d",
-        "1ddfbecd09a0b0a5",
-        "a1fdbb3360b9d58e",
-        "09cf5f4e122a61af",
-        "d785f410b193b0c8",
-        "83be5d43d531d35b",
-        "afa663e6536d2f2e",
-        "41e3fd3850345fba",
-        "7091c94bedcc3ef5",
-        "cd11fe58514c0557",
-        "8c1117dfc513f80c",
-        "25753ec18155a5be",
-        "897ac0131817bbd2",
-        "e02a6a860411676d",
-        "8de2b1ef33b59ac9",
-        "bb00f1dd8685e86a",
-        "99b1f96b4916408a",
-        "a7e202d6a86b3d4d",
-        "781b30596db96d58",
-        "d82707b1a3165890",
-        "bf133631e2324394",
-        "b68545b229f5dcb6",
-        "2517394f889adc59"
+        "922530fbca68665c"
       ],
+      "undated_article_ids": [],
       "push_article_ids": [
         "be078c0dc094af61",
         "af225938923aa64e",
@@ -961,54 +888,14 @@
         "2519ed04b33f983c",
         "28bcde53880900f7",
         "f0b5a25e84a9a81a",
-        "922530fbca68665c",
-        "4d4363bb6408f839",
-        "bd7723b614a03577",
-        "77eee48b38094ac5",
-        "8277734619d4e3de",
-        "5a13d964de471bc8",
-        "75133f96ddbd27c0",
-        "3ce1bd6ec7b34216",
-        "2d53a0b7c95ddc6a",
-        "a974b366a3555d12",
-        "f19f194b158f84fc",
-        "045a7f422754f9ef",
-        "375ab857af19375e",
-        "3b0998f6c77e3752",
-        "8e90e9fe15a0c8b9",
-        "ac27b5affc9f3e4b",
-        "bfd04a6d7e10f401",
-        "a62e3c316e022fdb",
-        "76e97634555857b8",
-        "20f3e6b72ec4aa4d",
-        "1ddfbecd09a0b0a5",
-        "a1fdbb3360b9d58e",
-        "09cf5f4e122a61af",
-        "d785f410b193b0c8",
-        "83be5d43d531d35b",
-        "afa663e6536d2f2e",
-        "41e3fd3850345fba",
-        "7091c94bedcc3ef5",
-        "cd11fe58514c0557",
-        "8c1117dfc513f80c",
-        "25753ec18155a5be",
-        "897ac0131817bbd2",
-        "e02a6a860411676d",
-        "8de2b1ef33b59ac9",
-        "bb00f1dd8685e86a",
-        "99b1f96b4916408a",
-        "a7e202d6a86b3d4d",
-        "781b30596db96d58",
-        "d82707b1a3165890",
-        "bf133631e2324394",
-        "b68545b229f5dcb6",
-        "2517394f889adc59"
+        "922530fbca68665c"
       ],
       "article_count": 50,
-      "recent_count": 0,
-      "undated_count": 50,
-      "push_count": 50,
-      "last_success_at": "2026-05-25T11:58:48.667Z"
+      "recent_count": 9,
+      "undated_count": 0,
+      "issue_dated_count": 50,
+      "push_count": 9,
+      "last_success_at": "2026-05-25T12:24:41.616Z"
     },
     "j12": {
       "journal_name": "中国农村经济",
@@ -1052,8 +939,9 @@
       "article_count": 9,
       "recent_count": 9,
       "undated_count": 0,
+      "issue_dated_count": 9,
       "push_count": 9,
-      "last_success_at": "2026-05-25T11:58:48.667Z"
+      "last_success_at": "2026-05-25T12:24:41.616Z"
     },
     "j3": {
       "journal_name": "世界经济",
@@ -1070,8 +958,7 @@
         "e38ae98d85ac9620",
         "486167839b12a834"
       ],
-      "recent_article_ids": [],
-      "undated_article_ids": [
+      "recent_article_ids": [
         "e92e6a7ee66c92b8",
         "65cc9554f29ca0dc",
         "4e52d9fb6c9de0e6",
@@ -1081,6 +968,7 @@
         "e38ae98d85ac9620",
         "486167839b12a834"
       ],
+      "undated_article_ids": [],
       "push_article_ids": [
         "e92e6a7ee66c92b8",
         "65cc9554f29ca0dc",
@@ -1092,10 +980,11 @@
         "486167839b12a834"
       ],
       "article_count": 8,
-      "recent_count": 0,
-      "undated_count": 8,
+      "recent_count": 8,
+      "undated_count": 0,
+      "issue_dated_count": 8,
       "push_count": 8,
-      "last_success_at": "2026-05-25T11:58:48.667Z"
+      "last_success_at": "2026-05-25T12:24:41.616Z"
     },
     "j5": {
       "journal_name": "金融研究",
@@ -1125,19 +1014,10 @@
         "143ffbd99e69fd0f",
         "57868b41e3311d4a",
         "762e4281812d328e",
-        "c660b459a0b0b38b",
-        "fd732dcda4a4f969",
-        "cc30248bc3591d21",
-        "e4cff9df2dae2889",
-        "1f2fb031d10858bb",
-        "5ac0a5df0ca923c9",
-        "025d8377774b2df6",
-        "086c88543dc32534",
-        "5758ea4ac952fc03"
+        "c660b459a0b0b38b"
       ],
       "recent_article_ids": [],
       "undated_article_ids": [
-        "0baaba7f02a67c5f",
         "832e85239543e060",
         "6ee5f4cbe92024a4",
         "5a94882302a142cb",
@@ -1148,29 +1028,9 @@
         "46f6a5262b8400e5",
         "1f4c29aa2f876984",
         "7e2ec80020d013c0",
-        "cb5276bcde2b40f4",
-        "e74e08fb138758df",
-        "84390e7bbc9b460f",
-        "d76412ae55050403",
-        "b0db781998d2a79e",
-        "872ffd5434d3fef5",
-        "0fe8f404f52bbf20",
-        "ceab0bb7c5616b8b",
-        "143ffbd99e69fd0f",
-        "57868b41e3311d4a",
-        "762e4281812d328e",
-        "c660b459a0b0b38b",
-        "fd732dcda4a4f969",
-        "cc30248bc3591d21",
-        "e4cff9df2dae2889",
-        "1f2fb031d10858bb",
-        "5ac0a5df0ca923c9",
-        "025d8377774b2df6",
-        "086c88543dc32534",
-        "5758ea4ac952fc03"
+        "cb5276bcde2b40f4"
       ],
       "push_article_ids": [
-        "0baaba7f02a67c5f",
         "832e85239543e060",
         "6ee5f4cbe92024a4",
         "5a94882302a142cb",
@@ -1181,32 +1041,14 @@
         "46f6a5262b8400e5",
         "1f4c29aa2f876984",
         "7e2ec80020d013c0",
-        "cb5276bcde2b40f4",
-        "e74e08fb138758df",
-        "84390e7bbc9b460f",
-        "d76412ae55050403",
-        "b0db781998d2a79e",
-        "872ffd5434d3fef5",
-        "0fe8f404f52bbf20",
-        "ceab0bb7c5616b8b",
-        "143ffbd99e69fd0f",
-        "57868b41e3311d4a",
-        "762e4281812d328e",
-        "c660b459a0b0b38b",
-        "fd732dcda4a4f969",
-        "cc30248bc3591d21",
-        "e4cff9df2dae2889",
-        "1f2fb031d10858bb",
-        "5ac0a5df0ca923c9",
-        "025d8377774b2df6",
-        "086c88543dc32534",
-        "5758ea4ac952fc03"
+        "cb5276bcde2b40f4"
       ],
-      "article_count": 31,
+      "article_count": 23,
       "recent_count": 0,
-      "undated_count": 31,
-      "push_count": 31,
-      "last_success_at": "2026-05-25T11:58:48.667Z"
+      "undated_count": 11,
+      "issue_dated_count": 12,
+      "push_count": 11,
+      "last_success_at": "2026-05-25T12:24:41.616Z"
     },
     "j6": {
       "journal_name": "管理世界",
@@ -1256,8 +1098,9 @@
       "article_count": 11,
       "recent_count": 11,
       "undated_count": 0,
+      "issue_dated_count": 0,
       "push_count": 11,
-      "last_success_at": "2026-05-25T11:58:48.667Z"
+      "last_success_at": "2026-05-25T12:24:41.616Z"
     },
     "j8": {
       "journal_name": "公共管理学报",
@@ -1280,38 +1123,25 @@
       ],
       "recent_article_ids": [],
       "undated_article_ids": [
-        "7864c2d5ba945a2c",
-        "030bcf88b7f16b6d",
-        "13bdb8ffd970e8af",
-        "c2fb143e66b8ae47",
-        "48f7374498506103",
-        "85b7ad708f8c3224",
         "7ca2f0e1ba20ad8f",
         "1fa2f3f1d09dede6",
         "c87daaa684ae4d94",
         "16d24f92a209fe30",
-        "5558797677dfb623",
-        "b4bf8b8f2b01a97c"
+        "5558797677dfb623"
       ],
       "push_article_ids": [
-        "7864c2d5ba945a2c",
-        "030bcf88b7f16b6d",
-        "13bdb8ffd970e8af",
-        "c2fb143e66b8ae47",
-        "48f7374498506103",
-        "85b7ad708f8c3224",
         "7ca2f0e1ba20ad8f",
         "1fa2f3f1d09dede6",
         "c87daaa684ae4d94",
         "16d24f92a209fe30",
-        "5558797677dfb623",
-        "b4bf8b8f2b01a97c"
+        "5558797677dfb623"
       ],
       "article_count": 12,
       "recent_count": 0,
-      "undated_count": 12,
-      "push_count": 12,
-      "last_success_at": "2026-05-25T11:58:48.667Z"
+      "undated_count": 5,
+      "issue_dated_count": 7,
+      "push_count": 5,
+      "last_success_at": "2026-05-25T12:24:41.616Z"
     },
     "j7": {
       "journal_name": "南开管理评论",
@@ -1343,8 +1173,9 @@
       "article_count": 17,
       "recent_count": 0,
       "undated_count": 0,
+      "issue_dated_count": 0,
       "push_count": 0,
-      "last_success_at": "2026-05-25T11:58:48.667Z"
+      "last_success_at": "2026-05-25T12:24:41.616Z"
     },
     "j9": {
       "journal_name": "管理科学学报",
@@ -1363,8 +1194,7 @@
         "2dd1e736f3e362e5",
         "ef3fb9a3717c7ea4"
       ],
-      "recent_article_ids": [],
-      "undated_article_ids": [
+      "recent_article_ids": [
         "6b3e1da86b74cc58",
         "10448c67514acc10",
         "60ab6531bb05147b",
@@ -1376,6 +1206,7 @@
         "2dd1e736f3e362e5",
         "ef3fb9a3717c7ea4"
       ],
+      "undated_article_ids": [],
       "push_article_ids": [
         "6b3e1da86b74cc58",
         "10448c67514acc10",
@@ -1389,10 +1220,11 @@
         "ef3fb9a3717c7ea4"
       ],
       "article_count": 10,
-      "recent_count": 0,
-      "undated_count": 10,
+      "recent_count": 10,
+      "undated_count": 0,
+      "issue_dated_count": 10,
       "push_count": 10,
-      "last_success_at": "2026-05-25T11:58:48.667Z"
+      "last_success_at": "2026-05-25T12:24:41.616Z"
     },
     "j10": {
       "journal_name": "中国行政管理",
@@ -1400,25 +1232,25 @@
       "probe_url": "https://www.cqvip.com/journal/81961X",
       "extraction_rule": "cqvip-journal-html",
       "article_ids": [
-        "d264f74a93f52139",
-        "8df6b936b08a64df",
-        "c91c6386e2831c5f",
-        "3ec6d41f5107e64c",
-        "1a42daa6cb672115",
-        "7b59aa63008fb820",
-        "218a4ab898f600c8",
-        "a3018020f73424e5",
-        "f7a7b4c5add88387",
-        "c3ba034837d238c4",
-        "293afd220cf38023",
-        "f4c70551f5d0aaab",
-        "73adffe65214cd91",
-        "3c23926b6129f4d6",
-        "6216a1acf657b9a6",
-        "d346657b48e2ebd1",
-        "faf57644da0e7b88",
-        "a8e51da7ec206da8",
-        "56729d7e1d6d9ae9"
+        "0e9ccf272e37b432",
+        "cac9df5aea66de31",
+        "e5379f3db3cb432e",
+        "eaaed2c247e41960",
+        "f267f80411b3fa65",
+        "c927679217f3507b",
+        "0f4f5a1ba52e538a",
+        "df9c2ed36d785633",
+        "a611f06306dca13a",
+        "2f50f89885a6591f",
+        "815e6d53723d2b1f",
+        "03cd66b3ce62422e",
+        "6ffed0b6eb85ade4",
+        "61bf1ee59765edff",
+        "b73879fea2c22cc9",
+        "3b44401874d7029c",
+        "e5b2c23964f4340c",
+        "c0f82bd0db9ca602",
+        "c9d7b584bbc38455"
       ],
       "recent_article_ids": [],
       "undated_article_ids": [],
@@ -1426,8 +1258,9 @@
       "article_count": 19,
       "recent_count": 0,
       "undated_count": 0,
+      "issue_dated_count": 19,
       "push_count": 0,
-      "last_success_at": "2026-05-25T11:58:48.667Z"
+      "last_success_at": "2026-05-25T12:24:41.616Z"
     },
     "j11": {
       "journal_name": "会计研究",
@@ -1449,8 +1282,7 @@
         "73be5843f75d804c",
         "33b631c9feeeba47"
       ],
-      "recent_article_ids": [],
-      "undated_article_ids": [
+      "recent_article_ids": [
         "a4f79c1ff3f1ced8",
         "5f502677b8a39495",
         "27d00d44a9b715db",
@@ -1465,6 +1297,7 @@
         "73be5843f75d804c",
         "33b631c9feeeba47"
       ],
+      "undated_article_ids": [],
       "push_article_ids": [
         "a4f79c1ff3f1ced8",
         "5f502677b8a39495",
@@ -1481,10 +1314,11 @@
         "33b631c9feeeba47"
       ],
       "article_count": 13,
-      "recent_count": 0,
-      "undated_count": 13,
+      "recent_count": 13,
+      "undated_count": 0,
+      "issue_dated_count": 13,
       "push_count": 13,
-      "last_success_at": "2026-05-25T11:58:48.667Z"
+      "last_success_at": "2026-05-25T12:24:41.616Z"
     },
     "j15": {
       "journal_name": "ACCOUNTING REVIEW",
@@ -1503,7 +1337,7 @@
         "546593dc3f3e7625",
         "dd49e2dd1623ff6a",
         "194f3e27fb51fbcc",
-        "4c9890f589e8c265"
+        "710f5dfac6c1a88a"
       ],
       "recent_article_ids": [
         "c58ba3ba158011da",
@@ -1533,8 +1367,9 @@
       "article_count": 12,
       "recent_count": 10,
       "undated_count": 0,
+      "issue_dated_count": 0,
       "push_count": 10,
-      "last_success_at": "2026-05-25T11:58:48.667Z"
+      "last_success_at": "2026-05-25T12:24:41.616Z"
     },
     "j16": {
       "journal_name": "AMERICAN ECONOMIC REVIEW",
@@ -1653,8 +1488,9 @@
       "article_count": 34,
       "recent_count": 0,
       "undated_count": 34,
+      "issue_dated_count": 0,
       "push_count": 34,
-      "last_success_at": "2026-05-25T11:58:48.667Z"
+      "last_success_at": "2026-05-25T12:24:41.616Z"
     },
     "j18": {
       "journal_name": "QUARTERLY JOURNAL OF ECONOMICS",
@@ -1693,8 +1529,9 @@
       "article_count": 12,
       "recent_count": 5,
       "undated_count": 0,
+      "issue_dated_count": 0,
       "push_count": 5,
-      "last_success_at": "2026-05-25T11:58:48.667Z"
+      "last_success_at": "2026-05-25T12:24:41.616Z"
     },
     "j19": {
       "journal_name": "REVIEW OF ECONOMIC STUDIES",
@@ -1747,8 +1584,9 @@
       "article_count": 12,
       "recent_count": 12,
       "undated_count": 0,
+      "issue_dated_count": 0,
       "push_count": 12,
-      "last_success_at": "2026-05-25T11:58:48.667Z"
+      "last_success_at": "2026-05-25T12:24:41.616Z"
     },
     "j1": {
       "journal_name": "JOURNAL OF FINANCE",
@@ -1756,50 +1594,51 @@
       "probe_url": "https://afajof.org/forthcoming-articles/",
       "extraction_rule": "afa-forthcoming-doi",
       "article_ids": [
-        "d4c31e70ee085130",
-        "a7954768f20cd59b",
-        "a771c2c6367701ea",
-        "78f1cc07d35ac2e3",
-        "ad05112d46b1a926",
-        "29abeaa744c2fa32",
-        "cd199905e6bf9194",
-        "9eb44facf0e487a1",
-        "331723b4bf8f2470",
-        "49c0bbf8282bc42a",
-        "efb336d19e28ddcb"
+        "5878a39a80e8263a",
+        "5fe26b6cb52837db",
+        "3b198cb2f5e22bb5",
+        "9ebd39ee536837bc",
+        "5cc8bdb1c2bf118f",
+        "8743d76175f99862",
+        "82467e3344097df9",
+        "81bfc35d8203fcbe",
+        "9d89e42864db7cdd",
+        "606db2b34f5fd4a9",
+        "951cbb696f3edfa2"
       ],
-      "recent_article_ids": [],
-      "undated_article_ids": [
-        "d4c31e70ee085130",
-        "a7954768f20cd59b",
-        "a771c2c6367701ea",
-        "78f1cc07d35ac2e3",
-        "ad05112d46b1a926",
-        "29abeaa744c2fa32",
-        "cd199905e6bf9194",
-        "9eb44facf0e487a1",
-        "331723b4bf8f2470",
-        "49c0bbf8282bc42a",
-        "efb336d19e28ddcb"
+      "recent_article_ids": [
+        "5878a39a80e8263a",
+        "5fe26b6cb52837db",
+        "3b198cb2f5e22bb5",
+        "9ebd39ee536837bc",
+        "5cc8bdb1c2bf118f",
+        "8743d76175f99862",
+        "82467e3344097df9",
+        "81bfc35d8203fcbe",
+        "9d89e42864db7cdd",
+        "606db2b34f5fd4a9",
+        "951cbb696f3edfa2"
       ],
+      "undated_article_ids": [],
       "push_article_ids": [
-        "d4c31e70ee085130",
-        "a7954768f20cd59b",
-        "a771c2c6367701ea",
-        "78f1cc07d35ac2e3",
-        "ad05112d46b1a926",
-        "29abeaa744c2fa32",
-        "cd199905e6bf9194",
-        "9eb44facf0e487a1",
-        "331723b4bf8f2470",
-        "49c0bbf8282bc42a",
-        "efb336d19e28ddcb"
+        "5878a39a80e8263a",
+        "5fe26b6cb52837db",
+        "3b198cb2f5e22bb5",
+        "9ebd39ee536837bc",
+        "5cc8bdb1c2bf118f",
+        "8743d76175f99862",
+        "82467e3344097df9",
+        "81bfc35d8203fcbe",
+        "9d89e42864db7cdd",
+        "606db2b34f5fd4a9",
+        "951cbb696f3edfa2"
       ],
       "article_count": 11,
-      "recent_count": 0,
-      "undated_count": 11,
+      "recent_count": 11,
+      "undated_count": 0,
+      "issue_dated_count": 0,
       "push_count": 11,
-      "last_success_at": "2026-05-25T11:58:48.667Z"
+      "last_success_at": "2026-05-25T12:24:41.616Z"
     },
     "j22": {
       "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
@@ -1823,8 +1662,6 @@
       ],
       "recent_article_ids": [],
       "undated_article_ids": [
-        "d5457cdc96ba7322",
-        "8fe57208ef31fd07",
         "8539c679b49127f8",
         "9da0064eec9148c0",
         "448937cf3814c000",
@@ -1838,8 +1675,6 @@
         "b9994563eb53d45a"
       ],
       "push_article_ids": [
-        "d5457cdc96ba7322",
-        "8fe57208ef31fd07",
         "8539c679b49127f8",
         "9da0064eec9148c0",
         "448937cf3814c000",
@@ -1854,9 +1689,10 @@
       ],
       "article_count": 13,
       "recent_count": 0,
-      "undated_count": 13,
-      "push_count": 13,
-      "last_success_at": "2026-05-25T11:58:48.667Z"
+      "undated_count": 11,
+      "issue_dated_count": 2,
+      "push_count": 11,
+      "last_success_at": "2026-05-25T12:24:41.616Z"
     }
   }
 }

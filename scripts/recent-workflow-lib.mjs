@@ -14,7 +14,7 @@ export function normalizeWorkflowDate(rawValue = "") {
   const raw = String(rawValue || "").trim();
   if (!raw) return { raw, normalized: "", precision: "unknown", status: "unknown" };
 
-  const dayMatch = raw.match(/\b(20\d{2})-(\d{1,2})-(\d{1,2})\b/);
+  const dayMatch = raw.match(/\b(20\d{2})-(\d{1,2})-(\d{1,2})(?!\d)/);
   if (dayMatch) {
     const [, year, month, day] = dayMatch;
     return {
@@ -25,7 +25,7 @@ export function normalizeWorkflowDate(rawValue = "") {
     };
   }
 
-  const monthMatch = raw.match(/\b(20\d{2})-(\d{1,2})\b/);
+  const monthMatch = raw.match(/\b(20\d{2})-(\d{1,2})(?!-\d)(?:\b|$)/);
   if (monthMatch) {
     const [, year, month] = monthMatch;
     return {
@@ -60,6 +60,15 @@ function isInsideWindow(normalizedDate, precision, since, until) {
   return false;
 }
 
+function bestDateInfo(...dateInfos) {
+  return dateInfos.find((dateInfo) => dateInfo.status === "known") || {
+    raw: "",
+    normalized: "",
+    precision: "unknown",
+    status: "unknown",
+  };
+}
+
 function stableArticleId(source, article) {
   const key = [
     source.journal_id,
@@ -83,20 +92,37 @@ function sourceArticles(source) {
 }
 
 function toWorkflowArticle(source, article, options, previousIds) {
-  const dateInfo = normalizeWorkflowDate(article.date);
+  const fallbackDateInfo = normalizeWorkflowDate(article.date);
+  const publishedDateInfo = normalizeWorkflowDate(article.published_at || (fallbackDateInfo.precision === "day" ? article.date : ""));
+  const issueDateInfo = normalizeWorkflowDate(article.issue_date || (fallbackDateInfo.precision === "month" ? article.date : ""));
+  const firstSeenInfo = normalizeWorkflowDate(article.first_seen_at || options.checkedAt);
+  const displayDateInfo = bestDateInfo(publishedDateInfo, issueDateInfo, firstSeenInfo);
   const id = stableArticleId(source, article);
-  const inWindow = isInsideWindow(dateInfo.normalized, dateInfo.precision, options.since, options.until);
+  const publishedInWindow = isInsideWindow(publishedDateInfo.normalized, publishedDateInfo.precision, options.since, options.until);
+  const issueInWindow = !publishedInWindow && isInsideWindow(issueDateInfo.normalized, issueDateInfo.precision, options.since, options.until);
   const isNew = !options.baseline && !previousIds.has(id);
-  const inclusionReason = inWindow
-    ? dateInfo.precision === "month" ? "month_overlaps_window" : "date_within_window"
-    : dateInfo.status === "unknown" ? "undated_latest_candidate" : "outside_window";
+  const hasNoUsableDate = publishedDateInfo.status === "unknown" && issueDateInfo.status === "unknown";
+  const inclusionReason = publishedInWindow
+    ? "date_within_window"
+    : issueInWindow
+      ? "issue_overlaps_window"
+      : hasNoUsableDate
+        ? "undated_latest_candidate"
+        : "outside_window";
   const pushBasis = !isNew
     ? ""
-    : inWindow
+    : publishedInWindow
       ? "published_date"
-      : dateInfo.status === "unknown"
-        ? "first_seen"
-        : "";
+      : issueInWindow
+        ? "issue_date"
+        : hasNoUsableDate
+          ? "first_seen"
+          : "";
+  const displayDateBasis = publishedDateInfo.status === "known"
+    ? "published_at"
+    : issueDateInfo.status === "known"
+      ? "issue_date"
+      : "first_seen_at";
 
   return {
     id,
@@ -109,10 +135,15 @@ function toWorkflowArticle(source, article, options, previousIds) {
     title: article.title,
     url: article.url || "",
     authors: article.authors || "",
-    published_at: dateInfo.normalized,
-    date_raw: dateInfo.raw,
-    date_precision: dateInfo.precision,
-    date_status: dateInfo.status,
+    published_at: publishedDateInfo.status === "known" && publishedDateInfo.precision === "day" ? publishedDateInfo.normalized : "",
+    issue_date: issueDateInfo.status === "known" ? issueDateInfo.normalized : "",
+    first_seen_at: firstSeenInfo.normalized,
+    display_date: displayDateInfo.normalized,
+    display_date_basis: displayDateBasis,
+    date_raw: publishedDateInfo.raw || issueDateInfo.raw,
+    date_precision: publishedDateInfo.status === "known" ? publishedDateInfo.precision : issueDateInfo.precision,
+    date_status: publishedDateInfo.status === "known" || issueDateInfo.status === "known" ? "known" : "unknown",
+    date_source: article.date_source || "",
     inclusion_reason: inclusionReason,
     push_basis: pushBasis,
     observed_at: options.checkedAt,
@@ -133,7 +164,7 @@ function dedupeById(items) {
 
 function sortArticles(items) {
   return [...items].sort((a, b) => {
-    const dateOrder = String(b.published_at || "").localeCompare(String(a.published_at || ""));
+    const dateOrder = String(b.display_date || b.published_at || "").localeCompare(String(a.display_date || a.published_at || ""));
     if (dateOrder) return dateOrder;
     return a.title.localeCompare(b.title, "zh-Hans-CN");
   });
@@ -164,7 +195,7 @@ export function buildRecentWorkflow(results, options) {
       checkedAt,
       baseline: Boolean(options.baseline),
     }, seenBefore));
-    const sourceRecent = sourceItems.filter((article) => ["date_within_window", "month_overlaps_window"].includes(article.inclusion_reason));
+    const sourceRecent = sourceItems.filter((article) => ["date_within_window", "issue_overlaps_window"].includes(article.inclusion_reason));
     const sourceUndated = sourceItems.filter((article) => article.inclusion_reason === "undated_latest_candidate");
     const sourcePushQueue = sourceItems.filter((article) => Boolean(article.push_basis));
     recent.push(...sourceRecent);
@@ -182,6 +213,7 @@ export function buildRecentWorkflow(results, options) {
       article_count: sourceItems.length,
       recent_count: sourceRecent.length,
       undated_count: sourceUndated.length,
+      issue_dated_count: sourceItems.filter((article) => article.issue_date && !article.published_at).length,
       push_count: sourcePushQueue.length,
       last_success_at: checkedAt,
     };
@@ -191,6 +223,7 @@ export function buildRecentWorkflow(results, options) {
   const recentArticles = sortArticles(dedupeById(recent));
   const undatedCandidates = sortArticles(dedupeById(undated));
   const pushArticles = sortArticles(dedupeById(pushQueue));
+  const issueDatedArticles = recentArticles.filter((article) => article.issue_date && !article.published_at);
 
   return {
     summary: {
@@ -201,6 +234,7 @@ export function buildRecentWorkflow(results, options) {
       sources_ready: readySources.length,
       recent_articles: recentArticles.length,
       new_recent_articles: recentArticles.filter((article) => article.is_new).length,
+      issue_dated_articles: issueDatedArticles.length,
       new_undated_articles: undatedCandidates.filter((article) => article.is_new).length,
       undated_candidates: undatedCandidates.length,
       push_queue_articles: pushArticles.length,
