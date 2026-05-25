@@ -1,356 +1,18 @@
 {
   "summary": {
-    "checked_at": "2026-05-25T13:06:41.100Z",
+    "checked_at": "2026-05-25T13:28:20.745Z",
     "since": "2026-04-25",
     "until": "2026-05-25",
     "sources_total": 22,
     "sources_ready": 22,
     "recent_articles": 132,
     "new_recent_articles": 132,
-    "issue_dated_articles": 55,
+    "issue_dated_articles": 42,
     "new_undated_articles": 34,
     "undated_candidates": 34,
     "push_queue_articles": 166
   },
   "recent_articles": [
-    {
-      "id": "659de30b493317cd",
-      "journal_id": "j22",
-      "source_journal_id": "j22",
-      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
-      "source_type": "adapter_source",
-      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "extraction_rule": "asq-sage-links",
-      "title": "A Curation Approach to Identity Management: The Costs of Combining Identity Expression and Suppression",
-      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261431827",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "2026-06",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-06",
-      "display_date_basis": "issue_date",
-      "date_raw": "2026-06",
-      "date_precision": "month",
-      "date_status": "known",
-      "date_source": "context_issue",
-      "inclusion_reason": "future_issue_first_seen",
-      "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
-      "is_new": true
-    },
-    {
-      "id": "582339f384ffbda9",
-      "journal_id": "j22",
-      "source_journal_id": "j22",
-      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
-      "source_type": "adapter_source",
-      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "extraction_rule": "asq-sage-links",
-      "title": "Alberto Galasso. The Management of Innovation: Managing and Creating Technology Capital",
-      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261417678",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "2026-06",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-06",
-      "display_date_basis": "issue_date",
-      "date_raw": "2026-06",
-      "date_precision": "month",
-      "date_status": "known",
-      "date_source": "context_issue",
-      "inclusion_reason": "future_issue_first_seen",
-      "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
-      "is_new": true
-    },
-    {
-      "id": "df24c56464ed0930",
-      "journal_id": "j22",
-      "source_journal_id": "j22",
-      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
-      "source_type": "adapter_source",
-      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "extraction_rule": "asq-sage-links",
-      "title": "Alessandro Gerosa. The Hipster Economy: Taste and Authenticity in Late Modern Capitalism",
-      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251411308",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "2026-06",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-06",
-      "display_date_basis": "issue_date",
-      "date_raw": "2026-06",
-      "date_precision": "month",
-      "date_status": "known",
-      "date_source": "context_issue",
-      "inclusion_reason": "future_issue_first_seen",
-      "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
-      "is_new": true
-    },
-    {
-      "id": "a18091e5df9305a0",
-      "journal_id": "j22",
-      "source_journal_id": "j22",
-      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
-      "source_type": "adapter_source",
-      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "extraction_rule": "asq-sage-links",
-      "title": "Andrew J. Hoffman. Business School and the Noble Purpose of the Market: Correcting the Systemic Failures of Shareholder Capitalism",
-      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251406234",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "2026-06",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-06",
-      "display_date_basis": "issue_date",
-      "date_raw": "2026-06",
-      "date_precision": "month",
-      "date_status": "known",
-      "date_source": "context_issue",
-      "inclusion_reason": "future_issue_first_seen",
-      "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
-      "is_new": true
-    },
-    {
-      "id": "1d87d42f27138fb6",
-      "journal_id": "j22",
-      "source_journal_id": "j22",
-      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
-      "source_type": "adapter_source",
-      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "extraction_rule": "asq-sage-links",
-      "title": "Daniel Susskind. Growth: A History and a Reckoning",
-      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251401212",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "2026-06",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-06",
-      "display_date_basis": "issue_date",
-      "date_raw": "2026-06",
-      "date_precision": "month",
-      "date_status": "known",
-      "date_source": "context_issue",
-      "inclusion_reason": "future_issue_first_seen",
-      "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
-      "is_new": true
-    },
-    {
-      "id": "5be451c06b7e8f5a",
-      "journal_id": "j22",
-      "source_journal_id": "j22",
-      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
-      "source_type": "adapter_source",
-      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "extraction_rule": "asq-sage-links",
-      "title": "David Lingelbach and Valentina Rodríguez Guerra. The Oligarchs’ Grip: Fusing Wealth and Power",
-      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251396889",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "2026-06",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-06",
-      "display_date_basis": "issue_date",
-      "date_raw": "2026-06",
-      "date_precision": "month",
-      "date_status": "known",
-      "date_source": "context_issue",
-      "inclusion_reason": "future_issue_first_seen",
-      "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
-      "is_new": true
-    },
-    {
-      "id": "48b8b21077d6073d",
-      "journal_id": "j22",
-      "source_journal_id": "j22",
-      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
-      "source_type": "adapter_source",
-      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "extraction_rule": "asq-sage-links",
-      "title": "Democratic Deviations: How Organizations Sustain Decentralization Commitments in the Face of Centralization Pressures",
-      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261421927",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "2026-06",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-06",
-      "display_date_basis": "issue_date",
-      "date_raw": "2026-06",
-      "date_precision": "month",
-      "date_status": "known",
-      "date_source": "context_issue",
-      "inclusion_reason": "future_issue_first_seen",
-      "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
-      "is_new": true
-    },
-    {
-      "id": "f38741cc0fe59db4",
-      "journal_id": "j22",
-      "source_journal_id": "j22",
-      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
-      "source_type": "adapter_source",
-      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "extraction_rule": "asq-sage-links",
-      "title": "Interpreting Violence: How Community Context Shapes Corporate Responses to Street Protests",
-      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261419416",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "2026-06",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-06",
-      "display_date_basis": "issue_date",
-      "date_raw": "2026-06",
-      "date_precision": "month",
-      "date_status": "known",
-      "date_source": "context_issue",
-      "inclusion_reason": "future_issue_first_seen",
-      "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
-      "is_new": true
-    },
-    {
-      "id": "242e08c506e211d5",
-      "journal_id": "j22",
-      "source_journal_id": "j22",
-      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
-      "source_type": "adapter_source",
-      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "extraction_rule": "asq-sage-links",
-      "title": "Jeffrey Funk. Unicorns, Hype, and Bubbles: A Guide to Spotting, Avoiding, and Exploiting Investment Bubbles in Tech",
-      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261421932",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "2026-06",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-06",
-      "display_date_basis": "issue_date",
-      "date_raw": "2026-06",
-      "date_precision": "month",
-      "date_status": "known",
-      "date_source": "context_issue",
-      "inclusion_reason": "future_issue_first_seen",
-      "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
-      "is_new": true
-    },
-    {
-      "id": "5e80e6b06655507c",
-      "journal_id": "j22",
-      "source_journal_id": "j22",
-      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
-      "source_type": "adapter_source",
-      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "extraction_rule": "asq-sage-links",
-      "title": "Kalpita Bhar Paul. Ecophenomenology and the Environmental Crisis in the Sundarbans: Towards a Community-Based Ethic",
-      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261428471",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "2026-06",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-06",
-      "display_date_basis": "issue_date",
-      "date_raw": "2026-06",
-      "date_precision": "month",
-      "date_status": "known",
-      "date_source": "context_issue",
-      "inclusion_reason": "future_issue_first_seen",
-      "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
-      "is_new": true
-    },
-    {
-      "id": "fc9b3e633a5aed07",
-      "journal_id": "j22",
-      "source_journal_id": "j22",
-      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
-      "source_type": "adapter_source",
-      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "extraction_rule": "asq-sage-links",
-      "title": "Occupational Identity Formation in Unsaturated Spaces: The Layered Accretion of the American Astronaut’s Identity",
-      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261427746",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "2026-06",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-06",
-      "display_date_basis": "issue_date",
-      "date_raw": "2026-06",
-      "date_precision": "month",
-      "date_status": "known",
-      "date_source": "context_issue",
-      "inclusion_reason": "future_issue_first_seen",
-      "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
-      "is_new": true
-    },
-    {
-      "id": "cd47acac39372f3d",
-      "journal_id": "j22",
-      "source_journal_id": "j22",
-      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
-      "source_type": "adapter_source",
-      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "extraction_rule": "asq-sage-links",
-      "title": "Timothy Kuhn. What Do Corporations Want? Communicative Capitalism, Corporate Purpose, and a New Theory of the Firm",
-      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251414373",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "2026-06",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-06",
-      "display_date_basis": "issue_date",
-      "date_raw": "2026-06",
-      "date_precision": "month",
-      "date_status": "known",
-      "date_source": "context_issue",
-      "inclusion_reason": "future_issue_first_seen",
-      "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
-      "is_new": true
-    },
-    {
-      "id": "bbea2bd0369b66c1",
-      "journal_id": "j22",
-      "source_journal_id": "j22",
-      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
-      "source_type": "adapter_source",
-      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "extraction_rule": "asq-sage-links",
-      "title": "Unequal in the Spotlight: Gender Differences in How Serving on Prominent Firms Affects Directors’ New Board Appointments",
-      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251405843",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "2026-06",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-06",
-      "display_date_basis": "issue_date",
-      "date_raw": "2026-06",
-      "date_precision": "month",
-      "date_status": "known",
-      "date_source": "context_issue",
-      "inclusion_reason": "future_issue_first_seen",
-      "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
-      "is_new": true
-    },
     {
       "id": "f2d4d2dde220f628",
       "journal_id": "j6",
@@ -374,7 +36,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -400,7 +62,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -426,7 +88,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -452,7 +114,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -478,7 +140,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -504,7 +166,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -530,7 +192,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -556,7 +218,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -582,7 +244,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -608,7 +270,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -634,7 +296,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -660,7 +322,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -686,7 +348,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -712,7 +374,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -738,7 +400,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -764,7 +426,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -790,7 +452,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -816,7 +478,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -842,7 +504,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -868,7 +530,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -894,7 +556,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -920,7 +582,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -946,7 +608,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -972,7 +634,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -998,7 +660,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -1024,7 +686,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -1050,7 +712,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -1076,7 +738,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -1102,7 +764,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -1128,7 +790,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -1154,7 +816,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -1180,7 +842,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -1206,7 +868,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -1232,11 +894,11 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
-      "id": "def69fc4d16022d9",
+      "id": "9e1788317390ac92",
       "journal_id": "j19",
       "source_journal_id": "j19",
       "journal_name": "REVIEW OF ECONOMIC STUDIES",
@@ -1244,9 +906,9 @@
       "source_url": "https://academic.oup.com/restud",
       "probe_url": "https://api.crossref.org/journals/0034-6527/works?filter=type:journal-article&sort=published&order=desc&rows=12",
       "extraction_rule": "open-metadata-works",
-      "title": "A Model of Multiple Hypothesis Testing",
-      "url": "https://doi.org/10.1093/restud/rdag026",
-      "authors": "Davide Viviano, Kaspar Wüthrich, Paul Niehaus",
+      "title": "Input Sourcing under Climate Risk: Evidence from U.S. Manufacturing Firms",
+      "url": "https://doi.org/10.1093/restud/rdag031",
+      "authors": "Joaquin Blaum, Federico Esposito, Sebastian Heise",
       "published_at": "2026-05-14",
       "issue_date": "",
       "first_seen_at": "2026-05-25",
@@ -1258,7 +920,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -1284,7 +946,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -1310,7 +972,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -1336,7 +998,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -1362,7 +1024,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -1388,7 +1050,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -1414,7 +1076,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -1440,7 +1102,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -1466,7 +1128,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -1492,7 +1154,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -1518,7 +1180,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -1544,7 +1206,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -1570,7 +1232,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -1596,7 +1258,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -1622,7 +1284,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -1648,7 +1310,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -1674,7 +1336,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -1700,7 +1362,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -1726,7 +1388,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -1752,7 +1414,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -1778,7 +1440,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -1804,7 +1466,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -1830,7 +1492,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -1856,7 +1518,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -1882,7 +1544,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -1908,7 +1570,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -1934,7 +1596,7 @@
       "date_source": "url_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -1960,7 +1622,7 @@
       "date_source": "url_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -1986,7 +1648,7 @@
       "date_source": "url_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -2012,7 +1674,7 @@
       "date_source": "",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -2038,7 +1700,7 @@
       "date_source": "url_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -2064,7 +1726,7 @@
       "date_source": "url_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -2090,7 +1752,7 @@
       "date_source": "url_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -2116,7 +1778,7 @@
       "date_source": "url_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -2142,7 +1804,7 @@
       "date_source": "url_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -2168,7 +1830,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -2194,7 +1856,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -2220,7 +1882,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -2246,7 +1908,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -2272,7 +1934,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -2298,7 +1960,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -2324,7 +1986,7 @@
       "date_source": "meta_published",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -2350,7 +2012,7 @@
       "date_source": "meta_published",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -2376,7 +2038,7 @@
       "date_source": "meta_published",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -2402,7 +2064,7 @@
       "date_source": "meta_published",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -2428,7 +2090,7 @@
       "date_source": "meta_published",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -2454,7 +2116,7 @@
       "date_source": "meta_published",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -2480,7 +2142,7 @@
       "date_source": "meta_published",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -2506,7 +2168,7 @@
       "date_source": "meta_published",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -2532,7 +2194,7 @@
       "date_source": "meta_published",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -2558,7 +2220,7 @@
       "date_source": "meta_published",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -2584,7 +2246,33 @@
       "date_source": "meta_published",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
+      "is_new": true
+    },
+    {
+      "id": "659de30b493317cd",
+      "journal_id": "j22",
+      "source_journal_id": "j22",
+      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
+      "source_type": "adapter_source",
+      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "extraction_rule": "asq-sage-links",
+      "title": "A Curation Approach to Identity Management: The Costs of Combining Identity Expression and Suppression",
+      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261431827",
+      "authors": "",
+      "published_at": "2026-04-12",
+      "issue_date": "2026-06",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2026-04-12",
+      "display_date_basis": "published_at",
+      "date_raw": "2026-04-12",
+      "date_precision": "day",
+      "date_status": "known",
+      "date_source": "metadata_published",
+      "inclusion_reason": "future_issue_first_seen",
+      "push_basis": "issue_date",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -2610,7 +2298,7 @@
       "date_source": "issue_loop",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -2636,7 +2324,7 @@
       "date_source": "issue_loop",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -2662,7 +2350,7 @@
       "date_source": "context_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -2688,7 +2376,7 @@
       "date_source": "issue_loop",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -2714,7 +2402,7 @@
       "date_source": "issue_loop",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -2740,7 +2428,7 @@
       "date_source": "url_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -2766,7 +2454,7 @@
       "date_source": "context_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -2792,7 +2480,7 @@
       "date_source": "issue_loop",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -2818,7 +2506,7 @@
       "date_source": "",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -2844,7 +2532,7 @@
       "date_source": "issue_loop",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -2870,7 +2558,7 @@
       "date_source": "issue_loop",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -2896,7 +2584,7 @@
       "date_source": "url_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -2922,7 +2610,7 @@
       "date_source": "url_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -2948,7 +2636,7 @@
       "date_source": "url_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -2974,7 +2662,7 @@
       "date_source": "context_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -3000,7 +2688,7 @@
       "date_source": "context_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -3026,7 +2714,7 @@
       "date_source": "context_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -3052,7 +2740,7 @@
       "date_source": "issue_loop",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -3078,7 +2766,7 @@
       "date_source": "url_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -3104,7 +2792,7 @@
       "date_source": "context_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -3130,7 +2818,7 @@
       "date_source": "issue_loop",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -3156,7 +2844,7 @@
       "date_source": "url_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -3182,7 +2870,7 @@
       "date_source": "context_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -3208,7 +2896,7 @@
       "date_source": "url_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -3234,7 +2922,7 @@
       "date_source": "issue_loop",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -3260,7 +2948,7 @@
       "date_source": "context_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -3286,7 +2974,7 @@
       "date_source": "url_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -3312,7 +3000,7 @@
       "date_source": "issue_loop",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -3338,7 +3026,7 @@
       "date_source": "url_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -3364,7 +3052,7 @@
       "date_source": "issue_loop",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -3390,7 +3078,7 @@
       "date_source": "context_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -3416,7 +3104,7 @@
       "date_source": "url_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -3442,7 +3130,319 @@
       "date_source": "context_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
+      "is_new": true
+    },
+    {
+      "id": "fc9b3e633a5aed07",
+      "journal_id": "j22",
+      "source_journal_id": "j22",
+      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
+      "source_type": "adapter_source",
+      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "extraction_rule": "asq-sage-links",
+      "title": "Occupational Identity Formation in Unsaturated Spaces: The Layered Accretion of the American Astronaut’s Identity",
+      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261427746",
+      "authors": "",
+      "published_at": "2026-03-20",
+      "issue_date": "2026-06",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2026-03-20",
+      "display_date_basis": "published_at",
+      "date_raw": "2026-03-20",
+      "date_precision": "day",
+      "date_status": "known",
+      "date_source": "metadata_published",
+      "inclusion_reason": "future_issue_first_seen",
+      "push_basis": "issue_date",
+      "observed_at": "2026-05-25T13:28:20.745Z",
+      "is_new": true
+    },
+    {
+      "id": "48b8b21077d6073d",
+      "journal_id": "j22",
+      "source_journal_id": "j22",
+      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
+      "source_type": "adapter_source",
+      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "extraction_rule": "asq-sage-links",
+      "title": "Democratic Deviations: How Organizations Sustain Decentralization Commitments in the Face of Centralization Pressures",
+      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261421927",
+      "authors": "",
+      "published_at": "2026-03-11",
+      "issue_date": "2026-06",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2026-03-11",
+      "display_date_basis": "published_at",
+      "date_raw": "2026-03-11",
+      "date_precision": "day",
+      "date_status": "known",
+      "date_source": "metadata_published",
+      "inclusion_reason": "future_issue_first_seen",
+      "push_basis": "issue_date",
+      "observed_at": "2026-05-25T13:28:20.745Z",
+      "is_new": true
+    },
+    {
+      "id": "5e80e6b06655507c",
+      "journal_id": "j22",
+      "source_journal_id": "j22",
+      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
+      "source_type": "adapter_source",
+      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "extraction_rule": "asq-sage-links",
+      "title": "Kalpita Bhar Paul. Ecophenomenology and the Environmental Crisis in the Sundarbans: Towards a Community-Based Ethic",
+      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261428471",
+      "authors": "",
+      "published_at": "2026-02-20",
+      "issue_date": "2026-06",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2026-02-20",
+      "display_date_basis": "published_at",
+      "date_raw": "2026-02-20",
+      "date_precision": "day",
+      "date_status": "known",
+      "date_source": "metadata_published",
+      "inclusion_reason": "future_issue_first_seen",
+      "push_basis": "issue_date",
+      "observed_at": "2026-05-25T13:28:20.745Z",
+      "is_new": true
+    },
+    {
+      "id": "f38741cc0fe59db4",
+      "journal_id": "j22",
+      "source_journal_id": "j22",
+      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
+      "source_type": "adapter_source",
+      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "extraction_rule": "asq-sage-links",
+      "title": "Interpreting Violence: How Community Context Shapes Corporate Responses to Street Protests",
+      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261419416",
+      "authors": "",
+      "published_at": "2026-02-19",
+      "issue_date": "2026-06",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2026-02-19",
+      "display_date_basis": "published_at",
+      "date_raw": "2026-02-19",
+      "date_precision": "day",
+      "date_status": "known",
+      "date_source": "metadata_published",
+      "inclusion_reason": "future_issue_first_seen",
+      "push_basis": "issue_date",
+      "observed_at": "2026-05-25T13:28:20.745Z",
+      "is_new": true
+    },
+    {
+      "id": "242e08c506e211d5",
+      "journal_id": "j22",
+      "source_journal_id": "j22",
+      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
+      "source_type": "adapter_source",
+      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "extraction_rule": "asq-sage-links",
+      "title": "Jeffrey Funk. Unicorns, Hype, and Bubbles: A Guide to Spotting, Avoiding, and Exploiting Investment Bubbles in Tech",
+      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261421932",
+      "authors": "",
+      "published_at": "2026-02-07",
+      "issue_date": "2026-06",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2026-02-07",
+      "display_date_basis": "published_at",
+      "date_raw": "2026-02-07",
+      "date_precision": "day",
+      "date_status": "known",
+      "date_source": "metadata_published",
+      "inclusion_reason": "future_issue_first_seen",
+      "push_basis": "issue_date",
+      "observed_at": "2026-05-25T13:28:20.745Z",
+      "is_new": true
+    },
+    {
+      "id": "582339f384ffbda9",
+      "journal_id": "j22",
+      "source_journal_id": "j22",
+      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
+      "source_type": "adapter_source",
+      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "extraction_rule": "asq-sage-links",
+      "title": "Alberto Galasso. The Management of Innovation: Managing and Creating Technology Capital",
+      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261417678",
+      "authors": "",
+      "published_at": "2026-01-21",
+      "issue_date": "2026-06",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2026-01-21",
+      "display_date_basis": "published_at",
+      "date_raw": "2026-01-21",
+      "date_precision": "day",
+      "date_status": "known",
+      "date_source": "metadata_published",
+      "inclusion_reason": "future_issue_first_seen",
+      "push_basis": "issue_date",
+      "observed_at": "2026-05-25T13:28:20.745Z",
+      "is_new": true
+    },
+    {
+      "id": "cd47acac39372f3d",
+      "journal_id": "j22",
+      "source_journal_id": "j22",
+      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
+      "source_type": "adapter_source",
+      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "extraction_rule": "asq-sage-links",
+      "title": "Timothy Kuhn. What Do Corporations Want? Communicative Capitalism, Corporate Purpose, and a New Theory of the Firm",
+      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251414373",
+      "authors": "",
+      "published_at": "2026-01-12",
+      "issue_date": "2026-06",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2026-01-12",
+      "display_date_basis": "published_at",
+      "date_raw": "2026-01-12",
+      "date_precision": "day",
+      "date_status": "known",
+      "date_source": "metadata_published",
+      "inclusion_reason": "future_issue_first_seen",
+      "push_basis": "issue_date",
+      "observed_at": "2026-05-25T13:28:20.745Z",
+      "is_new": true
+    },
+    {
+      "id": "df24c56464ed0930",
+      "journal_id": "j22",
+      "source_journal_id": "j22",
+      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
+      "source_type": "adapter_source",
+      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "extraction_rule": "asq-sage-links",
+      "title": "Alessandro Gerosa. The Hipster Economy: Taste and Authenticity in Late Modern Capitalism",
+      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251411308",
+      "authors": "",
+      "published_at": "2026-01-10",
+      "issue_date": "2026-06",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2026-01-10",
+      "display_date_basis": "published_at",
+      "date_raw": "2026-01-10",
+      "date_precision": "day",
+      "date_status": "known",
+      "date_source": "metadata_published",
+      "inclusion_reason": "future_issue_first_seen",
+      "push_basis": "issue_date",
+      "observed_at": "2026-05-25T13:28:20.745Z",
+      "is_new": true
+    },
+    {
+      "id": "bbea2bd0369b66c1",
+      "journal_id": "j22",
+      "source_journal_id": "j22",
+      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
+      "source_type": "adapter_source",
+      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "extraction_rule": "asq-sage-links",
+      "title": "Unequal in the Spotlight: Gender Differences in How Serving on Prominent Firms Affects Directors’ New Board Appointments",
+      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251405843",
+      "authors": "",
+      "published_at": "2026-01-08",
+      "issue_date": "2026-06",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2026-01-08",
+      "display_date_basis": "published_at",
+      "date_raw": "2026-01-08",
+      "date_precision": "day",
+      "date_status": "known",
+      "date_source": "metadata_published",
+      "inclusion_reason": "future_issue_first_seen",
+      "push_basis": "issue_date",
+      "observed_at": "2026-05-25T13:28:20.745Z",
+      "is_new": true
+    },
+    {
+      "id": "a18091e5df9305a0",
+      "journal_id": "j22",
+      "source_journal_id": "j22",
+      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
+      "source_type": "adapter_source",
+      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "extraction_rule": "asq-sage-links",
+      "title": "Andrew J. Hoffman. Business School and the Noble Purpose of the Market: Correcting the Systemic Failures of Shareholder Capitalism",
+      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251406234",
+      "authors": "",
+      "published_at": "2025-12-07",
+      "issue_date": "2026-06",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2025-12-07",
+      "display_date_basis": "published_at",
+      "date_raw": "2025-12-07",
+      "date_precision": "day",
+      "date_status": "known",
+      "date_source": "metadata_published",
+      "inclusion_reason": "future_issue_first_seen",
+      "push_basis": "issue_date",
+      "observed_at": "2026-05-25T13:28:20.745Z",
+      "is_new": true
+    },
+    {
+      "id": "1d87d42f27138fb6",
+      "journal_id": "j22",
+      "source_journal_id": "j22",
+      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
+      "source_type": "adapter_source",
+      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "extraction_rule": "asq-sage-links",
+      "title": "Daniel Susskind. Growth: A History and a Reckoning",
+      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251401212",
+      "authors": "",
+      "published_at": "2025-11-26",
+      "issue_date": "2026-06",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2025-11-26",
+      "display_date_basis": "published_at",
+      "date_raw": "2025-11-26",
+      "date_precision": "day",
+      "date_status": "known",
+      "date_source": "metadata_published",
+      "inclusion_reason": "future_issue_first_seen",
+      "push_basis": "issue_date",
+      "observed_at": "2026-05-25T13:28:20.745Z",
+      "is_new": true
+    },
+    {
+      "id": "5be451c06b7e8f5a",
+      "journal_id": "j22",
+      "source_journal_id": "j22",
+      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
+      "source_type": "adapter_source",
+      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "extraction_rule": "asq-sage-links",
+      "title": "David Lingelbach and Valentina Rodríguez Guerra. The Oligarchs’ Grip: Fusing Wealth and Power",
+      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251396889",
+      "authors": "",
+      "published_at": "2025-11-11",
+      "issue_date": "2026-06",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2025-11-11",
+      "display_date_basis": "published_at",
+      "date_raw": "2025-11-11",
+      "date_precision": "day",
+      "date_status": "known",
+      "date_source": "metadata_published",
+      "inclusion_reason": "future_issue_first_seen",
+      "push_basis": "issue_date",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     }
   ],
@@ -3470,7 +3470,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -3496,7 +3496,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -3522,7 +3522,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -3548,7 +3548,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -3574,7 +3574,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -3600,7 +3600,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -3626,7 +3626,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -3652,7 +3652,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -3678,7 +3678,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -3704,7 +3704,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -3730,7 +3730,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -3756,7 +3756,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -3782,7 +3782,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -3808,7 +3808,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -3834,7 +3834,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -3860,7 +3860,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -3886,7 +3886,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -3912,7 +3912,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -3938,7 +3938,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -3964,7 +3964,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -3990,7 +3990,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -4016,7 +4016,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -4042,7 +4042,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -4068,7 +4068,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -4094,7 +4094,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -4120,7 +4120,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -4146,7 +4146,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -4172,7 +4172,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -4198,7 +4198,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -4224,7 +4224,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -4250,7 +4250,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -4276,7 +4276,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -4302,7 +4302,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -4328,349 +4328,11 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     }
   ],
   "push_queue": [
-    {
-      "id": "659de30b493317cd",
-      "journal_id": "j22",
-      "source_journal_id": "j22",
-      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
-      "source_type": "adapter_source",
-      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "extraction_rule": "asq-sage-links",
-      "title": "A Curation Approach to Identity Management: The Costs of Combining Identity Expression and Suppression",
-      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261431827",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "2026-06",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-06",
-      "display_date_basis": "issue_date",
-      "date_raw": "2026-06",
-      "date_precision": "month",
-      "date_status": "known",
-      "date_source": "context_issue",
-      "inclusion_reason": "future_issue_first_seen",
-      "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
-      "is_new": true
-    },
-    {
-      "id": "582339f384ffbda9",
-      "journal_id": "j22",
-      "source_journal_id": "j22",
-      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
-      "source_type": "adapter_source",
-      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "extraction_rule": "asq-sage-links",
-      "title": "Alberto Galasso. The Management of Innovation: Managing and Creating Technology Capital",
-      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261417678",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "2026-06",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-06",
-      "display_date_basis": "issue_date",
-      "date_raw": "2026-06",
-      "date_precision": "month",
-      "date_status": "known",
-      "date_source": "context_issue",
-      "inclusion_reason": "future_issue_first_seen",
-      "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
-      "is_new": true
-    },
-    {
-      "id": "df24c56464ed0930",
-      "journal_id": "j22",
-      "source_journal_id": "j22",
-      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
-      "source_type": "adapter_source",
-      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "extraction_rule": "asq-sage-links",
-      "title": "Alessandro Gerosa. The Hipster Economy: Taste and Authenticity in Late Modern Capitalism",
-      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251411308",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "2026-06",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-06",
-      "display_date_basis": "issue_date",
-      "date_raw": "2026-06",
-      "date_precision": "month",
-      "date_status": "known",
-      "date_source": "context_issue",
-      "inclusion_reason": "future_issue_first_seen",
-      "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
-      "is_new": true
-    },
-    {
-      "id": "a18091e5df9305a0",
-      "journal_id": "j22",
-      "source_journal_id": "j22",
-      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
-      "source_type": "adapter_source",
-      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "extraction_rule": "asq-sage-links",
-      "title": "Andrew J. Hoffman. Business School and the Noble Purpose of the Market: Correcting the Systemic Failures of Shareholder Capitalism",
-      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251406234",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "2026-06",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-06",
-      "display_date_basis": "issue_date",
-      "date_raw": "2026-06",
-      "date_precision": "month",
-      "date_status": "known",
-      "date_source": "context_issue",
-      "inclusion_reason": "future_issue_first_seen",
-      "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
-      "is_new": true
-    },
-    {
-      "id": "1d87d42f27138fb6",
-      "journal_id": "j22",
-      "source_journal_id": "j22",
-      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
-      "source_type": "adapter_source",
-      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "extraction_rule": "asq-sage-links",
-      "title": "Daniel Susskind. Growth: A History and a Reckoning",
-      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251401212",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "2026-06",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-06",
-      "display_date_basis": "issue_date",
-      "date_raw": "2026-06",
-      "date_precision": "month",
-      "date_status": "known",
-      "date_source": "context_issue",
-      "inclusion_reason": "future_issue_first_seen",
-      "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
-      "is_new": true
-    },
-    {
-      "id": "5be451c06b7e8f5a",
-      "journal_id": "j22",
-      "source_journal_id": "j22",
-      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
-      "source_type": "adapter_source",
-      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "extraction_rule": "asq-sage-links",
-      "title": "David Lingelbach and Valentina Rodríguez Guerra. The Oligarchs’ Grip: Fusing Wealth and Power",
-      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251396889",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "2026-06",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-06",
-      "display_date_basis": "issue_date",
-      "date_raw": "2026-06",
-      "date_precision": "month",
-      "date_status": "known",
-      "date_source": "context_issue",
-      "inclusion_reason": "future_issue_first_seen",
-      "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
-      "is_new": true
-    },
-    {
-      "id": "48b8b21077d6073d",
-      "journal_id": "j22",
-      "source_journal_id": "j22",
-      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
-      "source_type": "adapter_source",
-      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "extraction_rule": "asq-sage-links",
-      "title": "Democratic Deviations: How Organizations Sustain Decentralization Commitments in the Face of Centralization Pressures",
-      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261421927",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "2026-06",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-06",
-      "display_date_basis": "issue_date",
-      "date_raw": "2026-06",
-      "date_precision": "month",
-      "date_status": "known",
-      "date_source": "context_issue",
-      "inclusion_reason": "future_issue_first_seen",
-      "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
-      "is_new": true
-    },
-    {
-      "id": "f38741cc0fe59db4",
-      "journal_id": "j22",
-      "source_journal_id": "j22",
-      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
-      "source_type": "adapter_source",
-      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "extraction_rule": "asq-sage-links",
-      "title": "Interpreting Violence: How Community Context Shapes Corporate Responses to Street Protests",
-      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261419416",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "2026-06",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-06",
-      "display_date_basis": "issue_date",
-      "date_raw": "2026-06",
-      "date_precision": "month",
-      "date_status": "known",
-      "date_source": "context_issue",
-      "inclusion_reason": "future_issue_first_seen",
-      "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
-      "is_new": true
-    },
-    {
-      "id": "242e08c506e211d5",
-      "journal_id": "j22",
-      "source_journal_id": "j22",
-      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
-      "source_type": "adapter_source",
-      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "extraction_rule": "asq-sage-links",
-      "title": "Jeffrey Funk. Unicorns, Hype, and Bubbles: A Guide to Spotting, Avoiding, and Exploiting Investment Bubbles in Tech",
-      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261421932",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "2026-06",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-06",
-      "display_date_basis": "issue_date",
-      "date_raw": "2026-06",
-      "date_precision": "month",
-      "date_status": "known",
-      "date_source": "context_issue",
-      "inclusion_reason": "future_issue_first_seen",
-      "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
-      "is_new": true
-    },
-    {
-      "id": "5e80e6b06655507c",
-      "journal_id": "j22",
-      "source_journal_id": "j22",
-      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
-      "source_type": "adapter_source",
-      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "extraction_rule": "asq-sage-links",
-      "title": "Kalpita Bhar Paul. Ecophenomenology and the Environmental Crisis in the Sundarbans: Towards a Community-Based Ethic",
-      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261428471",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "2026-06",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-06",
-      "display_date_basis": "issue_date",
-      "date_raw": "2026-06",
-      "date_precision": "month",
-      "date_status": "known",
-      "date_source": "context_issue",
-      "inclusion_reason": "future_issue_first_seen",
-      "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
-      "is_new": true
-    },
-    {
-      "id": "fc9b3e633a5aed07",
-      "journal_id": "j22",
-      "source_journal_id": "j22",
-      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
-      "source_type": "adapter_source",
-      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "extraction_rule": "asq-sage-links",
-      "title": "Occupational Identity Formation in Unsaturated Spaces: The Layered Accretion of the American Astronaut’s Identity",
-      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261427746",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "2026-06",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-06",
-      "display_date_basis": "issue_date",
-      "date_raw": "2026-06",
-      "date_precision": "month",
-      "date_status": "known",
-      "date_source": "context_issue",
-      "inclusion_reason": "future_issue_first_seen",
-      "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
-      "is_new": true
-    },
-    {
-      "id": "cd47acac39372f3d",
-      "journal_id": "j22",
-      "source_journal_id": "j22",
-      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
-      "source_type": "adapter_source",
-      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "extraction_rule": "asq-sage-links",
-      "title": "Timothy Kuhn. What Do Corporations Want? Communicative Capitalism, Corporate Purpose, and a New Theory of the Firm",
-      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251414373",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "2026-06",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-06",
-      "display_date_basis": "issue_date",
-      "date_raw": "2026-06",
-      "date_precision": "month",
-      "date_status": "known",
-      "date_source": "context_issue",
-      "inclusion_reason": "future_issue_first_seen",
-      "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
-      "is_new": true
-    },
-    {
-      "id": "bbea2bd0369b66c1",
-      "journal_id": "j22",
-      "source_journal_id": "j22",
-      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
-      "source_type": "adapter_source",
-      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "extraction_rule": "asq-sage-links",
-      "title": "Unequal in the Spotlight: Gender Differences in How Serving on Prominent Firms Affects Directors’ New Board Appointments",
-      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251405843",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "2026-06",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-06",
-      "display_date_basis": "issue_date",
-      "date_raw": "2026-06",
-      "date_precision": "month",
-      "date_status": "known",
-      "date_source": "context_issue",
-      "inclusion_reason": "future_issue_first_seen",
-      "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
-      "is_new": true
-    },
     {
       "id": "f2d4d2dde220f628",
       "journal_id": "j6",
@@ -4694,7 +4356,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -4720,7 +4382,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -4746,7 +4408,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -4772,7 +4434,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -4798,7 +4460,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -4824,7 +4486,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -4850,7 +4512,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -4876,7 +4538,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -4902,7 +4564,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -4928,7 +4590,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -4954,7 +4616,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -4980,7 +4642,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -5006,7 +4668,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -5032,7 +4694,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -5058,7 +4720,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -5084,7 +4746,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -5110,7 +4772,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -5136,7 +4798,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -5162,7 +4824,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -5188,7 +4850,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -5214,7 +4876,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -5240,7 +4902,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -5266,7 +4928,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -5292,7 +4954,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -5318,7 +4980,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -5344,7 +5006,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -5370,7 +5032,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -5396,7 +5058,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -5422,7 +5084,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -5448,7 +5110,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -5474,7 +5136,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -5500,7 +5162,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -5526,7 +5188,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -5552,7 +5214,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -5578,7 +5240,7 @@
       "date_source": "forthcoming_unassigned",
       "inclusion_reason": "undated_latest_candidate",
       "push_basis": "first_seen",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -5604,7 +5266,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -5630,7 +5292,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -5656,7 +5318,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -5682,7 +5344,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -5708,7 +5370,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -5734,7 +5396,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -5760,7 +5422,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -5786,7 +5448,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -5812,7 +5474,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -5838,7 +5500,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -5864,7 +5526,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -5890,7 +5552,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -5916,7 +5578,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -5942,7 +5604,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -5968,7 +5630,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -5994,7 +5656,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -6020,7 +5682,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -6046,7 +5708,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -6072,7 +5734,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -6098,7 +5760,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -6124,7 +5786,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -6150,7 +5812,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -6176,7 +5838,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -6202,7 +5864,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -6228,7 +5890,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -6254,7 +5916,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -6280,7 +5942,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -6306,7 +5968,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -6332,7 +5994,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -6358,7 +6020,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -6384,7 +6046,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -6410,7 +6072,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -6436,11 +6098,11 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
-      "id": "def69fc4d16022d9",
+      "id": "9e1788317390ac92",
       "journal_id": "j19",
       "source_journal_id": "j19",
       "journal_name": "REVIEW OF ECONOMIC STUDIES",
@@ -6448,9 +6110,9 @@
       "source_url": "https://academic.oup.com/restud",
       "probe_url": "https://api.crossref.org/journals/0034-6527/works?filter=type:journal-article&sort=published&order=desc&rows=12",
       "extraction_rule": "open-metadata-works",
-      "title": "A Model of Multiple Hypothesis Testing",
-      "url": "https://doi.org/10.1093/restud/rdag026",
-      "authors": "Davide Viviano, Kaspar Wüthrich, Paul Niehaus",
+      "title": "Input Sourcing under Climate Risk: Evidence from U.S. Manufacturing Firms",
+      "url": "https://doi.org/10.1093/restud/rdag031",
+      "authors": "Joaquin Blaum, Federico Esposito, Sebastian Heise",
       "published_at": "2026-05-14",
       "issue_date": "",
       "first_seen_at": "2026-05-25",
@@ -6462,7 +6124,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -6488,7 +6150,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -6514,7 +6176,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -6540,7 +6202,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -6566,7 +6228,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -6592,7 +6254,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -6618,7 +6280,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -6644,7 +6306,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -6670,7 +6332,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -6696,7 +6358,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -6722,7 +6384,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -6748,7 +6410,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -6774,7 +6436,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -6800,7 +6462,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -6826,7 +6488,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -6852,7 +6514,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -6878,7 +6540,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -6904,7 +6566,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -6930,7 +6592,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -6956,7 +6618,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -6982,7 +6644,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -7008,7 +6670,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -7034,7 +6696,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -7060,7 +6722,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -7086,7 +6748,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -7112,7 +6774,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -7138,7 +6800,7 @@
       "date_source": "url_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -7164,7 +6826,7 @@
       "date_source": "url_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -7190,7 +6852,7 @@
       "date_source": "url_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -7216,7 +6878,7 @@
       "date_source": "",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -7242,7 +6904,7 @@
       "date_source": "url_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -7268,7 +6930,7 @@
       "date_source": "url_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -7294,7 +6956,7 @@
       "date_source": "url_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -7320,7 +6982,7 @@
       "date_source": "url_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -7346,7 +7008,7 @@
       "date_source": "url_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -7372,7 +7034,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -7398,7 +7060,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -7424,7 +7086,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -7450,7 +7112,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -7476,7 +7138,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -7502,7 +7164,7 @@
       "date_source": "",
       "inclusion_reason": "date_within_window",
       "push_basis": "published_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -7528,7 +7190,7 @@
       "date_source": "meta_published",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -7554,7 +7216,7 @@
       "date_source": "meta_published",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -7580,7 +7242,7 @@
       "date_source": "meta_published",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -7606,7 +7268,7 @@
       "date_source": "meta_published",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -7632,7 +7294,7 @@
       "date_source": "meta_published",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -7658,7 +7320,7 @@
       "date_source": "meta_published",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -7684,7 +7346,7 @@
       "date_source": "meta_published",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -7710,7 +7372,7 @@
       "date_source": "meta_published",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -7736,7 +7398,7 @@
       "date_source": "meta_published",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -7762,7 +7424,7 @@
       "date_source": "meta_published",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -7788,7 +7450,33 @@
       "date_source": "meta_published",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
+      "is_new": true
+    },
+    {
+      "id": "659de30b493317cd",
+      "journal_id": "j22",
+      "source_journal_id": "j22",
+      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
+      "source_type": "adapter_source",
+      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "extraction_rule": "asq-sage-links",
+      "title": "A Curation Approach to Identity Management: The Costs of Combining Identity Expression and Suppression",
+      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261431827",
+      "authors": "",
+      "published_at": "2026-04-12",
+      "issue_date": "2026-06",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2026-04-12",
+      "display_date_basis": "published_at",
+      "date_raw": "2026-04-12",
+      "date_precision": "day",
+      "date_status": "known",
+      "date_source": "metadata_published",
+      "inclusion_reason": "future_issue_first_seen",
+      "push_basis": "issue_date",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -7814,7 +7502,7 @@
       "date_source": "issue_loop",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -7840,7 +7528,7 @@
       "date_source": "issue_loop",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -7866,7 +7554,7 @@
       "date_source": "context_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -7892,7 +7580,7 @@
       "date_source": "issue_loop",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -7918,7 +7606,7 @@
       "date_source": "issue_loop",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -7944,7 +7632,7 @@
       "date_source": "url_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -7970,7 +7658,7 @@
       "date_source": "context_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -7996,7 +7684,7 @@
       "date_source": "issue_loop",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -8022,7 +7710,7 @@
       "date_source": "",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -8048,7 +7736,7 @@
       "date_source": "issue_loop",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -8074,7 +7762,7 @@
       "date_source": "issue_loop",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -8100,7 +7788,7 @@
       "date_source": "url_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -8126,7 +7814,7 @@
       "date_source": "url_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -8152,7 +7840,7 @@
       "date_source": "url_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -8178,7 +7866,7 @@
       "date_source": "context_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -8204,7 +7892,7 @@
       "date_source": "context_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -8230,7 +7918,7 @@
       "date_source": "context_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -8256,7 +7944,7 @@
       "date_source": "issue_loop",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -8282,7 +7970,7 @@
       "date_source": "url_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -8308,7 +7996,7 @@
       "date_source": "context_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -8334,7 +8022,7 @@
       "date_source": "issue_loop",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -8360,7 +8048,7 @@
       "date_source": "url_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -8386,7 +8074,7 @@
       "date_source": "context_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -8412,7 +8100,7 @@
       "date_source": "url_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -8438,7 +8126,7 @@
       "date_source": "issue_loop",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -8464,7 +8152,7 @@
       "date_source": "context_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -8490,7 +8178,7 @@
       "date_source": "url_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -8516,7 +8204,7 @@
       "date_source": "issue_loop",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -8542,7 +8230,7 @@
       "date_source": "url_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -8568,7 +8256,7 @@
       "date_source": "issue_loop",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -8594,7 +8282,7 @@
       "date_source": "context_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -8620,7 +8308,7 @@
       "date_source": "url_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     },
     {
@@ -8646,13 +8334,325 @@
       "date_source": "context_issue",
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
-      "observed_at": "2026-05-25T13:06:41.100Z",
+      "observed_at": "2026-05-25T13:28:20.745Z",
+      "is_new": true
+    },
+    {
+      "id": "fc9b3e633a5aed07",
+      "journal_id": "j22",
+      "source_journal_id": "j22",
+      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
+      "source_type": "adapter_source",
+      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "extraction_rule": "asq-sage-links",
+      "title": "Occupational Identity Formation in Unsaturated Spaces: The Layered Accretion of the American Astronaut’s Identity",
+      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261427746",
+      "authors": "",
+      "published_at": "2026-03-20",
+      "issue_date": "2026-06",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2026-03-20",
+      "display_date_basis": "published_at",
+      "date_raw": "2026-03-20",
+      "date_precision": "day",
+      "date_status": "known",
+      "date_source": "metadata_published",
+      "inclusion_reason": "future_issue_first_seen",
+      "push_basis": "issue_date",
+      "observed_at": "2026-05-25T13:28:20.745Z",
+      "is_new": true
+    },
+    {
+      "id": "48b8b21077d6073d",
+      "journal_id": "j22",
+      "source_journal_id": "j22",
+      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
+      "source_type": "adapter_source",
+      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "extraction_rule": "asq-sage-links",
+      "title": "Democratic Deviations: How Organizations Sustain Decentralization Commitments in the Face of Centralization Pressures",
+      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261421927",
+      "authors": "",
+      "published_at": "2026-03-11",
+      "issue_date": "2026-06",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2026-03-11",
+      "display_date_basis": "published_at",
+      "date_raw": "2026-03-11",
+      "date_precision": "day",
+      "date_status": "known",
+      "date_source": "metadata_published",
+      "inclusion_reason": "future_issue_first_seen",
+      "push_basis": "issue_date",
+      "observed_at": "2026-05-25T13:28:20.745Z",
+      "is_new": true
+    },
+    {
+      "id": "5e80e6b06655507c",
+      "journal_id": "j22",
+      "source_journal_id": "j22",
+      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
+      "source_type": "adapter_source",
+      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "extraction_rule": "asq-sage-links",
+      "title": "Kalpita Bhar Paul. Ecophenomenology and the Environmental Crisis in the Sundarbans: Towards a Community-Based Ethic",
+      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261428471",
+      "authors": "",
+      "published_at": "2026-02-20",
+      "issue_date": "2026-06",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2026-02-20",
+      "display_date_basis": "published_at",
+      "date_raw": "2026-02-20",
+      "date_precision": "day",
+      "date_status": "known",
+      "date_source": "metadata_published",
+      "inclusion_reason": "future_issue_first_seen",
+      "push_basis": "issue_date",
+      "observed_at": "2026-05-25T13:28:20.745Z",
+      "is_new": true
+    },
+    {
+      "id": "f38741cc0fe59db4",
+      "journal_id": "j22",
+      "source_journal_id": "j22",
+      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
+      "source_type": "adapter_source",
+      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "extraction_rule": "asq-sage-links",
+      "title": "Interpreting Violence: How Community Context Shapes Corporate Responses to Street Protests",
+      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261419416",
+      "authors": "",
+      "published_at": "2026-02-19",
+      "issue_date": "2026-06",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2026-02-19",
+      "display_date_basis": "published_at",
+      "date_raw": "2026-02-19",
+      "date_precision": "day",
+      "date_status": "known",
+      "date_source": "metadata_published",
+      "inclusion_reason": "future_issue_first_seen",
+      "push_basis": "issue_date",
+      "observed_at": "2026-05-25T13:28:20.745Z",
+      "is_new": true
+    },
+    {
+      "id": "242e08c506e211d5",
+      "journal_id": "j22",
+      "source_journal_id": "j22",
+      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
+      "source_type": "adapter_source",
+      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "extraction_rule": "asq-sage-links",
+      "title": "Jeffrey Funk. Unicorns, Hype, and Bubbles: A Guide to Spotting, Avoiding, and Exploiting Investment Bubbles in Tech",
+      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261421932",
+      "authors": "",
+      "published_at": "2026-02-07",
+      "issue_date": "2026-06",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2026-02-07",
+      "display_date_basis": "published_at",
+      "date_raw": "2026-02-07",
+      "date_precision": "day",
+      "date_status": "known",
+      "date_source": "metadata_published",
+      "inclusion_reason": "future_issue_first_seen",
+      "push_basis": "issue_date",
+      "observed_at": "2026-05-25T13:28:20.745Z",
+      "is_new": true
+    },
+    {
+      "id": "582339f384ffbda9",
+      "journal_id": "j22",
+      "source_journal_id": "j22",
+      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
+      "source_type": "adapter_source",
+      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "extraction_rule": "asq-sage-links",
+      "title": "Alberto Galasso. The Management of Innovation: Managing and Creating Technology Capital",
+      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261417678",
+      "authors": "",
+      "published_at": "2026-01-21",
+      "issue_date": "2026-06",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2026-01-21",
+      "display_date_basis": "published_at",
+      "date_raw": "2026-01-21",
+      "date_precision": "day",
+      "date_status": "known",
+      "date_source": "metadata_published",
+      "inclusion_reason": "future_issue_first_seen",
+      "push_basis": "issue_date",
+      "observed_at": "2026-05-25T13:28:20.745Z",
+      "is_new": true
+    },
+    {
+      "id": "cd47acac39372f3d",
+      "journal_id": "j22",
+      "source_journal_id": "j22",
+      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
+      "source_type": "adapter_source",
+      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "extraction_rule": "asq-sage-links",
+      "title": "Timothy Kuhn. What Do Corporations Want? Communicative Capitalism, Corporate Purpose, and a New Theory of the Firm",
+      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251414373",
+      "authors": "",
+      "published_at": "2026-01-12",
+      "issue_date": "2026-06",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2026-01-12",
+      "display_date_basis": "published_at",
+      "date_raw": "2026-01-12",
+      "date_precision": "day",
+      "date_status": "known",
+      "date_source": "metadata_published",
+      "inclusion_reason": "future_issue_first_seen",
+      "push_basis": "issue_date",
+      "observed_at": "2026-05-25T13:28:20.745Z",
+      "is_new": true
+    },
+    {
+      "id": "df24c56464ed0930",
+      "journal_id": "j22",
+      "source_journal_id": "j22",
+      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
+      "source_type": "adapter_source",
+      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "extraction_rule": "asq-sage-links",
+      "title": "Alessandro Gerosa. The Hipster Economy: Taste and Authenticity in Late Modern Capitalism",
+      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251411308",
+      "authors": "",
+      "published_at": "2026-01-10",
+      "issue_date": "2026-06",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2026-01-10",
+      "display_date_basis": "published_at",
+      "date_raw": "2026-01-10",
+      "date_precision": "day",
+      "date_status": "known",
+      "date_source": "metadata_published",
+      "inclusion_reason": "future_issue_first_seen",
+      "push_basis": "issue_date",
+      "observed_at": "2026-05-25T13:28:20.745Z",
+      "is_new": true
+    },
+    {
+      "id": "bbea2bd0369b66c1",
+      "journal_id": "j22",
+      "source_journal_id": "j22",
+      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
+      "source_type": "adapter_source",
+      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "extraction_rule": "asq-sage-links",
+      "title": "Unequal in the Spotlight: Gender Differences in How Serving on Prominent Firms Affects Directors’ New Board Appointments",
+      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251405843",
+      "authors": "",
+      "published_at": "2026-01-08",
+      "issue_date": "2026-06",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2026-01-08",
+      "display_date_basis": "published_at",
+      "date_raw": "2026-01-08",
+      "date_precision": "day",
+      "date_status": "known",
+      "date_source": "metadata_published",
+      "inclusion_reason": "future_issue_first_seen",
+      "push_basis": "issue_date",
+      "observed_at": "2026-05-25T13:28:20.745Z",
+      "is_new": true
+    },
+    {
+      "id": "a18091e5df9305a0",
+      "journal_id": "j22",
+      "source_journal_id": "j22",
+      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
+      "source_type": "adapter_source",
+      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "extraction_rule": "asq-sage-links",
+      "title": "Andrew J. Hoffman. Business School and the Noble Purpose of the Market: Correcting the Systemic Failures of Shareholder Capitalism",
+      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251406234",
+      "authors": "",
+      "published_at": "2025-12-07",
+      "issue_date": "2026-06",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2025-12-07",
+      "display_date_basis": "published_at",
+      "date_raw": "2025-12-07",
+      "date_precision": "day",
+      "date_status": "known",
+      "date_source": "metadata_published",
+      "inclusion_reason": "future_issue_first_seen",
+      "push_basis": "issue_date",
+      "observed_at": "2026-05-25T13:28:20.745Z",
+      "is_new": true
+    },
+    {
+      "id": "1d87d42f27138fb6",
+      "journal_id": "j22",
+      "source_journal_id": "j22",
+      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
+      "source_type": "adapter_source",
+      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "extraction_rule": "asq-sage-links",
+      "title": "Daniel Susskind. Growth: A History and a Reckoning",
+      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251401212",
+      "authors": "",
+      "published_at": "2025-11-26",
+      "issue_date": "2026-06",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2025-11-26",
+      "display_date_basis": "published_at",
+      "date_raw": "2025-11-26",
+      "date_precision": "day",
+      "date_status": "known",
+      "date_source": "metadata_published",
+      "inclusion_reason": "future_issue_first_seen",
+      "push_basis": "issue_date",
+      "observed_at": "2026-05-25T13:28:20.745Z",
+      "is_new": true
+    },
+    {
+      "id": "5be451c06b7e8f5a",
+      "journal_id": "j22",
+      "source_journal_id": "j22",
+      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
+      "source_type": "adapter_source",
+      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
+      "extraction_rule": "asq-sage-links",
+      "title": "David Lingelbach and Valentina Rodríguez Guerra. The Oligarchs’ Grip: Fusing Wealth and Power",
+      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251396889",
+      "authors": "",
+      "published_at": "2025-11-11",
+      "issue_date": "2026-06",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2025-11-11",
+      "display_date_basis": "published_at",
+      "date_raw": "2025-11-11",
+      "date_precision": "day",
+      "date_status": "known",
+      "date_source": "metadata_published",
+      "inclusion_reason": "future_issue_first_seen",
+      "push_basis": "issue_date",
+      "observed_at": "2026-05-25T13:28:20.745Z",
       "is_new": true
     }
   ],
   "source_state": {
     "version": 1,
-    "checked_at": "2026-05-25T13:06:41.100Z",
+    "checked_at": "2026-05-25T13:28:20.745Z",
     "since": "2026-04-25",
     "until": "2026-05-25",
     "article_ids": [
@@ -8968,25 +8968,25 @@
       "c420162186a9f48a",
       "f37e9a590f928c34",
       "2ec543f2fec32538",
-      "13ae62b6c15c7c19",
-      "963ac879471c6a82",
-      "c7d1f93dd2f90de5",
-      "feb5f53934de4f64",
-      "67cae3cb42e26d2e",
-      "64dc01ba2362654b",
-      "c91d9c8824c1669e",
-      "a3ce6a0953aabcd9",
-      "e7c7da48e8aa9b7b",
-      "833044fcdc2044f2",
-      "e06ebeae9a5d38be",
-      "fe4b9e917712165b",
-      "697a78389f88c70f",
-      "145a51b601e368fa",
-      "4d2b4bab924c9e5b",
-      "ceb06a7b4f53d8b6",
-      "dfab6366d2c185db",
-      "05cfdfba8768371c",
-      "acd1fdb7fb3d0dab",
+      "6adf5d52855d315f",
+      "c1136ccf29572f3b",
+      "ba7dd80257fa4f7d",
+      "76daee632a2c1aa8",
+      "23a46e34e3dac0d1",
+      "ec4c31ab79ae5eca",
+      "be8fa7179f6956ad",
+      "36a690e75f0642d8",
+      "987a94e4dde915eb",
+      "1957958dfeff1a1d",
+      "8e8ba92bf456a7c8",
+      "c481aad10618459f",
+      "c51a2f5d2a4d8d53",
+      "613057310e8ea061",
+      "409741eb129fc4dc",
+      "9d7206d5b2768540",
+      "2d195a8efd48eed8",
+      "69f4403496f984bd",
+      "c9c4cc49f866709b",
       "dbc3ab1b8046c6c3",
       "56d3bb33a5eb2701",
       "3f0c0b8ab052717e",
@@ -9011,7 +9011,7 @@
       "a36b40e7e9f3b2d3",
       "fa40f9a6c19c55b8",
       "ca9aa78630325718",
-      "c20a6c1949ea1659",
+      "6b6b02e5019be0f8",
       "a766eb4b6d545652",
       "792766c2ec5eb401",
       "4df21c72c4fb2759",
@@ -9069,7 +9069,7 @@
       "1e97dcc00d9a8460",
       "6871382ac324a039",
       "046c8300c07ab20c",
-      "def69fc4d16022d9",
+      "9e1788317390ac92",
       "af51a40cbfd574fd",
       "046b803752d68495",
       "1dbbd9cd16a22f9a",
@@ -9173,7 +9173,7 @@
         "undated_count": 0,
         "issue_dated_count": 0,
         "push_count": 5,
-        "last_success_at": "2026-05-25T13:06:41.100Z"
+        "last_success_at": "2026-05-25T13:28:20.745Z"
       },
       "j14": {
         "journal_name": "JOURNAL OF FINANCE",
@@ -9261,7 +9261,7 @@
         "undated_count": 0,
         "issue_dated_count": 0,
         "push_count": 23,
-        "last_success_at": "2026-05-25T13:06:41.100Z"
+        "last_success_at": "2026-05-25T13:28:20.745Z"
       },
       "j17": {
         "journal_name": "JOURNAL OF POLITICAL ECONOMY",
@@ -9315,7 +9315,7 @@
         "undated_count": 0,
         "issue_dated_count": 0,
         "push_count": 8,
-        "last_success_at": "2026-05-25T13:06:41.100Z"
+        "last_success_at": "2026-05-25T13:28:20.745Z"
       },
       "j20": {
         "journal_name": "ECONOMETRICA",
@@ -9343,7 +9343,7 @@
         "undated_count": 0,
         "issue_dated_count": 0,
         "push_count": 0,
-        "last_success_at": "2026-05-25T13:06:41.100Z"
+        "last_success_at": "2026-05-25T13:28:20.745Z"
       },
       "j21": {
         "journal_name": "ACADEMY OF MANAGEMENT JOURNAL",
@@ -9416,7 +9416,7 @@
         "undated_count": 0,
         "issue_dated_count": 0,
         "push_count": 2,
-        "last_success_at": "2026-05-25T13:06:41.100Z"
+        "last_success_at": "2026-05-25T13:28:20.745Z"
       },
       "j2": {
         "journal_name": "经济研究",
@@ -9468,7 +9468,7 @@
         "undated_count": 0,
         "issue_dated_count": 11,
         "push_count": 11,
-        "last_success_at": "2026-05-25T13:06:41.100Z"
+        "last_success_at": "2026-05-25T13:28:20.745Z"
       },
       "j4": {
         "journal_name": "中国工业经济",
@@ -9555,7 +9555,7 @@
         "undated_count": 0,
         "issue_dated_count": 50,
         "push_count": 9,
-        "last_success_at": "2026-05-25T13:06:41.100Z"
+        "last_success_at": "2026-05-25T13:28:20.745Z"
       },
       "j12": {
         "journal_name": "中国农村经济",
@@ -9601,7 +9601,7 @@
         "undated_count": 0,
         "issue_dated_count": 9,
         "push_count": 9,
-        "last_success_at": "2026-05-25T13:06:41.100Z"
+        "last_success_at": "2026-05-25T13:28:20.745Z"
       },
       "j3": {
         "journal_name": "世界经济",
@@ -9644,7 +9644,7 @@
         "undated_count": 0,
         "issue_dated_count": 8,
         "push_count": 8,
-        "last_success_at": "2026-05-25T13:06:41.100Z"
+        "last_success_at": "2026-05-25T13:28:20.745Z"
       },
       "j5": {
         "journal_name": "金融研究",
@@ -9716,7 +9716,7 @@
         "undated_count": 0,
         "issue_dated_count": 20,
         "push_count": 11,
-        "last_success_at": "2026-05-25T13:06:41.100Z"
+        "last_success_at": "2026-05-25T13:28:20.745Z"
       },
       "j6": {
         "journal_name": "管理世界",
@@ -9768,7 +9768,7 @@
         "undated_count": 0,
         "issue_dated_count": 0,
         "push_count": 11,
-        "last_success_at": "2026-05-25T13:06:41.100Z"
+        "last_success_at": "2026-05-25T13:28:20.745Z"
       },
       "j8": {
         "journal_name": "公共管理学报",
@@ -9797,7 +9797,7 @@
         "undated_count": 0,
         "issue_dated_count": 7,
         "push_count": 0,
-        "last_success_at": "2026-05-25T13:06:41.100Z"
+        "last_success_at": "2026-05-25T13:28:20.745Z"
       },
       "j7": {
         "journal_name": "南开管理评论",
@@ -9831,7 +9831,7 @@
         "undated_count": 0,
         "issue_dated_count": 0,
         "push_count": 0,
-        "last_success_at": "2026-05-25T13:06:41.100Z"
+        "last_success_at": "2026-05-25T13:28:20.745Z"
       },
       "j9": {
         "journal_name": "管理科学学报",
@@ -9880,7 +9880,7 @@
         "undated_count": 0,
         "issue_dated_count": 10,
         "push_count": 10,
-        "last_success_at": "2026-05-25T13:06:41.100Z"
+        "last_success_at": "2026-05-25T13:28:20.745Z"
       },
       "j10": {
         "journal_name": "中国行政管理",
@@ -9888,25 +9888,25 @@
         "probe_url": "https://www.cqvip.com/journal/81961X",
         "extraction_rule": "cqvip-journal-html",
         "article_ids": [
-          "13ae62b6c15c7c19",
-          "963ac879471c6a82",
-          "c7d1f93dd2f90de5",
-          "feb5f53934de4f64",
-          "67cae3cb42e26d2e",
-          "64dc01ba2362654b",
-          "c91d9c8824c1669e",
-          "a3ce6a0953aabcd9",
-          "e7c7da48e8aa9b7b",
-          "833044fcdc2044f2",
-          "e06ebeae9a5d38be",
-          "fe4b9e917712165b",
-          "697a78389f88c70f",
-          "145a51b601e368fa",
-          "4d2b4bab924c9e5b",
-          "ceb06a7b4f53d8b6",
-          "dfab6366d2c185db",
-          "05cfdfba8768371c",
-          "acd1fdb7fb3d0dab"
+          "6adf5d52855d315f",
+          "c1136ccf29572f3b",
+          "ba7dd80257fa4f7d",
+          "76daee632a2c1aa8",
+          "23a46e34e3dac0d1",
+          "ec4c31ab79ae5eca",
+          "be8fa7179f6956ad",
+          "36a690e75f0642d8",
+          "987a94e4dde915eb",
+          "1957958dfeff1a1d",
+          "8e8ba92bf456a7c8",
+          "c481aad10618459f",
+          "c51a2f5d2a4d8d53",
+          "613057310e8ea061",
+          "409741eb129fc4dc",
+          "9d7206d5b2768540",
+          "2d195a8efd48eed8",
+          "69f4403496f984bd",
+          "c9c4cc49f866709b"
         ],
         "recent_article_ids": [],
         "undated_article_ids": [],
@@ -9916,7 +9916,7 @@
         "undated_count": 0,
         "issue_dated_count": 19,
         "push_count": 0,
-        "last_success_at": "2026-05-25T13:06:41.100Z"
+        "last_success_at": "2026-05-25T13:28:20.745Z"
       },
       "j11": {
         "journal_name": "会计研究",
@@ -9974,7 +9974,7 @@
         "undated_count": 0,
         "issue_dated_count": 13,
         "push_count": 13,
-        "last_success_at": "2026-05-25T13:06:41.100Z"
+        "last_success_at": "2026-05-25T13:28:20.745Z"
       },
       "j15": {
         "journal_name": "ACCOUNTING REVIEW",
@@ -9993,7 +9993,7 @@
           "a36b40e7e9f3b2d3",
           "fa40f9a6c19c55b8",
           "ca9aa78630325718",
-          "c20a6c1949ea1659"
+          "6b6b02e5019be0f8"
         ],
         "recent_article_ids": [
           "0a9b99a041581d21",
@@ -10025,7 +10025,7 @@
         "undated_count": 0,
         "issue_dated_count": 0,
         "push_count": 10,
-        "last_success_at": "2026-05-25T13:06:41.100Z"
+        "last_success_at": "2026-05-25T13:28:20.745Z"
       },
       "j16": {
         "journal_name": "AMERICAN ECONOMIC REVIEW",
@@ -10146,7 +10146,7 @@
         "undated_count": 34,
         "issue_dated_count": 0,
         "push_count": 34,
-        "last_success_at": "2026-05-25T13:06:41.100Z"
+        "last_success_at": "2026-05-25T13:28:20.745Z"
       },
       "j18": {
         "journal_name": "QUARTERLY JOURNAL OF ECONOMICS",
@@ -10187,7 +10187,7 @@
         "undated_count": 0,
         "issue_dated_count": 0,
         "push_count": 5,
-        "last_success_at": "2026-05-25T13:06:41.100Z"
+        "last_success_at": "2026-05-25T13:28:20.745Z"
       },
       "j19": {
         "journal_name": "REVIEW OF ECONOMIC STUDIES",
@@ -10206,7 +10206,7 @@
           "1e97dcc00d9a8460",
           "6871382ac324a039",
           "046c8300c07ab20c",
-          "def69fc4d16022d9"
+          "9e1788317390ac92"
         ],
         "recent_article_ids": [
           "d31770d38552eced",
@@ -10220,7 +10220,7 @@
           "1e97dcc00d9a8460",
           "6871382ac324a039",
           "046c8300c07ab20c",
-          "def69fc4d16022d9"
+          "9e1788317390ac92"
         ],
         "undated_article_ids": [],
         "push_article_ids": [
@@ -10235,14 +10235,14 @@
           "1e97dcc00d9a8460",
           "6871382ac324a039",
           "046c8300c07ab20c",
-          "def69fc4d16022d9"
+          "9e1788317390ac92"
         ],
         "article_count": 12,
         "recent_count": 12,
         "undated_count": 0,
         "issue_dated_count": 0,
         "push_count": 12,
-        "last_success_at": "2026-05-25T13:06:41.100Z"
+        "last_success_at": "2026-05-25T13:28:20.745Z"
       },
       "j1": {
         "journal_name": "JOURNAL OF FINANCE",
@@ -10294,7 +10294,7 @@
         "undated_count": 0,
         "issue_dated_count": 0,
         "push_count": 11,
-        "last_success_at": "2026-05-25T13:06:41.100Z"
+        "last_success_at": "2026-05-25T13:28:20.745Z"
       },
       "j22": {
         "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
@@ -10350,9 +10350,9 @@
         "article_count": 13,
         "recent_count": 13,
         "undated_count": 0,
-        "issue_dated_count": 13,
+        "issue_dated_count": 0,
         "push_count": 13,
-        "last_success_at": "2026-05-25T13:06:41.100Z"
+        "last_success_at": "2026-05-25T13:28:20.745Z"
       }
     }
   }

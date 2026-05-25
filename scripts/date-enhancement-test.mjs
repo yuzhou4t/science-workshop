@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 
-import { extractDateHints } from "./date-enhancement-lib.mjs";
+import { extractDateHints, extractMetadataDateHints } from "./date-enhancement-lib.mjs";
 
 assert.deepEqual(extractDateHints({
   url: "https://sjjj.magtech.com.cn/CN/Y2026/V49/I5/3",
@@ -48,6 +48,25 @@ assert.deepEqual(extractDateHints({
 }), {
   issue_date: "2026-06",
   date_source: "context_issue",
+});
+
+assert.deepEqual(extractDateHints({
+  url: "https://journals.sagepub.com/doi/full/10.1177/00018392261431827",
+  context: "Open Access Research article First published online April 12, 2026 Volume 71 Issue 2",
+}), {
+  published_at: "2026-04-12",
+  date_source: "context_published",
+});
+
+assert.deepEqual(extractMetadataDateHints({
+  message: {
+    "published-online": { "date-parts": [[2026, 4, 12]] },
+    "published-print": { "date-parts": [[2026, 6]] },
+  },
+}), {
+  published_at: "2026-04-12",
+  issue_date: "2026-06",
+  date_source: "metadata_published",
 });
 
 assert.deepEqual(extractDateHints({

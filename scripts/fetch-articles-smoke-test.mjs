@@ -3,7 +3,7 @@ import { readFile, writeFile } from "node:fs/promises";
 import vm from "node:vm";
 import { promisify } from "node:util";
 
-import { extractDateHints } from "./date-enhancement-lib.mjs";
+import { doiFromUrl, extractDateHints, extractMetadataDateHints } from "./date-enhancement-lib.mjs";
 import { addDays, buildRecentWorkflow, dateOnly } from "./recent-workflow-lib.mjs";
 
 const execFileAsync = promisify(execFile);
@@ -289,20 +289,24 @@ function parseAnchorsMatching(text, baseUrl, options = {}) {
 
 function mergeDateHints(article, hints = {}) {
   if (!Object.keys(hints).length) return article;
+  const hasNewPublishedDate = !article.published_at && Boolean(hints.published_at);
   const merged = {
     ...article,
     ...hints,
     published_at: article.published_at || hints.published_at || "",
     issue_date: article.issue_date || hints.issue_date || "",
-    date_source: article.date_source || hints.date_source || "",
+    date_source: hasNewPublishedDate ? hints.date_source || article.date_source || "" : article.date_source || hints.date_source || "",
   };
-  if (!merged.date && merged.published_at) merged.date = merged.published_at;
+  if (hasNewPublishedDate) merged.date = hints.published_at;
+  else if (!merged.date && merged.published_at) merged.date = merged.published_at;
   else if (!merged.date && merged.issue_date) merged.date = merged.issue_date;
   return merged;
 }
 
-function needsDetailDate(article) {
-  return !article.published_at && !article.issue_date && !article.date && /^https?:\/\//i.test(article.url || "");
+function needsDetailDate(article, options = {}) {
+  if (!/^https?:\/\//i.test(article.url || "")) return false;
+  if (options.ifMissingPublished) return !article.published_at;
+  return !article.published_at && !article.issue_date && !article.date;
 }
 
 async function enrichArticlesWithDetailDates(articles, options = {}) {
@@ -311,20 +315,37 @@ async function enrichArticlesWithDetailDates(articles, options = {}) {
   const enriched = [];
   let checked = 0;
   for (const article of articles) {
-    if (!needsDetailDate(article) || checked >= limit) {
+    if (!needsDetailDate(article, options) || checked >= limit) {
       enriched.push(article);
       continue;
     }
     checked += 1;
     try {
       const response = await fetchText(article.url, timeoutMs);
-      const hints = response.ok ? extractDateHints({ url: response.finalUrl || article.url, context: response.text }) : {};
+      let hints = response.ok ? extractDateHints({ url: response.finalUrl || article.url, context: response.text }) : {};
+      if (!hints.published_at) {
+        hints = mergeDateHints(hints, await fetchDoiMetadataDateHints(article, timeoutMs));
+      }
       enriched.push(mergeDateHints(article, hints));
     } catch {
       enriched.push(article);
     }
   }
   return enriched;
+}
+
+async function fetchDoiMetadataDateHints(article, timeoutMs) {
+  const doi = doiFromUrl(article.url || "");
+  if (!doi) return {};
+  const response = await fetchText(`https://api.crossref.org/works/${encodeURIComponent(doi)}`, timeoutMs, {
+    Accept: "application/json,*/*",
+  });
+  if (!response.ok) return {};
+  try {
+    return extractMetadataDateHints(JSON.parse(response.text));
+  } catch {
+    return {};
+  }
 }
 
 function looksLikeArticleTitle(title) {
@@ -932,7 +953,7 @@ async function extractAdapterArticles(item) {
     case "asq-sage-links":
       return extractHtmlByPatterns(item, {
         include: [/journals\.sagepub\.com\/doi\/(full|abs)\/10\.1177\//i],
-      }, 13000, { sourceDateHints: true });
+      }, 13000, { sourceDateHints: true, detailDateHints: { limit: 20, timeoutMs: 11000, ifMissingPublished: true } });
     default:
       return extractHtmlByPatterns(item, {
         include: [/article|abstract|paper|doi|content|detail/i],

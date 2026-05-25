@@ -2197,7 +2197,7 @@
           const journal = journalById(journalId);
           const range = articleRange(row);
           const date = range.precision === "month" ? range.start : isoDateOnly(row.display_date || range.start);
-          const kind = pushBasisLabel(row.push_basis);
+          const kind = dateBasisLabel(row.display_date_basis);
           const authorText = row.authors ? `作者：${row.authors}` : "作者信息待补全";
           const dateText = `${dateBasisLabel(row.display_date_basis)}：${formatDateLabel(row.display_date || row.issue_date || range.start)}`;
           return {

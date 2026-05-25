@@ -1,6 +1,6 @@
 {
   "summary": {
-    "checked_at": "2026-05-25T13:06:41.100Z",
+    "checked_at": "2026-05-25T13:28:20.745Z",
     "direct_feeds_total": 5,
     "direct_feeds_ok": 5,
     "adapter_sources_total": 17,
@@ -19,7 +19,7 @@
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1298,
+      "fetch_ms": 1061,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 50,
@@ -306,7 +306,7 @@
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1277,
+      "fetch_ms": 1158,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 23,
@@ -460,7 +460,7 @@
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1281,
+      "fetch_ms": 967,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 19,
@@ -594,7 +594,7 @@
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 2403,
+      "fetch_ms": 954,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 11,
@@ -688,7 +688,7 @@
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1750,
+      "fetch_ms": 1023,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 50,
@@ -977,7 +977,7 @@
       "status": 200,
       "content_type": "application/json; charset=utf-8",
       "transport": "fetch",
-      "fetch_ms": 4043,
+      "fetch_ms": 1576,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 11,
@@ -1084,8 +1084,8 @@
       "extraction_rule": "cie-legacy-html",
       "status": 200,
       "content_type": "text/html; charset=utf-8",
-      "transport": "fetch",
-      "fetch_ms": 16408,
+      "transport": "curl",
+      "fetch_ms": 21800,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 50,
@@ -1466,7 +1466,7 @@
         }
       ],
       "notes": [],
-      "error": ""
+      "error": "fetch failed"
     },
     {
       "type": "adapter_source",
@@ -1480,7 +1480,7 @@
       "status": 200,
       "content_type": "application/json; charset=utf-8",
       "transport": "fetch",
-      "fetch_ms": 5665,
+      "fetch_ms": 2376,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 9,
@@ -1575,8 +1575,8 @@
       "extraction_rule": "magtech-cn-html",
       "status": 200,
       "content_type": "text/html;charset=UTF-8",
-      "transport": "curl",
-      "fetch_ms": 10390,
+      "transport": "fetch",
+      "fetch_ms": 1919,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 8,
@@ -1663,7 +1663,7 @@
         }
       ],
       "notes": [],
-      "error": "fetch failed"
+      "error": ""
     },
     {
       "type": "adapter_source",
@@ -1677,7 +1677,7 @@
       "status": 200,
       "content_type": "text/html;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 5770,
+      "fetch_ms": 4804,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 31,
@@ -1952,7 +1952,7 @@
       "status": 200,
       "content_type": "text/html; charset=utf-8",
       "transport": "fetch",
-      "fetch_ms": 1032,
+      "fetch_ms": 968,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 11,
@@ -2064,7 +2064,7 @@
       "status": 200,
       "content_type": "text/html;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 3465,
+      "fetch_ms": 3339,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 12,
@@ -2198,7 +2198,7 @@
       "status": 200,
       "content_type": "text/html; charset=utf-8",
       "transport": "fetch",
-      "fetch_ms": 1004,
+      "fetch_ms": 1499,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 17,
@@ -2346,7 +2346,7 @@
       "status": 200,
       "content_type": "text/html; charset=utf-8",
       "transport": "fetch",
-      "fetch_ms": 852,
+      "fetch_ms": 627,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 10,
@@ -2463,7 +2463,7 @@
       "status": 200,
       "content_type": "text/html; charset=utf-8",
       "transport": "fetch",
-      "fetch_ms": 6242,
+      "fetch_ms": 6316,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 19,
@@ -2471,115 +2471,115 @@
       "articles": [
         {
           "title": "以制度建设为主线统筹发展和安全",
-          "url": "https://www.cqvip.com/doc/journal/7203343026?sign=62b708553da4bf0d5a6e94f5b5257752c4bb3c6747bc6618c0413d2fbf3f20ed&expireTime=1795266365147&resourceId=7203343026&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343026?sign=fa4ac583c93e4a582851e95ad37b741066f269c69486f30c753ca401274d8af8&expireTime=1795267670463&resourceId=7203343026&type=1",
           "date": "2026-03",
           "authors": "王浦劬, 连雨欣"
         },
         {
           "title": "“钉钉子”的技术:重大决策落实的工作机制",
-          "url": "https://www.cqvip.com/doc/journal/7203343027?sign=5d3d635d85dccea4aeb9cc5249af880ba6d7bba6ca8d05630fd179e9b2994e3f&expireTime=1795266365147&resourceId=7203343027&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343027?sign=733c356741384c5e0dee344ebecccf338b9c3b5588c1e61b9ea490fbb9102595&expireTime=1795267670463&resourceId=7203343027&type=1",
           "date": "2026-03",
           "authors": "庞明礼, 郭雯斐"
         },
         {
           "title": "从制度到行动:基层减负的层级传导与长效机制",
-          "url": "https://www.cqvip.com/doc/journal/7203343028?sign=140366d25aacc49cc9d60005397d21d75d715b5f78a662f90ac05123b1641215&expireTime=1795266365147&resourceId=7203343028&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343028?sign=c38eeb7ca940bf93d87217198d67759ec592a4039f63a90f3179145caa93f42a&expireTime=1795267670463&resourceId=7203343028&type=1",
           "date": "2026-03",
           "authors": "王锐, 倪星"
         },
         {
           "title": "政府数字平台何以走出难以为继困境?——基于生态系统视角的对比案例研究",
-          "url": "https://www.cqvip.com/doc/journal/7203343029?sign=85ee11c55cc65ffedd8ef7331e464797a8dcb405a571d0f99f76501634160428&expireTime=1795266365147&resourceId=7203343029&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343029?sign=a52bc9e357c79d37d85370d490c984974fccf085f5071a34b7e8bb91c3bc796f&expireTime=1795267670463&resourceId=7203343029&type=1",
           "date": "2026-03",
           "authors": "付宁, 林婕, 祝哲"
         },
         {
           "title": "人工智能的科林格里奇困境与安全监管的敏捷性调适",
-          "url": "https://www.cqvip.com/doc/journal/7203343030?sign=62b8afa04cc0c7e5277a3c5d595fd1c4dec7a9dad36f11a28c427464e59a38f1&expireTime=1795266365147&resourceId=7203343030&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343030?sign=2185a7c53e813429b4aba87d0ce110b240a10ed44346a5f87044894b3877eeff&expireTime=1795267670463&resourceId=7203343030&type=1",
           "date": "2026-03",
           "authors": "张乐, 赵爽爽"
         },
         {
           "title": "“数字帕金森”:数字治理中的任务冗余再生产",
-          "url": "https://www.cqvip.com/doc/journal/7203343031?sign=77a3507dc57f5eb9c467b9b61f32640b1d39596e6a6bae8024a3b9aa2f13db52&expireTime=1795266365147&resourceId=7203343031&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343031?sign=18a4f8ba72852a41657ea938cf81291e1595c93b45e215db1788baa76fa01513&expireTime=1795267670463&resourceId=7203343031&type=1",
           "date": "2026-03",
           "authors": "邓崧, 杨迪"
         },
         {
           "title": "把公共性带回来:社区慈善事业治理的路径选择",
-          "url": "https://www.cqvip.com/doc/journal/7203343032?sign=84f858736f5bf076d14cf4e251d532337eaa8c091e67bb735aeecf6c8d1b5856&expireTime=1795266365147&resourceId=7203343032&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343032?sign=5e321436f0754206f30a13531ae531062f5292b9f0f77467d844cfec3838c026&expireTime=1795267670463&resourceId=7203343032&type=1",
           "date": "2026-03",
           "authors": "舒文, 郑功成"
         },
         {
           "title": "“选择式自主”:社会组织可持续发展的新范式",
-          "url": "https://www.cqvip.com/doc/journal/7203343033?sign=7837b684465ff308f209fa8c09a9287b2d0530dfa0dfd40d627f6ba78cfab8cd&expireTime=1795266365147&resourceId=7203343033&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343033?sign=fd2832fb84c400844ad9739bdf77c849796274c67e834fc4ff6eaaf9d85a11bb&expireTime=1795267670463&resourceId=7203343033&type=1",
           "date": "2026-03",
           "authors": "刘蕾, 何书仪"
         },
         {
           "title": "基层“信用积分制”运行的实践错位与优化路径",
-          "url": "https://www.cqvip.com/doc/journal/7203343034?sign=65d319ed60c74bbd1a170bc93bb3ecdaa1b4fe2b38af69de473319ab7afa0c6e&expireTime=1795266365147&resourceId=7203343034&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343034?sign=4123988b2644c8a1567aa4a9148e0ecbdf12466e465f6d35f9e584b82634082e&expireTime=1795267670463&resourceId=7203343034&type=1",
           "date": "2026-03",
           "authors": "朱博宇, 沈圣兰, 黄璜"
         },
         {
           "title": "建构基于“有效的政府治理”标识性概念的中国政府治理理论框架",
-          "url": "https://www.cqvip.com/doc/journal/7203343035?sign=ed8fd0376ff87acafa72fe92935765827a7d472498d758c96a72c0a1d4d20288&expireTime=1795266365147&resourceId=7203343035&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343035?sign=94c92d99e52e7190aac5088781bc42ef2561d8e39a41b11e17b7baf70c165d7c&expireTime=1795267670463&resourceId=7203343035&type=1",
           "date": "2026-03",
           "authors": "李瑞昌"
         },
         {
           "title": "重新发现治理:评价理论的视角",
-          "url": "https://www.cqvip.com/doc/journal/7203343036?sign=629a0cc1af56878944187e88d0e01e16a523235cf04aee26a3a9f2c016ae826a&expireTime=1795266365147&resourceId=7203343036&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343036?sign=b7256f83173377e4b7a1ecc03451ccd95bd8a071a00fef71b67eabb51131f0df&expireTime=1795267670463&resourceId=7203343036&type=1",
           "date": "2026-03",
           "authors": "张乾友"
         },
         {
           "title": "数字技术驱动乡村公共服务共同生产的影响因素与实践逻辑",
-          "url": "https://www.cqvip.com/doc/journal/7203343037?sign=e072d45d4e957a7c4eda1493d71c23df4237ab50def62cf38182f74c13939f49&expireTime=1795266365147&resourceId=7203343037&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343037?sign=12f8b9f01e3bc214c8b43d9f94a7ff2c44c2fd336d6e7cfc1a4f2e9325a72ad4&expireTime=1795267670463&resourceId=7203343037&type=1",
           "date": "2026-03",
           "authors": "王洛忠, 徐成铭"
         },
         {
           "title": "数字生态何以影响乡村韧性治理绩效",
-          "url": "https://www.cqvip.com/doc/journal/7203343038?sign=eeaecb53a0e5f2f62308dd7b86aacf98165359f6dfa79e6f355c3f1e21ca5011&expireTime=1795266365147&resourceId=7203343038&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343038?sign=f45a59e228e1229584e1f84a3f22382ae48a1d3c82ec725b591eacb81bd96264&expireTime=1795267670463&resourceId=7203343038&type=1",
           "date": "2026-03",
           "authors": "陈浩天, 肖延玉"
         },
         {
           "title": "复合型公共空间:社交平台驱动的乡村公共空间新样态",
-          "url": "https://www.cqvip.com/doc/journal/7203343039?sign=7e6be81a849dd3de979f4749230fbabde4827d6df7f5c13b918e0d3b98f97ebf&expireTime=1795266365147&resourceId=7203343039&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343039?sign=b5bd446dd81b58ba17b5b7a200dcfa104e833bb778ce8b976c803dd128ab858a&expireTime=1795267670463&resourceId=7203343039&type=1",
           "date": "2026-03",
           "authors": "王承禹, 张旋"
         },
         {
           "title": "以科技人才集聚促进京津冀城市群高质量协同发展",
-          "url": "https://www.cqvip.com/doc/journal/7203343040?sign=dbc632143871e67734db61a51dbca8a4e2123e88a5754f537d9ac28b2fd185ab&expireTime=1795266365147&resourceId=7203343040&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343040?sign=0a1065923f055f65509bd9fd18948a417617a489d29873a6f680f9daefc329ea&expireTime=1795267670463&resourceId=7203343040&type=1",
           "date": "2026-03",
           "authors": "魏华颖, 李子昂, 孙宏皓"
         },
         {
           "title": "数字赋能乡村治理现代化的优化路径",
-          "url": "https://www.cqvip.com/doc/journal/7203343041?sign=a6ad492e19723e635c7ba042d54834ae0f0689200c2edaf02c564b75053d1bdc&expireTime=1795266365147&resourceId=7203343041&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343041?sign=3d2b41ee42e10af87bc4ae238200dcfe1a494c252f307813589ce8d64db57b00&expireTime=1795267670463&resourceId=7203343041&type=1",
           "date": "2026-03",
           "authors": "李俊清, 毋世扬"
         },
         {
           "title": "以全生命周期服务改革推动营商环境优化",
-          "url": "https://www.cqvip.com/doc/journal/7203343042?sign=d5064f4520fbe78f9f6dcc36f11c31fefcd9729f49e08580456a0733d09385f7&expireTime=1795266365147&resourceId=7203343042&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343042?sign=8e90d38e9b4e13c92476023e3bd54ce7ee6c9c236a0b3a8ff54663596f899f6d&expireTime=1795267670463&resourceId=7203343042&type=1",
           "date": "2026-03",
           "authors": "杨畅, 彭伟, 黄凌筱"
         },
         {
           "title": "内蒙古大学公共管理学院简介",
-          "url": "https://www.cqvip.com/doc/journal/7203343025?sign=0f237926cc4bb382ea08630064f041992a7436661930560c27e48d4de9ea1c3a&expireTime=1795266365147&resourceId=7203343025&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343025?sign=88f6e5ac6032be52cba6b9eda98825d1328740bc898813106d6ddccc0d417dc6&expireTime=1795267670463&resourceId=7203343025&type=1",
           "date": "2026-03",
           "authors": "白维军"
         },
         {
           "title": "中国银联积极服务政府促消费 双轮驱动激活市场新动能",
-          "url": "https://www.cqvip.com/doc/journal/7203343043?sign=48645745495d11785d1536151eaf4a026057a7be897ed6f50cefcb27928a9b2c&expireTime=1795266365147&resourceId=7203343043&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343043?sign=5ea257dca4700fc4d41aeb76832b027a846b9ee3870973ff1b7f208b655cc8a5&expireTime=1795267670463&resourceId=7203343043&type=1",
           "date": "2026-03",
           "authors": "韩永琛"
         }
@@ -2587,19 +2587,19 @@
       "samples": [
         {
           "title": "以制度建设为主线统筹发展和安全",
-          "url": "https://www.cqvip.com/doc/journal/7203343026?sign=62b708553da4bf0d5a6e94f5b5257752c4bb3c6747bc6618c0413d2fbf3f20ed&expireTime=1795266365147&resourceId=7203343026&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343026?sign=fa4ac583c93e4a582851e95ad37b741066f269c69486f30c753ca401274d8af8&expireTime=1795267670463&resourceId=7203343026&type=1",
           "date": "2026-03",
           "authors": "王浦劬, 连雨欣"
         },
         {
           "title": "“钉钉子”的技术:重大决策落实的工作机制",
-          "url": "https://www.cqvip.com/doc/journal/7203343027?sign=5d3d635d85dccea4aeb9cc5249af880ba6d7bba6ca8d05630fd179e9b2994e3f&expireTime=1795266365147&resourceId=7203343027&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343027?sign=733c356741384c5e0dee344ebecccf338b9c3b5588c1e61b9ea490fbb9102595&expireTime=1795267670463&resourceId=7203343027&type=1",
           "date": "2026-03",
           "authors": "庞明礼, 郭雯斐"
         },
         {
           "title": "从制度到行动:基层减负的层级传导与长效机制",
-          "url": "https://www.cqvip.com/doc/journal/7203343028?sign=140366d25aacc49cc9d60005397d21d75d715b5f78a662f90ac05123b1641215&expireTime=1795266365147&resourceId=7203343028&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343028?sign=c38eeb7ca940bf93d87217198d67759ec592a4039f63a90f3179145caa93f42a&expireTime=1795267670463&resourceId=7203343028&type=1",
           "date": "2026-03",
           "authors": "王锐, 倪星"
         }
@@ -2622,7 +2622,7 @@
       "status": 200,
       "content_type": "text/html;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 907,
+      "fetch_ms": 1066,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 13,
@@ -2760,7 +2760,7 @@
       "status": 200,
       "content_type": "application/json",
       "transport": "fetch",
-      "fetch_ms": 1546,
+      "fetch_ms": 1632,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 12,
@@ -2833,10 +2833,10 @@
           "authors": "Daniel A. Bens, Gavin Cassar, Ying Huang, Thomas Keusch"
         },
         {
-          "title": "The 2003 U.S. Dividend Tax Cut, Small Business Loan Supply, and the Real Economy",
-          "url": "https://doi.org/10.2308/tar-2023-0444",
+          "title": "Current Expected Credit Losses (CECL) Standard and Banks’ Information Production",
+          "url": "https://doi.org/10.2308/tar-2022-0314",
           "date": "2026-04-16",
-          "authors": "Oliver Zhen Li, Yupeng Lin, Keyuan Zhang"
+          "authors": "Sehwa Kim, Seil Kim, Anya Kleymenova, Rongchen Li"
         }
       ],
       "samples": [
@@ -2877,7 +2877,7 @@
       "status": 200,
       "content_type": "text/html; charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1831,
+      "fetch_ms": 1564,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 34,
@@ -3197,7 +3197,7 @@
       "status": 200,
       "content_type": "application/json",
       "transport": "fetch",
-      "fetch_ms": 692,
+      "fetch_ms": 556,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 12,
@@ -3314,7 +3314,7 @@
       "status": 200,
       "content_type": "application/json",
       "transport": "fetch",
-      "fetch_ms": 971,
+      "fetch_ms": 1310,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 12,
@@ -3387,10 +3387,10 @@
           "authors": "Maximilian Grimm, Òscar Jordà, Moritz Schularick, Alan M Taylor"
         },
         {
-          "title": "A Model of Multiple Hypothesis Testing",
-          "url": "https://doi.org/10.1093/restud/rdag026",
+          "title": "Input Sourcing under Climate Risk: Evidence from U.S. Manufacturing Firms",
+          "url": "https://doi.org/10.1093/restud/rdag031",
           "date": "2026-05-14",
-          "authors": "Davide Viviano, Kaspar Wüthrich, Paul Niehaus"
+          "authors": "Joaquin Blaum, Federico Esposito, Sebastian Heise"
         }
       ],
       "samples": [
@@ -3431,7 +3431,7 @@
       "status": 200,
       "content_type": "text/html; charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1593,
+      "fetch_ms": 1507,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 11,
@@ -3553,7 +3553,7 @@
       "status": 200,
       "content_type": "text/html; charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1628,
+      "fetch_ms": 1298,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 13,
@@ -3562,132 +3562,132 @@
         {
           "title": "Unequal in the Spotlight: Gender Differences in How Serving on Prominent Firms Affects Directors’ New Board Appointments",
           "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251405843",
-          "date": "2026-06",
+          "date": "2026-01-08",
           "issue_date": "2026-06",
-          "date_source": "context_issue",
-          "published_at": ""
+          "date_source": "metadata_published",
+          "published_at": "2026-01-08"
         },
         {
           "title": "Interpreting Violence: How Community Context Shapes Corporate Responses to Street Protests",
           "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261419416",
-          "date": "2026-06",
+          "date": "2026-02-19",
           "issue_date": "2026-06",
-          "date_source": "context_issue",
-          "published_at": ""
+          "date_source": "metadata_published",
+          "published_at": "2026-02-19"
         },
         {
           "title": "Democratic Deviations: How Organizations Sustain Decentralization Commitments in the Face of Centralization Pressures",
           "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261421927",
-          "date": "2026-06",
+          "date": "2026-03-11",
           "issue_date": "2026-06",
-          "date_source": "context_issue",
-          "published_at": ""
+          "date_source": "metadata_published",
+          "published_at": "2026-03-11"
         },
         {
           "title": "Occupational Identity Formation in Unsaturated Spaces: The Layered Accretion of the American Astronaut’s Identity",
           "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261427746",
-          "date": "2026-06",
+          "date": "2026-03-20",
           "issue_date": "2026-06",
-          "date_source": "context_issue",
-          "published_at": ""
+          "date_source": "metadata_published",
+          "published_at": "2026-03-20"
         },
         {
           "title": "A Curation Approach to Identity Management: The Costs of Combining Identity Expression and Suppression",
           "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261431827",
-          "date": "2026-06",
+          "date": "2026-04-12",
           "issue_date": "2026-06",
-          "date_source": "context_issue",
-          "published_at": ""
+          "date_source": "metadata_published",
+          "published_at": "2026-04-12"
         },
         {
           "title": "David Lingelbach and Valentina Rodríguez Guerra. The Oligarchs’ Grip: Fusing Wealth and Power",
           "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251396889",
-          "date": "2026-06",
+          "date": "2025-11-11",
           "issue_date": "2026-06",
-          "date_source": "context_issue",
-          "published_at": ""
+          "date_source": "metadata_published",
+          "published_at": "2025-11-11"
         },
         {
           "title": "Daniel Susskind. Growth: A History and a Reckoning",
           "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251401212",
-          "date": "2026-06",
+          "date": "2025-11-26",
           "issue_date": "2026-06",
-          "date_source": "context_issue",
-          "published_at": ""
+          "date_source": "metadata_published",
+          "published_at": "2025-11-26"
         },
         {
           "title": "Andrew J. Hoffman. Business School and the Noble Purpose of the Market: Correcting the Systemic Failures of Shareholder Capitalism",
           "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251406234",
-          "date": "2026-06",
+          "date": "2025-12-07",
           "issue_date": "2026-06",
-          "date_source": "context_issue",
-          "published_at": ""
+          "date_source": "metadata_published",
+          "published_at": "2025-12-07"
         },
         {
           "title": "Alessandro Gerosa. The Hipster Economy: Taste and Authenticity in Late Modern Capitalism",
           "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251411308",
-          "date": "2026-06",
+          "date": "2026-01-10",
           "issue_date": "2026-06",
-          "date_source": "context_issue",
-          "published_at": ""
+          "date_source": "metadata_published",
+          "published_at": "2026-01-10"
         },
         {
           "title": "Timothy Kuhn. What Do Corporations Want? Communicative Capitalism, Corporate Purpose, and a New Theory of the Firm",
           "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251414373",
-          "date": "2026-06",
+          "date": "2026-01-12",
           "issue_date": "2026-06",
-          "date_source": "context_issue",
-          "published_at": ""
+          "date_source": "metadata_published",
+          "published_at": "2026-01-12"
         },
         {
           "title": "Alberto Galasso. The Management of Innovation: Managing and Creating Technology Capital",
           "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261417678",
-          "date": "2026-06",
+          "date": "2026-01-21",
           "issue_date": "2026-06",
-          "date_source": "context_issue",
-          "published_at": ""
+          "date_source": "metadata_published",
+          "published_at": "2026-01-21"
         },
         {
           "title": "Jeffrey Funk. Unicorns, Hype, and Bubbles: A Guide to Spotting, Avoiding, and Exploiting Investment Bubbles in Tech",
           "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261421932",
-          "date": "2026-06",
+          "date": "2026-02-07",
           "issue_date": "2026-06",
-          "date_source": "context_issue",
-          "published_at": ""
+          "date_source": "metadata_published",
+          "published_at": "2026-02-07"
         },
         {
           "title": "Kalpita Bhar Paul. Ecophenomenology and the Environmental Crisis in the Sundarbans: Towards a Community-Based Ethic",
           "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261428471",
-          "date": "2026-06",
+          "date": "2026-02-20",
           "issue_date": "2026-06",
-          "date_source": "context_issue",
-          "published_at": ""
+          "date_source": "metadata_published",
+          "published_at": "2026-02-20"
         }
       ],
       "samples": [
         {
           "title": "Unequal in the Spotlight: Gender Differences in How Serving on Prominent Firms Affects Directors’ New Board Appointments",
           "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251405843",
-          "date": "2026-06",
+          "date": "2026-01-08",
           "issue_date": "2026-06",
-          "date_source": "context_issue",
-          "published_at": ""
+          "date_source": "metadata_published",
+          "published_at": "2026-01-08"
         },
         {
           "title": "Interpreting Violence: How Community Context Shapes Corporate Responses to Street Protests",
           "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261419416",
-          "date": "2026-06",
+          "date": "2026-02-19",
           "issue_date": "2026-06",
-          "date_source": "context_issue",
-          "published_at": ""
+          "date_source": "metadata_published",
+          "published_at": "2026-02-19"
         },
         {
           "title": "Democratic Deviations: How Organizations Sustain Decentralization Commitments in the Face of Centralization Pressures",
           "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261421927",
-          "date": "2026-06",
+          "date": "2026-03-11",
           "issue_date": "2026-06",
-          "date_source": "context_issue",
-          "published_at": ""
+          "date_source": "metadata_published",
+          "published_at": "2026-03-11"
         }
       ],
       "notes": [],

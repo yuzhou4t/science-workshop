@@ -22,14 +22,21 @@ function validMonth(month) {
   return value >= 1 && value <= 12;
 }
 
+function monthNumber(month) {
+  const value = monthNames.get(String(month).toLowerCase()) || Number(month);
+  return validMonth(value) ? value : "";
+}
+
 function issueDate(year, month) {
-  if (!year || !validMonth(month)) return "";
-  return `${year}-${pad2(month)}`;
+  const value = monthNumber(month);
+  if (!year || !value) return "";
+  return `${year}-${pad2(value)}`;
 }
 
 function publishedDate(year, month, day) {
-  if (!year || !validMonth(month) || Number(day) < 1 || Number(day) > 31) return "";
-  return `${year}-${pad2(month)}-${pad2(day)}`;
+  const value = monthNumber(month);
+  if (!year || !value || Number(day) < 1 || Number(day) > 31) return "";
+  return `${year}-${pad2(value)}-${pad2(day)}`;
 }
 
 function metaContent(text, name) {
@@ -50,6 +57,37 @@ function firstMetaContent(text, names) {
 function isoDay(value = "") {
   const match = String(value).match(/\b(20\d{2})-(\d{1,2})-(\d{1,2})\b/);
   return match ? publishedDate(match[1], match[2], match[3]) : "";
+}
+
+function datePartsToIso(dateParts) {
+  const parts = dateParts?.["date-parts"]?.[0] || [];
+  if (!parts.length) return "";
+  const [year, month, day] = parts;
+  if (!year) return "";
+  if (!month) return String(year);
+  if (!day) return issueDate(year, month);
+  return publishedDate(year, month, day);
+}
+
+export function doiFromUrl(url = "") {
+  const decoded = decodeURIComponent(String(url));
+  const match = decoded.match(/\b10\.\d{4,9}\/[^\s?#"'<>()]+/i);
+  return match ? match[0].replace(/[.,;:]+$/, "") : "";
+}
+
+export function extractMetadataDateHints(payload = {}) {
+  const metadata = payload.message || payload;
+  const published = datePartsToIso(metadata["published-online"] || metadata.published || metadata.issued);
+  const print = datePartsToIso(metadata["published-print"] || metadata["journal-issue"]?.["published-print"]);
+  const result = {};
+
+  if (/^\d{4}-\d{2}-\d{2}$/.test(published)) result.published_at = published;
+  if (/^\d{4}-\d{2}$/.test(print)) result.issue_date = print;
+  else if (/^\d{4}-\d{2}$/.test(published) && !result.published_at) result.issue_date = published;
+
+  if (result.published_at) result.date_source = "metadata_published";
+  else if (result.issue_date) result.date_source = "metadata_issue";
+  return result;
 }
 
 export function extractDateHints({ url = "", context = "" } = {}) {
@@ -76,6 +114,14 @@ export function extractDateHints({ url = "", context = "" } = {}) {
   if (onlineMatch) {
     return {
       published_at: publishedDate(onlineMatch[3], onlineMatch[1], onlineMatch[2]),
+      date_source: "context_published",
+    };
+  }
+
+  const namedOnlineMatch = haystack.match(/(?:Version of Record online|Published online|First published(?: online)?)\s*:?\s*(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{1,2}),?\s+(20\d{2})/i);
+  if (namedOnlineMatch) {
+    return {
+      published_at: publishedDate(namedOnlineMatch[3], namedOnlineMatch[1], namedOnlineMatch[2]),
       date_source: "context_published",
     };
   }
