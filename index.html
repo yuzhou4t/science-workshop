@@ -750,10 +750,16 @@
         line-height: 1;
       }
 
+      .score.a {
+        border-color: rgba(var(--accent-rgb), 0.32);
+        background: rgba(var(--accent-rgb), 0.11);
+        color: var(--accent);
+      }
+
       .score.aplus {
-        border-color: rgba(52, 211, 153, 0.32);
-        background: rgba(52, 211, 153, 0.1);
-        color: var(--emerald);
+        border-color: rgba(251, 191, 36, 0.36);
+        background: rgba(251, 191, 36, 0.12);
+        color: var(--amber);
       }
 
       .score.warn {
@@ -808,6 +814,16 @@
       .tag.cyan {
         background: rgba(var(--accent-rgb), 0.13);
         color: var(--accent);
+      }
+
+      .tag.rating-a {
+        background: rgba(var(--accent-rgb), 0.13);
+        color: var(--accent);
+      }
+
+      .tag.rating-aplus {
+        background: rgba(251, 191, 36, 0.12);
+        color: var(--amber);
       }
 
       .tag.emerald {
@@ -1893,7 +1909,7 @@
     <script src="data/recent-front-data.js"></script>
     <script>
       const rawJournals = [
-        ["1", "JOURNAL OF FINANCE", "BUSINESS,FINANCE", "", "0022-1082", "https://afajof.org/journal-of-finance/", "https://afajof.org/journal-of-finance/", "https://afajof.org/forthcoming-articles/", "A+"],
+        ["1", "JOURNAL OF FINANCE", "BUSINESS,FINANCE", "", "0022-1082", "https://afajof.org/journal-of-finance/", "https://afajof.org/journal-of-finance/", "https://afajof.org/forthcoming-articles/", "A"],
         ["2", "经济研究", "经济学", "中国社会科学院经济研究所", "11-1081/F", "https://erj.ajcass.com/#/index", "https://erj.ajcass.com/#/search?keywords=%E4%BA%BA&year=2025&issue=11", "https://erj.ajcass.com/#/issue?id=122648&year=2026&issue=3", "A"],
         ["3", "世界经济", "经济学", "中国社会科学院世界经济与政治研究所", "11-1138/F", "https://sjjj.magtech.com.cn/CN/home", "https://sjjj.magtech.com.cn/CN/archive_by_years", "https://sjjj.magtech.com.cn/CN/Y2026/V49/I4/3", "A"],
         ["4", "中国工业经济", "经济学", "中国社会科学院工业经济研究所", "11-3536/F", "https://ciejournal.ajcass.com/", "https://ciejournal.ajcass.com/", "https://ciejournal.ajcass.com/Magazine/Show?id=122793", "A"],
@@ -1906,7 +1922,7 @@
         ["11", "会计研究", "管理学", "中国会计学会", "11-1078/F", "https://www.asc.net.cn/AccountingResearch/NewestArticleList.aspx", "https://www.asc.net.cn/AccountingResearch/NewestArticleListCS.aspx?issue=4&year=2026", "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=0EB713F2-A67B-4D41-858D-33AA14CAE36F&ID=A3ED3197-6D0F-4E67-944A-FA5C00C7CD77", "A"],
         ["12", "中国农村经济", "管理学", "中国社会科学院农村发展研究所", "11-1262/F", "https://zgncjj.ajcass.com/#/", "https://zgncjj.ajcass.com/#/", "https://zgncjj.ajcass.com/#/issueDetail?contentId=122674&year=2026&issue=4&title=%E5%BD%93%E6%9C%9F%E7%9B%AE%E5%BD%95", "A"],
         ["13", "ACADEMY OF MANAGEMENT REVIEW", "BUSINESS", "", "0363-7425", "https://www.aom.org/publications/journals/review/", "https://journals.aom.org/journal/amr/fte-collection", "https://journals.aom.org/doi/10.5465/amr.2026.0147", "A+"],
-        ["14", "JOURNAL OF FINANCE", "BUSINESS,FINANCE", "", "0022-1082", "https://onlinelibrary.wiley.com/journal/15406261", "https://onlinelibrary.wiley.com/journal/15406261", "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70055", "A+"],
+        ["14", "JOURNAL OF FINANCE", "BUSINESS,FINANCE", "", "0022-1082", "https://onlinelibrary.wiley.com/journal/15406261", "https://onlinelibrary.wiley.com/journal/15406261", "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70055", "A"],
         ["15", "ACCOUNTING REVIEW", "BUSINESS", "", "0001-4826", "https://aaahq.org/Research/Journals/The-Accounting-Review", "https://publications.aaahq.org/accounting-review/issue/101/3", "https://publications.aaahq.org/accounting-review/article-abstract/101/3/1/23143/How-Good-Is-Goodwill-Accounting-Comparative?redirectedFrom=fulltext", "A+"],
         ["16", "AMERICAN ECONOMIC REVIEW", "ECONOMICS", "", "0002-8282", "https://www.aeaweb.org/journals/aer", "https://www.aeaweb.org/journals/aer/search-results?ArticleSearch%5Bwithin%5D%5Barticletitle%5D=1&ArticleSearch%5Bwithin%5D%5Barticleabstract%5D=1&ArticleSearch%5Bwithin%5D%5Bauthorlast%5D=1&JelClass%5Bvalue%5D=0&journal=1&ArticleSearch%5Bq%5D=", "https://www.aeaweb.org/articles?id=10.1257/aer.20240850&ArticleSearch%5Bwithin%5D%5Barticletitle%5D=1&ArticleSearch%5Bwithin%5D%5Barticleabstract%5D=1&ArticleSearch%5Bwithin%5D%5Bauthorlast%5D=1&ArticleSearch%5Bq%5D=&JelClass%5Bvalue%5D=0&journal=1&from=j", "A+"],
         ["17", "JOURNAL OF POLITICAL ECONOMY", "ECONOMICS", "", "0022-3808", "https://www.journals.uchicago.edu/toc/jpe/current", "https://www.journals.uchicago.edu/toc/jpe/current", "https://www.journals.uchicago.edu/doi/10.1086/739834", "A+"],
@@ -2201,7 +2217,7 @@
             rating: journal.rating,
             pushBasis: row.push_basis,
             tags: [journal.subject, journal.lang, journal.rating, kind],
-            status: row.push_basis === "first_seen" ? "warn" : journal.rating === "A+" ? "priority" : "normal"
+            status: row.push_basis === "first_seen" ? "warn" : "normal"
           };
         }).sort((a, b) => b.dateStart.localeCompare(a.dateStart) || a.title.localeCompare(b.title, "zh-Hans-CN"));
       }
@@ -2225,12 +2241,32 @@
             rating: journal.rating,
             pushBasis: "sample",
             tags: [journal.subject, journal.lang, journal.rating, journal.monitorPlan],
-            status: journal.health !== "ok" ? "warn" : journal.rating === "A+" ? "priority" : "normal"
+            status: journal.health !== "ok" ? "warn" : "normal"
           };
         });
       }
 
       const articles = (workflowData.push_queue?.length ? buildWorkflowArticles() : buildFallbackArticles());
+
+      function ratingScoreClass(rating) {
+        if (rating === "A+") return "aplus";
+        if (rating === "A") return "a";
+        return "";
+      }
+
+      function ratingTagClass(rating) {
+        if (rating === "A+") return "rating-aplus";
+        if (rating === "A") return "rating-a";
+        return "";
+      }
+
+      function timelineTagClass(tag) {
+        const classes = [];
+        if (tag === "中文" || tag === "英文") classes.push("cyan");
+        const ratingClass = ratingTagClass(tag);
+        if (ratingClass) classes.push(ratingClass);
+        return classes.join(" ");
+      }
 
       let activeSubject = "全部";
       let activeLanguage = "全部";
@@ -2363,8 +2399,8 @@
 
       function renderTimelineItem(article) {
         const journal = journalById(article.journalId);
-        const dotColor = article.status === "warn" ? "rgba(251,191,36,.82)" : article.status === "priority" ? "rgba(52,211,153,.82)" : "rgba(34,211,238,.72)";
-        const scoreClass = article.status === "warn" ? "warn" : journal.rating === "A+" ? "aplus" : "";
+        const dotColor = article.status === "warn" ? "rgba(251,191,36,.82)" : "rgba(34,211,238,.72)";
+        const scoreClass = ratingScoreClass(journal.rating);
         return `
           <article class="timeline-item">
             <div class="timeline-spacer" aria-hidden="true"></div>
@@ -2379,7 +2415,7 @@
               <div class="tags">
                 ${article.tags.map((tag) => {
                   const label = tag === journal.rating ? `刊物${tag}` : tag;
-                  return `<span class="tag ${tag === "中文" || tag === "英文" ? "cyan" : tag === "A+" ? "emerald" : ""}">${escapeHtml(label)}</span>`;
+                  return `<span class="tag ${timelineTagClass(tag)}">${escapeHtml(label)}</span>`;
                 }).join("")}
               </div>
             </div>
@@ -2509,7 +2545,7 @@
               <div class="tags">
                 <span class="tag">${escapeHtml(journal.subject)}</span>
                 <span class="tag cyan">${escapeHtml(journal.lang)}</span>
-                <span class="tag ${journal.rating === "A+" ? "emerald" : ""}">${escapeHtml(journal.rating)}</span>
+                <span class="tag ${ratingTagClass(journal.rating)}">${escapeHtml(journal.rating)}</span>
               </div>
             </td>
             <td>${sourceMode(journal)}</td>
