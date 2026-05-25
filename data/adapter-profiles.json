@@ -1,0 +1,114 @@
+{
+  "version": "0.1.0",
+  "updated_at": "2026-05-25",
+  "purpose": "Initial adapter registry for Chinese journals and English sources without article-level RSS.",
+  "direct_article_feeds": [
+    {
+      "journal_id": "j13",
+      "journal_name": "ACADEMY OF MANAGEMENT REVIEW",
+      "feed_url": "https://journals.aom.org/action/showFeed?jc=amr&type=etoc&feed=rss",
+      "parser_profile": "atypon-etoc"
+    },
+    {
+      "journal_id": "j14",
+      "journal_name": "JOURNAL OF FINANCE",
+      "feed_url": "https://onlinelibrary.wiley.com/action/showFeed?jc=15406261&type=etoc&feed=rss",
+      "parser_profile": "wiley-etoc"
+    },
+    {
+      "journal_id": "j17",
+      "journal_name": "JOURNAL OF POLITICAL ECONOMY",
+      "feed_url": "https://www.journals.uchicago.edu/action/showFeed?jc=jpe&type=etoc&feed=rss",
+      "parser_profile": "atypon-etoc"
+    },
+    {
+      "journal_id": "j20",
+      "journal_name": "ECONOMETRICA",
+      "feed_url": "https://onlinelibrary.wiley.com/action/showFeed?jc=14680262&type=etoc&feed=rss",
+      "parser_profile": "wiley-etoc"
+    },
+    {
+      "journal_id": "j21",
+      "journal_name": "ACADEMY OF MANAGEMENT JOURNAL",
+      "feed_url": "https://journals.aom.org/action/showFeed?jc=amj&type=etoc&feed=rss",
+      "parser_profile": "atypon-etoc"
+    }
+  ],
+  "platform_profiles": [
+    {
+      "id": "ajcass",
+      "name": "AJCass 社科院平台",
+      "strategy": "接口优先，Playwright 兜底",
+      "render_required": true,
+      "fields": ["title", "url", "issue", "year", "authors", "abstract"],
+      "next_action": "先修正中国工业经济 URL，再抓包确认期号接口。"
+    },
+    {
+      "id": "cn-journal-cms",
+      "name": "中文期刊 CMS / Magtech",
+      "strategy": "CSS/XPath 静态抽取",
+      "render_required": false,
+      "fields": ["title", "url", "issue", "date", "authors"],
+      "next_action": "用过刊页定位条目容器，先产出 CSS selector 规则。"
+    },
+    {
+      "id": "cnki-cbpt",
+      "name": "CNKI / 采编平台",
+      "strategy": "动态渲染 + 接口嗅探",
+      "render_required": true,
+      "fields": ["title", "url", "issue", "authors", "abstract"],
+      "next_action": "检查页面请求，能走接口就不跑浏览器渲染。"
+    },
+    {
+      "id": "university-custom",
+      "name": "高校自建站",
+      "strategy": "CSS/XPath，单刊参数化",
+      "render_required": false,
+      "fields": ["title", "url", "issue", "date", "authors"],
+      "next_action": "分别确认目录页列表结构和翻页规则。"
+    },
+    {
+      "id": "association-custom",
+      "name": "协会 / 自建系统",
+      "strategy": "先修 URL，再静态抽取",
+      "render_required": false,
+      "fields": ["title", "url", "issue", "date"],
+      "next_action": "中国行政管理缺少有效过刊入口，会计研究需处理 gb2312 编码。"
+    },
+    {
+      "id": "publisher-html",
+      "name": "英文出版平台页面",
+      "strategy": "出版平台模板 + 反爬兜底",
+      "render_required": true,
+      "fields": ["title", "url", "doi", "issue", "date", "authors"],
+      "next_action": "AAAHQ、AEA、Oxford 先找隐藏 JSON 或 citation 元数据。"
+    },
+    {
+      "id": "non-article-feed",
+      "name": "非论文 RSS 来源",
+      "strategy": "排除公告/评论 RSS，改抓文章页",
+      "render_required": false,
+      "fields": ["title", "url", "issue", "date", "authors"],
+      "next_action": "AFA 和 ASQ 的已有 RSS 不作为论文推送源，只保留为参考信号。"
+    }
+  ],
+  "adapter_queue": [
+    { "journal_id": "j2", "journal_name": "经济研究", "platform_id": "ajcass", "status": "规则待写", "source_url": "https://erj.ajcass.com/#/index" },
+    { "journal_id": "j4", "journal_name": "中国工业经济", "platform_id": "ajcass", "status": "先修 URL", "source_url": "https://ciejournal.ajcass.com/" },
+    { "journal_id": "j12", "journal_name": "中国农村经济", "platform_id": "ajcass", "status": "规则待写", "source_url": "https://zgncjj.ajcass.com/#/" },
+    { "journal_id": "j3", "journal_name": "世界经济", "platform_id": "cn-journal-cms", "status": "规则待写", "source_url": "https://sjjj.magtech.com.cn/CN/archive_by_years" },
+    { "journal_id": "j5", "journal_name": "金融研究", "platform_id": "cn-journal-cms", "status": "规则待写", "source_url": "http://www.jryj.org.cn/CN/article/showOldVolumnList.do" },
+    { "journal_id": "j6", "journal_name": "管理世界", "platform_id": "cnki-cbpt", "status": "规则待写", "source_url": "https://glsj.cbpt.cnki.net/WKB/WebPublication/wkTextContent.aspx?colType=4&tp=gklb&mid=glsj" },
+    { "journal_id": "j8", "journal_name": "公共管理学报", "platform_id": "cnki-cbpt", "status": "规则待写", "source_url": "https://gggl.cbpt.cnki.net/portal" },
+    { "journal_id": "j7", "journal_name": "南开管理评论", "platform_id": "university-custom", "status": "规则待写", "source_url": "https://nbr.nankai.edu.cn/nkglpl/home" },
+    { "journal_id": "j9", "journal_name": "管理科学学报", "platform_id": "university-custom", "status": "规则待写", "source_url": "https://jmsc.tju.edu.cn/jmsc/issue/browser" },
+    { "journal_id": "j10", "journal_name": "中国行政管理", "platform_id": "association-custom", "status": "先修 URL", "source_url": "https://www.cpaj.com.cn/" },
+    { "journal_id": "j11", "journal_name": "会计研究", "platform_id": "association-custom", "status": "规则待写", "source_url": "http://www.asc.org.cn/AccountingResearch/BrowsePeriodical.aspx" },
+    { "journal_id": "j15", "journal_name": "ACCOUNTING REVIEW", "platform_id": "publisher-html", "status": "未发现论文 RSS", "source_url": "https://publications.aaahq.org/accounting-review/issue/101/3" },
+    { "journal_id": "j16", "journal_name": "AMERICAN ECONOMIC REVIEW", "platform_id": "publisher-html", "status": "未发现论文 RSS", "source_url": "https://www.aeaweb.org/journals/aer" },
+    { "journal_id": "j18", "journal_name": "QUARTERLY JOURNAL OF ECONOMICS", "platform_id": "publisher-html", "status": "未发现论文 RSS", "source_url": "https://academic.oup.com/qje" },
+    { "journal_id": "j19", "journal_name": "REVIEW OF ECONOMIC STUDIES", "platform_id": "publisher-html", "status": "未发现论文 RSS", "source_url": "https://academic.oup.com/restud" },
+    { "journal_id": "j1", "journal_name": "JOURNAL OF FINANCE", "platform_id": "non-article-feed", "status": "非论文 RSS", "source_url": "https://afajof.org/forthcoming-articles/" },
+    { "journal_id": "j22", "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY", "platform_id": "non-article-feed", "status": "非论文 RSS", "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/" }
+  ]
+}

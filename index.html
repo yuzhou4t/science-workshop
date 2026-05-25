@@ -1,0 +1,2575 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>工作坊期刊情报台</title>
+    <style>
+      :root {
+        --bg-0: #0b0f1a;
+        --bg-1: #111827;
+        --bg-2: #1e293b;
+        --surface-0: rgba(255, 255, 255, 0.03);
+        --surface-1: rgba(255, 255, 255, 0.05);
+        --surface-2: rgba(255, 255, 255, 0.08);
+        --surface-card: rgba(255, 255, 255, 0.045);
+        --surface-elevated: linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.035));
+        --text-0: #f1f5f9;
+        --text-1: #94a3b8;
+        --text-2: #64748b;
+        --border: rgba(255, 255, 255, 0.07);
+        --border-strong: rgba(255, 255, 255, 0.12);
+        --border-soft: rgba(255, 255, 255, 0.045);
+        --border-emphasis: rgba(255, 255, 255, 0.2);
+        --accent: #22d3ee;
+        --accent-rgb: 34, 211, 238;
+        --accent-hover: #67e8f9;
+        --emerald: #34d399;
+        --amber: #fbbf24;
+        --rose: #fb7185;
+        --nav-width: 236px;
+        --radius: 12px;
+        --radius-sm: 8px;
+        --radius-lg: 16px;
+        --shadow-card: 0 18px 48px rgba(0, 0, 0, 0.24);
+        --shadow-card-hover: 0 24px 56px rgba(0, 0, 0, 0.32);
+        --theme-transition: background-color 220ms ease, background 220ms ease, color 180ms ease, border-color 180ms ease, box-shadow 220ms ease;
+        color-scheme: dark;
+      }
+
+      :root[data-theme="light"] {
+        --bg-0: #fafbfc;
+        --bg-1: #f1f4f8;
+        --bg-2: #e2e8f0;
+        --surface-0: rgba(15, 23, 42, 0.025);
+        --surface-1: rgba(15, 23, 42, 0.04);
+        --surface-2: rgba(15, 23, 42, 0.06);
+        --surface-card: #ffffff;
+        --surface-elevated: linear-gradient(180deg, #ffffff, rgba(255, 255, 255, 0.62));
+        --text-0: #0f172a;
+        --text-1: #475569;
+        --text-2: #64748b;
+        --border: rgba(15, 23, 42, 0.08);
+        --border-strong: rgba(15, 23, 42, 0.14);
+        --border-soft: rgba(15, 23, 42, 0.05);
+        --border-emphasis: rgba(15, 23, 42, 0.22);
+        --accent: #0891b2;
+        --accent-rgb: 8, 145, 178;
+        --accent-hover: #155e75;
+        --emerald: #047857;
+        --amber: #b45309;
+        --rose: #be123c;
+        --shadow-card: 0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px rgba(15, 23, 42, 0.06);
+        --shadow-card-hover: 0 1px 2px rgba(15, 23, 42, 0.06), 0 16px 32px rgba(15, 23, 42, 0.1);
+        color-scheme: light;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      [hidden] {
+        display: none !important;
+      }
+
+      html {
+        min-height: 100%;
+        background: var(--bg-0);
+      }
+
+      body {
+        margin: 0;
+        min-height: 100%;
+        background:
+          radial-gradient(circle at 82% -10%, rgba(var(--accent-rgb), 0.12), transparent 32rem),
+          linear-gradient(180deg, var(--bg-0), var(--bg-1));
+        color: var(--text-0);
+        font-family: "IBM Plex Sans", "Inter", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+        font-size: 14px;
+        line-height: 1.55;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      button,
+      input,
+      select {
+        font: inherit;
+      }
+
+      .app-shell {
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: var(--nav-width) minmax(0, 1fr);
+      }
+
+      .sidebar {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        display: grid;
+        grid-template-rows: auto auto 1fr auto;
+        gap: 10px;
+        padding: 18px 12px 14px;
+        border-right: 1px solid var(--border);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.018));
+        overflow: hidden;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 72px;
+        border: 1px solid var(--border-strong);
+        border-radius: 18px;
+        background: var(--surface-elevated);
+        text-decoration: none;
+      }
+
+      .brand-logo {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        font-family: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+        font-size: 18px;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        line-height: 1;
+      }
+
+      .brand-logo span:first-child {
+        color: rgba(241, 245, 249, 0.82);
+      }
+
+      :root[data-theme="light"] .brand-logo span:first-child {
+        color: rgba(15, 23, 42, 0.78);
+      }
+
+      .brand-orbit {
+        position: relative;
+        width: 0.92em;
+        height: 0.92em;
+        border: 1.5px solid rgba(var(--accent-rgb), 0.72);
+        border-radius: 999px;
+        box-shadow: inset 0 0 0 2px rgba(var(--accent-rgb), 0.07), 0 0 24px rgba(var(--accent-rgb), 0.22);
+      }
+
+      .brand-orbit::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 120%;
+        height: 1px;
+        background: rgba(var(--accent-rgb), 0.45);
+        transform: translate(-50%, -50%) rotate(-28deg);
+      }
+
+      .brand-orbit::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0.22em;
+        height: 0.22em;
+        border-radius: 50%;
+        background: var(--accent);
+        transform: translate(-50%, -50%);
+      }
+
+      .brand-hot {
+        color: var(--accent);
+      }
+
+      .divider {
+        height: 1px;
+        background: var(--border);
+      }
+
+      .side-nav,
+      .side-footer {
+        display: grid;
+        gap: 4px;
+        padding: 0 4px;
+      }
+
+      .side-nav {
+        align-content: start;
+        overflow: auto;
+        scrollbar-width: none;
+      }
+
+      .side-nav::-webkit-scrollbar {
+        display: none;
+      }
+
+      .side-link {
+        width: 100%;
+        min-height: 40px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 12px;
+        border: 1px solid transparent;
+        border-radius: 14px;
+        background: transparent;
+        color: var(--text-2);
+        cursor: pointer;
+        text-align: left;
+        text-decoration: none;
+        transition: background 0.1s ease, color 0.1s ease, border-color 0.1s ease;
+      }
+
+      .side-link:hover {
+        border-color: var(--border-strong);
+        background: var(--surface-1);
+        color: var(--text-0);
+      }
+
+      .side-link.active {
+        border-color: rgba(var(--accent-rgb), 0.28);
+        background: linear-gradient(90deg, rgba(var(--accent-rgb), 0.18), rgba(var(--accent-rgb), 0.06));
+        color: var(--accent);
+        box-shadow: inset 0 1px 0 var(--surface-0);
+      }
+
+      .side-icon {
+        width: 20px;
+        height: 20px;
+        flex: 0 0 20px;
+      }
+
+      .side-group {
+        margin: 10px 12px 4px;
+        font-family: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+        font-size: 9px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--text-2);
+      }
+
+      .side-soon {
+        opacity: 0.52;
+      }
+
+      .theme-toggle {
+        height: 34px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3px;
+        padding: 3px;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: var(--surface-0);
+      }
+
+      .theme-toggle button {
+        border: 0;
+        border-radius: 999px;
+        background: transparent;
+        color: var(--text-2);
+        cursor: pointer;
+        font-family: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+        font-size: 11px;
+      }
+
+      .theme-toggle button.active {
+        background: var(--surface-2);
+        color: var(--text-0);
+        box-shadow: var(--shadow-card);
+      }
+
+      .app-main {
+        min-width: 0;
+        display: grid;
+        align-content: start;
+        gap: 14px;
+        padding: 24px 28px 72px;
+      }
+
+      .mobile-bar {
+        display: none;
+      }
+
+      .page {
+        display: grid;
+        gap: 16px;
+      }
+
+      .page[hidden] {
+        display: none;
+      }
+
+      .card,
+      .panel {
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        background: var(--surface-card);
+        box-shadow: var(--shadow-card);
+        transition: var(--theme-transition);
+      }
+
+      .page-header {
+        padding: 18px 18px 14px;
+      }
+
+      .header-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .header-main {
+        min-width: 240px;
+      }
+
+      .header-actions {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+        flex: 1 1 420px;
+      }
+
+      .title {
+        margin: 0;
+        font-family: "Noto Serif SC", "Songti SC", Georgia, serif;
+        font-size: 24px;
+        line-height: 1.25;
+        letter-spacing: -0.02em;
+      }
+
+      .subtitle {
+        margin-top: 4px;
+        color: var(--text-1);
+        font-size: 13px;
+      }
+
+      .mono {
+        font-family: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .toolbar-line {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .segmented {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        padding: 4px;
+        border: 1px solid var(--border-emphasis);
+        border-radius: 999px;
+        background: var(--surface-elevated);
+        box-shadow: inset 0 1px 0 var(--surface-card);
+      }
+
+      .seg-item {
+        min-height: 30px;
+        min-width: 70px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 7px 12px;
+        border: 0;
+        border-radius: 999px;
+        background: transparent;
+        color: var(--text-2);
+        cursor: pointer;
+        font-family: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+        font-size: 11px;
+        letter-spacing: 0.04em;
+        transition: background 0.12s ease, color 0.12s ease, box-shadow 0.12s ease;
+      }
+
+      .seg-item:hover {
+        background: var(--surface-2);
+        color: var(--text-0);
+      }
+
+      .seg-item.active {
+        background: rgba(var(--accent-rgb), 0.16);
+        color: var(--accent);
+        box-shadow: inset 0 0 0 1px rgba(var(--accent-rgb), 0.28), var(--shadow-card);
+      }
+
+      .search-row {
+        display: grid;
+        grid-template-columns: minmax(220px, 340px) auto;
+        gap: 8px;
+      }
+
+      .filter-panel,
+      .source-ingest {
+        margin-top: 14px;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        background: var(--surface-0);
+        overflow: hidden;
+      }
+
+      .filter-panel summary,
+      .source-ingest summary {
+        min-height: 42px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 9px 12px;
+        cursor: pointer;
+        color: var(--text-1);
+        list-style: none;
+      }
+
+      .filter-panel summary::-webkit-details-marker,
+      .source-ingest summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .summary-title {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--text-0);
+        font-weight: 750;
+      }
+
+      .summary-hint {
+        min-width: 0;
+        overflow: hidden;
+        color: var(--text-2);
+        font-size: 12px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .filter-body,
+      .source-ingest-body {
+        display: grid;
+        gap: 12px;
+        padding: 0 12px 12px;
+        border-top: 1px solid var(--border-soft);
+      }
+
+      .filter-row {
+        display: grid;
+        gap: 8px;
+        padding-top: 12px;
+      }
+
+      .filter-row-head {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+        color: var(--text-2);
+        font-family: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .filter-chip-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .filter-chip {
+        min-height: 28px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 5px 9px;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: var(--surface-card);
+        color: var(--text-1);
+        cursor: pointer;
+        font-size: 12px;
+        line-height: 1;
+        transition: border-color 0.12s ease, background 0.12s ease, color 0.12s ease;
+      }
+
+      .filter-chip:hover {
+        border-color: rgba(var(--accent-rgb), 0.28);
+        background: rgba(var(--accent-rgb), 0.08);
+        color: var(--text-0);
+      }
+
+      .filter-chip.active {
+        border-color: rgba(var(--accent-rgb), 0.38);
+        background: rgba(var(--accent-rgb), 0.14);
+        color: var(--accent);
+      }
+
+      .filter-empty-hint {
+        padding: 10px 0 2px;
+        color: var(--text-2);
+        font-size: 12px;
+      }
+
+      .field {
+        min-height: 40px;
+        width: 100%;
+        padding: 9px 13px;
+        border: 1px solid var(--border-strong);
+        border-radius: 12px;
+        outline: none;
+        background: var(--surface-card);
+        color: var(--text-0);
+        transition: border-color 0.12s ease, background 0.12s ease, box-shadow 0.12s ease;
+      }
+
+      .field:focus {
+        border-color: rgba(var(--accent-rgb), 0.45);
+        background: var(--surface-2);
+        box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.12);
+      }
+
+      .field::placeholder {
+        color: var(--text-2);
+      }
+
+      .btn {
+        min-height: 38px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        padding: 9px 14px;
+        border: 1px solid var(--border-strong);
+        border-radius: 12px;
+        background: var(--surface-elevated);
+        color: var(--text-0);
+        cursor: pointer;
+        font-weight: 700;
+        line-height: 1;
+        white-space: nowrap;
+        text-decoration: none;
+        transition: background 0.12s ease, border-color 0.12s ease, transform 80ms ease, color 0.12s ease;
+      }
+
+      .btn:hover {
+        border-color: var(--border-emphasis);
+        background: var(--surface-2);
+      }
+
+      .btn:active {
+        transform: scale(0.98);
+      }
+
+      .btn-primary {
+        border-color: rgba(var(--accent-rgb), 0.34);
+        background: linear-gradient(180deg, rgba(var(--accent-rgb), 0.22), rgba(var(--accent-rgb), 0.11));
+        color: var(--accent);
+      }
+
+      .btn-ghost {
+        background: transparent;
+        color: var(--text-1);
+      }
+
+      .btn-sm {
+        min-height: 32px;
+        padding: 7px 10px;
+        border-radius: 10px;
+        font-size: 12px;
+      }
+
+      .btn[aria-disabled="true"] {
+        opacity: 0.42;
+        pointer-events: none;
+      }
+
+      .timeline {
+        --tl-time-w: 88px;
+        --tl-rail-w: 28px;
+        --tl-dot-top: 18px;
+        display: grid;
+        gap: 18px;
+      }
+
+      .timeline-day {
+        display: grid;
+        gap: 10px;
+      }
+
+      .timeline-day-head {
+        display: grid;
+        grid-template-columns: var(--tl-time-w) var(--tl-rail-w) 1fr;
+        align-items: center;
+      }
+
+      .timeline-date {
+        padding-right: 10px;
+        text-align: right;
+        font-family: "Noto Serif SC", "Songti SC", Georgia, serif;
+        font-size: 14px;
+        color: var(--text-1);
+        white-space: nowrap;
+      }
+
+      .timeline-day-rule {
+        height: 1px;
+        background: var(--border);
+      }
+
+      .timeline-day-items {
+        position: relative;
+        display: grid;
+        gap: 0;
+      }
+
+      .timeline-day-items::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: calc(var(--tl-time-w) + (var(--tl-rail-w) / 2));
+        width: 1px;
+        transform: translateX(-50%);
+        background: var(--border-emphasis);
+      }
+
+      .timeline-item {
+        display: grid;
+        grid-template-columns: var(--tl-time-w) var(--tl-rail-w) minmax(0, 1fr);
+        align-items: start;
+        padding-bottom: 10px;
+      }
+
+      .timeline-time {
+        padding-top: calc(var(--tl-dot-top) - 6px);
+        padding-right: 10px;
+        color: var(--text-0);
+        font-family: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+        font-size: 18px;
+        font-weight: 800;
+        letter-spacing: -0.05em;
+        line-height: 1.1;
+        text-align: right;
+        white-space: nowrap;
+      }
+
+      .timeline-rail {
+        position: relative;
+        min-height: 100%;
+      }
+
+      .timeline-dot {
+        position: absolute;
+        top: var(--tl-dot-top);
+        left: 50%;
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: var(--dot, rgba(52, 211, 153, 0.72));
+        box-shadow: 0 0 0 1px var(--border-emphasis);
+        transform: translateX(-50%);
+      }
+
+      .timeline-card {
+        min-width: 0;
+        padding: 14px 16px;
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
+        cursor: pointer;
+        transition: border-color 0.18s ease, background 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+      }
+
+      :root[data-theme="light"] .timeline-card {
+        background: var(--surface-card);
+      }
+
+      .timeline-card:hover,
+      .timeline-card.selected {
+        border-color: var(--border-strong);
+        background: var(--surface-2);
+        box-shadow: var(--shadow-card);
+        transform: translateY(-1px);
+      }
+
+      :root[data-theme="light"] .timeline-card:hover,
+      :root[data-theme="light"] .timeline-card.selected {
+        background: linear-gradient(180deg, #ffffff, #f8fbff);
+        border-color: var(--border-emphasis);
+        box-shadow: var(--shadow-card-hover);
+      }
+
+      .timeline-card-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        margin-bottom: 6px;
+      }
+
+      .timeline-source {
+        min-width: 0;
+        overflow: hidden;
+        color: var(--text-2);
+        font-size: 11px;
+        line-height: 1;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .score {
+        flex: 0 0 auto;
+        padding: 3px 7px;
+        border: 1px solid var(--border-strong);
+        border-radius: 999px;
+        background: var(--surface-card);
+        color: var(--accent);
+        font-family: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+        font-size: 11px;
+        font-weight: 800;
+        line-height: 1;
+      }
+
+      .score.aplus {
+        border-color: rgba(52, 211, 153, 0.32);
+        background: rgba(52, 211, 153, 0.1);
+        color: var(--emerald);
+      }
+
+      .score.warn {
+        border-color: rgba(251, 191, 36, 0.32);
+        background: rgba(251, 191, 36, 0.1);
+        color: var(--amber);
+      }
+
+      .timeline-title {
+        display: block;
+        color: var(--text-0);
+        font-size: 15px;
+        font-weight: 800;
+        line-height: 1.5;
+        text-decoration: none;
+      }
+
+      .timeline-title:hover {
+        color: var(--accent-hover);
+      }
+
+      .timeline-summary {
+        display: -webkit-box;
+        margin: 6px 0 0;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        color: var(--text-1);
+        font-size: 12.5px;
+        line-height: 1.62;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 8px;
+      }
+
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        padding: 2px 8px;
+        border-radius: 4px;
+        background: var(--surface-2);
+        color: var(--text-1);
+        font-family: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+        font-size: 11px;
+        line-height: 1.4;
+      }
+
+      .tag.cyan {
+        background: rgba(var(--accent-rgb), 0.13);
+        color: var(--accent);
+      }
+
+      .tag.emerald {
+        background: rgba(52, 211, 153, 0.12);
+        color: var(--emerald);
+      }
+
+      .tag.amber {
+        background: rgba(251, 191, 36, 0.12);
+        color: var(--amber);
+      }
+
+      .detail-panel {
+        position: sticky;
+        top: 24px;
+        display: grid;
+        gap: 14px;
+        padding: 16px;
+      }
+
+      .panel-title {
+        margin: 0;
+        font-family: "Noto Serif SC", "Songti SC", Georgia, serif;
+        font-size: 19px;
+        letter-spacing: -0.01em;
+      }
+
+      .panel-subtitle {
+        margin: 4px 0 0;
+        color: var(--text-1);
+        font-size: 12.5px;
+      }
+
+      .detail-meta {
+        display: grid;
+        gap: 8px;
+      }
+
+      .meta-row {
+        display: grid;
+        grid-template-columns: 88px minmax(0, 1fr);
+        gap: 10px;
+        padding: 8px 0;
+        border-top: 1px solid var(--border-soft);
+      }
+
+      .meta-label {
+        color: var(--text-2);
+        font-size: 12px;
+      }
+
+      .meta-value {
+        min-width: 0;
+        overflow-wrap: anywhere;
+        color: var(--text-0);
+        font-size: 12.5px;
+      }
+
+      .link-stack {
+        display: grid;
+        gap: 8px;
+      }
+
+      .source-link {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 10px 12px;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        background: var(--surface-0);
+        color: var(--text-1);
+        text-decoration: none;
+      }
+
+      .source-link:hover {
+        border-color: rgba(var(--accent-rgb), 0.35);
+        color: var(--accent);
+      }
+
+      .source-link.disabled {
+        opacity: 0.45;
+        pointer-events: none;
+      }
+
+      .mini-list {
+        display: grid;
+        gap: 8px;
+      }
+
+      .mini-item {
+        padding: 10px;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        background: var(--surface-0);
+      }
+
+      .mini-title {
+        margin: 0;
+        color: var(--text-0);
+        font-size: 12.5px;
+        font-weight: 750;
+      }
+
+      .mini-meta {
+        margin-top: 4px;
+        color: var(--text-2);
+        font-size: 11px;
+      }
+
+      .metrics-footer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 18px;
+        padding: 14px 4px 0 calc(88px + 28px);
+        color: var(--text-2);
+        font-size: 12px;
+      }
+
+      .metric-inline {
+        display: inline-flex;
+        align-items: baseline;
+        gap: 6px;
+      }
+
+      .metric-inline strong {
+        color: var(--text-0);
+        font-family: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+        font-size: 13px;
+      }
+
+      .table-panel {
+        overflow: hidden;
+      }
+
+      .source-toolbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 14px 16px;
+        border-bottom: 1px solid var(--border);
+        flex-wrap: wrap;
+      }
+
+      .source-grid {
+        display: none;
+      }
+
+      .source-metrics {
+        padding-left: 4px;
+      }
+
+      .rss-architecture {
+        display: grid;
+        gap: 10px;
+        padding-top: 12px;
+      }
+
+      .rss-pipeline,
+      .endpoint-list {
+        display: grid;
+        gap: 8px;
+      }
+
+      .rss-pipeline {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+      }
+
+      .endpoint-list {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .pipeline-step,
+      .endpoint-chip {
+        min-width: 0;
+        padding: 10px;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        background: var(--surface-card);
+      }
+
+      .pipeline-step strong,
+      .endpoint-chip strong {
+        display: block;
+        color: var(--text-0);
+        font-size: 12px;
+        line-height: 1.3;
+      }
+
+      .pipeline-step span,
+      .endpoint-chip span {
+        display: block;
+        margin-top: 5px;
+        overflow-wrap: anywhere;
+        color: var(--text-2);
+        font-family: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+        font-size: 10.5px;
+        line-height: 1.45;
+      }
+
+      .ingest-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .ingest-block {
+        padding: 12px;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        background: var(--surface-card);
+      }
+
+      .ingest-block-title {
+        margin: 0 0 8px;
+        color: var(--text-0);
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .ingest-block p {
+        margin: 0;
+        color: var(--text-2);
+        font-size: 12px;
+      }
+
+      .ingest-form {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr)) auto;
+        gap: 8px;
+        margin-top: 10px;
+      }
+
+      .source-mode {
+        display: grid;
+        gap: 5px;
+      }
+
+      .source-mode strong {
+        color: var(--text-0);
+        font-size: 12px;
+      }
+
+      .source-mode span {
+        color: var(--text-2);
+        font-family: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+        font-size: 10.5px;
+      }
+
+      .source-table-wrap {
+        overflow-x: visible;
+      }
+
+      table {
+        width: 100%;
+        table-layout: fixed;
+        border-collapse: separate;
+        border-spacing: 0;
+      }
+
+      .source-table-wrap th:nth-child(1),
+      .source-table-wrap td:nth-child(1) {
+        width: 20%;
+      }
+
+      .source-table-wrap th:nth-child(2),
+      .source-table-wrap td:nth-child(2) {
+        width: 11%;
+      }
+
+      .source-table-wrap th:nth-child(3),
+      .source-table-wrap td:nth-child(3) {
+        width: 15%;
+      }
+
+      .source-table-wrap th:nth-child(4),
+      .source-table-wrap td:nth-child(4) {
+        width: 11%;
+      }
+
+      .source-table-wrap th:nth-child(5),
+      .source-table-wrap td:nth-child(5) {
+        width: 12%;
+      }
+
+      .source-table-wrap th:nth-child(6),
+      .source-table-wrap td:nth-child(6),
+      .source-table-wrap th:nth-child(7),
+      .source-table-wrap td:nth-child(7),
+      .source-table-wrap th:nth-child(8),
+      .source-table-wrap td:nth-child(8) {
+        width: 10.33%;
+      }
+
+      th,
+      td {
+        min-width: 0;
+        padding: 11px 10px;
+        border-bottom: 1px solid var(--border);
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        background: var(--bg-0);
+        color: var(--text-2);
+        font-family: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      td {
+        color: var(--text-1);
+        font-size: 12px;
+      }
+
+      tr:hover td {
+        background: rgba(var(--accent-rgb), 0.045);
+      }
+
+      .journal-cell {
+        min-width: 0;
+      }
+
+      .journal-name {
+        overflow-wrap: anywhere;
+        color: var(--text-0);
+        font-weight: 800;
+        line-height: 1.3;
+      }
+
+      .journal-issn {
+        margin-top: 4px;
+        color: var(--text-2);
+        font-family: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+        font-size: 11px;
+      }
+
+      .url-status {
+        display: block;
+        max-width: 100%;
+        overflow: hidden;
+        padding: 2px 7px;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        color: var(--text-1);
+        font-family: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+        font-size: 10.5px;
+        line-height: 1.45;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .url-status.ok {
+        border-color: rgba(52, 211, 153, 0.28);
+        background: rgba(52, 211, 153, 0.08);
+        color: var(--emerald);
+      }
+
+      .url-status.warn {
+        border-color: rgba(251, 191, 36, 0.28);
+        background: rgba(251, 191, 36, 0.08);
+        color: var(--amber);
+      }
+
+      .url-status.bad {
+        border-color: rgba(251, 113, 133, 0.32);
+        background: rgba(251, 113, 133, 0.08);
+        color: var(--rose);
+      }
+
+      .actions {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+        min-width: 0;
+      }
+
+      .source-table-wrap .btn-sm {
+        min-height: 29px;
+        padding: 6px 8px;
+        font-size: 11px;
+      }
+
+      .source-table-wrap .tags {
+        gap: 4px;
+        margin-top: 0;
+      }
+
+      .source-table-wrap .tag {
+        max-width: 100%;
+        overflow: hidden;
+        padding: 2px 6px;
+        font-size: 10px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      @media (max-width: 760px) {
+        .source-table-wrap {
+          overflow-x: auto;
+        }
+
+        .source-table-wrap table {
+          min-width: 860px;
+        }
+      }
+
+      .empty {
+        padding: 32px;
+        border: 1px dashed var(--border);
+        border-radius: var(--radius);
+        color: var(--text-2);
+        text-align: center;
+      }
+
+      .adapter-summary {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
+        padding: 14px 16px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .adapter-stat {
+        min-width: 0;
+        padding: 11px 12px;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        background: var(--surface-0);
+      }
+
+      .adapter-stat span {
+        display: block;
+        overflow: hidden;
+        color: var(--text-2);
+        font-family: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+        font-size: 10px;
+        text-overflow: ellipsis;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      .adapter-stat strong {
+        display: block;
+        margin-top: 4px;
+        color: var(--text-0);
+        font-size: 18px;
+        line-height: 1;
+      }
+
+      .adapter-profile-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        padding: 14px 16px 16px;
+      }
+
+      .adapter-profile {
+        min-width: 0;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        background: var(--surface-card);
+        overflow: hidden;
+      }
+
+      .adapter-profile summary {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 11px 12px;
+        cursor: pointer;
+        list-style: none;
+      }
+
+      .adapter-profile summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .adapter-profile-title {
+        min-width: 0;
+        overflow: hidden;
+        color: var(--text-0);
+        font-weight: 800;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .adapter-profile-body {
+        display: grid;
+        gap: 10px;
+        padding: 0 12px 12px;
+        border-top: 1px solid var(--border-soft);
+      }
+
+      .adapter-profile-note {
+        margin: 0;
+        color: var(--text-1);
+        font-size: 12px;
+        line-height: 1.6;
+      }
+
+      .adapter-field-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+      }
+
+      .adapter-field {
+        max-width: 100%;
+        overflow: hidden;
+        padding: 2px 7px;
+        border-radius: 999px;
+        background: var(--surface-2);
+        color: var(--text-1);
+        font-family: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+        font-size: 10px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .adapter-table-wrap {
+        overflow-x: auto;
+      }
+
+      .adapter-table-wrap table {
+        min-width: 980px;
+      }
+
+      .adapter-table-wrap th:nth-child(1),
+      .adapter-table-wrap td:nth-child(1) {
+        width: 19%;
+      }
+
+      .adapter-table-wrap th:nth-child(2),
+      .adapter-table-wrap td:nth-child(2) {
+        width: 16%;
+      }
+
+      .adapter-table-wrap th:nth-child(3),
+      .adapter-table-wrap td:nth-child(3) {
+        width: 18%;
+      }
+
+      .adapter-table-wrap th:nth-child(4),
+      .adapter-table-wrap td:nth-child(4) {
+        width: 15%;
+      }
+
+      .adapter-table-wrap th:nth-child(5),
+      .adapter-table-wrap td:nth-child(5) {
+        width: 11%;
+      }
+
+      .adapter-table-wrap th:nth-child(6),
+      .adapter-table-wrap td:nth-child(6) {
+        width: 15%;
+      }
+
+      .adapter-table-wrap th:nth-child(7),
+      .adapter-table-wrap td:nth-child(7) {
+        width: 6%;
+      }
+
+      .adapter-next {
+        color: var(--text-1);
+        font-size: 12px;
+        line-height: 1.5;
+      }
+
+      .placeholder-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .placeholder-card {
+        min-height: 152px;
+        display: grid;
+        align-content: space-between;
+        padding: 16px;
+        border: 1px dashed var(--border-strong);
+        border-radius: var(--radius);
+        background: var(--surface-0);
+      }
+
+      .placeholder-card h3 {
+        margin: 0;
+        font-size: 16px;
+      }
+
+      .placeholder-card p {
+        margin: 8px 0 0;
+        color: var(--text-1);
+        font-size: 13px;
+      }
+
+      .pill {
+        width: fit-content;
+        padding: 3px 8px;
+        border: 1px solid rgba(var(--accent-rgb), 0.28);
+        border-radius: 999px;
+        background: rgba(var(--accent-rgb), 0.08);
+        color: var(--accent);
+        font-family: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+        font-size: 10px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      @media (max-width: 1120px) {
+        .layout-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .detail-panel {
+          position: static;
+        }
+      }
+
+      @media (max-width: 960px) {
+        .app-shell {
+          grid-template-columns: 1fr;
+        }
+
+        .sidebar {
+          position: fixed;
+          z-index: 20;
+          width: min(86vw, 320px);
+          transform: translateX(-100%);
+          transition: transform 0.2s cubic-bezier(0.32, 0.72, 0, 1);
+        }
+
+        .app-shell.sidebar-open .sidebar {
+          transform: translateX(0);
+        }
+
+        .mobile-bar {
+          position: sticky;
+          top: 0;
+          z-index: 10;
+          display: grid;
+          grid-template-columns: 44px 1fr 44px;
+          align-items: center;
+          gap: 8px;
+          margin: 0 -16px 12px;
+          padding: 8px 12px;
+          border-bottom: 1px solid var(--border);
+          background: color-mix(in srgb, var(--bg-0) 96%, transparent);
+        }
+
+        .mobile-brand {
+          justify-self: center;
+          color: var(--text-0);
+          font-family: "Noto Serif SC", "Songti SC", Georgia, serif;
+          font-weight: 800;
+          text-decoration: none;
+        }
+
+        .hamburger {
+          width: 40px;
+          height: 40px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid var(--border-strong);
+          border-radius: 12px;
+          background: var(--surface-card);
+          color: var(--text-0);
+        }
+
+        .app-main {
+          padding: 0 16px 60px;
+        }
+
+        .ingest-grid,
+        .ingest-form,
+        .rss-pipeline,
+        .endpoint-list,
+        .adapter-summary,
+        .adapter-profile-grid,
+        .placeholder-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 640px) {
+        .app-main {
+          padding: 0 12px 56px;
+        }
+
+        .mobile-bar {
+          margin: 0 -12px 10px;
+        }
+
+        .page-header {
+          padding: 14px;
+        }
+
+        .title {
+          font-size: 21px;
+        }
+
+        .header-actions,
+        .search-row,
+        .ingest-grid,
+        .ingest-form,
+        .rss-pipeline,
+        .endpoint-list,
+        .adapter-summary,
+        .adapter-profile-grid,
+        .placeholder-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .header-actions {
+          display: grid;
+          width: 100%;
+          justify-content: stretch;
+        }
+
+        .metrics-footer {
+          padding-left: 0;
+        }
+
+        .timeline {
+          --tl-time-w: 58px;
+          --tl-rail-w: 18px;
+        }
+
+        .timeline-time {
+          font-size: 13px;
+          letter-spacing: -0.02em;
+        }
+
+        .timeline-card {
+          padding: 12px;
+          border-radius: 14px;
+        }
+
+        .segmented {
+          width: 100%;
+          overflow-x: auto;
+          justify-content: flex-start;
+        }
+
+        .seg-item {
+          min-width: max-content;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app-shell" id="appShell">
+      <aside class="sidebar">
+        <a class="brand" href="#" aria-label="工作坊期刊情报台">
+          <span class="brand-logo"><span>JOURNAL</span><i class="brand-orbit" aria-hidden="true"></i><span class="brand-hot">WATCH</span></span>
+        </a>
+        <div class="divider"></div>
+        <nav class="side-nav" aria-label="主导航">
+          <button class="side-link active" data-view="tracking">
+            <svg class="side-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V5"/><path d="M4 12h4l3-6 4 12 3-6h2"/></svg>
+            <span>实时追踪</span>
+          </button>
+          <button class="side-link" data-view="sources">
+            <svg class="side-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7c0-1.7 3.6-3 8-3s8 1.3 8 3-3.6 3-8 3-8-1.3-8-3Z"/><path d="M4 7v5c0 1.7 3.6 3 8 3s8-1.3 8-3V7"/><path d="M4 12v5c0 1.7 3.6 3 8 3s8-1.3 8-3v-5"/></svg>
+            <span>数据源汇总</span>
+          </button>
+          <button class="side-link" data-view="adapters">
+            <svg class="side-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17h7"/><path d="M4 7h16"/><path d="M4 12h12"/><path d="M15 17h5"/><path d="m17 15 2 2-2 2"/></svg>
+            <span>适配器工作台</span>
+          </button>
+          <div class="side-group">Reserved</div>
+          <button class="side-link side-soon" data-view="reserved">
+            <svg class="side-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18H6z"/><path d="M9 7h6"/><path d="M9 11h6"/><path d="M9 15h4"/></svg>
+            <span>公众号转换</span>
+          </button>
+          <button class="side-link side-soon" data-view="reserved">
+            <svg class="side-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+            <span>选题重写</span>
+          </button>
+          <button class="side-link side-soon" data-view="reserved">
+            <svg class="side-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22v-5"/><path d="M9 8V2"/><path d="M15 8V2"/><path d="M18 8v3a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3V8Z"/></svg>
+            <span>推送设置</span>
+          </button>
+          <button class="side-link side-soon" data-view="reserved">
+            <svg class="side-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l3 2"/></svg>
+            <span>任务监控</span>
+          </button>
+        </nav>
+        <div class="side-footer">
+          <div class="theme-toggle" aria-label="主题切换">
+            <button class="active" data-theme-button="dark">Dark</button>
+            <button data-theme-button="light">Light</button>
+          </div>
+        </div>
+      </aside>
+
+      <main class="app-main">
+        <div class="mobile-bar">
+          <button class="hamburger" id="hamburger" aria-label="打开导航">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          </button>
+          <a class="mobile-brand" href="#">工作坊期刊情报台</a>
+          <span></span>
+        </div>
+
+        <section class="page" data-page="tracking">
+          <section class="card page-header">
+            <div class="header-row">
+              <div class="header-main">
+                <h1 class="title">期刊内容实时追踪</h1>
+                <div class="subtitle">按时间倒序聚合期刊目录、样例文章与数据源异常</div>
+              </div>
+              <div class="header-actions">
+                <div class="search-row">
+                  <input class="field" id="searchInput" type="search" placeholder="搜索期刊、学科、CN/ISSN、URL…" />
+                  <button class="btn btn-primary" id="searchButton">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                    搜索
+                  </button>
+                </div>
+                <button class="btn btn-ghost" id="clearJournalFilter" hidden>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+                  清除筛选
+                </button>
+              </div>
+            </div>
+            <details class="filter-panel" id="filterPanel">
+              <summary>
+                <span class="summary-title">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M7 12h10M10 18h4"/></svg>
+                  筛选
+                </span>
+                <span class="summary-hint" id="activeFilterSummary">先选中文或英文，再展开学科和期刊</span>
+              </summary>
+              <div class="filter-body">
+                <div class="filter-row">
+                  <div class="filter-row-head"><span>Language</span><span>优先级 1</span></div>
+                  <div class="segmented" id="languageFilters" aria-label="语言筛选"></div>
+                </div>
+                <div id="classificationStage"></div>
+              </div>
+            </details>
+          </section>
+
+          <section class="timeline" id="timeline"></section>
+          <footer class="metrics-footer" id="trackingStats"></footer>
+        </section>
+
+        <section class="page" data-page="sources" hidden>
+          <section class="card page-header">
+            <div class="header-row">
+              <div class="header-main">
+                <h1 class="title">期刊数据源</h1>
+                <div class="subtitle">从 Excel 模版抽取官网、过刊入口、样例文章与校验状态</div>
+              </div>
+              <div class="header-actions">
+                <input class="field" id="sourceSearch" type="search" placeholder="搜索期刊或 URL…" />
+                <button class="btn btn-ghost" id="showAllSources">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M7 12h10M10 18h4"/></svg>
+                  全部来源
+                </button>
+              </div>
+            </div>
+            <details class="source-ingest">
+              <summary>
+                <span class="summary-title">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+                  数据源接口
+                </span>
+                <span class="summary-hint">后续可上传 Excel/CSV，或手动新增单个期刊来源</span>
+              </summary>
+              <div class="source-ingest-body">
+                <div class="rss-architecture">
+                  <div class="rss-pipeline" aria-label="RSS 接入流程">
+                    <div class="pipeline-step">
+                      <strong>01 源注册</strong>
+                      <span>Excel / CSV / OPML</span>
+                    </div>
+                    <div class="pipeline-step">
+                      <strong>02 Feed 发现</strong>
+                      <span>RSS / Atom / JSON Feed</span>
+                    </div>
+                    <div class="pipeline-step">
+                      <strong>03 站点适配</strong>
+                      <span>RSSHub / Bridge / XPath</span>
+                    </div>
+                    <div class="pipeline-step">
+                      <strong>04 文章归一</strong>
+                      <span>URL / DOI / title 去重</span>
+                    </div>
+                    <div class="pipeline-step">
+                      <strong>05 输出推送</strong>
+                      <span>Timeline / Webhook / RSS</span>
+                    </div>
+                  </div>
+                  <div class="endpoint-list" aria-label="预留输出接口">
+                    <div class="endpoint-chip">
+                      <strong>全部推送</strong>
+                      <span>/feeds/all.xml</span>
+                    </div>
+                    <div class="endpoint-chip">
+                      <strong>单刊订阅</strong>
+                      <span>/feeds/journals/{id}.xml</span>
+                    </div>
+                    <div class="endpoint-chip">
+                      <strong>批量导入</strong>
+                      <span>/api/sources/import</span>
+                    </div>
+                    <div class="endpoint-chip">
+                      <strong>OPML 清单</strong>
+                      <span>/opml/sources.xml</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="ingest-grid">
+                  <div class="ingest-block">
+                    <h3 class="ingest-block-title">批量上传</h3>
+                    <p>支持沿用当前模版字段，也预留 OPML 导入，方便以后批量维护 Feed。</p>
+                  </div>
+                  <div class="ingest-block">
+                    <h3 class="ingest-block-title">RSS 自动发现</h3>
+                    <p>优先从官网和过刊页识别 RSS、Atom、JSON Feed 链接。</p>
+                  </div>
+                  <div class="ingest-block">
+                    <h3 class="ingest-block-title">站点适配器</h3>
+                    <p>没有官方 Feed 的来源，进入 RSSHub / RSS-Bridge / XPath 适配队列。</p>
+                  </div>
+                  <div class="ingest-block">
+                    <h3 class="ingest-block-title">接口预留</h3>
+                    <p>未来可接 API：POST /sources/import、POST /sources 与 POST /feeds/discover。</p>
+                  </div>
+                </div>
+                <div class="ingest-form">
+                  <input class="field" type="text" placeholder="期刊名称" />
+                  <input class="field" type="url" placeholder="官网 URL" />
+                  <input class="field" type="url" placeholder="Feed URL（可为空）" />
+                  <select class="field" aria-label="数据源类型">
+                    <option>RSS / Atom</option>
+                    <option>RSSHub 路由</option>
+                    <option>XPath 适配</option>
+                    <option>人工复核</option>
+                  </select>
+                  <select class="field" aria-label="刷新频率">
+                    <option>每周检查</option>
+                    <option>每月检查</option>
+                    <option>每日检查</option>
+                  </select>
+                  <button class="btn btn-primary" type="button">加入待校验</button>
+                </div>
+              </div>
+            </details>
+          </section>
+
+          <section class="panel table-panel">
+            <div class="source-toolbar">
+              <strong>来源清单</strong>
+              <span class="summary-hint">主要内容直接看表格，统计信息放在页尾</span>
+            </div>
+            <div class="source-table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>期刊</th>
+                    <th>操作</th>
+                    <th>标签</th>
+                    <th>接入</th>
+                    <th>Feed</th>
+                    <th>主页</th>
+                    <th>过刊</th>
+                    <th>样例文章</th>
+                  </tr>
+                </thead>
+                <tbody id="sourceRows"></tbody>
+              </table>
+            </div>
+          </section>
+          <footer class="metrics-footer source-metrics" id="sourceSummary"></footer>
+        </section>
+
+        <section class="page" data-page="adapters" hidden>
+          <section class="card page-header">
+            <div class="header-row">
+              <div class="header-main">
+                <h1 class="title">适配器工作台</h1>
+                <div class="subtitle">中文期刊与非论文 RSS 来源进入平台规则化队列</div>
+              </div>
+              <div class="header-actions">
+                <input class="field" id="adapterSearch" type="search" placeholder="搜索期刊、平台、策略…" />
+                <button class="btn btn-ghost" id="clearAdapterSearch">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+                  清空
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel">
+            <div class="source-toolbar">
+              <strong>平台规则分组</strong>
+              <span class="summary-hint">先按平台写适配器，再把单刊参数填进去</span>
+            </div>
+            <div class="adapter-summary" id="adapterStats"></div>
+            <div class="adapter-profile-grid" id="adapterProfiles"></div>
+          </section>
+
+          <section class="panel table-panel">
+            <div class="source-toolbar">
+              <strong>适配队列</strong>
+              <span class="summary-hint">覆盖中文期刊、未发现论文 RSS、以及 RSS 不适合推论文的来源</span>
+            </div>
+            <div class="adapter-table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>期刊</th>
+                    <th>平台</th>
+                    <th>策略</th>
+                    <th>字段</th>
+                    <th>状态</th>
+                    <th>下一步</th>
+                    <th>操作</th>
+                  </tr>
+                </thead>
+                <tbody id="adapterRows"></tbody>
+              </table>
+            </div>
+          </section>
+        </section>
+
+        <section class="page" data-page="reserved" hidden>
+          <section class="card page-header">
+            <div class="header-row">
+              <div>
+                <h1 class="title">后续能力预留区</h1>
+                <div class="subtitle">把“期刊追踪”继续接到选题、改写、公众号排版与推送任务</div>
+              </div>
+            </div>
+          </section>
+          <section class="placeholder-grid">
+            <article class="placeholder-card">
+              <div>
+                <span class="pill">Module 01</span>
+                <h3>论文转公众号文章</h3>
+                <p>输入文章 URL 后生成标题、摘要、导语、结构化小节与配图建议。</p>
+              </div>
+            </article>
+            <article class="placeholder-card">
+              <div>
+                <span class="pill">Module 02</span>
+                <h3>选题池与优先级</h3>
+                <p>按学科、期刊等级、发布时间和主题热度给内容排序。</p>
+              </div>
+            </article>
+            <article class="placeholder-card">
+              <div>
+                <span class="pill">Module 03</span>
+                <h3>抓取任务监控</h3>
+                <p>显示每个期刊的抓取状态、异常来源、最近成功时间与人工复核入口。</p>
+              </div>
+            </article>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const rawJournals = [
+        ["1", "JOURNAL OF FINANCE", "BUSINESS,FINANCE", "", "0022-1082", "https://afajof.org/journal-of-finance/", "https://afajof.org/journal-of-finance/", "https://afajof.org/forthcoming-articles/", "A"],
+        ["2", "经济研究", "经济学", "中国社会科学院经济研究所", "11-1081/F", "https://erj.ajcass.com/#/index", "https://erj.ajcass.com/#/search?keywords=%E4%BA%BA&year=2025&issue=11", "https://erj.ajcass.com/#/issue?id=122648&year=2026&issue=3", "A"],
+        ["3", "世界经济", "经济学", "中国社会科学院世界经济与政治研究所", "11-1138/F", "https://sjjj.magtech.com.cn/CN/home", "https://sjjj.magtech.com.cn/CN/archive_by_years", "https://sjjj.magtech.com.cn/CN/Y2026/V49/I4/3", "A"],
+        ["4", "中国工业经济", "经济学", "中国社会科学院工业经济研究所", "11-3536/F", "https://ciejournal.ajcass.com/https://ciejournal.ajcass.com/", "", "https://ciejournal.ajcass.com/Magazine/Show?id=122793", "A"],
+        ["5", "金融研究", "经济学", "中国金融学会", "11-1268/F", "http://www.jryj.org.cn/CN/1002-7246/home.shtml", "http://www.jryj.org.cn/CN/article/showOldVolumnList.do", "http://www.jryj.org.cn/CN/abstract/abstract1585.shtml", "A"],
+        ["6", "管理世界", "管理学", "中华人民共和国国务院发展研究中心", "11-1235/F", "https://glsj.cbpt.cnki.net/WKB2/WebPublication/index.aspx?mid=glsj", "https://glsj.cbpt.cnki.net/WKB/WebPublication/wkTextContent.aspx?colType=4&tp=gklb&mid=glsj", "https://glsj.cbpt.cnki.net/WKB/WebPublication/paperDigest.aspx?paperID=11f98966-b490-4529-902d-d5957a1429f6", "A"],
+        ["7", "南开管理评论", "管理学", "南开大学商学院", "12-1288/F", "https://nbr.nankai.edu.cn/nkglpl/home", "https://nbr.nankai.edu.cn/nkglpl/home", "https://nbr.nankai.edu.cn/nkglpl/article/abstract/231009057", "A"],
+        ["8", "公共管理学报", "管理学", "哈尔滨工业大学管理学院", "23-1523/F", "https://gggl.cbpt.cnki.net/portal", "https://gggl.cbpt.cnki.net/portal", "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/96f94922a46fa9e15ab6abc22eae2c55", "A"],
+        ["9", "管理科学学报", "管理学", "国家自然科学基金委员会管理科学部", "12-1275/G3", "https://jmsc.tju.edu.cn/jmsc/home", "https://jmsc.tju.edu.cn/jmsc/issue/browser", "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260401", "A"],
+        ["10", "中国行政管理", "管理学", "中国行政管理学会", "11-1145/D", "https://www.cpaj.com.cn/", "该网址显示异常", "", "A"],
+        ["11", "会计研究", "管理学", "中国会计学会", "11-1078/F", "http://www.asc.org.cn/AccountingResearch/ArticleList.aspx?year=2025&issue=1", "http://www.asc.org.cn/AccountingResearch/BrowsePeriodical.aspx", "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=167A4D20-C21C-4321-B44D-16C8E5FF4414&ID=92F3F679-2BA1-4AAD-8190-C2D5AFE6B48B", "A"],
+        ["12", "中国农村经济", "管理学", "中国社会科学院农村发展研究所", "11-1262/F", "https://zgncjj.ajcass.com/#/", "https://zgncjj.ajcass.com/#/", "https://zgncjj.ajcass.com/#/issueDetail?contentId=122674&year=2026&issue=4&title=%E5%BD%93%E6%9C%9F%E7%9B%AE%E5%BD%95", "A"],
+        ["13", "ACADEMY OF MANAGEMENT REVIEW", "BUSINESS", "", "0363-7425", "https://www.aom.org/publications/journals/review/", "https://journals.aom.org/journal/amr/fte-collection", "https://journals.aom.org/doi/10.5465/amr.2026.0147", "A+"],
+        ["14", "JOURNAL OF FINANCE", "BUSINESS", "", "0022-1082", "https://onlinelibrary.wiley.com/journal/15406261", "https://onlinelibrary.wiley.com/journal/15406261", "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70055", "A+"],
+        ["15", "ACCOUNTING REVIEW", "BUSINESS", "", "0001-4826", "https://aaahq.org/Research/Journals/The-Accounting-Review", "https://publications.aaahq.org/accounting-review/issue/101/3", "https://publications.aaahq.org/accounting-review/article-abstract/101/3/1/23143/How-Good-Is-Goodwill-Accounting-Comparative?redirectedFrom=fulltext", "A+"],
+        ["16", "AMERICAN ECONOMIC REVIEW", "ECONOMICS", "", "0002-8282", "https://www.aeaweb.org/journals/aer", "https://www.aeaweb.org/journals/aer/search-results?ArticleSearch%5Bwithin%5D%5Barticletitle%5D=1&ArticleSearch%5Bwithin%5D%5Barticleabstract%5D=1&ArticleSearch%5Bwithin%5D%5Bauthorlast%5D=1&JelClass%5Bvalue%5D=0&journal=1&ArticleSearch%5Bq%5D=", "https://www.aeaweb.org/articles?id=10.1257/aer.20240850&ArticleSearch%5Bwithin%5D%5Barticletitle%5D=1&ArticleSearch%5Bwithin%5D%5Barticleabstract%5D=1&ArticleSearch%5Bwithin%5D%5Bauthorlast%5D=1&ArticleSearch%5Bq%5D=&JelClass%5Bvalue%5D=0&journal=1&from=j", "A+"],
+        ["17", "JOURNAL OF POLITICAL ECONOMY", "ECONOMICS", "", "0022-3808", "https://www.journals.uchicago.edu/toc/jpe/current", "https://www.journals.uchicago.edu/toc/jpe/current", "https://www.journals.uchicago.edu/doi/10.1086/739834", "A+"],
+        ["18", "QUARTERLY JOURNAL OF ECONOMICS", "ECONOMICS", "", "0033-5533", "https://academic.oup.com/qje?login=true", "https://academic.oup.com/qje/issue/140/1", "https://academic.oup.com/qje/article/140/1/1/7824430", "A+"],
+        ["19", "REVIEW OF ECONOMIC STUDIES", "ECONOMICS", "", "0034-6527", "https://academic.oup.com/restud", "https://academic.oup.com/restud/issue/93/3", "https://academic.oup.com/restud/article/93/3/1393/8267991", "A+"],
+        ["20", "ECONOMETRICA", "ECONOMICS", "", "0012-9682", "https://onlinelibrary.wiley.com/journal/14680262", "https://onlinelibrary.wiley.com/journal/14680262", "https://onlinelibrary.wiley.com/doi/10.3982/ECTA19350", "A+"],
+        ["21", "ACADEMY OF MANAGEMENT JOURNAL", "MANAGEMENT", "", "0001-4273", "https://journals.aom.org/journal/amr/fte-collectionhttps://www.aom.org/publications/journals/journal/", "https://journals.aom.org/journal/amj/fte-collection", "https://journals.aom.org/doi/10.5465/amj.2026.4002", "A+"],
+        ["22", "ADMINISTRATIVE SCIENCE QUARTERLY", "MANAGEMENT", "", "0001-8392", "https://www.johnson.cornell.edu/administrative-science-quarterly/", "该网址显示异常", "该网址显示异常", "A+"]
+      ];
+
+      const validUrl = (value) => /^https?:\/\//i.test(value || "");
+      const hasChinese = (value) => /[\u4e00-\u9fff]/.test(value || "");
+      const escapeHtml = (value) => String(value ?? "").replace(/[&<>"']/g, (match) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#039;" })[match]);
+      const cleanUrlLabel = (value) => validUrl(value) ? new URL(value).hostname.replace(/^www\./, "") : (value ? value : "缺失");
+
+      function inferSourceProfile({ lang, homepage, archive, sample, homepageOk, archiveOk, sampleOk }) {
+        const urls = [homepage, archive, sample].join(" ").toLowerCase();
+        const broken = !homepageOk || (!archiveOk && !sampleOk);
+        if (broken) {
+          return {
+            type: "manual",
+            typeLabel: "人工复核",
+            status: "待复核",
+            feedLabel: "先修复 URL",
+            parser: "manual",
+            interval: "人工确认"
+          };
+        }
+        if (/onlinelibrary\.wiley|academic\.oup|journals\.uchicago|aeaweb/.test(urls)) {
+          return {
+            type: "rss",
+            typeLabel: "官方 Feed",
+            status: "RSS 可探测",
+            feedLabel: "自动发现",
+            parser: urls.includes("onlinelibrary.wiley") ? "wiley" : urls.includes("academic.oup") ? "oup" : urls.includes("aeaweb") ? "aea" : "publisher",
+            interval: "每周检查"
+          };
+        }
+        if (/journals\.aom|aaahq|johnson\.cornell/.test(urls)) {
+          return {
+            type: "rsshub",
+            typeLabel: "路由适配",
+            status: "需适配",
+            feedLabel: "RSSHub 路由",
+            parser: "publisher-route",
+            interval: "每周检查"
+          };
+        }
+        if (/magtech|cnki|ajcass|nankai|jmsc|jryj|asc\.org|cpaj/.test(urls) || lang === "中文") {
+          return {
+            type: "scraper",
+            typeLabel: "目录适配",
+            status: "需适配",
+            feedLabel: "XPath / CSS",
+            parser: "cn-journal",
+            interval: "每月检查"
+          };
+        }
+        return {
+          type: "discover",
+          typeLabel: "自动发现",
+          status: "待探测",
+          feedLabel: "RSS / Atom",
+          parser: "default",
+          interval: "每周检查"
+        };
+      }
+
+      const rssProbeOverrides = {
+        j1: { type: "scraper", typeLabel: "目录适配", status: "非论文 RSS", feedLabel: "AFA 公告 RSS 不用于推论文", parser: "afa-html", interval: "每周检查" },
+        j13: { type: "rss", typeLabel: "官方 Feed", status: "RSS 已接入", feedLabel: "AOM eTOC RSS", parser: "atypon-etoc", interval: "每周检查", feedUrl: "https://journals.aom.org/action/showFeed?jc=amr&type=etoc&feed=rss" },
+        j14: { type: "rss", typeLabel: "官方 Feed", status: "RSS 已接入", feedLabel: "Wiley eTOC RSS", parser: "wiley-etoc", interval: "每周检查", feedUrl: "https://onlinelibrary.wiley.com/action/showFeed?jc=15406261&type=etoc&feed=rss" },
+        j15: { type: "scraper", typeLabel: "出版平台适配", status: "未发现论文 RSS", feedLabel: "AAAHQ 页面适配", parser: "publisher-html", interval: "每周检查" },
+        j16: { type: "scraper", typeLabel: "出版平台适配", status: "未发现论文 RSS", feedLabel: "AEA 页面适配", parser: "publisher-html", interval: "每周检查" },
+        j17: { type: "rss", typeLabel: "官方 Feed", status: "RSS 已接入", feedLabel: "Chicago eTOC RSS", parser: "atypon-etoc", interval: "每周检查", feedUrl: "https://www.journals.uchicago.edu/action/showFeed?jc=jpe&type=etoc&feed=rss" },
+        j18: { type: "scraper", typeLabel: "出版平台适配", status: "未发现论文 RSS", feedLabel: "Oxford 页面适配", parser: "oup-html", interval: "每周检查" },
+        j19: { type: "scraper", typeLabel: "出版平台适配", status: "未发现论文 RSS", feedLabel: "Oxford 页面适配", parser: "oup-html", interval: "每周检查" },
+        j20: { type: "rss", typeLabel: "官方 Feed", status: "RSS 已接入", feedLabel: "Wiley eTOC RSS", parser: "wiley-etoc", interval: "每周检查", feedUrl: "https://onlinelibrary.wiley.com/action/showFeed?jc=14680262&type=etoc&feed=rss" },
+        j21: { type: "rss", typeLabel: "官方 Feed", status: "RSS 已接入", feedLabel: "AOM eTOC RSS", parser: "atypon-etoc", interval: "每周检查", feedUrl: "https://journals.aom.org/action/showFeed?jc=amj&type=etoc&feed=rss" },
+        j22: { type: "scraper", typeLabel: "目录适配", status: "非论文 RSS", feedLabel: "Cornell RSS 不用于推论文", parser: "asq-html", interval: "每周检查" }
+      };
+
+      const journals = rawJournals.map(([seq, name, subject, sponsor, issn, homepage, archive, sample, rating]) => {
+        const lang = hasChinese(name) ? "中文" : "英文";
+        const homepageOk = validUrl(homepage) && !homepage.includes("https://ciejournal.ajcass.com/https://") && !homepage.includes("fte-collectionhttps://");
+        const archiveOk = validUrl(archive);
+        const sampleOk = validUrl(sample);
+        const issues = [];
+        if (!homepageOk) issues.push("主页待校验");
+        if (!archiveOk) issues.push("过刊入口待校验");
+        if (!sampleOk) issues.push("样例文章待补齐");
+        const sourceProfile = inferSourceProfile({ lang, homepage, archive, sample, homepageOk, archiveOk, sampleOk });
+        const override = rssProbeOverrides[`j${seq}`] || {};
+        return {
+          id: `j${seq}`,
+          seq,
+          name,
+          subject,
+          sponsor: sponsor || "未记录",
+          issn,
+          homepage,
+          archive,
+          sample,
+          rating,
+          lang,
+          homepageOk,
+          archiveOk,
+          sampleOk,
+          health: issues.length ? "warn" : "ok",
+          issues,
+          monitorPlan: lang === "英文" ? "周度 Early View / Current Issue" : "月度目录 / 期号更新",
+          crawlMode: archiveOk ? "目录页抓取" : sampleOk ? "样例页反推" : "人工复核",
+          sourceType: override.type || sourceProfile.type,
+          sourceTypeLabel: override.typeLabel || sourceProfile.typeLabel,
+          sourceStatus: override.status || sourceProfile.status,
+          feedLabel: override.feedLabel || sourceProfile.feedLabel,
+          parserProfile: override.parser || sourceProfile.parser,
+          refreshInterval: override.interval || sourceProfile.interval,
+          feedUrl: override.feedUrl || ""
+        };
+      });
+
+      const adapterProfiles = [
+        {
+          id: "ajcass",
+          name: "AJCass 社科院平台",
+          strategy: "接口优先，Playwright 兜底",
+          journals: ["j2", "j4", "j12"],
+          fields: ["title", "url", "issue", "year", "authors", "abstract"],
+          next: "先修正中国工业经济 URL，再抓包确认期号接口。"
+        },
+        {
+          id: "cn-journal-cms",
+          name: "中文期刊 CMS / Magtech",
+          strategy: "CSS/XPath 静态抽取",
+          journals: ["j3", "j5"],
+          fields: ["title", "url", "issue", "date", "authors"],
+          next: "用过刊页定位条目容器，先产出 CSS selector 规则。"
+        },
+        {
+          id: "cnki-cbpt",
+          name: "CNKI / 采编平台",
+          strategy: "动态渲染 + 接口嗅探",
+          journals: ["j6", "j8"],
+          fields: ["title", "url", "issue", "authors", "abstract"],
+          next: "检查页面请求，能走接口就不跑浏览器渲染。"
+        },
+        {
+          id: "university-custom",
+          name: "高校自建站",
+          strategy: "CSS/XPath，单刊参数化",
+          journals: ["j7", "j9"],
+          fields: ["title", "url", "issue", "date", "authors"],
+          next: "分别确认目录页列表结构和翻页规则。"
+        },
+        {
+          id: "association-custom",
+          name: "协会 / 自建系统",
+          strategy: "先修 URL，再静态抽取",
+          journals: ["j10", "j11"],
+          fields: ["title", "url", "issue", "date"],
+          next: "中国行政管理缺少有效过刊入口，会计研究需处理 gb2312 编码。"
+        },
+        {
+          id: "publisher-html",
+          name: "英文出版平台页面",
+          strategy: "出版平台模板 + 反爬兜底",
+          journals: ["j15", "j16", "j18", "j19"],
+          fields: ["title", "url", "doi", "issue", "date", "authors"],
+          next: "AAAHQ、AEA、Oxford 先找隐藏 JSON 或 citation 元数据。"
+        },
+        {
+          id: "non-article-feed",
+          name: "非论文 RSS 来源",
+          strategy: "排除公告/评论 RSS，改抓文章页",
+          journals: ["j1", "j22"],
+          fields: ["title", "url", "issue", "date", "authors"],
+          next: "AFA 和 ASQ 的已有 RSS 不作为论文推送源，只保留为参考信号。"
+        }
+      ];
+
+      const adapterQueue = adapterProfiles.flatMap((profile) => profile.journals.map((journalId) => {
+        const journal = journals.find((item) => item.id === journalId);
+        const needsUrlFix = journal.health !== "ok" || journal.sourceStatus === "非论文 RSS";
+        return {
+          journalId,
+          platformId: profile.id,
+          platformName: profile.name,
+          strategy: profile.strategy,
+          fields: profile.fields,
+          status: needsUrlFix ? journal.sourceStatus : "规则待写",
+          priority: journal.lang === "中文" ? "P1" : "P2",
+          next: needsUrlFix ? `${journal.issues[0] || journal.sourceStatus}；${profile.next}` : profile.next
+        };
+      }));
+
+      const articleTemplates = [
+        ["2026-05-25", "09:20", "新刊目录", "目录页进入监测队列，后续可解析标题、作者、摘要、发布日期与 DOI。"],
+        ["2026-05-25", "08:45", "样例文章", "样例文章 URL 已登记，可作为抓取规则和字段映射的第一条测试样本。"],
+        ["2026-05-24", "18:10", "来源校验", "官网、过刊入口、样例文章三类链接完成初步归档。"],
+        ["2026-05-24", "15:35", "更新节奏", "当前先按建议监测节奏执行，真实周期等待自动探测或人工确认。"]
+      ];
+
+      const articles = journals.map((journal, index) => {
+        const template = articleTemplates[index % articleTemplates.length];
+        const url = validUrl(journal.sample) ? journal.sample : validUrl(journal.archive) ? journal.archive : validUrl(journal.homepage) ? journal.homepage : "";
+        const isWarning = journal.health !== "ok";
+        return {
+          id: `a-${journal.id}`,
+          journalId: journal.id,
+          date: isWarning ? "2026-05-25" : template[0],
+          time: isWarning ? "10:05" : template[1],
+          kind: isWarning ? "异常提示" : template[2],
+          title: isWarning ? `${journal.name} 数据源需要人工复核` : `${journal.name} ${template[2]}推送`,
+          summary: isWarning ? `${journal.issues.join("、")}。建议先修复数据源，再进入自动追踪。` : template[3],
+          url,
+          subject: journal.subject,
+          lang: journal.lang,
+          rating: journal.rating,
+          tags: [journal.subject, journal.lang, journal.rating, journal.monitorPlan],
+          status: isWarning ? "warn" : journal.rating === "A+" ? "priority" : "normal"
+        };
+      }).sort((a, b) => `${b.date} ${b.time}`.localeCompare(`${a.date} ${a.time}`));
+
+      let activeSubject = "全部";
+      let activeLanguage = "全部";
+      let activeJournalId = "";
+      let query = "";
+      let selectedArticleId = articles[0].id;
+      let selectedJournalId = articles[0].journalId;
+
+      const $ = (selector) => document.querySelector(selector);
+      const $$ = (selector) => Array.from(document.querySelectorAll(selector));
+
+      function journalById(id) {
+        return journals.find((journal) => journal.id === id) || journals[0];
+      }
+
+      function articlesForJournal(id) {
+        return articles.filter((article) => article.journalId === id);
+      }
+
+      function filteredArticles() {
+        const text = query.trim().toLowerCase();
+        return articles.filter((article) => {
+          const journal = journalById(article.journalId);
+          const matchesSubject = activeSubject === "全部" || article.subject === activeSubject;
+          const matchesLanguage = activeLanguage === "全部" || article.lang === activeLanguage;
+          const matchesJournal = !activeJournalId || article.journalId === activeJournalId;
+          const haystack = [article.title, article.summary, article.subject, article.lang, journal.name, journal.issn, journal.homepage, journal.archive, journal.sample].join(" ").toLowerCase();
+          const matchesText = !text || haystack.includes(text);
+          return matchesSubject && matchesLanguage && matchesJournal && matchesText;
+        });
+      }
+
+      function renderStats() {
+        const visible = filteredArticles();
+        const abnormal = journals.filter((journal) => journal.health !== "ok").length;
+        const cn = journals.filter((journal) => journal.lang === "中文").length;
+        const en = journals.length - cn;
+        $("#trackingStats").innerHTML = [
+          ["推送条目", visible.length],
+          ["数据源", journals.length],
+          ["中文 / 英文", `${cn}/${en}`],
+          ["待复核", abnormal]
+        ].map(([label, value]) => `<span class="metric-inline">${label}<strong>${value}</strong></span>`).join("");
+      }
+
+      function renderFilters() {
+        const scopedJournals = activeLanguage === "全部" ? [] : journals.filter((journal) => journal.lang === activeLanguage);
+        const subjects = ["全部", ...new Set(scopedJournals.map((journal) => journal.subject))];
+        const languages = ["全部", "中文", "英文"];
+        $("#languageFilters").innerHTML = languages.map((lang) => `<button class="seg-item ${lang === activeLanguage ? "active" : ""}" data-language="${escapeHtml(lang)}">${escapeHtml(lang)}</button>`).join("");
+        $("#classificationStage").innerHTML = activeLanguage === "全部" ? `
+          <div class="filter-empty-hint">先选择中文或英文，系统再展开对应学科和期刊标签。</div>
+        ` : `
+          <div class="filter-row">
+            <div class="filter-row-head"><span>Subject</span><span>优先级 2</span></div>
+            <div class="filter-chip-list" id="subjectFilters">
+              ${subjects.map((subject) => `<button class="filter-chip ${subject === activeSubject ? "active" : ""}" data-subject="${escapeHtml(subject)}">${escapeHtml(subject)}</button>`).join("")}
+            </div>
+          </div>
+          <div class="filter-row">
+            <div class="filter-row-head"><span>Journal</span><span>点击后像标签一样筛选</span></div>
+            <div class="filter-chip-list">
+              ${scopedJournals
+                .filter((journal) => activeSubject === "全部" || journal.subject === activeSubject)
+                .map((journal) => `<button class="filter-chip ${journal.id === activeJournalId ? "active" : ""}" data-journal-filter="${journal.id}">${escapeHtml(journal.name)}<span class="mono">${escapeHtml(journal.rating)}</span></button>`)
+                .join("")}
+            </div>
+          </div>
+        `;
+        renderFilterSummary();
+      }
+
+      function renderFilterSummary() {
+        const parts = [];
+        if (activeLanguage !== "全部") parts.push(activeLanguage);
+        if (activeSubject !== "全部") parts.push(activeSubject);
+        if (activeJournalId) parts.push(journalById(activeJournalId).name);
+        if (query.trim()) parts.push(`搜索: ${query.trim()}`);
+        $("#activeFilterSummary").textContent = parts.length ? parts.join(" / ") : "先选中文或英文，再展开学科和期刊";
+      }
+
+      function renderTimeline() {
+        const items = filteredArticles();
+        if (!items.length) {
+          $("#timeline").innerHTML = `<div class="empty">没有匹配的推送条目</div>`;
+          renderStats();
+          return;
+        }
+
+        const grouped = items.reduce((acc, article) => {
+          acc[article.date] = acc[article.date] || [];
+          acc[article.date].push(article);
+          return acc;
+        }, {});
+
+        $("#timeline").innerHTML = Object.entries(grouped).map(([date, dayItems]) => `
+          <div class="timeline-day">
+            <div class="timeline-day-head">
+              <div class="timeline-date">${formatDate(date)}</div>
+              <span></span>
+              <div class="timeline-day-rule"></div>
+            </div>
+            <div class="timeline-day-items">
+              ${dayItems.map(renderTimelineItem).join("")}
+            </div>
+          </div>
+        `).join("");
+        renderStats();
+        renderFilterSummary();
+      }
+
+      function renderTimelineItem(article) {
+        const journal = journalById(article.journalId);
+        const dotColor = article.status === "warn" ? "rgba(251,191,36,.82)" : article.status === "priority" ? "rgba(52,211,153,.82)" : "rgba(34,211,238,.72)";
+        const scoreClass = article.status === "warn" ? "warn" : journal.rating === "A+" ? "aplus" : "";
+        return `
+          <article class="timeline-item">
+            <div class="timeline-time">${escapeHtml(article.time)}</div>
+            <div class="timeline-rail" aria-hidden="true"><span class="timeline-dot" style="--dot:${dotColor}"></span></div>
+            <div class="timeline-card ${article.id === selectedArticleId ? "selected" : ""}" data-article-id="${article.id}">
+              <div class="timeline-card-head">
+                <div class="timeline-source">${escapeHtml(journal.name)} · ${escapeHtml(article.kind)}</div>
+                <span class="score ${scoreClass}">${escapeHtml(journal.rating)}</span>
+              </div>
+              <a class="timeline-title" href="${validUrl(article.url) ? escapeHtml(article.url) : "#"}" target="_blank" rel="noopener noreferrer">${escapeHtml(article.title)}</a>
+              <p class="timeline-summary">${escapeHtml(article.summary)}</p>
+              <div class="tags">
+                ${article.tags.map((tag) => `<span class="tag ${tag === "中文" || tag === "英文" ? "cyan" : tag === "A+" ? "emerald" : ""}">${escapeHtml(tag)}</span>`).join("")}
+              </div>
+            </div>
+          </article>
+        `;
+      }
+
+      function renderDetail() {
+        const journal = journalById(selectedJournalId);
+        const recent = articlesForJournal(journal.id);
+        $("#detailPanel").innerHTML = `
+          <div>
+            <h2 class="panel-title">${escapeHtml(journal.name)}</h2>
+            <p class="panel-subtitle">${escapeHtml(journal.subject)} · ${escapeHtml(journal.lang)} · ${escapeHtml(journal.rating)} · ${escapeHtml(journal.monitorPlan)}</p>
+          </div>
+          <div class="detail-meta">
+            ${metaRow("CN/ISSN", journal.issn)}
+            ${metaRow("主办单位", journal.sponsor)}
+            ${metaRow("抓取方式", journal.crawlMode)}
+            ${metaRow("状态", journal.health === "ok" ? "链接字段齐全" : journal.issues.join("、"))}
+          </div>
+          <div class="link-stack">
+            ${sourceLink("官网 URL", journal.homepage, journal.homepageOk)}
+            ${sourceLink("过刊 URL", journal.archive, journal.archiveOk)}
+            ${sourceLink("样例文章", journal.sample, journal.sampleOk)}
+          </div>
+          <div>
+            <h3 class="mini-title">最近推送</h3>
+            <div class="mini-list" style="margin-top:8px">
+              ${recent.map((item) => `
+                <div class="mini-item">
+                  <p class="mini-title">${escapeHtml(item.title)}</p>
+                  <div class="mini-meta">${formatDate(item.date)} ${escapeHtml(item.time)} · ${escapeHtml(item.kind)}</div>
+                </div>
+              `).join("")}
+            </div>
+          </div>
+          <button class="btn btn-primary" data-focus-journal="${journal.id}">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
+            只看该刊文章
+          </button>
+        `;
+      }
+
+      function metaRow(label, value) {
+        return `<div class="meta-row"><div class="meta-label">${escapeHtml(label)}</div><div class="meta-value">${escapeHtml(value || "未记录")}</div></div>`;
+      }
+
+      function sourceLink(label, url, ok) {
+        const disabled = !ok || !validUrl(url);
+        return `<a class="source-link ${disabled ? "disabled" : ""}" href="${disabled ? "#" : escapeHtml(url)}" target="_blank" rel="noopener noreferrer"><span>${escapeHtml(label)}</span><span class="mono">${escapeHtml(cleanUrlLabel(url))}</span></a>`;
+      }
+
+      function formatDate(date) {
+        const [, month, day] = date.split("-");
+        return `${Number(month)}月${Number(day)}日`;
+      }
+
+      function renderSourceSummary() {
+        const counts = journals.reduce((acc, journal) => {
+          acc[journal.subject] = (acc[journal.subject] || 0) + 1;
+          return acc;
+        }, {});
+        $("#sourceSummary").innerHTML = [
+          ["全部期刊", journals.length],
+          ["A+ 期刊", journals.filter((journal) => journal.rating === "A+").length],
+          ["RSS 已接入", journals.filter((journal) => journal.sourceStatus === "RSS 已接入").length],
+          ["适配队列", adapterQueue.length],
+          ["中文来源", journals.filter((journal) => journal.lang === "中文").length],
+          ["需复核", journals.filter((journal) => journal.health !== "ok").length]
+        ].map(([label, value]) => `<span class="metric-inline">${label}<strong>${value}</strong></span>`).join("") + Object.entries(counts).map(([label, value]) => `<span class="metric-inline">${escapeHtml(label)}<strong>${value}</strong></span>`).join("");
+      }
+
+      function renderSourceRows() {
+        const text = ($("#sourceSearch").value || "").trim().toLowerCase();
+        const rows = journals.filter((journal) => {
+          if (!text) return true;
+          return [journal.name, journal.subject, journal.lang, journal.issn, journal.homepage, journal.archive, journal.sample].join(" ").toLowerCase().includes(text);
+        });
+
+        $("#sourceRows").innerHTML = rows.map((journal) => `
+          <tr data-journal-row="${journal.id}">
+            <td class="journal-cell">
+              <div class="journal-name">${escapeHtml(journal.name)}</div>
+              <div class="journal-issn">${escapeHtml(journal.issn || "未记录")}</div>
+            </td>
+            <td>
+              <div class="actions">
+                <button class="btn btn-sm btn-primary" data-source-action="recent" data-journal-id="${journal.id}">最近文章</button>
+                ${validUrl(journal.homepage) ? `<a class="btn btn-sm btn-ghost" href="${escapeHtml(journal.homepage)}" target="_blank" rel="noopener noreferrer">官网</a>` : ""}
+              </div>
+            </td>
+            <td>
+              <div class="tags">
+                <span class="tag">${escapeHtml(journal.subject)}</span>
+                <span class="tag cyan">${escapeHtml(journal.lang)}</span>
+                <span class="tag ${journal.rating === "A+" ? "emerald" : ""}">${escapeHtml(journal.rating)}</span>
+              </div>
+            </td>
+            <td>${sourceMode(journal)}</td>
+            <td>${feedStatus(journal)}</td>
+            <td>${urlStatus(journal.homepageOk, journal.homepage)}</td>
+            <td>${urlStatus(journal.archiveOk, journal.archive)}</td>
+            <td>${urlStatus(journal.sampleOk, journal.sample)}</td>
+          </tr>
+        `).join("");
+      }
+
+      function sourceMode(journal) {
+        return `
+          <div class="source-mode">
+            <strong>${escapeHtml(journal.sourceTypeLabel)}</strong>
+            <span>${escapeHtml(journal.parserProfile)} · ${escapeHtml(journal.refreshInterval)}</span>
+          </div>
+        `;
+      }
+
+      function feedStatus(journal) {
+        const cls = journal.sourceType === "rss" ? "ok" : journal.sourceType === "manual" ? "bad" : "warn";
+        return `
+          <div class="source-mode">
+            <span class="url-status ${cls}">${journal.sourceType === "rss" ? "●" : "!"} ${escapeHtml(journal.sourceStatus)}</span>
+            <span>${escapeHtml(journal.feedLabel)}</span>
+          </div>
+        `;
+      }
+
+      function urlStatus(ok, url) {
+        const cls = ok ? "ok" : validUrl(url) ? "warn" : "bad";
+        const label = ok ? cleanUrlLabel(url) : validUrl(url) ? "待校验" : (url || "缺失");
+        return `<span class="url-status ${cls}">${ok ? "●" : "!"} ${escapeHtml(label)}</span>`;
+      }
+
+      function filteredAdapterQueue() {
+        const text = (($("#adapterSearch")?.value || "")).trim().toLowerCase();
+        if (!text) return adapterQueue;
+        return adapterQueue.filter((item) => {
+          const journal = journalById(item.journalId);
+          return [journal.name, journal.subject, journal.lang, journal.issn, item.platformName, item.strategy, item.status, item.next, item.fields.join(" ")].join(" ").toLowerCase().includes(text);
+        });
+      }
+
+      function renderAdapterStats() {
+        const directFeeds = journals.filter((journal) => journal.sourceStatus === "RSS 已接入").length;
+        const urlFix = adapterQueue.filter((item) => item.status.includes("复核") || item.status.includes("非论文")).length;
+        const cnQueue = adapterQueue.filter((item) => journalById(item.journalId).lang === "中文").length;
+        $("#adapterStats").innerHTML = [
+          ["适配队列", adapterQueue.length],
+          ["中文来源", cnQueue],
+          ["平台分组", adapterProfiles.length],
+          ["已接入 RSS", directFeeds],
+          ["需先处理", urlFix]
+        ].map(([label, value]) => `<div class="adapter-stat"><span>${escapeHtml(label)}</span><strong>${escapeHtml(value)}</strong></div>`).join("");
+      }
+
+      function renderAdapterProfiles() {
+        $("#adapterProfiles").innerHTML = adapterProfiles.map((profile, index) => {
+          const profileJournals = profile.journals.map(journalById);
+          const cnCount = profileJournals.filter((journal) => journal.lang === "中文").length;
+          return `
+            <details class="adapter-profile" ${index < 3 ? "open" : ""}>
+              <summary>
+                <span class="adapter-profile-title">${escapeHtml(profile.name)}</span>
+                <span class="pill">${profile.journals.length} 刊</span>
+              </summary>
+              <div class="adapter-profile-body">
+                <p class="adapter-profile-note">${escapeHtml(profile.strategy)}。${escapeHtml(profile.next)}</p>
+                <div class="adapter-field-list">
+                  <span class="adapter-field">${escapeHtml(cnCount ? `${cnCount} 中文` : "英文来源")}</span>
+                  ${profile.fields.map((field) => `<span class="adapter-field">${escapeHtml(field)}</span>`).join("")}
+                </div>
+                <div class="tags">
+                  ${profileJournals.map((journal) => `<span class="tag ${journal.lang === "中文" ? "cyan" : ""}">${escapeHtml(journal.name)}</span>`).join("")}
+                </div>
+              </div>
+            </details>
+          `;
+        }).join("");
+      }
+
+      function renderAdapterRows() {
+        const rows = filteredAdapterQueue();
+        $("#adapterRows").innerHTML = rows.length ? rows.map((item) => {
+          const journal = journalById(item.journalId);
+          const statusClass = item.status.includes("复核") || item.status.includes("非论文") ? "bad" : item.status.includes("待写") ? "warn" : "ok";
+          return `
+            <tr data-adapter-row="${journal.id}">
+              <td class="journal-cell">
+                <div class="journal-name">${escapeHtml(journal.name)}</div>
+                <div class="journal-issn">${escapeHtml(journal.lang)} · ${escapeHtml(journal.rating)} · ${escapeHtml(journal.issn || "未记录")}</div>
+              </td>
+              <td>${escapeHtml(item.platformName)}</td>
+              <td><div class="source-mode"><strong>${escapeHtml(item.priority)} ${escapeHtml(item.strategy)}</strong><span>${escapeHtml(journal.parserProfile)}</span></div></td>
+              <td><div class="adapter-field-list">${item.fields.map((field) => `<span class="adapter-field">${escapeHtml(field)}</span>`).join("")}</div></td>
+              <td><span class="url-status ${statusClass}">${escapeHtml(item.status)}</span></td>
+              <td><div class="adapter-next">${escapeHtml(item.next)}</div></td>
+              <td><button class="btn btn-sm btn-primary" data-adapter-focus="${journal.id}">看来源</button></td>
+            </tr>
+          `;
+        }).join("") : `<tr><td colspan="7"><div class="empty">没有匹配的适配任务</div></td></tr>`;
+      }
+
+      function renderAll() {
+        renderFilters();
+        renderTimeline();
+        renderSourceSummary();
+        renderSourceRows();
+        renderAdapterStats();
+        renderAdapterProfiles();
+        renderAdapterRows();
+        $("#clearJournalFilter").hidden = !activeJournalId && activeLanguage === "全部" && activeSubject === "全部";
+      }
+
+      function switchView(view) {
+        $$("[data-page]").forEach((page) => page.hidden = page.dataset.page !== view);
+        $$(".side-link").forEach((button) => button.classList.toggle("active", button.dataset.view === view));
+        $("#appShell").classList.remove("sidebar-open");
+      }
+
+      $("#classificationStage").addEventListener("click", (event) => {
+        const button = event.target.closest("[data-subject]");
+        const journalButton = event.target.closest("[data-journal-filter]");
+        if (button) {
+          activeSubject = button.dataset.subject;
+          activeJournalId = "";
+        }
+        if (journalButton) {
+          activeJournalId = journalButton.dataset.journalFilter;
+          const journal = journalById(activeJournalId);
+          activeSubject = journal.subject;
+          activeLanguage = journal.lang;
+        }
+        if (!button && !journalButton) return;
+        renderAll();
+      });
+
+      $("#languageFilters").addEventListener("click", (event) => {
+        const button = event.target.closest("[data-language]");
+        if (!button) return;
+        activeLanguage = button.dataset.language;
+        activeSubject = "全部";
+        activeJournalId = "";
+        if (activeLanguage !== "全部") {
+          $("#filterPanel").open = true;
+        }
+        renderAll();
+      });
+
+      $("#searchInput").addEventListener("input", (event) => {
+        query = event.target.value;
+        renderTimeline();
+      });
+
+      $("#searchButton").addEventListener("click", () => {
+        query = $("#searchInput").value;
+        renderTimeline();
+      });
+
+      $("#timeline").addEventListener("click", (event) => {
+        const card = event.target.closest("[data-article-id]");
+        if (!card) return;
+        const article = articles.find((item) => item.id === card.dataset.articleId);
+        if (!article) return;
+        selectedArticleId = article.id;
+        selectedJournalId = article.journalId;
+        renderTimeline();
+      });
+
+      $("#clearJournalFilter").addEventListener("click", () => {
+        activeJournalId = "";
+        activeSubject = "全部";
+        activeLanguage = "全部";
+        renderAll();
+      });
+
+      $("#sourceSearch").addEventListener("input", renderSourceRows);
+      $("#showAllSources").addEventListener("click", () => {
+        $("#sourceSearch").value = "";
+        renderSourceRows();
+      });
+
+      $("#adapterSearch").addEventListener("input", renderAdapterRows);
+      $("#clearAdapterSearch").addEventListener("click", () => {
+        $("#adapterSearch").value = "";
+        renderAdapterRows();
+      });
+
+      $("#adapterRows").addEventListener("click", (event) => {
+        const focus = event.target.closest("[data-adapter-focus]");
+        if (!focus) return;
+        const journal = journalById(focus.dataset.adapterFocus);
+        $("#sourceSearch").value = journal.name;
+        renderSourceRows();
+        switchView("sources");
+      });
+
+      $("#sourceRows").addEventListener("click", (event) => {
+        const action = event.target.closest("[data-source-action]");
+        const row = event.target.closest("[data-journal-row]");
+        if (row) {
+          selectedJournalId = row.dataset.journalRow;
+        }
+        if (action && action.dataset.sourceAction === "recent") {
+          activeJournalId = action.dataset.journalId;
+          selectedJournalId = activeJournalId;
+          const journal = journalById(activeJournalId);
+          activeLanguage = journal.lang;
+          activeSubject = journal.subject;
+          selectedArticleId = articlesForJournal(activeJournalId)[0]?.id || selectedArticleId;
+          switchView("tracking");
+          $("#filterPanel").open = true;
+          renderAll();
+        }
+      });
+
+      $$(".side-link").forEach((button) => {
+        button.addEventListener("click", () => switchView(button.dataset.view));
+      });
+
+      $("#hamburger").addEventListener("click", () => {
+        $("#appShell").classList.toggle("sidebar-open");
+      });
+
+      $$("[data-theme-button]").forEach((button) => {
+        button.addEventListener("click", () => {
+          document.documentElement.dataset.theme = button.dataset.themeButton;
+          $$("[data-theme-button]").forEach((item) => item.classList.toggle("active", item === button));
+        });
+      });
+
+      renderAll();
+    </script>
+  </body>
+</html>
