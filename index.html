@@ -520,13 +520,23 @@
 
       .date-filter-grid {
         display: grid;
-        grid-template-columns: minmax(170px, 280px) auto auto;
-        gap: 8px;
+        grid-template-columns: minmax(126px, 150px) minmax(126px, 150px) auto auto;
+        gap: 6px;
         align-items: center;
       }
 
       .date-filter-grid .btn {
-        min-height: 40px;
+        min-height: 34px;
+        padding: 7px 10px;
+        border-radius: 10px;
+        font-size: 12px;
+      }
+
+      .date-filter-grid .field {
+        min-height: 34px;
+        padding: 7px 10px;
+        border-radius: 10px;
+        font-size: 12px;
       }
 
       .field {
@@ -1646,10 +1656,11 @@
                   <div class="segmented" id="languageFilters" aria-label="语言筛选"></div>
                 </div>
                 <div class="filter-row">
-                  <div class="filter-row-head"><span>Date</span><span>按单日筛选推送</span></div>
+                  <div class="filter-row-head"><span>Date</span><span>近一周或自定义时间段</span></div>
                   <div class="date-filter-grid">
-                    <input class="field" id="dateInput" type="date" aria-label="筛选日期" />
-                    <button class="btn btn-ghost" id="todayDateRange" type="button">今天</button>
+                    <input class="field" id="dateFromInput" type="date" aria-label="开始日期" />
+                    <input class="field" id="dateToInput" type="date" aria-label="结束日期" />
+                    <button class="btn btn-ghost" id="weekDateRange" type="button">近7天</button>
                     <button class="btn btn-ghost" id="clearDateRange" type="button">清空</button>
                   </div>
                 </div>
@@ -1982,7 +1993,16 @@
         j22: { type: "scraper", typeLabel: "目录适配", status: "适配已接入", feedLabel: "Cornell / Sage DOI", parser: "asq-sage-links", interval: "每周检查" }
       };
 
-      const journals = rawJournals.map(([seq, name, subject, sponsor, issn, homepage, archive, sample, rating]) => {
+      const journalAliases = {
+        j1: "j14"
+      };
+
+      function canonicalJournalId(id) {
+        return journalAliases[id] || id;
+      }
+
+      const sourceEntries = rawJournals.map(([seq, name, subject, sponsor, issn, homepage, archive, sample, rating]) => {
+        const sourceId = `j${seq}`;
         const lang = hasChinese(name) ? "中文" : "英文";
         const homepageOk = validUrl(homepage) && !homepage.includes("https://ciejournal.ajcass.com/https://") && !homepage.includes("fte-collectionhttps://");
         const archiveOk = validUrl(archive);
@@ -1992,9 +2012,10 @@
         if (!archiveOk) issues.push("过刊入口待校验");
         if (!sampleOk) issues.push("样例文章待补齐");
         const sourceProfile = inferSourceProfile({ lang, homepage, archive, sample, homepageOk, archiveOk, sampleOk });
-        const override = rssProbeOverrides[`j${seq}`] || {};
+        const override = rssProbeOverrides[sourceId] || {};
         return {
-          id: `j${seq}`,
+          id: sourceId,
+          canonicalId: canonicalJournalId(sourceId),
           seq,
           name,
           subject,
@@ -2019,6 +2040,30 @@
           parserProfile: override.parser || sourceProfile.parser,
           refreshInterval: override.interval || sourceProfile.interval,
           feedUrl: override.feedUrl || ""
+        };
+      });
+
+      const sourceById = (id) => sourceEntries.find((source) => source.id === id) || sourceEntries[0];
+      const journalGroups = sourceEntries.reduce((groups, source) => {
+        groups[source.canonicalId] = groups[source.canonicalId] || [];
+        groups[source.canonicalId].push(source);
+        return groups;
+      }, {});
+
+      const journals = Object.entries(journalGroups).map(([canonicalId, sources]) => {
+        const primary = sources.find((source) => source.id === canonicalId) || sources[0];
+        const healthIssues = [...new Set(sources.flatMap((source) => source.issues))];
+        return {
+          ...primary,
+          id: canonicalId,
+          sourceEntries: sources,
+          sourceCount: sources.length,
+          health: healthIssues.length ? "warn" : "ok",
+          issues: healthIssues,
+          sourceTypeLabel: sources.length > 1 ? `${sources.length} 个来源` : primary.sourceTypeLabel,
+          sourceStatus: sources.every((source) => /已接入/.test(source.sourceStatus)) ? "全部已接入" : primary.sourceStatus,
+          feedLabel: sources.map((source) => source.feedLabel).join(" / "),
+          parserProfile: sources.map((source) => source.parserProfile).join(" + ")
         };
       });
 
@@ -2082,18 +2127,21 @@
       ];
 
       const adapterQueue = adapterProfiles.flatMap((profile) => profile.journals.map((journalId) => {
-        const journal = journals.find((item) => item.id === journalId);
-        const needsUrlFix = journal.health !== "ok" || journal.sourceStatus === "非论文 RSS";
-        const isReady = /已接入/.test(journal.sourceStatus);
+        const source = sourceById(journalId);
+        const journal = journals.find((item) => item.id === canonicalJournalId(journalId)) || journals[0];
+        const needsUrlFix = source.health !== "ok" || source.sourceStatus === "非论文 RSS";
+        const isReady = /已接入/.test(source.sourceStatus);
         return {
-          journalId,
+          journalId: journal.id,
+          sourceId: journalId,
           platformId: profile.id,
           platformName: profile.name,
           strategy: profile.strategy,
           fields: profile.fields,
-          status: isReady ? journal.sourceStatus : needsUrlFix ? journal.sourceStatus : "规则待写",
+          status: isReady ? source.sourceStatus : needsUrlFix ? source.sourceStatus : "规则待写",
           priority: journal.lang === "中文" ? "P1" : "P2",
-          next: isReady ? profile.next : needsUrlFix ? `${journal.issues[0] || journal.sourceStatus}；${profile.next}` : profile.next
+          parserProfile: source.parserProfile,
+          next: isReady ? profile.next : needsUrlFix ? `${source.issues[0] || source.sourceStatus}；${profile.next}` : profile.next
         };
       }));
 
@@ -2129,7 +2177,8 @@
 
       function buildWorkflowArticles() {
         return workflowData.push_queue.map((row) => {
-          const journal = journalById(row.journal_id);
+          const journalId = canonicalJournalId(row.journal_id);
+          const journal = journalById(journalId);
           const range = articleRange(row);
           const date = range.precision === "month" ? range.start : isoDateOnly(row.display_date || range.start);
           const kind = pushBasisLabel(row.push_basis);
@@ -2137,7 +2186,8 @@
           const dateText = `${dateBasisLabel(row.display_date_basis)}：${formatDateLabel(row.display_date || row.issue_date || range.start)}`;
           return {
             id: `wf-${row.id}`,
-            journalId: row.journal_id,
+            journalId,
+            sourceJournalId: row.source_journal_id || row.journal_id,
             date,
             dateStart: range.start,
             dateEnd: range.end,
@@ -2186,7 +2236,8 @@
       let activeLanguage = "全部";
       let activeJournalId = "";
       let query = "";
-      let activeDate = "";
+      let activeDateFrom = "";
+      let activeDateTo = "";
       let selectedArticleId = articles[0].id;
       let selectedJournalId = articles[0].journalId;
 
@@ -2194,7 +2245,7 @@
       const $$ = (selector) => Array.from(document.querySelectorAll(selector));
 
       function journalById(id) {
-        return journals.find((journal) => journal.id === id) || journals[0];
+        return journals.find((journal) => journal.id === canonicalJournalId(id)) || journals[0];
       }
 
       function articlesForJournal(id) {
@@ -2216,8 +2267,9 @@
       }
 
       function matchesDateRange(article) {
-        if (!activeDate) return true;
-        return article.dateStart <= activeDate && article.dateEnd >= activeDate;
+        const from = activeDateFrom || "0000-01-01";
+        const to = activeDateTo || "9999-12-31";
+        return article.dateEnd >= from && article.dateStart <= to;
       }
 
       function renderStats() {
@@ -2267,7 +2319,11 @@
         if (activeLanguage !== "全部") parts.push(activeLanguage);
         if (activeSubject !== "全部") parts.push(activeSubject);
         if (activeJournalId) parts.push(journalById(activeJournalId).name);
-        if (activeDate) parts.push(`日期: ${formatDateLabel(activeDate)}`);
+        if (activeDateFrom || activeDateTo) {
+          const fromLabel = activeDateFrom ? formatDateLabel(activeDateFrom) : "开始";
+          const toLabel = activeDateTo ? formatDateLabel(activeDateTo) : "结束";
+          parts.push(`日期: ${fromLabel} 至 ${toLabel}`);
+        }
         if (query.trim()) parts.push(`搜索: ${query.trim()}`);
         $("#activeFilterSummary").textContent = parts.length ? parts.join(" / ") : "先选中文或英文，再展开学科和期刊";
       }
@@ -2396,12 +2452,20 @@
         return workflowData.summary?.until || new Date().toISOString().slice(0, 10);
       }
 
-      function syncDateInputs() {
-        $("#dateInput").value = activeDate;
+      function addDays(dateText, days) {
+        const date = new Date(`${dateText}T00:00:00.000Z`);
+        date.setUTCDate(date.getUTCDate() + days);
+        return date.toISOString().slice(0, 10);
       }
 
-      function applyDateFilter(date) {
-        activeDate = date;
+      function syncDateInputs() {
+        $("#dateFromInput").value = activeDateFrom;
+        $("#dateToInput").value = activeDateTo;
+      }
+
+      function applyDateRange(from, to) {
+        activeDateFrom = from;
+        activeDateTo = to;
         syncDateInputs();
         renderTimeline();
       }
@@ -2412,7 +2476,8 @@
           return acc;
         }, {});
         $("#sourceSummary").innerHTML = [
-          ["全部期刊", journals.length],
+          ["期刊实体", journals.length],
+          ["来源入口", sourceEntries.length],
           ["A+ 期刊", journals.filter((journal) => journal.rating === "A+").length],
           ["RSS 已接入", journals.filter((journal) => journal.sourceStatus === "RSS 已接入").length],
           ["适配队列", adapterQueue.length],
@@ -2432,7 +2497,7 @@
           <tr data-journal-row="${journal.id}">
             <td class="journal-cell">
               <div class="journal-name">${escapeHtml(journal.name)}</div>
-              <div class="journal-issn">${escapeHtml(journal.issn || "未记录")}</div>
+              <div class="journal-issn">${escapeHtml(journal.issn || "未记录")}${journal.sourceCount > 1 ? ` · ${journal.sourceCount} 个来源` : ""}</div>
             </td>
             <td>
               <div class="actions">
@@ -2457,20 +2522,22 @@
       }
 
       function sourceMode(journal) {
+        const sources = journal.sourceEntries || [journal];
         return `
           <div class="source-mode">
             <strong>${escapeHtml(journal.sourceTypeLabel)}</strong>
-            <span>${escapeHtml(journal.parserProfile)} · ${escapeHtml(journal.refreshInterval)}</span>
+            <span>${escapeHtml(sources.map((source) => source.parserProfile).join(" / "))}</span>
           </div>
         `;
       }
 
       function feedStatus(journal) {
-        const cls = journal.sourceType === "rss" ? "ok" : journal.sourceType === "manual" ? "bad" : "warn";
+        const sources = journal.sourceEntries || [journal];
+        const cls = sources.every((source) => /已接入/.test(source.sourceStatus)) ? "ok" : journal.sourceType === "manual" ? "bad" : "warn";
         return `
           <div class="source-mode">
-            <span class="url-status ${cls}">${journal.sourceType === "rss" ? "●" : "!"} ${escapeHtml(journal.sourceStatus)}</span>
-            <span>${escapeHtml(journal.feedLabel)}</span>
+            <span class="url-status ${cls}">${cls === "ok" ? "●" : "!"} ${escapeHtml(journal.sourceStatus)}</span>
+            <span>${escapeHtml(sources.map((source) => source.feedLabel).join(" / "))}</span>
           </div>
         `;
       }
@@ -2540,7 +2607,7 @@
                 <div class="journal-issn">${escapeHtml(journal.lang)} · ${escapeHtml(journal.rating)} · ${escapeHtml(journal.issn || "未记录")}</div>
               </td>
               <td>${escapeHtml(item.platformName)}</td>
-              <td><div class="source-mode"><strong>${escapeHtml(item.priority)} ${escapeHtml(item.strategy)}</strong><span>${escapeHtml(journal.parserProfile)}</span></div></td>
+              <td><div class="source-mode"><strong>${escapeHtml(item.priority)} ${escapeHtml(item.strategy)}</strong><span>${escapeHtml(item.parserProfile)}</span></div></td>
               <td><div class="adapter-field-list">${item.fields.map((field) => `<span class="adapter-field">${escapeHtml(field)}</span>`).join("")}</div></td>
               <td><span class="url-status ${statusClass}">${escapeHtml(item.status)}</span></td>
               <td><div class="adapter-next">${escapeHtml(item.next)}</div></td>
@@ -2607,17 +2674,23 @@
         renderTimeline();
       });
 
-      $("#dateInput").addEventListener("change", (event) => {
-        activeDate = event.target.value;
+      $("#dateFromInput").addEventListener("change", (event) => {
+        activeDateFrom = event.target.value;
         renderTimeline();
       });
 
-      $("#todayDateRange").addEventListener("click", () => {
-        applyDateFilter(workflowToday());
+      $("#dateToInput").addEventListener("change", (event) => {
+        activeDateTo = event.target.value;
+        renderTimeline();
+      });
+
+      $("#weekDateRange").addEventListener("click", () => {
+        const today = workflowToday();
+        applyDateRange(addDays(today, -6), today);
       });
 
       $("#clearDateRange").addEventListener("click", () => {
-        applyDateFilter("");
+        applyDateRange("", "");
       });
 
       $("#timeline").addEventListener("click", (event) => {

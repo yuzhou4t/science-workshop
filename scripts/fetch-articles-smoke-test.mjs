@@ -287,6 +287,46 @@ function parseAnchorsMatching(text, baseUrl, options = {}) {
   return dedupeArticles(articles);
 }
 
+function mergeDateHints(article, hints = {}) {
+  if (!Object.keys(hints).length) return article;
+  const merged = {
+    ...article,
+    ...hints,
+    published_at: article.published_at || hints.published_at || "",
+    issue_date: article.issue_date || hints.issue_date || "",
+    date_source: article.date_source || hints.date_source || "",
+  };
+  if (!merged.date && merged.published_at) merged.date = merged.published_at;
+  else if (!merged.date && merged.issue_date) merged.date = merged.issue_date;
+  return merged;
+}
+
+function needsDetailDate(article) {
+  return !article.published_at && !article.issue_date && !article.date && /^https?:\/\//i.test(article.url || "");
+}
+
+async function enrichArticlesWithDetailDates(articles, options = {}) {
+  const limit = options.limit || 20;
+  const timeoutMs = options.timeoutMs || 9000;
+  const enriched = [];
+  let checked = 0;
+  for (const article of articles) {
+    if (!needsDetailDate(article) || checked >= limit) {
+      enriched.push(article);
+      continue;
+    }
+    checked += 1;
+    try {
+      const response = await fetchText(article.url, timeoutMs);
+      const hints = response.ok ? extractDateHints({ url: response.finalUrl || article.url, context: response.text }) : {};
+      enriched.push(mergeDateHints(article, hints));
+    } catch {
+      enriched.push(article);
+    }
+  }
+  return enriched;
+}
+
 function looksLikeArticleTitle(title) {
   if (!title) return false;
   const compact = title.replace(/\s/g, "");
@@ -411,9 +451,16 @@ async function extractAjcassCurrentApi(item) {
   return { response, probe_url: probeUrl, articles: dedupeArticles(articles), candidate_count: articles.length, notes };
 }
 
-async function extractHtmlByPatterns(item, patternOptions, timeoutMs = 11000) {
+async function extractHtmlByPatterns(item, patternOptions, timeoutMs = 11000, options = {}) {
   const response = await fetchText(item.source_url, timeoutMs);
-  const articles = response.ok ? parseAnchorsMatching(response.text, response.finalUrl, patternOptions) : [];
+  let articles = response.ok ? parseAnchorsMatching(response.text, response.finalUrl, patternOptions) : [];
+  if (response.ok && options.sourceDateHints) {
+    const sourceHints = extractDateHints({ url: response.finalUrl, context: response.text });
+    articles = articles.map((article) => mergeDateHints(article, sourceHints));
+  }
+  if (response.ok && options.detailDateHints) {
+    articles = await enrichArticlesWithDetailDates(articles, options.detailDateHints);
+  }
   return { response, probe_url: item.source_url, articles, candidate_count: articles.length, notes: [] };
 }
 
@@ -843,7 +890,7 @@ async function extractAdapterArticles(item) {
       return extractHtmlByPatterns(item, {
         include: [/\/CN\/abstract\/abstract\d+\.shtml/i, /\/CN\/Y20\d{2}\/V\d+\/I\d+\/\d+/i],
         exclude: [/\/CN\/column\//i, /volumn/i, /showOldVolumnList/i],
-      });
+      }, 11000, { detailDateHints: { limit: 30, timeoutMs: 10000 } });
     case "cnki-captcha-check":
       return extractCnkiCaptchaCheck(item);
     case "macrodatas-issue-list":
@@ -852,7 +899,7 @@ async function extractAdapterArticles(item) {
       return extractHtmlByPatterns(item, {
         include: [/\/portal\/journal\/portal\/client\/paper\/[a-z0-9-]+/i],
         exclude: [/\/editor\b/i, /admin/i, /login/i],
-      }, 13000);
+      }, 13000, { detailDateHints: { limit: 20, timeoutMs: 11000 } });
     case "nankai-protected-html":
       return extractNankaiProtectedHtml(item);
     case "jmsc-issue-html":
@@ -874,7 +921,7 @@ async function extractAdapterArticles(item) {
       return extractHtmlByPatterns(item, {
         include: [/\/articles\?id=10\.1257\/aer\./i],
         exclude: [/front matter/i, /full_issue\.php/i],
-      }, 13000);
+      }, 13000, { sourceDateHints: true });
     case "oup-advance-html":
       return extractHtmlByPatterns(item, {
         include: [/\/(qje|restud)\/(advance-article|article)\/doi\/10\.1093\//i, /\/doi\/10\.1093\//i],
@@ -885,7 +932,7 @@ async function extractAdapterArticles(item) {
     case "asq-sage-links":
       return extractHtmlByPatterns(item, {
         include: [/journals\.sagepub\.com\/doi\/(full|abs)\/10\.1177\//i],
-      }, 13000);
+      }, 13000, { sourceDateHints: true });
     default:
       return extractHtmlByPatterns(item, {
         include: [/article|abstract|paper|doi|content|detail/i],

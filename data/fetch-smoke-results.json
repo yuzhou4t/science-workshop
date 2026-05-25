@@ -1,6 +1,6 @@
 {
   "summary": {
-    "checked_at": "2026-05-25T12:24:41.616Z",
+    "checked_at": "2026-05-25T13:06:41.100Z",
     "direct_feeds_total": 5,
     "direct_feeds_ok": 5,
     "adapter_sources_total": 17,
@@ -19,7 +19,7 @@
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1248,
+      "fetch_ms": 1298,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 50,
@@ -306,7 +306,7 @@
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1128,
+      "fetch_ms": 1277,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 23,
@@ -460,7 +460,7 @@
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1023,
+      "fetch_ms": 1281,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 19,
@@ -594,7 +594,7 @@
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1006,
+      "fetch_ms": 2403,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 11,
@@ -688,7 +688,7 @@
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1087,
+      "fetch_ms": 1750,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 50,
@@ -977,7 +977,7 @@
       "status": 200,
       "content_type": "application/json; charset=utf-8",
       "transport": "fetch",
-      "fetch_ms": 1614,
+      "fetch_ms": 4043,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 11,
@@ -1084,8 +1084,8 @@
       "extraction_rule": "cie-legacy-html",
       "status": 200,
       "content_type": "text/html; charset=utf-8",
-      "transport": "curl",
-      "fetch_ms": 26822,
+      "transport": "fetch",
+      "fetch_ms": 16408,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 50,
@@ -1466,7 +1466,7 @@
         }
       ],
       "notes": [],
-      "error": "timeout"
+      "error": ""
     },
     {
       "type": "adapter_source",
@@ -1480,7 +1480,7 @@
       "status": 200,
       "content_type": "application/json; charset=utf-8",
       "transport": "fetch",
-      "fetch_ms": 5584,
+      "fetch_ms": 5665,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 9,
@@ -1575,8 +1575,8 @@
       "extraction_rule": "magtech-cn-html",
       "status": 200,
       "content_type": "text/html;charset=UTF-8",
-      "transport": "fetch",
-      "fetch_ms": 2878,
+      "transport": "curl",
+      "fetch_ms": 10390,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 8,
@@ -1663,7 +1663,7 @@
         }
       ],
       "notes": [],
-      "error": ""
+      "error": "fetch failed"
     },
     {
       "type": "adapter_source",
@@ -1676,12 +1676,12 @@
       "extraction_rule": "jryj-html",
       "status": 200,
       "content_type": "text/html;charset=UTF-8",
-      "transport": "curl",
-      "fetch_ms": 23739,
+      "transport": "fetch",
+      "fetch_ms": 5770,
       "ok": true,
       "usable_as_data_source": true,
-      "article_count": 23,
-      "candidate_count": 23,
+      "article_count": 31,
+      "candidate_count": 31,
       "articles": [
         {
           "title": "中国的利率体系与利率市场化改革",
@@ -1693,57 +1693,90 @@
         {
           "title": "公众预期、政策协调与房地产金融宏观审慎政策有效性",
           "url": "http://www.jryj.org.cn/CN/abstract/abstract1596.shtml",
-          "date": ""
+          "date": "2026-04-24",
+          "published_at": "2026-04-24",
+          "issue_date": "2026-04",
+          "date_source": "meta_published"
         },
         {
           "title": "关税冲击与人民币货币锚地位调整——来自2018—2020年中美贸易摩擦的经验证据",
           "url": "http://www.jryj.org.cn/CN/abstract/abstract1597.shtml",
-          "date": ""
+          "date": "2026-04-24",
+          "published_at": "2026-04-24",
+          "issue_date": "2026-04",
+          "date_source": "meta_published"
         },
         {
           "title": "金融分权、信贷错配与地方中小银行风险",
           "url": "http://www.jryj.org.cn/CN/abstract/abstract1598.shtml",
-          "date": ""
+          "date": "2026-04-24",
+          "published_at": "2026-04-24",
+          "issue_date": "2026-04",
+          "date_source": "meta_published"
         },
         {
           "title": "地方隐性担保破除对域内中小银行风险的影响",
           "url": "http://www.jryj.org.cn/CN/abstract/abstract1599.shtml",
-          "date": ""
+          "date": "2026-04-24",
+          "published_at": "2026-04-24",
+          "issue_date": "2026-04",
+          "date_source": "meta_published"
         },
         {
           "title": "媒体负面报道与银行信贷——基于信息中介和外部监督的双重视角",
           "url": "http://www.jryj.org.cn/CN/abstract/abstract1600.shtml",
-          "date": ""
+          "date": "2026-04-24",
+          "published_at": "2026-04-24",
+          "issue_date": "2026-04",
+          "date_source": "meta_published"
         },
         {
           "title": "要素市场一体化背景下的政府引导基金跨区域流动——来自国家级城市群规划的证据",
           "url": "http://www.jryj.org.cn/CN/abstract/abstract1601.shtml",
-          "date": ""
+          "date": "2026-04-24",
+          "published_at": "2026-04-24",
+          "issue_date": "2026-04",
+          "date_source": "meta_published"
         },
         {
           "title": "供应链网络中创新与企业全要素生产率提升:供应商创新视角",
           "url": "http://www.jryj.org.cn/CN/abstract/abstract1602.shtml",
-          "date": ""
+          "date": "2026-04-24",
+          "published_at": "2026-04-24",
+          "issue_date": "2026-04",
+          "date_source": "meta_published"
         },
         {
           "title": "个人破产制度与地区创业活力——基于中国个人破产试点的经验证据",
           "url": "http://www.jryj.org.cn/CN/abstract/abstract1603.shtml",
-          "date": ""
+          "date": "2026-04-24",
+          "published_at": "2026-04-24",
+          "issue_date": "2026-04",
+          "date_source": "meta_published"
         },
         {
           "title": "碳减排政策、绿色技术采用与转型风险",
           "url": "http://www.jryj.org.cn/CN/abstract/abstract1604.shtml",
-          "date": ""
+          "date": "2026-04-24",
+          "published_at": "2026-04-24",
+          "issue_date": "2026-04",
+          "date_source": "meta_published"
         },
         {
           "title": "基层医疗资源下沉与农村家庭贫困脆弱性——来自紧密型医共体建设的证据",
           "url": "http://www.jryj.org.cn/CN/abstract/abstract1605.shtml",
-          "date": ""
+          "date": "2026-04-24",
+          "published_at": "2026-04-24",
+          "issue_date": "2026-04",
+          "date_source": "meta_published"
         },
         {
           "title": "分析师跟踪对企业产品质量违规的影响研究",
           "url": "http://www.jryj.org.cn/CN/abstract/abstract1606.shtml",
-          "date": ""
+          "date": "2026-04-24",
+          "published_at": "2026-04-24",
+          "issue_date": "2026-04",
+          "date_source": "meta_published"
         },
         {
           "title": "技术封锁与企业供应链调整——基于美对华实体清单的实证研究",
@@ -1821,6 +1854,62 @@
           "date": "",
           "issue_date": "2018-02",
           "date_source": "url_issue"
+        },
+        {
+          "title": "中国历史上的国际收支估算:1550—1948",
+          "url": "http://www.jryj.org.cn/CN/Y2023/V513/I3/188",
+          "date": "",
+          "issue_date": "2023-03",
+          "date_source": "url_issue"
+        },
+        {
+          "title": "绿色金融、绿色创新与经济高质量发展",
+          "url": "http://www.jryj.org.cn/CN/Y2022/V506/I8/1",
+          "date": "",
+          "issue_date": "2022-08",
+          "date_source": "url_issue"
+        },
+        {
+          "title": "跨境金融:驱动因素、结构特征与未来路径",
+          "url": "http://www.jryj.org.cn/CN/Y2022/V500/I2/1",
+          "date": "",
+          "issue_date": "2022-02",
+          "date_source": "url_issue"
+        },
+        {
+          "title": "中国历史上白银大规模跨境流动研究",
+          "url": "http://www.jryj.org.cn/CN/Y2023/V517/I7/193",
+          "date": "",
+          "issue_date": "2023-07",
+          "date_source": "url_issue"
+        },
+        {
+          "title": "批发业外资开放、供应链整合与消费福利——基于微观视角的理论与经验分析",
+          "url": "http://www.jryj.org.cn/CN/Y2024/V532/I10/113",
+          "date": "",
+          "issue_date": "2024-10",
+          "date_source": "url_issue"
+        },
+        {
+          "title": "分层制度提升新三板流动性了吗？——来自多维断点回归的经验证据",
+          "url": "http://www.jryj.org.cn/CN/Y2019/V467/I5/170",
+          "date": "",
+          "issue_date": "2019-05",
+          "date_source": "url_issue"
+        },
+        {
+          "title": "《巴塞尔III最终方案》的影响及应对",
+          "url": "http://www.jryj.org.cn/CN/Y2018/V452/I2/30",
+          "date": "",
+          "issue_date": "2018-02",
+          "date_source": "url_issue"
+        },
+        {
+          "title": "首日涨停板制度与IPO解禁效应——基于投机泡沫视角的分析",
+          "url": "http://www.jryj.org.cn/CN/Y2020/V478/I4/186",
+          "date": "",
+          "issue_date": "2020-04",
+          "date_source": "url_issue"
         }
       ],
       "samples": [
@@ -1834,16 +1923,22 @@
         {
           "title": "公众预期、政策协调与房地产金融宏观审慎政策有效性",
           "url": "http://www.jryj.org.cn/CN/abstract/abstract1596.shtml",
-          "date": ""
+          "date": "2026-04-24",
+          "published_at": "2026-04-24",
+          "issue_date": "2026-04",
+          "date_source": "meta_published"
         },
         {
           "title": "关税冲击与人民币货币锚地位调整——来自2018—2020年中美贸易摩擦的经验证据",
           "url": "http://www.jryj.org.cn/CN/abstract/abstract1597.shtml",
-          "date": ""
+          "date": "2026-04-24",
+          "published_at": "2026-04-24",
+          "issue_date": "2026-04",
+          "date_source": "meta_published"
         }
       ],
       "notes": [],
-      "error": "curl: (28) Operation timed out after 17002 milliseconds with 215562 bytes received"
+      "error": ""
     },
     {
       "type": "adapter_source",
@@ -1857,7 +1952,7 @@
       "status": 200,
       "content_type": "text/html; charset=utf-8",
       "transport": "fetch",
-      "fetch_ms": 1873,
+      "fetch_ms": 1032,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 11,
@@ -1969,7 +2064,7 @@
       "status": 200,
       "content_type": "text/html;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 4955,
+      "fetch_ms": 3465,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 12,
@@ -2020,27 +2115,42 @@
         {
           "title": "以公共价值为基础的政府绩效治理——源起、架构与研究问题",
           "url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/d79d1af464dd99db301857f3c4202b18",
-          "date": ""
+          "date": "2012-04-20",
+          "published_at": "2012-04-20",
+          "issue_date": "2012-02",
+          "date_source": "meta_published"
         },
         {
           "title": "网络治理:公共管理的新框架",
           "url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/788b9d590a93de9b5e4797526c02eb61",
-          "date": ""
+          "date": "2007-01-20",
+          "published_at": "2007-01-20",
+          "issue_date": "2007-01",
+          "date_source": "meta_published"
         },
         {
           "title": "用文献计量研究重塑政策文本数据分析——政策文献计量的起源、迁移与方法创新",
           "url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/d9146b8716eeeb8b7e4a3c717763380e",
-          "date": ""
+          "date": "2015-04-20",
+          "published_at": "2015-04-20",
+          "issue_date": "2015-02",
+          "date_source": "meta_published"
         },
         {
           "title": "城市居民垃圾分类的影响因素研究",
           "url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/466fea9b60d22ef094ec2459206a81f3",
-          "date": ""
+          "date": "2017-01-20",
+          "published_at": "2017-01-20",
+          "issue_date": "2017-01",
+          "date_source": "meta_published"
         },
         {
           "title": "共享单车:互联网技术与公共服务中的协同治理",
           "url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/9cb42fa7075e5ea7d5e122134f264d3d",
-          "date": ""
+          "date": "2017-07-20",
+          "published_at": "2017-07-20",
+          "issue_date": "2017-03",
+          "date_source": "meta_published"
         },
         {
           "title": "国家治理体系与治理能力研究:回顾与前瞻",
@@ -2088,7 +2198,7 @@
       "status": 200,
       "content_type": "text/html; charset=utf-8",
       "transport": "fetch",
-      "fetch_ms": 1561,
+      "fetch_ms": 1004,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 17,
@@ -2236,7 +2346,7 @@
       "status": 200,
       "content_type": "text/html; charset=utf-8",
       "transport": "fetch",
-      "fetch_ms": 684,
+      "fetch_ms": 852,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 10,
@@ -2353,7 +2463,7 @@
       "status": 200,
       "content_type": "text/html; charset=utf-8",
       "transport": "fetch",
-      "fetch_ms": 8044,
+      "fetch_ms": 6242,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 19,
@@ -2361,115 +2471,115 @@
       "articles": [
         {
           "title": "以制度建设为主线统筹发展和安全",
-          "url": "https://www.cqvip.com/doc/journal/7203343026?sign=42f24c030a25eed0027b9b9793a86fce420958a0bea0053a94408bd2175cb961&expireTime=1795263875057&resourceId=7203343026&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343026?sign=62b708553da4bf0d5a6e94f5b5257752c4bb3c6747bc6618c0413d2fbf3f20ed&expireTime=1795266365147&resourceId=7203343026&type=1",
           "date": "2026-03",
           "authors": "王浦劬, 连雨欣"
         },
         {
           "title": "“钉钉子”的技术:重大决策落实的工作机制",
-          "url": "https://www.cqvip.com/doc/journal/7203343027?sign=4e2512d9b44e15a36f494a267b2d8eab92783058e7f820f32b03a0041f02bbb2&expireTime=1795263875057&resourceId=7203343027&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343027?sign=5d3d635d85dccea4aeb9cc5249af880ba6d7bba6ca8d05630fd179e9b2994e3f&expireTime=1795266365147&resourceId=7203343027&type=1",
           "date": "2026-03",
           "authors": "庞明礼, 郭雯斐"
         },
         {
           "title": "从制度到行动:基层减负的层级传导与长效机制",
-          "url": "https://www.cqvip.com/doc/journal/7203343028?sign=b6016b238a8a5fe89e289f8214a5386241a1811f3c1103fa840936760b2b9066&expireTime=1795263875057&resourceId=7203343028&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343028?sign=140366d25aacc49cc9d60005397d21d75d715b5f78a662f90ac05123b1641215&expireTime=1795266365147&resourceId=7203343028&type=1",
           "date": "2026-03",
           "authors": "王锐, 倪星"
         },
         {
           "title": "政府数字平台何以走出难以为继困境?——基于生态系统视角的对比案例研究",
-          "url": "https://www.cqvip.com/doc/journal/7203343029?sign=9f76ebffea3c67f3f0bc7eaeec4c80a1b2316d8a56b9da8d97d045e776b016f0&expireTime=1795263875057&resourceId=7203343029&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343029?sign=85ee11c55cc65ffedd8ef7331e464797a8dcb405a571d0f99f76501634160428&expireTime=1795266365147&resourceId=7203343029&type=1",
           "date": "2026-03",
           "authors": "付宁, 林婕, 祝哲"
         },
         {
           "title": "人工智能的科林格里奇困境与安全监管的敏捷性调适",
-          "url": "https://www.cqvip.com/doc/journal/7203343030?sign=26e8db5f62414f45983fe36c734302a73439ee1353df4edc86ac7057b0d2e578&expireTime=1795263875057&resourceId=7203343030&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343030?sign=62b8afa04cc0c7e5277a3c5d595fd1c4dec7a9dad36f11a28c427464e59a38f1&expireTime=1795266365147&resourceId=7203343030&type=1",
           "date": "2026-03",
           "authors": "张乐, 赵爽爽"
         },
         {
           "title": "“数字帕金森”:数字治理中的任务冗余再生产",
-          "url": "https://www.cqvip.com/doc/journal/7203343031?sign=d98751a49979857f51c88ed547949e410fac3166a9e7772ed5ea6ae5c69db70a&expireTime=1795263875057&resourceId=7203343031&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343031?sign=77a3507dc57f5eb9c467b9b61f32640b1d39596e6a6bae8024a3b9aa2f13db52&expireTime=1795266365147&resourceId=7203343031&type=1",
           "date": "2026-03",
           "authors": "邓崧, 杨迪"
         },
         {
           "title": "把公共性带回来:社区慈善事业治理的路径选择",
-          "url": "https://www.cqvip.com/doc/journal/7203343032?sign=2b4103838b3396debc810eb8385188f0de76b2fbac691a39dd8485f62151d511&expireTime=1795263875057&resourceId=7203343032&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343032?sign=84f858736f5bf076d14cf4e251d532337eaa8c091e67bb735aeecf6c8d1b5856&expireTime=1795266365147&resourceId=7203343032&type=1",
           "date": "2026-03",
           "authors": "舒文, 郑功成"
         },
         {
           "title": "“选择式自主”:社会组织可持续发展的新范式",
-          "url": "https://www.cqvip.com/doc/journal/7203343033?sign=64ff20d4ccc504434c8cd83a06543fca9bdced8194b72bd4a5a4183378b5cc45&expireTime=1795263875057&resourceId=7203343033&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343033?sign=7837b684465ff308f209fa8c09a9287b2d0530dfa0dfd40d627f6ba78cfab8cd&expireTime=1795266365147&resourceId=7203343033&type=1",
           "date": "2026-03",
           "authors": "刘蕾, 何书仪"
         },
         {
           "title": "基层“信用积分制”运行的实践错位与优化路径",
-          "url": "https://www.cqvip.com/doc/journal/7203343034?sign=c73d793bce8c7498e32f4253773a08a3e34b849635dbc790f7f60c0339a96dc1&expireTime=1795263875057&resourceId=7203343034&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343034?sign=65d319ed60c74bbd1a170bc93bb3ecdaa1b4fe2b38af69de473319ab7afa0c6e&expireTime=1795266365147&resourceId=7203343034&type=1",
           "date": "2026-03",
           "authors": "朱博宇, 沈圣兰, 黄璜"
         },
         {
           "title": "建构基于“有效的政府治理”标识性概念的中国政府治理理论框架",
-          "url": "https://www.cqvip.com/doc/journal/7203343035?sign=fda65022645035b1eacd289fe74eaea98d56c02309e0fbc1de27f0d09fb99a9a&expireTime=1795263875057&resourceId=7203343035&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343035?sign=ed8fd0376ff87acafa72fe92935765827a7d472498d758c96a72c0a1d4d20288&expireTime=1795266365147&resourceId=7203343035&type=1",
           "date": "2026-03",
           "authors": "李瑞昌"
         },
         {
           "title": "重新发现治理:评价理论的视角",
-          "url": "https://www.cqvip.com/doc/journal/7203343036?sign=cee1013fa0f0082bffbee7f71fe7f6c1a89875c89b677d923c0cbf4eb133e0de&expireTime=1795263875057&resourceId=7203343036&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343036?sign=629a0cc1af56878944187e88d0e01e16a523235cf04aee26a3a9f2c016ae826a&expireTime=1795266365147&resourceId=7203343036&type=1",
           "date": "2026-03",
           "authors": "张乾友"
         },
         {
           "title": "数字技术驱动乡村公共服务共同生产的影响因素与实践逻辑",
-          "url": "https://www.cqvip.com/doc/journal/7203343037?sign=170f965a6207438cc28e612b8bb4a6574f58c38affd46dd98963a555869ed6fd&expireTime=1795263875057&resourceId=7203343037&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343037?sign=e072d45d4e957a7c4eda1493d71c23df4237ab50def62cf38182f74c13939f49&expireTime=1795266365147&resourceId=7203343037&type=1",
           "date": "2026-03",
           "authors": "王洛忠, 徐成铭"
         },
         {
           "title": "数字生态何以影响乡村韧性治理绩效",
-          "url": "https://www.cqvip.com/doc/journal/7203343038?sign=b11c5788ecc8bcc999bc1718e2ea643200a07890e1e864c4e619ccea7abd94dd&expireTime=1795263875057&resourceId=7203343038&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343038?sign=eeaecb53a0e5f2f62308dd7b86aacf98165359f6dfa79e6f355c3f1e21ca5011&expireTime=1795266365147&resourceId=7203343038&type=1",
           "date": "2026-03",
           "authors": "陈浩天, 肖延玉"
         },
         {
           "title": "复合型公共空间:社交平台驱动的乡村公共空间新样态",
-          "url": "https://www.cqvip.com/doc/journal/7203343039?sign=1da44fa9c756262f629bcd90e3f751d4ffa5c57421944ea26bd1b675fa58487f&expireTime=1795263875057&resourceId=7203343039&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343039?sign=7e6be81a849dd3de979f4749230fbabde4827d6df7f5c13b918e0d3b98f97ebf&expireTime=1795266365147&resourceId=7203343039&type=1",
           "date": "2026-03",
           "authors": "王承禹, 张旋"
         },
         {
           "title": "以科技人才集聚促进京津冀城市群高质量协同发展",
-          "url": "https://www.cqvip.com/doc/journal/7203343040?sign=552439613e8d1694cbd1fbb0bc5bbb7aa436fda487e6519fea64bc726af661da&expireTime=1795263875057&resourceId=7203343040&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343040?sign=dbc632143871e67734db61a51dbca8a4e2123e88a5754f537d9ac28b2fd185ab&expireTime=1795266365147&resourceId=7203343040&type=1",
           "date": "2026-03",
           "authors": "魏华颖, 李子昂, 孙宏皓"
         },
         {
           "title": "数字赋能乡村治理现代化的优化路径",
-          "url": "https://www.cqvip.com/doc/journal/7203343041?sign=275c99c7cbda073814760a16c82aaad07b44c0c38748ab6674602143cc32bf3b&expireTime=1795263875057&resourceId=7203343041&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343041?sign=a6ad492e19723e635c7ba042d54834ae0f0689200c2edaf02c564b75053d1bdc&expireTime=1795266365147&resourceId=7203343041&type=1",
           "date": "2026-03",
           "authors": "李俊清, 毋世扬"
         },
         {
           "title": "以全生命周期服务改革推动营商环境优化",
-          "url": "https://www.cqvip.com/doc/journal/7203343042?sign=128bd7ff18c9a6483aaba4097829960eb13e48e486bfb2990836c1c87cfaec60&expireTime=1795263875057&resourceId=7203343042&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343042?sign=d5064f4520fbe78f9f6dcc36f11c31fefcd9729f49e08580456a0733d09385f7&expireTime=1795266365147&resourceId=7203343042&type=1",
           "date": "2026-03",
           "authors": "杨畅, 彭伟, 黄凌筱"
         },
         {
           "title": "内蒙古大学公共管理学院简介",
-          "url": "https://www.cqvip.com/doc/journal/7203343025?sign=4479ffbe6f4723dd4204cabff281bc1ef5defca3fe3ab082591a9f047c9bffa4&expireTime=1795263875057&resourceId=7203343025&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343025?sign=0f237926cc4bb382ea08630064f041992a7436661930560c27e48d4de9ea1c3a&expireTime=1795266365147&resourceId=7203343025&type=1",
           "date": "2026-03",
           "authors": "白维军"
         },
         {
           "title": "中国银联积极服务政府促消费 双轮驱动激活市场新动能",
-          "url": "https://www.cqvip.com/doc/journal/7203343043?sign=751e04f75fed0e02b9991740e813924a1caba1b8ef1e588818c817ef97607c8a&expireTime=1795263875057&resourceId=7203343043&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343043?sign=48645745495d11785d1536151eaf4a026057a7be897ed6f50cefcb27928a9b2c&expireTime=1795266365147&resourceId=7203343043&type=1",
           "date": "2026-03",
           "authors": "韩永琛"
         }
@@ -2477,19 +2587,19 @@
       "samples": [
         {
           "title": "以制度建设为主线统筹发展和安全",
-          "url": "https://www.cqvip.com/doc/journal/7203343026?sign=42f24c030a25eed0027b9b9793a86fce420958a0bea0053a94408bd2175cb961&expireTime=1795263875057&resourceId=7203343026&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343026?sign=62b708553da4bf0d5a6e94f5b5257752c4bb3c6747bc6618c0413d2fbf3f20ed&expireTime=1795266365147&resourceId=7203343026&type=1",
           "date": "2026-03",
           "authors": "王浦劬, 连雨欣"
         },
         {
           "title": "“钉钉子”的技术:重大决策落实的工作机制",
-          "url": "https://www.cqvip.com/doc/journal/7203343027?sign=4e2512d9b44e15a36f494a267b2d8eab92783058e7f820f32b03a0041f02bbb2&expireTime=1795263875057&resourceId=7203343027&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343027?sign=5d3d635d85dccea4aeb9cc5249af880ba6d7bba6ca8d05630fd179e9b2994e3f&expireTime=1795266365147&resourceId=7203343027&type=1",
           "date": "2026-03",
           "authors": "庞明礼, 郭雯斐"
         },
         {
           "title": "从制度到行动:基层减负的层级传导与长效机制",
-          "url": "https://www.cqvip.com/doc/journal/7203343028?sign=b6016b238a8a5fe89e289f8214a5386241a1811f3c1103fa840936760b2b9066&expireTime=1795263875057&resourceId=7203343028&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343028?sign=140366d25aacc49cc9d60005397d21d75d715b5f78a662f90ac05123b1641215&expireTime=1795266365147&resourceId=7203343028&type=1",
           "date": "2026-03",
           "authors": "王锐, 倪星"
         }
@@ -2512,7 +2622,7 @@
       "status": 200,
       "content_type": "text/html;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1097,
+      "fetch_ms": 907,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 13,
@@ -2650,7 +2760,7 @@
       "status": 200,
       "content_type": "application/json",
       "transport": "fetch",
-      "fetch_ms": 1660,
+      "fetch_ms": 1546,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 12,
@@ -2723,10 +2833,10 @@
           "authors": "Daniel A. Bens, Gavin Cassar, Ying Huang, Thomas Keusch"
         },
         {
-          "title": "Current Expected Credit Losses (CECL) Standard and Banks’ Information Production",
-          "url": "https://doi.org/10.2308/tar-2022-0314",
+          "title": "The 2003 U.S. Dividend Tax Cut, Small Business Loan Supply, and the Real Economy",
+          "url": "https://doi.org/10.2308/tar-2023-0444",
           "date": "2026-04-16",
-          "authors": "Sehwa Kim, Seil Kim, Anya Kleymenova, Rongchen Li"
+          "authors": "Oliver Zhen Li, Yupeng Lin, Keyuan Zhang"
         }
       ],
       "samples": [
@@ -2767,7 +2877,7 @@
       "status": 200,
       "content_type": "text/html; charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1736,
+      "fetch_ms": 1831,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 34,
@@ -2776,189 +2886,300 @@
         {
           "title": "Remote Work and City Structure",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20231414",
-          "date": ""
+          "date": "",
+          "date_source": "forthcoming_unassigned",
+          "published_at": "",
+          "issue_date": ""
         },
         {
           "title": "A Theory of Price Caps on Non-Renewable Resources",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20250064",
-          "date": ""
+          "date": "",
+          "date_source": "forthcoming_unassigned",
+          "published_at": "",
+          "issue_date": ""
         },
         {
           "title": "Talent Hoarding in Organizations",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20220264",
-          "date": ""
+          "date": "",
+          "date_source": "forthcoming_unassigned",
+          "published_at": "",
+          "issue_date": ""
         },
         {
           "title": "Optimal Public Transportation Networks: Evidence from the World’s Largest Bus Rapid Transit System in Jakarta",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20230768",
-          "date": ""
+          "date": "",
+          "date_source": "forthcoming_unassigned",
+          "published_at": "",
+          "issue_date": ""
         },
         {
           "title": "Risk Sharing Tests and Covariate Shocks: Drought, Floods, and Pests in Uganda",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20240664",
-          "date": ""
+          "date": "",
+          "date_source": "forthcoming_unassigned",
+          "published_at": "",
+          "issue_date": ""
         },
         {
           "title": "Manipulation-Robust Prediction",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20241087",
-          "date": ""
+          "date": "",
+          "date_source": "forthcoming_unassigned",
+          "published_at": "",
+          "issue_date": ""
         },
         {
           "title": "Merger Effects and Antitrust Enforcement: Evidence from US Consumer Packaged Goods",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20240497",
-          "date": ""
+          "date": "",
+          "date_source": "forthcoming_unassigned",
+          "published_at": "",
+          "issue_date": ""
         },
         {
           "title": "Designing Dynamic Reassignment Mechanisms: Evidence from GP Allocation",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20240617",
-          "date": ""
+          "date": "",
+          "date_source": "forthcoming_unassigned",
+          "published_at": "",
+          "issue_date": ""
         },
         {
           "title": "Community Engagement and Public Safety: Evidence from Crime Enforcement Targeting Immigrants",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20250305",
-          "date": ""
+          "date": "",
+          "date_source": "forthcoming_unassigned",
+          "published_at": "",
+          "issue_date": ""
         },
         {
           "title": "The Effect of Omitted Variables on the Sign of Regression Coefficients",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20230242",
-          "date": ""
+          "date": "",
+          "date_source": "forthcoming_unassigned",
+          "published_at": "",
+          "issue_date": ""
         },
         {
           "title": "The Effect of High-Tech Clusters on the Productivity of Top Inventors: Comment",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20231415",
-          "date": ""
+          "date": "",
+          "date_source": "forthcoming_unassigned",
+          "published_at": "",
+          "issue_date": ""
         },
         {
           "title": "The Aggregate Costs of Uninsurable Business Risk",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20230849",
-          "date": ""
+          "date": "",
+          "date_source": "forthcoming_unassigned",
+          "published_at": "",
+          "issue_date": ""
         },
         {
           "title": "Additionality and Asymmetric Information in Environmental Markets: Evidence from Conservation Auctions",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20250295",
-          "date": ""
+          "date": "",
+          "date_source": "forthcoming_unassigned",
+          "published_at": "",
+          "issue_date": ""
         },
         {
           "title": "Professional Motivations in the Public Sector: Evidence from Police Officers",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20231696",
-          "date": ""
+          "date": "",
+          "date_source": "forthcoming_unassigned",
+          "published_at": "",
+          "issue_date": ""
         },
         {
           "title": "Understanding High-Wage Firms: Monopoly, Monopsony, and Bargaining Power",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20230344",
-          "date": ""
+          "date": "",
+          "date_source": "forthcoming_unassigned",
+          "published_at": "",
+          "issue_date": ""
         },
         {
           "title": "Self-Fulfilling Fluctuations in HANK Economies",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20240642",
-          "date": ""
+          "date": "",
+          "date_source": "forthcoming_unassigned",
+          "published_at": "",
+          "issue_date": ""
         },
         {
           "title": "Ideological Alignment and Evidence-Based Policy Adoption",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20240673",
-          "date": ""
+          "date": "",
+          "date_source": "forthcoming_unassigned",
+          "published_at": "",
+          "issue_date": ""
         },
         {
           "title": "Energy Transitions in Regulated Markets",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20240094",
-          "date": ""
+          "date": "",
+          "date_source": "forthcoming_unassigned",
+          "published_at": "",
+          "issue_date": ""
         },
         {
           "title": "Market Opacity and Fragility: Why Liquidity Evaporates When It Is Most Needed",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20231613",
-          "date": ""
+          "date": "",
+          "date_source": "forthcoming_unassigned",
+          "published_at": "",
+          "issue_date": ""
         },
         {
           "title": "Identifying Preference for Early Resolution from Asset Prices",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20221351",
-          "date": ""
+          "date": "",
+          "date_source": "forthcoming_unassigned",
+          "published_at": "",
+          "issue_date": ""
         },
         {
           "title": "Germs in the Family: The Short- and Long-Term Consequences of Intra-Household Disease Spread",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20231521",
-          "date": ""
+          "date": "",
+          "date_source": "forthcoming_unassigned",
+          "published_at": "",
+          "issue_date": ""
         },
         {
           "title": "Friendship Networks and Political Opinions",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20231344",
-          "date": ""
+          "date": "",
+          "date_source": "forthcoming_unassigned",
+          "published_at": "",
+          "issue_date": ""
         },
         {
           "title": "Monetary Policy without Commitment",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20241925",
-          "date": ""
+          "date": "",
+          "date_source": "forthcoming_unassigned",
+          "published_at": "",
+          "issue_date": ""
         },
         {
           "title": "Contextually Private Mechanisms",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20240576",
-          "date": ""
+          "date": "",
+          "date_source": "forthcoming_unassigned",
+          "published_at": "",
+          "issue_date": ""
         },
         {
           "title": "The Productivity of Professions: Evidence from the Emergency Department",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20241007",
-          "date": ""
+          "date": "",
+          "date_source": "forthcoming_unassigned",
+          "published_at": "",
+          "issue_date": ""
         },
         {
           "title": "Spatial Spillovers of Conflict in Somalia",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20231699",
-          "date": ""
+          "date": "",
+          "date_source": "forthcoming_unassigned",
+          "published_at": "",
+          "issue_date": ""
         },
         {
           "title": "Uncertainty and Change: Survey Evidence of Firms’ Subjective Beliefs",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20240056",
-          "date": ""
+          "date": "",
+          "date_source": "forthcoming_unassigned",
+          "published_at": "",
+          "issue_date": ""
         },
         {
           "title": "Random Utility with Unobservable Alternatives",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20240712",
-          "date": ""
+          "date": "",
+          "date_source": "forthcoming_unassigned",
+          "published_at": "",
+          "issue_date": ""
         },
         {
           "title": "Quality Adjustment at Scale: Hedonic vs. Exact Demand-Based Price Indices",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20230766",
-          "date": ""
+          "date": "",
+          "date_source": "forthcoming_unassigned",
+          "published_at": "",
+          "issue_date": ""
         },
         {
           "title": "Elite Universities and the Intergenerational Transmission of Human and Social Capital",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20230802",
-          "date": ""
+          "date": "",
+          "date_source": "forthcoming_unassigned",
+          "published_at": "",
+          "issue_date": ""
         },
         {
           "title": "Mergers, Foreign Competition, and Jobs: Evidence from the U.S. Appliance Industry",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20230017",
-          "date": ""
+          "date": "",
+          "date_source": "forthcoming_unassigned",
+          "published_at": "",
+          "issue_date": ""
         },
         {
           "title": "The Private Provision of Public Services: Evidence from Random Assignment in Medicaid",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20230541",
-          "date": ""
+          "date": "",
+          "date_source": "forthcoming_unassigned",
+          "published_at": "",
+          "issue_date": ""
         },
         {
           "title": "Quota vs. Quality? Long-Term Gains from an Unusual Gender Quota",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20230376",
-          "date": ""
+          "date": "",
+          "date_source": "forthcoming_unassigned",
+          "published_at": "",
+          "issue_date": ""
         },
         {
           "title": "A Welfare Analysis of Policies Impacting Climate Change",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20250166",
-          "date": ""
+          "date": "",
+          "date_source": "forthcoming_unassigned",
+          "published_at": "",
+          "issue_date": ""
         }
       ],
       "samples": [
         {
           "title": "Remote Work and City Structure",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20231414",
-          "date": ""
+          "date": "",
+          "date_source": "forthcoming_unassigned",
+          "published_at": "",
+          "issue_date": ""
         },
         {
           "title": "A Theory of Price Caps on Non-Renewable Resources",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20250064",
-          "date": ""
+          "date": "",
+          "date_source": "forthcoming_unassigned",
+          "published_at": "",
+          "issue_date": ""
         },
         {
           "title": "Talent Hoarding in Organizations",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20220264",
-          "date": ""
+          "date": "",
+          "date_source": "forthcoming_unassigned",
+          "published_at": "",
+          "issue_date": ""
         }
       ],
       "notes": [],
@@ -2976,7 +3197,7 @@
       "status": 200,
       "content_type": "application/json",
       "transport": "fetch",
-      "fetch_ms": 802,
+      "fetch_ms": 692,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 12,
@@ -3093,7 +3314,7 @@
       "status": 200,
       "content_type": "application/json",
       "transport": "fetch",
-      "fetch_ms": 691,
+      "fetch_ms": 971,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 12,
@@ -3166,10 +3387,10 @@
           "authors": "Maximilian Grimm, Òscar Jordà, Moritz Schularick, Alan M Taylor"
         },
         {
-          "title": "Input Sourcing under Climate Risk: Evidence from U.S. Manufacturing Firms",
-          "url": "https://doi.org/10.1093/restud/rdag031",
+          "title": "A Model of Multiple Hypothesis Testing",
+          "url": "https://doi.org/10.1093/restud/rdag026",
           "date": "2026-05-14",
-          "authors": "Joaquin Blaum, Federico Esposito, Sebastian Heise"
+          "authors": "Davide Viviano, Kaspar Wüthrich, Paul Niehaus"
         }
       ],
       "samples": [
@@ -3210,7 +3431,7 @@
       "status": 200,
       "content_type": "text/html; charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1649,
+      "fetch_ms": 1593,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 11,
@@ -3332,7 +3553,7 @@
       "status": 200,
       "content_type": "text/html; charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1257,
+      "fetch_ms": 1628,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 13,
@@ -3341,92 +3562,132 @@
         {
           "title": "Unequal in the Spotlight: Gender Differences in How Serving on Prominent Firms Affects Directors’ New Board Appointments",
           "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251405843",
-          "date": "",
+          "date": "2026-06",
           "issue_date": "2026-06",
-          "date_source": "context_issue"
+          "date_source": "context_issue",
+          "published_at": ""
         },
         {
           "title": "Interpreting Violence: How Community Context Shapes Corporate Responses to Street Protests",
           "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261419416",
-          "date": "",
+          "date": "2026-06",
           "issue_date": "2026-06",
-          "date_source": "context_issue"
+          "date_source": "context_issue",
+          "published_at": ""
         },
         {
           "title": "Democratic Deviations: How Organizations Sustain Decentralization Commitments in the Face of Centralization Pressures",
           "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261421927",
-          "date": ""
+          "date": "2026-06",
+          "issue_date": "2026-06",
+          "date_source": "context_issue",
+          "published_at": ""
         },
         {
           "title": "Occupational Identity Formation in Unsaturated Spaces: The Layered Accretion of the American Astronaut’s Identity",
           "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261427746",
-          "date": ""
+          "date": "2026-06",
+          "issue_date": "2026-06",
+          "date_source": "context_issue",
+          "published_at": ""
         },
         {
           "title": "A Curation Approach to Identity Management: The Costs of Combining Identity Expression and Suppression",
           "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261431827",
-          "date": ""
+          "date": "2026-06",
+          "issue_date": "2026-06",
+          "date_source": "context_issue",
+          "published_at": ""
         },
         {
           "title": "David Lingelbach and Valentina Rodríguez Guerra. The Oligarchs’ Grip: Fusing Wealth and Power",
           "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251396889",
-          "date": ""
+          "date": "2026-06",
+          "issue_date": "2026-06",
+          "date_source": "context_issue",
+          "published_at": ""
         },
         {
           "title": "Daniel Susskind. Growth: A History and a Reckoning",
           "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251401212",
-          "date": ""
+          "date": "2026-06",
+          "issue_date": "2026-06",
+          "date_source": "context_issue",
+          "published_at": ""
         },
         {
           "title": "Andrew J. Hoffman. Business School and the Noble Purpose of the Market: Correcting the Systemic Failures of Shareholder Capitalism",
           "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251406234",
-          "date": ""
+          "date": "2026-06",
+          "issue_date": "2026-06",
+          "date_source": "context_issue",
+          "published_at": ""
         },
         {
           "title": "Alessandro Gerosa. The Hipster Economy: Taste and Authenticity in Late Modern Capitalism",
           "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251411308",
-          "date": ""
+          "date": "2026-06",
+          "issue_date": "2026-06",
+          "date_source": "context_issue",
+          "published_at": ""
         },
         {
           "title": "Timothy Kuhn. What Do Corporations Want? Communicative Capitalism, Corporate Purpose, and a New Theory of the Firm",
           "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251414373",
-          "date": ""
+          "date": "2026-06",
+          "issue_date": "2026-06",
+          "date_source": "context_issue",
+          "published_at": ""
         },
         {
           "title": "Alberto Galasso. The Management of Innovation: Managing and Creating Technology Capital",
           "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261417678",
-          "date": ""
+          "date": "2026-06",
+          "issue_date": "2026-06",
+          "date_source": "context_issue",
+          "published_at": ""
         },
         {
           "title": "Jeffrey Funk. Unicorns, Hype, and Bubbles: A Guide to Spotting, Avoiding, and Exploiting Investment Bubbles in Tech",
           "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261421932",
-          "date": ""
+          "date": "2026-06",
+          "issue_date": "2026-06",
+          "date_source": "context_issue",
+          "published_at": ""
         },
         {
           "title": "Kalpita Bhar Paul. Ecophenomenology and the Environmental Crisis in the Sundarbans: Towards a Community-Based Ethic",
           "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261428471",
-          "date": ""
+          "date": "2026-06",
+          "issue_date": "2026-06",
+          "date_source": "context_issue",
+          "published_at": ""
         }
       ],
       "samples": [
         {
           "title": "Unequal in the Spotlight: Gender Differences in How Serving on Prominent Firms Affects Directors’ New Board Appointments",
           "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251405843",
-          "date": "",
+          "date": "2026-06",
           "issue_date": "2026-06",
-          "date_source": "context_issue"
+          "date_source": "context_issue",
+          "published_at": ""
         },
         {
           "title": "Interpreting Violence: How Community Context Shapes Corporate Responses to Street Protests",
           "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261419416",
-          "date": "",
+          "date": "2026-06",
           "issue_date": "2026-06",
-          "date_source": "context_issue"
+          "date_source": "context_issue",
+          "published_at": ""
         },
         {
           "title": "Democratic Deviations: How Organizations Sustain Decentralization Commitments in the Face of Centralization Pressures",
           "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261421927",
-          "date": ""
+          "date": "2026-06",
+          "issue_date": "2026-06",
+          "date_source": "context_issue",
+          "published_at": ""
         }
       ],
       "notes": [],

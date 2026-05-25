@@ -1,5 +1,9 @@
 import { createHash } from "node:crypto";
 
+const canonicalJournalIds = new Map([
+  ["j1", "j14"],
+]);
+
 export function dateOnly(value = new Date()) {
   return value.toISOString().slice(0, 10);
 }
@@ -60,6 +64,12 @@ function isInsideWindow(normalizedDate, precision, since, until) {
   return false;
 }
 
+function isAfterWindow(normalizedDate, precision, until) {
+  if (precision === "day") return normalizedDate > until;
+  if (precision === "month") return monthRange(normalizedDate).start > until;
+  return false;
+}
+
 function bestDateInfo(...dateInfos) {
   return dateInfos.find((dateInfo) => dateInfo.status === "known") || {
     raw: "",
@@ -69,12 +79,28 @@ function bestDateInfo(...dateInfos) {
   };
 }
 
+function canonicalJournalId(id) {
+  return canonicalJournalIds.get(id) || id;
+}
+
+function normalizedDoi(value = "") {
+  const decoded = decodeURIComponent(String(value || ""));
+  const match = decoded.match(/\b10\.\d{4,9}\/[^\s?#"'<>]+/i);
+  return match ? match[0].replace(/[.,;:)\]]+$/, "").toLowerCase() : "";
+}
+
+function articleIdentity(source, article) {
+  const doi = normalizedDoi(article.doi || article.url);
+  if (doi) return `doi:${doi}`;
+  const url = String(article.url || "").split("#")[0].replace(/\/$/, "").toLowerCase();
+  if (url) return `url:${url}`;
+  return `title:${String(article.title || "").replace(/\s+/g, " ").trim().toLowerCase()}::${article.date || article.issue_date || article.published_at || ""}`;
+}
+
 function stableArticleId(source, article) {
   const key = [
-    source.journal_id,
-    article.url || "",
-    article.title || "",
-    article.date || "",
+    canonicalJournalId(source.journal_id),
+    articleIdentity(source, article),
   ].join("::");
   return createHash("sha1").update(key).digest("hex").slice(0, 16);
 }
@@ -102,22 +128,27 @@ function toWorkflowArticle(source, article, options, previousIds) {
   const issueInWindow = !publishedInWindow && isInsideWindow(issueDateInfo.normalized, issueDateInfo.precision, options.since, options.until);
   const isNew = !options.baseline && !previousIds.has(id);
   const hasNoUsableDate = publishedDateInfo.status === "unknown" && issueDateInfo.status === "unknown";
+  const futureIssueFirstSeen = isNew && !publishedInWindow && !issueInWindow && isAfterWindow(issueDateInfo.normalized, issueDateInfo.precision, options.until);
   const inclusionReason = publishedInWindow
     ? "date_within_window"
     : issueInWindow
       ? "issue_overlaps_window"
-      : hasNoUsableDate
-        ? "undated_latest_candidate"
-        : "outside_window";
+      : futureIssueFirstSeen
+        ? "future_issue_first_seen"
+        : hasNoUsableDate
+          ? "undated_latest_candidate"
+          : "outside_window";
   const pushBasis = !isNew
     ? ""
     : publishedInWindow
       ? "published_date"
       : issueInWindow
         ? "issue_date"
-        : hasNoUsableDate
-          ? "first_seen"
-          : "";
+        : futureIssueFirstSeen
+          ? "issue_date"
+          : hasNoUsableDate
+            ? "first_seen"
+            : "";
   const displayDateBasis = publishedDateInfo.status === "known"
     ? "published_at"
     : issueDateInfo.status === "known"
@@ -126,7 +157,8 @@ function toWorkflowArticle(source, article, options, previousIds) {
 
   return {
     id,
-    journal_id: source.journal_id,
+    journal_id: canonicalJournalId(source.journal_id),
+    source_journal_id: source.journal_id,
     journal_name: source.journal_name,
     source_type: source.type,
     source_url: source.source_url,
@@ -195,7 +227,7 @@ export function buildRecentWorkflow(results, options) {
       checkedAt,
       baseline: Boolean(options.baseline),
     }, seenBefore));
-    const sourceRecent = sourceItems.filter((article) => ["date_within_window", "issue_overlaps_window"].includes(article.inclusion_reason));
+    const sourceRecent = sourceItems.filter((article) => ["date_within_window", "issue_overlaps_window", "future_issue_first_seen"].includes(article.inclusion_reason));
     const sourceUndated = sourceItems.filter((article) => article.inclusion_reason === "undated_latest_candidate");
     const sourcePushQueue = sourceItems.filter((article) => Boolean(article.push_basis));
     recent.push(...sourceRecent);

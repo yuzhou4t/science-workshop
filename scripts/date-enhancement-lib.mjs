@@ -32,8 +32,45 @@ function publishedDate(year, month, day) {
   return `${year}-${pad2(month)}-${pad2(day)}`;
 }
 
+function metaContent(text, name) {
+  const escapedName = name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const nameFirst = new RegExp(`<meta\\b(?=[^>]*\\bname=["']${escapedName}["'])(?=[^>]*\\bcontent=["']([^"']+)["'])[^>]*>`, "i");
+  const propertyFirst = new RegExp(`<meta\\b(?=[^>]*\\bproperty=["']${escapedName}["'])(?=[^>]*\\bcontent=["']([^"']+)["'])[^>]*>`, "i");
+  return text.match(nameFirst)?.[1] || text.match(propertyFirst)?.[1] || "";
+}
+
+function firstMetaContent(text, names) {
+  for (const name of names) {
+    const value = metaContent(text, name);
+    if (value) return value;
+  }
+  return "";
+}
+
+function isoDay(value = "") {
+  const match = String(value).match(/\b(20\d{2})-(\d{1,2})-(\d{1,2})\b/);
+  return match ? publishedDate(match[1], match[2], match[3]) : "";
+}
+
 export function extractDateHints({ url = "", context = "" } = {}) {
   const haystack = `${url} ${context}`.replace(/\s+/g, " ");
+
+  const metaPublished = isoDay(firstMetaContent(context, [
+    "citation_online_date",
+    "citation_publication_date",
+    "citation_date",
+    "DC.Date",
+    "article:published_time",
+  ]));
+  const metaIssue = firstMetaContent(context, ["citation_issue"]);
+  if (metaPublished || metaIssue) {
+    const issueMonth = metaIssue ? issueDate(metaPublished.slice(0, 4), metaIssue.replace(/^0+/, "")) : "";
+    return {
+      ...(metaPublished ? { published_at: metaPublished } : {}),
+      ...(issueMonth ? { issue_date: issueMonth } : {}),
+      date_source: metaPublished ? "meta_published" : "meta_issue",
+    };
+  }
 
   const onlineMatch = haystack.match(/(?:Version of Record online|Published online|First published)\s*:?\s*(\d{1,2})\/(\d{1,2})\/(20\d{2})/i);
   if (onlineMatch) {
@@ -88,6 +125,12 @@ export function extractDateHints({ url = "", context = "" } = {}) {
     return {
       issue_date: issueDate(englishIssueMatch[2], monthNames.get(englishIssueMatch[1].toLowerCase())),
       date_source: "context_issue",
+    };
+  }
+
+  if (/\bForthcoming(?:\s+Article| Articles)?\b/i.test(haystack)) {
+    return {
+      date_source: "forthcoming_unassigned",
     };
   }
 

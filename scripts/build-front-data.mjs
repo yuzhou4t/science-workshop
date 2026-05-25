@@ -7,6 +7,7 @@ const workflow = JSON.parse(await readFile(workflowPath, "utf8"));
 const compactArticle = (article) => ({
   id: article.id,
   journal_id: article.journal_id,
+  source_journal_id: article.source_journal_id || article.journal_id,
   journal_name: article.journal_name,
   title: article.title,
   url: article.url,

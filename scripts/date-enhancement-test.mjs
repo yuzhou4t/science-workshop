@@ -50,4 +50,29 @@ assert.deepEqual(extractDateHints({
   date_source: "context_issue",
 });
 
+assert.deepEqual(extractDateHints({
+  url: "http://www.jryj.org.cn/CN/abstract/abstract1599.shtml",
+  context: '<meta name="citation_online_date" content="2026-04-24" /><meta name="citation_volume" content="550" /><meta name="citation_issue" content="4" />',
+}), {
+  published_at: "2026-04-24",
+  issue_date: "2026-04",
+  date_source: "meta_published",
+});
+
+assert.deepEqual(extractDateHints({
+  url: "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/466fea9b60d22ef094ec2459206a81f3",
+  context: '<meta name="citation_publication_date" content="2017-01-20"><meta name="citation_volume" content="v.14"><meta name="citation_issue" content="01">',
+}), {
+  published_at: "2017-01-20",
+  issue_date: "2017-01",
+  date_source: "meta_published",
+});
+
+assert.deepEqual(extractDateHints({
+  url: "https://www.aeaweb.org/articles?id=10.1257%2Faer.20250064",
+  context: "<div>American Economic Review (Forthcoming)</div>",
+}), {
+  date_source: "forthcoming_unassigned",
+});
+
 console.log("date enhancement rules ok");

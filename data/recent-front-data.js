@@ -1,277 +1,243 @@
 window.RECENT_WORKFLOW_DATA = {
   "summary": {
-    "checked_at": "2026-05-25T12:24:41.616Z",
+    "checked_at": "2026-05-25T13:06:41.100Z",
     "since": "2026-04-25",
     "until": "2026-05-25",
     "sources_total": 22,
     "sources_ready": 22,
-    "recent_articles": 147,
-    "new_recent_articles": 147,
-    "issue_dated_articles": 60,
-    "new_undated_articles": 61,
-    "undated_candidates": 61,
-    "push_queue_articles": 208
+    "recent_articles": 132,
+    "new_recent_articles": 132,
+    "issue_dated_articles": 55,
+    "new_undated_articles": 34,
+    "undated_candidates": 34,
+    "push_queue_articles": 166
   },
   "push_queue": [
     {
-      "id": "02ea1b52ffa77ad5",
+      "id": "659de30b493317cd",
+      "journal_id": "j22",
+      "source_journal_id": "j22",
+      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
+      "title": "A Curation Approach to Identity Management: The Costs of Combining Identity Expression and Suppression",
+      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261431827",
+      "authors": "",
+      "published_at": "",
+      "issue_date": "2026-06",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2026-06",
+      "display_date_basis": "issue_date",
+      "push_basis": "issue_date",
+      "extraction_rule": "asq-sage-links",
+      "date_source": "context_issue"
+    },
+    {
+      "id": "582339f384ffbda9",
+      "journal_id": "j22",
+      "source_journal_id": "j22",
+      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
+      "title": "Alberto Galasso. The Management of Innovation: Managing and Creating Technology Capital",
+      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261417678",
+      "authors": "",
+      "published_at": "",
+      "issue_date": "2026-06",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2026-06",
+      "display_date_basis": "issue_date",
+      "push_basis": "issue_date",
+      "extraction_rule": "asq-sage-links",
+      "date_source": "context_issue"
+    },
+    {
+      "id": "df24c56464ed0930",
+      "journal_id": "j22",
+      "source_journal_id": "j22",
+      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
+      "title": "Alessandro Gerosa. The Hipster Economy: Taste and Authenticity in Late Modern Capitalism",
+      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251411308",
+      "authors": "",
+      "published_at": "",
+      "issue_date": "2026-06",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2026-06",
+      "display_date_basis": "issue_date",
+      "push_basis": "issue_date",
+      "extraction_rule": "asq-sage-links",
+      "date_source": "context_issue"
+    },
+    {
+      "id": "a18091e5df9305a0",
+      "journal_id": "j22",
+      "source_journal_id": "j22",
+      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
+      "title": "Andrew J. Hoffman. Business School and the Noble Purpose of the Market: Correcting the Systemic Failures of Shareholder Capitalism",
+      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251406234",
+      "authors": "",
+      "published_at": "",
+      "issue_date": "2026-06",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2026-06",
+      "display_date_basis": "issue_date",
+      "push_basis": "issue_date",
+      "extraction_rule": "asq-sage-links",
+      "date_source": "context_issue"
+    },
+    {
+      "id": "1d87d42f27138fb6",
+      "journal_id": "j22",
+      "source_journal_id": "j22",
+      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
+      "title": "Daniel Susskind. Growth: A History and a Reckoning",
+      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251401212",
+      "authors": "",
+      "published_at": "",
+      "issue_date": "2026-06",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2026-06",
+      "display_date_basis": "issue_date",
+      "push_basis": "issue_date",
+      "extraction_rule": "asq-sage-links",
+      "date_source": "context_issue"
+    },
+    {
+      "id": "5be451c06b7e8f5a",
+      "journal_id": "j22",
+      "source_journal_id": "j22",
+      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
+      "title": "David Lingelbach and Valentina Rodríguez Guerra. The Oligarchs’ Grip: Fusing Wealth and Power",
+      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251396889",
+      "authors": "",
+      "published_at": "",
+      "issue_date": "2026-06",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2026-06",
+      "display_date_basis": "issue_date",
+      "push_basis": "issue_date",
+      "extraction_rule": "asq-sage-links",
+      "date_source": "context_issue"
+    },
+    {
+      "id": "48b8b21077d6073d",
+      "journal_id": "j22",
+      "source_journal_id": "j22",
+      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
+      "title": "Democratic Deviations: How Organizations Sustain Decentralization Commitments in the Face of Centralization Pressures",
+      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261421927",
+      "authors": "",
+      "published_at": "",
+      "issue_date": "2026-06",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2026-06",
+      "display_date_basis": "issue_date",
+      "push_basis": "issue_date",
+      "extraction_rule": "asq-sage-links",
+      "date_source": "context_issue"
+    },
+    {
+      "id": "f38741cc0fe59db4",
+      "journal_id": "j22",
+      "source_journal_id": "j22",
+      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
+      "title": "Interpreting Violence: How Community Context Shapes Corporate Responses to Street Protests",
+      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261419416",
+      "authors": "",
+      "published_at": "",
+      "issue_date": "2026-06",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2026-06",
+      "display_date_basis": "issue_date",
+      "push_basis": "issue_date",
+      "extraction_rule": "asq-sage-links",
+      "date_source": "context_issue"
+    },
+    {
+      "id": "242e08c506e211d5",
+      "journal_id": "j22",
+      "source_journal_id": "j22",
+      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
+      "title": "Jeffrey Funk. Unicorns, Hype, and Bubbles: A Guide to Spotting, Avoiding, and Exploiting Investment Bubbles in Tech",
+      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261421932",
+      "authors": "",
+      "published_at": "",
+      "issue_date": "2026-06",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2026-06",
+      "display_date_basis": "issue_date",
+      "push_basis": "issue_date",
+      "extraction_rule": "asq-sage-links",
+      "date_source": "context_issue"
+    },
+    {
+      "id": "5e80e6b06655507c",
+      "journal_id": "j22",
+      "source_journal_id": "j22",
+      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
+      "title": "Kalpita Bhar Paul. Ecophenomenology and the Environmental Crisis in the Sundarbans: Towards a Community-Based Ethic",
+      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261428471",
+      "authors": "",
+      "published_at": "",
+      "issue_date": "2026-06",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2026-06",
+      "display_date_basis": "issue_date",
+      "push_basis": "issue_date",
+      "extraction_rule": "asq-sage-links",
+      "date_source": "context_issue"
+    },
+    {
+      "id": "fc9b3e633a5aed07",
+      "journal_id": "j22",
+      "source_journal_id": "j22",
+      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
+      "title": "Occupational Identity Formation in Unsaturated Spaces: The Layered Accretion of the American Astronaut’s Identity",
+      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261427746",
+      "authors": "",
+      "published_at": "",
+      "issue_date": "2026-06",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2026-06",
+      "display_date_basis": "issue_date",
+      "push_basis": "issue_date",
+      "extraction_rule": "asq-sage-links",
+      "date_source": "context_issue"
+    },
+    {
+      "id": "cd47acac39372f3d",
+      "journal_id": "j22",
+      "source_journal_id": "j22",
+      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
+      "title": "Timothy Kuhn. What Do Corporations Want? Communicative Capitalism, Corporate Purpose, and a New Theory of the Firm",
+      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251414373",
+      "authors": "",
+      "published_at": "",
+      "issue_date": "2026-06",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2026-06",
+      "display_date_basis": "issue_date",
+      "push_basis": "issue_date",
+      "extraction_rule": "asq-sage-links",
+      "date_source": "context_issue"
+    },
+    {
+      "id": "bbea2bd0369b66c1",
+      "journal_id": "j22",
+      "source_journal_id": "j22",
+      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
+      "title": "Unequal in the Spotlight: Gender Differences in How Serving on Prominent Firms Affects Directors’ New Board Appointments",
+      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251405843",
+      "authors": "",
+      "published_at": "",
+      "issue_date": "2026-06",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2026-06",
+      "display_date_basis": "issue_date",
+      "push_basis": "issue_date",
+      "extraction_rule": "asq-sage-links",
+      "date_source": "context_issue"
+    },
+    {
+      "id": "f2d4d2dde220f628",
       "journal_id": "j6",
-      "journal_name": "管理世界",
-      "title": "超越经济激励：平台经济中的评论激励机制、市场交易行为与社会福利",
-      "url": "https://www.macrodatas.cn/article/1779681420#directory-08",
-      "authors": "罗俊，潘佳艺，邹乐豪",
-      "published_at": "2026-05-25",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-25",
-      "display_date_basis": "published_at",
-      "push_basis": "published_date",
-      "extraction_rule": "macrodatas-issue-list",
-      "date_source": ""
-    },
-    {
-      "id": "16d24f92a209fe30",
-      "journal_id": "j8",
-      "journal_name": "公共管理学报",
-      "title": "城市居民垃圾分类的影响因素研究",
-      "url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/466fea9b60d22ef094ec2459206a81f3",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-25",
-      "display_date_basis": "first_seen_at",
-      "push_basis": "first_seen",
-      "extraction_rule": "cnki-portal-paper",
-      "date_source": ""
-    },
-    {
-      "id": "903b5064d6d38bbe",
-      "journal_id": "j6",
-      "journal_name": "管理世界",
-      "title": "从“三农”术语革命迈向三农学——中国式现代化的“三农”经验与自主理论创新",
-      "url": "https://www.macrodatas.cn/article/1779681420#directory-04",
-      "authors": "朱信凯，陈家炜，高原",
-      "published_at": "2026-05-25",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-25",
-      "display_date_basis": "published_at",
-      "push_basis": "published_date",
-      "extraction_rule": "macrodatas-issue-list",
-      "date_source": ""
-    },
-    {
-      "id": "00100e6f72ab321a",
-      "journal_id": "j6",
-      "journal_name": "管理世界",
-      "title": "从业务主导到技术主导的制度逻辑变革——基于圆通数字化转型的案例研究",
-      "url": "https://www.macrodatas.cn/article/1779681420#directory-10",
-      "authors": "董静，吕孟丽，王诗翔",
-      "published_at": "2026-05-25",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-25",
-      "display_date_basis": "published_at",
-      "push_basis": "published_date",
-      "extraction_rule": "macrodatas-issue-list",
-      "date_source": ""
-    },
-    {
-      "id": "53fd90c47c579dd3",
-      "journal_id": "j5",
-      "journal_name": "金融研究",
-      "title": "地方隐性担保破除对域内中小银行风险的影响",
-      "url": "http://www.jryj.org.cn/CN/abstract/abstract1599.shtml",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-25",
-      "display_date_basis": "first_seen_at",
-      "push_basis": "first_seen",
-      "extraction_rule": "jryj-html",
-      "date_source": ""
-    },
-    {
-      "id": "cb5276bcde2b40f4",
-      "journal_id": "j5",
-      "journal_name": "金融研究",
-      "title": "分析师跟踪对企业产品质量违规的影响研究",
-      "url": "http://www.jryj.org.cn/CN/abstract/abstract1606.shtml",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-25",
-      "display_date_basis": "first_seen_at",
-      "push_basis": "first_seen",
-      "extraction_rule": "jryj-html",
-      "date_source": ""
-    },
-    {
-      "id": "46f6a5262b8400e5",
-      "journal_id": "j5",
-      "journal_name": "金融研究",
-      "title": "个人破产制度与地区创业活力——基于中国个人破产试点的经验证据",
-      "url": "http://www.jryj.org.cn/CN/abstract/abstract1603.shtml",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-25",
-      "display_date_basis": "first_seen_at",
-      "push_basis": "first_seen",
-      "extraction_rule": "jryj-html",
-      "date_source": ""
-    },
-    {
-      "id": "bbd65826fae2a979",
-      "journal_id": "j6",
-      "journal_name": "管理世界",
-      "title": "工程管理基础理论：建构管理学中国自主知识体系的学理表征",
-      "url": "https://www.macrodatas.cn/article/1779681420#directory-03",
-      "authors": "盛昭瀚",
-      "published_at": "2026-05-25",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-25",
-      "display_date_basis": "published_at",
-      "push_basis": "published_date",
-      "extraction_rule": "macrodatas-issue-list",
-      "date_source": ""
-    },
-    {
-      "id": "832e85239543e060",
-      "journal_id": "j5",
-      "journal_name": "金融研究",
-      "title": "公众预期、政策协调与房地产金融宏观审慎政策有效性",
-      "url": "http://www.jryj.org.cn/CN/abstract/abstract1596.shtml",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-25",
-      "display_date_basis": "first_seen_at",
-      "push_basis": "first_seen",
-      "extraction_rule": "jryj-html",
-      "date_source": ""
-    },
-    {
-      "id": "14ca8eaf215aea08",
-      "journal_id": "j5",
-      "journal_name": "金融研究",
-      "title": "供应链网络中创新与企业全要素生产率提升:供应商创新视角",
-      "url": "http://www.jryj.org.cn/CN/abstract/abstract1602.shtml",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-25",
-      "display_date_basis": "first_seen_at",
-      "push_basis": "first_seen",
-      "extraction_rule": "jryj-html",
-      "date_source": ""
-    },
-    {
-      "id": "5558797677dfb623",
-      "journal_id": "j8",
-      "journal_name": "公共管理学报",
-      "title": "共享单车:互联网技术与公共服务中的协同治理",
-      "url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/9cb42fa7075e5ea7d5e122134f264d3d",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-25",
-      "display_date_basis": "first_seen_at",
-      "push_basis": "first_seen",
-      "extraction_rule": "cnki-portal-paper",
-      "date_source": ""
-    },
-    {
-      "id": "e62c017b79e652ef",
-      "journal_id": "j6",
-      "journal_name": "管理世界",
-      "title": "构建中国公共管理自主知识体系的系统性思维和建构性路径",
-      "url": "https://www.macrodatas.cn/article/1779681420#directory-02",
-      "authors": "薛澜，赵静",
-      "published_at": "2026-05-25",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-25",
-      "display_date_basis": "published_at",
-      "push_basis": "published_date",
-      "extraction_rule": "macrodatas-issue-list",
-      "date_source": ""
-    },
-    {
-      "id": "e79a9ac2aa13e4dc",
-      "journal_id": "j6",
-      "journal_name": "管理世界",
-      "title": "构建中国化时代化的中国管理学自主知识体系",
-      "url": "https://www.macrodatas.cn/article/1779681420#directory-05",
-      "authors": "易靖韬",
-      "published_at": "2026-05-25",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-25",
-      "display_date_basis": "published_at",
-      "push_basis": "published_date",
-      "extraction_rule": "macrodatas-issue-list",
-      "date_source": ""
-    },
-    {
-      "id": "6ee5f4cbe92024a4",
-      "journal_id": "j5",
-      "journal_name": "金融研究",
-      "title": "关税冲击与人民币货币锚地位调整——来自2018—2020年中美贸易摩擦的经验证据",
-      "url": "http://www.jryj.org.cn/CN/abstract/abstract1597.shtml",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-25",
-      "display_date_basis": "first_seen_at",
-      "push_basis": "first_seen",
-      "extraction_rule": "jryj-html",
-      "date_source": ""
-    },
-    {
-      "id": "7e2ec80020d013c0",
-      "journal_id": "j5",
-      "journal_name": "金融研究",
-      "title": "基层医疗资源下沉与农村家庭贫困脆弱性——来自紧密型医共体建设的证据",
-      "url": "http://www.jryj.org.cn/CN/abstract/abstract1605.shtml",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-25",
-      "display_date_basis": "first_seen_at",
-      "push_basis": "first_seen",
-      "extraction_rule": "jryj-html",
-      "date_source": ""
-    },
-    {
-      "id": "5a94882302a142cb",
-      "journal_id": "j5",
-      "journal_name": "金融研究",
-      "title": "金融分权、信贷错配与地方中小银行风险",
-      "url": "http://www.jryj.org.cn/CN/abstract/abstract1598.shtml",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-25",
-      "display_date_basis": "first_seen_at",
-      "push_basis": "first_seen",
-      "extraction_rule": "jryj-html",
-      "date_source": ""
-    },
-    {
-      "id": "45ba45507e055438",
-      "journal_id": "j6",
+      "source_journal_id": "j6",
       "journal_name": "管理世界",
       "title": "科技强国建设中的双重创新动力源——一个知识流创新链分析框架及其考证",
       "url": "https://www.macrodatas.cn/article/1779681420#directory-01",
@@ -286,168 +252,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "e791193e4b015262",
-      "journal_id": "j5",
-      "journal_name": "金融研究",
-      "title": "媒体负面报道与银行信贷——基于信息中介和外部监督的双重视角",
-      "url": "http://www.jryj.org.cn/CN/abstract/abstract1600.shtml",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-25",
-      "display_date_basis": "first_seen_at",
-      "push_basis": "first_seen",
-      "extraction_rule": "jryj-html",
-      "date_source": ""
-    },
-    {
-      "id": "a521e6a6760b2e45",
-      "journal_id": "j6",
-      "journal_name": "管理世界",
-      "title": "数智管理模式：概念界定、理论框架与未来展望",
-      "url": "https://www.macrodatas.cn/article/1779681420#directory-11",
-      "authors": "孙新波，何志伟，李俊悦",
-      "published_at": "2026-05-25",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-25",
-      "display_date_basis": "published_at",
-      "push_basis": "published_date",
-      "extraction_rule": "macrodatas-issue-list",
-      "date_source": ""
-    },
-    {
-      "id": "12fe6df4a8b09cdf",
-      "journal_id": "j6",
-      "journal_name": "管理世界",
-      "title": "数字经济的空间效应——基于贸易成本的视角",
-      "url": "https://www.macrodatas.cn/article/1779681420#directory-07",
-      "authors": "刘琳，蔡宏波，毛健",
-      "published_at": "2026-05-25",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-25",
-      "display_date_basis": "published_at",
-      "push_basis": "published_date",
-      "extraction_rule": "macrodatas-issue-list",
-      "date_source": ""
-    },
-    {
-      "id": "1f4c29aa2f876984",
-      "journal_id": "j5",
-      "journal_name": "金融研究",
-      "title": "碳减排政策、绿色技术采用与转型风险",
-      "url": "http://www.jryj.org.cn/CN/abstract/abstract1604.shtml",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-25",
-      "display_date_basis": "first_seen_at",
-      "push_basis": "first_seen",
-      "extraction_rule": "jryj-html",
-      "date_source": ""
-    },
-    {
-      "id": "1fa2f3f1d09dede6",
-      "journal_id": "j8",
-      "journal_name": "公共管理学报",
-      "title": "网络治理:公共管理的新框架",
-      "url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/788b9d590a93de9b5e4797526c02eb61",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-25",
-      "display_date_basis": "first_seen_at",
-      "push_basis": "first_seen",
-      "extraction_rule": "cnki-portal-paper",
-      "date_source": ""
-    },
-    {
-      "id": "36c6a93e74d900ef",
-      "journal_id": "j5",
-      "journal_name": "金融研究",
-      "title": "要素市场一体化背景下的政府引导基金跨区域流动——来自国家级城市群规划的证据",
-      "url": "http://www.jryj.org.cn/CN/abstract/abstract1601.shtml",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-25",
-      "display_date_basis": "first_seen_at",
-      "push_basis": "first_seen",
-      "extraction_rule": "jryj-html",
-      "date_source": ""
-    },
-    {
-      "id": "7ca2f0e1ba20ad8f",
-      "journal_id": "j8",
-      "journal_name": "公共管理学报",
-      "title": "以公共价值为基础的政府绩效治理——源起、架构与研究问题",
-      "url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/d79d1af464dd99db301857f3c4202b18",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-25",
-      "display_date_basis": "first_seen_at",
-      "push_basis": "first_seen",
-      "extraction_rule": "cnki-portal-paper",
-      "date_source": ""
-    },
-    {
-      "id": "c87daaa684ae4d94",
-      "journal_id": "j8",
-      "journal_name": "公共管理学报",
-      "title": "用文献计量研究重塑政策文本数据分析——政策文献计量的起源、迁移与方法创新",
-      "url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/d9146b8716eeeb8b7e4a3c717763380e",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-25",
-      "display_date_basis": "first_seen_at",
-      "push_basis": "first_seen",
-      "extraction_rule": "cnki-portal-paper",
-      "date_source": ""
-    },
-    {
-      "id": "22dc300e80b6d2d8",
-      "journal_id": "j6",
-      "journal_name": "管理世界",
-      "title": "增值税大规模留抵退税的宏观效应估计",
-      "url": "https://www.macrodatas.cn/article/1779681420#directory-06",
-      "authors": "聂海峰，刘怡",
-      "published_at": "2026-05-25",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-25",
-      "display_date_basis": "published_at",
-      "push_basis": "published_date",
-      "extraction_rule": "macrodatas-issue-list",
-      "date_source": ""
-    },
-    {
-      "id": "448937cf3814c000",
-      "journal_id": "j22",
-      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
-      "title": "A Curation Approach to Identity Management: The Costs of Combining Identity Expression and Suppression",
-      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261431827",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-25",
-      "display_date_basis": "first_seen_at",
-      "push_basis": "first_seen",
-      "extraction_rule": "asq-sage-links",
-      "date_source": ""
-    },
-    {
-      "id": "d08f03d3fe31f8cf",
+      "id": "792766c2ec5eb401",
       "journal_id": "j16",
+      "source_journal_id": "j16",
       "journal_name": "AMERICAN ECONOMIC REVIEW",
       "title": "A Theory of Price Caps on Non-Renewable Resources",
       "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20250064",
@@ -459,11 +266,12 @@ window.RECENT_WORKFLOW_DATA = {
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": ""
+      "date_source": "forthcoming_unassigned"
     },
     {
-      "id": "ff2a0fcd05b86057",
+      "id": "385c12ce48555ef4",
       "journal_id": "j16",
+      "source_journal_id": "j16",
       "journal_name": "AMERICAN ECONOMIC REVIEW",
       "title": "A Welfare Analysis of Policies Impacting Climate Change",
       "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20250166",
@@ -475,11 +283,12 @@ window.RECENT_WORKFLOW_DATA = {
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": ""
+      "date_source": "forthcoming_unassigned"
     },
     {
-      "id": "19f1e8872a9141a9",
+      "id": "0bab521813fa9850",
       "journal_id": "j16",
+      "source_journal_id": "j16",
       "journal_name": "AMERICAN ECONOMIC REVIEW",
       "title": "Additionality and Asymmetric Information in Environmental Markets: Evidence from Conservation Auctions",
       "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20250295",
@@ -491,75 +300,12 @@ window.RECENT_WORKFLOW_DATA = {
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": ""
+      "date_source": "forthcoming_unassigned"
     },
     {
-      "id": "12bf50e31d5b7f79",
-      "journal_id": "j6",
-      "journal_name": "管理世界",
-      "title": "AI协作系统、智能定制惯例与智能制造企业数字创新——一个复杂中介模型",
-      "url": "https://www.macrodatas.cn/article/1779681420#directory-09",
-      "authors": "马鸿佳，等",
-      "published_at": "2026-05-25",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-25",
-      "display_date_basis": "published_at",
-      "push_basis": "published_date",
-      "extraction_rule": "macrodatas-issue-list",
-      "date_source": ""
-    },
-    {
-      "id": "2bbdaabf2c5a4eda",
-      "journal_id": "j22",
-      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
-      "title": "Alberto Galasso. The Management of Innovation: Managing and Creating Technology Capital",
-      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261417678",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-25",
-      "display_date_basis": "first_seen_at",
-      "push_basis": "first_seen",
-      "extraction_rule": "asq-sage-links",
-      "date_source": ""
-    },
-    {
-      "id": "8118ff086e375b29",
-      "journal_id": "j22",
-      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
-      "title": "Alessandro Gerosa. The Hipster Economy: Taste and Authenticity in Late Modern Capitalism",
-      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251411308",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-25",
-      "display_date_basis": "first_seen_at",
-      "push_basis": "first_seen",
-      "extraction_rule": "asq-sage-links",
-      "date_source": ""
-    },
-    {
-      "id": "c9e57c4466349f48",
-      "journal_id": "j22",
-      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
-      "title": "Andrew J. Hoffman. Business School and the Noble Purpose of the Market: Correcting the Systemic Failures of Shareholder Capitalism",
-      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251406234",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-25",
-      "display_date_basis": "first_seen_at",
-      "push_basis": "first_seen",
-      "extraction_rule": "asq-sage-links",
-      "date_source": ""
-    },
-    {
-      "id": "d321f8828d44a2fa",
+      "id": "30bac7102eacd816",
       "journal_id": "j16",
+      "source_journal_id": "j16",
       "journal_name": "AMERICAN ECONOMIC REVIEW",
       "title": "Community Engagement and Public Safety: Evidence from Crime Enforcement Targeting Immigrants",
       "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20250305",
@@ -571,11 +317,12 @@ window.RECENT_WORKFLOW_DATA = {
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": ""
+      "date_source": "forthcoming_unassigned"
     },
     {
-      "id": "a80cdeec8fd026e7",
+      "id": "2373a9cf020f1e5a",
       "journal_id": "j16",
+      "source_journal_id": "j16",
       "journal_name": "AMERICAN ECONOMIC REVIEW",
       "title": "Contextually Private Mechanisms",
       "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20240576",
@@ -587,59 +334,12 @@ window.RECENT_WORKFLOW_DATA = {
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": ""
+      "date_source": "forthcoming_unassigned"
     },
     {
-      "id": "2ec152cbf5469d18",
-      "journal_id": "j22",
-      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
-      "title": "Daniel Susskind. Growth: A History and a Reckoning",
-      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251401212",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-25",
-      "display_date_basis": "first_seen_at",
-      "push_basis": "first_seen",
-      "extraction_rule": "asq-sage-links",
-      "date_source": ""
-    },
-    {
-      "id": "c68d5f57b6528b5c",
-      "journal_id": "j22",
-      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
-      "title": "David Lingelbach and Valentina Rodríguez Guerra. The Oligarchs’ Grip: Fusing Wealth and Power",
-      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251396889",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-25",
-      "display_date_basis": "first_seen_at",
-      "push_basis": "first_seen",
-      "extraction_rule": "asq-sage-links",
-      "date_source": ""
-    },
-    {
-      "id": "8539c679b49127f8",
-      "journal_id": "j22",
-      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
-      "title": "Democratic Deviations: How Organizations Sustain Decentralization Commitments in the Face of Centralization Pressures",
-      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261421927",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-25",
-      "display_date_basis": "first_seen_at",
-      "push_basis": "first_seen",
-      "extraction_rule": "asq-sage-links",
-      "date_source": ""
-    },
-    {
-      "id": "ab0d50a767b72a60",
+      "id": "a48b8476a7e5c26f",
       "journal_id": "j16",
+      "source_journal_id": "j16",
       "journal_name": "AMERICAN ECONOMIC REVIEW",
       "title": "Designing Dynamic Reassignment Mechanisms: Evidence from GP Allocation",
       "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20240617",
@@ -651,11 +351,12 @@ window.RECENT_WORKFLOW_DATA = {
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": ""
+      "date_source": "forthcoming_unassigned"
     },
     {
-      "id": "372072a41a92745a",
+      "id": "ed288d860ab7f8bf",
       "journal_id": "j16",
+      "source_journal_id": "j16",
       "journal_name": "AMERICAN ECONOMIC REVIEW",
       "title": "Elite Universities and the Intergenerational Transmission of Human and Social Capital",
       "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20230802",
@@ -667,11 +368,12 @@ window.RECENT_WORKFLOW_DATA = {
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": ""
+      "date_source": "forthcoming_unassigned"
     },
     {
-      "id": "8285093e0c226056",
+      "id": "072fff7bad21ed1e",
       "journal_id": "j16",
+      "source_journal_id": "j16",
       "journal_name": "AMERICAN ECONOMIC REVIEW",
       "title": "Energy Transitions in Regulated Markets",
       "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20240094",
@@ -683,11 +385,12 @@ window.RECENT_WORKFLOW_DATA = {
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": ""
+      "date_source": "forthcoming_unassigned"
     },
     {
-      "id": "469d04e9d05fd475",
+      "id": "a539c005172e8eb2",
       "journal_id": "j16",
+      "source_journal_id": "j16",
       "journal_name": "AMERICAN ECONOMIC REVIEW",
       "title": "Friendship Networks and Political Opinions",
       "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20231344",
@@ -699,11 +402,12 @@ window.RECENT_WORKFLOW_DATA = {
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": ""
+      "date_source": "forthcoming_unassigned"
     },
     {
-      "id": "c75e19243501a868",
+      "id": "8f6053674dba91ec",
       "journal_id": "j16",
+      "source_journal_id": "j16",
       "journal_name": "AMERICAN ECONOMIC REVIEW",
       "title": "Germs in the Family: The Short- and Long-Term Consequences of Intra-Household Disease Spread",
       "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20231521",
@@ -715,11 +419,12 @@ window.RECENT_WORKFLOW_DATA = {
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": ""
+      "date_source": "forthcoming_unassigned"
     },
     {
-      "id": "fc4ffa57caabac7a",
+      "id": "c13a299df336c415",
       "journal_id": "j16",
+      "source_journal_id": "j16",
       "journal_name": "AMERICAN ECONOMIC REVIEW",
       "title": "Identifying Preference for Early Resolution from Asset Prices",
       "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20221351",
@@ -731,11 +436,12 @@ window.RECENT_WORKFLOW_DATA = {
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": ""
+      "date_source": "forthcoming_unassigned"
     },
     {
-      "id": "c2491aca33132904",
+      "id": "3131f569babd4275",
       "journal_id": "j16",
+      "source_journal_id": "j16",
       "journal_name": "AMERICAN ECONOMIC REVIEW",
       "title": "Ideological Alignment and Evidence-Based Policy Adoption",
       "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20240673",
@@ -747,43 +453,12 @@ window.RECENT_WORKFLOW_DATA = {
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": ""
+      "date_source": "forthcoming_unassigned"
     },
     {
-      "id": "816d8d714475f9c8",
-      "journal_id": "j22",
-      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
-      "title": "Jeffrey Funk. Unicorns, Hype, and Bubbles: A Guide to Spotting, Avoiding, and Exploiting Investment Bubbles in Tech",
-      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261421932",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-25",
-      "display_date_basis": "first_seen_at",
-      "push_basis": "first_seen",
-      "extraction_rule": "asq-sage-links",
-      "date_source": ""
-    },
-    {
-      "id": "b9994563eb53d45a",
-      "journal_id": "j22",
-      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
-      "title": "Kalpita Bhar Paul. Ecophenomenology and the Environmental Crisis in the Sundarbans: Towards a Community-Based Ethic",
-      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261428471",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-25",
-      "display_date_basis": "first_seen_at",
-      "push_basis": "first_seen",
-      "extraction_rule": "asq-sage-links",
-      "date_source": ""
-    },
-    {
-      "id": "0647c1ad919038f9",
+      "id": "5932a29df1df5a20",
       "journal_id": "j16",
+      "source_journal_id": "j16",
       "journal_name": "AMERICAN ECONOMIC REVIEW",
       "title": "Manipulation-Robust Prediction",
       "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20241087",
@@ -795,11 +470,12 @@ window.RECENT_WORKFLOW_DATA = {
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": ""
+      "date_source": "forthcoming_unassigned"
     },
     {
-      "id": "1c635533e0151ae8",
+      "id": "d39df91d7299bb32",
       "journal_id": "j16",
+      "source_journal_id": "j16",
       "journal_name": "AMERICAN ECONOMIC REVIEW",
       "title": "Market Opacity and Fragility: Why Liquidity Evaporates When It Is Most Needed",
       "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20231613",
@@ -811,11 +487,12 @@ window.RECENT_WORKFLOW_DATA = {
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": ""
+      "date_source": "forthcoming_unassigned"
     },
     {
-      "id": "26c7ce97a0af43ad",
+      "id": "f80a20bce49e55c4",
       "journal_id": "j16",
+      "source_journal_id": "j16",
       "journal_name": "AMERICAN ECONOMIC REVIEW",
       "title": "Merger Effects and Antitrust Enforcement: Evidence from US Consumer Packaged Goods",
       "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20240497",
@@ -827,11 +504,12 @@ window.RECENT_WORKFLOW_DATA = {
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": ""
+      "date_source": "forthcoming_unassigned"
     },
     {
-      "id": "3d4dcdb8261600bd",
+      "id": "e28a79dc7620343b",
       "journal_id": "j16",
+      "source_journal_id": "j16",
       "journal_name": "AMERICAN ECONOMIC REVIEW",
       "title": "Mergers, Foreign Competition, and Jobs: Evidence from the U.S. Appliance Industry",
       "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20230017",
@@ -843,11 +521,12 @@ window.RECENT_WORKFLOW_DATA = {
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": ""
+      "date_source": "forthcoming_unassigned"
     },
     {
-      "id": "74b8a2079bca659f",
+      "id": "b0214c17ef3874ce",
       "journal_id": "j16",
+      "source_journal_id": "j16",
       "journal_name": "AMERICAN ECONOMIC REVIEW",
       "title": "Monetary Policy without Commitment",
       "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20241925",
@@ -859,27 +538,12 @@ window.RECENT_WORKFLOW_DATA = {
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": ""
+      "date_source": "forthcoming_unassigned"
     },
     {
-      "id": "9da0064eec9148c0",
-      "journal_id": "j22",
-      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
-      "title": "Occupational Identity Formation in Unsaturated Spaces: The Layered Accretion of the American Astronaut’s Identity",
-      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392261427746",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-25",
-      "display_date_basis": "first_seen_at",
-      "push_basis": "first_seen",
-      "extraction_rule": "asq-sage-links",
-      "date_source": ""
-    },
-    {
-      "id": "0acea84545e323b4",
+      "id": "cc39fe34152dd5a9",
       "journal_id": "j16",
+      "source_journal_id": "j16",
       "journal_name": "AMERICAN ECONOMIC REVIEW",
       "title": "Optimal Public Transportation Networks: Evidence from the World’s Largest Bus Rapid Transit System in Jakarta",
       "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20230768",
@@ -891,11 +555,12 @@ window.RECENT_WORKFLOW_DATA = {
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": ""
+      "date_source": "forthcoming_unassigned"
     },
     {
-      "id": "06251300b53b0b80",
+      "id": "6501e07e9f5d0a4b",
       "journal_id": "j16",
+      "source_journal_id": "j16",
       "journal_name": "AMERICAN ECONOMIC REVIEW",
       "title": "Professional Motivations in the Public Sector: Evidence from Police Officers",
       "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20231696",
@@ -907,11 +572,12 @@ window.RECENT_WORKFLOW_DATA = {
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": ""
+      "date_source": "forthcoming_unassigned"
     },
     {
-      "id": "44e0139d3de29e26",
+      "id": "a15ee9ed05921375",
       "journal_id": "j16",
+      "source_journal_id": "j16",
       "journal_name": "AMERICAN ECONOMIC REVIEW",
       "title": "Quality Adjustment at Scale: Hedonic vs. Exact Demand-Based Price Indices",
       "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20230766",
@@ -923,11 +589,12 @@ window.RECENT_WORKFLOW_DATA = {
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": ""
+      "date_source": "forthcoming_unassigned"
     },
     {
-      "id": "6c645c2aa93924a5",
+      "id": "4721680d6d0e0507",
       "journal_id": "j16",
+      "source_journal_id": "j16",
       "journal_name": "AMERICAN ECONOMIC REVIEW",
       "title": "Quota vs. Quality? Long-Term Gains from an Unusual Gender Quota",
       "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20230376",
@@ -939,11 +606,12 @@ window.RECENT_WORKFLOW_DATA = {
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": ""
+      "date_source": "forthcoming_unassigned"
     },
     {
-      "id": "3e06592a6b78bcbc",
+      "id": "8f9c1dcde6676b4d",
       "journal_id": "j16",
+      "source_journal_id": "j16",
       "journal_name": "AMERICAN ECONOMIC REVIEW",
       "title": "Random Utility with Unobservable Alternatives",
       "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20240712",
@@ -955,11 +623,12 @@ window.RECENT_WORKFLOW_DATA = {
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": ""
+      "date_source": "forthcoming_unassigned"
     },
     {
-      "id": "6129537ae9707362",
+      "id": "a766eb4b6d545652",
       "journal_id": "j16",
+      "source_journal_id": "j16",
       "journal_name": "AMERICAN ECONOMIC REVIEW",
       "title": "Remote Work and City Structure",
       "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20231414",
@@ -971,11 +640,12 @@ window.RECENT_WORKFLOW_DATA = {
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": ""
+      "date_source": "forthcoming_unassigned"
     },
     {
-      "id": "20809d8c607d5de4",
+      "id": "2bbd5ce5f6f6cd14",
       "journal_id": "j16",
+      "source_journal_id": "j16",
       "journal_name": "AMERICAN ECONOMIC REVIEW",
       "title": "Risk Sharing Tests and Covariate Shocks: Drought, Floods, and Pests in Uganda",
       "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20240664",
@@ -987,11 +657,12 @@ window.RECENT_WORKFLOW_DATA = {
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": ""
+      "date_source": "forthcoming_unassigned"
     },
     {
-      "id": "a675021fecba147e",
+      "id": "b26e61cc4596ac62",
       "journal_id": "j16",
+      "source_journal_id": "j16",
       "journal_name": "AMERICAN ECONOMIC REVIEW",
       "title": "Self-Fulfilling Fluctuations in HANK Economies",
       "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20240642",
@@ -1003,11 +674,12 @@ window.RECENT_WORKFLOW_DATA = {
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": ""
+      "date_source": "forthcoming_unassigned"
     },
     {
-      "id": "c3190d9588def951",
+      "id": "4dbb78b02cd77284",
       "journal_id": "j16",
+      "source_journal_id": "j16",
       "journal_name": "AMERICAN ECONOMIC REVIEW",
       "title": "Spatial Spillovers of Conflict in Somalia",
       "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20231699",
@@ -1019,11 +691,12 @@ window.RECENT_WORKFLOW_DATA = {
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": ""
+      "date_source": "forthcoming_unassigned"
     },
     {
-      "id": "4b74666a2fc642fd",
+      "id": "4df21c72c4fb2759",
       "journal_id": "j16",
+      "source_journal_id": "j16",
       "journal_name": "AMERICAN ECONOMIC REVIEW",
       "title": "Talent Hoarding in Organizations",
       "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20220264",
@@ -1035,11 +708,12 @@ window.RECENT_WORKFLOW_DATA = {
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": ""
+      "date_source": "forthcoming_unassigned"
     },
     {
-      "id": "e0baa5d3d6880477",
+      "id": "5319d4af9c286921",
       "journal_id": "j16",
+      "source_journal_id": "j16",
       "journal_name": "AMERICAN ECONOMIC REVIEW",
       "title": "The Aggregate Costs of Uninsurable Business Risk",
       "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20230849",
@@ -1051,11 +725,12 @@ window.RECENT_WORKFLOW_DATA = {
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": ""
+      "date_source": "forthcoming_unassigned"
     },
     {
-      "id": "4a0d3bde96a71652",
+      "id": "fb2cf3e9e8ff5cc5",
       "journal_id": "j16",
+      "source_journal_id": "j16",
       "journal_name": "AMERICAN ECONOMIC REVIEW",
       "title": "The Effect of High-Tech Clusters on the Productivity of Top Inventors: Comment",
       "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20231415",
@@ -1067,11 +742,12 @@ window.RECENT_WORKFLOW_DATA = {
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": ""
+      "date_source": "forthcoming_unassigned"
     },
     {
-      "id": "3687ea87fa05da26",
+      "id": "3efa11be12cd9ae9",
       "journal_id": "j16",
+      "source_journal_id": "j16",
       "journal_name": "AMERICAN ECONOMIC REVIEW",
       "title": "The Effect of Omitted Variables on the Sign of Regression Coefficients",
       "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20230242",
@@ -1083,11 +759,12 @@ window.RECENT_WORKFLOW_DATA = {
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": ""
+      "date_source": "forthcoming_unassigned"
     },
     {
-      "id": "803141544cfcb731",
+      "id": "9222c5f94d074d15",
       "journal_id": "j16",
+      "source_journal_id": "j16",
       "journal_name": "AMERICAN ECONOMIC REVIEW",
       "title": "The Private Provision of Public Services: Evidence from Random Assignment in Medicaid",
       "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20230541",
@@ -1099,11 +776,12 @@ window.RECENT_WORKFLOW_DATA = {
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": ""
+      "date_source": "forthcoming_unassigned"
     },
     {
-      "id": "e6fbd0381c0d0692",
+      "id": "d8080cdafd8cf63a",
       "journal_id": "j16",
+      "source_journal_id": "j16",
       "journal_name": "AMERICAN ECONOMIC REVIEW",
       "title": "The Productivity of Professions: Evidence from the Emergency Department",
       "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20241007",
@@ -1115,27 +793,12 @@ window.RECENT_WORKFLOW_DATA = {
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": ""
+      "date_source": "forthcoming_unassigned"
     },
     {
-      "id": "ec7ea0a20e37404f",
-      "journal_id": "j22",
-      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
-      "title": "Timothy Kuhn. What Do Corporations Want? Communicative Capitalism, Corporate Purpose, and a New Theory of the Firm",
-      "url": "https://journals.sagepub.com/doi/full/10.1177/00018392251414373",
-      "authors": "",
-      "published_at": "",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-25",
-      "display_date_basis": "first_seen_at",
-      "push_basis": "first_seen",
-      "extraction_rule": "asq-sage-links",
-      "date_source": ""
-    },
-    {
-      "id": "0bc665a2c4cb1653",
+      "id": "2a200d3ffb4a242d",
       "journal_id": "j16",
+      "source_journal_id": "j16",
       "journal_name": "AMERICAN ECONOMIC REVIEW",
       "title": "Uncertainty and Change: Survey Evidence of Firms’ Subjective Beliefs",
       "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20240056",
@@ -1147,11 +810,12 @@ window.RECENT_WORKFLOW_DATA = {
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": ""
+      "date_source": "forthcoming_unassigned"
     },
     {
-      "id": "5b1eb24706e5adc2",
+      "id": "198ebc5ee1771469",
       "journal_id": "j16",
+      "source_journal_id": "j16",
       "journal_name": "AMERICAN ECONOMIC REVIEW",
       "title": "Understanding High-Wage Firms: Monopoly, Monopsony, and Bargaining Power",
       "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20230344",
@@ -1163,11 +827,12 @@ window.RECENT_WORKFLOW_DATA = {
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": ""
+      "date_source": "forthcoming_unassigned"
     },
     {
-      "id": "3a658f1767b0e69d",
+      "id": "c33b5113a179dc10",
       "journal_id": "j14",
+      "source_journal_id": "j14",
       "journal_name": "JOURNAL OF FINANCE",
       "title": "Competition Enforcement and Accounting for Intangible Capital",
       "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70028",
@@ -1182,8 +847,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "ece3755be3d63ffa",
+      "id": "a2f03a8ba8e86061",
       "journal_id": "j14",
+      "source_journal_id": "j14",
       "journal_name": "JOURNAL OF FINANCE",
       "title": "Consumer Choice and Corporate Bankruptcy",
       "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70030",
@@ -1198,8 +864,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "1e982564fe16b5d7",
+      "id": "495ddb3c1a542fa5",
       "journal_id": "j14",
+      "source_journal_id": "j14",
       "journal_name": "JOURNAL OF FINANCE",
       "title": "Corporate M&As and Labor Market Concentration: Efficiency Gains or Power Grabs?",
       "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70035",
@@ -1214,8 +881,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "12143a1ea781cb8c",
+      "id": "1cfde90118921c19",
       "journal_id": "j14",
+      "source_journal_id": "j14",
       "journal_name": "JOURNAL OF FINANCE",
       "title": "Deposit Franchise Runs",
       "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70034",
@@ -1230,8 +898,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "17fee6b25f9d1e60",
+      "id": "971301373d4a7943",
       "journal_id": "j14",
+      "source_journal_id": "j14",
       "journal_name": "JOURNAL OF FINANCE",
       "title": "Funding Black High‐Growth Startups",
       "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70039",
@@ -1246,8 +915,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "b4c75e3d37a0b65b",
+      "id": "046b803752d68495",
       "journal_id": "j14",
+      "source_journal_id": "j14",
       "journal_name": "JOURNAL OF FINANCE",
       "title": "Hedger of Last Resort: Evidence from Brazilian FX Interventions, Local Credit, and Global Financial Cycles",
       "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70054",
@@ -1262,8 +932,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "4d203cd92aa0fc9e",
+      "id": "058e71a2e0f21d10",
       "journal_id": "j14",
+      "source_journal_id": "j14",
       "journal_name": "JOURNAL OF FINANCE",
       "title": "Leader‐Follower Dynamics in Shareholder Activism",
       "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70033",
@@ -1278,8 +949,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "a3d9672982399961",
+      "id": "6c3161c23f0f6181",
       "journal_id": "j14",
+      "source_journal_id": "j14",
       "journal_name": "JOURNAL OF FINANCE",
       "title": "Model Ambiguity versus Model Misspecification in Dynamic Portfolio Choice",
       "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70027",
@@ -1294,8 +966,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "b5f50bd5438a9ac0",
+      "id": "22a3e20ef739e1da",
       "journal_id": "j14",
+      "source_journal_id": "j14",
       "journal_name": "JOURNAL OF FINANCE",
       "title": "Pricing of Climate Risk Insurance: Regulation and Cross‐Subsidies",
       "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70029",
@@ -1310,8 +983,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "e19d0a5196793c33",
+      "id": "af51a40cbfd574fd",
       "journal_id": "j14",
+      "source_journal_id": "j14",
       "journal_name": "JOURNAL OF FINANCE",
       "title": "Quote Competition in Corporate Bonds",
       "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70048",
@@ -1326,8 +1000,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "a3f6e4abc27b96d1",
+      "id": "08fba647a778e133",
       "journal_id": "j14",
+      "source_journal_id": "j14",
       "journal_name": "JOURNAL OF FINANCE",
       "title": "Size, Returns, and Value: Do Private Equity Firms Allocate Capital According to Manager Skill?",
       "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70036",
@@ -1342,8 +1017,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "0200e225944d2e3f",
+      "id": "9dad915f81e56c9d",
       "journal_id": "j14",
+      "source_journal_id": "j14",
       "journal_name": "JOURNAL OF FINANCE",
       "title": "The (Missing) Relation between Acquisition Announcement Returns and Value Creation",
       "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70038",
@@ -1358,8 +1034,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "e6d625ac9d203cb9",
+      "id": "5088b6a1beefb66e",
       "journal_id": "j14",
+      "source_journal_id": "j14",
       "journal_name": "JOURNAL OF FINANCE",
       "title": "The Effect of Advisors' Incentives on Clients' Investments",
       "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70041",
@@ -1374,8 +1051,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "9e6a82fd6d9be0da",
+      "id": "44823dc7936b2f72",
       "journal_id": "j14",
+      "source_journal_id": "j14",
       "journal_name": "JOURNAL OF FINANCE",
       "title": "The Voting Premium",
       "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70037",
@@ -1390,8 +1068,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "7ba9fc2f98f4c320",
+      "id": "3b7760dfdd62e355",
       "journal_id": "j15",
+      "source_journal_id": "j15",
       "journal_name": "ACCOUNTING REVIEW",
       "title": "Burn It or Return It? The Effects of the Possibility to Return Budget Surplus and the Moderating Role of Uncertainty on Capital Budgeting",
       "url": "https://doi.org/10.2308/tar-2023-0727",
@@ -1406,24 +1085,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "5fe26b6cb52837db",
-      "journal_id": "j1",
-      "journal_name": "JOURNAL OF FINANCE",
-      "title": "Hedger of Last Resort: Evidence from Brazilian FX Interventions, Local Credit, and Global Financial Cycles",
-      "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70054",
-      "authors": "",
-      "published_at": "2026-05-22",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-22",
-      "display_date_basis": "published_at",
-      "push_basis": "published_date",
-      "extraction_rule": "afa-forthcoming-doi",
-      "date_source": "context_published"
-    },
-    {
-      "id": "975527ad254bce79",
+      "id": "d31770d38552eced",
       "journal_id": "j19",
+      "source_journal_id": "j19",
       "journal_name": "REVIEW OF ECONOMIC STUDIES",
       "title": "Monopsony Makes Firms Not Only Small but Also Unproductive: Why East Germany has Not Converged",
       "url": "https://doi.org/10.1093/restud/rdag033",
@@ -1438,24 +1102,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "5878a39a80e8263a",
-      "journal_id": "j1",
-      "journal_name": "JOURNAL OF FINANCE",
-      "title": "Quote Competition in Corporate Bonds",
-      "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70048",
-      "authors": "",
-      "published_at": "2026-05-22",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-22",
-      "display_date_basis": "published_at",
-      "push_basis": "published_date",
-      "extraction_rule": "afa-forthcoming-doi",
-      "date_source": "context_published"
-    },
-    {
-      "id": "397d4ee384bd1cdb",
+      "id": "9bd6594bcf35f762",
       "journal_id": "j19",
+      "source_journal_id": "j19",
       "journal_name": "REVIEW OF ECONOMIC STUDIES",
       "title": "Eliciting Multiple Prior Beliefs",
       "url": "https://doi.org/10.1093/restud/rdag043",
@@ -1470,8 +1119,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "9e8e3a26e28ce133",
+      "id": "86f8a789e7c56891",
       "journal_id": "j19",
+      "source_journal_id": "j19",
       "journal_name": "REVIEW OF ECONOMIC STUDIES",
       "title": "Money Markets, Collateral and Monetary Policy",
       "url": "https://doi.org/10.1093/restud/rdag041",
@@ -1486,8 +1136,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "8630699d7e410347",
+      "id": "92807279e981e58f",
       "journal_id": "j19",
+      "source_journal_id": "j19",
       "journal_name": "REVIEW OF ECONOMIC STUDIES",
       "title": "Technology Transfer and Early Industrial Development: Evidence from the Sino-Soviet Alliance",
       "url": "https://doi.org/10.1093/restud/rdag047",
@@ -1502,8 +1153,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "cba1d73620788133",
+      "id": "fa06367232ea92ab",
       "journal_id": "j19",
+      "source_journal_id": "j19",
       "journal_name": "REVIEW OF ECONOMIC STUDIES",
       "title": "Closing Gender Gaps through Workplace Diversity: The Intergenerational Effects of World War I",
       "url": "https://doi.org/10.1093/restud/rdag048",
@@ -1518,8 +1170,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "dace6950509bf56d",
+      "id": "1dbbd9cd16a22f9a",
       "journal_id": "j14",
+      "source_journal_id": "j14",
       "journal_name": "JOURNAL OF FINANCE",
       "title": "Investing with Purpose: Evidence from Private Foundations",
       "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70055",
@@ -1534,24 +1187,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "3b198cb2f5e22bb5",
-      "journal_id": "j1",
-      "journal_name": "JOURNAL OF FINANCE",
-      "title": "Investing with Purpose: Evidence from Private Foundations",
-      "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70055",
-      "authors": "",
-      "published_at": "2026-05-20",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-20",
-      "display_date_basis": "published_at",
-      "push_basis": "published_date",
-      "extraction_rule": "afa-forthcoming-doi",
-      "date_source": "context_published"
-    },
-    {
-      "id": "ee7ffb899b28d13d",
+      "id": "be8da62eaf38a85e",
       "journal_id": "j19",
+      "source_journal_id": "j19",
       "journal_name": "REVIEW OF ECONOMIC STUDIES",
       "title": "Jackknife Standard Errors for Clustered Regression",
       "url": "https://doi.org/10.1093/restud/rdag050",
@@ -1566,8 +1204,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "217348a0c82f0e8e",
+      "id": "83ea87f0f95aa1f6",
       "journal_id": "j19",
+      "source_journal_id": "j19",
       "journal_name": "REVIEW OF ECONOMIC STUDIES",
       "title": "The Dynamics of Internal Migration: A New Fact and its Implications",
       "url": "https://doi.org/10.1093/restud/rdag049",
@@ -1582,8 +1221,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "f106696f53860725",
+      "id": "c194472d30e30fba",
       "journal_id": "j14",
+      "source_journal_id": "j14",
       "journal_name": "JOURNAL OF FINANCE",
       "title": "Why Have CEO Pay Levels Become Less Diverse?",
       "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70050",
@@ -1598,24 +1238,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "9ebd39ee536837bc",
-      "journal_id": "j1",
-      "journal_name": "JOURNAL OF FINANCE",
-      "title": "Why Have CEO Pay Levels Become Less Diverse?",
-      "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70050",
-      "authors": "",
-      "published_at": "2026-05-19",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-19",
-      "display_date_basis": "published_at",
-      "push_basis": "published_date",
-      "extraction_rule": "afa-forthcoming-doi",
-      "date_source": "context_published"
-    },
-    {
-      "id": "ea9b1db0b3aab6a2",
+      "id": "cb62b9c3e30e8006",
       "journal_id": "j14",
+      "source_journal_id": "j14",
       "journal_name": "JOURNAL OF FINANCE",
       "title": "Bank Competition Amid Digital Disruption: Implications for Financial Inclusion",
       "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70051",
@@ -1630,8 +1255,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "93870a6923ec5a88",
+      "id": "d11d5e673c02273a",
       "journal_id": "j19",
+      "source_journal_id": "j19",
       "journal_name": "REVIEW OF ECONOMIC STUDIES",
       "title": "Catastrophes, Delays, and Learning",
       "url": "https://doi.org/10.1093/restud/rdag025",
@@ -1646,8 +1272,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "8d9306a9fd94e41e",
+      "id": "1632f35c7bd5f316",
       "journal_id": "j13",
+      "source_journal_id": "j13",
       "journal_name": "ACADEMY OF MANAGEMENT REVIEW",
       "title": "The Origins and Evolution of Red, Blue, and Purple Employee Populations: A Theory of How Organizations Become Ideologically Skewed",
       "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0229",
@@ -1662,8 +1289,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "dd49e2dd1623ff6a",
+      "id": "fa40f9a6c19c55b8",
       "journal_id": "j15",
+      "source_journal_id": "j15",
       "journal_name": "ACCOUNTING REVIEW",
       "title": "Year-to-Year Adjustments of Performance Measure Weights: The Relevance of Prior Target Achievement",
       "url": "https://doi.org/10.2308/tar-2021-0511",
@@ -1678,24 +1306,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "5cc8bdb1c2bf118f",
-      "journal_id": "j1",
-      "journal_name": "JOURNAL OF FINANCE",
-      "title": "Bank Competition Amid Digital Disruption: Implications for Financial Inclusion",
-      "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70051",
-      "authors": "",
-      "published_at": "2026-05-17",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-17",
-      "display_date_basis": "published_at",
-      "push_basis": "published_date",
-      "extraction_rule": "afa-forthcoming-doi",
-      "date_source": "context_published"
-    },
-    {
-      "id": "bf60838c051a40f0",
+      "id": "b277377805c482b5",
       "journal_id": "j14",
+      "source_journal_id": "j14",
       "journal_name": "JOURNAL OF FINANCE",
       "title": "Consumption in Asset Returns",
       "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70044",
@@ -1710,24 +1323,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "8743d76175f99862",
-      "journal_id": "j1",
-      "journal_name": "JOURNAL OF FINANCE",
-      "title": "Consumption in Asset Returns",
-      "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70044",
-      "authors": "",
-      "published_at": "2026-05-15",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-15",
-      "display_date_basis": "published_at",
-      "push_basis": "published_date",
-      "extraction_rule": "afa-forthcoming-doi",
-      "date_source": "context_published"
-    },
-    {
-      "id": "70a687980ae4da41",
+      "id": "1e97dcc00d9a8460",
       "journal_id": "j19",
+      "source_journal_id": "j19",
       "journal_name": "REVIEW OF ECONOMIC STUDIES",
       "title": "Financial Intermediation and Aggregate Demand: A Sufficient Statistics Approach",
       "url": "https://doi.org/10.1093/restud/rdag032",
@@ -1742,8 +1340,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "2c34c1d4acdbdc10",
+      "id": "046c8300c07ab20c",
       "journal_id": "j19",
+      "source_journal_id": "j19",
       "journal_name": "REVIEW OF ECONOMIC STUDIES",
       "title": "Loose Monetary Policy and Financial Instability",
       "url": "https://doi.org/10.1093/restud/rdag044",
@@ -1758,8 +1357,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "be0b0a86613cd7ba",
+      "id": "6871382ac324a039",
       "journal_id": "j19",
+      "source_journal_id": "j19",
       "journal_name": "REVIEW OF ECONOMIC STUDIES",
       "title": "Monetary Policy and Endogenous Financial Crises",
       "url": "https://doi.org/10.1093/restud/rdag042",
@@ -1774,8 +1374,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "8831eb17532a7835",
+      "id": "22f6e3a48cd5759d",
       "journal_id": "j14",
+      "source_journal_id": "j14",
       "journal_name": "JOURNAL OF FINANCE",
       "title": "The Drivers and Implications of Retail Margin Trading",
       "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70049",
@@ -1790,28 +1391,13 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "82467e3344097df9",
-      "journal_id": "j1",
-      "journal_name": "JOURNAL OF FINANCE",
-      "title": "The Drivers and Implications of Retail Margin Trading",
-      "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70049",
-      "authors": "",
-      "published_at": "2026-05-15",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-15",
-      "display_date_basis": "published_at",
-      "push_basis": "published_date",
-      "extraction_rule": "afa-forthcoming-doi",
-      "date_source": "context_published"
-    },
-    {
-      "id": "55193b18ac02a9c6",
+      "id": "def69fc4d16022d9",
       "journal_id": "j19",
+      "source_journal_id": "j19",
       "journal_name": "REVIEW OF ECONOMIC STUDIES",
-      "title": "Input Sourcing under Climate Risk: Evidence from U.S. Manufacturing Firms",
-      "url": "https://doi.org/10.1093/restud/rdag031",
-      "authors": "Joaquin Blaum, Federico Esposito, Sebastian Heise",
+      "title": "A Model of Multiple Hypothesis Testing",
+      "url": "https://doi.org/10.1093/restud/rdag026",
+      "authors": "Davide Viviano, Kaspar Wüthrich, Paul Niehaus",
       "published_at": "2026-05-14",
       "issue_date": "",
       "first_seen_at": "2026-05-25",
@@ -1822,8 +1408,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "8c17295aa2d82082",
+      "id": "2af8ecc959b64e67",
       "journal_id": "j18",
+      "source_journal_id": "j18",
       "journal_name": "QUARTERLY JOURNAL OF ECONOMICS",
       "title": "International Reserve Management Under Rollover Crises",
       "url": "https://doi.org/10.1093/qje/qjag025",
@@ -1838,8 +1425,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "2af4ace0f553ba3d",
+      "id": "e967050448d6ebb2",
       "journal_id": "j15",
+      "source_journal_id": "j15",
       "journal_name": "ACCOUNTING REVIEW",
       "title": "Market Leaders’ Tax-Motivated Income Shifting and U.S. Domestic Firms’ Investment Efficiency",
       "url": "https://doi.org/10.2308/tar-2024-0328",
@@ -1854,8 +1442,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "e995849744adff6e",
+      "id": "01f9ac5f5caffa72",
       "journal_id": "j18",
+      "source_journal_id": "j18",
       "journal_name": "QUARTERLY JOURNAL OF ECONOMICS",
       "title": "Public Services Under Private Management",
       "url": "https://doi.org/10.1093/qje/qjag028",
@@ -1870,8 +1459,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "887a007df5c57812",
+      "id": "436d7147ea028ac4",
       "journal_id": "j18",
+      "source_journal_id": "j18",
       "journal_name": "QUARTERLY JOURNAL OF ECONOMICS",
       "title": "The Power of Proximity to Coworkers",
       "url": "https://doi.org/10.1093/qje/qjag027",
@@ -1886,8 +1476,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "8800bb983fb6bf4b",
+      "id": "b7dcbfae227907e7",
       "journal_id": "j15",
+      "source_journal_id": "j15",
       "journal_name": "ACCOUNTING REVIEW",
       "title": "The Rich Get Richer: An Examination of Tax Haven Concentration and the New “Top 7”",
       "url": "https://doi.org/10.2308/tar-2025-0139",
@@ -1902,8 +1493,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "9dfbd2df4dc54628",
+      "id": "451cb5d6ecd2b497",
       "journal_id": "j15",
+      "source_journal_id": "j15",
       "journal_name": "ACCOUNTING REVIEW",
       "title": "Transparency and Bank Liability Structure",
       "url": "https://doi.org/10.2308/tar-2024-0705",
@@ -1918,8 +1510,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "546593dc3f3e7625",
+      "id": "a36b40e7e9f3b2d3",
       "journal_id": "j15",
+      "source_journal_id": "j15",
       "journal_name": "ACCOUNTING REVIEW",
       "title": "AI-Augmented Design and the Expertise Bias in Subjective Evaluations of Creative Output",
       "url": "https://doi.org/10.2308/tar-2024-0592",
@@ -1934,8 +1527,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "549f779198b5fee5",
+      "id": "24c0096bdbd514e2",
       "journal_id": "j15",
+      "source_journal_id": "j15",
       "journal_name": "ACCOUNTING REVIEW",
       "title": "Contractual Private Disclosures in Supply Chains and Managerial Learning from Financial Markets",
       "url": "https://doi.org/10.2308/tar-2024-0472",
@@ -1950,8 +1544,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "8a818b41d6dc23c7",
+      "id": "e1363355811c91b8",
       "journal_id": "j18",
+      "source_journal_id": "j18",
       "journal_name": "QUARTERLY JOURNAL OF ECONOMICS",
       "title": "Praying for Rain",
       "url": "https://doi.org/10.1093/qje/qjag026",
@@ -1966,8 +1561,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "205714b2253af59f",
+      "id": "b594e9f7d88342f7",
       "journal_id": "j14",
+      "source_journal_id": "j14",
       "journal_name": "JOURNAL OF FINANCE",
       "title": "Risk‐Free Rates and Convenience Yields around the World",
       "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70045",
@@ -1982,24 +1578,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "81bfc35d8203fcbe",
-      "journal_id": "j1",
-      "journal_name": "JOURNAL OF FINANCE",
-      "title": "Risk‐Free Rates and Convenience Yields around the World",
-      "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70045",
-      "authors": "",
-      "published_at": "2026-05-11",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-11",
-      "display_date_basis": "published_at",
-      "push_basis": "published_date",
-      "extraction_rule": "afa-forthcoming-doi",
-      "date_source": "context_published"
-    },
-    {
-      "id": "818007697207e8b6",
+      "id": "eaaacfafbcc91375",
       "journal_id": "j14",
+      "source_journal_id": "j14",
       "journal_name": "JOURNAL OF FINANCE",
       "title": "The Equilibrium Effects of Eviction Policies",
       "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70046",
@@ -2014,24 +1595,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "9d89e42864db7cdd",
-      "journal_id": "j1",
-      "journal_name": "JOURNAL OF FINANCE",
-      "title": "The Equilibrium Effects of Eviction Policies",
-      "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70046",
-      "authors": "",
-      "published_at": "2026-05-11",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-11",
-      "display_date_basis": "published_at",
-      "push_basis": "published_date",
-      "extraction_rule": "afa-forthcoming-doi",
-      "date_source": "context_published"
-    },
-    {
-      "id": "c58ba3ba158011da",
+      "id": "0a9b99a041581d21",
       "journal_id": "j15",
+      "source_journal_id": "j15",
       "journal_name": "ACCOUNTING REVIEW",
       "title": "Modern Privacy Regulation, Internal Information Quality, and Operational Efficiency: Evidence from the General Data Protection Regulation",
       "url": "https://doi.org/10.2308/tar-2022-0542",
@@ -2046,8 +1612,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "18117fa4a3e3aad8",
+      "id": "10e83a5d75b4040d",
       "journal_id": "j14",
+      "source_journal_id": "j14",
       "journal_name": "JOURNAL OF FINANCE",
       "title": "Partisan Entrepreneurship",
       "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70042",
@@ -2062,24 +1629,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "606db2b34f5fd4a9",
-      "journal_id": "j1",
-      "journal_name": "JOURNAL OF FINANCE",
-      "title": "Partisan Entrepreneurship",
-      "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70042",
-      "authors": "",
-      "published_at": "2026-05-08",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-08",
-      "display_date_basis": "published_at",
-      "push_basis": "published_date",
-      "extraction_rule": "afa-forthcoming-doi",
-      "date_source": "context_published"
-    },
-    {
-      "id": "1404262631148340",
+      "id": "feabe9376d599255",
       "journal_id": "j21",
+      "source_journal_id": "j21",
       "journal_name": "ACADEMY OF MANAGEMENT JOURNAL",
       "title": "Polyphonic Career Scripting: Political and Relational Dynamics in the Construction of Promotion Norms",
       "url": "https://journals.aom.org/doi/abs/10.5465/amj.2022.1039",
@@ -2094,8 +1646,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "bfcecdc979c883db",
+      "id": "5160dde09a68c91d",
       "journal_id": "j17",
+      "source_journal_id": "j17",
       "journal_name": "JOURNAL OF POLITICAL ECONOMY",
       "title": "The Origin of the State: Land Productivity or Appropriability? Comment",
       "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/740225",
@@ -2110,8 +1663,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "0af79c96f25203a8",
+      "id": "38c50da44e88370c",
       "journal_id": "j17",
+      "source_journal_id": "j17",
       "journal_name": "JOURNAL OF POLITICAL ECONOMY",
       "title": "Glass Walls: Experimental Evidence on Constraints Faced by Women in Accessing Valuable Skilling Opportunities",
       "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/739830",
@@ -2126,8 +1680,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "86136026a9cdebc5",
+      "id": "397634cea00e5d9c",
       "journal_id": "j14",
+      "source_journal_id": "j14",
       "journal_name": "JOURNAL OF FINANCE",
       "title": "Learning in the Limit: Income Inference from Credit Extensions",
       "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70040",
@@ -2142,24 +1697,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "951cbb696f3edfa2",
-      "journal_id": "j1",
-      "journal_name": "JOURNAL OF FINANCE",
-      "title": "Learning in the Limit: Income Inference from Credit Extensions",
-      "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70040",
-      "authors": "",
-      "published_at": "2026-05-07",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-07",
-      "display_date_basis": "published_at",
-      "push_basis": "published_date",
-      "extraction_rule": "afa-forthcoming-doi",
-      "date_source": "context_published"
-    },
-    {
-      "id": "1d11f2b97befb536",
+      "id": "923aee601ffebb17",
       "journal_id": "j15",
+      "source_journal_id": "j15",
       "journal_name": "ACCOUNTING REVIEW",
       "title": "The Impact of the SEC’s Office of Minority and Women Inclusion: Evidence from the Filing Review Process",
       "url": "https://doi.org/10.2308/tar-2023-0649",
@@ -2174,8 +1714,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "f8e5ea4e41719d27",
+      "id": "a53398f0457050e6",
       "journal_id": "j13",
+      "source_journal_id": "j13",
       "journal_name": "ACADEMY OF MANAGEMENT REVIEW",
       "title": "Coleman’s Boat and Complex Cross-Level Aggregation in Interinstitutional Systems: An Extension of Almandoz and Thornton’s “Understanding Institutional Environments: An Institutional Logics Model of Societal Evolution”",
       "url": "https://journals.aom.org/doi/abs/10.5465/amr.2026.0224",
@@ -2190,8 +1731,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "4fd46b1d9c7a4f9f",
+      "id": "c4b9d37654d96013",
       "journal_id": "j13",
+      "source_journal_id": "j13",
       "journal_name": "ACADEMY OF MANAGEMENT REVIEW",
       "title": "Moral Ambiguity and Judgment: A Reply to “Acting to Know”",
       "url": "https://journals.aom.org/doi/abs/10.5465/amr.2026.0465",
@@ -2206,8 +1748,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "6ce3f4699c8f5562",
+      "id": "77b52ea8f3caf76b",
       "journal_id": "j13",
+      "source_journal_id": "j13",
       "journal_name": "ACADEMY OF MANAGEMENT REVIEW",
       "title": "A Reply to “Adversity Reveals Character: A Virtue Ethics-Based Contingency Theory Extension of Yan et al.’s ‘How Underdogs Succeed and Fail’”",
       "url": "https://journals.aom.org/doi/abs/10.5465/amr.2026.0385",
@@ -2222,8 +1765,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "f17c61c4b7b479a3",
+      "id": "19d99863f6b2ccc6",
       "journal_id": "j17",
+      "source_journal_id": "j17",
       "journal_name": "JOURNAL OF POLITICAL ECONOMY",
       "title": "The Gas Trap: Outcompeting Coal versus Renewables",
       "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/740172",
@@ -2238,8 +1782,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "0bcae29008f883be",
+      "id": "408befcbac65cdac",
       "journal_id": "j18",
+      "source_journal_id": "j18",
       "journal_name": "QUARTERLY JOURNAL OF ECONOMICS",
       "title": "Why Doesn’t the United States Have National Health Insurance? The Political Role of the American Medical Association",
       "url": "https://doi.org/10.1093/qje/qjag024",
@@ -2254,8 +1799,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "4f0d3cb36c9ab684",
+      "id": "210462ad9bc2858d",
       "journal_id": "j15",
+      "source_journal_id": "j15",
       "journal_name": "ACCOUNTING REVIEW",
       "title": "Financial Reporting and Detection of Labor Union Misconduct",
       "url": "https://doi.org/10.2308/tar-2024-0710",
@@ -2270,8 +1816,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "6aaffcad27959a09",
+      "id": "d6f85a861c78081c",
       "journal_id": "j17",
+      "source_journal_id": "j17",
       "journal_name": "JOURNAL OF POLITICAL ECONOMY",
       "title": "Health Shocks, Health Insurance, Human Capital, and the Dynamics of Earnings and Health",
       "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/739831",
@@ -2286,72 +1833,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "ed95ea9ebfbc10a4",
-      "journal_id": "j12",
-      "journal_name": "中国农村经济",
-      "title": "超越结构与行动：政府赋能农村集体经济发展的可持续机制",
-      "url": "https://zgncjj.ajcass.com/#/issueDetail?id=122827",
-      "authors": "李小艺 佟健 任利刚",
-      "published_at": "",
-      "issue_date": "2026-05",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05",
-      "display_date_basis": "issue_date",
-      "push_basis": "issue_date",
-      "extraction_rule": "ajcass-current-api",
-      "date_source": ""
-    },
-    {
-      "id": "22f98a44e3dd31f1",
-      "journal_id": "j12",
-      "journal_name": "中国农村经济",
-      "title": "返乡创业试点政策实施如何助推城乡融合发展",
-      "url": "https://zgncjj.ajcass.com/#/issueDetail?id=122826",
-      "authors": "肖霞 徐成铭 黄亮雄",
-      "published_at": "",
-      "issue_date": "2026-05",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05",
-      "display_date_basis": "issue_date",
-      "push_basis": "issue_date",
-      "extraction_rule": "ajcass-current-api",
-      "date_source": ""
-    },
-    {
-      "id": "1815477da136bcf3",
-      "journal_id": "j12",
-      "journal_name": "中国农村经济",
-      "title": "高素质农民培育何以驱动县域经济发展——基于新型职业农民培育示范政策的实证研究",
-      "url": "https://zgncjj.ajcass.com/#/issueDetail?id=122825",
-      "authors": "徐卓君 吴贾 吴顺利",
-      "published_at": "",
-      "issue_date": "2026-05",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05",
-      "display_date_basis": "issue_date",
-      "push_basis": "issue_date",
-      "extraction_rule": "ajcass-current-api",
-      "date_source": ""
-    },
-    {
-      "id": "65a12511fde1e239",
-      "journal_id": "j12",
-      "journal_name": "中国农村经济",
-      "title": "环境规制对空气污染城乡分布的影响研究——以国家环境空气监测站的建立为例",
-      "url": "https://zgncjj.ajcass.com/#/issueDetail?id=122829",
-      "authors": "王玉泽 张诗怡 杨开忠",
-      "published_at": "",
-      "issue_date": "2026-05",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05",
-      "display_date_basis": "issue_date",
-      "push_basis": "issue_date",
-      "extraction_rule": "ajcass-current-api",
-      "date_source": ""
-    },
-    {
-      "id": "486167839b12a834",
+      "id": "06f7140875239486",
       "journal_id": "j3",
+      "source_journal_id": "j3",
       "journal_name": "世界经济",
       "title": "基础教育结果均等化改革的效应评估：以上海市为例",
       "url": "https://sjjj.magtech.com.cn/CN/Y2026/V49/I5/238",
@@ -2366,8 +1850,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": "url_issue"
     },
     {
-      "id": "e92e6a7ee66c92b8",
+      "id": "9fd0d4f2b11d708c",
       "journal_id": "j3",
+      "source_journal_id": "j3",
       "journal_name": "世界经济",
       "title": "极端天气、贸易信贷传导与供应链稳定",
       "url": "https://sjjj.magtech.com.cn/CN/Y2026/V49/I5/3",
@@ -2382,8 +1867,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": "url_issue"
     },
     {
-      "id": "4e52d9fb6c9de0e6",
+      "id": "bb67ce52963597a1",
       "journal_id": "j3",
+      "source_journal_id": "j3",
       "journal_name": "世界经济",
       "title": "科技赋能司法与全国统一大市场的形成",
       "url": "https://sjjj.magtech.com.cn/CN/Y2026/V49/I5/77",
@@ -2398,40 +1884,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": "url_issue"
     },
     {
-      "id": "a859744190ea04fb",
+      "id": "ea503371cbba8e72",
       "journal_id": "j12",
-      "journal_name": "中国农村经济",
-      "title": "林牧渔草业转型升级与“十五五”时期发展思路——中国林牧渔业经济学会2025年年会综述",
-      "url": "https://zgncjj.ajcass.com/#/issueDetail?id=122831",
-      "authors": "张强强 刘芳 王术坤",
-      "published_at": "",
-      "issue_date": "2026-05",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05",
-      "display_date_basis": "issue_date",
-      "push_basis": "issue_date",
-      "extraction_rule": "ajcass-current-api",
-      "date_source": ""
-    },
-    {
-      "id": "09db18f7a87135ff",
-      "journal_id": "j12",
-      "journal_name": "中国农村经济",
-      "title": "绿色算力基础设施建设对包容性绿色发展效率的影响",
-      "url": "https://zgncjj.ajcass.com/#/issueDetail?id=122830",
-      "authors": "刘传明 朱凯",
-      "published_at": "",
-      "issue_date": "2026-05",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05",
-      "display_date_basis": "issue_date",
-      "push_basis": "issue_date",
-      "extraction_rule": "ajcass-current-api",
-      "date_source": ""
-    },
-    {
-      "id": "bc96e15bfcecd687",
-      "journal_id": "j12",
+      "source_journal_id": "j12",
       "journal_name": "中国农村经济",
       "title": "论巩固和完善农村基本经营制度",
       "url": "https://zgncjj.ajcass.com/#/issueDetail?id=122803",
@@ -2446,8 +1901,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "450a7994c59e81d4",
+      "id": "c42f686eb771f766",
       "journal_id": "j3",
+      "source_journal_id": "j3",
       "journal_name": "世界经济",
       "title": "平台垄断、监管取向与全要素生产率：生态位视角的证据",
       "url": "https://sjjj.magtech.com.cn/CN/Y2026/V49/I5/172",
@@ -2462,8 +1918,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": "url_issue"
     },
     {
-      "id": "e38ae98d85ac9620",
+      "id": "7a4f98e291faca99",
       "journal_id": "j3",
+      "source_journal_id": "j3",
       "journal_name": "世界经济",
       "title": "人工智能技术进步与人口增长",
       "url": "https://sjjj.magtech.com.cn/CN/Y2026/V49/I5/208",
@@ -2478,24 +1935,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": "url_issue"
     },
     {
-      "id": "f54b5d81f1f32f97",
-      "journal_id": "j12",
-      "journal_name": "中国农村经济",
-      "title": "县域城乡融合发展的理论逻辑与实践模式——基于中国特色实践的一般性分析框架",
-      "url": "https://zgncjj.ajcass.com/#/issueDetail?id=122824",
-      "authors": "钟苏娟 黄贤金 贾铠阳",
-      "published_at": "",
-      "issue_date": "2026-05",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05",
-      "display_date_basis": "issue_date",
-      "push_basis": "issue_date",
-      "extraction_rule": "ajcass-current-api",
-      "date_source": ""
-    },
-    {
-      "id": "7263b565ba689165",
+      "id": "870df83f1f725d29",
       "journal_id": "j3",
+      "source_journal_id": "j3",
       "journal_name": "世界经济",
       "title": "线上商家“标题党”行为与内卷式竞争",
       "url": "https://sjjj.magtech.com.cn/CN/Y2026/V49/I5/108",
@@ -2510,8 +1952,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": "url_issue"
     },
     {
-      "id": "65cc9554f29ca0dc",
+      "id": "15d465a98864c029",
       "journal_id": "j3",
+      "source_journal_id": "j3",
       "journal_name": "世界经济",
       "title": "新闻情绪与人民币汇率预期",
       "url": "https://sjjj.magtech.com.cn/CN/Y2026/V49/I5/39",
@@ -2526,8 +1969,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": "url_issue"
     },
     {
-      "id": "af3637480c046983",
+      "id": "499d21402d0a0a46",
       "journal_id": "j3",
+      "source_journal_id": "j3",
       "journal_name": "世界经济",
       "title": "政府产业基金支持企业创新的最优投资模式研究",
       "url": "https://sjjj.magtech.com.cn/CN/Y2026/V49/I5/139",
@@ -2542,24 +1986,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": "url_issue"
     },
     {
-      "id": "8ac9e85c092452aa",
-      "journal_id": "j12",
-      "journal_name": "中国农村经济",
-      "title": "中国农村信用发展水平测度、演变及其影响因素的组态分析",
-      "url": "https://zgncjj.ajcass.com/#/issueDetail?id=122828",
-      "authors": "田侃 温国强 贾万颖",
-      "published_at": "",
-      "issue_date": "2026-05",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05",
-      "display_date_basis": "issue_date",
-      "push_basis": "issue_date",
-      "extraction_rule": "ajcass-current-api",
-      "date_source": ""
-    },
-    {
-      "id": "f3444d5905a3f4fb",
+      "id": "894ffe4137456bfb",
       "journal_id": "j17",
+      "source_journal_id": "j17",
       "journal_name": "JOURNAL OF POLITICAL ECONOMY",
       "title": "JPE Turnaround Times",
       "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/741685",
@@ -2574,8 +2003,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "9455a8c3e35198b6",
+      "id": "95cb81c0286cf976",
       "journal_id": "j17",
+      "source_journal_id": "j17",
       "journal_name": "JOURNAL OF POLITICAL ECONOMY",
       "title": "Recent Referees",
       "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/742103",
@@ -2590,8 +2020,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "fb9fe5979f0b0815",
+      "id": "61feb76ae788c08e",
       "journal_id": "j17",
+      "source_journal_id": "j17",
       "journal_name": "JOURNAL OF POLITICAL ECONOMY",
       "title": "The Zero-Beta Interest Rate",
       "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/740220",
@@ -2606,8 +2037,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "2bcc77ed913e78ad",
+      "id": "739a50720a74f763",
       "journal_id": "j17",
+      "source_journal_id": "j17",
       "journal_name": "JOURNAL OF POLITICAL ECONOMY",
       "title": "Revolutionary Transition: Inheritance Change and Fertility Decline",
       "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/739821",
@@ -2622,8 +2054,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "43bbf9b92c9a56fd",
+      "id": "e3de354a796c55fd",
       "journal_id": "j13",
+      "source_journal_id": "j13",
       "journal_name": "ACADEMY OF MANAGEMENT REVIEW",
       "title": "How AI Reshapes Multimodal Theorization: An Extension of Kuric and Höllerer’s “Theorization as a Prerequisite for Diffusion”",
       "url": "https://journals.aom.org/doi/abs/10.5465/amr.2026.0095",
@@ -2638,8 +2071,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "b9c4732af340591d",
+      "id": "e3b9343289569522",
       "journal_id": "j21",
+      "source_journal_id": "j21",
       "journal_name": "ACADEMY OF MANAGEMENT JOURNAL",
       "title": "Innovating More Formally: How Resistance-Led Participation Drives Expansion and Integration in Innovation Control Configuration",
       "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0722",
@@ -2654,8 +2088,196 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "eb0e45e0a99f86ce",
+      "id": "820f7e3ac97bd767",
+      "journal_id": "j5",
+      "source_journal_id": "j5",
+      "journal_name": "金融研究",
+      "title": "地方隐性担保破除对域内中小银行风险的影响",
+      "url": "http://www.jryj.org.cn/CN/abstract/abstract1599.shtml",
+      "authors": "",
+      "published_at": "2026-04-24",
+      "issue_date": "2026-04",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2026-04-24",
+      "display_date_basis": "published_at",
+      "push_basis": "issue_date",
+      "extraction_rule": "jryj-html",
+      "date_source": "meta_published"
+    },
+    {
+      "id": "04a72a53efa18c5d",
+      "journal_id": "j5",
+      "source_journal_id": "j5",
+      "journal_name": "金融研究",
+      "title": "分析师跟踪对企业产品质量违规的影响研究",
+      "url": "http://www.jryj.org.cn/CN/abstract/abstract1606.shtml",
+      "authors": "",
+      "published_at": "2026-04-24",
+      "issue_date": "2026-04",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2026-04-24",
+      "display_date_basis": "published_at",
+      "push_basis": "issue_date",
+      "extraction_rule": "jryj-html",
+      "date_source": "meta_published"
+    },
+    {
+      "id": "ec0070a46cf6d1ad",
+      "journal_id": "j5",
+      "source_journal_id": "j5",
+      "journal_name": "金融研究",
+      "title": "个人破产制度与地区创业活力——基于中国个人破产试点的经验证据",
+      "url": "http://www.jryj.org.cn/CN/abstract/abstract1603.shtml",
+      "authors": "",
+      "published_at": "2026-04-24",
+      "issue_date": "2026-04",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2026-04-24",
+      "display_date_basis": "published_at",
+      "push_basis": "issue_date",
+      "extraction_rule": "jryj-html",
+      "date_source": "meta_published"
+    },
+    {
+      "id": "2291c93154cdfd0b",
+      "journal_id": "j5",
+      "source_journal_id": "j5",
+      "journal_name": "金融研究",
+      "title": "公众预期、政策协调与房地产金融宏观审慎政策有效性",
+      "url": "http://www.jryj.org.cn/CN/abstract/abstract1596.shtml",
+      "authors": "",
+      "published_at": "2026-04-24",
+      "issue_date": "2026-04",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2026-04-24",
+      "display_date_basis": "published_at",
+      "push_basis": "issue_date",
+      "extraction_rule": "jryj-html",
+      "date_source": "meta_published"
+    },
+    {
+      "id": "0cb9ab4f4f1f235e",
+      "journal_id": "j5",
+      "source_journal_id": "j5",
+      "journal_name": "金融研究",
+      "title": "供应链网络中创新与企业全要素生产率提升:供应商创新视角",
+      "url": "http://www.jryj.org.cn/CN/abstract/abstract1602.shtml",
+      "authors": "",
+      "published_at": "2026-04-24",
+      "issue_date": "2026-04",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2026-04-24",
+      "display_date_basis": "published_at",
+      "push_basis": "issue_date",
+      "extraction_rule": "jryj-html",
+      "date_source": "meta_published"
+    },
+    {
+      "id": "9f04b011ce601f14",
+      "journal_id": "j5",
+      "source_journal_id": "j5",
+      "journal_name": "金融研究",
+      "title": "关税冲击与人民币货币锚地位调整——来自2018—2020年中美贸易摩擦的经验证据",
+      "url": "http://www.jryj.org.cn/CN/abstract/abstract1597.shtml",
+      "authors": "",
+      "published_at": "2026-04-24",
+      "issue_date": "2026-04",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2026-04-24",
+      "display_date_basis": "published_at",
+      "push_basis": "issue_date",
+      "extraction_rule": "jryj-html",
+      "date_source": "meta_published"
+    },
+    {
+      "id": "c36b10b69c175a23",
+      "journal_id": "j5",
+      "source_journal_id": "j5",
+      "journal_name": "金融研究",
+      "title": "基层医疗资源下沉与农村家庭贫困脆弱性——来自紧密型医共体建设的证据",
+      "url": "http://www.jryj.org.cn/CN/abstract/abstract1605.shtml",
+      "authors": "",
+      "published_at": "2026-04-24",
+      "issue_date": "2026-04",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2026-04-24",
+      "display_date_basis": "published_at",
+      "push_basis": "issue_date",
+      "extraction_rule": "jryj-html",
+      "date_source": "meta_published"
+    },
+    {
+      "id": "8c0d5d21c5318862",
+      "journal_id": "j5",
+      "source_journal_id": "j5",
+      "journal_name": "金融研究",
+      "title": "金融分权、信贷错配与地方中小银行风险",
+      "url": "http://www.jryj.org.cn/CN/abstract/abstract1598.shtml",
+      "authors": "",
+      "published_at": "2026-04-24",
+      "issue_date": "2026-04",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2026-04-24",
+      "display_date_basis": "published_at",
+      "push_basis": "issue_date",
+      "extraction_rule": "jryj-html",
+      "date_source": "meta_published"
+    },
+    {
+      "id": "6d70e9af82bdf7ce",
+      "journal_id": "j5",
+      "source_journal_id": "j5",
+      "journal_name": "金融研究",
+      "title": "媒体负面报道与银行信贷——基于信息中介和外部监督的双重视角",
+      "url": "http://www.jryj.org.cn/CN/abstract/abstract1600.shtml",
+      "authors": "",
+      "published_at": "2026-04-24",
+      "issue_date": "2026-04",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2026-04-24",
+      "display_date_basis": "published_at",
+      "push_basis": "issue_date",
+      "extraction_rule": "jryj-html",
+      "date_source": "meta_published"
+    },
+    {
+      "id": "093ba3e85e528e5b",
+      "journal_id": "j5",
+      "source_journal_id": "j5",
+      "journal_name": "金融研究",
+      "title": "碳减排政策、绿色技术采用与转型风险",
+      "url": "http://www.jryj.org.cn/CN/abstract/abstract1604.shtml",
+      "authors": "",
+      "published_at": "2026-04-24",
+      "issue_date": "2026-04",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2026-04-24",
+      "display_date_basis": "published_at",
+      "push_basis": "issue_date",
+      "extraction_rule": "jryj-html",
+      "date_source": "meta_published"
+    },
+    {
+      "id": "1c50469e18562920",
+      "journal_id": "j5",
+      "source_journal_id": "j5",
+      "journal_name": "金融研究",
+      "title": "要素市场一体化背景下的政府引导基金跨区域流动——来自国家级城市群规划的证据",
+      "url": "http://www.jryj.org.cn/CN/abstract/abstract1601.shtml",
+      "authors": "",
+      "published_at": "2026-04-24",
+      "issue_date": "2026-04",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2026-04-24",
+      "display_date_basis": "published_at",
+      "push_basis": "issue_date",
+      "extraction_rule": "jryj-html",
+      "date_source": "meta_published"
+    },
+    {
+      "id": "efd560aa3b1539f4",
       "journal_id": "j11",
+      "source_journal_id": "j11",
       "journal_name": "会计研究",
       "title": "《中小企业促进法》与企业投资",
       "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=3BB8045E-0B48-46BF-820C-C1D8A7C3BEA9&ID=A3ED3197-6D0F-4E67-944A-FA5C00C7CD77",
@@ -2670,8 +2292,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": "issue_loop"
     },
     {
-      "id": "7196a871c572eb13",
+      "id": "e5ef384c8e8453eb",
       "journal_id": "j11",
+      "source_journal_id": "j11",
       "journal_name": "会计研究",
       "title": "财务数智化转型的逻辑体系与实现路径：一个理论框架",
       "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=6AB54C2A-3493-488A-818A-8FD4ED6AB6E9&ID=A3ED3197-6D0F-4E67-944A-FA5C00C7CD77",
@@ -2686,24 +2309,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": "issue_loop"
     },
     {
-      "id": "e74536a498e9898f",
-      "journal_id": "j2",
-      "journal_name": "经济研究",
-      "title": "产业结构变化机制及其对经济增长的影响——兼论保持制造业合理比重的必要性",
-      "url": "https://erj.ajcass.com/#/issueDetail?id=122886",
-      "authors": "王弟海，吴茂华，潘士远",
-      "published_at": "",
-      "issue_date": "2026-04",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-04",
-      "display_date_basis": "issue_date",
-      "push_basis": "issue_date",
-      "extraction_rule": "ajcass-current-api",
-      "date_source": ""
-    },
-    {
-      "id": "59ece0fd4da9b4a0",
+      "id": "0f775e3d4d12fc93",
       "journal_id": "j4",
+      "source_journal_id": "j4",
       "journal_name": "中国工业经济",
       "title": "产业链人才链融合的劳动生产率提升效应——基于地理空间的产业链人才链测度",
       "url": "https://ciejournal.ajcass.com/Magazine/Show?id=122796",
@@ -2718,8 +2326,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": "context_issue"
     },
     {
-      "id": "5f2853878e5975cf",
+      "id": "a8cbf2c78e375181",
       "journal_id": "j11",
+      "source_journal_id": "j11",
       "journal_name": "会计研究",
       "title": "乘风逐绿：央企双碳考核如何驱动供应链绿色转型",
       "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=E2271787-D102-4298-9C6E-BFC3076B312E&ID=A3ED3197-6D0F-4E67-944A-FA5C00C7CD77",
@@ -2734,8 +2343,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": "issue_loop"
     },
     {
-      "id": "0fbf5aa70d372b1b",
+      "id": "7e0e2f1b1e5713d3",
       "journal_id": "j11",
+      "source_journal_id": "j11",
       "journal_name": "会计研究",
       "title": "打破业务藩篱：环保税征管、税种联动与企业所得税遵从",
       "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=7E6A9D5B-5A89-4806-BF98-92CCC68AB590&ID=A3ED3197-6D0F-4E67-944A-FA5C00C7CD77",
@@ -2750,24 +2360,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": "issue_loop"
     },
     {
-      "id": "26739ffe96a49413",
-      "journal_id": "j2",
-      "journal_name": "经济研究",
-      "title": "大国科技竞争下的前沿技术路线布局与研发资助策略",
-      "url": "https://erj.ajcass.com/#/issueDetail?id=122891",
-      "authors": "陈茁，赵艺璇，刘运",
-      "published_at": "",
-      "issue_date": "2026-04",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-04",
-      "display_date_basis": "issue_date",
-      "push_basis": "issue_date",
-      "extraction_rule": "ajcass-current-api",
-      "date_source": ""
-    },
-    {
-      "id": "2dd1e736f3e362e5",
+      "id": "f37e9a590f928c34",
       "journal_id": "j9",
+      "source_journal_id": "j9",
       "journal_name": "管理科学学报",
       "title": "动态批量与预测时阈：研究现状与展望",
       "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260409?st=article_issue",
@@ -2782,24 +2377,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": "url_issue"
     },
     {
-      "id": "47d35802f1131095",
-      "journal_id": "j2",
-      "journal_name": "经济研究",
-      "title": "分配改善的增长:一种检验政策共同富裕效应的新框架",
-      "url": "https://erj.ajcass.com/#/issueDetail?id=122893",
-      "authors": "张征宇，陈浩文，邵黎娜，曹思力，朱平芳",
-      "published_at": "",
-      "issue_date": "2026-04",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-04",
-      "display_date_basis": "issue_date",
-      "push_basis": "issue_date",
-      "extraction_rule": "ajcass-current-api",
-      "date_source": ""
-    },
-    {
-      "id": "af225938923aa64e",
+      "id": "52b1dc30e5ab2ea7",
       "journal_id": "j4",
+      "source_journal_id": "j4",
       "journal_name": "中国工业经济",
       "title": "工业智能化与收入分配格局演变：经济发展机遇背后的分配失衡隐忧",
       "url": "https://ciejournal.ajcass.com/Magazine/Show?id=122794",
@@ -2814,8 +2394,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": "context_issue"
     },
     {
-      "id": "73be5843f75d804c",
+      "id": "ddb91f0d233cd689",
       "journal_id": "j11",
+      "source_journal_id": "j11",
       "journal_name": "会计研究",
       "title": "公司劳务外包与经营风险———基于实物期权视角",
       "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=CB29DF6F-1F4A-4E34-B900-C6B7F5D88F6D&ID=A3ED3197-6D0F-4E67-944A-FA5C00C7CD77",
@@ -2830,8 +2411,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": "issue_loop"
     },
     {
-      "id": "eee4f4e015094379",
+      "id": "b346fdbf92d9c2a3",
       "journal_id": "j2",
+      "source_journal_id": "j2",
       "journal_name": "经济研究",
       "title": "构建中国经济学自主知识体系丨中国经济学的继承性、民族性问题探讨——学习贯彻习近平总书记在哲学社会科学工作座谈会上的重要讲话精神",
       "url": "https://erj.ajcass.com/#/issueDetail?id=122885",
@@ -2846,8 +2428,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": ""
     },
     {
-      "id": "2eafe4dc76f2063b",
+      "id": "71922550003587b7",
       "journal_id": "j11",
+      "source_journal_id": "j11",
       "journal_name": "会计研究",
       "title": "国有企业经营投资问责会影响客户企业真实盈余管理吗",
       "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=5E400AE6-1102-4271-8E3F-9C6F9ED20A7D&ID=A3ED3197-6D0F-4E67-944A-FA5C00C7CD77",
@@ -2862,8 +2445,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": "issue_loop"
     },
     {
-      "id": "33b631c9feeeba47",
+      "id": "31e3b15a2a23e381",
       "journal_id": "j11",
+      "source_journal_id": "j11",
       "journal_name": "会计研究",
       "title": "机构纵向持股对供应链长鞭效应的治理研究",
       "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=6C48B6EC-BCEA-4DA5-958C-EBBEE75ADB0B&ID=A3ED3197-6D0F-4E67-944A-FA5C00C7CD77",
@@ -2878,8 +2462,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": "issue_loop"
     },
     {
-      "id": "f150f36c1ec2f84f",
+      "id": "195ba7027d853e70",
       "journal_id": "j9",
+      "source_journal_id": "j9",
       "journal_name": "管理科学学报",
       "title": "基于高维因子模型的A股市场系统性风险研究",
       "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260404?st=article_issue",
@@ -2894,24 +2479,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": "url_issue"
     },
     {
-      "id": "02ace5f996e45ab0",
-      "journal_id": "j2",
-      "journal_name": "经济研究",
-      "title": "经济发展差异、财政制度变迁与县级财力均衡：1953—2019年的量化分析",
-      "url": "https://erj.ajcass.com/#/issueDetail?id=122895",
-      "authors": "汪德华，邹杰，吴涵",
-      "published_at": "",
-      "issue_date": "2026-04",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-04",
-      "display_date_basis": "issue_date",
-      "push_basis": "issue_date",
-      "extraction_rule": "ajcass-current-api",
-      "date_source": ""
-    },
-    {
-      "id": "fd1bc76343cbe9a4",
+      "id": "104605e3f5eb27ac",
       "journal_id": "j9",
+      "source_journal_id": "j9",
       "journal_name": "管理科学学报",
       "title": "考虑农户损失规避的平台型供应链融资模式选择",
       "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260407?st=article_issue",
@@ -2926,8 +2496,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": "url_issue"
     },
     {
-      "id": "ff56fe84f9ee56c8",
+      "id": "2ea118ca76293e4a",
       "journal_id": "j9",
+      "source_journal_id": "j9",
       "journal_name": "管理科学学报",
       "title": "考虑偏差修正的Bootstrap假设检验及大规模关键质量因子筛选研究",
       "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260405?st=article_issue",
@@ -2942,8 +2513,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": "url_issue"
     },
     {
-      "id": "a4f79c1ff3f1ced8",
+      "id": "dbc3ab1b8046c6c3",
       "journal_id": "j11",
+      "source_journal_id": "j11",
       "journal_name": "会计研究",
       "title": "劳动力市场势力如何影响分析师盈余预测准确性?———基于证券公...",
       "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=0EB713F2-A67B-4D41-858D-33AA14CAE36F&ID=A3ED3197-6D0F-4E67-944A-FA5C00C7CD77",
@@ -2958,8 +2530,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": "context_issue"
     },
     {
-      "id": "69ddd773fd5d66b4",
+      "id": "5fd45d4d2f88258a",
       "journal_id": "j4",
+      "source_journal_id": "j4",
       "journal_name": "中国工业经济",
       "title": "迈向全球共享繁荣：偏向性技术进步适宜性如何缓解收入不平等",
       "url": "https://ciejournal.ajcass.com/Magazine/Show?id=122795",
@@ -2974,8 +2547,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": "context_issue"
     },
     {
-      "id": "be078c0dc094af61",
+      "id": "e3e5aa3f53622fbd",
       "journal_id": "j4",
+      "source_journal_id": "j4",
       "journal_name": "中国工业经济",
       "title": "贸易政策不确定性、供应链暴露网络与全球违约风险——来自异质性空间自回归模型的新证据",
       "url": "https://ciejournal.ajcass.com/Magazine/Show?id=122793",
@@ -2990,8 +2564,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": "context_issue"
     },
     {
-      "id": "5f502677b8a39495",
+      "id": "56d3bb33a5eb2701",
       "journal_id": "j11",
+      "source_journal_id": "j11",
       "journal_name": "会计研究",
       "title": "耐心资本与企业盈余管理：基于失败容忍度的研究",
       "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=8BF9AA05-F099-4254-8E78-35850228415C&ID=A3ED3197-6D0F-4E67-944A-FA5C00C7CD77",
@@ -3006,8 +2581,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": "issue_loop"
     },
     {
-      "id": "ef3fb9a3717c7ea4",
+      "id": "2ec543f2fec32538",
       "journal_id": "j9",
+      "source_journal_id": "j9",
       "journal_name": "管理科学学报",
       "title": "评论操控：概念解析、理论发展和未来展望",
       "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260410?st=article_issue",
@@ -3022,8 +2598,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": "url_issue"
     },
     {
-      "id": "f0b5a25e84a9a81a",
+      "id": "a883300d44c9aaf8",
       "journal_id": "j4",
+      "source_journal_id": "j4",
       "journal_name": "中国工业经济",
       "title": "企业参与电商平台的就业效应及其机理",
       "url": "https://ciejournal.ajcass.com/Magazine/Show?id=122800",
@@ -3038,8 +2615,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": "context_issue"
     },
     {
-      "id": "3fd44f5e93545450",
+      "id": "bfe2b5ee6e201a0d",
       "journal_id": "j11",
+      "source_journal_id": "j11",
       "journal_name": "会计研究",
       "title": "企业数据资产信息披露同群效应研究",
       "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=4186276E-B31D-4704-97DE-96745DC5E9DA&ID=A3ED3197-6D0F-4E67-944A-FA5C00C7CD77",
@@ -3054,8 +2632,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": "issue_loop"
     },
     {
-      "id": "10448c67514acc10",
+      "id": "ba4323db0a7d59d1",
       "journal_id": "j9",
+      "source_journal_id": "j9",
       "journal_name": "管理科学学报",
       "title": "区域一体化推进的工业污染集聚效应——来自长三角边界效应与扩容影响的证据",
       "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260402?st=article_issue",
@@ -3070,24 +2649,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": "url_issue"
     },
     {
-      "id": "f76e996ca7f9aef4",
-      "journal_id": "j2",
-      "journal_name": "经济研究",
-      "title": "社会资本参与、市场承诺与应用基础研究创新",
-      "url": "https://erj.ajcass.com/#/issueDetail?id=122887",
-      "authors": "冷萱，钟诗宇，曾宪聚，朱田恬",
-      "published_at": "",
-      "issue_date": "2026-04",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-04",
-      "display_date_basis": "issue_date",
-      "push_basis": "issue_date",
-      "extraction_rule": "ajcass-current-api",
-      "date_source": ""
-    },
-    {
-      "id": "28bcde53880900f7",
+      "id": "4558f6f42cef4f00",
       "journal_id": "j4",
+      "source_journal_id": "j4",
       "journal_name": "中国工业经济",
       "title": "数据要素市场化、数商发展与实数融合",
       "url": "https://ciejournal.ajcass.com/Magazine/Show?id=122799",
@@ -3102,8 +2666,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": "context_issue"
     },
     {
-      "id": "60ab6531bb05147b",
+      "id": "bc1fd8a6e541b4e0",
       "journal_id": "j9",
+      "source_journal_id": "j9",
       "journal_name": "管理科学学报",
       "title": "数字金融的治理效应研究——基于盈余管理的视角",
       "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260403?st=article_issue",
@@ -3118,8 +2683,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": "url_issue"
     },
     {
-      "id": "f3aca6f50eb2300f",
+      "id": "34ca55d40c924af7",
       "journal_id": "j11",
+      "source_journal_id": "j11",
       "journal_name": "会计研究",
       "title": "双边政治关系与跨国企业审计收费",
       "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=D33DD869-EF81-46E8-BF10-BB5D55CE265D&ID=A3ED3197-6D0F-4E67-944A-FA5C00C7CD77",
@@ -3134,24 +2700,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": "issue_loop"
     },
     {
-      "id": "a2ed364e6e0ae397",
-      "journal_id": "j2",
-      "journal_name": "经济研究",
-      "title": "税收征管数字化升级与上市公司所得税费用偏差",
-      "url": "https://erj.ajcass.com/#/issueDetail?id=122889",
-      "authors": "储德银，刘文龙，张同斌，储旭捷",
-      "published_at": "",
-      "issue_date": "2026-04",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-04",
-      "display_date_basis": "issue_date",
-      "push_basis": "issue_date",
-      "extraction_rule": "ajcass-current-api",
-      "date_source": ""
-    },
-    {
-      "id": "9ad53cffa90435e4",
+      "id": "34bcadbdbc8d89b6",
       "journal_id": "j4",
+      "source_journal_id": "j4",
       "journal_name": "中国工业经济",
       "title": "头部企业数字化转型、创造性破坏与制造业生产率",
       "url": "https://ciejournal.ajcass.com/Magazine/Show?id=122797",
@@ -3166,24 +2717,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": "context_issue"
     },
     {
-      "id": "6333eb7f8c649411",
-      "journal_id": "j2",
-      "journal_name": "经济研究",
-      "title": "网络平台位置资源的分配机制与福利效应",
-      "url": "https://erj.ajcass.com/#/issueDetail?id=122894",
-      "authors": "王大中，宫汝凯，戴逸菲",
-      "published_at": "",
-      "issue_date": "2026-04",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-04",
-      "display_date_basis": "issue_date",
-      "push_basis": "issue_date",
-      "extraction_rule": "ajcass-current-api",
-      "date_source": ""
-    },
-    {
-      "id": "6b3e1da86b74cc58",
+      "id": "96cfa91894d638af",
       "journal_id": "j9",
+      "source_journal_id": "j9",
       "journal_name": "管理科学学报",
       "title": "异质性环境规制、绿色创新与企业绿色形象的关系研究",
       "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260401?st=article_issue",
@@ -3198,8 +2734,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": "url_issue"
     },
     {
-      "id": "27d00d44a9b715db",
+      "id": "3f0c0b8ab052717e",
       "journal_id": "j11",
+      "source_journal_id": "j11",
       "journal_name": "会计研究",
       "title": "银行关联、信贷周期与债务违约风险",
       "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=5C457CA7-246B-4C2C-A3DA-59E0A1079ED1&ID=A3ED3197-6D0F-4E67-944A-FA5C00C7CD77",
@@ -3214,8 +2751,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": "issue_loop"
     },
     {
-      "id": "74ddb6d55ebaa077",
+      "id": "c420162186a9f48a",
       "journal_id": "j9",
+      "source_journal_id": "j9",
       "journal_name": "管理科学学报",
       "title": "折价出售传染与货币市场基金行业系统性风险——基于“基金-资产”二分网络视角",
       "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260408?st=article_issue",
@@ -3230,8 +2768,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": "url_issue"
     },
     {
-      "id": "0a2c9a586f24a4d7",
+      "id": "4ecbd35b4a9c7f70",
       "journal_id": "j11",
+      "source_journal_id": "j11",
       "journal_name": "会计研究",
       "title": "职工董事与资本市场稳定：基于股价崩盘风险的视角",
       "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=3560B744-9569-4B80-B443-B66335BFF097&ID=A3ED3197-6D0F-4E67-944A-FA5C00C7CD77",
@@ -3246,8 +2785,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": "issue_loop"
     },
     {
-      "id": "2519ed04b33f983c",
+      "id": "1ffc3a3bc7b4b387",
       "journal_id": "j4",
+      "source_journal_id": "j4",
       "journal_name": "中国工业经济",
       "title": "制度型开放创新与企业碳负担——来自自由贸易试验区的经验证据",
       "url": "https://ciejournal.ajcass.com/Magazine/Show?id=122798",
@@ -3262,56 +2802,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": "context_issue"
     },
     {
-      "id": "cc4611c0600b4570",
-      "journal_id": "j2",
-      "journal_name": "经济研究",
-      "title": "中国碳排放权交易市场价格波动机制及实证——基于双层演化博弈视角的研究",
-      "url": "https://erj.ajcass.com/#/issueDetail?id=122888",
-      "authors": "王杰铖，高文武，陈诗一",
-      "published_at": "",
-      "issue_date": "2026-04",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-04",
-      "display_date_basis": "issue_date",
-      "push_basis": "issue_date",
-      "extraction_rule": "ajcass-current-api",
-      "date_source": ""
-    },
-    {
-      "id": "5f7c6e5943a9b5ad",
-      "journal_id": "j2",
-      "journal_name": "经济研究",
-      "title": "中国新能源汽车发展和世界碳减排——基于量化贸易模型的研究",
-      "url": "https://erj.ajcass.com/#/issueDetail?id=122892",
-      "authors": "段玉婉，高远，张礼卿",
-      "published_at": "",
-      "issue_date": "2026-04",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-04",
-      "display_date_basis": "issue_date",
-      "push_basis": "issue_date",
-      "extraction_rule": "ajcass-current-api",
-      "date_source": ""
-    },
-    {
-      "id": "8b1e390107e4167c",
-      "journal_id": "j2",
-      "journal_name": "经济研究",
-      "title": "中间品贸易自由化、共同投资者持股与核心技术突破",
-      "url": "https://erj.ajcass.com/#/issueDetail?id=122890",
-      "authors": "魏浩，孙全刚",
-      "published_at": "",
-      "issue_date": "2026-04",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-04",
-      "display_date_basis": "issue_date",
-      "push_basis": "issue_date",
-      "extraction_rule": "ajcass-current-api",
-      "date_source": ""
-    },
-    {
-      "id": "ad4624c495c3a3e7",
+      "id": "9f22b8407dffe6cc",
       "journal_id": "j9",
+      "source_journal_id": "j9",
       "journal_name": "管理科学学报",
       "title": "自动化码头AGV无死锁在线路径规划算法",
       "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260406?st=article_issue",
@@ -3326,8 +2819,9 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": "url_issue"
     },
     {
-      "id": "922530fbca68665c",
+      "id": "290212594ff03811",
       "journal_id": "j4",
+      "source_journal_id": "j4",
       "journal_name": "中国工业经济",
       "title": "ESG合成谬误的生成与破解：从强还原论范式转向弱整体论范式",
       "url": "https://ciejournal.ajcass.com/Magazine/Show?id=122801",
