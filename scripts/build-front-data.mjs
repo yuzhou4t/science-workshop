@@ -1,6 +1,26 @@
-import { readFile, writeFile } from "node:fs/promises";
+import { readdir, readFile, writeFile } from "node:fs/promises";
 
-const workflowPath = new URL("../data/recent-articles-2026-04-25_2026-05-25.json", import.meta.url);
+async function resolveWorkflowPath() {
+  const argPath = process.argv.slice(2).find((arg) => arg.startsWith("--workflow="))?.slice("--workflow=".length);
+  if (argPath) return new URL(argPath, `file://${process.cwd()}/`);
+
+  const dataDir = new URL("../data/", import.meta.url);
+  const entries = await readdir(dataDir, { withFileTypes: true });
+  const workflowFiles = entries
+    .filter((entry) => entry.isFile() && /^recent-articles-\d{4}-\d{2}-\d{2}_\d{4}-\d{2}-\d{2}\.json$/.test(entry.name))
+    .map((entry) => entry.name)
+    .sort();
+
+  for (const file of workflowFiles.toReversed()) {
+    const workflowPath = new URL(`../data/${file}`, import.meta.url);
+    const workflow = JSON.parse(await readFile(workflowPath, "utf8"));
+    if (workflow.summary?.sources_ready > 0) return workflowPath;
+  }
+
+  throw new Error("No successful recent workflow file found under data/.");
+}
+
+const workflowPath = await resolveWorkflowPath();
 const outputPath = new URL("../data/recent-front-data.js", import.meta.url);
 const workflow = JSON.parse(await readFile(workflowPath, "utf8"));
 
@@ -29,4 +49,4 @@ const frontData = {
 
 const js = `window.RECENT_WORKFLOW_DATA = ${JSON.stringify(frontData, null, 2)};\n`;
 await writeFile(outputPath, js);
-console.log(`wrote ${outputPath.pathname}`);
+console.log(`wrote ${outputPath.pathname} from ${workflowPath.pathname}`);
