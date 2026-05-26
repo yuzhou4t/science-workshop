@@ -2195,7 +2195,7 @@
           const kind = dateBasisLabel(row.display_date_basis);
           const authorText = row.authors ? `作者：${row.authors}` : "作者信息待补全";
           const dateText = `${dateBasisLabel(row.display_date_basis)}：${formatDateLabel(row.display_date || row.issue_date || range.start)}`;
-          const pushText = `发现：${formatDate(pushDate)}`;
+          const pushText = kind === "首次发现" ? "" : `首次发现：${formatDate(pushDate)}`;
           return {
             id: `wf-${row.id}`,
             journalId,
@@ -2207,7 +2207,7 @@
             pushDate,
             kind,
             title: row.title,
-            summary: `${authorText} · ${dateText} · ${pushText} · ${row.extraction_rule}`,
+            summary: [authorText, dateText, pushText, row.extraction_rule].filter(Boolean).join(" · "),
             url: row.url,
             subject: journal.subject,
             lang: journal.lang,
@@ -2445,7 +2445,7 @@
               ${recent.map((item) => `
                 <div class="mini-item">
                   <p class="mini-title">${escapeHtml(item.title)}</p>
-                  <div class="mini-meta">${formatDateLabel(item.datePrecision === "month" ? item.date.slice(0, 7) : item.date)} · ${escapeHtml(item.kind)} · 发现 ${formatDate(item.pushDate || item.date)}</div>
+                  <div class="mini-meta">${miniDateMeta(item)}</div>
                 </div>
               `).join("")}
             </div>
@@ -2455,6 +2455,12 @@
             只看该刊文章
           </button>
         `;
+      }
+
+      function miniDateMeta(item) {
+        const articleDate = formatDateLabel(item.datePrecision === "month" ? item.date.slice(0, 7) : item.date);
+        const discoveryText = item.kind === "首次发现" ? "" : ` · 首次发现 ${formatDate(item.pushDate || item.date)}`;
+        return `${escapeHtml(articleDate)} · ${escapeHtml(item.kind)}${escapeHtml(discoveryText)}`;
       }
 
       function metaRow(label, value) {
