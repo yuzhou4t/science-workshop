@@ -1672,7 +1672,7 @@
                   <div class="segmented" id="languageFilters" aria-label="语言筛选"></div>
                 </div>
                 <div class="filter-row">
-                  <div class="filter-row-head"><span>Push Date</span><span>按发现/入库日期筛选</span></div>
+                  <div class="filter-row-head"><span>Article Date</span><span>优先首次发表日，缺失时按期号</span></div>
                   <div class="date-filter-grid">
                     <input class="field" id="dateFromInput" type="date" aria-label="开始日期" />
                     <input class="field" id="dateToInput" type="date" aria-label="结束日期" />
@@ -2179,17 +2179,6 @@
         return { start: firstSeen, end: firstSeen, precision: "day" };
       }
 
-      function pushRange(row) {
-        const date = isoDateOnly(row.first_seen_at || row.observed_at || workflowData.summary?.checked_at || "2026-05-25");
-        return { start: date, end: date, precision: "day" };
-      }
-
-      function pushBasisLabel(value) {
-        if (value === "published_date") return "真实日期";
-        if (value === "issue_date") return "期号日期";
-        return "首次发现";
-      }
-
       function dateBasisLabel(value) {
         if (value === "published_at") return "发布日期";
         if (value === "issue_date") return "期号";
@@ -2200,12 +2189,13 @@
         return workflowData.push_queue.map((row) => {
           const journalId = canonicalJournalId(row.journal_id);
           const journal = journalById(journalId);
-          const range = pushRange(row);
-          const displayRange = articleDisplayRange(row);
+          const range = articleDisplayRange(row);
           const date = range.start;
-          const kind = "推送发现";
+          const pushDate = isoDateOnly(row.first_seen_at || row.observed_at || workflowData.summary?.checked_at || "2026-05-25");
+          const kind = dateBasisLabel(row.display_date_basis);
           const authorText = row.authors ? `作者：${row.authors}` : "作者信息待补全";
           const dateText = `${dateBasisLabel(row.display_date_basis)}：${formatDateLabel(row.display_date || row.issue_date || range.start)}`;
+          const pushText = `发现：${formatDate(pushDate)}`;
           return {
             id: `wf-${row.id}`,
             journalId,
@@ -2214,11 +2204,10 @@
             dateStart: range.start,
             dateEnd: range.end,
             datePrecision: range.precision,
-            articleDate: displayRange.start,
-            articleDatePrecision: displayRange.precision,
+            pushDate,
             kind,
             title: row.title,
-            summary: `${authorText} · ${dateText} · ${row.extraction_rule}`,
+            summary: `${authorText} · ${dateText} · ${pushText} · ${row.extraction_rule}`,
             url: row.url,
             subject: journal.subject,
             lang: journal.lang,
@@ -2366,7 +2355,7 @@
         if (activeDateFrom || activeDateTo) {
           const fromLabel = activeDateFrom ? formatDateLabel(activeDateFrom) : "开始";
           const toLabel = activeDateTo ? formatDateLabel(activeDateTo) : "结束";
-          parts.push(`推送日期: ${fromLabel} 至 ${toLabel}`);
+          parts.push(`文章日期: ${fromLabel} 至 ${toLabel}`);
         }
         if (query.trim()) parts.push(`搜索: ${query.trim()}`);
         $("#activeFilterSummary").textContent = parts.length ? parts.join(" / ") : "先选中文或英文，再展开学科和期刊";
@@ -2387,7 +2376,7 @@
         }, {});
 
         $("#timeline").innerHTML = Object.entries(grouped).map(([date, dayItems]) => {
-          const dateLabel = formatDate(date);
+          const dateLabel = dayItems.every((item) => item.datePrecision === "month") ? formatDateLabel(date.slice(0, 7)) : formatDate(date);
           return `
           <div class="timeline-day">
             <div class="timeline-day-head">
@@ -2456,7 +2445,7 @@
               ${recent.map((item) => `
                 <div class="mini-item">
                   <p class="mini-title">${escapeHtml(item.title)}</p>
-                  <div class="mini-meta">${formatDate(item.date)} · ${escapeHtml(item.kind)} · ${formatDateLabel(item.articleDatePrecision === "month" ? item.articleDate.slice(0, 7) : item.articleDate)}</div>
+                  <div class="mini-meta">${formatDateLabel(item.datePrecision === "month" ? item.date.slice(0, 7) : item.date)} · ${escapeHtml(item.kind)} · 发现 ${formatDate(item.pushDate || item.date)}</div>
                 </div>
               `).join("")}
             </div>
