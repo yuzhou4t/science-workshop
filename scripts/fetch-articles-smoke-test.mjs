@@ -394,6 +394,8 @@ function isNonArticleTitle(title) {
   return /^(announcements?|frontmatter|front matter|backmatter|back matter|contents?|cover|masthead|issue information)$/i.test(title)
     || /^(front|back)\s?matter\b/i.test(title)
     || /^american finance association$/i.test(title)
+    || /^jpe turnaround times$/i.test(title)
+    || /^recent referees$/i.test(title)
     || /annual report of the editor/i.test(title)
     || /election of fellows/i.test(title)
     || /^front matter$/i.test(title);

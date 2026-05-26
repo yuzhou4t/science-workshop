@@ -1672,7 +1672,7 @@
                   <div class="segmented" id="languageFilters" aria-label="语言筛选"></div>
                 </div>
                 <div class="filter-row">
-                  <div class="filter-row-head"><span>Article Date</span><span>优先首次发表日，缺失时按期号</span></div>
+                  <div class="filter-row-head"><span>Push Date</span><span>按入库日期筛选</span></div>
                   <div class="date-filter-grid">
                     <input class="field" id="dateFromInput" type="date" aria-label="开始日期" />
                     <input class="field" id="dateToInput" type="date" aria-label="结束日期" />
@@ -2167,54 +2167,37 @@
         return String(value || "").slice(0, 10);
       }
 
-      function monthEnd(monthText) {
-        const [year, month] = String(monthText).split("-").map(Number);
-        return new Date(Date.UTC(year, month, 0)).toISOString().slice(0, 10);
-      }
-
-      function articleDisplayRange(row) {
-        if (row.published_at) return { start: isoDateOnly(row.published_at), end: isoDateOnly(row.published_at), precision: "day" };
-        if (row.issue_date) return { start: `${row.issue_date}-01`, end: monthEnd(row.issue_date), precision: "month" };
-        const firstSeen = isoDateOnly(row.first_seen_at || workflowData.summary?.checked_at || "2026-05-25");
-        return { start: firstSeen, end: firstSeen, precision: "day" };
-      }
-
-      function dateBasisLabel(value) {
-        if (value === "published_at") return "发布日期";
-        if (value === "issue_date") return "期号";
-        return "首次发现";
-      }
-
       function buildWorkflowArticles() {
         return workflowData.push_queue.map((row) => {
           const journalId = canonicalJournalId(row.journal_id);
           const journal = journalById(journalId);
-          const range = articleDisplayRange(row);
-          const date = range.start;
           const pushDate = isoDateOnly(row.first_seen_at || row.observed_at || workflowData.summary?.checked_at || "2026-05-25");
-          const kind = dateBasisLabel(row.display_date_basis);
+          const kind = "推送条目";
           const authorText = row.authors ? `作者：${row.authors}` : "作者信息待补全";
-          const dateText = `${dateBasisLabel(row.display_date_basis)}：${formatDateLabel(row.display_date || row.issue_date || range.start)}`;
-          const pushText = kind === "首次发现" ? "" : `首次发现：${formatDate(pushDate)}`;
+          const publishedText = row.published_at ? `首发：${formatDate(row.published_at)}` : "";
+          const issueText = row.issue_date ? `期号：${formatDateLabel(row.issue_date)}` : "";
+          const dateText = [publishedText, issueText].filter(Boolean).join(" · ");
           return {
             id: `wf-${row.id}`,
             journalId,
             sourceJournalId: row.source_journal_id || row.journal_id,
-            date,
-            dateStart: range.start,
-            dateEnd: range.end,
-            datePrecision: range.precision,
+            date: pushDate,
+            dateStart: pushDate,
+            dateEnd: pushDate,
+            datePrecision: "day",
             pushDate,
+            publishedAt: row.published_at || "",
+            issueDate: row.issue_date || "",
             kind,
             title: row.title,
-            summary: [authorText, dateText, pushText, row.extraction_rule].filter(Boolean).join(" · "),
+            summary: [authorText, dateText, row.extraction_rule].filter(Boolean).join(" · "),
             url: row.url,
             subject: journal.subject,
             lang: journal.lang,
             rating: journal.rating,
             pushBasis: row.push_basis,
             tags: [journal.subject, journal.lang, journal.rating, kind],
-            status: row.push_basis === "first_seen" ? "warn" : "normal"
+            status: row.published_at || row.issue_date ? "normal" : "warn"
           };
         }).sort((a, b) => b.dateStart.localeCompare(a.dateStart) || a.title.localeCompare(b.title, "zh-Hans-CN"));
       }
@@ -2307,15 +2290,15 @@
 
       function renderStats() {
         const visible = filteredArticles();
-        const realDate = visible.filter((article) => article.pushBasis === "published_date").length;
-        const issueDate = visible.filter((article) => article.pushBasis === "issue_date").length;
-        const firstSeen = visible.filter((article) => article.pushBasis === "first_seen").length;
+        const publishedDate = visible.filter((article) => article.publishedAt).length;
+        const issueDate = visible.filter((article) => article.issueDate).length;
+        const pendingArticleDate = visible.filter((article) => !article.publishedAt && !article.issueDate).length;
         const workflowTotal = workflowData.summary?.push_queue_articles || articles.length;
         $("#trackingStats").innerHTML = [
           ["推送条目", visible.length],
-          ["真实日期", realDate],
-          ["期号日期", issueDate],
-          ["首次发现", firstSeen],
+          ["有首发日", publishedDate],
+          ["有期号", issueDate],
+          ["待日期", pendingArticleDate],
           ["工作流总量", workflowTotal]
         ].map(([label, value]) => `<span class="metric-inline">${label}<strong>${value}</strong></span>`).join("");
       }
@@ -2355,7 +2338,7 @@
         if (activeDateFrom || activeDateTo) {
           const fromLabel = activeDateFrom ? formatDateLabel(activeDateFrom) : "开始";
           const toLabel = activeDateTo ? formatDateLabel(activeDateTo) : "结束";
-          parts.push(`文章日期: ${fromLabel} 至 ${toLabel}`);
+          parts.push(`推送日期: ${fromLabel} 至 ${toLabel}`);
         }
         if (query.trim()) parts.push(`搜索: ${query.trim()}`);
         $("#activeFilterSummary").textContent = parts.length ? parts.join(" / ") : "先选中文或英文，再展开学科和期刊";
@@ -2376,7 +2359,7 @@
         }, {});
 
         $("#timeline").innerHTML = Object.entries(grouped).map(([date, dayItems]) => {
-          const dateLabel = dayItems.every((item) => item.datePrecision === "month") ? formatDateLabel(date.slice(0, 7)) : formatDate(date);
+          const dateLabel = formatDate(date);
           return `
           <div class="timeline-day">
             <div class="timeline-day-head">
@@ -2458,9 +2441,10 @@
       }
 
       function miniDateMeta(item) {
-        const articleDate = formatDateLabel(item.datePrecision === "month" ? item.date.slice(0, 7) : item.date);
-        const discoveryText = item.kind === "首次发现" ? "" : ` · 首次发现 ${formatDate(item.pushDate || item.date)}`;
-        return `${escapeHtml(articleDate)} · ${escapeHtml(item.kind)}${escapeHtml(discoveryText)}`;
+        const parts = [formatDate(item.date)];
+        if (item.publishedAt) parts.push(`首发 ${formatDate(item.publishedAt)}`);
+        if (item.issueDate) parts.push(`期号 ${formatDateLabel(item.issueDate)}`);
+        return parts.map(escapeHtml).join(" · ");
       }
 
       function metaRow(label, value) {

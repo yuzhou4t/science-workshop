@@ -778,7 +778,7 @@
       "fetch_ms": 1043,
       "ok": true,
       "usable_as_data_source": true,
-      "article_count": 19,
+      "article_count": 17,
       "candidate_count": 20,
       "articles": [
         {
@@ -839,26 +839,6 @@
           "author_source": "",
           "published_at": "2026-05-01",
           "date_source": "metadata_published",
-          "issue_date": ""
-        },
-        {
-          "title": "Recent Referees",
-          "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/742103",
-          "date": "2026-05-01",
-          "authors": "",
-          "published_at": "2026-05-01",
-          "date_source": "metadata_published",
-          "author_source": "",
-          "issue_date": ""
-        },
-        {
-          "title": "JPE Turnaround Times",
-          "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/741685",
-          "date": "2026-05-01",
-          "authors": "",
-          "published_at": "2026-05-01",
-          "date_source": "metadata_published",
-          "author_source": "",
           "issue_date": ""
         },
         {

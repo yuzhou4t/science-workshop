@@ -5,12 +5,12 @@ window.RECENT_WORKFLOW_DATA = {
     "until": "2026-05-26",
     "sources_total": 22,
     "sources_ready": 22,
-    "recent_articles": 153,
-    "new_recent_articles": 153,
+    "recent_articles": 151,
+    "new_recent_articles": 151,
     "issue_dated_articles": 42,
     "new_undated_articles": 34,
     "undated_candidates": 34,
-    "push_queue_articles": 187
+    "push_queue_articles": 185
   },
   "push_queue": [
     {
@@ -1459,23 +1459,6 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": "metadata_published"
     },
     {
-      "id": "894ffe4137456bfb",
-      "journal_id": "j17",
-      "source_journal_id": "j17",
-      "journal_name": "JOURNAL OF POLITICAL ECONOMY",
-      "title": "JPE Turnaround Times",
-      "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/741685",
-      "authors": "",
-      "published_at": "2026-05-01",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-01",
-      "display_date_basis": "published_at",
-      "push_basis": "published_date",
-      "extraction_rule": "atypon-etoc",
-      "date_source": "metadata_published"
-    },
-    {
       "id": "feec6371b077fd74",
       "journal_id": "j17",
       "source_journal_id": "j17",
@@ -1483,23 +1466,6 @@ window.RECENT_WORKFLOW_DATA = {
       "title": "Private Private Information",
       "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/739833",
       "authors": "Kevin HeFedor SandomirskiyOmer TamuzUniversity of PennsylvaniaPrinceton UniversityCalifornia Institute of Technology",
-      "published_at": "2026-05-01",
-      "issue_date": "",
-      "first_seen_at": "2026-05-25",
-      "display_date": "2026-05-01",
-      "display_date_basis": "published_at",
-      "push_basis": "published_date",
-      "extraction_rule": "atypon-etoc",
-      "date_source": "metadata_published"
-    },
-    {
-      "id": "95cb81c0286cf976",
-      "journal_id": "j17",
-      "source_journal_id": "j17",
-      "journal_name": "JOURNAL OF POLITICAL ECONOMY",
-      "title": "Recent Referees",
-      "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/742103",
-      "authors": "",
       "published_at": "2026-05-01",
       "issue_date": "",
       "first_seen_at": "2026-05-25",
