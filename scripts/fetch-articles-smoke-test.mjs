@@ -172,28 +172,33 @@ async function fetchWithCurl(url, timeoutMs, extraHeaders = {}, started = Date.n
     return raw.trim().split("\n").slice(0, 3).join(" ");
   };
 
-  try {
-    const { stdout } = await execFileAsync("curl", args, { encoding: "buffer", maxBuffer: 24 * 1024 * 1024 });
-    const parsed = parseCurlOutput(stdout);
-    if (!parsed) throw new Error("curl meta marker missing");
-    return parsed;
-  } catch (error) {
-    const compactError = compactCurlError(error);
-    if (error.stdout?.length) {
-      const parsed = parseCurlOutput(error.stdout, compactError);
-      if (parsed?.text) return parsed;
+  let lastErrorResponse = null;
+  for (let attempt = 0; attempt < 2; attempt += 1) {
+    try {
+      const { stdout } = await execFileAsync("curl", args, { encoding: "buffer", maxBuffer: 24 * 1024 * 1024 });
+      const parsed = parseCurlOutput(stdout);
+      if (!parsed) throw new Error("curl meta marker missing");
+      return parsed;
+    } catch (error) {
+      const compactError = compactCurlError(error);
+      if (error.stdout?.length) {
+        const parsed = parseCurlOutput(error.stdout, compactError);
+        if (parsed?.text) return parsed;
+      }
+      lastErrorResponse = {
+        ok: false,
+        status: "ERR",
+        finalUrl: url,
+        contentType: "",
+        text: "",
+        transport: "curl",
+        error: compactError,
+        ms: Date.now() - started,
+      };
+      if (attempt === 0) await new Promise((resolve) => setTimeout(resolve, 750));
     }
-    return {
-      ok: false,
-      status: "ERR",
-      finalUrl: url,
-      contentType: "",
-      text: "",
-      transport: "curl",
-      error: compactError,
-      ms: Date.now() - started,
-    };
   }
+  return lastErrorResponse;
 }
 
 async function fetchText(url, timeoutMs = 10000, extraHeaders = {}) {
@@ -653,13 +658,19 @@ async function extractJmscIssueHtml(item) {
   }
 
   const issueResponse = await fetchText(issueLinks[0].url, 12000);
-  const articles = issueResponse.ok
+  let articles = issueResponse.ok
     ? parseAnchorsMatching(issueResponse.text, issueResponse.finalUrl, {
       include: [/\/jmsc\/article\/abstract\/\d+/i],
       exclude: [/\/jmsc\/article\/issue\//i],
       mapHref: (href) => (/^jmsc\//i.test(href) ? `/${href}` : href),
     })
     : [];
+  articles = await enrichArticlesWithDetailMetadata(articles, {
+    limit: 30,
+    timeoutMs: 11000,
+    ifMissingAuthors: true,
+    ifMissingPublished: true,
+  });
 
   return {
     response: issueResponse,
@@ -974,17 +985,17 @@ async function extractAdapterArticles(item) {
       return extractHtmlByPatterns(item, {
         include: [/\/Magazine\/Show\?id=\d+/i],
         exclude: [/Admin\/|CommonBlock\/|SiteContent/i],
-      }, 17000);
+      }, 17000, { detailDateHints: { limit: 20, timeoutMs: 11000, ifMissingAuthors: true } });
     case "magtech-cn-html":
       return extractHtmlByPatterns(item, {
         include: [/\/CN\/Y20\d{2}\/V\d+\/I\d+\/\d+/i],
         exclude: [/#bccl/i, /archive_by_years/i, /\/CN\/Y20\d{2}\/V\d+\/I\d+$/i],
-      });
+      }, 11000, { detailDateHints: { limit: 30, timeoutMs: 11000, ifMissingAuthors: true, ifMissingPublished: true } });
     case "jryj-html":
       return extractHtmlByPatterns(item, {
         include: [/\/CN\/abstract\/abstract\d+\.shtml/i, /\/CN\/Y20\d{2}\/V\d+\/I\d+\/\d+/i],
         exclude: [/\/CN\/column\//i, /volumn/i, /showOldVolumnList/i],
-      }, 11000, { detailDateHints: { limit: 30, timeoutMs: 10000 } });
+      }, 11000, { detailDateHints: { limit: 30, timeoutMs: 10000, ifMissingAuthors: true, ifMissingPublished: true } });
     case "cnki-captcha-check":
       return extractCnkiCaptchaCheck(item);
     case "macrodatas-issue-list":

@@ -1,6 +1,6 @@
 {
   "summary": {
-    "checked_at": "2026-05-26T03:58:23.214Z",
+    "checked_at": "2026-05-26T16:37:16.924Z",
     "direct_feeds_total": 5,
     "direct_feeds_ok": 5,
     "adapter_sources_total": 17,
@@ -19,7 +19,7 @@
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1177,
+      "fetch_ms": 1237,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 50,
@@ -491,7 +491,7 @@
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1314,
+      "fetch_ms": 1081,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 23,
@@ -775,7 +775,7 @@
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1043,
+      "fetch_ms": 1215,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 17,
@@ -985,7 +985,7 @@
         }
       ],
       "notes": [
-        "filtered_non_article:1"
+        "filtered_non_article:3"
       ],
       "error": ""
     },
@@ -998,8 +998,8 @@
       "extraction_rule": "wiley-etoc",
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
-      "transport": "curl",
-      "fetch_ms": 6321,
+      "transport": "fetch",
+      "fetch_ms": 1068,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 11,
@@ -1151,7 +1151,7 @@
       "notes": [
         "filtered_non_article:3"
       ],
-      "error": "fetch failed"
+      "error": ""
     },
     {
       "type": "direct_rss",
@@ -1163,7 +1163,7 @@
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1267,
+      "fetch_ms": 1818,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 50,
@@ -1616,8 +1616,8 @@
       "extraction_rule": "ajcass-current-api",
       "status": 200,
       "content_type": "application/json; charset=utf-8",
-      "transport": "curl",
-      "fetch_ms": 29850,
+      "transport": "fetch",
+      "fetch_ms": 2478,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 11,
@@ -1711,7 +1711,7 @@
         }
       ],
       "notes": [],
-      "error": "timeout"
+      "error": ""
     },
     {
       "type": "adapter_source",
@@ -1724,8 +1724,8 @@
       "extraction_rule": "cie-legacy-html",
       "status": 200,
       "content_type": "text/html; charset=utf-8",
-      "transport": "curl",
-      "fetch_ms": 50014,
+      "transport": "fetch",
+      "fetch_ms": 12886,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 50,
@@ -2019,17 +2019,17 @@
           "date_source": "context_issue"
         },
         {
-          "title": "科技创新政策、研发投入与关键核心技术攻坚",
-          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=120846",
-          "date": "",
-          "issue_date": "2025-09",
-          "date_source": "context_issue"
-        },
-        {
           "title": "人工智能供给约束、技术异质性与国际比较优势",
           "url": "https://ciejournal.ajcass.com/Magazine/Show?id=97302",
           "date": "",
           "issue_date": "2024-09",
+          "date_source": "context_issue"
+        },
+        {
+          "title": "科技创新政策、研发投入与关键核心技术攻坚",
+          "url": "https://ciejournal.ajcass.com/Magazine/Show?id=120846",
+          "date": "",
+          "issue_date": "2025-09",
           "date_source": "context_issue"
         },
         {
@@ -2106,7 +2106,7 @@
         }
       ],
       "notes": [],
-      "error": "timeout"
+      "error": ""
     },
     {
       "type": "adapter_source",
@@ -2119,8 +2119,8 @@
       "extraction_rule": "ajcass-current-api",
       "status": 200,
       "content_type": "application/json; charset=utf-8",
-      "transport": "curl",
-      "fetch_ms": 30151,
+      "transport": "fetch",
+      "fetch_ms": 3081,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 9,
@@ -2202,7 +2202,7 @@
         }
       ],
       "notes": [],
-      "error": "timeout"
+      "error": ""
     },
     {
       "type": "adapter_source",
@@ -2216,7 +2216,7 @@
       "status": 200,
       "content_type": "text/html;charset=UTF-8",
       "transport": "curl",
-      "fetch_ms": 30546,
+      "fetch_ms": 8413,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 8,
@@ -2225,85 +2225,118 @@
         {
           "title": "极端天气、贸易信贷传导与供应链稳定",
           "url": "https://sjjj.magtech.com.cn/CN/Y2026/V49/I5/3",
-          "date": "",
+          "date": "2026-05-18",
           "issue_date": "2026-05",
-          "date_source": "url_issue"
+          "date_source": "context_published",
+          "authors": "史青, 孟恩恩, 陈梦婷",
+          "author_source": "meta_author",
+          "published_at": "2026-05-18"
         },
         {
           "title": "新闻情绪与人民币汇率预期",
           "url": "https://sjjj.magtech.com.cn/CN/Y2026/V49/I5/39",
-          "date": "",
+          "date": "2026-05-18",
           "issue_date": "2026-05",
-          "date_source": "url_issue"
+          "date_source": "context_published",
+          "authors": "刘林东, 欧明刚, 周静毅, 崔文芮",
+          "author_source": "meta_author",
+          "published_at": "2026-05-18"
         },
         {
           "title": "科技赋能司法与全国统一大市场的形成",
           "url": "https://sjjj.magtech.com.cn/CN/Y2026/V49/I5/77",
-          "date": "",
+          "date": "2026-05-18",
           "issue_date": "2026-05",
-          "date_source": "url_issue"
+          "date_source": "context_published",
+          "authors": "陈克兢, 熊熊, 杨国超, 刘锦晔",
+          "author_source": "meta_author",
+          "published_at": "2026-05-18"
         },
         {
           "title": "线上商家“标题党”行为与内卷式竞争",
           "url": "https://sjjj.magtech.com.cn/CN/Y2026/V49/I5/108",
-          "date": "",
+          "date": "2026-05-18",
           "issue_date": "2026-05",
-          "date_source": "url_issue"
+          "date_source": "context_published",
+          "authors": "张昊, 严玉珊, 王心怡, 王巍霖",
+          "author_source": "meta_author",
+          "published_at": "2026-05-18"
         },
         {
           "title": "政府产业基金支持企业创新的最优投资模式研究",
           "url": "https://sjjj.magtech.com.cn/CN/Y2026/V49/I5/139",
-          "date": "",
+          "date": "2026-05-18",
           "issue_date": "2026-05",
-          "date_source": "url_issue"
+          "date_source": "context_published",
+          "authors": "郝项超, 胡慧杰",
+          "author_source": "meta_author",
+          "published_at": "2026-05-18"
         },
         {
           "title": "平台垄断、监管取向与全要素生产率：生态位视角的证据",
           "url": "https://sjjj.magtech.com.cn/CN/Y2026/V49/I5/172",
-          "date": "",
+          "date": "2026-05-18",
           "issue_date": "2026-05",
-          "date_source": "url_issue"
+          "date_source": "context_published",
+          "authors": "孙早, 蒋旸阳",
+          "author_source": "meta_author",
+          "published_at": "2026-05-18"
         },
         {
           "title": "人工智能技术进步与人口增长",
           "url": "https://sjjj.magtech.com.cn/CN/Y2026/V49/I5/208",
-          "date": "",
+          "date": "2026-05-18",
           "issue_date": "2026-05",
-          "date_source": "url_issue"
+          "date_source": "context_published",
+          "authors": "王钰冰, 郭凯明",
+          "author_source": "meta_author",
+          "published_at": "2026-05-18"
         },
         {
           "title": "基础教育结果均等化改革的效应评估：以上海市为例",
           "url": "https://sjjj.magtech.com.cn/CN/Y2026/V49/I5/238",
-          "date": "",
+          "date": "2026-05-18",
           "issue_date": "2026-05",
-          "date_source": "url_issue"
+          "date_source": "context_published",
+          "authors": "童健, 袁贵博, 薛景, 程婉静",
+          "author_source": "meta_author",
+          "published_at": "2026-05-18"
         }
       ],
       "samples": [
         {
           "title": "极端天气、贸易信贷传导与供应链稳定",
           "url": "https://sjjj.magtech.com.cn/CN/Y2026/V49/I5/3",
-          "date": "",
+          "date": "2026-05-18",
           "issue_date": "2026-05",
-          "date_source": "url_issue"
+          "date_source": "context_published",
+          "authors": "史青, 孟恩恩, 陈梦婷",
+          "author_source": "meta_author",
+          "published_at": "2026-05-18"
         },
         {
           "title": "新闻情绪与人民币汇率预期",
           "url": "https://sjjj.magtech.com.cn/CN/Y2026/V49/I5/39",
-          "date": "",
+          "date": "2026-05-18",
           "issue_date": "2026-05",
-          "date_source": "url_issue"
+          "date_source": "context_published",
+          "authors": "刘林东, 欧明刚, 周静毅, 崔文芮",
+          "author_source": "meta_author",
+          "published_at": "2026-05-18"
         },
         {
           "title": "科技赋能司法与全国统一大市场的形成",
           "url": "https://sjjj.magtech.com.cn/CN/Y2026/V49/I5/77",
-          "date": "",
+          "date": "2026-05-18",
           "issue_date": "2026-05",
-          "date_source": "url_issue"
+          "date_source": "context_published",
+          "authors": "陈克兢, 熊熊, 杨国超, 刘锦晔",
+          "author_source": "meta_author",
+          "published_at": "2026-05-18"
         }
       ],
       "notes": [],
-      "error": "timeout"
+      "error": "fetch failed"
     },
     {
       "type": "adapter_source",
@@ -2317,101 +2350,167 @@
       "status": 200,
       "content_type": "text/html;charset=UTF-8",
       "transport": "curl",
-      "fetch_ms": 33454,
+      "fetch_ms": 22138,
       "ok": true,
       "usable_as_data_source": true,
-      "article_count": 6,
-      "candidate_count": 6,
+      "article_count": 12,
+      "candidate_count": 12,
       "articles": [
         {
           "title": "中国的利率体系与利率市场化改革",
           "url": "http://www.jryj.org.cn/CN/Y2021/V495/I9/1",
-          "date": "",
+          "date": "2021-10-02",
           "issue_date": "2021-09",
-          "date_source": "url_issue"
+          "date_source": "meta_published",
+          "authors": "易纲",
+          "author_source": "meta_author",
+          "published_at": "2021-10-02"
         },
         {
           "title": "公众预期、政策协调与房地产金融宏观审慎政策有效性",
           "url": "http://www.jryj.org.cn/CN/abstract/abstract1596.shtml",
           "date": "2026-04-24",
+          "authors": "肖争艳, 武佳慧, 江艳",
+          "author_source": "meta_author",
           "published_at": "2026-04-24",
           "issue_date": "2026-04",
-          "date_source": "meta_published",
-          "authors": "",
-          "author_source": ""
+          "date_source": "meta_published"
         },
         {
           "title": "关税冲击与人民币货币锚地位调整——来自2018—2020年中美贸易摩擦的经验证据",
           "url": "http://www.jryj.org.cn/CN/abstract/abstract1597.shtml",
           "date": "2026-04-24",
+          "authors": "张冲, 曹鹏举, 刘瑶",
+          "author_source": "meta_author",
           "published_at": "2026-04-24",
           "issue_date": "2026-04",
-          "date_source": "meta_published",
-          "authors": "",
-          "author_source": ""
+          "date_source": "meta_published"
         },
         {
           "title": "金融分权、信贷错配与地方中小银行风险",
           "url": "http://www.jryj.org.cn/CN/abstract/abstract1598.shtml",
           "date": "2026-04-24",
+          "authors": "肖锐, 艾思静, 洪正",
+          "author_source": "meta_author",
           "published_at": "2026-04-24",
           "issue_date": "2026-04",
-          "date_source": "meta_published",
-          "authors": "",
-          "author_source": ""
+          "date_source": "meta_published"
         },
         {
           "title": "地方隐性担保破除对域内中小银行风险的影响",
           "url": "http://www.jryj.org.cn/CN/abstract/abstract1599.shtml",
           "date": "2026-04-24",
+          "authors": "舒少文, 蔡庆丰, 陈栋, 邹静娴",
+          "author_source": "meta_author",
           "published_at": "2026-04-24",
           "issue_date": "2026-04",
-          "date_source": "meta_published",
-          "authors": "",
-          "author_source": ""
+          "date_source": "meta_published"
         },
         {
           "title": "媒体负面报道与银行信贷——基于信息中介和外部监督的双重视角",
           "url": "http://www.jryj.org.cn/CN/abstract/abstract1600.shtml",
           "date": "2026-04-24",
+          "authors": "孙莎, 巩倩, 潘奇, 范静",
+          "author_source": "meta_author",
           "published_at": "2026-04-24",
           "issue_date": "2026-04",
-          "date_source": "meta_published",
-          "authors": "",
-          "author_source": ""
+          "date_source": "meta_published"
+        },
+        {
+          "title": "要素市场一体化背景下的政府引导基金跨区域流动——来自国家级城市群规划的证据",
+          "url": "http://www.jryj.org.cn/CN/abstract/abstract1601.shtml",
+          "date": "2026-04-24",
+          "authors": "唐为, 邱旋",
+          "author_source": "meta_author",
+          "published_at": "2026-04-24",
+          "issue_date": "2026-04",
+          "date_source": "meta_published"
+        },
+        {
+          "title": "供应链网络中创新与企业全要素生产率提升:供应商创新视角",
+          "url": "http://www.jryj.org.cn/CN/abstract/abstract1602.shtml",
+          "date": "2026-04-24",
+          "authors": "朱光, 张鹏杨",
+          "author_source": "meta_author",
+          "published_at": "2026-04-24",
+          "issue_date": "2026-04",
+          "date_source": "meta_published"
+        },
+        {
+          "title": "个人破产制度与地区创业活力——基于中国个人破产试点的经验证据",
+          "url": "http://www.jryj.org.cn/CN/abstract/abstract1603.shtml",
+          "date": "2026-04-24",
+          "authors": "丁海, 刘晨冉, 周黎安",
+          "author_source": "meta_author",
+          "published_at": "2026-04-24",
+          "issue_date": "2026-04",
+          "date_source": "meta_published"
+        },
+        {
+          "title": "碳减排政策、绿色技术采用与转型风险",
+          "url": "http://www.jryj.org.cn/CN/abstract/abstract1604.shtml",
+          "date": "2026-04-24",
+          "authors": "熊琛, 杨翱, 张兆鹏",
+          "author_source": "meta_author",
+          "published_at": "2026-04-24",
+          "issue_date": "2026-04",
+          "date_source": "meta_published"
+        },
+        {
+          "title": "基层医疗资源下沉与农村家庭贫困脆弱性——来自紧密型医共体建设的证据",
+          "url": "http://www.jryj.org.cn/CN/abstract/abstract1605.shtml",
+          "date": "2026-04-24",
+          "authors": "艾爽, 孟恩慧, 牛耕",
+          "author_source": "meta_author",
+          "published_at": "2026-04-24",
+          "issue_date": "2026-04",
+          "date_source": "meta_published"
+        },
+        {
+          "title": "分析师跟踪对企业产品质量违规的影响研究",
+          "url": "http://www.jryj.org.cn/CN/abstract/abstract1606.shtml",
+          "date": "2026-04-24",
+          "authors": "鲍珩淼, 吴超鹏",
+          "author_source": "meta_author",
+          "published_at": "2026-04-24",
+          "issue_date": "2026-04",
+          "date_source": "meta_published"
         }
       ],
       "samples": [
         {
           "title": "中国的利率体系与利率市场化改革",
           "url": "http://www.jryj.org.cn/CN/Y2021/V495/I9/1",
-          "date": "",
+          "date": "2021-10-02",
           "issue_date": "2021-09",
-          "date_source": "url_issue"
+          "date_source": "meta_published",
+          "authors": "易纲",
+          "author_source": "meta_author",
+          "published_at": "2021-10-02"
         },
         {
           "title": "公众预期、政策协调与房地产金融宏观审慎政策有效性",
           "url": "http://www.jryj.org.cn/CN/abstract/abstract1596.shtml",
           "date": "2026-04-24",
+          "authors": "肖争艳, 武佳慧, 江艳",
+          "author_source": "meta_author",
           "published_at": "2026-04-24",
           "issue_date": "2026-04",
-          "date_source": "meta_published",
-          "authors": "",
-          "author_source": ""
+          "date_source": "meta_published"
         },
         {
           "title": "关税冲击与人民币货币锚地位调整——来自2018—2020年中美贸易摩擦的经验证据",
           "url": "http://www.jryj.org.cn/CN/abstract/abstract1597.shtml",
           "date": "2026-04-24",
+          "authors": "张冲, 曹鹏举, 刘瑶",
+          "author_source": "meta_author",
           "published_at": "2026-04-24",
           "issue_date": "2026-04",
-          "date_source": "meta_published",
-          "authors": "",
-          "author_source": ""
+          "date_source": "meta_published"
         }
       ],
       "notes": [],
-      "error": "curl: (28) Operation timed out after 17001 milliseconds with 49377 bytes received"
+      "error": "curl: (28) Operation timed out after 17000 milliseconds with 113531 bytes received"
     },
     {
       "type": "adapter_source",
@@ -2425,7 +2524,7 @@
       "status": 200,
       "content_type": "text/html; charset=utf-8",
       "transport": "fetch",
-      "fetch_ms": 909,
+      "fetch_ms": 1506,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 11,
@@ -2536,8 +2635,8 @@
       "extraction_rule": "cnki-portal-paper",
       "status": 200,
       "content_type": "text/html;charset=UTF-8",
-      "transport": "curl",
-      "fetch_ms": 32822,
+      "transport": "fetch",
+      "fetch_ms": 3573,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 12,
@@ -2667,7 +2766,7 @@
         }
       ],
       "notes": [],
-      "error": "timeout"
+      "error": ""
     },
     {
       "type": "adapter_source",
@@ -2681,7 +2780,7 @@
       "status": 200,
       "content_type": "text/html; charset=utf-8",
       "transport": "fetch",
-      "fetch_ms": 1996,
+      "fetch_ms": 1572,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 17,
@@ -2829,7 +2928,7 @@
       "status": 200,
       "content_type": "text/html; charset=utf-8",
       "transport": "fetch",
-      "fetch_ms": 1411,
+      "fetch_ms": 698,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 10,
@@ -2838,95 +2937,134 @@
         {
           "title": "异质性环境规制、绿色创新与企业绿色形象的关系研究",
           "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260401?st=article_issue",
-          "date": "",
+          "date": "2026-05-03",
           "issue_date": "2026-04",
-          "date_source": "url_issue"
+          "date_source": "meta_published",
+          "authors": "解学梅, 陈文妍, 倪书阳, 郭海望",
+          "author_source": "meta_author",
+          "published_at": "2026-05-03"
         },
         {
           "title": "区域一体化推进的工业污染集聚效应——来自长三角边界效应与扩容影响的证据",
           "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260402?st=article_issue",
-          "date": "",
+          "date": "2026-05-03",
           "issue_date": "2026-04",
-          "date_source": "url_issue"
+          "date_source": "meta_published",
+          "authors": "邵帅, 徐乐, 范美婷",
+          "author_source": "meta_author",
+          "published_at": "2026-05-03"
         },
         {
           "title": "数字金融的治理效应研究——基于盈余管理的视角",
           "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260403?st=article_issue",
-          "date": "",
+          "date": "2026-05-03",
           "issue_date": "2026-04",
-          "date_source": "url_issue"
+          "date_source": "meta_published",
+          "authors": "闫伟宸, 吴俊杰, 邓路",
+          "author_source": "meta_author",
+          "published_at": "2026-05-03"
         },
         {
           "title": "基于高维因子模型的A股市场系统性风险研究",
           "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260404?st=article_issue",
-          "date": "",
+          "date": "2026-05-03",
           "issue_date": "2026-04",
-          "date_source": "url_issue"
+          "date_source": "meta_published",
+          "authors": "魏照昊, 李秀婷, 卢全莹, 董纪昌, 董志",
+          "author_source": "meta_author",
+          "published_at": "2026-05-03"
         },
         {
           "title": "考虑偏差修正的Bootstrap假设检验及大规模关键质量因子筛选研究",
           "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260405?st=article_issue",
-          "date": "",
+          "date": "2026-05-03",
           "issue_date": "2026-04",
-          "date_source": "url_issue"
+          "date_source": "meta_published",
+          "authors": "刘丽君, 欧阳林寒, 马义中, 吴锋",
+          "author_source": "meta_author",
+          "published_at": "2026-05-03"
         },
         {
           "title": "自动化码头AGV无死锁在线路径规划算法",
           "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260406?st=article_issue",
-          "date": "",
+          "date": "2026-05-03",
           "issue_date": "2026-04",
-          "date_source": "url_issue"
+          "date_source": "meta_published",
+          "authors": "周琛淏, 焦俊玲, 车阿大",
+          "author_source": "meta_author",
+          "published_at": "2026-05-03"
         },
         {
           "title": "考虑农户损失规避的平台型供应链融资模式选择",
           "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260407?st=article_issue",
-          "date": "",
+          "date": "2026-05-03",
           "issue_date": "2026-04",
-          "date_source": "url_issue"
+          "date_source": "meta_published",
+          "authors": "於慧琳, 刘敏, 周永务",
+          "author_source": "meta_author",
+          "published_at": "2026-05-03"
         },
         {
           "title": "折价出售传染与货币市场基金行业系统性风险——基于“基金-资产”二分网络视角",
           "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260408?st=article_issue",
-          "date": "",
+          "date": "2026-05-03",
           "issue_date": "2026-04",
-          "date_source": "url_issue"
+          "date_source": "meta_published",
+          "authors": "姚晨安, 张卫国, 王超",
+          "author_source": "meta_author",
+          "published_at": "2026-05-03"
         },
         {
           "title": "动态批量与预测时阈：研究现状与展望",
           "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260409?st=article_issue",
-          "date": "",
+          "date": "2026-05-03",
           "issue_date": "2026-04",
-          "date_source": "url_issue"
+          "date_source": "meta_published",
+          "authors": "慕银平, 靖富营",
+          "author_source": "meta_author",
+          "published_at": "2026-05-03"
         },
         {
           "title": "评论操控：概念解析、理论发展和未来展望",
           "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260410?st=article_issue",
-          "date": "",
+          "date": "2026-05-03",
           "issue_date": "2026-04",
-          "date_source": "url_issue"
+          "date_source": "meta_published",
+          "authors": "王乐, 叶强, 李一军, 张紫琼",
+          "author_source": "meta_author",
+          "published_at": "2026-05-03"
         }
       ],
       "samples": [
         {
           "title": "异质性环境规制、绿色创新与企业绿色形象的关系研究",
           "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260401?st=article_issue",
-          "date": "",
+          "date": "2026-05-03",
           "issue_date": "2026-04",
-          "date_source": "url_issue"
+          "date_source": "meta_published",
+          "authors": "解学梅, 陈文妍, 倪书阳, 郭海望",
+          "author_source": "meta_author",
+          "published_at": "2026-05-03"
         },
         {
           "title": "区域一体化推进的工业污染集聚效应——来自长三角边界效应与扩容影响的证据",
           "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260402?st=article_issue",
-          "date": "",
+          "date": "2026-05-03",
           "issue_date": "2026-04",
-          "date_source": "url_issue"
+          "date_source": "meta_published",
+          "authors": "邵帅, 徐乐, 范美婷",
+          "author_source": "meta_author",
+          "published_at": "2026-05-03"
         },
         {
           "title": "数字金融的治理效应研究——基于盈余管理的视角",
           "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260403?st=article_issue",
-          "date": "",
+          "date": "2026-05-03",
           "issue_date": "2026-04",
-          "date_source": "url_issue"
+          "date_source": "meta_published",
+          "authors": "闫伟宸, 吴俊杰, 邓路",
+          "author_source": "meta_author",
+          "published_at": "2026-05-03"
         }
       ],
       "notes": [
@@ -2945,8 +3083,8 @@
       "extraction_rule": "cqvip-journal-html",
       "status": 200,
       "content_type": "text/html; charset=utf-8",
-      "transport": "fetch",
-      "fetch_ms": 11114,
+      "transport": "curl",
+      "fetch_ms": 12693,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 19,
@@ -2954,115 +3092,115 @@
       "articles": [
         {
           "title": "以制度建设为主线统筹发展和安全",
-          "url": "https://www.cqvip.com/doc/journal/7203343026?sign=41cb681f9b93cc2a1389e3d6883a1060009802bfde20d756bfc24f82a83ae977&expireTime=1795319063847&resourceId=7203343026&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343026?sign=02ec5ca4fb34bfb93c8b4c1e9f8f7b6c9c2c5754fbdd546ea8de079c1d777267&expireTime=1795365341019&resourceId=7203343026&type=1",
           "date": "2026-03",
           "authors": "王浦劬, 连雨欣"
         },
         {
           "title": "“钉钉子”的技术:重大决策落实的工作机制",
-          "url": "https://www.cqvip.com/doc/journal/7203343027?sign=8d773fc3620ec15c278e0fd57b523e514ac1eeb41043500e63a133f09b714b84&expireTime=1795319063847&resourceId=7203343027&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343027?sign=c6f27000949e8f8fdb3cb224993edceb60386f32fa4dcc1e171e8620a3353292&expireTime=1795365341019&resourceId=7203343027&type=1",
           "date": "2026-03",
           "authors": "庞明礼, 郭雯斐"
         },
         {
           "title": "从制度到行动:基层减负的层级传导与长效机制",
-          "url": "https://www.cqvip.com/doc/journal/7203343028?sign=3d416ff6f87188ed500e873c92ffe864496dc9b116f80f00027985dc22dbbdcc&expireTime=1795319063847&resourceId=7203343028&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343028?sign=e598817d7863249254349b5c2a95155b64896b8a53ee7fa54c35bd4977fae1c7&expireTime=1795365341019&resourceId=7203343028&type=1",
           "date": "2026-03",
           "authors": "王锐, 倪星"
         },
         {
           "title": "政府数字平台何以走出难以为继困境?——基于生态系统视角的对比案例研究",
-          "url": "https://www.cqvip.com/doc/journal/7203343029?sign=6dfdf8b5b7180b35299913b592d61f50da471c38762b0c66719c41d4e96db5ce&expireTime=1795319063847&resourceId=7203343029&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343029?sign=4af03d40584e159184739efc0cc0bf062ab78e28d3bc08da64f2199a87766d90&expireTime=1795365341019&resourceId=7203343029&type=1",
           "date": "2026-03",
           "authors": "付宁, 林婕, 祝哲"
         },
         {
           "title": "人工智能的科林格里奇困境与安全监管的敏捷性调适",
-          "url": "https://www.cqvip.com/doc/journal/7203343030?sign=0eb8934ff0b8842d1cc8127092594399fbfc2515cab0ec406ea4781f119b0dfb&expireTime=1795319063847&resourceId=7203343030&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343030?sign=e15d49bdb2a83fa79288d1f92e5ebeb1a6c8d42e127a8a37fdbff2c3b57cce2a&expireTime=1795365341019&resourceId=7203343030&type=1",
           "date": "2026-03",
           "authors": "张乐, 赵爽爽"
         },
         {
           "title": "“数字帕金森”:数字治理中的任务冗余再生产",
-          "url": "https://www.cqvip.com/doc/journal/7203343031?sign=277ad85e4f407a764dff07ead8b597b7b676c83a804b265f85dfcacaedbb5ce6&expireTime=1795319063847&resourceId=7203343031&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343031?sign=cb5fd8399feef4d85d10f5d18df57313a217b221819ae08eefff42110c276838&expireTime=1795365341019&resourceId=7203343031&type=1",
           "date": "2026-03",
           "authors": "邓崧, 杨迪"
         },
         {
           "title": "把公共性带回来:社区慈善事业治理的路径选择",
-          "url": "https://www.cqvip.com/doc/journal/7203343032?sign=f88b7ab34a9cabf08167ba5edaa46716c272a54e3fb7e2e167dd66bd76646372&expireTime=1795319063847&resourceId=7203343032&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343032?sign=a7da52493314bc8c7d343ca3c1af5d858594884509d45952faf197b2c4fa7161&expireTime=1795365341019&resourceId=7203343032&type=1",
           "date": "2026-03",
           "authors": "舒文, 郑功成"
         },
         {
           "title": "“选择式自主”:社会组织可持续发展的新范式",
-          "url": "https://www.cqvip.com/doc/journal/7203343033?sign=7e08673dedf20ce31207b8cf3d521bd6d47f5170b1a8bf1b605087ae013addd0&expireTime=1795319063847&resourceId=7203343033&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343033?sign=0dd0eaefc06283b14bc71d245b7bb37d4349387587b64c292505af0744269cb9&expireTime=1795365341019&resourceId=7203343033&type=1",
           "date": "2026-03",
           "authors": "刘蕾, 何书仪"
         },
         {
           "title": "基层“信用积分制”运行的实践错位与优化路径",
-          "url": "https://www.cqvip.com/doc/journal/7203343034?sign=51c3690b60a9cb81d278e6a4510b87b64b2d1502b50224056d0eb10498e45785&expireTime=1795319063847&resourceId=7203343034&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343034?sign=56363bafcf63766a0c073d43ac51894c53e8a293b17f79576eb77c85bd3743ba&expireTime=1795365341019&resourceId=7203343034&type=1",
           "date": "2026-03",
           "authors": "朱博宇, 沈圣兰, 黄璜"
         },
         {
           "title": "建构基于“有效的政府治理”标识性概念的中国政府治理理论框架",
-          "url": "https://www.cqvip.com/doc/journal/7203343035?sign=1f23b1e034d17fc347b2719a75ebab3118b4ee99decd0fba7cef15edb0af4eb4&expireTime=1795319063847&resourceId=7203343035&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343035?sign=99c6cb28d6328c13cbb72315f39b672d50f827827667865743b486fc8a677dd7&expireTime=1795365341019&resourceId=7203343035&type=1",
           "date": "2026-03",
           "authors": "李瑞昌"
         },
         {
           "title": "重新发现治理:评价理论的视角",
-          "url": "https://www.cqvip.com/doc/journal/7203343036?sign=8c11daf5834fc0cf92b914d1a11092be540b02216262db5a8ae9477579b955fd&expireTime=1795319063847&resourceId=7203343036&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343036?sign=801f55ce31f45e1967aabeb4a97ded8b3eb24bc4569760c985a9ddf99ec349d9&expireTime=1795365341019&resourceId=7203343036&type=1",
           "date": "2026-03",
           "authors": "张乾友"
         },
         {
           "title": "数字技术驱动乡村公共服务共同生产的影响因素与实践逻辑",
-          "url": "https://www.cqvip.com/doc/journal/7203343037?sign=9f0804e6b9ee8834c06da91707b91636a3c08a1c7a606c3dd5ee95bbf2bb67d5&expireTime=1795319063847&resourceId=7203343037&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343037?sign=0cb92b4903497bc7dee2c006e1989fdec9e13c8edd085ff3205d8cc41ec99096&expireTime=1795365341019&resourceId=7203343037&type=1",
           "date": "2026-03",
           "authors": "王洛忠, 徐成铭"
         },
         {
           "title": "数字生态何以影响乡村韧性治理绩效",
-          "url": "https://www.cqvip.com/doc/journal/7203343038?sign=22adc1606ca2e9e42f639e89f7a0e632223b99d5fd91675b1cf243ec0838bb65&expireTime=1795319063847&resourceId=7203343038&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343038?sign=21019250fb78c38015d871f4a360912fef9ce3db2e0802346546295eacf0e0c5&expireTime=1795365341020&resourceId=7203343038&type=1",
           "date": "2026-03",
           "authors": "陈浩天, 肖延玉"
         },
         {
           "title": "复合型公共空间:社交平台驱动的乡村公共空间新样态",
-          "url": "https://www.cqvip.com/doc/journal/7203343039?sign=9a2d5b9bfa766e66a27ffabc7bfcb8d09f9dcb867ddd1d2e2dc6e066381d6522&expireTime=1795319063847&resourceId=7203343039&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343039?sign=2b470bdf384f553ad9c65937c57597201f9f7b01ec8bcde45e3b86109182d2e9&expireTime=1795365341020&resourceId=7203343039&type=1",
           "date": "2026-03",
           "authors": "王承禹, 张旋"
         },
         {
           "title": "以科技人才集聚促进京津冀城市群高质量协同发展",
-          "url": "https://www.cqvip.com/doc/journal/7203343040?sign=442644e8a41b7eb518265e6c895212483964b61d8e5840b8dcd276f13d2afa26&expireTime=1795319063847&resourceId=7203343040&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343040?sign=487cec296a9f3a47a2fe5380f468051e9254c7f63a75d8fef65f6b5aa11092d5&expireTime=1795365341020&resourceId=7203343040&type=1",
           "date": "2026-03",
           "authors": "魏华颖, 李子昂, 孙宏皓"
         },
         {
           "title": "数字赋能乡村治理现代化的优化路径",
-          "url": "https://www.cqvip.com/doc/journal/7203343041?sign=ee50bba427de325e981a463894cbc435c20a7bdfe6d8651e2b4506adc8e945ad&expireTime=1795319063847&resourceId=7203343041&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343041?sign=a9e04491c683052523019f7a9fbfbe131431cee34a42bce0e66dc4c8b1a7a098&expireTime=1795365341020&resourceId=7203343041&type=1",
           "date": "2026-03",
           "authors": "李俊清, 毋世扬"
         },
         {
           "title": "以全生命周期服务改革推动营商环境优化",
-          "url": "https://www.cqvip.com/doc/journal/7203343042?sign=9d7a43e9ddb8d86287c89b3d666e51501488447a8b8d38dfb18e7073c635ef9c&expireTime=1795319063847&resourceId=7203343042&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343042?sign=6a1aeafe53d59498cf74458d43ecd5e9fc85cffe926def29527daacadc0ce712&expireTime=1795365341020&resourceId=7203343042&type=1",
           "date": "2026-03",
           "authors": "杨畅, 彭伟, 黄凌筱"
         },
         {
           "title": "内蒙古大学公共管理学院简介",
-          "url": "https://www.cqvip.com/doc/journal/7203343025?sign=fd9f4641d5d2d993d1250b36bce9c35c624bd5adaf9dc56a3832e0dec20dfa24&expireTime=1795319063847&resourceId=7203343025&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343025?sign=ac9593fc8d2d708804fc01551e5e537fed5fc20b9101257e4a409e5de3bf5c3d&expireTime=1795365341020&resourceId=7203343025&type=1",
           "date": "2026-03",
           "authors": "白维军"
         },
         {
           "title": "中国银联积极服务政府促消费 双轮驱动激活市场新动能",
-          "url": "https://www.cqvip.com/doc/journal/7203343043?sign=ac27cbd4e61c9853d3a9843b6ebf375ce60b0fa596f873beb7b3503f5b590b95&expireTime=1795319063847&resourceId=7203343043&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343043?sign=694e42374dbae73f198e55bbe4615befac18e2bdd53c10bfbb6db0c12f776581&expireTime=1795365341020&resourceId=7203343043&type=1",
           "date": "2026-03",
           "authors": "韩永琛"
         }
@@ -3070,19 +3208,19 @@
       "samples": [
         {
           "title": "以制度建设为主线统筹发展和安全",
-          "url": "https://www.cqvip.com/doc/journal/7203343026?sign=41cb681f9b93cc2a1389e3d6883a1060009802bfde20d756bfc24f82a83ae977&expireTime=1795319063847&resourceId=7203343026&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343026?sign=02ec5ca4fb34bfb93c8b4c1e9f8f7b6c9c2c5754fbdd546ea8de079c1d777267&expireTime=1795365341019&resourceId=7203343026&type=1",
           "date": "2026-03",
           "authors": "王浦劬, 连雨欣"
         },
         {
           "title": "“钉钉子”的技术:重大决策落实的工作机制",
-          "url": "https://www.cqvip.com/doc/journal/7203343027?sign=8d773fc3620ec15c278e0fd57b523e514ac1eeb41043500e63a133f09b714b84&expireTime=1795319063847&resourceId=7203343027&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343027?sign=c6f27000949e8f8fdb3cb224993edceb60386f32fa4dcc1e171e8620a3353292&expireTime=1795365341019&resourceId=7203343027&type=1",
           "date": "2026-03",
           "authors": "庞明礼, 郭雯斐"
         },
         {
           "title": "从制度到行动:基层减负的层级传导与长效机制",
-          "url": "https://www.cqvip.com/doc/journal/7203343028?sign=3d416ff6f87188ed500e873c92ffe864496dc9b116f80f00027985dc22dbbdcc&expireTime=1795319063847&resourceId=7203343028&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343028?sign=e598817d7863249254349b5c2a95155b64896b8a53ee7fa54c35bd4977fae1c7&expireTime=1795365341019&resourceId=7203343028&type=1",
           "date": "2026-03",
           "authors": "王锐, 倪星"
         }
@@ -3091,7 +3229,7 @@
         "issue:2026年3期",
         "fallback_source:cqvip"
       ],
-      "error": ""
+      "error": "fetch failed"
     },
     {
       "type": "adapter_source",
@@ -3105,7 +3243,7 @@
       "status": 200,
       "content_type": "text/html;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 696,
+      "fetch_ms": 1096,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 13,
@@ -3243,7 +3381,7 @@
       "status": 200,
       "content_type": "application/json",
       "transport": "fetch",
-      "fetch_ms": 14866,
+      "fetch_ms": 2586,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 12,
@@ -3360,7 +3498,7 @@
       "status": 200,
       "content_type": "text/html; charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1663,
+      "fetch_ms": 1877,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 34,
@@ -3756,7 +3894,7 @@
       "status": 200,
       "content_type": "application/json",
       "transport": "fetch",
-      "fetch_ms": 774,
+      "fetch_ms": 1233,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 12,
@@ -3873,12 +4011,18 @@
       "status": 200,
       "content_type": "application/json",
       "transport": "fetch",
-      "fetch_ms": 813,
+      "fetch_ms": 1100,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 12,
       "candidate_count": 12,
       "articles": [
+        {
+          "title": "The Architecture of Social Networks and the Diffusion of Innovations",
+          "url": "https://doi.org/10.1093/restud/rdag052",
+          "date": "2026-05-26",
+          "authors": "Bryony Reich"
+        },
         {
           "title": "Monopsony Makes Firms Not Only Small but Also Unproductive: Why East Germany has Not Converged",
           "url": "https://doi.org/10.1093/restud/rdag033",
@@ -3944,15 +4088,15 @@
           "url": "https://doi.org/10.1093/restud/rdag044",
           "date": "2026-05-15",
           "authors": "Maximilian Grimm, Òscar Jordà, Moritz Schularick, Alan M Taylor"
-        },
-        {
-          "title": "Input Sourcing under Climate Risk: Evidence from U.S. Manufacturing Firms",
-          "url": "https://doi.org/10.1093/restud/rdag031",
-          "date": "2026-05-14",
-          "authors": "Joaquin Blaum, Federico Esposito, Sebastian Heise"
         }
       ],
       "samples": [
+        {
+          "title": "The Architecture of Social Networks and the Diffusion of Innovations",
+          "url": "https://doi.org/10.1093/restud/rdag052",
+          "date": "2026-05-26",
+          "authors": "Bryony Reich"
+        },
         {
           "title": "Monopsony Makes Firms Not Only Small but Also Unproductive: Why East Germany has Not Converged",
           "url": "https://doi.org/10.1093/restud/rdag033",
@@ -3964,12 +4108,6 @@
           "url": "https://doi.org/10.1093/restud/rdag043",
           "date": "2026-05-21",
           "authors": "Mohammed Abdellaoui, Philippe Colo, Brian Hill"
-        },
-        {
-          "title": "Money Markets, Collateral and Monetary Policy",
-          "url": "https://doi.org/10.1093/restud/rdag041",
-          "date": "2026-05-21",
-          "authors": "Fiorella De Fiore, Marie Hoerova, Ciaran Rogers, Harald Uhlig"
         }
       ],
       "notes": [
@@ -3990,7 +4128,7 @@
       "status": 200,
       "content_type": "text/html; charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1550,
+      "fetch_ms": 1590,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 11,
@@ -4153,8 +4291,8 @@
       "extraction_rule": "asq-sage-links",
       "status": 200,
       "content_type": "text/html; charset=UTF-8",
-      "transport": "curl",
-      "fetch_ms": 31423,
+      "transport": "fetch",
+      "fetch_ms": 1428,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 13,
@@ -4324,7 +4462,7 @@
         }
       ],
       "notes": [],
-      "error": "timeout"
+      "error": ""
     }
   ]
 }

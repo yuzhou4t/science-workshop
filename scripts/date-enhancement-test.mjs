@@ -121,6 +121,55 @@ assert.deepEqual(extractHtmlArticleHints({
   date_source: "forthcoming_unassigned",
 });
 
+assert.deepEqual(extractHtmlArticleHints({
+  url: "https://sjjj.magtech.com.cn/CN/Y2026/V49/I5/3",
+  context: '<meta name="authors" content="史青, 孟恩恩, 陈梦婷"><meta name="citation_online_date" content="2026/05/10">',
+}), {
+  authors: "史青, 孟恩恩, 陈梦婷",
+  author_source: "meta_author",
+  published_at: "2026-05-10",
+  date_source: "meta_published",
+});
+
+assert.deepEqual(extractHtmlArticleHints({
+  url: "https://sjjj.magtech.com.cn/CN/Y2026/V49/I5/172",
+  context: '<meta name="authors" content="蒋旸阳 孙早"><meta name="citation_online_date" content="2026/05/10">',
+}), {
+  authors: "蒋旸阳, 孙早",
+  author_source: "meta_author",
+  published_at: "2026-05-10",
+  date_source: "meta_published",
+});
+
+assert.deepEqual(extractHtmlArticleHints({
+  url: "https://sjjj.magtech.com.cn/CN/Y2026/V49/I5/172",
+  context: '<meta name="authors" content="孙早, 蒋旸阳"><meta name="citation_issue" content="5"><meta name="citation_publication_date" content="2026/05/10"><meta name="citation_online_date" content="2026/05/10"><script>window.metaData={"shouCiFaBuRiQi":"2026-05-18"}</script>',
+}), {
+  authors: "孙早, 蒋旸阳",
+  author_source: "meta_author",
+  published_at: "2026-05-18",
+  issue_date: "2026-05",
+  date_source: "context_published",
+});
+
+assert.deepEqual(extractHtmlArticleHints({
+  url: "http://www.jryj.org.cn/CN/abstract/abstract1599.shtml",
+  context: '<meta name="DC.Contributor" content="舒少文" /><meta name="DC.Contributor" content=" 蔡庆丰" /><meta name="DC.Contributor" content=" 陈栋" /><meta name="DC.Contributor" content=" 邹静娴" />',
+}), {
+  authors: "舒少文, 蔡庆丰, 陈栋, 邹静娴",
+  author_source: "meta_author",
+});
+
+assert.deepEqual(extractHtmlArticleHints({
+  url: "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260401",
+  context: '<meta name="citation_authors" xml:lang="cn" content="解学梅，陈文妍，倪书阳，郭海望"/><meta name="citation_authors" xml:lang="en" content="XIE Xue-mei, CHEN Wen-yan, NI Shu-yang, GUO Hai-wang"/>',
+}), {
+  authors: "解学梅, 陈文妍, 倪书阳, 郭海望",
+  author_source: "meta_author",
+  issue_date: "2026-04",
+  date_source: "url_issue",
+});
+
 assert.deepEqual(extractDateHints({
   url: "http://www.jryj.org.cn/CN/abstract/abstract1599.shtml",
   context: '<meta name="citation_online_date" content="2026-04-24" /><meta name="citation_volume" content="550" /><meta name="citation_issue" content="4" />',

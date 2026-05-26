@@ -104,6 +104,16 @@ function datePartsToIso(dateParts) {
   return publishedDate(year, month, day);
 }
 
+function issueDateFromUrl(url = "") {
+  const magtechMatch = String(url).match(/\/Y(20\d{2})\/V[^/]+\/I(\d{1,2})\//i);
+  if (magtechMatch) return issueDate(magtechMatch[1], magtechMatch[2]);
+  const issueMatch = String(url).match(/\/issue\/(20\d{2})_(\d{1,2})(?:\b|\/|$)/i);
+  if (issueMatch) return issueDate(issueMatch[1], issueMatch[2]);
+  const abstractMatch = String(url).match(/\/abstract\/(?:abstract)?(20\d{2})(\d{2})\d{2}/i);
+  if (abstractMatch) return issueDate(abstractMatch[1], abstractMatch[2]);
+  return "";
+}
+
 export function doiFromUrl(url = "") {
   const decoded = decodeURIComponent(String(url));
   const match = decoded.match(/\b10\.\d{4,9}\/[^\s?#"'<>()]+/i);
@@ -133,10 +143,22 @@ function normalizeAuthorName(value = "") {
   return cleaned;
 }
 
+function expandAuthorValue(value = "") {
+  const cleaned = stripTags(value).replace(/\s+/g, " ").trim();
+  if (!/[\u3400-\u9fff]/.test(cleaned)) return [value];
+  if (/[，、；;]/.test(cleaned) || /,\s*[\u3400-\u9fff]/.test(cleaned)) {
+    return cleaned.split(/\s*(?:[，、；;]|,\s*)\s*/).filter(Boolean);
+  }
+  if (/^[\u3400-\u9fff·.\-\s]+$/.test(cleaned) && /\s/.test(cleaned)) {
+    return cleaned.split(/\s+/).filter(Boolean);
+  }
+  return [cleaned];
+}
+
 function dedupeAuthors(authors = []) {
   const seen = new Set();
   const result = [];
-  for (const raw of authors) {
+  for (const raw of authors.flatMap(expandAuthorValue)) {
     const author = normalizeAuthorName(raw);
     const key = author.toLowerCase();
     if (!author || seen.has(key)) continue;
@@ -147,7 +169,15 @@ function dedupeAuthors(authors = []) {
 }
 
 export function extractHtmlAuthorHints(context = "") {
-  const metaAuthors = dedupeAuthors(metaContents(context, "citation_author"));
+  const metaAuthors = dedupeAuthors([
+    ...metaContents(context, "citation_author"),
+    ...metaContents(context, "authors").slice(0, 1),
+    ...metaContents(context, "DC.Contributor"),
+    ...metaContents(context, "dc.contributor"),
+    ...metaContents(context, "DC.Creator"),
+    ...metaContents(context, "dc.creator"),
+    ...metaContents(context, "citation_authors").slice(0, 1),
+  ]);
   if (metaAuthors.length) {
     return {
       authors: metaAuthors.join(", "),
@@ -205,6 +235,21 @@ export function extractHtmlArticleHints({ url = "", context = "" } = {}) {
 
 export function extractDateHints({ url = "", context = "" } = {}) {
   const haystack = `${url} ${context}`.replace(/\s+/g, " ");
+  const metaIssue = firstMetaContent(context, ["citation_issue"]);
+  const issueFromUrl = issueDateFromUrl(url);
+  const explicitFirstPublished = isoDay(
+    haystack.match(/"shouCiFaBuRiQi"\s*:\s*"([^"]+)"/)?.[1]
+    || haystack.match(/首次(?:发表|发布)(?:日期|时间|日)?[^0-9]*(20\d{2}[-/]\d{1,2}[-/]\d{1,2})/)?.[1]
+    || "",
+  );
+  if (explicitFirstPublished) {
+    const issueMonth = metaIssue ? issueDate(explicitFirstPublished.slice(0, 4), metaIssue.replace(/^0+/, "")) : issueFromUrl;
+    return {
+      published_at: explicitFirstPublished,
+      ...(issueMonth ? { issue_date: issueMonth } : {}),
+      date_source: "context_published",
+    };
+  }
 
   const metaPublished = isoDay(firstMetaContent(context, [
     "citation_online_date",
@@ -213,7 +258,6 @@ export function extractDateHints({ url = "", context = "" } = {}) {
     "DC.Date",
     "article:published_time",
   ]));
-  const metaIssue = firstMetaContent(context, ["citation_issue"]);
   if (metaPublished || metaIssue) {
     const issueMonth = metaIssue ? issueDate(metaPublished.slice(0, 4), metaIssue.replace(/^0+/, "")) : "";
     return {
@@ -239,26 +283,26 @@ export function extractDateHints({ url = "", context = "" } = {}) {
     };
   }
 
-  const urlMagtechMatch = url.match(/\/Y(20\d{2})\/V[^/]+\/I(\d{1,2})\//i);
+  const urlMagtechMatch = issueFromUrl && url.match(/\/Y(20\d{2})\/V[^/]+\/I(\d{1,2})\//i);
   if (urlMagtechMatch) {
     return {
-      issue_date: issueDate(urlMagtechMatch[1], urlMagtechMatch[2]),
+      issue_date: issueFromUrl,
       date_source: "url_issue",
     };
   }
 
-  const urlIssueMatch = url.match(/\/issue\/(20\d{2})_(\d{1,2})(?:\b|\/|$)/i);
+  const urlIssueMatch = issueFromUrl && url.match(/\/issue\/(20\d{2})_(\d{1,2})(?:\b|\/|$)/i);
   if (urlIssueMatch) {
     return {
-      issue_date: issueDate(urlIssueMatch[1], urlIssueMatch[2]),
+      issue_date: issueFromUrl,
       date_source: "url_issue",
     };
   }
 
-  const urlAbstractMatch = url.match(/\/abstract\/(?:abstract)?(20\d{2})(\d{2})\d{2}/i);
+  const urlAbstractMatch = issueFromUrl && url.match(/\/abstract\/(?:abstract)?(20\d{2})(\d{2})\d{2}/i);
   if (urlAbstractMatch) {
     return {
-      issue_date: issueDate(urlAbstractMatch[1], urlAbstractMatch[2]),
+      issue_date: issueFromUrl,
       date_source: "url_issue",
     };
   }

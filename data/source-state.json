@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "checked_at": "2026-05-26T03:58:23.214Z",
+  "checked_at": "2026-05-26T16:37:16.924Z",
   "since": "2026-04-26",
   "until": "2026-05-26",
   "article_ids": [
@@ -207,8 +207,8 @@
     "dcf7051a7aed5375",
     "2da6390f9403f86c",
     "e12c5feea9a2e1ec",
-    "20ac44d09c08b13f",
     "542025c28be4d4a5",
+    "20ac44d09c08b13f",
     "b07a653869627110",
     "427f1660667a649d",
     "d10d6ddac56a55ed",
@@ -239,6 +239,12 @@
     "8c0d5d21c5318862",
     "820f7e3ac97bd767",
     "6d70e9af82bdf7ce",
+    "1c50469e18562920",
+    "0cb9ab4f4f1f235e",
+    "ec0070a46cf6d1ad",
+    "093ba3e85e528e5b",
+    "c36b10b69c175a23",
+    "04a72a53efa18c5d",
     "f2d4d2dde220f628",
     "f2d4d2dde220f628",
     "f2d4d2dde220f628",
@@ -289,25 +295,25 @@
     "c420162186a9f48a",
     "f37e9a590f928c34",
     "2ec543f2fec32538",
-    "df4fede0fd0186c7",
-    "0e732b79a5e4f33b",
-    "b9aa3c59a5b034e9",
-    "ad85e11ba01ac2cc",
-    "345f9abe27f438e7",
-    "ebb8b1cbf647ed1e",
-    "3a663ef31599a8fb",
-    "f7fe36cb3e8a88f9",
-    "38816e306e2fb04d",
-    "ffeabfc2f14ece8e",
-    "ebe11a0e3a91a406",
-    "66a03d92f9640698",
-    "4dd9759b23c4bafa",
-    "5e9ffca8cff47705",
-    "025b253353a4ae2c",
-    "ed9c9b8e901882f1",
-    "c94c21c69dbe1224",
-    "df9c6edd41c45e49",
-    "8073557bd7a5387e",
+    "f09c270fc24fdac6",
+    "c8905043fd1b45ae",
+    "1c29c485b56ee788",
+    "0ac3b4b605778523",
+    "f9b5ca4e049c4083",
+    "f44de0bb5d0bcc01",
+    "77d8808dd95247b8",
+    "78ab47ecbb3963f8",
+    "f0fca292228b42fb",
+    "7f5217f9924e5ea4",
+    "bfa2402eb267fb6b",
+    "ca65d768b5cd7735",
+    "e746cadd997f714a",
+    "2eea73e26e2c4dc5",
+    "936e454f99e5dab0",
+    "bc1f62e6eaccb1e7",
+    "01f51ffa318dddc0",
+    "0755b8770b5fe14c",
+    "240780a012937b24",
     "dbc3ab1b8046c6c3",
     "56d3bb33a5eb2701",
     "3f0c0b8ab052717e",
@@ -379,6 +385,7 @@
     "06a16b8924adb2e8",
     "95d0acacc3ccc860",
     "f12b7a2f139c04aa",
+    "9391712b3e94bd04",
     "d31770d38552eced",
     "9bd6594bcf35f762",
     "86f8a789e7c56891",
@@ -390,7 +397,6 @@
     "1e97dcc00d9a8460",
     "6871382ac324a039",
     "046c8300c07ab20c",
-    "9e1788317390ac92",
     "af51a40cbfd574fd",
     "046b803752d68495",
     "1dbbd9cd16a22f9a",
@@ -569,56 +575,56 @@
     "ad4796486d2bec05": "2026-05-25",
     "999a26991033635a": "2026-05-25",
     "b346fdbf92d9c2a3": "2026-05-25",
-    "e3e5aa3f53622fbd": "2026-05-25",
-    "52b1dc30e5ab2ea7": "2026-05-25",
-    "5fd45d4d2f88258a": "2026-05-25",
-    "0f775e3d4d12fc93": "2026-05-25",
-    "34bcadbdbc8d89b6": "2026-05-25",
-    "1ffc3a3bc7b4b387": "2026-05-25",
-    "4558f6f42cef4f00": "2026-05-25",
-    "a883300d44c9aaf8": "2026-05-25",
-    "290212594ff03811": "2026-05-25",
-    "a07a26599187f631": "2026-05-25",
-    "96437ad5bd510329": "2026-05-25",
-    "f5017cf12dace1b8": "2026-05-25",
-    "7d8439f52c0c6517": "2026-05-25",
-    "5032aa87b2a80481": "2026-05-25",
-    "6d1422f78b800d47": "2026-05-25",
-    "f10ae1b72732b09d": "2026-05-25",
-    "64a3ca157f02f625": "2026-05-25",
-    "fd5f91659f9bb30c": "2026-05-25",
-    "45d5e1ba222d3575": "2026-05-25",
-    "f0f7b8931c03601d": "2026-05-25",
-    "03c42494e8ffe2b3": "2026-05-25",
-    "f193f5359448ab44": "2026-05-25",
-    "b0f2ef1bf8f84188": "2026-05-25",
-    "cb1b078d6e0cadca": "2026-05-25",
-    "9f50dd2bc36ed285": "2026-05-25",
-    "b970a09a17fac703": "2026-05-25",
-    "531540d7e3f666de": "2026-05-25",
-    "f3f567f1f203c6cd": "2026-05-25",
-    "c0b3a8cac266c8c2": "2026-05-25",
-    "70690ce01f15ebc4": "2026-05-25",
-    "14d4d93fe5ddecdc": "2026-05-25",
-    "24a002bc94d8add4": "2026-05-25",
-    "d758353790259f9c": "2026-05-25",
-    "692764ab2ebbc300": "2026-05-25",
-    "d84e578253ee9d1e": "2026-05-25",
-    "e4d26eaaae711220": "2026-05-25",
-    "454efa4d4ac9da8e": "2026-05-25",
-    "aeb8a19e771706e7": "2026-05-25",
-    "dcf7051a7aed5375": "2026-05-25",
-    "2da6390f9403f86c": "2026-05-25",
-    "e12c5feea9a2e1ec": "2026-05-25",
-    "20ac44d09c08b13f": "2026-05-25",
-    "542025c28be4d4a5": "2026-05-25",
-    "b07a653869627110": "2026-05-25",
-    "427f1660667a649d": "2026-05-25",
-    "d10d6ddac56a55ed": "2026-05-25",
-    "727d1680f1432df5": "2026-05-25",
-    "051d668c9d8a6f3d": "2026-05-25",
-    "7afd7afad2cf456e": "2026-05-25",
-    "b9c4ac9ba6f7c600": "2026-05-25",
+    "e3e5aa3f53622fbd": "2026-05-26",
+    "52b1dc30e5ab2ea7": "2026-05-26",
+    "5fd45d4d2f88258a": "2026-05-26",
+    "0f775e3d4d12fc93": "2026-05-26",
+    "34bcadbdbc8d89b6": "2026-05-26",
+    "1ffc3a3bc7b4b387": "2026-05-26",
+    "4558f6f42cef4f00": "2026-05-26",
+    "a883300d44c9aaf8": "2026-05-26",
+    "290212594ff03811": "2026-05-26",
+    "a07a26599187f631": "2026-05-26",
+    "96437ad5bd510329": "2026-05-26",
+    "f5017cf12dace1b8": "2026-05-26",
+    "7d8439f52c0c6517": "2026-05-26",
+    "5032aa87b2a80481": "2026-05-26",
+    "6d1422f78b800d47": "2026-05-26",
+    "f10ae1b72732b09d": "2026-05-26",
+    "64a3ca157f02f625": "2026-05-26",
+    "fd5f91659f9bb30c": "2026-05-26",
+    "45d5e1ba222d3575": "2026-05-26",
+    "f0f7b8931c03601d": "2026-05-26",
+    "03c42494e8ffe2b3": "2026-05-26",
+    "f193f5359448ab44": "2026-05-26",
+    "b0f2ef1bf8f84188": "2026-05-26",
+    "cb1b078d6e0cadca": "2026-05-26",
+    "9f50dd2bc36ed285": "2026-05-26",
+    "b970a09a17fac703": "2026-05-26",
+    "531540d7e3f666de": "2026-05-26",
+    "f3f567f1f203c6cd": "2026-05-26",
+    "c0b3a8cac266c8c2": "2026-05-26",
+    "70690ce01f15ebc4": "2026-05-26",
+    "14d4d93fe5ddecdc": "2026-05-26",
+    "24a002bc94d8add4": "2026-05-26",
+    "d758353790259f9c": "2026-05-26",
+    "692764ab2ebbc300": "2026-05-26",
+    "d84e578253ee9d1e": "2026-05-26",
+    "e4d26eaaae711220": "2026-05-26",
+    "454efa4d4ac9da8e": "2026-05-26",
+    "aeb8a19e771706e7": "2026-05-26",
+    "dcf7051a7aed5375": "2026-05-26",
+    "2da6390f9403f86c": "2026-05-26",
+    "e12c5feea9a2e1ec": "2026-05-26",
+    "542025c28be4d4a5": "2026-05-26",
+    "20ac44d09c08b13f": "2026-05-26",
+    "b07a653869627110": "2026-05-26",
+    "427f1660667a649d": "2026-05-26",
+    "d10d6ddac56a55ed": "2026-05-26",
+    "727d1680f1432df5": "2026-05-26",
+    "051d668c9d8a6f3d": "2026-05-26",
+    "7afd7afad2cf456e": "2026-05-26",
+    "b9c4ac9ba6f7c600": "2026-05-26",
     "ea503371cbba8e72": "2026-05-25",
     "9fd0d4f2b11d708c": "2026-05-25",
     "15d465a98864c029": "2026-05-25",
@@ -634,6 +640,12 @@
     "8c0d5d21c5318862": "2026-05-25",
     "820f7e3ac97bd767": "2026-05-25",
     "6d70e9af82bdf7ce": "2026-05-25",
+    "1c50469e18562920": "2026-05-26",
+    "0cb9ab4f4f1f235e": "2026-05-26",
+    "ec0070a46cf6d1ad": "2026-05-26",
+    "093ba3e85e528e5b": "2026-05-26",
+    "c36b10b69c175a23": "2026-05-26",
+    "04a72a53efa18c5d": "2026-05-26",
     "f2d4d2dde220f628": "2026-05-25",
     "c2f218b31c0b6ec9": "2026-05-25",
     "f6459b6269eb614a": "2026-05-25",
@@ -658,25 +670,25 @@
     "c420162186a9f48a": "2026-05-25",
     "f37e9a590f928c34": "2026-05-25",
     "2ec543f2fec32538": "2026-05-25",
-    "df4fede0fd0186c7": "2026-05-26",
-    "0e732b79a5e4f33b": "2026-05-26",
-    "b9aa3c59a5b034e9": "2026-05-26",
-    "ad85e11ba01ac2cc": "2026-05-26",
-    "345f9abe27f438e7": "2026-05-26",
-    "ebb8b1cbf647ed1e": "2026-05-26",
-    "3a663ef31599a8fb": "2026-05-26",
-    "f7fe36cb3e8a88f9": "2026-05-26",
-    "38816e306e2fb04d": "2026-05-26",
-    "ffeabfc2f14ece8e": "2026-05-26",
-    "ebe11a0e3a91a406": "2026-05-26",
-    "66a03d92f9640698": "2026-05-26",
-    "4dd9759b23c4bafa": "2026-05-26",
-    "5e9ffca8cff47705": "2026-05-26",
-    "025b253353a4ae2c": "2026-05-26",
-    "ed9c9b8e901882f1": "2026-05-26",
-    "c94c21c69dbe1224": "2026-05-26",
-    "df9c6edd41c45e49": "2026-05-26",
-    "8073557bd7a5387e": "2026-05-26",
+    "f09c270fc24fdac6": "2026-05-26",
+    "c8905043fd1b45ae": "2026-05-26",
+    "1c29c485b56ee788": "2026-05-26",
+    "0ac3b4b605778523": "2026-05-26",
+    "f9b5ca4e049c4083": "2026-05-26",
+    "f44de0bb5d0bcc01": "2026-05-26",
+    "77d8808dd95247b8": "2026-05-26",
+    "78ab47ecbb3963f8": "2026-05-26",
+    "f0fca292228b42fb": "2026-05-26",
+    "7f5217f9924e5ea4": "2026-05-26",
+    "bfa2402eb267fb6b": "2026-05-26",
+    "ca65d768b5cd7735": "2026-05-26",
+    "e746cadd997f714a": "2026-05-26",
+    "2eea73e26e2c4dc5": "2026-05-26",
+    "936e454f99e5dab0": "2026-05-26",
+    "bc1f62e6eaccb1e7": "2026-05-26",
+    "01f51ffa318dddc0": "2026-05-26",
+    "0755b8770b5fe14c": "2026-05-26",
+    "240780a012937b24": "2026-05-26",
     "dbc3ab1b8046c6c3": "2026-05-25",
     "56d3bb33a5eb2701": "2026-05-25",
     "3f0c0b8ab052717e": "2026-05-25",
@@ -748,6 +760,7 @@
     "06a16b8924adb2e8": "2026-05-25",
     "95d0acacc3ccc860": "2026-05-25",
     "f12b7a2f139c04aa": "2026-05-25",
+    "9391712b3e94bd04": "2026-05-26",
     "d31770d38552eced": "2026-05-25",
     "9bd6594bcf35f762": "2026-05-25",
     "86f8a789e7c56891": "2026-05-25",
@@ -759,7 +772,6 @@
     "1e97dcc00d9a8460": "2026-05-25",
     "6871382ac324a039": "2026-05-25",
     "046c8300c07ab20c": "2026-05-25",
-    "9e1788317390ac92": "2026-05-25",
     "bbea2bd0369b66c1": "2026-05-25",
     "f38741cc0fe59db4": "2026-05-25",
     "48b8b21077d6073d": "2026-05-25",
@@ -876,7 +888,7 @@
       "undated_count": 0,
       "issue_dated_count": 0,
       "push_count": 17,
-      "last_success_at": "2026-05-26T03:58:23.214Z"
+      "last_success_at": "2026-05-26T16:37:16.924Z"
     },
     "j14": {
       "journal_name": "JOURNAL OF FINANCE",
@@ -964,7 +976,7 @@
       "undated_count": 0,
       "issue_dated_count": 0,
       "push_count": 23,
-      "last_success_at": "2026-05-26T03:58:23.214Z"
+      "last_success_at": "2026-05-26T16:37:16.924Z"
     },
     "j17": {
       "journal_name": "JOURNAL OF POLITICAL ECONOMY",
@@ -997,8 +1009,6 @@
         "d1e9b34504ad1557",
         "ddee8cbbcd09ae1a",
         "1a26367942441916",
-        "95cb81c0286cf976",
-        "894ffe4137456bfb",
         "19d99863f6b2ccc6",
         "61feb76ae788c08e",
         "d6f85a861c78081c",
@@ -1014,8 +1024,6 @@
         "d1e9b34504ad1557",
         "ddee8cbbcd09ae1a",
         "1a26367942441916",
-        "95cb81c0286cf976",
-        "894ffe4137456bfb",
         "19d99863f6b2ccc6",
         "61feb76ae788c08e",
         "d6f85a861c78081c",
@@ -1023,12 +1031,12 @@
         "5160dde09a68c91d",
         "739a50720a74f763"
       ],
-      "article_count": 19,
-      "recent_count": 14,
+      "article_count": 17,
+      "recent_count": 12,
       "undated_count": 0,
       "issue_dated_count": 0,
-      "push_count": 14,
-      "last_success_at": "2026-05-26T03:58:23.214Z"
+      "push_count": 12,
+      "last_success_at": "2026-05-26T16:37:16.924Z"
     },
     "j20": {
       "journal_name": "ECONOMETRICA",
@@ -1056,7 +1064,7 @@
       "undated_count": 0,
       "issue_dated_count": 0,
       "push_count": 0,
-      "last_success_at": "2026-05-26T03:58:23.214Z"
+      "last_success_at": "2026-05-26T16:37:16.924Z"
     },
     "j21": {
       "journal_name": "ACADEMY OF MANAGEMENT JOURNAL",
@@ -1147,7 +1155,7 @@
       "undated_count": 0,
       "issue_dated_count": 0,
       "push_count": 11,
-      "last_success_at": "2026-05-26T03:58:23.214Z"
+      "last_success_at": "2026-05-26T16:37:16.924Z"
     },
     "j2": {
       "journal_name": "经济研究",
@@ -1199,7 +1207,7 @@
       "undated_count": 0,
       "issue_dated_count": 11,
       "push_count": 11,
-      "last_success_at": "2026-05-26T03:58:23.214Z"
+      "last_success_at": "2026-05-26T16:37:16.924Z"
     },
     "j4": {
       "journal_name": "中国工业经济",
@@ -1248,8 +1256,8 @@
         "dcf7051a7aed5375",
         "2da6390f9403f86c",
         "e12c5feea9a2e1ec",
-        "20ac44d09c08b13f",
         "542025c28be4d4a5",
+        "20ac44d09c08b13f",
         "b07a653869627110",
         "427f1660667a649d",
         "d10d6ddac56a55ed",
@@ -1286,7 +1294,7 @@
       "undated_count": 0,
       "issue_dated_count": 50,
       "push_count": 9,
-      "last_success_at": "2026-05-26T03:58:23.214Z"
+      "last_success_at": "2026-05-26T16:37:16.924Z"
     },
     "j12": {
       "journal_name": "中国农村经济",
@@ -1332,7 +1340,7 @@
       "undated_count": 0,
       "issue_dated_count": 9,
       "push_count": 9,
-      "last_success_at": "2026-05-26T03:58:23.214Z"
+      "last_success_at": "2026-05-26T16:37:16.924Z"
     },
     "j3": {
       "journal_name": "世界经济",
@@ -1373,9 +1381,9 @@
       "article_count": 8,
       "recent_count": 8,
       "undated_count": 0,
-      "issue_dated_count": 8,
+      "issue_dated_count": 0,
       "push_count": 8,
-      "last_success_at": "2026-05-26T03:58:23.214Z"
+      "last_success_at": "2026-05-26T16:37:16.924Z"
     },
     "j5": {
       "journal_name": "金融研究",
@@ -1388,14 +1396,26 @@
         "9f04b011ce601f14",
         "8c0d5d21c5318862",
         "820f7e3ac97bd767",
-        "6d70e9af82bdf7ce"
+        "6d70e9af82bdf7ce",
+        "1c50469e18562920",
+        "0cb9ab4f4f1f235e",
+        "ec0070a46cf6d1ad",
+        "093ba3e85e528e5b",
+        "c36b10b69c175a23",
+        "04a72a53efa18c5d"
       ],
       "recent_article_ids": [
         "2291c93154cdfd0b",
         "9f04b011ce601f14",
         "8c0d5d21c5318862",
         "820f7e3ac97bd767",
-        "6d70e9af82bdf7ce"
+        "6d70e9af82bdf7ce",
+        "1c50469e18562920",
+        "0cb9ab4f4f1f235e",
+        "ec0070a46cf6d1ad",
+        "093ba3e85e528e5b",
+        "c36b10b69c175a23",
+        "04a72a53efa18c5d"
       ],
       "undated_article_ids": [],
       "push_article_ids": [
@@ -1403,14 +1423,20 @@
         "9f04b011ce601f14",
         "8c0d5d21c5318862",
         "820f7e3ac97bd767",
-        "6d70e9af82bdf7ce"
+        "6d70e9af82bdf7ce",
+        "1c50469e18562920",
+        "0cb9ab4f4f1f235e",
+        "ec0070a46cf6d1ad",
+        "093ba3e85e528e5b",
+        "c36b10b69c175a23",
+        "04a72a53efa18c5d"
       ],
-      "article_count": 6,
-      "recent_count": 5,
+      "article_count": 12,
+      "recent_count": 11,
       "undated_count": 0,
-      "issue_dated_count": 1,
-      "push_count": 5,
-      "last_success_at": "2026-05-26T03:58:23.214Z"
+      "issue_dated_count": 0,
+      "push_count": 11,
+      "last_success_at": "2026-05-26T16:37:16.924Z"
     },
     "j6": {
       "journal_name": "管理世界",
@@ -1462,7 +1488,7 @@
       "undated_count": 0,
       "issue_dated_count": 0,
       "push_count": 11,
-      "last_success_at": "2026-05-26T03:58:23.214Z"
+      "last_success_at": "2026-05-26T16:37:16.924Z"
     },
     "j8": {
       "journal_name": "公共管理学报",
@@ -1491,7 +1517,7 @@
       "undated_count": 0,
       "issue_dated_count": 7,
       "push_count": 0,
-      "last_success_at": "2026-05-26T03:58:23.214Z"
+      "last_success_at": "2026-05-26T16:37:16.924Z"
     },
     "j7": {
       "journal_name": "南开管理评论",
@@ -1525,7 +1551,7 @@
       "undated_count": 0,
       "issue_dated_count": 0,
       "push_count": 0,
-      "last_success_at": "2026-05-26T03:58:23.214Z"
+      "last_success_at": "2026-05-26T16:37:16.924Z"
     },
     "j9": {
       "journal_name": "管理科学学报",
@@ -1572,9 +1598,9 @@
       "article_count": 10,
       "recent_count": 10,
       "undated_count": 0,
-      "issue_dated_count": 10,
+      "issue_dated_count": 0,
       "push_count": 10,
-      "last_success_at": "2026-05-26T03:58:23.214Z"
+      "last_success_at": "2026-05-26T16:37:16.924Z"
     },
     "j10": {
       "journal_name": "中国行政管理",
@@ -1582,25 +1608,25 @@
       "probe_url": "https://www.cqvip.com/journal/81961X",
       "extraction_rule": "cqvip-journal-html",
       "article_ids": [
-        "df4fede0fd0186c7",
-        "0e732b79a5e4f33b",
-        "b9aa3c59a5b034e9",
-        "ad85e11ba01ac2cc",
-        "345f9abe27f438e7",
-        "ebb8b1cbf647ed1e",
-        "3a663ef31599a8fb",
-        "f7fe36cb3e8a88f9",
-        "38816e306e2fb04d",
-        "ffeabfc2f14ece8e",
-        "ebe11a0e3a91a406",
-        "66a03d92f9640698",
-        "4dd9759b23c4bafa",
-        "5e9ffca8cff47705",
-        "025b253353a4ae2c",
-        "ed9c9b8e901882f1",
-        "c94c21c69dbe1224",
-        "df9c6edd41c45e49",
-        "8073557bd7a5387e"
+        "f09c270fc24fdac6",
+        "c8905043fd1b45ae",
+        "1c29c485b56ee788",
+        "0ac3b4b605778523",
+        "f9b5ca4e049c4083",
+        "f44de0bb5d0bcc01",
+        "77d8808dd95247b8",
+        "78ab47ecbb3963f8",
+        "f0fca292228b42fb",
+        "7f5217f9924e5ea4",
+        "bfa2402eb267fb6b",
+        "ca65d768b5cd7735",
+        "e746cadd997f714a",
+        "2eea73e26e2c4dc5",
+        "936e454f99e5dab0",
+        "bc1f62e6eaccb1e7",
+        "01f51ffa318dddc0",
+        "0755b8770b5fe14c",
+        "240780a012937b24"
       ],
       "recent_article_ids": [],
       "undated_article_ids": [],
@@ -1610,7 +1636,7 @@
       "undated_count": 0,
       "issue_dated_count": 19,
       "push_count": 0,
-      "last_success_at": "2026-05-26T03:58:23.214Z"
+      "last_success_at": "2026-05-26T16:37:16.924Z"
     },
     "j11": {
       "journal_name": "会计研究",
@@ -1668,7 +1694,7 @@
       "undated_count": 0,
       "issue_dated_count": 13,
       "push_count": 13,
-      "last_success_at": "2026-05-26T03:58:23.214Z"
+      "last_success_at": "2026-05-26T16:37:16.924Z"
     },
     "j15": {
       "journal_name": "ACCOUNTING REVIEW",
@@ -1719,7 +1745,7 @@
       "undated_count": 0,
       "issue_dated_count": 0,
       "push_count": 10,
-      "last_success_at": "2026-05-26T03:58:23.214Z"
+      "last_success_at": "2026-05-26T16:37:16.924Z"
     },
     "j16": {
       "journal_name": "AMERICAN ECONOMIC REVIEW",
@@ -1840,7 +1866,7 @@
       "undated_count": 34,
       "issue_dated_count": 0,
       "push_count": 34,
-      "last_success_at": "2026-05-26T03:58:23.214Z"
+      "last_success_at": "2026-05-26T16:37:16.924Z"
     },
     "j18": {
       "journal_name": "QUARTERLY JOURNAL OF ECONOMICS",
@@ -1881,7 +1907,7 @@
       "undated_count": 0,
       "issue_dated_count": 0,
       "push_count": 5,
-      "last_success_at": "2026-05-26T03:58:23.214Z"
+      "last_success_at": "2026-05-26T16:37:16.924Z"
     },
     "j19": {
       "journal_name": "REVIEW OF ECONOMIC STUDIES",
@@ -1889,6 +1915,7 @@
       "probe_url": "https://api.crossref.org/journals/0034-6527/works?filter=type:journal-article&sort=published&order=desc&rows=12",
       "extraction_rule": "open-metadata-works",
       "article_ids": [
+        "9391712b3e94bd04",
         "d31770d38552eced",
         "9bd6594bcf35f762",
         "86f8a789e7c56891",
@@ -1899,10 +1926,10 @@
         "d11d5e673c02273a",
         "1e97dcc00d9a8460",
         "6871382ac324a039",
-        "046c8300c07ab20c",
-        "9e1788317390ac92"
+        "046c8300c07ab20c"
       ],
       "recent_article_ids": [
+        "9391712b3e94bd04",
         "d31770d38552eced",
         "9bd6594bcf35f762",
         "86f8a789e7c56891",
@@ -1913,11 +1940,11 @@
         "d11d5e673c02273a",
         "1e97dcc00d9a8460",
         "6871382ac324a039",
-        "046c8300c07ab20c",
-        "9e1788317390ac92"
+        "046c8300c07ab20c"
       ],
       "undated_article_ids": [],
       "push_article_ids": [
+        "9391712b3e94bd04",
         "d31770d38552eced",
         "9bd6594bcf35f762",
         "86f8a789e7c56891",
@@ -1928,15 +1955,14 @@
         "d11d5e673c02273a",
         "1e97dcc00d9a8460",
         "6871382ac324a039",
-        "046c8300c07ab20c",
-        "9e1788317390ac92"
+        "046c8300c07ab20c"
       ],
       "article_count": 12,
       "recent_count": 12,
       "undated_count": 0,
       "issue_dated_count": 0,
       "push_count": 12,
-      "last_success_at": "2026-05-26T03:58:23.214Z"
+      "last_success_at": "2026-05-26T16:37:16.924Z"
     },
     "j1": {
       "journal_name": "JOURNAL OF FINANCE",
@@ -1988,7 +2014,7 @@
       "undated_count": 0,
       "issue_dated_count": 0,
       "push_count": 11,
-      "last_success_at": "2026-05-26T03:58:23.214Z"
+      "last_success_at": "2026-05-26T16:37:16.924Z"
     },
     "j22": {
       "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
@@ -2046,7 +2072,7 @@
       "undated_count": 0,
       "issue_dated_count": 0,
       "push_count": 13,
-      "last_success_at": "2026-05-26T03:58:23.214Z"
+      "last_success_at": "2026-05-26T16:37:16.924Z"
     }
   }
 }
