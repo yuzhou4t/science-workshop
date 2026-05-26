@@ -1,6 +1,6 @@
 {
   "summary": {
-    "checked_at": "2026-05-26T02:23:41.495Z",
+    "checked_at": "2026-05-26T03:58:23.214Z",
     "direct_feeds_total": 5,
     "direct_feeds_ok": 5,
     "adapter_sources_total": 17,
@@ -19,7 +19,7 @@
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1211,
+      "fetch_ms": 1177,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 50,
@@ -28,269 +28,454 @@
         {
           "title": "How to R.E.S.P.O.N.D.: A Framework for Thoughtful Revisions and Scholarly Dialogue",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2026.0147",
-          "date": "2026-03-24T02:32:31Z"
+          "date": "2026-03-24T02:32:31Z",
+          "authors": "Kristie Rogers, Christine Shropshire, Mark Bolino",
+          "author_source": "",
+          "issue_date": "2026-04",
+          "date_source": "metadata_issue",
+          "published_at": ""
         },
         {
           "title": "2025 Presidential Address: Activism, Impact, and Science: Management Scholarship in a Challenging Era",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0742",
-          "date": "2025-12-16T06:35:46Z"
+          "date": "2025-12-16T06:35:46Z",
+          "authors": "Peter Bamberger",
+          "author_source": "",
+          "issue_date": "2026-04",
+          "date_source": "metadata_issue",
+          "published_at": ""
         },
         {
           "title": "From the Evaluator’s Perspective: A Functional Approach to Social Judgments",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2020.0405",
-          "date": "2025-02-14T09:07:41Z"
+          "date": "2025-02-14T09:07:41Z",
+          "authors": "Alex Bitektine, Nicole Gillespie, Donald Lange",
+          "author_source": "",
+          "issue_date": "2026-04",
+          "date_source": "metadata_issue",
+          "published_at": ""
         },
         {
           "title": "Beyond Backlash: Advancing Dominant-Group Employees’ Learning, Allyship, and Growth through Social Identity Threat",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2021.0521",
-          "date": "2024-10-30T05:39:08Z"
+          "date": "2024-10-30T05:39:08Z",
+          "authors": "Camellia Bryan, Brent J. Lyons",
+          "author_source": "",
+          "issue_date": "2026-04",
+          "date_source": "metadata_issue",
+          "published_at": ""
         },
         {
           "title": "Taming Artificial Intelligence: A Theory of Control-Accountability Alignment among AI Developers and Users",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2023.0117",
-          "date": "2024-10-30T05:30:57Z"
+          "date": "2024-10-30T05:30:57Z",
+          "authors": "Gudela Grote, Sharon K. Parker, Kevin Crowston",
+          "author_source": "",
+          "issue_date": "2026-04",
+          "date_source": "metadata_issue",
+          "published_at": ""
         },
         {
           "title": "Theorizing Routine Enactment from a Pragmatist Perspective: Agency, Experience, and Situational Novelty",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2022.0518",
-          "date": "2025-01-27T04:43:59Z"
+          "date": "2025-01-27T04:43:59Z",
+          "authors": "Dionysios D. Dionysiou, Haridimos Tsoukas, Kathleen M. Sutcliffe",
+          "author_source": "",
+          "issue_date": "2026-04",
+          "date_source": "metadata_issue",
+          "published_at": ""
         },
         {
           "title": "Achieving Holism: Narrating Multiple Identities in the Moment and over Time",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2023.0215",
-          "date": "2025-03-05T06:48:03Z"
+          "date": "2025-03-05T06:48:03Z",
+          "authors": "Sarah Wittman, Blake E. Ashforth, Herminia Ibarra",
+          "author_source": "",
+          "issue_date": "2026-04",
+          "date_source": "metadata_issue",
+          "published_at": ""
         },
         {
           "title": "It Takes Two to Untangle: Illuminating How and Why Some Workplace Relationships Adapt while Others Deteriorate after a Workplace Microaggression",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2022.0355",
-          "date": "2025-03-10T08:20:13Z"
+          "date": "2025-03-10T08:20:13Z",
+          "authors": "Summer R. Jackson, Basima A. Tewfik",
+          "author_source": "",
+          "issue_date": "2026-04",
+          "date_source": "metadata_issue",
+          "published_at": ""
         },
         {
           "title": "A Theory of the Start-Up Workforce",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2023.0174",
-          "date": "2025-03-06T02:41:15Z"
+          "date": "2025-03-06T02:41:15Z",
+          "authors": "James Bort",
+          "author_source": "",
+          "issue_date": "2026-04",
+          "date_source": "metadata_issue",
+          "published_at": ""
         },
         {
           "title": "Awe-Driven Venturing: Identifying and Pursuing Transformational Opportunities",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2023.0247",
-          "date": "2025-08-07T04:10:17Z"
+          "date": "2025-08-07T04:10:17Z",
+          "authors": "Trenton Alma Williams, Dean A. Shepherd",
+          "author_source": "",
+          "issue_date": "2026-04",
+          "date_source": "metadata_issue",
+          "published_at": ""
         },
         {
           "title": "Co-Constructive Start-Up Illusions: An Extension of Bort’s “A Theory of the Start-Up Workforce”",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0144",
-          "date": "2025-10-16T03:26:17Z"
+          "date": "2025-10-16T03:26:17Z",
+          "authors": "Robert J. Pidduck",
+          "author_source": "",
+          "issue_date": "2026-04",
+          "date_source": "metadata_issue",
+          "published_at": ""
         },
         {
           "title": "The Promise and Perils of Co-Construction: A Reply to “Co-Constructive Start-Up Illusions”",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0698",
-          "date": "2026-02-09T06:05:07Z"
+          "date": "2026-02-09T06:05:07Z",
+          "authors": "James Bort",
+          "author_source": "",
+          "issue_date": "2026-04",
+          "date_source": "metadata_issue",
+          "published_at": ""
         },
         {
           "title": "The Origins and Evolution of Red, Blue, and Purple Employee Populations: A Theory of How Organizations Become Ideologically Skewed",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0229",
-          "date": "2026-05-18T04:51:35Z"
+          "date": "2026-05-18",
+          "authors": "Yasir Dewan, Abhinav Gupta, Donald C. Hambrick",
+          "author_source": "",
+          "published_at": "2026-05-18",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "Coleman’s Boat and Complex Cross-Level Aggregation in Interinstitutional Systems: An Extension of Almandoz and Thornton’s “Understanding Institutional Environments: An Institutional Logics Model of Societal Evolution”",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2026.0224",
-          "date": "2026-05-06T06:46:15Z"
+          "date": "2026-05-06",
+          "authors": "Kris Mikel-Hong",
+          "author_source": "",
+          "published_at": "2026-05-06",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "Moral Ambiguity and Judgment: A Reply to “Acting to Know”",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2026.0465",
-          "date": "2026-05-06T06:44:36Z"
+          "date": "2026-05-06",
+          "authors": "Marina Vorholzer, Anna Brattström",
+          "author_source": "",
+          "published_at": "2026-05-06",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "A Reply to “Adversity Reveals Character: A Virtue Ethics-Based Contingency Theory Extension of Yan et al.’s ‘How Underdogs Succeed and Fail’”",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2026.0385",
-          "date": "2026-05-05T02:27:32Z"
+          "date": "2026-05-05",
+          "authors": "Liuxin Yan, Daniel J. McAllister, Grace J. H. Lim, Kai Chi Yam",
+          "author_source": "",
+          "published_at": "2026-05-05",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "How AI Reshapes Multimodal Theorization: An Extension of Kuric and Höllerer’s “Theorization as a Prerequisite for Diffusion”",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2026.0095",
-          "date": "2026-04-27T04:23:29Z"
+          "date": "2026-04-27",
+          "authors": "Shuang Liu",
+          "author_source": "",
+          "published_at": "2026-04-27",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "Copying the Wrong Winner? When Noisy Attribution Reverses Mutual Learning Prescriptions in Denrell, Christensen, Knudsen, and Liu’s “The Impact of Learning Mode and Speed on Mutual Learning”",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0682",
-          "date": "2026-04-22T05:25:27Z"
+          "date": "2026-04-22",
+          "authors": "Piotr Tomasz Makowski, Nicolai J. Foss",
+          "author_source": "",
+          "published_at": "2026-04-22",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "Boundary Conditions and the Juxtaposition of Externalities: An Extension to Anand et al.’s “Competitive Externalities in Acquisitions”",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2026.0341",
-          "date": "2026-04-22T05:23:48Z"
+          "date": "2026-04-22",
+          "authors": "Hao Ma",
+          "author_source": "",
+          "published_at": "2026-04-22",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "Competitive Dynamics are Alive with the Sound of Music: A Reply to “Time to Face the Music”",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.1029",
-          "date": "2026-04-10T02:04:56Z"
+          "date": "2026-04-10",
+          "authors": "Eric Y. Lee, John R. Busenbark, Michael C. Withers, Edward J. Zajac",
+          "author_source": "",
+          "published_at": "2026-04-10",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "Leaders on the Other Side of Voice: Extending Black et al.’s Integrative Theory of Collective Voice",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0769",
-          "date": "2026-04-09T03:11:35Z"
+          "date": "2026-04-09",
+          "authors": "Xiaoran Hu, Chang Su",
+          "author_source": "",
+          "published_at": "2026-04-09",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "Understanding Inclusion: The Role of Organization Member Prototypes",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2023.0010",
-          "date": "2026-03-31T06:41:14Z"
+          "date": "2026-03-31",
+          "authors": "Felix Danbold, Batia M. Wiesenfeld",
+          "author_source": "",
+          "published_at": "2026-03-31",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "Adversity Reveals Character: A Virtue Ethics-Based Contingency Theory Extension of Yan et al.’s “How Underdogs Succeed and Fail”",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0762",
-          "date": "2026-03-30T08:18:34Z"
+          "date": "2026-03-30",
+          "authors": "Xiaojie Wu, Qingfeng Tian, Xinbo Sun, Xin Li",
+          "author_source": "",
+          "published_at": "2026-03-30",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "Necessity Entrepreneurship as a Process: A Response to “Beyond the Individual,” “Feedback as a Mechanism,” and “Toward Communalism”",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0914",
-          "date": "2026-03-30T08:21:34Z"
+          "date": "2026-03-30",
+          "authors": "Chad D. Coffman, Griffin W. Cottle, Sanwar A. Sunny",
+          "author_source": "",
+          "published_at": "2026-03-30",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "Acting to Know: Extending Vorholzer and Brattström’s Theory of Moral Ambiguity in Entrepreneurial Action through Externalized Moral Resolution",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.1031",
-          "date": "2026-03-30T08:20:07Z"
+          "date": "2026-03-30",
+          "authors": "Morgan X. Yang, Kwok Yuen Fan, Kevin J. Zeng",
+          "author_source": "",
+          "published_at": "2026-03-30",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "When Compassion Constricts: Identity Threat and Organizational Responses to Suffering",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2024.0068",
-          "date": "2026-03-26T01:27:31Z"
+          "date": "2026-03-26",
+          "authors": "William A. Kahn, Han Liu",
+          "author_source": "",
+          "published_at": "2026-03-26",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "Defending the Hoax: A Commentary on Willmott’s “Management Theory: Jungle, Myth, or Hoax?”",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0753",
-          "date": "2026-03-26T01:44:40Z"
+          "date": "2026-03-26",
+          "authors": "Stefan Schwarzkopf",
+          "author_source": "",
+          "published_at": "2026-03-26",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "Institutional Resilience for Institutional Diversity: An Extension of Almandoz and Thornton’s “Understanding Institutional Environments: An Institutional Logics Model of Societal Evolution”",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0956",
-          "date": "2026-03-26T05:51:12Z"
+          "date": "2026-03-26",
+          "authors": "Felix Carl Schultz, Vladislav Valentinov",
+          "author_source": "",
+          "published_at": "2026-03-26",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "From Hoax to Kayfabe: Reframing Willmott’s Metaphor for Management Theory",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0758",
-          "date": "2026-03-19T05:58:03Z"
+          "date": "2026-03-19",
+          "authors": "Aditya Simha",
+          "author_source": "",
+          "published_at": "2026-03-19",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "The Writer’s Room: An Extension to Willmott’s “Management Theory: Jungle, Myth, or Hoax?”",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0886",
-          "date": "2026-03-19T05:59:02Z"
+          "date": "2026-03-19",
+          "authors": "Carlos Carrasco-Farré, Ferran Torres",
+          "author_source": "",
+          "published_at": "2026-03-19",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "Syncing Minds and Machines: Hybrid Cognitive Alignment as an Emergent Coordination Mechanism in Human–AI Collaboration",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2024.0546",
-          "date": "2026-03-18T02:13:11Z"
+          "date": "2026-03-18T02:13:11Z",
+          "authors": "Li Lu, Bei Yan"
         },
         {
           "title": "Corrective Governance in the Boardroom: A Negotiated Order Perspective",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2023.0238",
-          "date": "2026-03-13T03:02:23Z"
+          "date": "2026-03-13T03:02:23Z",
+          "authors": "Dana Bement, Ryan Krause, Michael C. Withers, Matthew Semadeni"
         },
         {
           "title": "Construct Fallacies and Construct Validation in Theories of Management and Organization",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2024.0235",
-          "date": "2026-03-10T05:06:31Z"
+          "date": "2026-03-10T05:06:31Z",
+          "authors": "Joep P. Cornelissen, Mirjam D. Werner, Leander De Schutter, Omar N. Solinger"
         },
         {
           "title": "In Defense of Objectivity: Beyond False Binaries and Manufactured Divides",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0871",
-          "date": "2026-03-10T05:09:59Z"
+          "date": "2026-03-10T05:09:59Z",
+          "authors": "Stratos Ramoglou, Robin Holt"
         },
         {
           "title": "Asymmetric Jeopardy through Dissonant Ties: An Extension of Brands and Kilduff’s “Multiplex Jeopardy”",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0499",
-          "date": "2026-02-24T05:04:37Z"
+          "date": "2026-02-24T05:04:37Z",
+          "authors": "Stefano Tasselli, Julia Brennecke"
         },
         {
           "title": "Reimagining Management Theory as Theater Rather than Hoax: A Commentary on Willmott’s “Management Theory: Jungle, Myth, or Hoax?”",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0637",
-          "date": "2026-02-12T06:31:49Z"
+          "date": "2026-02-12T06:31:49Z",
+          "authors": "Yannick Griep"
         },
         {
           "title": "The Role of Deliberate Silence in Institutional Change",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2022.0145",
-          "date": "2026-02-09T06:06:27Z"
+          "date": "2026-02-09T06:06:27Z",
+          "authors": "Dennis C. Jancsary"
         },
         {
           "title": "Transaction Governance: Firm-Level Influences and the Organizational Identity Paradox",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2023.0064",
-          "date": "2026-02-09T06:07:27Z"
+          "date": "2026-02-09T06:07:27Z",
+          "authors": "Paul Tracey, Jan B. Heide, Simon J. Bell"
         },
         {
           "title": "Competitive Externalities in Acquisitions",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2023.0120",
-          "date": "2026-02-09T06:05:27Z"
+          "date": "2026-02-09T06:05:27Z",
+          "authors": "Jaideep Anand, Philipp Meyer-Doyle, Benjamin W Blunck"
         },
         {
           "title": "Designing Dual-Purpose Organizations: The Role of Soft Governance",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2023.0226",
-          "date": "2026-02-09T05:23:47Z"
+          "date": "2026-02-09T05:23:47Z",
+          "authors": "Anna Szerb, Ilze Kivleniece, Vikas A Aggarwal"
         },
         {
           "title": "Fading Memories: The Role of Machine Learning in Organizational Knowledge Depreciation",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2024.0408",
-          "date": "2026-02-03T04:08:48Z"
+          "date": "2026-02-03T04:08:48Z",
+          "authors": "Jin P. Gerlach, Donald Lange"
         },
         {
           "title": "Corporate Strategy and the Portfolio-Based View of CSR: Toward a Theory of Optimal CSR Diversification",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2023.0416",
-          "date": "2026-01-22T07:12:53Z"
+          "date": "2026-01-22T07:12:53Z",
+          "authors": "David J. Skandera, Mark R. DesJardine, Dane P. Blevins"
         },
         {
           "title": "Tackling the Complexity Challenge: When and How to Engage in Configurational and Hybrid Theorizing",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2024.0187",
-          "date": "2026-01-09T09:13:30Z"
+          "date": "2026-01-09T09:13:30Z",
+          "authors": "Joanna T. Campbell, Peer C. Fiss"
         },
         {
           "title": "Empirically Based Response Strategies: When and How Empirical Debate Allows Firms to Resist Stakeholders",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2024.0294",
-          "date": "2026-01-09T09:13:35Z"
+          "date": "2026-01-09T09:13:35Z",
+          "authors": "Nicole V. West, David G. Sirmon"
         },
         {
           "title": "Feedback as a Mechanism: An Extension of Coffman et al.’s “Leaving Necessity Entrepreneurship Behind”",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0494",
-          "date": "2026-01-09T09:13:30Z"
+          "date": "2026-01-09T09:13:30Z",
+          "authors": "Jun Xia, Yue Wang, Xinyu (Jessie) Yan, Shuyuan Bai"
         },
         {
           "title": "Moral Conviction as a Distinct Pathway in Resistance to Burdensome Role Expectations: An Extension of Yagil’s “I Don’t Want To: The Violation of Burdensome Role Expectations”",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0586",
-          "date": "2026-01-09T09:13:34Z"
+          "date": "2026-01-09T09:13:34Z",
+          "authors": "Yannick Griep, Kevin S. Cruz"
         },
         {
           "title": "Beyond Dangling Carrots: The Effect of Policy Maker Motives on Their Response to Corporate Political Activity",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2023.0033",
-          "date": "2025-12-16T06:36:05Z"
+          "date": "2025-12-16T06:36:05Z",
+          "authors": "Pouyan Tabasi-Nejad, Yuval Deutsch"
         },
         {
           "title": "Rethinking Necessity Entrepreneurship Beyond Binaries and Toward Communalism: A Commentary on Coffman et al.’s “Leaving Necessity Entrepreneurship Behind”",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0446",
-          "date": "2025-11-11T04:35:02Z"
+          "date": "2025-11-11T04:35:02Z",
+          "authors": "Katrin M. Smolka, Sophie Bacq, Pursey P. M. A. R. Heugens"
         },
         {
           "title": "Theorization as a Prerequisite for Diffusion: How and Why Multimodal Expression Matters",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2023.0193",
-          "date": "2025-11-10T04:07:36Z"
+          "date": "2025-11-10T04:07:36Z",
+          "authors": "Ines Kuric, Markus A. Höllerer"
         },
         {
           "title": "Understanding Institutional Environments: An Institutional Logics Model of Societal Evolution",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2023.0056",
-          "date": "2025-11-07T05:03:37Z"
+          "date": "2025-11-07T05:03:37Z",
+          "authors": "Juan (“John”) Almandoz, Patricia H. Thornton"
         }
       ],
       "samples": [
         {
           "title": "How to R.E.S.P.O.N.D.: A Framework for Thoughtful Revisions and Scholarly Dialogue",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2026.0147",
-          "date": "2026-03-24T02:32:31Z"
+          "date": "2026-03-24T02:32:31Z",
+          "authors": "Kristie Rogers, Christine Shropshire, Mark Bolino",
+          "author_source": "",
+          "issue_date": "2026-04",
+          "date_source": "metadata_issue",
+          "published_at": ""
         },
         {
           "title": "2025 Presidential Address: Activism, Impact, and Science: Management Scholarship in a Challenging Era",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0742",
-          "date": "2025-12-16T06:35:46Z"
+          "date": "2025-12-16T06:35:46Z",
+          "authors": "Peter Bamberger",
+          "author_source": "",
+          "issue_date": "2026-04",
+          "date_source": "metadata_issue",
+          "published_at": ""
         },
         {
           "title": "From the Evaluator’s Perspective: A Functional Approach to Social Judgments",
           "url": "https://journals.aom.org/doi/abs/10.5465/amr.2020.0405",
-          "date": "2025-02-14T09:07:41Z"
+          "date": "2025-02-14T09:07:41Z",
+          "authors": "Alex Bitektine, Nicole Gillespie, Donald Lange",
+          "author_source": "",
+          "issue_date": "2026-04",
+          "date_source": "metadata_issue",
+          "published_at": ""
         }
       ],
       "notes": [],
@@ -306,7 +491,7 @@
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1047,
+      "fetch_ms": 1314,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 23,
@@ -315,134 +500,264 @@
         {
           "title": "Hedger of Last Resort: Evidence from Brazilian FX Interventions, Local Credit, and Global Financial Cycles",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70054",
-          "date": "Fri, 22 May 2026 23:38:25 -0700"
+          "date": "2026-05-22",
+          "authors": "RODRIGO BARBONE GONZALEZ, DMITRY KHAMETSHIN, JOSÉ‐LUIS PEYDRÓ, ANDREA POLO",
+          "author_source": "",
+          "published_at": "2026-05-22",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "Quote Competition in Corporate Bonds",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70048",
-          "date": "Fri, 22 May 2026 23:37:08 -0700"
+          "date": "2026-05-22",
+          "authors": "TERRENCE HENDERSHOTT, DAN LI, DMITRY LIVDAN, NORMAN SCHÜRHOFF, KUMAR VENKATARAMAN",
+          "author_source": "",
+          "published_at": "2026-05-22",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "Model Ambiguity versus Model Misspecification in Dynamic Portfolio Choice",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70027",
-          "date": "Fri, 22 May 2026 20:54:22 -0700"
+          "date": "2026-01-21",
+          "authors": "PASCAL J. MAENHOUT, HAO XING, ANNE G. BALTER",
+          "author_source": "",
+          "published_at": "2026-01-21",
+          "issue_date": "2026-06",
+          "date_source": "metadata_published"
         },
         {
           "title": "Competition Enforcement and Accounting for Intangible Capital",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70028",
-          "date": "Fri, 22 May 2026 20:54:22 -0700"
+          "date": "2026-02-06",
+          "authors": "JOHN D. KEPLER, CHARLES G. MCCLURE, CHRISTOPHER R. STEWART",
+          "author_source": "",
+          "published_at": "2026-02-06",
+          "issue_date": "2026-06",
+          "date_source": "metadata_published"
         },
         {
           "title": "Consumer Choice and Corporate Bankruptcy",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70030",
-          "date": "Fri, 22 May 2026 20:54:22 -0700"
+          "date": "2026-03-23",
+          "authors": "SAMUEL ANTILL, MEGAN HUNTER",
+          "author_source": "",
+          "published_at": "2026-03-23",
+          "issue_date": "2026-06",
+          "date_source": "metadata_published"
         },
         {
           "title": "Leader‐Follower Dynamics in Shareholder Activism",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70033",
-          "date": "Fri, 22 May 2026 20:54:22 -0700"
+          "date": "2026-04-02",
+          "authors": "DORUK CETEMEN, GONZALO CISTERNAS, AARON KOLB, S. VISWANATHAN",
+          "author_source": "",
+          "published_at": "2026-04-02",
+          "issue_date": "2026-06",
+          "date_source": "metadata_published"
         },
         {
           "title": "Deposit Franchise Runs",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70034",
-          "date": "Fri, 22 May 2026 20:54:22 -0700"
+          "date": "2026-04-07",
+          "authors": "ITAMAR DRECHSLER, ALEXI SAVOV, PHILIPP SCHNABL, OLIVIER WANG",
+          "author_source": "",
+          "published_at": "2026-04-07",
+          "issue_date": "2026-06",
+          "date_source": "metadata_published"
         },
         {
           "title": "Corporate M&As and Labor Market Concentration: Efficiency Gains or Power Grabs?",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70035",
-          "date": "Fri, 22 May 2026 20:54:22 -0700"
+          "date": "2026-04-01",
+          "authors": "DAVID CICERO, MO SHEN, JAIDEEP SHENOY",
+          "author_source": "",
+          "published_at": "2026-04-01",
+          "issue_date": "2026-06",
+          "date_source": "metadata_published"
         },
         {
           "title": "Size, Returns, and Value: Do Private Equity Firms Allocate Capital According to Manager Skill?",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70036",
-          "date": "Fri, 22 May 2026 20:54:22 -0700"
+          "date": "2026-04-03",
+          "authors": "REINER BRAUN, NILS DORAU, TIM JENKINSON, DANIEL URBAN",
+          "author_source": "",
+          "published_at": "2026-04-03",
+          "issue_date": "2026-06",
+          "date_source": "metadata_published"
         },
         {
           "title": "The Voting Premium",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70037",
-          "date": "Fri, 22 May 2026 20:54:22 -0700"
+          "date": "2026-03-30",
+          "authors": "DORON LEVIT, NADYA MALENKO, ERNST MAUG",
+          "author_source": "",
+          "published_at": "2026-03-30",
+          "issue_date": "2026-06",
+          "date_source": "metadata_published"
         },
         {
           "title": "The (Missing) Relation between Acquisition Announcement Returns and Value Creation",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70038",
-          "date": "Fri, 22 May 2026 20:54:22 -0700"
+          "date": "2026-04-07",
+          "authors": "ITZHAK BEN‐DAVID, UTPAL BHATTACHARYA, RUIDI HUANG, STACEY JACOBSEN",
+          "author_source": "",
+          "published_at": "2026-04-07",
+          "issue_date": "2026-06",
+          "date_source": "metadata_published"
         },
         {
           "title": "Funding Black High‐Growth Startups",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70039",
-          "date": "Fri, 22 May 2026 20:54:22 -0700"
+          "date": "2026-04-09",
+          "authors": "LISA D. COOK, MATT MARX, EMMANUEL YIMFOR",
+          "author_source": "",
+          "published_at": "2026-04-09",
+          "issue_date": "2026-06",
+          "date_source": "metadata_published"
         },
         {
           "title": "The Effect of Advisors' Incentives on Clients' Investments",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70041",
-          "date": "Fri, 22 May 2026 20:54:22 -0700"
+          "date": "2026-04-27",
+          "authors": "DIEGO BATTISTON, JORDI BLANES I VIDAL, RAFAEL HORTALA‐VALLVE, DONG LOU",
+          "author_source": "",
+          "published_at": "2026-04-27",
+          "issue_date": "2026-06",
+          "date_source": "metadata_published"
         },
         {
           "title": "Pricing of Climate Risk Insurance: Regulation and Cross‐Subsidies",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70029",
-          "date": "Fri, 22 May 2026 20:54:22 -0700"
+          "date": "2026-03-16",
+          "authors": "SANGMIN S. OH, ISHITA SEN, ANA‐MARIA TENEKEDJIEVA",
+          "author_source": "",
+          "published_at": "2026-03-16",
+          "issue_date": "2026-06",
+          "date_source": "metadata_published"
         },
         {
           "title": "Investing with Purpose: Evidence from Private Foundations",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70055",
-          "date": "Wed, 20 May 2026 01:29:04 -0700"
+          "date": "2026-05-20",
+          "authors": "MATTEO BINFARÈ, KYLE E. ZIMMERSCHIED",
+          "author_source": "",
+          "published_at": "2026-05-20",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "Why Have CEO Pay Levels Become Less Diverse?",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70050",
-          "date": "Tue, 19 May 2026 00:06:23 -0700"
+          "date": "2026-05-19",
+          "authors": "TORSTEN JOCHEM, GAIZKA ORMAZABAL, ANJANA RAJAMANI",
+          "author_source": "",
+          "published_at": "2026-05-19",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "Bank Competition Amid Digital Disruption: Implications for Financial Inclusion",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70051",
-          "date": "Sun, 17 May 2026 23:54:38 -0700"
+          "date": "2026-05-17",
+          "authors": "ERICA XUEWEI JIANG, GLORIA YANG YU, JINYUAN ZHANG",
+          "author_source": "",
+          "published_at": "2026-05-17",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "Consumption in Asset Returns",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70044",
-          "date": "Fri, 15 May 2026 00:21:22 -0700"
+          "date": "2026-05-15",
+          "authors": "SVETLANA BRYZGALOVA, JIANTAO HUANG, CHRISTIAN JULLIARD",
+          "author_source": "",
+          "published_at": "2026-05-15",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "The Drivers and Implications of Retail Margin Trading",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70049",
-          "date": "Fri, 15 May 2026 00:15:18 -0700"
+          "date": "2026-05-15",
+          "authors": "JIANGZE BIAN, ZHI DA, ZHIGUO HE, DONG LOU, KELLY SHUE, HAO ZHOU",
+          "author_source": "",
+          "published_at": "2026-05-15",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "Risk‐Free Rates and Convenience Yields around the World",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70045",
-          "date": "Mon, 11 May 2026 01:52:04 -0700"
+          "date": "2026-05-11",
+          "authors": "William Diamond, Peter Van Tassel",
+          "author_source": "",
+          "published_at": "2026-05-11",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "The Equilibrium Effects of Eviction Policies",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70046",
-          "date": "Mon, 11 May 2026 01:50:43 -0700"
+          "date": "2026-05-11",
+          "authors": "BOAZ ABRAMSON",
+          "author_source": "",
+          "published_at": "2026-05-11",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "Partisan Entrepreneurship",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70042",
-          "date": "Fri, 08 May 2026 05:16:34 -0700"
+          "date": "2026-05-08",
+          "authors": "JOSEPH ENGELBERG, JORGE GUZMAN, RUNJING LU, WILLIAM MULLINS",
+          "author_source": "",
+          "published_at": "2026-05-08",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "Learning in the Limit: Income Inference from Credit Extensions",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70040",
-          "date": "Thu, 07 May 2026 01:10:18 -0700"
+          "date": "2026-05-07",
+          "authors": "XIAO YIN",
+          "author_source": "",
+          "published_at": "2026-05-07",
+          "date_source": "metadata_published",
+          "issue_date": ""
         }
       ],
       "samples": [
         {
           "title": "Hedger of Last Resort: Evidence from Brazilian FX Interventions, Local Credit, and Global Financial Cycles",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70054",
-          "date": "Fri, 22 May 2026 23:38:25 -0700"
+          "date": "2026-05-22",
+          "authors": "RODRIGO BARBONE GONZALEZ, DMITRY KHAMETSHIN, JOSÉ‐LUIS PEYDRÓ, ANDREA POLO",
+          "author_source": "",
+          "published_at": "2026-05-22",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "Quote Competition in Corporate Bonds",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70048",
-          "date": "Fri, 22 May 2026 23:37:08 -0700"
+          "date": "2026-05-22",
+          "authors": "TERRENCE HENDERSHOTT, DAN LI, DMITRY LIVDAN, NORMAN SCHÜRHOFF, KUMAR VENKATARAMAN",
+          "author_source": "",
+          "published_at": "2026-05-22",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "Model Ambiguity versus Model Misspecification in Dynamic Portfolio Choice",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70027",
-          "date": "Fri, 22 May 2026 20:54:22 -0700"
+          "date": "2026-01-21",
+          "authors": "PASCAL J. MAENHOUT, HAO XING, ANNE G. BALTER",
+          "author_source": "",
+          "published_at": "2026-01-21",
+          "issue_date": "2026-06",
+          "date_source": "metadata_published"
         }
       ],
       "notes": [
@@ -460,7 +775,7 @@
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1093,
+      "fetch_ms": 1043,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 19,
@@ -469,114 +784,224 @@
         {
           "title": "A Model of Social Duties",
           "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/739834",
-          "date": "2026-03-31T02:53:39Z"
+          "date": "2026-05-01",
+          "authors": "Tore EllingsenErik MohlinStockholm School of EconomicsLund University, Swedish Defence University, and Institute for Futures Studies",
+          "author_source": "",
+          "published_at": "2026-05-01",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "Private Private Information",
           "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/739833",
-          "date": "2026-03-27T02:44:47Z"
+          "date": "2026-05-01",
+          "authors": "Kevin HeFedor SandomirskiyOmer TamuzUniversity of PennsylvaniaPrinceton UniversityCalifornia Institute of Technology",
+          "author_source": "",
+          "published_at": "2026-05-01",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "Algorithm Design: A Fairness-Accuracy Frontier",
           "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/739826",
-          "date": "2026-04-13T03:54:32Z"
+          "date": "2026-05-01",
+          "authors": "Annie LiangJay LuXiaosheng MuKyohei OkumuraNorthwestern UniversityUniversity of California, Los AngelesPrinceton University",
+          "author_source": "",
+          "published_at": "2026-05-01",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "Booms, Busts, and Mismatch in Capital Markets: Evidence from the Offshore Oil and Gas Industry",
           "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/739827",
-          "date": "2026-03-25T03:56:24Z"
+          "date": "2026-05-01",
+          "authors": "Nicholas VreugdenhilArizona State University",
+          "author_source": "",
+          "published_at": "2026-05-01",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "The Causal Effects of Youth Cigarette Addiction and Education",
           "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/739828",
-          "date": "2026-03-19T04:21:38Z"
+          "date": "2026-05-01",
+          "authors": "Rong HaiJames HeckmanUniversity of MiamiUniversity of Chicago",
+          "author_source": "",
+          "published_at": "2026-05-01",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "US Public Debt and Safe Asset Market Power",
           "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/739824",
-          "date": "2026-03-19T04:21:39Z"
+          "date": "2026-05-01",
+          "authors": "Jason ChoiRishabh KirpalaniDiego J. PerezUniversity of TorontoUniversity of Wisconsin–MadisonNew York University and National Bureau of Economic Research",
+          "author_source": "",
+          "published_at": "2026-05-01",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "Recent Referees",
           "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/742103",
-          "date": "2026-04-30T08:20:30Z"
+          "date": "2026-05-01",
+          "authors": "",
+          "published_at": "2026-05-01",
+          "date_source": "metadata_published",
+          "author_source": "",
+          "issue_date": ""
         },
         {
           "title": "JPE Turnaround Times",
           "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/741685",
-          "date": "2026-04-30T08:20:38Z"
+          "date": "2026-05-01",
+          "authors": "",
+          "published_at": "2026-05-01",
+          "date_source": "metadata_published",
+          "author_source": "",
+          "issue_date": ""
         },
         {
           "title": "The Gas Trap: Outcompeting Coal versus Renewables",
           "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/740172",
-          "date": "2026-05-05T02:02:24Z"
+          "date": "2026-05-05",
+          "authors": "Bård HarstadKatinka HoltsmarkStanford University, National Bureau of Economic Research, and Centre for Economic Policy ResearchUniversity of Oslo",
+          "author_source": "",
+          "published_at": "2026-05-05",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "Ever since Allais",
           "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/739829",
-          "date": "2026-04-15T03:36:46Z"
+          "date": "2026-04-15",
+          "authors": "Aluma DemboShachar KarivMatthew PolissonJohn K.-H. QuahReichman UniversityUniversity of California, BerkeleyUniversity of LeicesterNational University of Singapore",
+          "author_source": "",
+          "published_at": "2026-04-15",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "On the Nature of Entrepreneurship",
           "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/739823",
-          "date": "2026-04-21T04:22:40Z"
+          "date": "2026-04-21",
+          "authors": "Anmol BhandariTobey KassThomas J. MayEllen R. McGrattanEvan SchulzUniversity of MinnesotaOffice of Tax AnalysisCalifornia State University, FullertonInternal Revenue Service",
+          "author_source": "",
+          "published_at": "2026-04-21",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "Linking Social and Personal Preferences: Theory and Experiment",
           "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/739832",
-          "date": "2026-04-23T02:57:42Z"
+          "date": "2026-04-23",
+          "authors": "William R. ZameBertil TungoddenErik Ø. SørensenShachar KarivAlexander W. CappelenUniversity of California, Los AngelesNorwegian School of EconomicsNorwegian School of EconomicsUniversity of California, BerkeleyNorwegian School of Economics",
+          "author_source": "",
+          "published_at": "2026-04-23",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "The Zero-Beta Interest Rate",
           "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/740220",
-          "date": "2026-04-30T04:29:26Z"
+          "date": "2026-04-30",
+          "authors": "Sebastian Di TellaBenjamin HébertPablo KurlatQitong WangStanford University and National Bureau of Economic ResearchUniversity of Southern California and National Bureau of Economic ResearchUniversity of Southern California",
+          "author_source": "",
+          "published_at": "2026-04-30",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "Health Shocks, Health Insurance, Human Capital, and the Dynamics of Earnings and Health",
           "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/739831",
-          "date": "2026-05-01T04:03:39Z"
+          "date": "2026-05-01",
+          "authors": "Elena CapatinaMichael KeaneAustralian National UniversityJohns Hopkins Carey Business School, ARC Centre of Excellence in Population Ageing Research (CEPAR), and University of New South Wales",
+          "author_source": "",
+          "published_at": "2026-05-01",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "Glass Walls: Experimental Evidence on Constraints Faced by Women in Accessing Valuable Skilling Opportunities",
           "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/739830",
-          "date": "2026-05-07T04:04:56Z"
+          "date": "2026-05-07",
+          "authors": "Ali CheemaAsim I. KhwajaM. Farooq NaseerJacob N. ShapiroLahore University of Management Sciences (LUMS)Harvard Kennedy SchoolLUMSPrinceton University",
+          "author_source": "",
+          "published_at": "2026-05-07",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "The Origin of the State: Land Productivity or Appropriability? Comment",
           "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/740225",
-          "date": "2026-05-08T04:00:41Z"
+          "date": "2026-05-08",
+          "authors": "Nikolai CookThibaut DupreyAnthony HeyesMartino PelliWilfrid Laurier UniversityBank of CanadaUniversity of BirminghamAsian Development Bank",
+          "author_source": "",
+          "published_at": "2026-05-08",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "The Macroeconomic Consequences of Early Childhood Development Policies",
           "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/740224",
-          "date": "2026-01-07T05:52:51Z"
+          "date": "2026-01-07",
+          "authors": "Diego DaruichUniversity of Southern California",
+          "author_source": "",
+          "published_at": "2026-01-07",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "A Method to Estimate Discrete Choice Models That Is Robust to Consumer Search",
           "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/740223",
-          "date": "2026-01-07T05:52:56Z"
+          "date": "2026-01-07",
+          "authors": "Jason AbaluckGiovanni CompianiFan ZhangYale School of ManagementUniversity of Chicago Booth School of BusinessNOVA School of Business and Economics, Universidade NOVA de Lisboa",
+          "author_source": "",
+          "published_at": "2026-01-07",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "Revolutionary Transition: Inheritance Change and Fertility Decline",
           "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/739821",
-          "date": "2026-04-29T03:34:05Z"
+          "date": "2026-04-29",
+          "authors": "Victor GayPaula E. GobbiMarc GoñiToulouse School of Economics, University of Toulouse CapitoleEuropean Center for Advanced Research in Economics and Statistics, Université Libre de Bruxelles, and Centre for Economic Policy ResearchUniversity of Bergen and Centre for Economic Policy Research",
+          "author_source": "",
+          "published_at": "2026-04-29",
+          "date_source": "metadata_published",
+          "issue_date": ""
         }
       ],
       "samples": [
         {
           "title": "A Model of Social Duties",
           "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/739834",
-          "date": "2026-03-31T02:53:39Z"
+          "date": "2026-05-01",
+          "authors": "Tore EllingsenErik MohlinStockholm School of EconomicsLund University, Swedish Defence University, and Institute for Futures Studies",
+          "author_source": "",
+          "published_at": "2026-05-01",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "Private Private Information",
           "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/739833",
-          "date": "2026-03-27T02:44:47Z"
+          "date": "2026-05-01",
+          "authors": "Kevin HeFedor SandomirskiyOmer TamuzUniversity of PennsylvaniaPrinceton UniversityCalifornia Institute of Technology",
+          "author_source": "",
+          "published_at": "2026-05-01",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "Algorithm Design: A Fairness-Accuracy Frontier",
           "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/739826",
-          "date": "2026-04-13T03:54:32Z"
+          "date": "2026-05-01",
+          "authors": "Annie LiangJay LuXiaosheng MuKyohei OkumuraNorthwestern UniversityUniversity of California, Los AngelesPrinceton University",
+          "author_source": "",
+          "published_at": "2026-05-01",
+          "date_source": "metadata_published",
+          "issue_date": ""
         }
       ],
       "notes": [
@@ -593,8 +1018,8 @@
       "extraction_rule": "wiley-etoc",
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
-      "transport": "fetch",
-      "fetch_ms": 1040,
+      "transport": "curl",
+      "fetch_ms": 6321,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 11,
@@ -603,80 +1028,150 @@
         {
           "title": "Spatial Economics for Granular Settings",
           "url": "https://onlinelibrary.wiley.com/doi/10.3982/ECTA19350",
-          "date": "Wed, 01 Apr 2026 05:25:22 -0700"
+          "date": "Wed, 01 Apr 2026 05:25:22 -0700",
+          "authors": "Jonathan I. Dingel, Felix Tintelnot",
+          "author_source": "",
+          "published_at": "",
+          "issue_date": "",
+          "date_source": ""
         },
         {
           "title": "Trade and Domestic Distortions: The Case of Informality",
           "url": "https://onlinelibrary.wiley.com/doi/10.3982/ECTA19378",
-          "date": "Wed, 01 Apr 2026 05:25:22 -0700"
+          "date": "Wed, 01 Apr 2026 05:25:22 -0700",
+          "authors": "Rafael Dix‐Carneiro, Pinelopi Goldberg, Costas Meghir, Gabriel Ulyssea",
+          "author_source": "",
+          "published_at": "",
+          "issue_date": "",
+          "date_source": ""
         },
         {
           "title": "Optimal Shrinkage Estimation of Fixed Effects in Linear Panel Data Models",
           "url": "https://onlinelibrary.wiley.com/doi/10.3982/ECTA22386",
-          "date": "Wed, 01 Apr 2026 05:25:22 -0700"
+          "date": "Wed, 01 Apr 2026 05:25:22 -0700",
+          "authors": "Soonwoo Kwon",
+          "author_source": "",
+          "published_at": "",
+          "issue_date": "",
+          "date_source": ""
         },
         {
           "title": "Optimally‐Transported Generalized Method of Moments",
           "url": "https://onlinelibrary.wiley.com/doi/10.3982/ECTA22486",
-          "date": "Wed, 01 Apr 2026 05:25:22 -0700"
+          "date": "Wed, 01 Apr 2026 05:25:22 -0700",
+          "authors": "Susanne Schennach, Vincent Starck",
+          "author_source": "",
+          "published_at": "",
+          "issue_date": "",
+          "date_source": ""
         },
         {
           "title": "Empirical Bayes When Estimation Precision Predicts Parameters",
           "url": "https://onlinelibrary.wiley.com/doi/10.3982/ECTA22935",
-          "date": "Wed, 01 Apr 2026 05:25:22 -0700"
+          "date": "Wed, 01 Apr 2026 05:25:22 -0700",
+          "authors": "Jiafeng Chen",
+          "author_source": "",
+          "published_at": "",
+          "issue_date": "",
+          "date_source": ""
         },
         {
           "title": "The Complexity of Multidimensional Learning in Agriculture",
           "url": "https://onlinelibrary.wiley.com/doi/10.3982/ECTA22974",
-          "date": "Wed, 01 Apr 2026 05:25:22 -0700"
+          "date": "Wed, 01 Apr 2026 05:25:22 -0700",
+          "authors": "Rachid Laajaj, Karen Macours",
+          "author_source": "",
+          "published_at": "",
+          "issue_date": "",
+          "date_source": ""
         },
         {
           "title": "Food Policy in a Warming World",
           "url": "https://onlinelibrary.wiley.com/doi/10.3982/ECTA23125",
-          "date": "Wed, 01 Apr 2026 05:25:22 -0700"
+          "date": "Wed, 01 Apr 2026 05:25:22 -0700",
+          "authors": "Allan Hsiao, Jacob Moscona, Karthik A. Sastry",
+          "author_source": "",
+          "published_at": "",
+          "issue_date": "",
+          "date_source": ""
         },
         {
           "title": "Dynamic Incentives in Incompletely Specified Environments",
           "url": "https://onlinelibrary.wiley.com/doi/10.3982/ECTA23373",
-          "date": "Wed, 01 Apr 2026 05:25:22 -0700"
+          "date": "Wed, 01 Apr 2026 05:25:22 -0700",
+          "authors": "Gabriel Carroll",
+          "author_source": "",
+          "published_at": "",
+          "issue_date": "",
+          "date_source": ""
         },
         {
           "title": "Monotonicity and Robust Implementation Under Forward‐Induction Reasoning",
           "url": "https://onlinelibrary.wiley.com/doi/10.3982/ECTA23709",
-          "date": "Wed, 01 Apr 2026 05:25:22 -0700"
+          "date": "Wed, 01 Apr 2026 05:25:22 -0700",
+          "authors": "Pierpaolo Battigalli, Emiliano Catonini",
+          "author_source": "",
+          "published_at": "",
+          "issue_date": "",
+          "date_source": ""
         },
         {
           "title": "An Experimental Evaluation of Deferred Acceptance: Evidence From Over 100 Army Officer Labor Markets",
           "url": "https://onlinelibrary.wiley.com/doi/10.3982/ECTA22160",
-          "date": "Wed, 01 Apr 2026 00:00:00 -0700"
+          "date": "Wed, 01 Apr 2026 00:00:00 -0700",
+          "authors": "Jonathan M.V. Davis, Kyle Greenberg, Damon Jones",
+          "author_source": "",
+          "published_at": "",
+          "issue_date": "",
+          "date_source": ""
         },
         {
           "title": "Firm Accommodation After Workplace Disability: Labor Market Impacts and Implications for Subsidy Design",
           "url": "https://onlinelibrary.wiley.com/doi/10.3982/ECTA22565",
-          "date": "Wed, 01 Apr 2026 00:00:00 -0700"
+          "date": "Wed, 01 Apr 2026 00:00:00 -0700",
+          "authors": "Naoki Aizawa, Corina Mommaerts, Stephanie Rennane",
+          "author_source": "",
+          "published_at": "",
+          "issue_date": "",
+          "date_source": ""
         }
       ],
       "samples": [
         {
           "title": "Spatial Economics for Granular Settings",
           "url": "https://onlinelibrary.wiley.com/doi/10.3982/ECTA19350",
-          "date": "Wed, 01 Apr 2026 05:25:22 -0700"
+          "date": "Wed, 01 Apr 2026 05:25:22 -0700",
+          "authors": "Jonathan I. Dingel, Felix Tintelnot",
+          "author_source": "",
+          "published_at": "",
+          "issue_date": "",
+          "date_source": ""
         },
         {
           "title": "Trade and Domestic Distortions: The Case of Informality",
           "url": "https://onlinelibrary.wiley.com/doi/10.3982/ECTA19378",
-          "date": "Wed, 01 Apr 2026 05:25:22 -0700"
+          "date": "Wed, 01 Apr 2026 05:25:22 -0700",
+          "authors": "Rafael Dix‐Carneiro, Pinelopi Goldberg, Costas Meghir, Gabriel Ulyssea",
+          "author_source": "",
+          "published_at": "",
+          "issue_date": "",
+          "date_source": ""
         },
         {
           "title": "Optimal Shrinkage Estimation of Fixed Effects in Linear Panel Data Models",
           "url": "https://onlinelibrary.wiley.com/doi/10.3982/ECTA22386",
-          "date": "Wed, 01 Apr 2026 05:25:22 -0700"
+          "date": "Wed, 01 Apr 2026 05:25:22 -0700",
+          "authors": "Soonwoo Kwon",
+          "author_source": "",
+          "published_at": "",
+          "issue_date": "",
+          "date_source": ""
         }
       ],
       "notes": [
         "filtered_non_article:3"
       ],
-      "error": ""
+      "error": "fetch failed"
     },
     {
       "type": "direct_rss",
@@ -688,7 +1183,7 @@
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1300,
+      "fetch_ms": 1267,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 50,
@@ -697,269 +1192,434 @@
         {
           "title": "Artificial Intelligence and Responsible Research at AMJ",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2026.4002",
-          "date": "2026-04-15T07:48:58Z"
+          "date": "2026-04-15T07:48:58Z",
+          "authors": "Quinetta Roberson",
+          "author_source": "",
+          "issue_date": "2026-04",
+          "date_source": "metadata_issue",
+          "published_at": ""
         },
         {
           "title": "Violence and Competition: The Effect of Mass Shootings and Domestic Terrorism on Organizational Risk-Taking in Response to Performance Shortfalls",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.0306",
-          "date": "2025-08-05T05:31:45Z"
+          "date": "2025-08-05T05:31:45Z",
+          "authors": "Christian Schumacher, Steffen Keck, Abhinav Gupta",
+          "author_source": "",
+          "issue_date": "2026-04",
+          "date_source": "metadata_issue",
+          "published_at": ""
         },
         {
           "title": "How Employees Who Have Made Upward Social Class Transitions Get Heard in the Workplace",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.0042",
-          "date": "2025-11-04T04:05:38Z"
+          "date": "2025-11-04T04:05:38Z",
+          "authors": "Yasha Spriha, Subrahmaniam Tangirala, Rui Shu, Srinivas Ekkirala",
+          "author_source": "",
+          "issue_date": "2026-04",
+          "date_source": "metadata_issue",
+          "published_at": ""
         },
         {
           "title": "Woulda, Shoulda, Coulda? The Impact of Predictive, Prescriptive, and Prospective Expectations on Stakeholder Reactions",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0135",
-          "date": "2025-09-08T04:17:25Z"
+          "date": "2025-09-08T04:17:25Z",
+          "authors": "Yuri Mishina, Maxine Yu, David Gomulya",
+          "author_source": "",
+          "issue_date": "2026-04",
+          "date_source": "metadata_issue",
+          "published_at": ""
         },
         {
           "title": "Siloed Sustainability: How Paradox Management Unravels in Integrative Practice Implementation",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.0548",
-          "date": "2025-10-30T05:28:10Z"
+          "date": "2025-10-30T05:28:10Z",
+          "authors": "Lucas Amaral, Juliane Reinecke, Michael Etter",
+          "author_source": "",
+          "issue_date": "2026-04",
+          "date_source": "metadata_issue",
+          "published_at": ""
         },
         {
           "title": "Deeply Rooted and Versatile? Knowledge Scouts and External Knowledge Integration in Multidivisional Firms",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0276",
-          "date": "2025-10-08T02:47:25Z"
+          "date": "2025-10-08T02:47:25Z",
+          "authors": "Benoit Decreton, Felipe Monteiro, Francisco Polidoro",
+          "author_source": "",
+          "issue_date": "2026-04",
+          "date_source": "metadata_issue",
+          "published_at": ""
         },
         {
           "title": "Who Avoids Punishment? How Discretion and Psychopathy Shape Leaders’ Responses to Misconduct",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0229",
-          "date": "2025-11-04T04:05:41Z"
+          "date": "2025-11-04T04:05:41Z",
+          "authors": "Wei Jee Ong, Grace J. H. Lim",
+          "author_source": "",
+          "issue_date": "2026-04",
+          "date_source": "metadata_issue",
+          "published_at": ""
         },
         {
           "title": "The Ties That Nurture: Expressive Simmelian Ties, Instrumental Brokerage, and Individual Performance",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0234",
-          "date": "2025-11-07T05:00:37Z"
+          "date": "2025-11-07T05:00:37Z",
+          "authors": "Marco Tortoriello, Giuseppe Soda, Manuel Gomez-Solorzano",
+          "author_source": "",
+          "issue_date": "2026-04",
+          "date_source": "metadata_issue",
+          "published_at": ""
         },
         {
           "title": "From Paralysis to Publicization: How Victims of the UK Post Office Horizon IT Scandal Experienced and Confronted Organizational Harm",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.1166",
-          "date": "2025-12-11T03:33:19Z"
+          "date": "2025-12-11T03:33:19Z",
+          "authors": "Jan Lodge, Grace Augustine, Mislav Radic",
+          "author_source": "",
+          "issue_date": "2026-04",
+          "date_source": "metadata_issue",
+          "published_at": ""
         },
         {
           "title": "Polyphonic Career Scripting: Political and Relational Dynamics in the Construction of Promotion Norms",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2022.1039",
-          "date": "2026-05-08T04:32:15Z"
+          "date": "2026-05-08",
+          "authors": "Elena Doldor, Madeleine Wyatt, Doyin Atewologun",
+          "author_source": "",
+          "published_at": "2026-05-08",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "Innovating More Formally: How Resistance-Led Participation Drives Expansion and Integration in Innovation Control Configuration",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0722",
-          "date": "2026-04-27T06:06:11Z"
+          "date": "2026-04-27",
+          "authors": "Shiko M. Ben-Menahem, Vivianna F. He, Georg Von Krogh, Christian Wedl",
+          "author_source": "",
+          "published_at": "2026-04-27",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "“We’re Not Designing with the Same Brain”: How Tattoo Artists Navigate Authority-Expertise Asymmetry to Sustain Creator-Client Co-Creation",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.1212",
-          "date": "2026-04-22T05:21:18Z"
+          "date": "2026-04-22",
+          "authors": "Alexandra Rheinhardt Beer, Amnah Ameen, Dhvani Badwaik, Monique Domingo, Nora Madjar",
+          "author_source": "",
+          "published_at": "2026-04-22",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "Listen to Your Users? Self-Selection in User Community Feedback and Commercial Impact",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0178",
-          "date": "2026-04-09T03:21:08Z"
+          "date": "2026-04-09",
+          "authors": "Ryan T. Allen, Robert Bremner, Rory M. McDonald",
+          "author_source": "",
+          "published_at": "2026-04-09",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "A Prosocial Perspective on Advice Seeking and Networking: How Focusing on What Advice Givers Can Gain Motivates Advice Seekers to Reach Out More",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0635",
-          "date": "2026-04-09T03:21:06Z"
+          "date": "2026-04-09",
+          "authors": "Anne Burmeister, Daniel Z. Levin",
+          "author_source": "",
+          "published_at": "2026-04-09",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "Time the Surge: Theorizing and Examining Team Pacing in Multiple-Membership Contexts",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0522",
-          "date": "2026-04-08T05:35:13Z"
+          "date": "2026-04-08",
+          "authors": "Chen Zhang, Ning Li, Xilan Zhang, Yi-An Deng, Laijie Yang",
+          "author_source": "",
+          "published_at": "2026-04-08",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "Algorithmic Facial Expression Analysis: A Novel Methodology to Advance Management Research on Emotions",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0826",
-          "date": "2026-04-08T05:34:34Z"
+          "date": "2026-04-08",
+          "authors": "Silvia Stroe, Charlotta Sirén, Vivianna Fang He, Barbara Burkhard, Vangelis Souitaris",
+          "author_source": "",
+          "published_at": "2026-04-08",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "The Resource Insecurity Mindset: Why CEOs from Lower-Class Origins Are Both Greedier and More Generous",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0347",
-          "date": "2026-04-01T03:46:56Z"
+          "date": "2026-04-01",
+          "authors": "Timothy D. Hubbard, Lívia Markóczy, Aten Zaandam",
+          "author_source": "",
+          "published_at": "2026-04-01",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "From Founders to Funders: Generalized Reciprocity and Embeddedness in Founders’ Transition to Angel Investing",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.1097",
-          "date": "2026-03-24T02:11:39Z"
+          "date": "2026-03-24",
+          "authors": "Alessandro Piazza, William D. Miles",
+          "author_source": "",
+          "published_at": "2026-03-24",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "Relationship Splintering and Repair: The Dynamics of Marginalization in Organizations",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2022.1042",
-          "date": "2026-03-19T07:45:14Z"
+          "date": "2026-03-19",
+          "authors": "Deniz Öztürk, John M. Amis",
+          "author_source": "",
+          "published_at": "2026-03-19",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "Movin’ and Groovin’! Increased Prior Mobility Facilitates Newcomers’ Transitions Into Organizations",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0138",
-          "date": "2026-03-19T07:45:12Z"
+          "date": "2026-03-19",
+          "authors": "Rebecca R. Kehoe, F. Scott Bentley",
+          "author_source": "",
+          "published_at": "2026-03-19",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "Short-Term Demands and Long-Term Commitments: A Temporal Model of Stakeholder Governance",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.1164",
-          "date": "2026-03-18T02:18:51Z"
+          "date": "2026-03-18",
+          "authors": "Romain Boulongne, Trevor Young-Hyman, Pascual Berrone",
+          "author_source": "",
+          "published_at": "2026-03-18",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "Bricolage as Enacted Sensemaking in Emergent Response Groups: Organizing in Conditions of Extreme Equivocality",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0486",
-          "date": "2026-03-18T02:18:32Z"
+          "date": "2026-03-18",
+          "authors": "Ricardo Coelho Da Silva, Leid Zejnilović, Marco Berti, Miguel Pina e Cunha, Pedro Oliveira",
+          "author_source": "",
+          "published_at": "2026-03-18",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "How Mega-threats Influence Workplace Cooperation: Effect of #BlackLivesMatter Salience on Cooperation among and between Black and White Coworkers",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0457",
-          "date": "2026-03-16T08:09:20Z"
+          "date": "2026-03-16",
+          "authors": "Steffen Keck, Christian Schumacher, Abhinav Gupta, Keith Leavitt",
+          "author_source": "",
+          "published_at": "2026-03-16",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "Dynamic Demands versus Durable Skills: Career Dilemmas in Pharmaceutical R&D",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0338",
-          "date": "2026-03-13T03:17:23Z"
+          "date": "2026-03-13",
+          "authors": "Shinjinee Chattopadhyay, Shinjae Won, Matthew Bidwell",
+          "author_source": "",
+          "published_at": "2026-03-13",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "Constructing Agency Under Persistent Precarity: Shame, Anger, and Compassion in the Self-Narratives of Thai Sex Workers",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.1415",
-          "date": "2026-03-12T02:29:31Z"
+          "date": "2026-03-12",
+          "authors": "Hee-Chan Song, Winnie Y. Jiang",
+          "author_source": "",
+          "published_at": "2026-03-12",
+          "date_source": "metadata_published",
+          "issue_date": ""
         },
         {
           "title": "Cultivating a Climate for Work–Life Inclusion by Implementing Human Resource Practices: Reducing Personal Life Stigma to Enhance Gender Career Equality",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.0979",
-          "date": "2026-03-10T04:26:16Z"
+          "date": "2026-03-10T04:26:16Z",
+          "authors": "Yixuan Li, Haiyang Liu, Zhefan Huang, Ellen Ernst Kossek, Mo Wang, Yueting Ji, Shengming Liu"
         },
         {
           "title": "Being the Change: Prefiguration and Moral Exclusion in a Refugee Relief Organization",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.0411",
-          "date": "2026-03-09T04:36:00Z"
+          "date": "2026-03-09T04:36:00Z",
+          "authors": "Myrto Chliova, Saku Mantere, Henri Schildt, Anna Salvanou"
         },
         {
           "title": "Spacing Bodies: The Interplay between Focal and Subsidiary Coordinating",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0300",
-          "date": "2026-03-09T04:36:19Z"
+          "date": "2026-03-09T04:36:19Z",
+          "authors": "Samer Faraj, Karla Sayegh"
         },
         {
           "title": "Hostile Frame Takeover: Co-opting the Security Frame in the Nuclear Energy Debate",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0656",
-          "date": "2026-03-03T05:45:49Z"
+          "date": "2026-03-03T05:45:49Z",
+          "authors": "Stephan Bohn, Nora Lohmeyer, Harsh Kumar Jha, Juliane Reinecke"
         },
         {
           "title": "Pipelines and Sprinkler Systems: Documenting the Speed–Flexibility Tradeoff in How Jobs Shape Promotion",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0582",
-          "date": "2026-03-02T06:44:38Z"
+          "date": "2026-03-02T06:44:38Z",
+          "authors": "Shun Yiu, Matthew Bidwell, JR Keller"
         },
         {
           "title": "They Saw It Coming: Executive Experience and Foresight in Competitor Identification",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0463",
-          "date": "2026-02-20T06:27:31Z"
+          "date": "2026-02-20T06:27:31Z",
+          "authors": "Sruthi Thatchenkery"
         },
         {
           "title": "To Be or Not To Be (Aligned with Elites): Navigating Systemic Power within Informal Institutions",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.0515",
-          "date": "2026-02-19T07:03:36Z"
+          "date": "2026-02-19T07:03:36Z",
+          "authors": "Christopher Sutter, Babita Bhatt, Israr Qureshi"
         },
         {
           "title": "Knowledge Bridging: How Acquirers Leverage the Knowledge of Their Targets’ Prior Alliance Partners",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.1203",
-          "date": "2026-02-17T04:56:48Z"
+          "date": "2026-02-17T04:56:48Z",
+          "authors": "Jens-Christian Friedmann, Korcan Kavusan"
         },
         {
           "title": "Market-Stigmatized Groups and the Effectiveness of Stigma Management Strategies: Evidence from Washington’s Marijuana Market",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.0995",
-          "date": "2026-02-13T04:36:46Z"
+          "date": "2026-02-13T04:36:46Z",
+          "authors": "Cyrus Dioun, Kisha Lashley, Vontrese Pamphile"
         },
         {
           "title": "Role Rectification: How Hybrid Entrepreneurship Turns Entrepreneur Roles from Liability to Advantage in Hiring",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.1071",
-          "date": "2026-02-09T06:07:24Z"
+          "date": "2026-02-09T06:07:24Z",
+          "authors": "Gavin Williamson, Timothy P. Munyon, Ali Mchiri, Malgorzata W. Kozusznik"
         },
         {
           "title": "Tied in or Tied Up? The Contrasting Effects of Social Ties on Employee Turnover",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0641",
-          "date": "2026-02-09T06:07:21Z"
+          "date": "2026-02-09T06:07:21Z",
+          "authors": "Alessandro Iorio, Shad Morris"
         },
         {
           "title": "Understanding Why and When Coworkers Undermine Employees Who Have Friends in High Places",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2022.1306",
-          "date": "2026-02-04T03:21:00Z"
+          "date": "2026-02-04T03:21:00Z",
+          "authors": "Ruolian Fang, Daniel J. McAllister, Zhen Zhang, Michelle K. Duffy, Lin Wang"
         },
         {
           "title": "When Women Stick Together: Network Dynamics and Shared Resources Following Disruptive Events",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0199",
-          "date": "2026-01-30T08:29:06Z"
+          "date": "2026-01-30T08:29:06Z",
+          "authors": "Yiftach Yarmar, Tiantian Yang, Marissa D. King"
         },
         {
           "title": "Reckoning With the Ideal Worker Body: A Qualitative Study of Workers in Chronic Pain",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.0511",
-          "date": "2026-01-22T03:36:52Z"
+          "date": "2026-01-22T03:36:52Z",
+          "authors": "Beth S. Schinoff, Kim Rocheville, Elana Feldman, Njoke Thomas"
         },
         {
           "title": "When the Moon is Jealous of the Stars: Implications of Informal Leadership for Supervisor Downward Jealousy and Their Treatment of Other Subordinates",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.0646",
-          "date": "2026-01-22T03:34:55Z"
+          "date": "2026-01-22T03:34:55Z",
+          "authors": "Feng Qiu, Lingtao Yu, Xueqi Wen, Michelle Duffy, Ke Michael Mai"
         },
         {
           "title": "Point Break? The Efficacy of Creative Differences as a Protective Label for Future Work",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.0759",
-          "date": "2026-01-16T08:50:54Z"
+          "date": "2026-01-16T08:50:54Z",
+          "authors": "Spencer Huber Harrison, Patrick Reilly, Yanbo Song, Khwan Kim"
         },
         {
           "title": "CEO Regulatory Focus as an Interpretive Frame: An Empirical Examination of Investor Perceptions in the Context of Earning Deviations",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.0896",
-          "date": "2026-01-16T08:50:57Z"
+          "date": "2026-01-16T08:50:57Z",
+          "authors": "Srikanth Paruchuri, Joel L. Andrus, David W. Sullivan"
         },
         {
           "title": "Political Segregation in the Labor Market and the Persistence of Pay Gaps",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.0371",
-          "date": "2026-01-14T07:17:10Z"
+          "date": "2026-01-14T07:17:10Z",
+          "authors": "Ray Tsai Fang, Felice B. Klein, Chi Nguyen, Jeff Lingwall, Alexander Lewis"
         },
         {
           "title": "Seeking Greener Pastures: Employee Turnover Following Corporate Stakeholder Violations",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0243",
-          "date": "2026-01-09T04:54:30Z"
+          "date": "2026-01-09T04:54:30Z",
+          "authors": "Forrest Briscoe, Mark R. DesJardine"
         },
         {
           "title": "Who I Am Not: Enhancing Self-Clarity through Cultivating Not-Me Identities",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0530",
-          "date": "2026-01-09T04:54:33Z"
+          "date": "2026-01-09T04:54:33Z",
+          "authors": "Neveen Saied, Katleen De Stobbeleir"
         },
         {
           "title": "Are You Looking at Me? Orchestrating Voyeuristic Events to Add Value for Those Being Observed",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.1385",
-          "date": "2026-01-09T04:54:32Z"
+          "date": "2026-01-09T04:54:32Z",
+          "authors": "Dean A. Shepherd, Vinit Parida, Sarah Chase, Joakim Wincent"
         },
         {
           "title": "Stakeholder Political Ideology, Purpose of Business Beliefs, and Responses to CEO Activism: Introducing an Asymmetry Model",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.0510",
-          "date": "2025-12-22T02:31:41Z"
+          "date": "2025-12-22T02:31:41Z",
+          "authors": "Krishnan Nair, Marlon Mooijman"
         },
         {
           "title": "We’re Not in Kansas Anymore: Pragmatic Adaptation in Large-Scale Creative Projects with Underspecified Product Concepts",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0418",
-          "date": "2025-12-22T02:31:36Z"
+          "date": "2025-12-22T02:31:36Z",
+          "authors": "Elizabeth D. Rouse"
         },
         {
           "title": "Moderately Fast and Furious: A Screening and Behavioral Theory of New CEO Strategic Action Speed",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0829",
-          "date": "2025-12-12T06:48:03Z"
+          "date": "2025-12-12T06:48:03Z",
+          "authors": "John R. Busenbark, Robert Campbell, Diego Villalpando"
         },
         {
           "title": "Team Hierarchical Adaptability: Benefits for Team Coordination and Performance",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.1308",
-          "date": "2025-12-11T03:44:51Z"
+          "date": "2025-12-11T03:44:51Z",
+          "authors": "Nicole Abi-Esber, Lindred L. Greer, Annebel H. B. De Hoogh"
         }
       ],
       "samples": [
         {
           "title": "Artificial Intelligence and Responsible Research at AMJ",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2026.4002",
-          "date": "2026-04-15T07:48:58Z"
+          "date": "2026-04-15T07:48:58Z",
+          "authors": "Quinetta Roberson",
+          "author_source": "",
+          "issue_date": "2026-04",
+          "date_source": "metadata_issue",
+          "published_at": ""
         },
         {
           "title": "Violence and Competition: The Effect of Mass Shootings and Domestic Terrorism on Organizational Risk-Taking in Response to Performance Shortfalls",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.0306",
-          "date": "2025-08-05T05:31:45Z"
+          "date": "2025-08-05T05:31:45Z",
+          "authors": "Christian Schumacher, Steffen Keck, Abhinav Gupta",
+          "author_source": "",
+          "issue_date": "2026-04",
+          "date_source": "metadata_issue",
+          "published_at": ""
         },
         {
           "title": "How Employees Who Have Made Upward Social Class Transitions Get Heard in the Workplace",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.0042",
-          "date": "2025-11-04T04:05:38Z"
+          "date": "2025-11-04T04:05:38Z",
+          "authors": "Yasha Spriha, Subrahmaniam Tangirala, Rui Shu, Srinivas Ekkirala",
+          "author_source": "",
+          "issue_date": "2026-04",
+          "date_source": "metadata_issue",
+          "published_at": ""
         }
       ],
       "notes": [],
@@ -976,8 +1636,8 @@
       "extraction_rule": "ajcass-current-api",
       "status": 200,
       "content_type": "application/json; charset=utf-8",
-      "transport": "fetch",
-      "fetch_ms": 2644,
+      "transport": "curl",
+      "fetch_ms": 29850,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 11,
@@ -1071,7 +1731,7 @@
         }
       ],
       "notes": [],
-      "error": ""
+      "error": "timeout"
     },
     {
       "type": "adapter_source",
@@ -1085,11 +1745,11 @@
       "status": 200,
       "content_type": "text/html; charset=utf-8",
       "transport": "curl",
-      "fetch_ms": 40114,
+      "fetch_ms": 50014,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 50,
-      "candidate_count": 209,
+      "candidate_count": 276,
       "articles": [
         {
           "title": "贸易政策不确定性、供应链暴露网络与全球违约风险——来自异质性空间自回归模型的新证据",
@@ -1466,7 +2126,7 @@
         }
       ],
       "notes": [],
-      "error": "curl: (28) Operation timed out after 23082 milliseconds with 392655 out of 530439 bytes received"
+      "error": "timeout"
     },
     {
       "type": "adapter_source",
@@ -1479,8 +2139,8 @@
       "extraction_rule": "ajcass-current-api",
       "status": 200,
       "content_type": "application/json; charset=utf-8",
-      "transport": "fetch",
-      "fetch_ms": 2444,
+      "transport": "curl",
+      "fetch_ms": 30151,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 9,
@@ -1562,7 +2222,7 @@
         }
       ],
       "notes": [],
-      "error": ""
+      "error": "timeout"
     },
     {
       "type": "adapter_source",
@@ -1575,8 +2235,8 @@
       "extraction_rule": "magtech-cn-html",
       "status": 200,
       "content_type": "text/html;charset=UTF-8",
-      "transport": "fetch",
-      "fetch_ms": 3826,
+      "transport": "curl",
+      "fetch_ms": 30546,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 8,
@@ -1663,7 +2323,7 @@
         }
       ],
       "notes": [],
-      "error": ""
+      "error": "timeout"
     },
     {
       "type": "adapter_source",
@@ -1676,12 +2336,12 @@
       "extraction_rule": "jryj-html",
       "status": 200,
       "content_type": "text/html;charset=UTF-8",
-      "transport": "fetch",
-      "fetch_ms": 9721,
+      "transport": "curl",
+      "fetch_ms": 33454,
       "ok": true,
       "usable_as_data_source": true,
-      "article_count": 31,
-      "candidate_count": 31,
+      "article_count": 6,
+      "candidate_count": 6,
       "articles": [
         {
           "title": "中国的利率体系与利率市场化改革",
@@ -1696,7 +2356,9 @@
           "date": "2026-04-24",
           "published_at": "2026-04-24",
           "issue_date": "2026-04",
-          "date_source": "meta_published"
+          "date_source": "meta_published",
+          "authors": "",
+          "author_source": ""
         },
         {
           "title": "关税冲击与人民币货币锚地位调整——来自2018—2020年中美贸易摩擦的经验证据",
@@ -1704,7 +2366,9 @@
           "date": "2026-04-24",
           "published_at": "2026-04-24",
           "issue_date": "2026-04",
-          "date_source": "meta_published"
+          "date_source": "meta_published",
+          "authors": "",
+          "author_source": ""
         },
         {
           "title": "金融分权、信贷错配与地方中小银行风险",
@@ -1712,7 +2376,9 @@
           "date": "2026-04-24",
           "published_at": "2026-04-24",
           "issue_date": "2026-04",
-          "date_source": "meta_published"
+          "date_source": "meta_published",
+          "authors": "",
+          "author_source": ""
         },
         {
           "title": "地方隐性担保破除对域内中小银行风险的影响",
@@ -1720,7 +2386,9 @@
           "date": "2026-04-24",
           "published_at": "2026-04-24",
           "issue_date": "2026-04",
-          "date_source": "meta_published"
+          "date_source": "meta_published",
+          "authors": "",
+          "author_source": ""
         },
         {
           "title": "媒体负面报道与银行信贷——基于信息中介和外部监督的双重视角",
@@ -1728,188 +2396,9 @@
           "date": "2026-04-24",
           "published_at": "2026-04-24",
           "issue_date": "2026-04",
-          "date_source": "meta_published"
-        },
-        {
-          "title": "要素市场一体化背景下的政府引导基金跨区域流动——来自国家级城市群规划的证据",
-          "url": "http://www.jryj.org.cn/CN/abstract/abstract1601.shtml",
-          "date": "2026-04-24",
-          "published_at": "2026-04-24",
-          "issue_date": "2026-04",
-          "date_source": "meta_published"
-        },
-        {
-          "title": "供应链网络中创新与企业全要素生产率提升:供应商创新视角",
-          "url": "http://www.jryj.org.cn/CN/abstract/abstract1602.shtml",
-          "date": "2026-04-24",
-          "published_at": "2026-04-24",
-          "issue_date": "2026-04",
-          "date_source": "meta_published"
-        },
-        {
-          "title": "个人破产制度与地区创业活力——基于中国个人破产试点的经验证据",
-          "url": "http://www.jryj.org.cn/CN/abstract/abstract1603.shtml",
-          "date": "2026-04-24",
-          "published_at": "2026-04-24",
-          "issue_date": "2026-04",
-          "date_source": "meta_published"
-        },
-        {
-          "title": "碳减排政策、绿色技术采用与转型风险",
-          "url": "http://www.jryj.org.cn/CN/abstract/abstract1604.shtml",
-          "date": "2026-04-24",
-          "published_at": "2026-04-24",
-          "issue_date": "2026-04",
-          "date_source": "meta_published"
-        },
-        {
-          "title": "基层医疗资源下沉与农村家庭贫困脆弱性——来自紧密型医共体建设的证据",
-          "url": "http://www.jryj.org.cn/CN/abstract/abstract1605.shtml",
-          "date": "2026-04-24",
-          "published_at": "2026-04-24",
-          "issue_date": "2026-04",
-          "date_source": "meta_published"
-        },
-        {
-          "title": "分析师跟踪对企业产品质量违规的影响研究",
-          "url": "http://www.jryj.org.cn/CN/abstract/abstract1606.shtml",
-          "date": "2026-04-24",
-          "published_at": "2026-04-24",
-          "issue_date": "2026-04",
-          "date_source": "meta_published"
-        },
-        {
-          "title": "技术封锁与企业供应链调整——基于美对华实体清单的实证研究",
-          "url": "http://www.jryj.org.cn/CN/Y2025/V544/I10/115",
-          "date": "",
-          "issue_date": "2025-10",
-          "date_source": "url_issue"
-        },
-        {
-          "title": "双边本币互换与国际货币格局演变——来自人民币的证据",
-          "url": "http://www.jryj.org.cn/CN/Y2025/V542/I8/56",
-          "date": "",
-          "issue_date": "2025-08",
-          "date_source": "url_issue"
-        },
-        {
-          "title": "绿色金融能否促进经济“脱虚向实”——基于绿色金融改革创新试验区的经验证据",
-          "url": "http://www.jryj.org.cn/CN/Y2025/V546/I12/20",
-          "date": "",
-          "issue_date": "2025-12",
-          "date_source": "url_issue"
-        },
-        {
-          "title": "通胀预期如何影响债券信用利差？",
-          "url": "http://www.jryj.org.cn/CN/Y2025/V544/I10/1",
-          "date": "",
-          "issue_date": "2025-10",
-          "date_source": "url_issue"
-        },
-        {
-          "title": "金融科技、货币政策传导与消费——来自大科技平台个人用户的微观证据",
-          "url": "http://www.jryj.org.cn/CN/Y2025/V545/I11/1",
-          "date": "",
-          "issue_date": "2025-11",
-          "date_source": "url_issue"
-        },
-        {
-          "title": "人民币清算行设立能推动跨境贸易人民币结算吗？——兼论CIPS的协同效应",
-          "url": "http://www.jryj.org.cn/CN/Y2025/V546/I12/1",
-          "date": "",
-          "issue_date": "2025-12",
-          "date_source": "url_issue"
-        },
-        {
-          "title": "网络安全风险治理与企业创新——基于大语言模型的识别与发现",
-          "url": "http://www.jryj.org.cn/CN/Y2026/V547/I1/76",
-          "date": "",
-          "issue_date": "2026-01",
-          "date_source": "url_issue"
-        },
-        {
-          "title": "退市制度改革能够提高定价效率吗？——基于壳资源的视角",
-          "url": "http://www.jryj.org.cn/CN/Y2025/V543/I9/170",
-          "date": "",
-          "issue_date": "2025-09",
-          "date_source": "url_issue"
-        },
-        {
-          "title": "供应链不确定性与中国企业创新——基于中美供应链微观企业数据的分析",
-          "url": "http://www.jryj.org.cn/CN/Y2025/V542/I8/75",
-          "date": "",
-          "issue_date": "2025-08",
-          "date_source": "url_issue"
-        },
-        {
-          "title": "算力基础设施建设是否抑制了企业“脱实向虚”?——来自中国地级及以上城市数据中心建设的经验证据",
-          "url": "http://www.jryj.org.cn/CN/Y2025/V541/I7/95",
-          "date": "",
-          "issue_date": "2025-07",
-          "date_source": "url_issue"
-        },
-        {
-          "title": "清代官绅家庭资产结构一般特征初探——以抄产档案为中心的研究",
-          "url": "http://www.jryj.org.cn/CN/Y2018/V452/I2/61",
-          "date": "",
-          "issue_date": "2018-02",
-          "date_source": "url_issue"
-        },
-        {
-          "title": "中国历史上的国际收支估算:1550—1948",
-          "url": "http://www.jryj.org.cn/CN/Y2023/V513/I3/188",
-          "date": "",
-          "issue_date": "2023-03",
-          "date_source": "url_issue"
-        },
-        {
-          "title": "绿色金融、绿色创新与经济高质量发展",
-          "url": "http://www.jryj.org.cn/CN/Y2022/V506/I8/1",
-          "date": "",
-          "issue_date": "2022-08",
-          "date_source": "url_issue"
-        },
-        {
-          "title": "跨境金融:驱动因素、结构特征与未来路径",
-          "url": "http://www.jryj.org.cn/CN/Y2022/V500/I2/1",
-          "date": "",
-          "issue_date": "2022-02",
-          "date_source": "url_issue"
-        },
-        {
-          "title": "中国历史上白银大规模跨境流动研究",
-          "url": "http://www.jryj.org.cn/CN/Y2023/V517/I7/193",
-          "date": "",
-          "issue_date": "2023-07",
-          "date_source": "url_issue"
-        },
-        {
-          "title": "批发业外资开放、供应链整合与消费福利——基于微观视角的理论与经验分析",
-          "url": "http://www.jryj.org.cn/CN/Y2024/V532/I10/113",
-          "date": "",
-          "issue_date": "2024-10",
-          "date_source": "url_issue"
-        },
-        {
-          "title": "分层制度提升新三板流动性了吗？——来自多维断点回归的经验证据",
-          "url": "http://www.jryj.org.cn/CN/Y2019/V467/I5/170",
-          "date": "",
-          "issue_date": "2019-05",
-          "date_source": "url_issue"
-        },
-        {
-          "title": "《巴塞尔III最终方案》的影响及应对",
-          "url": "http://www.jryj.org.cn/CN/Y2018/V452/I2/30",
-          "date": "",
-          "issue_date": "2018-02",
-          "date_source": "url_issue"
-        },
-        {
-          "title": "首日涨停板制度与IPO解禁效应——基于投机泡沫视角的分析",
-          "url": "http://www.jryj.org.cn/CN/Y2020/V478/I4/186",
-          "date": "",
-          "issue_date": "2020-04",
-          "date_source": "url_issue"
+          "date_source": "meta_published",
+          "authors": "",
+          "author_source": ""
         }
       ],
       "samples": [
@@ -1926,7 +2415,9 @@
           "date": "2026-04-24",
           "published_at": "2026-04-24",
           "issue_date": "2026-04",
-          "date_source": "meta_published"
+          "date_source": "meta_published",
+          "authors": "",
+          "author_source": ""
         },
         {
           "title": "关税冲击与人民币货币锚地位调整——来自2018—2020年中美贸易摩擦的经验证据",
@@ -1934,11 +2425,13 @@
           "date": "2026-04-24",
           "published_at": "2026-04-24",
           "issue_date": "2026-04",
-          "date_source": "meta_published"
+          "date_source": "meta_published",
+          "authors": "",
+          "author_source": ""
         }
       ],
       "notes": [],
-      "error": ""
+      "error": "curl: (28) Operation timed out after 17001 milliseconds with 49377 bytes received"
     },
     {
       "type": "adapter_source",
@@ -1952,7 +2445,7 @@
       "status": 200,
       "content_type": "text/html; charset=utf-8",
       "transport": "fetch",
-      "fetch_ms": 1032,
+      "fetch_ms": 909,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 11,
@@ -2063,8 +2556,8 @@
       "extraction_rule": "cnki-portal-paper",
       "status": 200,
       "content_type": "text/html;charset=UTF-8",
-      "transport": "fetch",
-      "fetch_ms": 4363,
+      "transport": "curl",
+      "fetch_ms": 32822,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 12,
@@ -2116,6 +2609,8 @@
           "title": "以公共价值为基础的政府绩效治理——源起、架构与研究问题",
           "url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/d79d1af464dd99db301857f3c4202b18",
           "date": "2012-04-20",
+          "authors": "Bao Guoxian, Wang Xuejun.(China Center for Local Government Performance Evaluation, Lanzhou University, Lanzhou, 730000, China)",
+          "author_source": "meta_author",
           "published_at": "2012-04-20",
           "issue_date": "2012-02",
           "date_source": "meta_published"
@@ -2124,6 +2619,8 @@
           "title": "网络治理:公共管理的新框架",
           "url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/788b9d590a93de9b5e4797526c02eb61",
           "date": "2007-01-20",
+          "authors": "Yin Yifen (Macau Polytechnic Institute, Macao, 5996111, China)",
+          "author_source": "meta_author",
           "published_at": "2007-01-20",
           "issue_date": "2007-01",
           "date_source": "meta_published"
@@ -2132,6 +2629,8 @@
           "title": "用文献计量研究重塑政策文本数据分析——政策文献计量的起源、迁移与方法创新",
           "url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/d9146b8716eeeb8b7e4a3c717763380e",
           "date": "2015-04-20",
+          "authors": "Li Jiang, Liu Yuanhao, Huang Cui, Su Jun",
+          "author_source": "meta_author",
           "published_at": "2015-04-20",
           "issue_date": "2015-02",
           "date_source": "meta_published"
@@ -2140,6 +2639,8 @@
           "title": "城市居民垃圾分类的影响因素研究",
           "url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/466fea9b60d22ef094ec2459206a81f3",
           "date": "2017-01-20",
+          "authors": "Xu Lin, Ling Maoliang, Lu Yujie",
+          "author_source": "meta_author",
           "published_at": "2017-01-20",
           "issue_date": "2017-01",
           "date_source": "meta_published"
@@ -2148,6 +2649,8 @@
           "title": "共享单车:互联网技术与公共服务中的协同治理",
           "url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/9cb42fa7075e5ea7d5e122134f264d3d",
           "date": "2017-07-20",
+          "authors": "Guo Peng, Lin Xiangzhi, Huang Yi, Tu Siming, Bai Xiaoming, Yang Yawen, Ye Lin",
+          "author_source": "meta_author",
           "published_at": "2017-07-20",
           "issue_date": "2017-03",
           "date_source": "meta_published"
@@ -2184,7 +2687,7 @@
         }
       ],
       "notes": [],
-      "error": ""
+      "error": "timeout"
     },
     {
       "type": "adapter_source",
@@ -2198,7 +2701,7 @@
       "status": 200,
       "content_type": "text/html; charset=utf-8",
       "transport": "fetch",
-      "fetch_ms": 929,
+      "fetch_ms": 1996,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 17,
@@ -2346,7 +2849,7 @@
       "status": 200,
       "content_type": "text/html; charset=utf-8",
       "transport": "fetch",
-      "fetch_ms": 652,
+      "fetch_ms": 1411,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 10,
@@ -2463,7 +2966,7 @@
       "status": 200,
       "content_type": "text/html; charset=utf-8",
       "transport": "fetch",
-      "fetch_ms": 5925,
+      "fetch_ms": 11114,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 19,
@@ -2471,115 +2974,115 @@
       "articles": [
         {
           "title": "以制度建设为主线统筹发展和安全",
-          "url": "https://www.cqvip.com/doc/journal/7203343026?sign=fd463990605caf61ce6d3cf564210adc38ecb38c71e6dfc564b36643f7bac8f4&expireTime=1795314180552&resourceId=7203343026&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343026?sign=41cb681f9b93cc2a1389e3d6883a1060009802bfde20d756bfc24f82a83ae977&expireTime=1795319063847&resourceId=7203343026&type=1",
           "date": "2026-03",
           "authors": "王浦劬, 连雨欣"
         },
         {
           "title": "“钉钉子”的技术:重大决策落实的工作机制",
-          "url": "https://www.cqvip.com/doc/journal/7203343027?sign=5e275af10becd0468698391907b3148b649668188ae1c1abd414f3d24b71ef09&expireTime=1795314180552&resourceId=7203343027&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343027?sign=8d773fc3620ec15c278e0fd57b523e514ac1eeb41043500e63a133f09b714b84&expireTime=1795319063847&resourceId=7203343027&type=1",
           "date": "2026-03",
           "authors": "庞明礼, 郭雯斐"
         },
         {
           "title": "从制度到行动:基层减负的层级传导与长效机制",
-          "url": "https://www.cqvip.com/doc/journal/7203343028?sign=6af0116aa8751cfdf38f1e525caf06dcbf997daf6f3d9ea77fc861028467624c&expireTime=1795314180552&resourceId=7203343028&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343028?sign=3d416ff6f87188ed500e873c92ffe864496dc9b116f80f00027985dc22dbbdcc&expireTime=1795319063847&resourceId=7203343028&type=1",
           "date": "2026-03",
           "authors": "王锐, 倪星"
         },
         {
           "title": "政府数字平台何以走出难以为继困境?——基于生态系统视角的对比案例研究",
-          "url": "https://www.cqvip.com/doc/journal/7203343029?sign=925a8b398990564ee1564d8285434decf9055048d4b083bedc339ace428d364c&expireTime=1795314180552&resourceId=7203343029&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343029?sign=6dfdf8b5b7180b35299913b592d61f50da471c38762b0c66719c41d4e96db5ce&expireTime=1795319063847&resourceId=7203343029&type=1",
           "date": "2026-03",
           "authors": "付宁, 林婕, 祝哲"
         },
         {
           "title": "人工智能的科林格里奇困境与安全监管的敏捷性调适",
-          "url": "https://www.cqvip.com/doc/journal/7203343030?sign=d83e896c3172114a7226e6607414fbb268b1470706d0aaba6dde7e8c04d70698&expireTime=1795314180552&resourceId=7203343030&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343030?sign=0eb8934ff0b8842d1cc8127092594399fbfc2515cab0ec406ea4781f119b0dfb&expireTime=1795319063847&resourceId=7203343030&type=1",
           "date": "2026-03",
           "authors": "张乐, 赵爽爽"
         },
         {
           "title": "“数字帕金森”:数字治理中的任务冗余再生产",
-          "url": "https://www.cqvip.com/doc/journal/7203343031?sign=e21739555b06df65f7c6532a155ce18273440e16c168ac6ddca2e15b078f9d8b&expireTime=1795314180552&resourceId=7203343031&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343031?sign=277ad85e4f407a764dff07ead8b597b7b676c83a804b265f85dfcacaedbb5ce6&expireTime=1795319063847&resourceId=7203343031&type=1",
           "date": "2026-03",
           "authors": "邓崧, 杨迪"
         },
         {
           "title": "把公共性带回来:社区慈善事业治理的路径选择",
-          "url": "https://www.cqvip.com/doc/journal/7203343032?sign=5f4a9695d1e83b16e76fa759dfff07e480c4822086b759b7824ae1315114a14c&expireTime=1795314180552&resourceId=7203343032&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343032?sign=f88b7ab34a9cabf08167ba5edaa46716c272a54e3fb7e2e167dd66bd76646372&expireTime=1795319063847&resourceId=7203343032&type=1",
           "date": "2026-03",
           "authors": "舒文, 郑功成"
         },
         {
           "title": "“选择式自主”:社会组织可持续发展的新范式",
-          "url": "https://www.cqvip.com/doc/journal/7203343033?sign=76ee2436f05cd5a11da605e1e68e934daf461a06b0e9db6dff87c4e2d99433c1&expireTime=1795314180552&resourceId=7203343033&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343033?sign=7e08673dedf20ce31207b8cf3d521bd6d47f5170b1a8bf1b605087ae013addd0&expireTime=1795319063847&resourceId=7203343033&type=1",
           "date": "2026-03",
           "authors": "刘蕾, 何书仪"
         },
         {
           "title": "基层“信用积分制”运行的实践错位与优化路径",
-          "url": "https://www.cqvip.com/doc/journal/7203343034?sign=4334a1117c51e8ab48f6f176c9b220f0b7eb0722565bce1db300eede6c976d41&expireTime=1795314180552&resourceId=7203343034&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343034?sign=51c3690b60a9cb81d278e6a4510b87b64b2d1502b50224056d0eb10498e45785&expireTime=1795319063847&resourceId=7203343034&type=1",
           "date": "2026-03",
           "authors": "朱博宇, 沈圣兰, 黄璜"
         },
         {
           "title": "建构基于“有效的政府治理”标识性概念的中国政府治理理论框架",
-          "url": "https://www.cqvip.com/doc/journal/7203343035?sign=dba308df14ac4a78a55a9f5f22e41451506a5199ea70c70fcea29c1d874c43e7&expireTime=1795314180552&resourceId=7203343035&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343035?sign=1f23b1e034d17fc347b2719a75ebab3118b4ee99decd0fba7cef15edb0af4eb4&expireTime=1795319063847&resourceId=7203343035&type=1",
           "date": "2026-03",
           "authors": "李瑞昌"
         },
         {
           "title": "重新发现治理:评价理论的视角",
-          "url": "https://www.cqvip.com/doc/journal/7203343036?sign=1e6c298807651b2a2929551161c2348140505f937ee2eadad0064988bcd10563&expireTime=1795314180552&resourceId=7203343036&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343036?sign=8c11daf5834fc0cf92b914d1a11092be540b02216262db5a8ae9477579b955fd&expireTime=1795319063847&resourceId=7203343036&type=1",
           "date": "2026-03",
           "authors": "张乾友"
         },
         {
           "title": "数字技术驱动乡村公共服务共同生产的影响因素与实践逻辑",
-          "url": "https://www.cqvip.com/doc/journal/7203343037?sign=5448f308121c788337095a1c43c7453ee3dfce874ead12efc02fe9d64f4a54d8&expireTime=1795314180552&resourceId=7203343037&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343037?sign=9f0804e6b9ee8834c06da91707b91636a3c08a1c7a606c3dd5ee95bbf2bb67d5&expireTime=1795319063847&resourceId=7203343037&type=1",
           "date": "2026-03",
           "authors": "王洛忠, 徐成铭"
         },
         {
           "title": "数字生态何以影响乡村韧性治理绩效",
-          "url": "https://www.cqvip.com/doc/journal/7203343038?sign=a9439af1b5e39cdbce67192b5e26f5047a444c7c3422b25cfdfe035b8c9862f0&expireTime=1795314180552&resourceId=7203343038&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343038?sign=22adc1606ca2e9e42f639e89f7a0e632223b99d5fd91675b1cf243ec0838bb65&expireTime=1795319063847&resourceId=7203343038&type=1",
           "date": "2026-03",
           "authors": "陈浩天, 肖延玉"
         },
         {
           "title": "复合型公共空间:社交平台驱动的乡村公共空间新样态",
-          "url": "https://www.cqvip.com/doc/journal/7203343039?sign=a9f5a3c1e495b4c46541cdda11fa6e371d00297f31e5c9d5f1cfcdbb1ea22053&expireTime=1795314180552&resourceId=7203343039&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343039?sign=9a2d5b9bfa766e66a27ffabc7bfcb8d09f9dcb867ddd1d2e2dc6e066381d6522&expireTime=1795319063847&resourceId=7203343039&type=1",
           "date": "2026-03",
           "authors": "王承禹, 张旋"
         },
         {
           "title": "以科技人才集聚促进京津冀城市群高质量协同发展",
-          "url": "https://www.cqvip.com/doc/journal/7203343040?sign=c5a7582cf6e1022903e145fcf07f0d67d51d317d63b8c1cf3836bfaa672f8d25&expireTime=1795314180552&resourceId=7203343040&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343040?sign=442644e8a41b7eb518265e6c895212483964b61d8e5840b8dcd276f13d2afa26&expireTime=1795319063847&resourceId=7203343040&type=1",
           "date": "2026-03",
           "authors": "魏华颖, 李子昂, 孙宏皓"
         },
         {
           "title": "数字赋能乡村治理现代化的优化路径",
-          "url": "https://www.cqvip.com/doc/journal/7203343041?sign=b574b385edef649866d8f3be9d3c4d42d1caa23ee2cef6fe9aa161c4737234c9&expireTime=1795314180552&resourceId=7203343041&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343041?sign=ee50bba427de325e981a463894cbc435c20a7bdfe6d8651e2b4506adc8e945ad&expireTime=1795319063847&resourceId=7203343041&type=1",
           "date": "2026-03",
           "authors": "李俊清, 毋世扬"
         },
         {
           "title": "以全生命周期服务改革推动营商环境优化",
-          "url": "https://www.cqvip.com/doc/journal/7203343042?sign=ab4f832081a0e0b1fba7ed48808d8de7e1be36fc1070404583361356e27208e1&expireTime=1795314180552&resourceId=7203343042&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343042?sign=9d7a43e9ddb8d86287c89b3d666e51501488447a8b8d38dfb18e7073c635ef9c&expireTime=1795319063847&resourceId=7203343042&type=1",
           "date": "2026-03",
           "authors": "杨畅, 彭伟, 黄凌筱"
         },
         {
           "title": "内蒙古大学公共管理学院简介",
-          "url": "https://www.cqvip.com/doc/journal/7203343025?sign=c2fd3502ca7416d527a3c6412881ed25af03d514c64e66a5473c781d69835831&expireTime=1795314180552&resourceId=7203343025&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343025?sign=fd9f4641d5d2d993d1250b36bce9c35c624bd5adaf9dc56a3832e0dec20dfa24&expireTime=1795319063847&resourceId=7203343025&type=1",
           "date": "2026-03",
           "authors": "白维军"
         },
         {
           "title": "中国银联积极服务政府促消费 双轮驱动激活市场新动能",
-          "url": "https://www.cqvip.com/doc/journal/7203343043?sign=a199545f82c8b28b4d89a41fc22cac1716a3e062f414f8ff137b231642b3f2a3&expireTime=1795314180552&resourceId=7203343043&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343043?sign=ac27cbd4e61c9853d3a9843b6ebf375ce60b0fa596f873beb7b3503f5b590b95&expireTime=1795319063847&resourceId=7203343043&type=1",
           "date": "2026-03",
           "authors": "韩永琛"
         }
@@ -2587,19 +3090,19 @@
       "samples": [
         {
           "title": "以制度建设为主线统筹发展和安全",
-          "url": "https://www.cqvip.com/doc/journal/7203343026?sign=fd463990605caf61ce6d3cf564210adc38ecb38c71e6dfc564b36643f7bac8f4&expireTime=1795314180552&resourceId=7203343026&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343026?sign=41cb681f9b93cc2a1389e3d6883a1060009802bfde20d756bfc24f82a83ae977&expireTime=1795319063847&resourceId=7203343026&type=1",
           "date": "2026-03",
           "authors": "王浦劬, 连雨欣"
         },
         {
           "title": "“钉钉子”的技术:重大决策落实的工作机制",
-          "url": "https://www.cqvip.com/doc/journal/7203343027?sign=5e275af10becd0468698391907b3148b649668188ae1c1abd414f3d24b71ef09&expireTime=1795314180552&resourceId=7203343027&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343027?sign=8d773fc3620ec15c278e0fd57b523e514ac1eeb41043500e63a133f09b714b84&expireTime=1795319063847&resourceId=7203343027&type=1",
           "date": "2026-03",
           "authors": "庞明礼, 郭雯斐"
         },
         {
           "title": "从制度到行动:基层减负的层级传导与长效机制",
-          "url": "https://www.cqvip.com/doc/journal/7203343028?sign=6af0116aa8751cfdf38f1e525caf06dcbf997daf6f3d9ea77fc861028467624c&expireTime=1795314180552&resourceId=7203343028&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343028?sign=3d416ff6f87188ed500e873c92ffe864496dc9b116f80f00027985dc22dbbdcc&expireTime=1795319063847&resourceId=7203343028&type=1",
           "date": "2026-03",
           "authors": "王锐, 倪星"
         }
@@ -2622,7 +3125,7 @@
       "status": 200,
       "content_type": "text/html;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 901,
+      "fetch_ms": 696,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 13,
@@ -2760,7 +3263,7 @@
       "status": 200,
       "content_type": "application/json",
       "transport": "fetch",
-      "fetch_ms": 2496,
+      "fetch_ms": 14866,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 12,
@@ -2877,7 +3380,7 @@
       "status": 200,
       "content_type": "text/html; charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1701,
+      "fetch_ms": 1663,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 34,
@@ -2887,6 +3390,8 @@
           "title": "Remote Work and City Structure",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20231414",
           "date": "",
+          "authors": "Ferdinando Monte, Charly Porcher, Esteban Rossi-Hansberg",
+          "author_source": "html_author",
           "date_source": "forthcoming_unassigned",
           "published_at": "",
           "issue_date": ""
@@ -2895,6 +3400,8 @@
           "title": "A Theory of Price Caps on Non-Renewable Resources",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20250064",
           "date": "",
+          "authors": "Simon Johnson, Lukasz Rachel, Catherine Wolfram",
+          "author_source": "html_author",
           "date_source": "forthcoming_unassigned",
           "published_at": "",
           "issue_date": ""
@@ -2903,6 +3410,8 @@
           "title": "Talent Hoarding in Organizations",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20220264",
           "date": "",
+          "authors": "Ingrid Haegele",
+          "author_source": "html_author",
           "date_source": "forthcoming_unassigned",
           "published_at": "",
           "issue_date": ""
@@ -2911,6 +3420,8 @@
           "title": "Optimal Public Transportation Networks: Evidence from the World’s Largest Bus Rapid Transit System in Jakarta",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20230768",
           "date": "",
+          "authors": "Gabriel Kreindler, Arya Gaduh, Tilman Graff, Rema Hanna, Benjamin A. Olken",
+          "author_source": "html_author",
           "date_source": "forthcoming_unassigned",
           "published_at": "",
           "issue_date": ""
@@ -2919,6 +3430,8 @@
           "title": "Risk Sharing Tests and Covariate Shocks: Drought, Floods, and Pests in Uganda",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20240664",
           "date": "",
+          "authors": "Ethan Ligon",
+          "author_source": "html_author",
           "date_source": "forthcoming_unassigned",
           "published_at": "",
           "issue_date": ""
@@ -2927,6 +3440,8 @@
           "title": "Manipulation-Robust Prediction",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20241087",
           "date": "",
+          "authors": "Daniel Björkegren, Joshua E. Blumenstock, Samsun Knight",
+          "author_source": "html_author",
           "date_source": "forthcoming_unassigned",
           "published_at": "",
           "issue_date": ""
@@ -2935,6 +3450,8 @@
           "title": "Merger Effects and Antitrust Enforcement: Evidence from US Consumer Packaged Goods",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20240497",
           "date": "",
+          "authors": "Vivek Bhattacharya, Gastón Illanes, David Stillerman",
+          "author_source": "html_author",
           "date_source": "forthcoming_unassigned",
           "published_at": "",
           "issue_date": ""
@@ -2943,6 +3460,8 @@
           "title": "Designing Dynamic Reassignment Mechanisms: Evidence from GP Allocation",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20240617",
           "date": "",
+          "authors": "Ingrid Huitfeldt, Victoria Marone, Daniel Waldinger",
+          "author_source": "html_author",
           "date_source": "forthcoming_unassigned",
           "published_at": "",
           "issue_date": ""
@@ -2951,6 +3470,8 @@
           "title": "Community Engagement and Public Safety: Evidence from Crime Enforcement Targeting Immigrants",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20250305",
           "date": "",
+          "authors": "Felipe Gonçalves, Elisa Jácome, Emily Weisburst",
+          "author_source": "html_author",
           "date_source": "forthcoming_unassigned",
           "published_at": "",
           "issue_date": ""
@@ -2959,6 +3480,8 @@
           "title": "The Effect of Omitted Variables on the Sign of Regression Coefficients",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20230242",
           "date": "",
+          "authors": "Matthew A. Masten, Alexandre Poirier",
+          "author_source": "html_author",
           "date_source": "forthcoming_unassigned",
           "published_at": "",
           "issue_date": ""
@@ -2967,6 +3490,8 @@
           "title": "The Effect of High-Tech Clusters on the Productivity of Top Inventors: Comment",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20231415",
           "date": "",
+          "authors": "Michael Wiebe",
+          "author_source": "html_author",
           "date_source": "forthcoming_unassigned",
           "published_at": "",
           "issue_date": ""
@@ -2975,6 +3500,8 @@
           "title": "The Aggregate Costs of Uninsurable Business Risk",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20230849",
           "date": "",
+          "authors": "Corina Boar, Denis Gorea, Virgiliu Midrigan",
+          "author_source": "html_author",
           "date_source": "forthcoming_unassigned",
           "published_at": "",
           "issue_date": ""
@@ -2983,6 +3510,8 @@
           "title": "Additionality and Asymmetric Information in Environmental Markets: Evidence from Conservation Auctions",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20250295",
           "date": "",
+          "authors": "Karl M. Aspelund, Anna Russo",
+          "author_source": "html_author",
           "date_source": "forthcoming_unassigned",
           "published_at": "",
           "issue_date": ""
@@ -2991,6 +3520,8 @@
           "title": "Professional Motivations in the Public Sector: Evidence from Police Officers",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20231696",
           "date": "",
+          "authors": "Aaron Chalfin, Felipe Goncalves",
+          "author_source": "html_author",
           "date_source": "forthcoming_unassigned",
           "published_at": "",
           "issue_date": ""
@@ -2999,6 +3530,8 @@
           "title": "Understanding High-Wage Firms: Monopoly, Monopsony, and Bargaining Power",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20230344",
           "date": "",
+          "authors": "Horng Chern Wong",
+          "author_source": "html_author",
           "date_source": "forthcoming_unassigned",
           "published_at": "",
           "issue_date": ""
@@ -3007,6 +3540,8 @@
           "title": "Self-Fulfilling Fluctuations in HANK Economies",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20240642",
           "date": "",
+          "authors": "Sushant Acharya, Jess Benhabib",
+          "author_source": "html_author",
           "date_source": "forthcoming_unassigned",
           "published_at": "",
           "issue_date": ""
@@ -3015,6 +3550,8 @@
           "title": "Ideological Alignment and Evidence-Based Policy Adoption",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20240673",
           "date": "",
+          "authors": "Jorge García-Hombrados, Marcel Jansen, Angel Martínez, Berkay Özcan, Pedro Rey-Biel, Antonio Roldán-Monés",
+          "author_source": "html_author",
           "date_source": "forthcoming_unassigned",
           "published_at": "",
           "issue_date": ""
@@ -3023,6 +3560,8 @@
           "title": "Energy Transitions in Regulated Markets",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20240094",
           "date": "",
+          "authors": "Gautam Gowrisankaran, Ashley Langer, Mar Reguant",
+          "author_source": "html_author",
           "date_source": "forthcoming_unassigned",
           "published_at": "",
           "issue_date": ""
@@ -3031,6 +3570,8 @@
           "title": "Market Opacity and Fragility: Why Liquidity Evaporates When It Is Most Needed",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20231613",
           "date": "",
+          "authors": "Giovanni Cespa, Xavier Vives",
+          "author_source": "html_author",
           "date_source": "forthcoming_unassigned",
           "published_at": "",
           "issue_date": ""
@@ -3039,6 +3580,8 @@
           "title": "Identifying Preference for Early Resolution from Asset Prices",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20221351",
           "date": "",
+          "authors": "Hengjie Ai, Ravi Bansal, Hongye Guo, Amir Yaron",
+          "author_source": "html_author",
           "date_source": "forthcoming_unassigned",
           "published_at": "",
           "issue_date": ""
@@ -3047,6 +3590,8 @@
           "title": "Germs in the Family: The Short- and Long-Term Consequences of Intra-Household Disease Spread",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20231521",
           "date": "",
+          "authors": "N. Meltem Daysal, Hui Ding, Maya Rossin-Slater, Hannes Schwandt",
+          "author_source": "html_author",
           "date_source": "forthcoming_unassigned",
           "published_at": "",
           "issue_date": ""
@@ -3055,6 +3600,8 @@
           "title": "Friendship Networks and Political Opinions",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20231344",
           "date": "",
+          "authors": "Yann Algan, Nicolò Dalvit, Quoc-Anh Do, Alexis Le Chapelain, Yves Zenou",
+          "author_source": "html_author",
           "date_source": "forthcoming_unassigned",
           "published_at": "",
           "issue_date": ""
@@ -3063,6 +3610,8 @@
           "title": "Monetary Policy without Commitment",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20241925",
           "date": "",
+          "authors": "Hassan Afrouzi, Marina Halac, Kenneth Rogoff, Pierre Yared",
+          "author_source": "html_author",
           "date_source": "forthcoming_unassigned",
           "published_at": "",
           "issue_date": ""
@@ -3071,6 +3620,8 @@
           "title": "Contextually Private Mechanisms",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20240576",
           "date": "",
+          "authors": "Andreas Haupt, Zoë Hitzig",
+          "author_source": "html_author",
           "date_source": "forthcoming_unassigned",
           "published_at": "",
           "issue_date": ""
@@ -3079,6 +3630,8 @@
           "title": "The Productivity of Professions: Evidence from the Emergency Department",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20241007",
           "date": "",
+          "authors": "David Chan, Yiqun Chen",
+          "author_source": "html_author",
           "date_source": "forthcoming_unassigned",
           "published_at": "",
           "issue_date": ""
@@ -3087,6 +3640,8 @@
           "title": "Spatial Spillovers of Conflict in Somalia",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20231699",
           "date": "",
+          "authors": "Marco Alfano, Thomas Cornelissen",
+          "author_source": "html_author",
           "date_source": "forthcoming_unassigned",
           "published_at": "",
           "issue_date": ""
@@ -3095,6 +3650,8 @@
           "title": "Uncertainty and Change: Survey Evidence of Firms’ Subjective Beliefs",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20240056",
           "date": "",
+          "authors": "Rüdiger Bachmann, Kai Carstensen, Stefan Lautenbacher, Manuel Menkhoff, Martin Schneider",
+          "author_source": "html_author",
           "date_source": "forthcoming_unassigned",
           "published_at": "",
           "issue_date": ""
@@ -3103,6 +3660,8 @@
           "title": "Random Utility with Unobservable Alternatives",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20240712",
           "date": "",
+          "authors": "Haruki Kono, Kota Saito, Alec Sandroni",
+          "author_source": "html_author",
           "date_source": "forthcoming_unassigned",
           "published_at": "",
           "issue_date": ""
@@ -3111,6 +3670,8 @@
           "title": "Quality Adjustment at Scale: Hedonic vs. Exact Demand-Based Price Indices",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20230766",
           "date": "",
+          "authors": "Gabriel Ehrlich, John Haltiwanger, Ron Jarmin, David Johnson, Ed Olivares, Luke Pardue, Matthew D. Shapiro, Laura Yi Zhao",
+          "author_source": "html_author",
           "date_source": "forthcoming_unassigned",
           "published_at": "",
           "issue_date": ""
@@ -3119,6 +3680,8 @@
           "title": "Elite Universities and the Intergenerational Transmission of Human and Social Capital",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20230802",
           "date": "",
+          "authors": "Andrés Barrios-Fernández, Christopher Neilson, Seth Zimmerman",
+          "author_source": "html_author",
           "date_source": "forthcoming_unassigned",
           "published_at": "",
           "issue_date": ""
@@ -3127,6 +3690,8 @@
           "title": "Mergers, Foreign Competition, and Jobs: Evidence from the U.S. Appliance Industry",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20230017",
           "date": "",
+          "authors": "Felix Montag",
+          "author_source": "html_author",
           "date_source": "forthcoming_unassigned",
           "published_at": "",
           "issue_date": ""
@@ -3135,6 +3700,8 @@
           "title": "The Private Provision of Public Services: Evidence from Random Assignment in Medicaid",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20230541",
           "date": "",
+          "authors": "Danil Agafiev Macambira, Michael Geruso, Anthony Lollo, Chima D. Ndumele, Jacob Wallace",
+          "author_source": "html_author",
           "date_source": "forthcoming_unassigned",
           "published_at": "",
           "issue_date": ""
@@ -3143,6 +3710,8 @@
           "title": "Quota vs. Quality? Long-Term Gains from an Unusual Gender Quota",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20230376",
           "date": "",
+          "authors": "Ursina Schaede, Ville Mankki",
+          "author_source": "html_author",
           "date_source": "forthcoming_unassigned",
           "published_at": "",
           "issue_date": ""
@@ -3151,6 +3720,8 @@
           "title": "A Welfare Analysis of Policies Impacting Climate Change",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20250166",
           "date": "",
+          "authors": "Robert W. Hahn, Nathaniel Hendren, Robert D. Metcalfe, Ben Sprung-Keyser",
+          "author_source": "html_author",
           "date_source": "forthcoming_unassigned",
           "published_at": "",
           "issue_date": ""
@@ -3161,6 +3732,8 @@
           "title": "Remote Work and City Structure",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20231414",
           "date": "",
+          "authors": "Ferdinando Monte, Charly Porcher, Esteban Rossi-Hansberg",
+          "author_source": "html_author",
           "date_source": "forthcoming_unassigned",
           "published_at": "",
           "issue_date": ""
@@ -3169,6 +3742,8 @@
           "title": "A Theory of Price Caps on Non-Renewable Resources",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20250064",
           "date": "",
+          "authors": "Simon Johnson, Lukasz Rachel, Catherine Wolfram",
+          "author_source": "html_author",
           "date_source": "forthcoming_unassigned",
           "published_at": "",
           "issue_date": ""
@@ -3177,12 +3752,16 @@
           "title": "Talent Hoarding in Organizations",
           "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20220264",
           "date": "",
+          "authors": "Ingrid Haegele",
+          "author_source": "html_author",
           "date_source": "forthcoming_unassigned",
           "published_at": "",
           "issue_date": ""
         }
       ],
-      "notes": [],
+      "notes": [
+        "forthcoming_articles_no_issue"
+      ],
       "error": ""
     },
     {
@@ -3197,7 +3776,7 @@
       "status": 200,
       "content_type": "application/json",
       "transport": "fetch",
-      "fetch_ms": 2062,
+      "fetch_ms": 774,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 12,
@@ -3314,7 +3893,7 @@
       "status": 200,
       "content_type": "application/json",
       "transport": "fetch",
-      "fetch_ms": 2354,
+      "fetch_ms": 813,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 12,
@@ -3431,7 +4010,7 @@
       "status": 200,
       "content_type": "text/html; charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 2038,
+      "fetch_ms": 1550,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 11,
@@ -3442,77 +4021,110 @@
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70048",
           "date": "2026-05-22",
           "published_at": "2026-05-22",
-          "date_source": "context_published"
+          "date_source": "context_published",
+          "authors": "TERRENCE HENDERSHOTT, DAN LI, DMITRY LIVDAN, NORMAN SCHÜRHOFF, KUMAR VENKATARAMAN",
+          "author_source": "metadata_author",
+          "issue_date": ""
         },
         {
           "title": "Hedger of Last Resort: Evidence from Brazilian FX Interventions, Local Credit, and Global Financial Cycles",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70054",
           "date": "2026-05-22",
           "published_at": "2026-05-22",
-          "date_source": "context_published"
+          "date_source": "context_published",
+          "authors": "RODRIGO BARBONE GONZALEZ, DMITRY KHAMETSHIN, JOSÉ‐LUIS PEYDRÓ, ANDREA POLO",
+          "author_source": "metadata_author",
+          "issue_date": ""
         },
         {
           "title": "Investing with Purpose: Evidence from Private Foundations",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70055",
           "date": "2026-05-20",
           "published_at": "2026-05-20",
-          "date_source": "context_published"
+          "date_source": "context_published",
+          "authors": "MATTEO BINFARÈ, KYLE E. ZIMMERSCHIED",
+          "author_source": "metadata_author",
+          "issue_date": ""
         },
         {
           "title": "Why Have CEO Pay Levels Become Less Diverse?",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70050",
           "date": "2026-05-19",
           "published_at": "2026-05-19",
-          "date_source": "context_published"
+          "date_source": "context_published",
+          "authors": "TORSTEN JOCHEM, GAIZKA ORMAZABAL, ANJANA RAJAMANI",
+          "author_source": "metadata_author",
+          "issue_date": ""
         },
         {
           "title": "Bank Competition Amid Digital Disruption: Implications for Financial Inclusion",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70051",
           "date": "2026-05-17",
           "published_at": "2026-05-17",
-          "date_source": "context_published"
+          "date_source": "context_published",
+          "authors": "ERICA XUEWEI JIANG, GLORIA YANG YU, JINYUAN ZHANG",
+          "author_source": "metadata_author",
+          "issue_date": ""
         },
         {
           "title": "Consumption in Asset Returns",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70044",
           "date": "2026-05-15",
           "published_at": "2026-05-15",
-          "date_source": "context_published"
+          "date_source": "context_published",
+          "authors": "SVETLANA BRYZGALOVA, JIANTAO HUANG, CHRISTIAN JULLIARD",
+          "author_source": "metadata_author",
+          "issue_date": ""
         },
         {
           "title": "The Drivers and Implications of Retail Margin Trading",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70049",
           "date": "2026-05-15",
           "published_at": "2026-05-15",
-          "date_source": "context_published"
+          "date_source": "context_published",
+          "authors": "JIANGZE BIAN, ZHI DA, ZHIGUO HE, DONG LOU, KELLY SHUE, HAO ZHOU",
+          "author_source": "metadata_author",
+          "issue_date": ""
         },
         {
           "title": "Risk‐Free Rates and Convenience Yields around the World",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70045",
           "date": "2026-05-11",
           "published_at": "2026-05-11",
-          "date_source": "context_published"
+          "date_source": "context_published",
+          "authors": "William Diamond, Peter Van Tassel",
+          "author_source": "metadata_author",
+          "issue_date": ""
         },
         {
           "title": "The Equilibrium Effects of Eviction Policies",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70046",
           "date": "2026-05-11",
           "published_at": "2026-05-11",
-          "date_source": "context_published"
+          "date_source": "context_published",
+          "authors": "BOAZ ABRAMSON",
+          "author_source": "metadata_author",
+          "issue_date": ""
         },
         {
           "title": "Partisan Entrepreneurship",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70042",
           "date": "2026-05-08",
           "published_at": "2026-05-08",
-          "date_source": "context_published"
+          "date_source": "context_published",
+          "authors": "JOSEPH ENGELBERG, JORGE GUZMAN, RUNJING LU, WILLIAM MULLINS",
+          "author_source": "metadata_author",
+          "issue_date": ""
         },
         {
           "title": "Learning in the Limit: Income Inference from Credit Extensions",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70040",
           "date": "2026-05-07",
           "published_at": "2026-05-07",
-          "date_source": "context_published"
+          "date_source": "context_published",
+          "authors": "XIAO YIN",
+          "author_source": "metadata_author",
+          "issue_date": ""
         }
       ],
       "samples": [
@@ -3521,21 +4133,30 @@
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70048",
           "date": "2026-05-22",
           "published_at": "2026-05-22",
-          "date_source": "context_published"
+          "date_source": "context_published",
+          "authors": "TERRENCE HENDERSHOTT, DAN LI, DMITRY LIVDAN, NORMAN SCHÜRHOFF, KUMAR VENKATARAMAN",
+          "author_source": "metadata_author",
+          "issue_date": ""
         },
         {
           "title": "Hedger of Last Resort: Evidence from Brazilian FX Interventions, Local Credit, and Global Financial Cycles",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70054",
           "date": "2026-05-22",
           "published_at": "2026-05-22",
-          "date_source": "context_published"
+          "date_source": "context_published",
+          "authors": "RODRIGO BARBONE GONZALEZ, DMITRY KHAMETSHIN, JOSÉ‐LUIS PEYDRÓ, ANDREA POLO",
+          "author_source": "metadata_author",
+          "issue_date": ""
         },
         {
           "title": "Investing with Purpose: Evidence from Private Foundations",
           "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70055",
           "date": "2026-05-20",
           "published_at": "2026-05-20",
-          "date_source": "context_published"
+          "date_source": "context_published",
+          "authors": "MATTEO BINFARÈ, KYLE E. ZIMMERSCHIED",
+          "author_source": "metadata_author",
+          "issue_date": ""
         }
       ],
       "notes": [],
@@ -3552,8 +4173,8 @@
       "extraction_rule": "asq-sage-links",
       "status": 200,
       "content_type": "text/html; charset=UTF-8",
-      "transport": "fetch",
-      "fetch_ms": 1285,
+      "transport": "curl",
+      "fetch_ms": 31423,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 13,
@@ -3565,6 +4186,8 @@
           "date": "2026-01-08",
           "issue_date": "2026-06",
           "date_source": "metadata_published",
+          "authors": "Hans T. W. Frankort, Isabel Fernandez-Mateo, Raina Brands",
+          "author_source": "metadata_author",
           "published_at": "2026-01-08"
         },
         {
@@ -3573,6 +4196,8 @@
           "date": "2026-02-19",
           "issue_date": "2026-06",
           "date_source": "metadata_published",
+          "authors": "Forrest Briscoe, Mark R. DesJardine, Muhan Zhang",
+          "author_source": "metadata_author",
           "published_at": "2026-02-19"
         },
         {
@@ -3581,6 +4206,8 @@
           "date": "2026-03-11",
           "issue_date": "2026-06",
           "date_source": "metadata_published",
+          "authors": "Michael Y. Lee, Trevor Young-Hyman",
+          "author_source": "metadata_author",
           "published_at": "2026-03-11"
         },
         {
@@ -3589,6 +4216,8 @@
           "date": "2026-03-20",
           "issue_date": "2026-06",
           "date_source": "metadata_published",
+          "authors": "Evelyn Micelotta, Giulia Cappellaro, Claudia Gabbioneta, Michael G. Pratt",
+          "author_source": "metadata_author",
           "published_at": "2026-03-20"
         },
         {
@@ -3597,6 +4226,8 @@
           "date": "2026-04-12",
           "issue_date": "2026-06",
           "date_source": "metadata_published",
+          "authors": "Rachel D. Arnett, Serenity S. Lee, Patricia Faison Hewlin",
+          "author_source": "metadata_author",
           "published_at": "2026-04-12"
         },
         {
@@ -3605,6 +4236,8 @@
           "date": "2025-11-11",
           "issue_date": "2026-06",
           "date_source": "metadata_published",
+          "authors": "Allison Tait",
+          "author_source": "metadata_author",
           "published_at": "2025-11-11"
         },
         {
@@ -3613,6 +4246,8 @@
           "date": "2025-11-26",
           "issue_date": "2026-06",
           "date_source": "metadata_published",
+          "authors": "Irene Henriques",
+          "author_source": "metadata_author",
           "published_at": "2025-11-26"
         },
         {
@@ -3621,6 +4256,8 @@
           "date": "2025-12-07",
           "issue_date": "2026-06",
           "date_source": "metadata_published",
+          "authors": "J.P. Eggers, Carol Newell",
+          "author_source": "metadata_author",
           "published_at": "2025-12-07"
         },
         {
@@ -3629,6 +4266,8 @@
           "date": "2026-01-10",
           "issue_date": "2026-06",
           "date_source": "metadata_published",
+          "authors": "Christine Larson",
+          "author_source": "metadata_author",
           "published_at": "2026-01-10"
         },
         {
@@ -3637,6 +4276,8 @@
           "date": "2026-01-12",
           "issue_date": "2026-06",
           "date_source": "metadata_published",
+          "authors": "Leandro S. Pongeluppe",
+          "author_source": "metadata_author",
           "published_at": "2026-01-12"
         },
         {
@@ -3645,6 +4286,8 @@
           "date": "2026-01-21",
           "issue_date": "2026-06",
           "date_source": "metadata_published",
+          "authors": "Shane Greenstein",
+          "author_source": "metadata_author",
           "published_at": "2026-01-21"
         },
         {
@@ -3653,6 +4296,8 @@
           "date": "2026-02-07",
           "issue_date": "2026-06",
           "date_source": "metadata_published",
+          "authors": "Yuliya Snihur",
+          "author_source": "metadata_author",
           "published_at": "2026-02-07"
         },
         {
@@ -3661,6 +4306,8 @@
           "date": "2026-02-20",
           "issue_date": "2026-06",
           "date_source": "metadata_published",
+          "authors": "Juliane Reinecke",
+          "author_source": "metadata_author",
           "published_at": "2026-02-20"
         }
       ],
@@ -3671,6 +4318,8 @@
           "date": "2026-01-08",
           "issue_date": "2026-06",
           "date_source": "metadata_published",
+          "authors": "Hans T. W. Frankort, Isabel Fernandez-Mateo, Raina Brands",
+          "author_source": "metadata_author",
           "published_at": "2026-01-08"
         },
         {
@@ -3679,6 +4328,8 @@
           "date": "2026-02-19",
           "issue_date": "2026-06",
           "date_source": "metadata_published",
+          "authors": "Forrest Briscoe, Mark R. DesJardine, Muhan Zhang",
+          "author_source": "metadata_author",
           "published_at": "2026-02-19"
         },
         {
@@ -3687,11 +4338,13 @@
           "date": "2026-03-11",
           "issue_date": "2026-06",
           "date_source": "metadata_published",
+          "authors": "Michael Y. Lee, Trevor Young-Hyman",
+          "author_source": "metadata_author",
           "published_at": "2026-03-11"
         }
       ],
       "notes": [],
-      "error": ""
+      "error": "timeout"
     }
   ]
 }

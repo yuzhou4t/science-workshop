@@ -1,6 +1,11 @@
 import assert from "node:assert/strict";
 
-import { extractDateHints, extractMetadataDateHints } from "./date-enhancement-lib.mjs";
+import {
+  extractDateHints,
+  extractHtmlArticleHints,
+  extractMetadataArticleHints,
+  extractMetadataDateHints,
+} from "./date-enhancement-lib.mjs";
 
 assert.deepEqual(extractDateHints({
   url: "https://sjjj.magtech.com.cn/CN/Y2026/V49/I5/3",
@@ -67,6 +72,53 @@ assert.deepEqual(extractMetadataDateHints({
   published_at: "2026-04-12",
   issue_date: "2026-06",
   date_source: "metadata_published",
+});
+
+assert.deepEqual(extractMetadataArticleHints({
+  message: {
+    author: [
+      { given: "Simon", family: "Johnson" },
+      { given: "Lukasz", family: "Rachel" },
+      { given: "Catherine", family: "Wolfram" },
+    ],
+    "published-online": { "date-parts": [[2026, 5, 23]] },
+  },
+}), {
+  authors: "Simon Johnson, Lukasz Rachel, Catherine Wolfram",
+  author_source: "metadata_author",
+  published_at: "2026-05-23",
+  date_source: "metadata_published",
+});
+
+assert.deepEqual(extractHtmlArticleHints({
+  url: "https://www.aeaweb.org/articles?id=10.1257/aer.20250064",
+  context: `
+    <meta name="citation_author" content="Johnson, Simon">
+    <meta name="citation_author" content="Rachel, Lukasz">
+    <meta name="citation_author" content="Wolfram, Catherine">
+    <ul class="attribution">
+      <li class="author">Simon Johnson</li>
+      <li class="author">Lukasz Rachel</li>
+    </ul>
+  `,
+}), {
+  authors: "Simon Johnson, Lukasz Rachel, Catherine Wolfram",
+  author_source: "meta_author",
+});
+
+assert.deepEqual(extractHtmlArticleHints({
+  url: "https://www.aeaweb.org/journals/aer/forthcoming",
+  context: `
+    <div class="article-item-authors">
+      <span class="fn n"><span class="given-name">Simon</span> <span class="family-name">Johnson</span></span>
+      <span class="fn n"><span class="given-name">Lukasz</span> <span class="family-name">Rachel</span></span>
+      <span class="fn n"><span class="given-name">Catherine</span> <span class="family-name">Wolfram</span></span>
+    </div>
+  `,
+}), {
+  authors: "Simon Johnson, Lukasz Rachel, Catherine Wolfram",
+  author_source: "html_author",
+  date_source: "forthcoming_unassigned",
 });
 
 assert.deepEqual(extractDateHints({

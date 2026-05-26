@@ -3,7 +3,7 @@ import { readFile, writeFile } from "node:fs/promises";
 import vm from "node:vm";
 import { promisify } from "node:util";
 
-import { doiFromUrl, extractDateHints, extractMetadataDateHints } from "./date-enhancement-lib.mjs";
+import { doiFromUrl, extractDateHints, extractHtmlArticleHints, extractMetadataArticleHints } from "./date-enhancement-lib.mjs";
 import { addDays, buildRecentWorkflow, dateOnly } from "./recent-workflow-lib.mjs";
 
 const execFileAsync = promisify(execFile);
@@ -237,8 +237,11 @@ function parseXmlFeed(text, baseUrl) {
     const atomLink = block.match(/<link\b[^>]*href=["']([^"']+)["'][^>]*>/i)?.[1] || "";
     const guid = stripTags(block.match(/<guid[^>]*>([\s\S]*?)<\/guid>/i)?.[1] || "");
     const date = stripTags(block.match(/<(?:[\w.-]+:)?(?:pubDate|updated|published|date|publicationDate)[^>]*>([\s\S]*?)<\/(?:[\w.-]+:)?(?:pubDate|updated|published|date|publicationDate)>/i)?.[1] || "");
+    const creatorAuthors = [...block.matchAll(/<(?:[\w.-]+:)?creator[^>]*>([\s\S]*?)<\/(?:[\w.-]+:)?creator>/gi)].map((match) => stripTags(match[1])).filter(Boolean);
+    const atomAuthors = [...block.matchAll(/<author\b[^>]*>[\s\S]*?<name\b[^>]*>([\s\S]*?)<\/name>[\s\S]*?<\/author>/gi)].map((match) => stripTags(match[1])).filter(Boolean);
+    const authors = [...creatorAuthors, ...atomAuthors].filter(Boolean).join(", ");
     const link = cleanArticleUrl(normalizeUrl(rssLink || atomLink || guid, baseUrl));
-    if (title && link) items.push({ title, url: link, date });
+    if (title && link) items.push({ title, url: link, date, authors });
   }
   return dedupeArticles(items);
 }
@@ -296,6 +299,8 @@ function mergeDateHints(article, hints = {}) {
   const merged = {
     ...article,
     ...hints,
+    authors: article.authors || hints.authors || "",
+    author_source: article.author_source || (!article.authors && hints.authors ? hints.author_source || "" : ""),
     published_at: article.published_at || hints.published_at || "",
     issue_date: article.issue_date || hints.issue_date || "",
     date_source: hasNewPublishedDate ? hints.date_source || article.date_source || "" : article.date_source || hints.date_source || "",
@@ -306,30 +311,41 @@ function mergeDateHints(article, hints = {}) {
   return merged;
 }
 
-function needsDetailDate(article, options = {}) {
+function needsDetailMetadata(article, options = {}) {
   if (!/^https?:\/\//i.test(article.url || "")) return false;
-  if (options.ifMissingPublished) return !article.published_at;
-  return !article.published_at && !article.issue_date && !article.date;
+  const missingAuthors = Boolean(options.ifMissingAuthors) && !article.authors;
+  if (options.ifMissingPublished) return missingAuthors || !article.published_at;
+  const missingDate = !article.published_at && !article.issue_date && !article.date;
+  return missingAuthors || missingDate;
 }
 
-async function enrichArticlesWithDetailDates(articles, options = {}) {
+function needsDoiMetadata(article, options = {}) {
+  const missingAuthors = Boolean(options.ifMissingAuthors) && !article.authors;
+  const missingPublished = options.ifMissingPublished ? !article.published_at : !article.published_at && !article.issue_date && !article.date;
+  return missingAuthors || missingPublished;
+}
+
+async function enrichArticlesWithDetailMetadata(articles, options = {}) {
   const limit = options.limit || 20;
   const timeoutMs = options.timeoutMs || 9000;
   const enriched = [];
   let checked = 0;
   for (const article of articles) {
-    if (!needsDetailDate(article, options) || checked >= limit) {
+    if (!needsDetailMetadata(article, options) || checked >= limit) {
       enriched.push(article);
       continue;
     }
     checked += 1;
     try {
+      let merged = article;
       const response = await fetchText(article.url, timeoutMs);
-      let hints = response.ok ? extractDateHints({ url: response.finalUrl || article.url, context: response.text }) : {};
-      if (!hints.published_at) {
-        hints = mergeDateHints(hints, await fetchDoiMetadataDateHints(article, timeoutMs));
+      if (response.ok) {
+        merged = mergeDateHints(merged, extractHtmlArticleHints({ url: response.finalUrl || article.url, context: response.text }));
       }
-      enriched.push(mergeDateHints(article, hints));
+      if (needsDoiMetadata(merged, options)) {
+        merged = mergeDateHints(merged, await fetchDoiMetadataArticleHints(merged, timeoutMs));
+      }
+      enriched.push(merged);
     } catch {
       enriched.push(article);
     }
@@ -337,7 +353,11 @@ async function enrichArticlesWithDetailDates(articles, options = {}) {
   return enriched;
 }
 
-async function fetchDoiMetadataDateHints(article, timeoutMs) {
+async function enrichArticlesWithDetailDates(articles, options = {}) {
+  return enrichArticlesWithDetailMetadata(articles, options);
+}
+
+async function fetchDoiMetadataArticleHints(article, timeoutMs) {
   const doi = doiFromUrl(article.url || "");
   if (!doi) return {};
   const metadataUrl = `https://api.crossref.org/works/${encodeURIComponent(doi)}`;
@@ -347,7 +367,7 @@ async function fetchDoiMetadataDateHints(article, timeoutMs) {
     });
     if (response.ok) {
       try {
-        const hints = extractMetadataDateHints(JSON.parse(response.text));
+        const hints = extractMetadataArticleHints(JSON.parse(response.text));
         if (Object.keys(hints).length) return hints;
       } catch {
         return {};
@@ -879,7 +899,7 @@ async function extractMacrodatasIssueList(item) {
 }
 
 async function extractAfaForthcomingDoi(item) {
-  return extractHtmlByPatterns(item, {
+  const extraction = await extractHtmlByPatterns(item, {
     include: [/10\.1111\/jofi\.\d+/i],
     mapHref: (href, title) => {
       const match = href.match(/viewDoc\(['"]([^'"]+)['"]/i);
@@ -887,6 +907,47 @@ async function extractAfaForthcomingDoi(item) {
       return `https://onlinelibrary.wiley.com/doi/${match[1]}`;
     },
   }, 14000);
+  return {
+    ...extraction,
+    articles: await enrichArticlesWithDetailMetadata(extraction.articles, {
+      limit: 30,
+      timeoutMs: 12000,
+      ifMissingAuthors: true,
+      ifMissingPublished: true,
+    }),
+  };
+}
+
+function parseAeaForthcomingArticles(html, baseUrl) {
+  const articles = [];
+  const blocks = [...html.matchAll(/<li\b[^>]*class=["'][^"']*\barticle\b[^"']*["'][^>]*>[\s\S]*?<\/li>/gi)].map((match) => match[0]);
+  for (const block of blocks) {
+    const linkMatch = block.match(/<h4\b[^>]*class=["'][^"']*\btitle\b[^"']*["'][^>]*>[\s\S]*?<a\b[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/i);
+    if (!linkMatch) continue;
+    const url = cleanArticleUrl(normalizeUrl(linkMatch[1], baseUrl));
+    const title = stripTags(linkMatch[2]);
+    if (!url || !looksLikeArticleTitle(title)) continue;
+    const hints = extractHtmlArticleHints({ url, context: block });
+    articles.push({
+      title,
+      url,
+      date: hints.published_at || "",
+      ...hints,
+    });
+  }
+  return dedupeArticles(articles);
+}
+
+async function extractAeaForthcomingHtml(item) {
+  const response = await fetchText(item.source_url, 13000);
+  let articles = response.ok ? parseAeaForthcomingArticles(response.text, response.finalUrl) : [];
+  articles = await enrichArticlesWithDetailMetadata(articles, {
+    limit: 50,
+    timeoutMs: 12000,
+    ifMissingAuthors: true,
+    ifMissingPublished: true,
+  });
+  return { response, probe_url: item.source_url, articles, candidate_count: articles.length, notes: ["forthcoming_articles_no_issue"] };
 }
 
 async function extractNankaiProtectedHtml(item) {
@@ -949,10 +1010,7 @@ async function extractAdapterArticles(item) {
         exclude: [/login|register|search/i],
       }, 13000);
     case "aea-forthcoming-html":
-      return extractHtmlByPatterns(item, {
-        include: [/\/articles\?id=10\.1257\/aer\./i],
-        exclude: [/front matter/i, /full_issue\.php/i],
-      }, 13000, { sourceDateHints: true });
+      return extractAeaForthcomingHtml(item);
     case "oup-advance-html":
       return extractHtmlByPatterns(item, {
         include: [/\/(qje|restud)\/(advance-article|article)\/doi\/10\.1093\//i, /\/doi\/10\.1093\//i],
@@ -963,7 +1021,7 @@ async function extractAdapterArticles(item) {
     case "asq-sage-links":
       return extractHtmlByPatterns(item, {
         include: [/journals\.sagepub\.com\/doi\/(full|abs)\/10\.1177\//i],
-      }, 13000, { sourceDateHints: true, detailDateHints: { limit: 20, timeoutMs: 11000, ifMissingPublished: true } });
+      }, 13000, { sourceDateHints: true, detailDateHints: { limit: 20, timeoutMs: 11000, ifMissingPublished: true, ifMissingAuthors: true } });
     default:
       return extractHtmlByPatterns(item, {
         include: [/article|abstract|paper|doi|content|detail/i],
@@ -989,7 +1047,12 @@ async function testDirectFeed(feed) {
   const response = await fetchText(feed.feed_url, 10000);
   const allArticles = response.ok ? parseXmlFeed(response.text, response.finalUrl) : [];
   const filteredArticles = allArticles.filter((article) => looksLikeArticleTitle(article.title) && !isNonArticleTitle(article.title));
-  const articles = filteredArticles.slice(0, cliOptions.articleLimit);
+  const articles = await enrichArticlesWithDetailMetadata(filteredArticles.slice(0, cliOptions.articleLimit), {
+    limit: Math.min(cliOptions.articleLimit, 30),
+    timeoutMs: 12000,
+    ifMissingAuthors: true,
+    ifMissingPublished: true,
+  });
   return {
     type: "direct_rss",
     journal_id: feed.journal_id,

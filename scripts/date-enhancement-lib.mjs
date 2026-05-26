@@ -46,6 +46,12 @@ function metaContent(text, name) {
   return text.match(nameFirst)?.[1] || text.match(propertyFirst)?.[1] || "";
 }
 
+function metaContents(text, name) {
+  const escapedName = name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const metaRegex = new RegExp(`<meta\\b(?=[^>]*\\b(?:name|property)=["']${escapedName}["'])(?=[^>]*\\bcontent=["']([^"']+)["'])[^>]*>`, "gi");
+  return [...String(text).matchAll(metaRegex)].map((match) => decodeEntities(match[1]).trim()).filter(Boolean);
+}
+
 function firstMetaContent(text, names) {
   for (const name of names) {
     const value = metaContent(text, name);
@@ -54,8 +60,37 @@ function firstMetaContent(text, names) {
   return "";
 }
 
+function decodeEntities(value = "") {
+  return String(value)
+    .replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, "$1")
+    .replace(/&nbsp;/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&apos;/g, "'")
+    .replace(/&#39;/g, "'")
+    .replace(/&rsquo;/g, "'")
+    .replace(/&lsquo;/g, "'")
+    .replace(/&ldquo;/g, '"')
+    .replace(/&rdquo;/g, '"')
+    .replace(/&mdash;/g, "-")
+    .replace(/&ndash;/g, "-")
+    .replace(/&#x([0-9a-f]+);/gi, (_, hex) => String.fromCodePoint(parseInt(hex, 16)))
+    .replace(/&#(\d+);/g, (_, num) => String.fromCodePoint(Number(num)));
+}
+
+function stripTags(value = "") {
+  return decodeEntities(String(value)
+    .replace(/<script[\s\S]*?<\/script>/gi, "")
+    .replace(/<style[\s\S]*?<\/style>/gi, "")
+    .replace(/<[^>]+>/g, " "))
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 function isoDay(value = "") {
-  const match = String(value).match(/\b(20\d{2})-(\d{1,2})-(\d{1,2})\b/);
+  const match = String(value).match(/\b(20\d{2})[-/](\d{1,2})[-/](\d{1,2})\b/);
   return match ? publishedDate(match[1], match[2], match[3]) : "";
 }
 
@@ -88,6 +123,84 @@ export function extractMetadataDateHints(payload = {}) {
   if (result.published_at) result.date_source = "metadata_published";
   else if (result.issue_date) result.date_source = "metadata_issue";
   return result;
+}
+
+function normalizeAuthorName(value = "") {
+  const cleaned = stripTags(value).replace(/\s+/g, " ").trim();
+  if (!cleaned) return "";
+  const commaParts = cleaned.split(",").map((part) => part.trim()).filter(Boolean);
+  if (commaParts.length === 2 && !/[，、]/.test(cleaned)) return `${commaParts[1]} ${commaParts[0]}`.trim();
+  return cleaned;
+}
+
+function dedupeAuthors(authors = []) {
+  const seen = new Set();
+  const result = [];
+  for (const raw of authors) {
+    const author = normalizeAuthorName(raw);
+    const key = author.toLowerCase();
+    if (!author || seen.has(key)) continue;
+    seen.add(key);
+    result.push(author);
+  }
+  return result;
+}
+
+export function extractHtmlAuthorHints(context = "") {
+  const metaAuthors = dedupeAuthors(metaContents(context, "citation_author"));
+  if (metaAuthors.length) {
+    return {
+      authors: metaAuthors.join(", "),
+      author_source: "meta_author",
+    };
+  }
+
+  const structuredAuthors = dedupeAuthors([...String(context).matchAll(/<span\b[^>]*class=["'][^"']*\bgiven-name\b[^"']*["'][^>]*>([\s\S]*?)<\/span>\s*(?:<span\b[^>]*class=["'][^"']*\badditional-name\b[^"']*["'][^>]*>([\s\S]*?)<\/span>\s*)?<span\b[^>]*class=["'][^"']*\bfamily-name\b[^"']*["'][^>]*>([\s\S]*?)<\/span>/gi)]
+    .map((match) => [match[1], match[2], match[3]].filter(Boolean).map(stripTags).join(" ")));
+  if (structuredAuthors.length) {
+    return {
+      authors: structuredAuthors.join(", "),
+      author_source: "html_author",
+    };
+  }
+
+  const hcardAuthors = dedupeAuthors([...String(context).matchAll(/<span\b[^>]*class=["'][^"']*\bfn\b[^"']*\bn\b[^"']*["'][^>]*>([\s\S]*?)<\/span>/gi)]
+    .map((match) => stripTags(match[1])));
+  if (hcardAuthors.length) {
+    return {
+      authors: hcardAuthors.join(", "),
+      author_source: "html_author",
+    };
+  }
+
+  return {};
+}
+
+export function extractMetadataAuthorHints(payload = {}) {
+  const metadata = payload.message || payload;
+  const authors = dedupeAuthors([
+    ...(metadata.author || []).map((author) => [author.given, author.family].filter(Boolean).join(" ")),
+    ...(metadata.authorships || []).map((author) => author.author?.display_name || ""),
+  ]);
+
+  return authors.length ? {
+    authors: authors.join(", "),
+    author_source: "metadata_author",
+  } : {};
+}
+
+export function extractMetadataArticleHints(payload = {}) {
+  return {
+    ...extractMetadataAuthorHints(payload),
+    ...extractMetadataDateHints(payload),
+  };
+}
+
+export function extractHtmlArticleHints({ url = "", context = "" } = {}) {
+  return {
+    ...extractHtmlAuthorHints(context),
+    ...extractDateHints({ url, context }),
+  };
 }
 
 export function extractDateHints({ url = "", context = "" } = {}) {
