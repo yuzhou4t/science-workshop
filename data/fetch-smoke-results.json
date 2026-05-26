@@ -1,6 +1,6 @@
 {
   "summary": {
-    "checked_at": "2026-05-26T02:12:31.027Z",
+    "checked_at": "2026-05-26T02:23:41.495Z",
     "direct_feeds_total": 5,
     "direct_feeds_ok": 5,
     "adapter_sources_total": 17,
@@ -19,7 +19,7 @@
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1648,
+      "fetch_ms": 1211,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 50,
@@ -306,7 +306,7 @@
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1158,
+      "fetch_ms": 1047,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 23,
@@ -460,7 +460,7 @@
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1693,
+      "fetch_ms": 1093,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 19,
@@ -594,7 +594,7 @@
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1160,
+      "fetch_ms": 1040,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 11,
@@ -688,7 +688,7 @@
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1070,
+      "fetch_ms": 1300,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 50,
@@ -977,7 +977,7 @@
       "status": 200,
       "content_type": "application/json; charset=utf-8",
       "transport": "fetch",
-      "fetch_ms": 2267,
+      "fetch_ms": 2644,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 11,
@@ -1084,12 +1084,12 @@
       "extraction_rule": "cie-legacy-html",
       "status": 200,
       "content_type": "text/html; charset=utf-8",
-      "transport": "fetch",
-      "fetch_ms": 15887,
+      "transport": "curl",
+      "fetch_ms": 40114,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 50,
-      "candidate_count": 276,
+      "candidate_count": 209,
       "articles": [
         {
           "title": "贸易政策不确定性、供应链暴露网络与全球违约风险——来自异质性空间自回归模型的新证据",
@@ -1466,7 +1466,7 @@
         }
       ],
       "notes": [],
-      "error": ""
+      "error": "curl: (28) Operation timed out after 23082 milliseconds with 392655 out of 530439 bytes received"
     },
     {
       "type": "adapter_source",
@@ -1480,7 +1480,7 @@
       "status": 200,
       "content_type": "application/json; charset=utf-8",
       "transport": "fetch",
-      "fetch_ms": 2022,
+      "fetch_ms": 2444,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 9,
@@ -1576,7 +1576,7 @@
       "status": 200,
       "content_type": "text/html;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 2631,
+      "fetch_ms": 3826,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 8,
@@ -1677,7 +1677,7 @@
       "status": 200,
       "content_type": "text/html;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 5192,
+      "fetch_ms": 9721,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 31,
@@ -1952,7 +1952,7 @@
       "status": 200,
       "content_type": "text/html; charset=utf-8",
       "transport": "fetch",
-      "fetch_ms": 1139,
+      "fetch_ms": 1032,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 11,
@@ -2064,7 +2064,7 @@
       "status": 200,
       "content_type": "text/html;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 3948,
+      "fetch_ms": 4363,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 12,
@@ -2198,7 +2198,7 @@
       "status": 200,
       "content_type": "text/html; charset=utf-8",
       "transport": "fetch",
-      "fetch_ms": 979,
+      "fetch_ms": 929,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 17,
@@ -2346,7 +2346,7 @@
       "status": 200,
       "content_type": "text/html; charset=utf-8",
       "transport": "fetch",
-      "fetch_ms": 1443,
+      "fetch_ms": 652,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 10,
@@ -2463,7 +2463,7 @@
       "status": 200,
       "content_type": "text/html; charset=utf-8",
       "transport": "fetch",
-      "fetch_ms": 5542,
+      "fetch_ms": 5925,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 19,
@@ -2471,115 +2471,115 @@
       "articles": [
         {
           "title": "以制度建设为主线统筹发展和安全",
-          "url": "https://www.cqvip.com/doc/journal/7203343026?sign=7f958958dbbd51902ab355a3ba21bb22759a275afc2bbfcfbf449bda4481de1c&expireTime=1795313523338&resourceId=7203343026&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343026?sign=fd463990605caf61ce6d3cf564210adc38ecb38c71e6dfc564b36643f7bac8f4&expireTime=1795314180552&resourceId=7203343026&type=1",
           "date": "2026-03",
           "authors": "王浦劬, 连雨欣"
         },
         {
           "title": "“钉钉子”的技术:重大决策落实的工作机制",
-          "url": "https://www.cqvip.com/doc/journal/7203343027?sign=58de4d17ea7dc50cedbf72518b83f885efb27eed1bc065affffd464e9062ea09&expireTime=1795313523338&resourceId=7203343027&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343027?sign=5e275af10becd0468698391907b3148b649668188ae1c1abd414f3d24b71ef09&expireTime=1795314180552&resourceId=7203343027&type=1",
           "date": "2026-03",
           "authors": "庞明礼, 郭雯斐"
         },
         {
           "title": "从制度到行动:基层减负的层级传导与长效机制",
-          "url": "https://www.cqvip.com/doc/journal/7203343028?sign=a1e4ad4a7f9cb3fcf7bdc57adf6fc2bd59ce241de2aa3ac1edcedf3f45b09b4f&expireTime=1795313523338&resourceId=7203343028&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343028?sign=6af0116aa8751cfdf38f1e525caf06dcbf997daf6f3d9ea77fc861028467624c&expireTime=1795314180552&resourceId=7203343028&type=1",
           "date": "2026-03",
           "authors": "王锐, 倪星"
         },
         {
           "title": "政府数字平台何以走出难以为继困境?——基于生态系统视角的对比案例研究",
-          "url": "https://www.cqvip.com/doc/journal/7203343029?sign=bafd65eaa7a26fff330e3f8ab108eb3c3de47a7d07df1ac424d0b45a141bc910&expireTime=1795313523338&resourceId=7203343029&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343029?sign=925a8b398990564ee1564d8285434decf9055048d4b083bedc339ace428d364c&expireTime=1795314180552&resourceId=7203343029&type=1",
           "date": "2026-03",
           "authors": "付宁, 林婕, 祝哲"
         },
         {
           "title": "人工智能的科林格里奇困境与安全监管的敏捷性调适",
-          "url": "https://www.cqvip.com/doc/journal/7203343030?sign=08a8140870292846187dbdf2e10ac2608baf5709e6161e1b74aee33dabbbc7c1&expireTime=1795313523338&resourceId=7203343030&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343030?sign=d83e896c3172114a7226e6607414fbb268b1470706d0aaba6dde7e8c04d70698&expireTime=1795314180552&resourceId=7203343030&type=1",
           "date": "2026-03",
           "authors": "张乐, 赵爽爽"
         },
         {
           "title": "“数字帕金森”:数字治理中的任务冗余再生产",
-          "url": "https://www.cqvip.com/doc/journal/7203343031?sign=fb7b43aecb04640a47014ab679912d31331d13e13f0f77329222a621ccc3acd8&expireTime=1795313523338&resourceId=7203343031&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343031?sign=e21739555b06df65f7c6532a155ce18273440e16c168ac6ddca2e15b078f9d8b&expireTime=1795314180552&resourceId=7203343031&type=1",
           "date": "2026-03",
           "authors": "邓崧, 杨迪"
         },
         {
           "title": "把公共性带回来:社区慈善事业治理的路径选择",
-          "url": "https://www.cqvip.com/doc/journal/7203343032?sign=ceaebea8b9de100d15ba0e494049d562ff6b83988db001a7241599ccdc0dea66&expireTime=1795313523338&resourceId=7203343032&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343032?sign=5f4a9695d1e83b16e76fa759dfff07e480c4822086b759b7824ae1315114a14c&expireTime=1795314180552&resourceId=7203343032&type=1",
           "date": "2026-03",
           "authors": "舒文, 郑功成"
         },
         {
           "title": "“选择式自主”:社会组织可持续发展的新范式",
-          "url": "https://www.cqvip.com/doc/journal/7203343033?sign=fc98c08dbd05e5b8be8a3f0e48485825898d8692ee16c5ce557854becbb3f9b6&expireTime=1795313523338&resourceId=7203343033&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343033?sign=76ee2436f05cd5a11da605e1e68e934daf461a06b0e9db6dff87c4e2d99433c1&expireTime=1795314180552&resourceId=7203343033&type=1",
           "date": "2026-03",
           "authors": "刘蕾, 何书仪"
         },
         {
           "title": "基层“信用积分制”运行的实践错位与优化路径",
-          "url": "https://www.cqvip.com/doc/journal/7203343034?sign=71c5a3c577cbc2a3f271d7ca40a9a32ecff64c87c8dfdb2ce5fb6faac895a5bd&expireTime=1795313523338&resourceId=7203343034&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343034?sign=4334a1117c51e8ab48f6f176c9b220f0b7eb0722565bce1db300eede6c976d41&expireTime=1795314180552&resourceId=7203343034&type=1",
           "date": "2026-03",
           "authors": "朱博宇, 沈圣兰, 黄璜"
         },
         {
           "title": "建构基于“有效的政府治理”标识性概念的中国政府治理理论框架",
-          "url": "https://www.cqvip.com/doc/journal/7203343035?sign=dc1f66c30059e37c17ac0df0b3089bccd090b8ac970d84b0202d7f80ff4315d4&expireTime=1795313523338&resourceId=7203343035&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343035?sign=dba308df14ac4a78a55a9f5f22e41451506a5199ea70c70fcea29c1d874c43e7&expireTime=1795314180552&resourceId=7203343035&type=1",
           "date": "2026-03",
           "authors": "李瑞昌"
         },
         {
           "title": "重新发现治理:评价理论的视角",
-          "url": "https://www.cqvip.com/doc/journal/7203343036?sign=8030a936cd4259c2036da8ae4a7edb2aa8205579bd8f5d67349ed5f044dcf8e8&expireTime=1795313523338&resourceId=7203343036&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343036?sign=1e6c298807651b2a2929551161c2348140505f937ee2eadad0064988bcd10563&expireTime=1795314180552&resourceId=7203343036&type=1",
           "date": "2026-03",
           "authors": "张乾友"
         },
         {
           "title": "数字技术驱动乡村公共服务共同生产的影响因素与实践逻辑",
-          "url": "https://www.cqvip.com/doc/journal/7203343037?sign=8fb964969208f59e431d490889426447051088ddd7d10115eaed558124e42552&expireTime=1795313523338&resourceId=7203343037&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343037?sign=5448f308121c788337095a1c43c7453ee3dfce874ead12efc02fe9d64f4a54d8&expireTime=1795314180552&resourceId=7203343037&type=1",
           "date": "2026-03",
           "authors": "王洛忠, 徐成铭"
         },
         {
           "title": "数字生态何以影响乡村韧性治理绩效",
-          "url": "https://www.cqvip.com/doc/journal/7203343038?sign=b596df6952817c52a5ac4f442eca3ffb88f29340062a8849b46c5527d3bf3c05&expireTime=1795313523338&resourceId=7203343038&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343038?sign=a9439af1b5e39cdbce67192b5e26f5047a444c7c3422b25cfdfe035b8c9862f0&expireTime=1795314180552&resourceId=7203343038&type=1",
           "date": "2026-03",
           "authors": "陈浩天, 肖延玉"
         },
         {
           "title": "复合型公共空间:社交平台驱动的乡村公共空间新样态",
-          "url": "https://www.cqvip.com/doc/journal/7203343039?sign=075ea12dae38cf7d9d3dcb6b5e6b209a1a4d0e545d534c69f4dfdfe8b919e3e2&expireTime=1795313523338&resourceId=7203343039&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343039?sign=a9f5a3c1e495b4c46541cdda11fa6e371d00297f31e5c9d5f1cfcdbb1ea22053&expireTime=1795314180552&resourceId=7203343039&type=1",
           "date": "2026-03",
           "authors": "王承禹, 张旋"
         },
         {
           "title": "以科技人才集聚促进京津冀城市群高质量协同发展",
-          "url": "https://www.cqvip.com/doc/journal/7203343040?sign=f54c9b32e9f94565cf6a8d53910c7b1b4f7744f2f28c4d959980a74abbe86a9e&expireTime=1795313523338&resourceId=7203343040&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343040?sign=c5a7582cf6e1022903e145fcf07f0d67d51d317d63b8c1cf3836bfaa672f8d25&expireTime=1795314180552&resourceId=7203343040&type=1",
           "date": "2026-03",
           "authors": "魏华颖, 李子昂, 孙宏皓"
         },
         {
           "title": "数字赋能乡村治理现代化的优化路径",
-          "url": "https://www.cqvip.com/doc/journal/7203343041?sign=e8c453037fc1abaf5a03005e709e6d85783a9cc3b7f9fd7e3c130d55eabfb13a&expireTime=1795313523338&resourceId=7203343041&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343041?sign=b574b385edef649866d8f3be9d3c4d42d1caa23ee2cef6fe9aa161c4737234c9&expireTime=1795314180552&resourceId=7203343041&type=1",
           "date": "2026-03",
           "authors": "李俊清, 毋世扬"
         },
         {
           "title": "以全生命周期服务改革推动营商环境优化",
-          "url": "https://www.cqvip.com/doc/journal/7203343042?sign=d0b859628cc4e21b5a00fb50aeb5c185b68c1dc1e6e6b25524e675e45f31bf81&expireTime=1795313523338&resourceId=7203343042&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343042?sign=ab4f832081a0e0b1fba7ed48808d8de7e1be36fc1070404583361356e27208e1&expireTime=1795314180552&resourceId=7203343042&type=1",
           "date": "2026-03",
           "authors": "杨畅, 彭伟, 黄凌筱"
         },
         {
           "title": "内蒙古大学公共管理学院简介",
-          "url": "https://www.cqvip.com/doc/journal/7203343025?sign=f84f35ec2270be879024fb4bcea46de229c63c5e8be9ffa9b78c801b3a917e6f&expireTime=1795313523338&resourceId=7203343025&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343025?sign=c2fd3502ca7416d527a3c6412881ed25af03d514c64e66a5473c781d69835831&expireTime=1795314180552&resourceId=7203343025&type=1",
           "date": "2026-03",
           "authors": "白维军"
         },
         {
           "title": "中国银联积极服务政府促消费 双轮驱动激活市场新动能",
-          "url": "https://www.cqvip.com/doc/journal/7203343043?sign=5763e6c2fba17a9c82ed8a101c72f8efb41c35f31b2100a4ab373398db7e6701&expireTime=1795313523338&resourceId=7203343043&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343043?sign=a199545f82c8b28b4d89a41fc22cac1716a3e062f414f8ff137b231642b3f2a3&expireTime=1795314180552&resourceId=7203343043&type=1",
           "date": "2026-03",
           "authors": "韩永琛"
         }
@@ -2587,19 +2587,19 @@
       "samples": [
         {
           "title": "以制度建设为主线统筹发展和安全",
-          "url": "https://www.cqvip.com/doc/journal/7203343026?sign=7f958958dbbd51902ab355a3ba21bb22759a275afc2bbfcfbf449bda4481de1c&expireTime=1795313523338&resourceId=7203343026&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343026?sign=fd463990605caf61ce6d3cf564210adc38ecb38c71e6dfc564b36643f7bac8f4&expireTime=1795314180552&resourceId=7203343026&type=1",
           "date": "2026-03",
           "authors": "王浦劬, 连雨欣"
         },
         {
           "title": "“钉钉子”的技术:重大决策落实的工作机制",
-          "url": "https://www.cqvip.com/doc/journal/7203343027?sign=58de4d17ea7dc50cedbf72518b83f885efb27eed1bc065affffd464e9062ea09&expireTime=1795313523338&resourceId=7203343027&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343027?sign=5e275af10becd0468698391907b3148b649668188ae1c1abd414f3d24b71ef09&expireTime=1795314180552&resourceId=7203343027&type=1",
           "date": "2026-03",
           "authors": "庞明礼, 郭雯斐"
         },
         {
           "title": "从制度到行动:基层减负的层级传导与长效机制",
-          "url": "https://www.cqvip.com/doc/journal/7203343028?sign=a1e4ad4a7f9cb3fcf7bdc57adf6fc2bd59ce241de2aa3ac1edcedf3f45b09b4f&expireTime=1795313523338&resourceId=7203343028&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343028?sign=6af0116aa8751cfdf38f1e525caf06dcbf997daf6f3d9ea77fc861028467624c&expireTime=1795314180552&resourceId=7203343028&type=1",
           "date": "2026-03",
           "authors": "王锐, 倪星"
         }
@@ -2622,7 +2622,7 @@
       "status": 200,
       "content_type": "text/html;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1351,
+      "fetch_ms": 901,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 13,
@@ -2760,7 +2760,7 @@
       "status": 200,
       "content_type": "application/json",
       "transport": "fetch",
-      "fetch_ms": 1993,
+      "fetch_ms": 2496,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 12,
@@ -2877,7 +2877,7 @@
       "status": 200,
       "content_type": "text/html; charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1641,
+      "fetch_ms": 1701,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 34,
@@ -3197,7 +3197,7 @@
       "status": 200,
       "content_type": "application/json",
       "transport": "fetch",
-      "fetch_ms": 810,
+      "fetch_ms": 2062,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 12,
@@ -3314,7 +3314,7 @@
       "status": 200,
       "content_type": "application/json",
       "transport": "fetch",
-      "fetch_ms": 1662,
+      "fetch_ms": 2354,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 12,
@@ -3431,7 +3431,7 @@
       "status": 200,
       "content_type": "text/html; charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1745,
+      "fetch_ms": 2038,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 11,
@@ -3553,7 +3553,7 @@
       "status": 200,
       "content_type": "text/html; charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1327,
+      "fetch_ms": 1285,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 13,

@@ -113,20 +113,31 @@ function previousArticleIds(previousState = {}) {
   return ids;
 }
 
+function previousFirstSeenDates(previousState = {}) {
+  const dates = new Map(Object.entries(previousState.first_seen_by_id || {}));
+  const fallback = normalizeWorkflowDate(previousState.checked_at).normalized;
+  if (fallback) {
+    for (const id of previousArticleIds(previousState)) {
+      if (!dates.has(id)) dates.set(id, fallback);
+    }
+  }
+  return dates;
+}
+
 function sourceArticles(source) {
   return (source.articles?.length ? source.articles : source.samples || []).filter((article) => article?.title);
 }
 
-function toWorkflowArticle(source, article, options, previousIds) {
+function toWorkflowArticle(source, article, options, previousIds, previousFirstSeenById) {
+  const id = stableArticleId(source, article);
   const fallbackDateInfo = normalizeWorkflowDate(article.date);
   const publishedDateInfo = normalizeWorkflowDate(article.published_at || (fallbackDateInfo.precision === "day" ? article.date : ""));
   const issueDateInfo = normalizeWorkflowDate(article.issue_date || (fallbackDateInfo.precision === "month" ? article.date : ""));
-  const firstSeenInfo = normalizeWorkflowDate(article.first_seen_at || options.checkedAt);
+  const firstSeenInfo = normalizeWorkflowDate(article.first_seen_at || previousFirstSeenById.get(id) || options.checkedAt);
   const displayDateInfo = bestDateInfo(publishedDateInfo, issueDateInfo, firstSeenInfo);
-  const id = stableArticleId(source, article);
   const publishedInWindow = isInsideWindow(publishedDateInfo.normalized, publishedDateInfo.precision, options.since, options.until);
   const issueInWindow = !publishedInWindow && isInsideWindow(issueDateInfo.normalized, issueDateInfo.precision, options.since, options.until);
-  const isNew = !options.baseline && !previousIds.has(id);
+  const isNew = !options.baseline && (options.forcePushAll || !previousIds.has(id));
   const hasNoUsableDate = publishedDateInfo.status === "unknown" && issueDateInfo.status === "unknown";
   const futureIssueFirstSeen = isNew && !publishedInWindow && !issueInWindow && isAfterWindow(issueDateInfo.normalized, issueDateInfo.precision, options.until);
   const inclusionReason = publishedInWindow
@@ -208,12 +219,14 @@ export function buildRecentWorkflow(results, options) {
   const checkedAt = options.checkedAt || new Date().toISOString();
   const readySources = results.filter((source) => source.usable_as_data_source);
   const seenBefore = previousArticleIds(options.previousState);
+  const firstSeenBefore = previousFirstSeenDates(options.previousState);
   const sourceState = {
     version: 1,
     checked_at: checkedAt,
     since,
     until,
     article_ids: [],
+    first_seen_by_id: {},
     sources: {},
   };
   const recent = [];
@@ -226,7 +239,8 @@ export function buildRecentWorkflow(results, options) {
       until,
       checkedAt,
       baseline: Boolean(options.baseline),
-    }, seenBefore));
+      forcePushAll: Boolean(options.forcePushAll),
+    }, seenBefore, firstSeenBefore));
     const sourceRecent = sourceItems.filter((article) => ["date_within_window", "issue_overlaps_window", "future_issue_first_seen"].includes(article.inclusion_reason));
     const sourceUndated = sourceItems.filter((article) => article.inclusion_reason === "undated_latest_candidate");
     const sourcePushQueue = sourceItems.filter((article) => Boolean(article.push_basis));
@@ -249,6 +263,9 @@ export function buildRecentWorkflow(results, options) {
       push_count: sourcePushQueue.length,
       last_success_at: checkedAt,
     };
+    for (const article of sourceItems) {
+      sourceState.first_seen_by_id[article.id] = article.first_seen_at;
+    }
   }
 
   sourceState.article_ids = Object.values(sourceState.sources).flatMap((source) => source.article_ids);

@@ -21,6 +21,9 @@ function parseCliOptions(argv) {
     } else if (arg === "--baseline") {
       options.workflow = true;
       options.baseline = true;
+    } else if (arg === "--force-push-all") {
+      options.workflow = true;
+      options.forcePushAll = true;
     }
     else if (arg.startsWith("--since=")) {
       options.workflow = true;
@@ -337,15 +340,22 @@ async function enrichArticlesWithDetailDates(articles, options = {}) {
 async function fetchDoiMetadataDateHints(article, timeoutMs) {
   const doi = doiFromUrl(article.url || "");
   if (!doi) return {};
-  const response = await fetchText(`https://api.crossref.org/works/${encodeURIComponent(doi)}`, timeoutMs, {
-    Accept: "application/json,*/*",
-  });
-  if (!response.ok) return {};
-  try {
-    return extractMetadataDateHints(JSON.parse(response.text));
-  } catch {
-    return {};
+  const metadataUrl = `https://api.crossref.org/works/${encodeURIComponent(doi)}`;
+  for (let attempt = 0; attempt < 2; attempt += 1) {
+    const response = await fetchText(metadataUrl, Math.max(timeoutMs, 15000), {
+      Accept: "application/json,*/*",
+    });
+    if (response.ok) {
+      try {
+        const hints = extractMetadataDateHints(JSON.parse(response.text));
+        if (Object.keys(hints).length) return hints;
+      } catch {
+        return {};
+      }
+    }
+    if (attempt === 0) await new Promise((resolve) => setTimeout(resolve, 750));
   }
+  return {};
 }
 
 function looksLikeArticleTitle(title) {
@@ -1081,6 +1091,7 @@ if (cliOptions.workflow) {
     checkedAt: summary.checked_at,
     previousState,
     baseline: cliOptions.baseline,
+    forcePushAll: cliOptions.forcePushAll,
   });
   const recentPath = new URL(`../data/recent-articles-${cliOptions.since}_${cliOptions.until}.json`, import.meta.url);
   const statePath = new URL("../data/source-state.json", import.meta.url);
@@ -1095,6 +1106,7 @@ if (workflow) {
     output: `data/recent-articles-${cliOptions.since}_${cliOptions.until}.json`,
     state: "data/source-state.json",
     baseline: Boolean(cliOptions.baseline),
+    forcePushAll: Boolean(cliOptions.forcePushAll),
     ...workflow.summary,
   }, null, 2));
 }

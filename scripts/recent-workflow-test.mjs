@@ -171,6 +171,32 @@ assert.equal(secondRun.summary.new_recent_articles, 0);
 assert.equal(secondRun.summary.new_undated_articles, 0);
 assert.equal(secondRun.summary.push_queue_articles, 0);
 assert.ok(secondRun.recent_articles.every((article) => article.is_new === false));
+assert.equal(secondRun.recent_articles.find((article) => article.title === "窗口内文章").first_seen_at, "2026-05-25");
+assert.equal(firstRun.source_state.first_seen_by_id[firstRun.push_queue.find((article) => article.title === "窗口内文章").id], "2026-05-25");
+
+const legacyStateRun = buildRecentWorkflow(probeResults, {
+  since: "2026-04-25",
+  until: "2026-05-25",
+  checkedAt: "2026-05-26T10:00:00.000Z",
+  previousState: {
+    checked_at: "2026-05-25T12:00:00.000Z",
+    article_ids: firstRun.source_state.article_ids,
+  },
+});
+
+assert.equal(legacyStateRun.recent_articles.find((article) => article.title === "窗口内文章").first_seen_at, "2026-05-25");
+
+const forcedPushRun = buildRecentWorkflow(probeResults, {
+  since: "2026-04-25",
+  until: "2026-05-25",
+  checkedAt: "2026-05-26T10:00:00.000Z",
+  previousState: firstRun.source_state,
+  forcePushAll: true,
+});
+
+assert.equal(forcedPushRun.summary.push_queue_articles, 3);
+assert.equal(forcedPushRun.push_queue.find((article) => article.title === "窗口内文章").first_seen_at, "2026-05-25");
+assert.equal(forcedPushRun.push_queue.find((article) => article.title === "无日期文章").first_seen_at, "2026-05-25");
 
 const baselineRun = buildRecentWorkflow(probeResults, {
   since: "2026-04-25",
