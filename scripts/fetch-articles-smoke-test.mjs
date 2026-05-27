@@ -4,6 +4,7 @@ import vm from "node:vm";
 import { promisify } from "node:util";
 
 import { doiFromUrl, extractDateHints, extractHtmlArticleHints, extractMetadataArticleHints } from "./date-enhancement-lib.mjs";
+import { parseAscIssueListArticles, parseCieCurrentArticles } from "./html-adapter-parsers.mjs";
 import { addDays, buildRecentWorkflow, dateOnly } from "./recent-workflow-lib.mjs";
 
 const execFileAsync = promisify(execFile);
@@ -15,6 +16,14 @@ function parseCliOptions(argv) {
   const options = { workflow: false, articleLimit: 8, recentDays: 30 };
   for (const arg of argv) {
     if (arg === "--workflow") options.workflow = true;
+    else if (arg === "--daily") {
+      options.workflow = true;
+      options.daily = true;
+      options.pushNewDiscoveries = true;
+    } else if (arg === "--push-new-discoveries") {
+      options.workflow = true;
+      options.pushNewDiscoveries = true;
+    }
     else if (arg === "--ignore-state") {
       options.workflow = true;
       options.ignoreState = true;
@@ -38,7 +47,7 @@ function parseCliOptions(argv) {
   }
 
   options.until ||= dateOnly(new Date());
-  options.since ||= addDays(options.until, -options.recentDays);
+  options.since ||= options.daily ? options.until : addDays(options.until, -options.recentDays);
   if (options.workflow) options.articleLimit = 50;
 
   for (const [name, value] of [["since", options.since], ["until", options.until]]) {
@@ -522,6 +531,24 @@ async function extractHtmlByPatterns(item, patternOptions, timeoutMs = 11000, op
   return { response, probe_url: item.source_url, articles, candidate_count: articles.length, notes: [] };
 }
 
+async function extractCieLegacyHtml(item) {
+  const response = await fetchText(item.source_url, 17000);
+  let articles = response.ok ? parseCieCurrentArticles(response.text, response.finalUrl) : [];
+  if (response.ok && !articles.length) {
+    articles = parseAnchorsMatching(response.text, response.finalUrl, {
+      include: [/\/Magazine\/Show\?id=\d+/i],
+      exclude: [/Admin\/|CommonBlock\/|SiteContent/i],
+    });
+  }
+  return {
+    response,
+    probe_url: item.source_url,
+    articles,
+    candidate_count: articles.length,
+    notes: articles.some((article) => article.authors) ? ["authors_from_current_list"] : [],
+  };
+}
+
 async function extractCnkiCaptchaCheck(item) {
   const response = await fetchText(item.source_url, 12000);
   const notes = [];
@@ -695,21 +722,23 @@ async function extractAscCurrentIssueHtml(item) {
       lastResponse = response;
       if (!response.ok) continue;
 
-      const articles = parseAnchorsMatching(response.text, response.finalUrl, {
+      const issueDateText = `${year}-${String(issue).padStart(2, "0")}`;
+      const parsedArticles = parseAscIssueListArticles(response.text, response.finalUrl, issueDateText);
+      const articles = (parsedArticles.length ? parsedArticles : parseAnchorsMatching(response.text, response.finalUrl, {
         include: [/\/AccountingResearch\/BrowseDetail\.aspx/i, /BrowseDetail\.aspx\?/i],
         exclude: [/Login|User|Download/i],
       }).map((article) => ({
         ...article,
-        issue_date: article.issue_date || `${year}-${String(issue).padStart(2, "0")}`,
+        issue_date: article.issue_date || issueDateText,
         date_source: article.date_source || "issue_loop",
-      }));
+      })));
       if (articles.length) {
         return {
           response,
           probe_url: probeUrl,
           articles,
           candidate_count: articles.length,
-          notes: [`issue:${year}-${String(issue).padStart(2, "0")}`],
+          notes: [`issue:${issueDateText}`, parsedArticles.some((article) => article.author_source === "list_author_partial") ? "partial_authors_from_list" : ""].filter(Boolean),
         };
       }
     }
@@ -982,10 +1011,7 @@ async function extractAdapterArticles(item) {
     case "ajcass-current-api":
       return extractAjcassCurrentApi(item);
     case "cie-legacy-html":
-      return extractHtmlByPatterns(item, {
-        include: [/\/Magazine\/Show\?id=\d+/i],
-        exclude: [/Admin\/|CommonBlock\/|SiteContent/i],
-      }, 17000, { detailDateHints: { limit: 20, timeoutMs: 11000, ifMissingAuthors: true } });
+      return extractCieLegacyHtml(item);
     case "magtech-cn-html":
       return extractHtmlByPatterns(item, {
         include: [/\/CN\/Y20\d{2}\/V\d+\/I\d+\/\d+/i],
@@ -1156,9 +1182,13 @@ const summary = {
 };
 
 const result = { summary, results: allResults };
-await writeFile(new URL("../data/fetch-smoke-results.json", import.meta.url), JSON.stringify(result, null, 2));
+const resultPath = cliOptions.workflow && summary.article_ready_total === 0
+  ? new URL("../data/fetch-smoke-results.failed.json", import.meta.url)
+  : new URL("../data/fetch-smoke-results.json", import.meta.url);
+await writeFile(resultPath, JSON.stringify(result, null, 2));
 
 let workflow = null;
+let workflowPersisted = false;
 if (cliOptions.workflow) {
   const previousState = cliOptions.ignoreState ? {} : await readJsonIfExists(new URL("../data/source-state.json", import.meta.url));
   workflow = buildRecentWorkflow(allResults, {
@@ -1166,23 +1196,31 @@ if (cliOptions.workflow) {
     until: cliOptions.until,
     checkedAt: summary.checked_at,
     previousState,
+    daily: cliOptions.daily,
     baseline: cliOptions.baseline,
     forcePushAll: cliOptions.forcePushAll,
+    pushNewDiscoveries: cliOptions.pushNewDiscoveries,
   });
-  const recentPath = new URL(`../data/recent-articles-${cliOptions.since}_${cliOptions.until}.json`, import.meta.url);
-  const statePath = new URL("../data/source-state.json", import.meta.url);
-  await writeFile(recentPath, JSON.stringify(workflow, null, 2));
-  await writeFile(statePath, JSON.stringify(workflow.source_state, null, 2));
+  if (workflow.summary.sources_ready > 0) {
+    const recentPath = new URL(`../data/recent-articles-${cliOptions.since}_${cliOptions.until}.json`, import.meta.url);
+    const statePath = new URL("../data/source-state.json", import.meta.url);
+    await writeFile(recentPath, JSON.stringify(workflow, null, 2));
+    await writeFile(statePath, JSON.stringify(workflow.source_state, null, 2));
+    workflowPersisted = true;
+  }
 }
 
 console.log(JSON.stringify(summary, null, 2));
 if (workflow) {
   console.log(JSON.stringify({
     workflow: "recent_articles",
-    output: `data/recent-articles-${cliOptions.since}_${cliOptions.until}.json`,
+    output: workflowPersisted ? `data/recent-articles-${cliOptions.since}_${cliOptions.until}.json` : "",
     state: "data/source-state.json",
+    daily: Boolean(cliOptions.daily),
     baseline: Boolean(cliOptions.baseline),
     forcePushAll: Boolean(cliOptions.forcePushAll),
+    pushNewDiscoveries: Boolean(cliOptions.pushNewDiscoveries),
+    state_preserved: !workflowPersisted,
     ...workflow.summary,
   }, null, 2));
 }
@@ -1190,4 +1228,9 @@ for (const item of allResults) {
   const mark = item.usable_as_data_source ? "READY" : "BLOCKED";
   const sample = item.samples[0]?.title || item.notes?.join(",") || item.error || item.content_type || "";
   console.log(`${mark.padEnd(8)} ${item.journal_id.padEnd(4)} ${item.journal_name} | ${String(item.article_count).padStart(2)} | ${item.extraction_rule} | ${sample}`);
+}
+
+if (cliOptions.workflow && summary.article_ready_total === 0) {
+  console.error("No article sources were reachable; preserved previous workflow state and wrote fetch-smoke-results.failed.json.");
+  process.exitCode = 2;
 }

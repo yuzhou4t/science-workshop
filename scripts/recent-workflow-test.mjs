@@ -174,6 +174,28 @@ assert.ok(secondRun.recent_articles.every((article) => article.is_new === false)
 assert.equal(secondRun.recent_articles.find((article) => article.title === "窗口内文章").first_seen_at, "2026-05-25");
 assert.equal(firstRun.source_state.first_seen_by_id[firstRun.push_queue.find((article) => article.title === "窗口内文章").id], "2026-05-25");
 
+const blockedSourceRun = buildRecentWorkflow([
+  {
+    journal_id: "j-test",
+    journal_name: "测试期刊",
+    type: "adapter_source",
+    source_url: "https://example.test/journal",
+    probe_url: "https://example.test/current",
+    extraction_rule: "test-rule",
+    usable_as_data_source: false,
+    articles: [],
+  },
+], {
+  since: "2026-04-25",
+  until: "2026-05-25",
+  checkedAt: "2026-05-25T13:00:00.000Z",
+  previousState: firstRun.source_state,
+});
+
+assert.equal(blockedSourceRun.summary.sources_ready, 0);
+assert.deepEqual(blockedSourceRun.source_state.sources["j-test"].article_ids, firstRun.source_state.sources["j-test"].article_ids);
+assert.deepEqual(blockedSourceRun.source_state.article_ids, firstRun.source_state.article_ids);
+
 const legacyStateRun = buildRecentWorkflow(probeResults, {
   since: "2026-04-25",
   until: "2026-05-25",
@@ -197,6 +219,37 @@ const forcedPushRun = buildRecentWorkflow(probeResults, {
 assert.equal(forcedPushRun.summary.push_queue_articles, 3);
 assert.equal(forcedPushRun.push_queue.find((article) => article.title === "窗口内文章").first_seen_at, "2026-05-25");
 assert.equal(forcedPushRun.push_queue.find((article) => article.title === "无日期文章").first_seen_at, "2026-05-25");
+
+const dailyDiscoveryRun = buildRecentWorkflow([
+  {
+    journal_id: "j-daily",
+    journal_name: "每日发现期刊",
+    type: "adapter_source",
+    source_url: "https://example.test/daily",
+    probe_url: "https://example.test/daily",
+    extraction_rule: "daily-rule",
+    usable_as_data_source: true,
+    articles: [
+      { title: "历史发表但今天首次发现", url: "https://example.test/old-new", published_at: "2026-04-01", authors: "A" },
+    ],
+  },
+], {
+  since: "2026-05-27",
+  until: "2026-05-27",
+  checkedAt: "2026-05-27T10:00:00.000Z",
+  previousState: {},
+  daily: true,
+  pushNewDiscoveries: true,
+});
+
+assert.equal(dailyDiscoveryRun.source_state.daily_initialized, true);
+assert.equal(dailyDiscoveryRun.summary.recent_articles, 0);
+assert.equal(dailyDiscoveryRun.summary.push_queue_articles, 1);
+assert.equal(dailyDiscoveryRun.push_queue[0].title, "历史发表但今天首次发现");
+assert.equal(dailyDiscoveryRun.push_queue[0].push_basis, "first_seen");
+assert.equal(dailyDiscoveryRun.push_queue[0].inclusion_reason, "new_discovery_outside_window");
+assert.equal(dailyDiscoveryRun.push_queue[0].first_seen_at, "2026-05-27");
+assert.equal(dailyDiscoveryRun.push_queue[0].published_at, "2026-04-01");
 
 const baselineRun = buildRecentWorkflow(probeResults, {
   since: "2026-04-25",

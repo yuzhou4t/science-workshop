@@ -140,12 +140,15 @@ function toWorkflowArticle(source, article, options, previousIds, previousFirstS
   const isNew = !options.baseline && (options.forcePushAll || !previousIds.has(id));
   const hasNoUsableDate = publishedDateInfo.status === "unknown" && issueDateInfo.status === "unknown";
   const futureIssueFirstSeen = isNew && !publishedInWindow && !issueInWindow && isAfterWindow(issueDateInfo.normalized, issueDateInfo.precision, options.until);
+  const newDiscoveryOutsideWindow = Boolean(options.pushNewDiscoveries) && isNew && !publishedInWindow && !issueInWindow && !futureIssueFirstSeen && !hasNoUsableDate;
   const inclusionReason = publishedInWindow
     ? "date_within_window"
     : issueInWindow
       ? "issue_overlaps_window"
       : futureIssueFirstSeen
         ? "future_issue_first_seen"
+        : newDiscoveryOutsideWindow
+          ? "new_discovery_outside_window"
         : hasNoUsableDate
           ? "undated_latest_candidate"
           : "outside_window";
@@ -154,12 +157,14 @@ function toWorkflowArticle(source, article, options, previousIds, previousFirstS
     : publishedInWindow
       ? "published_date"
       : issueInWindow
+      ? "issue_date"
+      : futureIssueFirstSeen
         ? "issue_date"
-        : futureIssueFirstSeen
-          ? "issue_date"
-          : hasNoUsableDate
-            ? "first_seen"
-            : "";
+        : newDiscoveryOutsideWindow
+          ? "first_seen"
+        : hasNoUsableDate
+          ? "first_seen"
+          : "";
   const displayDateBasis = publishedDateInfo.status === "known"
     ? "published_at"
     : issueDateInfo.status === "known"
@@ -225,6 +230,7 @@ export function buildRecentWorkflow(results, options) {
     checked_at: checkedAt,
     since,
     until,
+    daily_initialized: Boolean(options.daily || options.previousState?.daily_initialized),
     article_ids: [],
     first_seen_by_id: {},
     sources: {},
@@ -240,6 +246,7 @@ export function buildRecentWorkflow(results, options) {
       checkedAt,
       baseline: Boolean(options.baseline),
       forcePushAll: Boolean(options.forcePushAll),
+      pushNewDiscoveries: Boolean(options.pushNewDiscoveries),
     }, seenBefore, firstSeenBefore));
     const sourceRecent = sourceItems.filter((article) => ["date_within_window", "issue_overlaps_window", "future_issue_first_seen"].includes(article.inclusion_reason));
     const sourceUndated = sourceItems.filter((article) => article.inclusion_reason === "undated_latest_candidate");
@@ -265,6 +272,19 @@ export function buildRecentWorkflow(results, options) {
     };
     for (const article of sourceItems) {
       sourceState.first_seen_by_id[article.id] = article.first_seen_at;
+    }
+  }
+
+  for (const source of results.filter((item) => !item.usable_as_data_source)) {
+    const previousSource = options.previousState?.sources?.[source.journal_id];
+    if (!previousSource) continue;
+    sourceState.sources[source.journal_id] = {
+      ...previousSource,
+      last_failed_at: checkedAt,
+    };
+    for (const id of previousSource.article_ids || []) {
+      const firstSeen = firstSeenBefore.get(id);
+      if (firstSeen) sourceState.first_seen_by_id[id] = firstSeen;
     }
   }
 
