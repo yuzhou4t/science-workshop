@@ -26,8 +26,10 @@ node scripts/recent-workflow-test.mjs
 node scripts/html-adapter-parsers-test.mjs
 node scripts/date-enhancement-test.mjs
 node scripts/launchd-plist-test.mjs
+node scripts/build-adapter-front-data-test.mjs
 node scripts/adapter-smoke-test.mjs
 node --check scripts/fetch-articles-smoke-test.mjs
+node --check scripts/build-adapter-front-data.mjs
 node --check scripts/run-daily-workflow.mjs
 node --check scripts/install-daily-launchd.mjs
 ```
@@ -41,6 +43,7 @@ node scripts/fetch-articles-smoke-test.mjs --workflow --since=2026-04-27 --until
 Rebuild frontend data from a workflow file:
 
 ```bash
+node scripts/build-adapter-front-data.mjs
 node scripts/build-front-data.mjs --workflow=data/recent-articles-2026-04-27_2026-05-27.json
 ```
 

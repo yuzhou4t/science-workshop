@@ -39,9 +39,11 @@ node scripts/build-front-data.mjs --workflow=data/recent-articles-2026-04-27_202
 - `index.html`：前端原型页面，包含文章推送流、数据源汇总、筛选器和预留的转换功能入口。
 - `data/adapter-profiles.json`：期刊数据源规则表，目前包含 5 个直接 RSS/eTOC 来源和 17 个页面适配来源。
 - `data/fetch-smoke-results.json`：最近一次真实探测所有数据源后的结果。
+- `data/adapter-front-data.js`：前端“适配器工作台”读取的真实注册表状态。
 - `data/recent-articles-*.json`：某个日期范围或某天的抓取工作流输出。
 - `data/recent-front-data.js`：前端页面实际读取的文章推送数据。
 - `data/source-state.json`：每日自动运行时使用的去重和首次发现记录。
+- `scripts/build-adapter-front-data.mjs`：把 `data/adapter-profiles.json` 转换成前端适配器工作台数据。
 - `scripts/fetch-articles-smoke-test.mjs`：真实抓取入口，会访问 RSS、官网页面、替代目录页或开放元数据接口。
 - `scripts/build-front-data.mjs`：把抓取结果转换成前端能展示的数据。
 - `scripts/run-daily-workflow.mjs`：每日自动检查入口，只检查当天窗口并按首次发现去重。

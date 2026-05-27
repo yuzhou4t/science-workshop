@@ -1825,7 +1825,7 @@
             <div class="header-row">
               <div class="header-main">
                 <h1 class="title">适配器工作台</h1>
-                <div class="subtitle">中文期刊与非论文 RSS 来源进入平台规则化队列</div>
+                <div class="subtitle">从真实注册表展示 RSS、页面适配、替代目录与开放元数据规则</div>
               </div>
               <div class="header-actions">
                 <input class="field" id="adapterSearch" type="search" placeholder="搜索期刊、平台、策略…" />
@@ -1840,7 +1840,7 @@
           <section class="panel">
             <div class="source-toolbar">
               <strong>平台规则分组</strong>
-              <span class="summary-hint">先按平台写适配器，再把单刊参数填进去</span>
+              <span class="summary-hint">按平台查看已接入规则、兜底来源和后续增强方向</span>
             </div>
             <div class="adapter-summary" id="adapterStats"></div>
             <div class="adapter-profile-grid" id="adapterProfiles"></div>
@@ -1849,7 +1849,7 @@
           <section class="panel table-panel">
             <div class="source-toolbar">
               <strong>适配队列</strong>
-              <span class="summary-hint">覆盖中文期刊、未发现论文 RSS、以及 RSS 不适合推论文的来源</span>
+              <span class="summary-hint">当前显示真实 adapter-profiles 注册表，不再用早期“规则待写”规划状态</span>
             </div>
             <div class="adapter-table-wrap">
               <table>
@@ -1906,6 +1906,7 @@
       </main>
     </div>
 
+    <script src="data/adapter-front-data.js"></script>
     <script src="data/recent-front-data.js"></script>
     <script>
       const rawJournals = [
@@ -2083,7 +2084,7 @@
         };
       });
 
-      const adapterProfiles = [
+      const fallbackAdapterProfiles = [
         {
           id: "ajcass",
           name: "AJCass 社科院平台",
@@ -2142,7 +2143,34 @@
         }
       ];
 
-      const adapterQueue = adapterProfiles.flatMap((profile) => profile.journals.map((journalId) => {
+      const adapterFrontData = window.ADAPTER_PROFILE_DATA || null;
+      const registryAdapterQueue = (adapterFrontData?.adapter_queue || []).map((item) => {
+        const journal = journalById(item.journal_id);
+        return {
+          journalId: journal.id,
+          sourceId: item.journal_id,
+          platformId: item.platform_id,
+          platformName: item.platform_name,
+          strategy: item.strategy,
+          fields: item.fields || [],
+          status: item.status || "规则待确认",
+          priority: journal.lang === "中文" ? "P1" : "P2",
+          parserProfile: item.adapter_kind || "adapter-rule",
+          next: item.next_action || "规则已接入，继续观察抓取稳定性。"
+        };
+      });
+      const adapterProfiles = adapterFrontData?.platform_profiles?.length
+        ? adapterFrontData.platform_profiles.map((profile) => ({
+          id: profile.id,
+          name: profile.name,
+          strategy: profile.strategy,
+          journals: profile.journals || registryAdapterQueue.filter((item) => item.platformId === profile.id).map((item) => item.sourceId),
+          fields: profile.fields || [],
+          next: profile.next_action || "规则已接入，继续观察抓取稳定性。"
+        }))
+        : fallbackAdapterProfiles;
+
+      const fallbackAdapterQueue = fallbackAdapterProfiles.flatMap((profile) => profile.journals.map((journalId) => {
         const source = sourceById(journalId);
         const journal = journals.find((item) => item.id === canonicalJournalId(journalId)) || journals[0];
         const needsUrlFix = source.health !== "ok" || source.sourceStatus === "非论文 RSS";
@@ -2160,6 +2188,7 @@
           next: isReady ? profile.next : needsUrlFix ? `${source.issues[0] || source.sourceStatus}；${profile.next}` : profile.next
         };
       }));
+      const adapterQueue = registryAdapterQueue.length ? registryAdapterQueue : fallbackAdapterQueue;
 
       const workflowData = window.RECENT_WORKFLOW_DATA || { summary: null, push_queue: [] };
 
@@ -2580,16 +2609,25 @@
         });
       }
 
+      function adapterStatusClass(status = "") {
+        if (/复核|非论文|失败|阻断/.test(status)) return "bad";
+        if (/待写|待确认|需适配|待探测/.test(status)) return "warn";
+        return "ok";
+      }
+
       function renderAdapterStats() {
-        const directFeeds = journals.filter((journal) => journal.sourceStatus === "RSS 已接入").length;
-        const urlFix = adapterQueue.filter((item) => item.status.includes("复核") || item.status.includes("非论文")).length;
+        const directFeeds = adapterFrontData?.summary?.direct_article_feeds ?? journals.filter((journal) => journal.sourceStatus === "RSS 已接入").length;
+        const readyRules = adapterQueue.filter((item) => adapterStatusClass(item.status) === "ok").length;
+        const fallbackRules = adapterQueue.filter((item) => /替代|兜底|维普|开放元数据|DOI/.test(item.status)).length;
+        const attentionCount = adapterQueue.filter((item) => adapterStatusClass(item.status) !== "ok").length;
         const cnQueue = adapterQueue.filter((item) => journalById(item.journalId).lang === "中文").length;
         $("#adapterStats").innerHTML = [
-          ["适配队列", adapterQueue.length],
+          ["页面适配源", adapterQueue.length],
+          ["已接入规则", readyRules],
           ["中文来源", cnQueue],
-          ["平台分组", adapterProfiles.length],
-          ["已接入 RSS", directFeeds],
-          ["需先处理", urlFix]
+          ["直接 RSS", directFeeds],
+          ["替代/兜底", fallbackRules],
+          ["需处理", attentionCount]
         ].map(([label, value]) => `<div class="adapter-stat"><span>${escapeHtml(label)}</span><strong>${escapeHtml(value)}</strong></div>`).join("");
       }
 
@@ -2622,7 +2660,7 @@
         const rows = filteredAdapterQueue();
         $("#adapterRows").innerHTML = rows.length ? rows.map((item) => {
           const journal = journalById(item.journalId);
-          const statusClass = item.status.includes("复核") || item.status.includes("非论文") ? "bad" : item.status.includes("待写") ? "warn" : "ok";
+          const statusClass = adapterStatusClass(item.status);
           return `
             <tr data-adapter-row="${journal.id}">
               <td class="journal-cell">

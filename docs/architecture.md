@@ -9,8 +9,9 @@ Science Workshop is a static frontend plus local Node.js crawler scripts. It is 
 3. `scripts/fetch-articles-smoke-test.mjs` probes all direct feeds and adapter sources.
 4. Live probe results are written to `data/fetch-smoke-results.json`.
 5. When run with `--workflow`, the probe also writes `data/recent-articles-<since>_<until>.json`.
-6. `scripts/build-front-data.mjs` compacts a workflow file into `data/recent-front-data.js`.
-7. `index.html` reads `window.RECENT_WORKFLOW_DATA` and renders the timeline from the push queue.
+6. `scripts/build-adapter-front-data.mjs` converts the adapter registry into `data/adapter-front-data.js`.
+7. `scripts/build-front-data.mjs` compacts a workflow file into `data/recent-front-data.js`.
+8. `index.html` reads `window.ADAPTER_PROFILE_DATA` for the adapter workbench and `window.RECENT_WORKFLOW_DATA` for the timeline.
 
 ## Source Model
 
