@@ -46,3 +46,19 @@ Latest smoke test result: 22 article-ready sources out of 22 total sources. This
 Latest lightweight workflow trial for 2026-04-25 to 2026-05-25: 111 date-window articles from 22 ready sources, plus 182 no-date first-seen articles. The generated push queue contains 293 articles: 111 pushed by publication date and 182 pushed by first-seen detection so no-date sources do not get silently dropped.
 
 For a quick browser preview, open `index.html` directly or serve the directory with a local static server.
+
+## Daily local workflow
+
+The daily workflow is designed to run on the local Mac, so it uses the same network environment as a manual check.
+
+- `scripts/run-daily-workflow.mjs` runs the one-day article detection workflow, initializes a no-push baseline on first use, and updates frontend data only when new push articles are found.
+- `scripts/launchd-plist.mjs` generates the macOS LaunchAgent plist for the daily workflow.
+- `scripts/install-daily-launchd.mjs` installs or refreshes the LaunchAgent at `~/Library/LaunchAgents/com.science-workshop.daily.plist`.
+
+Install or refresh the daily 10:00 local job with:
+
+```bash
+node scripts/install-daily-launchd.mjs
+```
+
+The scheduled job writes logs to `logs/daily-workflow.log` and errors to `logs/daily-workflow.error.log`.
