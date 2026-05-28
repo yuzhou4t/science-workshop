@@ -1,1 +1,2 @@
 logs/*.log
+data/fetch-smoke-results-*.json

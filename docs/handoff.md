@@ -7,7 +7,7 @@ Status on 2026-05-28:
 - Prototype path: `/Users/yuzhou4tc/Public/工作坊/journal-workshop-prototype`.
 - Frontend entry: `index.html`.
 - Source registry: `data/adapter-profiles.json`.
-- Latest live probe ready sources: 21 of 22.
+- Latest live probe ready sources: 22 of 22.
 - Direct article RSS/eTOC feeds: 5.
 - Adapter-based sources: 17.
 - Local daily scheduler: installed as `com.science-workshop.daily`.
@@ -30,7 +30,7 @@ The daily dedupe state is initialized in `data/source-state.json`. Rebuilding fr
 - Date display separates first-seen push timing from article publication date and issue date.
 - `JOURNAL OF FINANCE` duplicate inputs are canonicalized into one journal identity.
 - Chinese sources without RSS use automated adapters or fallback catalog sources instead of manual uploads.
-- `管理科学学报` has both current issue-browser extraction and older reader issue-page fallback; the latest local live probe still saw 503/TLS instability from that host.
+- `管理科学学报` has both current issue-browser extraction and older reader issue-page fallback. The latest local live probe returned READY, and the single-source probe returned 10 current-issue articles.
 - A local macOS LaunchAgent runs the daily workflow at 10:00.
 
 ## Remaining Work

@@ -62,22 +62,28 @@ assert.deepEqual(ascArticles, [
 ]);
 
 const jmscArticles = parseJmscReaderIssueArticles(`
-  <div>
-    20260401
-    <a href="view_abstract.aspx?file_no=20260401&flag=1">异质性环境规制、绿色创新与企业绿色形象的关系研究</a>
-    解学梅，陈文妍，倪书阳，郭海望 2026,(4):1-16
-  </div>
-  <div>
-    20260402
-    <a href="/ch/reader/view_abstract.aspx?file_no=20260402&flag=1">区域一体化推进的工业污染集聚效应——来自长三角边界效应与扩容影响的证据</a>
-    邵帅，徐乐，范美婷 2026,(4):17-39
-  </div>
+  <table>
+    <tr>
+      <td style="width:70px;">20260401</td><td>
+        <a href="view_abstract.aspx?flag=1&file_no=20260401&journal_id=jmsc" target='_blank'>异质性环境规制、绿色创新与企业绿色形象的关系研究</a>
+      </td>
+      <td>解学梅，陈文妍，倪书阳，郭海望</td>
+      <td>2026,(4):1-16</td>
+    </tr>
+    <tr>
+      <td style="width:70px;">20260402</td><td>
+        <a href="/ch/reader/view_abstract.aspx?flag=1&file_no=20260402&journal_id=jmsc" target='_blank'>区域一体化推进的工业污染集聚效应——来自长三角边界效应与扩容影响的证据</a>
+      </td>
+      <td>邵帅，徐乐，范美婷</td>
+      <td>2026,(4):17-39</td>
+    </tr>
+  </table>
 `, "https://jmsc.tju.edu.cn/ch/reader/issue_query.aspx");
 
 assert.deepEqual(jmscArticles, [
   {
     title: "异质性环境规制、绿色创新与企业绿色形象的关系研究",
-    url: "https://jmsc.tju.edu.cn/ch/reader/view_abstract.aspx?file_no=20260401&flag=1",
+    url: "https://jmsc.tju.edu.cn/ch/reader/view_abstract.aspx?flag=1&file_no=20260401&journal_id=jmsc",
     authors: "解学梅, 陈文妍, 倪书阳, 郭海望",
     author_source: "reader_issue",
     issue_date: "2026-04",
@@ -85,7 +91,7 @@ assert.deepEqual(jmscArticles, [
   },
   {
     title: "区域一体化推进的工业污染集聚效应——来自长三角边界效应与扩容影响的证据",
-    url: "https://jmsc.tju.edu.cn/ch/reader/view_abstract.aspx?file_no=20260402&flag=1",
+    url: "https://jmsc.tju.edu.cn/ch/reader/view_abstract.aspx?flag=1&file_no=20260402&journal_id=jmsc",
     authors: "邵帅, 徐乐, 范美婷",
     author_source: "reader_issue",
     issue_date: "2026-04",

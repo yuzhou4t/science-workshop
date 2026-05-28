@@ -63,11 +63,11 @@ node scripts/build-front-data.mjs --reset-history --workflow=data/recent-article
 截至 2026-05-28，前端参考数据已合并 `data/recent-articles-2026-04-27_2026-05-27.json` 和 `data/recent-articles-2026-05-28_2026-05-28.json`。
 
 - 期刊数据源：22 个。
-- 最近一次真实探测可用数据源：21 个。
+- 最近一次真实探测可用数据源：22 个。
 - 前端累计展示文章：217 篇。
 - 今日新增推送文章：26 篇。
 - 每日自动任务的去重状态已写入 `data/source-state.json`。
-- `管理科学学报` 规则已包含新版期号页和旧版 reader 期号页兜底；最近一次本机探测仍受该站点 503/TLS 抖动影响。
+- `管理科学学报` 已可从新版期号页解析；旧版 reader 期号页可作为备用解析入口，单源探测可返回 10 篇当期文章。
 
 ## 每日自动检查
 

@@ -1,12 +1,12 @@
 {
   "summary": {
-    "checked_at": "2026-05-28T13:38:22.410Z",
+    "checked_at": "2026-05-28T14:21:35.294Z",
     "direct_feeds_total": 5,
     "direct_feeds_ok": 5,
     "adapter_sources_total": 17,
-    "adapter_sources_article_ready": 16,
-    "adapter_sources_blocked": 1,
-    "article_ready_total": 21
+    "adapter_sources_article_ready": 17,
+    "adapter_sources_blocked": 0,
+    "article_ready_total": 22
   },
   "results": [
     {
@@ -19,7 +19,7 @@
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1086,
+      "fetch_ms": 1290,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 8,
@@ -151,7 +151,7 @@
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 989,
+      "fetch_ms": 1145,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 8,
@@ -284,8 +284,8 @@
       "extraction_rule": "atypon-etoc",
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
-      "transport": "fetch",
-      "fetch_ms": 1011,
+      "transport": "curl",
+      "fetch_ms": 6303,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 8,
@@ -407,7 +407,7 @@
       "notes": [
         "filtered_non_article:3"
       ],
-      "error": ""
+      "error": "fetch failed"
     },
     {
       "type": "direct_rss",
@@ -419,7 +419,7 @@
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1224,
+      "fetch_ms": 1544,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 8,
@@ -553,7 +553,7 @@
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1026,
+      "fetch_ms": 1051,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 8,
@@ -686,8 +686,8 @@
       "extraction_rule": "ajcass-current-api",
       "status": 200,
       "content_type": "application/json; charset=utf-8",
-      "transport": "fetch",
-      "fetch_ms": 3509,
+      "transport": "curl",
+      "fetch_ms": 7482,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 8,
@@ -763,7 +763,7 @@
         }
       ],
       "notes": [],
-      "error": ""
+      "error": "fetch failed"
     },
     {
       "type": "adapter_source",
@@ -777,7 +777,7 @@
       "status": 200,
       "content_type": "text/html; charset=utf-8",
       "transport": "fetch",
-      "fetch_ms": 9661,
+      "fetch_ms": 7750,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 8,
@@ -890,8 +890,8 @@
       "extraction_rule": "ajcass-current-api",
       "status": 200,
       "content_type": "application/json; charset=utf-8",
-      "transport": "fetch",
-      "fetch_ms": 2365,
+      "transport": "curl",
+      "fetch_ms": 7386,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 8,
@@ -967,7 +967,7 @@
         }
       ],
       "notes": [],
-      "error": ""
+      "error": "fetch failed"
     },
     {
       "type": "adapter_source",
@@ -980,8 +980,8 @@
       "extraction_rule": "magtech-cn-html",
       "status": 200,
       "content_type": "text/html;charset=UTF-8",
-      "transport": "curl",
-      "fetch_ms": 14287,
+      "transport": "fetch",
+      "fetch_ms": 2529,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 8,
@@ -1101,7 +1101,7 @@
         }
       ],
       "notes": [],
-      "error": "fetch failed"
+      "error": ""
     },
     {
       "type": "adapter_source",
@@ -1114,12 +1114,12 @@
       "extraction_rule": "jryj-html",
       "status": 200,
       "content_type": "text/html;charset=UTF-8",
-      "transport": "curl",
-      "fetch_ms": 28015,
+      "transport": "fetch",
+      "fetch_ms": 3006,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 8,
-      "candidate_count": 26,
+      "candidate_count": 31,
       "articles": [
         {
           "title": "中国的利率体系与利率市场化改革",
@@ -1235,7 +1235,7 @@
         }
       ],
       "notes": [],
-      "error": "curl: (28) Operation timed out after 17001 milliseconds with 227322 bytes received"
+      "error": ""
     },
     {
       "type": "adapter_source",
@@ -1249,7 +1249,7 @@
       "status": 200,
       "content_type": "text/html; charset=utf-8",
       "transport": "fetch",
-      "fetch_ms": 965,
+      "fetch_ms": 901,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 8,
@@ -1343,7 +1343,7 @@
       "status": 200,
       "content_type": "text/html;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 4198,
+      "fetch_ms": 7717,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 8,
@@ -1453,7 +1453,7 @@
       "status": 200,
       "content_type": "text/html; charset=utf-8",
       "transport": "fetch",
-      "fetch_ms": 3451,
+      "fetch_ms": 1366,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 8,
@@ -1542,23 +1542,134 @@
       "platform_id": "university-custom",
       "platform_name": "高校自建站",
       "source_url": "https://jmsc.tju.edu.cn/jmsc/issue/browser",
-      "probe_url": "https://jmsc.tju.edu.cn/jmsc/issue/browser",
+      "probe_url": "https://jmsc.tju.edu.cn/jmsc/article/issue/2026_4",
       "extraction_rule": "jmsc-issue-html",
-      "status": "ERR",
-      "content_type": "",
-      "transport": "curl",
-      "fetch_ms": 47585,
-      "ok": false,
-      "usable_as_data_source": false,
-      "article_count": 0,
-      "candidate_count": 0,
-      "articles": [],
-      "samples": [],
-      "notes": [
-        "issue_browser_status:ERR",
-        "reader_issue_status:503"
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "transport": "fetch",
+      "fetch_ms": 5972,
+      "ok": true,
+      "usable_as_data_source": true,
+      "article_count": 8,
+      "candidate_count": 253,
+      "articles": [
+        {
+          "title": "异质性环境规制、绿色创新与企业绿色形象的关系研究",
+          "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260401?st=article_issue",
+          "date": "2026-05-03",
+          "issue_date": "2026-04",
+          "date_source": "meta_published",
+          "authors": "解学梅, 陈文妍, 倪书阳, 郭海望",
+          "author_source": "meta_author",
+          "published_at": "2026-05-03"
+        },
+        {
+          "title": "区域一体化推进的工业污染集聚效应——来自长三角边界效应与扩容影响的证据",
+          "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260402?st=article_issue",
+          "date": "2026-05-03",
+          "issue_date": "2026-04",
+          "date_source": "meta_published",
+          "authors": "邵帅, 徐乐, 范美婷",
+          "author_source": "meta_author",
+          "published_at": "2026-05-03"
+        },
+        {
+          "title": "数字金融的治理效应研究——基于盈余管理的视角",
+          "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260403?st=article_issue",
+          "date": "2026-05-03",
+          "issue_date": "2026-04",
+          "date_source": "meta_published",
+          "authors": "闫伟宸, 吴俊杰, 邓路",
+          "author_source": "meta_author",
+          "published_at": "2026-05-03"
+        },
+        {
+          "title": "基于高维因子模型的A股市场系统性风险研究",
+          "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260404?st=article_issue",
+          "date": "2026-05-03",
+          "issue_date": "2026-04",
+          "date_source": "meta_published",
+          "authors": "魏照昊, 李秀婷, 卢全莹, 董纪昌, 董志",
+          "author_source": "meta_author",
+          "published_at": "2026-05-03"
+        },
+        {
+          "title": "考虑偏差修正的Bootstrap假设检验及大规模关键质量因子筛选研究",
+          "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260405?st=article_issue",
+          "date": "2026-05-03",
+          "issue_date": "2026-04",
+          "date_source": "meta_published",
+          "authors": "刘丽君, 欧阳林寒, 马义中, 吴锋",
+          "author_source": "meta_author",
+          "published_at": "2026-05-03"
+        },
+        {
+          "title": "自动化码头AGV无死锁在线路径规划算法",
+          "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260406?st=article_issue",
+          "date": "2026-05-03",
+          "issue_date": "2026-04",
+          "date_source": "meta_published",
+          "authors": "周琛淏, 焦俊玲, 车阿大",
+          "author_source": "meta_author",
+          "published_at": "2026-05-03"
+        },
+        {
+          "title": "考虑农户损失规避的平台型供应链融资模式选择",
+          "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260407?st=article_issue",
+          "date": "2026-05-03",
+          "issue_date": "2026-04",
+          "date_source": "meta_published",
+          "authors": "於慧琳, 刘敏, 周永务",
+          "author_source": "meta_author",
+          "published_at": "2026-05-03"
+        },
+        {
+          "title": "折价出售传染与货币市场基金行业系统性风险——基于“基金-资产”二分网络视角",
+          "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260408?st=article_issue",
+          "date": "2026-05-03",
+          "issue_date": "2026-04",
+          "date_source": "meta_published",
+          "authors": "姚晨安, 张卫国, 王超",
+          "author_source": "meta_author",
+          "published_at": "2026-05-03"
+        }
       ],
-      "error": "curl: (28) Operation timed out after 18001 milliseconds with 0 bytes received"
+      "samples": [
+        {
+          "title": "异质性环境规制、绿色创新与企业绿色形象的关系研究",
+          "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260401?st=article_issue",
+          "date": "2026-05-03",
+          "issue_date": "2026-04",
+          "date_source": "meta_published",
+          "authors": "解学梅, 陈文妍, 倪书阳, 郭海望",
+          "author_source": "meta_author",
+          "published_at": "2026-05-03"
+        },
+        {
+          "title": "区域一体化推进的工业污染集聚效应——来自长三角边界效应与扩容影响的证据",
+          "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260402?st=article_issue",
+          "date": "2026-05-03",
+          "issue_date": "2026-04",
+          "date_source": "meta_published",
+          "authors": "邵帅, 徐乐, 范美婷",
+          "author_source": "meta_author",
+          "published_at": "2026-05-03"
+        },
+        {
+          "title": "数字金融的治理效应研究——基于盈余管理的视角",
+          "url": "https://jmsc.tju.edu.cn/jmsc/article/abstract/20260403?st=article_issue",
+          "date": "2026-05-03",
+          "issue_date": "2026-04",
+          "date_source": "meta_published",
+          "authors": "闫伟宸, 吴俊杰, 邓路",
+          "author_source": "meta_author",
+          "published_at": "2026-05-03"
+        }
+      ],
+      "notes": [
+        "issue_candidates:253"
+      ],
+      "error": ""
     },
     {
       "type": "adapter_source",
@@ -1571,8 +1682,8 @@
       "extraction_rule": "cqvip-journal-html",
       "status": 200,
       "content_type": "text/html; charset=utf-8",
-      "transport": "fetch",
-      "fetch_ms": 9266,
+      "transport": "curl",
+      "fetch_ms": 15103,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 8,
@@ -1580,49 +1691,49 @@
       "articles": [
         {
           "title": "以制度建设为主线统筹发展和安全",
-          "url": "https://www.cqvip.com/doc/journal/7203343026?sign=4a0870a2395ebd21666fe6301185b5983026065085d9d165aa96c023219d4d24&expireTime=1795527383751&resourceId=7203343026&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343026?sign=03d8841095cf81dd79fb7c269637dc6fd2d06e9109fb0dea7932b54a3ad13101&expireTime=1795529918553&resourceId=7203343026&type=1",
           "date": "2026-03",
           "authors": "王浦劬, 连雨欣"
         },
         {
           "title": "“钉钉子”的技术:重大决策落实的工作机制",
-          "url": "https://www.cqvip.com/doc/journal/7203343027?sign=8171a1b285d209e19cc47cf44fa1084b7b84aa2259fc63ef44a71e469138e824&expireTime=1795527383751&resourceId=7203343027&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343027?sign=0231b63c37dbeb7dcd670b94df22f1f5bdfc7470e9216c457f98e6948f3c8b00&expireTime=1795529918553&resourceId=7203343027&type=1",
           "date": "2026-03",
           "authors": "庞明礼, 郭雯斐"
         },
         {
           "title": "从制度到行动:基层减负的层级传导与长效机制",
-          "url": "https://www.cqvip.com/doc/journal/7203343028?sign=265210468eb703ebea4fe20fefcff41cdaef44262bfa42ba7c8aa471b5dd8858&expireTime=1795527383751&resourceId=7203343028&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343028?sign=60d7e50ff51881ab0edc003ca412878798f577f6c5db6a00e68f21c2e5cb9ab1&expireTime=1795529918553&resourceId=7203343028&type=1",
           "date": "2026-03",
           "authors": "王锐, 倪星"
         },
         {
           "title": "政府数字平台何以走出难以为继困境?——基于生态系统视角的对比案例研究",
-          "url": "https://www.cqvip.com/doc/journal/7203343029?sign=4541ecf0fd5ceffccdab7d8f0226c0e7958908e302d89d2d2aef823dcb4d5269&expireTime=1795527383751&resourceId=7203343029&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343029?sign=246d3b610d823089c2e636915e99139979740004fbe17bcbad6f8c4c95999d5d&expireTime=1795529918553&resourceId=7203343029&type=1",
           "date": "2026-03",
           "authors": "付宁, 林婕, 祝哲"
         },
         {
           "title": "人工智能的科林格里奇困境与安全监管的敏捷性调适",
-          "url": "https://www.cqvip.com/doc/journal/7203343030?sign=1995cf5d46dcfa167c56f96a513b2683255052e4b1bdc8ad82224c02abee66f7&expireTime=1795527383751&resourceId=7203343030&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343030?sign=caca5814e6a577a75adf1c3cf7843e31329aad30ada3191ff80db07fc18d5289&expireTime=1795529918553&resourceId=7203343030&type=1",
           "date": "2026-03",
           "authors": "张乐, 赵爽爽"
         },
         {
           "title": "“数字帕金森”:数字治理中的任务冗余再生产",
-          "url": "https://www.cqvip.com/doc/journal/7203343031?sign=c70dc5cd76e4faf490b364252989d1155c31efcdc233beec3a2a6f8ff8c4b026&expireTime=1795527383751&resourceId=7203343031&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343031?sign=44247c01bbcc48e9d8d691667eb45532f16e2598b86d328b24d8718a852d7e33&expireTime=1795529918553&resourceId=7203343031&type=1",
           "date": "2026-03",
           "authors": "邓崧, 杨迪"
         },
         {
           "title": "把公共性带回来:社区慈善事业治理的路径选择",
-          "url": "https://www.cqvip.com/doc/journal/7203343032?sign=995870306d61ad9e057a9656d8fbc43d26a7963ba26a4a2289d9fff25c6ca6aa&expireTime=1795527383751&resourceId=7203343032&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343032?sign=e67b606abd694aaf6b1578b7f92a4994b2fba090b8ce77865fac233b9b46ffde&expireTime=1795529918553&resourceId=7203343032&type=1",
           "date": "2026-03",
           "authors": "舒文, 郑功成"
         },
         {
           "title": "“选择式自主”:社会组织可持续发展的新范式",
-          "url": "https://www.cqvip.com/doc/journal/7203343033?sign=a9ee6700257c3f7a6d2b9318174a771a230a5d6e677b3838258b8c63180dbfa5&expireTime=1795527383751&resourceId=7203343033&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343033?sign=457baf3b445fd91a99af9a8c55a424d2f735e23769e4e802dd5598102bc8bc78&expireTime=1795529918553&resourceId=7203343033&type=1",
           "date": "2026-03",
           "authors": "刘蕾, 何书仪"
         }
@@ -1630,19 +1741,19 @@
       "samples": [
         {
           "title": "以制度建设为主线统筹发展和安全",
-          "url": "https://www.cqvip.com/doc/journal/7203343026?sign=4a0870a2395ebd21666fe6301185b5983026065085d9d165aa96c023219d4d24&expireTime=1795527383751&resourceId=7203343026&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343026?sign=03d8841095cf81dd79fb7c269637dc6fd2d06e9109fb0dea7932b54a3ad13101&expireTime=1795529918553&resourceId=7203343026&type=1",
           "date": "2026-03",
           "authors": "王浦劬, 连雨欣"
         },
         {
           "title": "“钉钉子”的技术:重大决策落实的工作机制",
-          "url": "https://www.cqvip.com/doc/journal/7203343027?sign=8171a1b285d209e19cc47cf44fa1084b7b84aa2259fc63ef44a71e469138e824&expireTime=1795527383751&resourceId=7203343027&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343027?sign=0231b63c37dbeb7dcd670b94df22f1f5bdfc7470e9216c457f98e6948f3c8b00&expireTime=1795529918553&resourceId=7203343027&type=1",
           "date": "2026-03",
           "authors": "庞明礼, 郭雯斐"
         },
         {
           "title": "从制度到行动:基层减负的层级传导与长效机制",
-          "url": "https://www.cqvip.com/doc/journal/7203343028?sign=265210468eb703ebea4fe20fefcff41cdaef44262bfa42ba7c8aa471b5dd8858&expireTime=1795527383751&resourceId=7203343028&type=1",
+          "url": "https://www.cqvip.com/doc/journal/7203343028?sign=60d7e50ff51881ab0edc003ca412878798f577f6c5db6a00e68f21c2e5cb9ab1&expireTime=1795529918553&resourceId=7203343028&type=1",
           "date": "2026-03",
           "authors": "王锐, 倪星"
         }
@@ -1651,7 +1762,7 @@
         "issue:2026年3期",
         "fallback_source:cqvip"
       ],
-      "error": ""
+      "error": "fetch failed"
     },
     {
       "type": "adapter_source",
@@ -1665,7 +1776,7 @@
       "status": 200,
       "content_type": "text/html;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 579,
+      "fetch_ms": 731,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 8,
@@ -1780,7 +1891,7 @@
       "status": 200,
       "content_type": "application/json",
       "transport": "fetch",
-      "fetch_ms": 2688,
+      "fetch_ms": 1772,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 8,
@@ -1873,7 +1984,7 @@
       "status": 200,
       "content_type": "text/html; charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1699,
+      "fetch_ms": 1635,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 8,
@@ -2009,7 +2120,7 @@
       "status": 200,
       "content_type": "application/json",
       "transport": "fetch",
-      "fetch_ms": 1311,
+      "fetch_ms": 1315,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 8,
@@ -2102,7 +2213,7 @@
       "status": 200,
       "content_type": "application/json",
       "transport": "fetch",
-      "fetch_ms": 1325,
+      "fetch_ms": 831,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 8,
@@ -2195,7 +2306,7 @@
       "status": 200,
       "content_type": "text/html; charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1678,
+      "fetch_ms": 1603,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 8,
@@ -2329,7 +2440,7 @@
       "status": 200,
       "content_type": "text/html; charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 2092,
+      "fetch_ms": 1202,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 8,

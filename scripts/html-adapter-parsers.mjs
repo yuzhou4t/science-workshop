@@ -98,6 +98,26 @@ export function parseAscIssueListArticles(html = "", baseUrl = "", issueDateText
 
 export function parseJmscReaderIssueArticles(html = "", baseUrl = "") {
   const articles = [];
+  const rows = String(html).match(/<tr\b[\s\S]*?<\/tr>/gi) || [];
+  for (const row of rows) {
+    const cells = [...row.matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/gi)].map((match) => match[1]);
+    const fileNo = stripTags(cells[0] || "").match(/^20\d{6}$/)?.[0] || "";
+    const link = row.match(/<a\b[^>]*href=["']([^"']*view_abstract\.aspx[^"']*)["'][^>]*>([\s\S]*?)<\/a>/i);
+    if (!fileNo || !link) continue;
+    const issueText = stripTags(cells[3] || "");
+    const issueMatch = issueText.match(/(20\d{2})\s*,?\s*\(?\s*(\d{1,2})\s*\)?\s*:/);
+    const authors = normalizeAuthors(cells[2] || "");
+    articles.push({
+      title: stripTags(link[2]),
+      url: normalizeUrl(link[1], baseUrl),
+      authors,
+      author_source: authors ? "reader_issue" : "",
+      issue_date: issueDate(issueMatch?.[1], issueMatch?.[2]),
+      date_source: issueMatch ? "reader_issue" : "",
+    });
+  }
+  if (articles.length) return articles.filter((article) => article.title && article.url);
+
   const articleRegex = /(20\d{6})\s*<a\b[^>]*href=["']([^"']*view_abstract\.aspx[^"']*)["'][^>]*>([\s\S]*?)<\/a>([\s\S]*?)(?=20\d{6}\s*<a\b|版权所有|$)/gi;
   for (const match of String(html).matchAll(articleRegex)) {
     const [, , href, titleHtml, tailHtml] = match;

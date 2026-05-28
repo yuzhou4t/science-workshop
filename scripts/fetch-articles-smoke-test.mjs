@@ -44,18 +44,39 @@ function parseCliOptions(argv) {
     } else if (arg.startsWith("--recent-days=")) {
       options.workflow = true;
       options.recentDays = Number(arg.slice("--recent-days=".length));
+    } else if (arg.startsWith("--source=")) {
+      options.source = arg.slice("--source=".length).trim();
+    } else if (arg.startsWith("--article-limit=")) {
+      options.articleLimit = Number(arg.slice("--article-limit=".length));
     }
   }
 
   options.until ||= dateOnly(new Date());
   options.since ||= options.daily ? options.until : addDays(options.until, -options.recentDays);
-  if (options.workflow) options.articleLimit = 50;
+  if (options.workflow || options.source) options.articleLimit = Math.max(options.articleLimit, 50);
 
   for (const [name, value] of [["since", options.since], ["until", options.until]]) {
     if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) throw new Error(`Invalid --${name} date: ${value}. Use YYYY-MM-DD.`);
   }
   if (options.since > options.until) throw new Error(`Invalid window: --since ${options.since} is after --until ${options.until}.`);
   return options;
+}
+
+function sourceMatches(item, sourceFilter = "") {
+  if (!sourceFilter) return true;
+  const needle = sourceFilter.toLowerCase();
+  return [item.journal_id, item.journal_name, item.feed_url, item.source_url]
+    .filter(Boolean)
+    .some((value) => String(value).toLowerCase().includes(needle));
+}
+
+function filteredResultPath(sourceFilter = "", workflow, articleReadyTotal) {
+  if (sourceFilter) {
+    const safeSource = sourceFilter.replace(/[^a-z0-9_-]+/gi, "-").replace(/^-|-$/g, "") || "source";
+    return new URL(`../data/fetch-smoke-results-${safeSource}.json`, import.meta.url);
+  }
+  if (workflow && articleReadyTotal === 0) return new URL("../data/fetch-smoke-results.failed.json", import.meta.url);
+  return new URL("../data/fetch-smoke-results.json", import.meta.url);
 }
 
 async function readJsonIfExists(url) {
@@ -1207,8 +1228,10 @@ async function testAdapterSource(item) {
   }
 }
 
-const directResults = await runPool(registry.direct_article_feeds, 4, testDirectFeed);
-const adapterResults = await runPool(registry.adapter_queue, 4, testAdapterSource);
+const directSources = registry.direct_article_feeds.filter((item) => sourceMatches(item, cliOptions.source));
+const adapterSources = registry.adapter_queue.filter((item) => sourceMatches(item, cliOptions.source));
+const directResults = await runPool(directSources, 4, testDirectFeed);
+const adapterResults = await runPool(adapterSources, 4, testAdapterSource);
 const allResults = [...directResults, ...adapterResults];
 
 const summary = {
@@ -1222,9 +1245,7 @@ const summary = {
 };
 
 const result = { summary, results: allResults };
-const resultPath = cliOptions.workflow && summary.article_ready_total === 0
-  ? new URL("../data/fetch-smoke-results.failed.json", import.meta.url)
-  : new URL("../data/fetch-smoke-results.json", import.meta.url);
+const resultPath = filteredResultPath(cliOptions.source, cliOptions.workflow, summary.article_ready_total);
 await writeFile(resultPath, JSON.stringify(result, null, 2));
 
 let workflow = null;

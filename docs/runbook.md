@@ -42,6 +42,12 @@ Run the live probe when network behavior matters:
 node scripts/fetch-articles-smoke-test.mjs --workflow --since=2026-04-27 --until=2026-05-27 --ignore-state
 ```
 
+Run only one journal source while debugging an adapter:
+
+```bash
+node scripts/fetch-articles-smoke-test.mjs --source=j9
+```
+
 Rebuild frontend data from a workflow file:
 
 ```bash
