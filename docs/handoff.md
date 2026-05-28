@@ -2,25 +2,24 @@
 
 ## Snapshot
 
-Status on 2026-05-27:
+Status on 2026-05-28:
 
 - Prototype path: `/Users/yuzhou4tc/Public/工作坊/journal-workshop-prototype`.
 - Frontend entry: `index.html`.
 - Source registry: `data/adapter-profiles.json`.
-- Ready sources: 22 of 22.
+- Latest live probe ready sources: 21 of 22.
 - Direct article RSS/eTOC feeds: 5.
 - Adapter-based sources: 17.
 - Local daily scheduler: installed as `com.science-workshop.daily`.
 - Codex app automation `science-workshop`: paused to avoid duplicate daily runs.
 
-The reference full workflow output is `data/recent-articles-2026-04-27_2026-05-27.json`:
+The frontend history currently merges `data/recent-articles-2026-04-27_2026-05-27.json` and `data/recent-articles-2026-05-28_2026-05-28.json`:
 
-- `recent_articles`: 157.
-- `push_queue_articles`: 191.
-- `issue_dated_articles`: 24.
-- `undated_candidates`: 34.
+- `history_articles`: 217.
+- `new_push_queue_articles` from the 2026-05-28 daily run: 26.
+- `data/recent-front-data.js` and `data/push-history.json` both contain 217 unique article IDs.
 
-The daily baseline is initialized in `data/source-state.json`. The 2026-05-27 daily run found 9 articles in the day window and 0 new push articles, so the frontend data was not overwritten by an empty queue.
+The daily dedupe state is initialized in `data/source-state.json`. Rebuilding frontend data now appends into `data/push-history.json`, so a one-day run does not overwrite the visible timeline with only that day.
 
 ## What Is Working
 
@@ -31,6 +30,7 @@ The daily baseline is initialized in `data/source-state.json`. The 2026-05-27 da
 - Date display separates first-seen push timing from article publication date and issue date.
 - `JOURNAL OF FINANCE` duplicate inputs are canonicalized into one journal identity.
 - Chinese sources without RSS use automated adapters or fallback catalog sources instead of manual uploads.
+- `管理科学学报` has both current issue-browser extraction and older reader issue-page fallback; the latest local live probe still saw 503/TLS instability from that host.
 - A local macOS LaunchAgent runs the daily workflow at 10:00.
 
 ## Remaining Work
@@ -49,13 +49,13 @@ Run the daily workflow manually:
 node scripts/run-daily-workflow.mjs
 ```
 
-Run a full 30-day trial without mutating dedupe state:
+Run a full trial without mutating dedupe state:
 
 ```bash
 node scripts/fetch-articles-smoke-test.mjs --workflow --since=2026-04-27 --until=2026-05-27 --ignore-state
 ```
 
-Rebuild frontend push data:
+Rebuild frontend push data from cumulative history:
 
 ```bash
 node scripts/build-front-data.mjs --workflow=data/recent-articles-2026-04-27_2026-05-27.json

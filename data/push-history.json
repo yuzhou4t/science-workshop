@@ -1,4 +1,6 @@
-window.RECENT_WORKFLOW_DATA = {
+{
+  "version": 1,
+  "updated_at": "2026-05-28T02:06:03.465Z",
   "summary": {
     "checked_at": "2026-05-28T02:06:03.465Z",
     "since": "2026-05-25",
@@ -10,7 +12,7 @@ window.RECENT_WORKFLOW_DATA = {
     "new_push_queue_articles": 26,
     "last_workflow_file": "data/recent-articles-2026-05-28_2026-05-28.json"
   },
-  "push_queue": [
+  "articles": [
     {
       "id": "203910d31463ecb6",
       "journal_id": "j13",
@@ -3701,4 +3703,4 @@ window.RECENT_WORKFLOW_DATA = {
       "date_source": "metadata_issue"
     }
   ]
-};
+}

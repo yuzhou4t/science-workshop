@@ -174,6 +174,131 @@ assert.ok(secondRun.recent_articles.every((article) => article.is_new === false)
 assert.equal(secondRun.recent_articles.find((article) => article.title === "窗口内文章").first_seen_at, "2026-05-25");
 assert.equal(firstRun.source_state.first_seen_by_id[firstRun.push_queue.find((article) => article.title === "窗口内文章").id], "2026-05-25");
 
+const rotatedFeedSecondRun = buildRecentWorkflow([
+  {
+    journal_id: "j-rotating",
+    journal_name: "滚动目录期刊",
+    type: "direct_feed",
+    source_url: "https://example.test/feed",
+    probe_url: "https://example.test/feed",
+    extraction_rule: "test-feed",
+    usable_as_data_source: true,
+    articles: [
+      { title: "旧文章 A", url: "https://example.test/a", published_at: "2026-05-24" },
+      { title: "旧文章 B", url: "https://example.test/b", published_at: "2026-05-24" },
+    ],
+  },
+], {
+  since: "2026-05-24",
+  until: "2026-05-24",
+  checkedAt: "2026-05-24T10:00:00.000Z",
+  previousState: {},
+  daily: true,
+});
+
+const rotatedFeedThirdRun = buildRecentWorkflow([
+  {
+    journal_id: "j-rotating",
+    journal_name: "滚动目录期刊",
+    type: "direct_feed",
+    source_url: "https://example.test/feed",
+    probe_url: "https://example.test/feed",
+    extraction_rule: "test-feed",
+    usable_as_data_source: true,
+    articles: [
+      { title: "旧文章 B", url: "https://example.test/b", published_at: "2026-05-24" },
+    ],
+  },
+], {
+  since: "2026-05-25",
+  until: "2026-05-25",
+  checkedAt: "2026-05-25T10:00:00.000Z",
+  previousState: rotatedFeedSecondRun.source_state,
+  daily: true,
+  pushNewDiscoveries: true,
+});
+
+const rotatedFeedFourthRun = buildRecentWorkflow([
+  {
+    journal_id: "j-rotating",
+    journal_name: "滚动目录期刊",
+    type: "direct_feed",
+    source_url: "https://example.test/feed",
+    probe_url: "https://example.test/feed",
+    extraction_rule: "test-feed",
+    usable_as_data_source: true,
+    articles: [
+      { title: "旧文章 A", url: "https://example.test/a", published_at: "2026-05-24" },
+    ],
+  },
+], {
+  since: "2026-05-26",
+  until: "2026-05-26",
+  checkedAt: "2026-05-26T10:00:00.000Z",
+  previousState: rotatedFeedThirdRun.source_state,
+  daily: true,
+  pushNewDiscoveries: true,
+});
+
+assert.equal(rotatedFeedThirdRun.summary.push_queue_articles, 0);
+assert.equal(rotatedFeedFourthRun.summary.push_queue_articles, 0);
+
+const volatileUrlFirstRun = buildRecentWorkflow([
+  {
+    journal_id: "j-cqvip",
+    journal_name: "维普链接期刊",
+    type: "adapter_source",
+    source_url: "https://www.cqvip.com/journal/demo",
+    probe_url: "https://www.cqvip.com/journal/demo",
+    extraction_rule: "cqvip-journal-html",
+    usable_as_data_source: true,
+    articles: [
+      {
+        title: "同一篇带临时签名的文章",
+        url: "https://www.cqvip.com/doc/journal/7203343027?sign=aaa&expireTime=1795485812689&resourceId=7203343027&type=1",
+        issue_date: "2026-03",
+      },
+    ],
+  },
+], {
+  since: "2026-05-27",
+  until: "2026-05-27",
+  checkedAt: "2026-05-27T10:00:00.000Z",
+  previousState: {},
+  daily: true,
+  pushNewDiscoveries: true,
+});
+
+const volatileUrlSecondRun = buildRecentWorkflow([
+  {
+    journal_id: "j-cqvip",
+    journal_name: "维普链接期刊",
+    type: "adapter_source",
+    source_url: "https://www.cqvip.com/journal/demo",
+    probe_url: "https://www.cqvip.com/journal/demo",
+    extraction_rule: "cqvip-journal-html",
+    usable_as_data_source: true,
+    articles: [
+      {
+        title: "同一篇带临时签名的文章",
+        url: "https://www.cqvip.com/doc/journal/7203343027?sign=bbb&expireTime=1795572212689&resourceId=7203343027&type=1",
+        issue_date: "2026-03",
+      },
+    ],
+  },
+], {
+  since: "2026-05-28",
+  until: "2026-05-28",
+  checkedAt: "2026-05-28T10:00:00.000Z",
+  previousState: volatileUrlFirstRun.source_state,
+  daily: true,
+  pushNewDiscoveries: true,
+});
+
+assert.equal(volatileUrlFirstRun.summary.push_queue_articles, 1);
+assert.equal(volatileUrlSecondRun.summary.push_queue_articles, 0);
+assert.equal(volatileUrlSecondRun.source_state.article_ids[0], volatileUrlFirstRun.source_state.article_ids[0]);
+
 const blockedSourceRun = buildRecentWorkflow([
   {
     journal_id: "j-test",

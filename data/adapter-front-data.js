@@ -109,7 +109,7 @@ window.ADAPTER_PROFILE_DATA = {
         "date",
         "authors"
       ],
-      "next_action": "管理科学学报先从 issue/browser 找最新期，再进入期号页抽 article/abstract。",
+      "next_action": "管理科学学报先从 issue/browser 找最新期，再进入期号页抽 article/abstract；站点抖动时兜底到 ch/reader/issue_query.aspx。",
       "journals": [
         "j7",
         "j9"
@@ -325,7 +325,7 @@ window.ADAPTER_PROFILE_DATA = {
       "status": "替代期次索引",
       "source_url": "https://nbr.nankai.edu.cn/nkglpl/home",
       "adapter_kind": "macrodatas-issue-list",
-      "next_action": "管理科学学报先从 issue/browser 找最新期，再进入期号页抽 article/abstract。",
+      "next_action": "管理科学学报先从 issue/browser 找最新期，再进入期号页抽 article/abstract；站点抖动时兜底到 ch/reader/issue_query.aspx。",
       "render_required": false
     },
     {
@@ -344,7 +344,7 @@ window.ADAPTER_PROFILE_DATA = {
       "status": "期号规则",
       "source_url": "https://jmsc.tju.edu.cn/jmsc/issue/browser",
       "adapter_kind": "jmsc-issue-html",
-      "next_action": "管理科学学报先从 issue/browser 找最新期，再进入期号页抽 article/abstract。",
+      "next_action": "管理科学学报先从 issue/browser 找最新期，再进入期号页抽 article/abstract；站点抖动时兜底到 ch/reader/issue_query.aspx。",
       "render_required": false
     },
     {

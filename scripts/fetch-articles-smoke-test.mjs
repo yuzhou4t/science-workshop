@@ -4,7 +4,8 @@ import vm from "node:vm";
 import { promisify } from "node:util";
 
 import { doiFromUrl, extractDateHints, extractHtmlArticleHints, extractMetadataArticleHints } from "./date-enhancement-lib.mjs";
-import { parseAscIssueListArticles, parseCieCurrentArticles } from "./html-adapter-parsers.mjs";
+import { shouldRetryWithCurlStatus } from "./fetch-retry-policy.mjs";
+import { parseAscIssueListArticles, parseCieCurrentArticles, parseJmscReaderIssueArticles } from "./html-adapter-parsers.mjs";
 import { addDays, buildRecentWorkflow, dateOnly } from "./recent-workflow-lib.mjs";
 
 const execFileAsync = promisify(execFile);
@@ -141,6 +142,7 @@ function cleanArticleUrl(url) {
 async function fetchWithCurl(url, timeoutMs, extraHeaders = {}, started = Date.now()) {
   const args = [
     "-L",
+    "--http1.1",
     "--max-time",
     String(Math.ceil(timeoutMs / 1000)),
     "-sS",
@@ -182,7 +184,7 @@ async function fetchWithCurl(url, timeoutMs, extraHeaders = {}, started = Date.n
   };
 
   let lastErrorResponse = null;
-  for (let attempt = 0; attempt < 2; attempt += 1) {
+  for (let attempt = 0; attempt < 3; attempt += 1) {
     try {
       const { stdout } = await execFileAsync("curl", args, { encoding: "buffer", maxBuffer: 24 * 1024 * 1024 });
       const parsed = parseCurlOutput(stdout);
@@ -204,7 +206,7 @@ async function fetchWithCurl(url, timeoutMs, extraHeaders = {}, started = Date.n
         error: compactError,
         ms: Date.now() - started,
       };
-      if (attempt === 0) await new Promise((resolve) => setTimeout(resolve, 750));
+      if (attempt < 2) await new Promise((resolve) => setTimeout(resolve, 750));
     }
   }
   return lastErrorResponse;
@@ -222,7 +224,7 @@ async function fetchText(url, timeoutMs = 10000, extraHeaders = {}) {
     });
     const contentType = response.headers.get("content-type") || "";
     const buffer = await response.arrayBuffer();
-    return {
+    const fetchResponse = {
       ok: response.ok,
       status: response.status,
       finalUrl: response.url,
@@ -231,6 +233,17 @@ async function fetchText(url, timeoutMs = 10000, extraHeaders = {}) {
       transport: "fetch",
       ms: Date.now() - started,
     };
+    if (shouldRetryWithCurlStatus(response.status)) {
+      clearTimeout(timer);
+      const curlResponse = await fetchWithCurl(url, timeoutMs + 6000, extraHeaders, started);
+      if (curlResponse.ok) return { ...curlResponse, fetch_status: response.status };
+      return {
+        ...fetchResponse,
+        curl_status: curlResponse.status,
+        curl_error: curlResponse.error,
+      };
+    }
+    return fetchResponse;
   } catch (error) {
     clearTimeout(timer);
     return fetchWithCurl(url, timeoutMs + 6000, extraHeaders, started).then((curlResponse) => ({
@@ -664,9 +677,12 @@ async function extractOpenMetadataWorks(item) {
 }
 
 async function extractJmscIssueHtml(item) {
-  const indexResponse = await fetchText(item.source_url, 12000);
   const notes = [];
-  if (!indexResponse.ok) return { response: indexResponse, probe_url: item.source_url, articles: [], candidate_count: 0, notes };
+  const indexResponse = await fetchText(item.source_url, 12000);
+  if (!indexResponse.ok) {
+    notes.push(`issue_browser_status:${indexResponse.status}`);
+    return extractJmscReaderIssueFallback(item, indexResponse, notes);
+  }
 
   const issueLinks = dedupeArticles(
     parseRawAnchors(indexResponse.text, indexResponse.finalUrl)
@@ -696,8 +712,9 @@ async function extractJmscIssueHtml(item) {
     limit: 30,
     timeoutMs: 11000,
     ifMissingAuthors: true,
-    ifMissingPublished: true,
-  });
+      ifMissingPublished: true,
+    });
+  if (!articles.length) return extractJmscReaderIssueFallback(item, issueResponse, [...notes, `issue_candidates:${issueLinks.length}`]);
 
   return {
     response: issueResponse,
@@ -705,6 +722,29 @@ async function extractJmscIssueHtml(item) {
     articles,
     candidate_count: issueLinks.length,
     notes: [`issue_candidates:${issueLinks.length}`],
+  };
+}
+
+async function extractJmscReaderIssueFallback(item, previousResponse, notes = []) {
+  const readerUrl = item.adapter_rule?.reader_issue_url || "https://jmsc.tju.edu.cn/ch/reader/issue_query.aspx";
+  const readerResponse = await fetchText(readerUrl, 12000);
+  if (!readerResponse.ok) {
+    return {
+      response: previousResponse,
+      probe_url: previousResponse?.finalUrl || item.source_url,
+      articles: [],
+      candidate_count: 0,
+      notes: [...notes, `reader_issue_status:${readerResponse.status}`],
+    };
+  }
+
+  const articles = parseJmscReaderIssueArticles(readerResponse.text, readerResponse.finalUrl);
+  return {
+    response: readerResponse,
+    probe_url: readerResponse.finalUrl,
+    articles,
+    candidate_count: articles.length,
+    notes: [...notes, "fallback_source:jmsc_reader_issue"],
   };
 }
 

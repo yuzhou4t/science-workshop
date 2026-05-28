@@ -20,7 +20,9 @@ open index.html
 
 ```bash
 node scripts/adapter-fallback-test.mjs
+node scripts/fetch-retry-policy-test.mjs
 node scripts/recent-workflow-test.mjs
+node scripts/front-data-history-test.mjs
 node scripts/html-adapter-parsers-test.mjs
 node scripts/date-enhancement-test.mjs
 node scripts/launchd-plist-test.mjs
@@ -31,7 +33,7 @@ node scripts/adapter-smoke-test.mjs
 
 ```bash
 node scripts/fetch-articles-smoke-test.mjs --workflow --since=2026-04-27 --until=2026-05-27 --ignore-state
-node scripts/build-front-data.mjs --workflow=data/recent-articles-2026-04-27_2026-05-27.json
+node scripts/build-front-data.mjs --reset-history --workflow=data/recent-articles-2026-04-27_2026-05-27.json
 ```
 
 ## 主要文件
@@ -41,7 +43,8 @@ node scripts/build-front-data.mjs --workflow=data/recent-articles-2026-04-27_202
 - `data/fetch-smoke-results.json`：最近一次真实探测所有数据源后的结果。
 - `data/adapter-front-data.js`：前端“适配器工作台”读取的真实注册表状态。
 - `data/recent-articles-*.json`：某个日期范围或某天的抓取工作流输出。
-- `data/recent-front-data.js`：前端页面实际读取的文章推送数据。
+- `data/push-history.json`：前端累计推送历史，会按文章 ID 去重并保留最早首次发现日。
+- `data/recent-front-data.js`：前端页面实际读取的文章推送数据，由累计推送历史生成。
 - `data/source-state.json`：每日自动运行时使用的去重和首次发现记录。
 - `scripts/build-adapter-front-data.mjs`：把 `data/adapter-profiles.json` 转换成前端适配器工作台数据。
 - `scripts/fetch-articles-smoke-test.mjs`：真实抓取入口，会访问 RSS、官网页面、替代目录页或开放元数据接口。
@@ -57,15 +60,14 @@ node scripts/build-front-data.mjs --workflow=data/recent-articles-2026-04-27_202
 
 ## 当前状态
 
-截至 2026-05-27，参考完整抓取结果为 `data/recent-articles-2026-04-27_2026-05-27.json`。
+截至 2026-05-28，前端参考数据已合并 `data/recent-articles-2026-04-27_2026-05-27.json` 和 `data/recent-articles-2026-05-28_2026-05-28.json`。
 
 - 期刊数据源：22 个。
-- 当前可用数据源：22 个。
-- 日期窗口内文章：157 篇。
-- 前端推送队列文章：191 篇。
-- 只有期号日期、没有精确发表日的文章：24 篇。
-- 暂时没有明确发表日期、但通过“首次发现日期”保护的候选文章：34 篇。
-- 每日自动任务的基线状态已写入 `data/source-state.json`。
+- 最近一次真实探测可用数据源：21 个。
+- 前端累计展示文章：217 篇。
+- 今日新增推送文章：26 篇。
+- 每日自动任务的去重状态已写入 `data/source-state.json`。
+- `管理科学学报` 规则已包含新版期号页和旧版 reader 期号页兜底；最近一次本机探测仍受该站点 503/TLS 抖动影响。
 
 ## 每日自动检查
 
@@ -86,4 +88,4 @@ node scripts/run-daily-workflow.mjs
 - `logs/daily-workflow.log`
 - `logs/daily-workflow.error.log`
 
-如果当天没有新文章，前端数据不会被空结果覆盖；如果发现新文章，脚本会更新 `data/recent-front-data.js`，页面里的推送流也会随之更新。
+如果当天没有新文章，前端数据不会被空结果覆盖；如果发现新文章，脚本会先合并到 `data/push-history.json`，再更新 `data/recent-front-data.js`。页面默认展示累计推送历史，日期筛选只是缩小查看范围。

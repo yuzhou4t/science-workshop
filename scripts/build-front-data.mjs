@@ -1,10 +1,31 @@
 import { readdir, readFile, writeFile } from "node:fs/promises";
+import { fileURLToPath } from "node:url";
+
+const dataDir = new URL("../data/", import.meta.url);
+const outputPath = new URL("../data/recent-front-data.js", import.meta.url);
+const historyPath = new URL("../data/push-history.json", import.meta.url);
+
+function cliFlag(name) {
+  return process.argv.slice(2).includes(name);
+}
+
+function cliValue(name) {
+  return process.argv.slice(2).find((arg) => arg.startsWith(`${name}=`))?.slice(name.length + 1);
+}
+
+async function readJsonIfExists(url, fallback) {
+  try {
+    return JSON.parse(await readFile(url, "utf8"));
+  } catch (error) {
+    if (error.code === "ENOENT") return fallback;
+    throw error;
+  }
+}
 
 async function resolveWorkflowPath() {
-  const argPath = process.argv.slice(2).find((arg) => arg.startsWith("--workflow="))?.slice("--workflow=".length);
+  const argPath = cliValue("--workflow");
   if (argPath) return new URL(argPath, `file://${process.cwd()}/`);
 
-  const dataDir = new URL("../data/", import.meta.url);
   const entries = await readdir(dataDir, { withFileTypes: true });
   const workflowFiles = entries
     .filter((entry) => entry.isFile() && /^recent-articles-\d{4}-\d{2}-\d{2}_\d{4}-\d{2}-\d{2}\.json$/.test(entry.name))
@@ -20,33 +41,113 @@ async function resolveWorkflowPath() {
   throw new Error("No successful recent workflow file found under data/.");
 }
 
-const workflowPath = await resolveWorkflowPath();
-const outputPath = new URL("../data/recent-front-data.js", import.meta.url);
-const workflow = JSON.parse(await readFile(workflowPath, "utf8"));
+function compactArticle(article) {
+  return {
+    id: article.id,
+    journal_id: article.journal_id,
+    source_journal_id: article.source_journal_id || article.journal_id,
+    journal_name: article.journal_name,
+    title: article.title,
+    url: article.url,
+    authors: article.authors || "",
+    published_at: article.published_at || "",
+    issue_date: article.issue_date || "",
+    first_seen_at: article.first_seen_at || "",
+    display_date: article.display_date || article.published_at || article.issue_date || article.first_seen_at || "",
+    display_date_basis: article.display_date_basis || "",
+    push_basis: article.push_basis || "",
+    extraction_rule: article.extraction_rule || "",
+    date_source: article.date_source || "",
+  };
+}
 
-const compactArticle = (article) => ({
-  id: article.id,
-  journal_id: article.journal_id,
-  source_journal_id: article.source_journal_id || article.journal_id,
-  journal_name: article.journal_name,
-  title: article.title,
-  url: article.url,
-  authors: article.authors || "",
-  published_at: article.published_at || "",
-  issue_date: article.issue_date || "",
-  first_seen_at: article.first_seen_at || "",
-  display_date: article.display_date || article.published_at || article.issue_date || article.first_seen_at || "",
-  display_date_basis: article.display_date_basis || "",
-  push_basis: article.push_basis || "",
-  extraction_rule: article.extraction_rule || "",
-  date_source: article.date_source || "",
-});
+function minDate(a = "", b = "") {
+  if (!a) return b;
+  if (!b) return a;
+  return a <= b ? a : b;
+}
 
-const frontData = {
-  summary: workflow.summary,
-  push_queue: workflow.push_queue.map(compactArticle),
-};
+function mergeArticle(existing, incoming) {
+  if (!existing) return incoming;
+  const firstSeenAt = minDate(existing.first_seen_at, incoming.first_seen_at);
+  return {
+    ...existing,
+    ...incoming,
+    authors: incoming.authors || existing.authors || "",
+    published_at: incoming.published_at || existing.published_at || "",
+    issue_date: incoming.issue_date || existing.issue_date || "",
+    first_seen_at: firstSeenAt,
+    display_date: incoming.display_date || existing.display_date || firstSeenAt,
+    display_date_basis: incoming.display_date_basis || existing.display_date_basis || "",
+    push_basis: existing.push_basis || incoming.push_basis || "",
+  };
+}
 
-const js = `window.RECENT_WORKFLOW_DATA = ${JSON.stringify(frontData, null, 2)};\n`;
-await writeFile(outputPath, js);
-console.log(`wrote ${outputPath.pathname} from ${workflowPath.pathname}`);
+function sortPushArticles(articles) {
+  return [...articles].sort((a, b) => {
+    const pushDateOrder = String(b.first_seen_at || "").localeCompare(String(a.first_seen_at || ""));
+    if (pushDateOrder) return pushDateOrder;
+    const articleDateOrder = String(b.published_at || b.issue_date || b.display_date || "").localeCompare(String(a.published_at || a.issue_date || a.display_date || ""));
+    if (articleDateOrder) return articleDateOrder;
+    return String(a.title || "").localeCompare(String(b.title || ""), "zh-Hans-CN");
+  });
+}
+
+export function mergePushHistory(existingHistory = {}, workflow, options = {}) {
+  const byId = new Map();
+  for (const article of existingHistory.articles || []) {
+    if (article?.id) byId.set(article.id, compactArticle(article));
+  }
+  for (const article of workflow.push_queue || []) {
+    if (!article?.id) continue;
+    const incoming = compactArticle(article);
+    byId.set(article.id, mergeArticle(byId.get(article.id), incoming));
+  }
+
+  const articles = sortPushArticles([...byId.values()]);
+  const firstSeenDates = articles.map((article) => article.first_seen_at).filter(Boolean).sort();
+  return {
+    version: 1,
+    updated_at: options.updatedAt || workflow.summary?.checked_at || new Date().toISOString(),
+    summary: {
+      checked_at: workflow.summary?.checked_at || "",
+      since: firstSeenDates[0] || workflow.summary?.since || "",
+      until: firstSeenDates.at(-1) || workflow.summary?.until || "",
+      sources_total: workflow.summary?.sources_total || 0,
+      sources_ready: workflow.summary?.sources_ready || 0,
+      history_articles: articles.length,
+      push_queue_articles: articles.length,
+      new_push_queue_articles: workflow.summary?.push_queue_articles || 0,
+      last_workflow_file: options.workflowFile || "",
+    },
+    articles,
+  };
+}
+
+export function frontDataFromHistory(history) {
+  const articles = sortPushArticles(history.articles || []);
+  return {
+    summary: {
+      ...(history.summary || {}),
+      push_queue_articles: articles.length,
+    },
+    push_queue: articles.map(compactArticle),
+  };
+}
+
+async function main() {
+  const workflowPath = await resolveWorkflowPath();
+  const workflow = JSON.parse(await readFile(workflowPath, "utf8"));
+  const existingHistory = cliFlag("--reset-history") ? { version: 1, articles: [] } : await readJsonIfExists(historyPath, { version: 1, articles: [] });
+  const workflowFile = `data/${workflowPath.pathname.split("/").at(-1)}`;
+  const history = mergePushHistory(existingHistory, workflow, { workflowFile });
+  const frontData = frontDataFromHistory(history);
+
+  await writeFile(historyPath, `${JSON.stringify(history, null, 2)}\n`, "utf8");
+  await writeFile(outputPath, `window.RECENT_WORKFLOW_DATA = ${JSON.stringify(frontData, null, 2)};\n`, "utf8");
+  console.log(`wrote ${outputPath.pathname} from ${historyPath.pathname} (${frontData.push_queue.length} articles)`);
+}
+
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  await main();
+}

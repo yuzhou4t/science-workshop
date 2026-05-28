@@ -22,7 +22,9 @@ Run the pure checks before committing script or frontend-data changes:
 
 ```bash
 node scripts/adapter-fallback-test.mjs
+node scripts/fetch-retry-policy-test.mjs
 node scripts/recent-workflow-test.mjs
+node scripts/front-data-history-test.mjs
 node scripts/html-adapter-parsers-test.mjs
 node scripts/date-enhancement-test.mjs
 node scripts/launchd-plist-test.mjs
@@ -45,6 +47,12 @@ Rebuild frontend data from a workflow file:
 ```bash
 node scripts/build-adapter-front-data.mjs
 node scripts/build-front-data.mjs --workflow=data/recent-articles-2026-04-27_2026-05-27.json
+```
+
+Use `--reset-history` only when intentionally reseeding the whole frontend history:
+
+```bash
+node scripts/build-front-data.mjs --reset-history --workflow=data/recent-articles-2026-04-27_2026-05-27.json
 ```
 
 ## Daily Scheduler
@@ -82,7 +90,7 @@ Daily workflow logs:
 - `logs/daily-workflow.log`
 - `logs/daily-workflow.error.log`
 
-The daily script writes a one-day workflow file such as `data/recent-articles-2026-05-27_2026-05-27.json`. If no new push articles are found, `data/recent-front-data.js` is left unchanged.
+The daily script writes a one-day workflow file such as `data/recent-articles-2026-05-28_2026-05-28.json`. If no new push articles are found, `data/recent-front-data.js` is left unchanged. If new articles are found, `scripts/build-front-data.mjs` merges them into `data/push-history.json` and regenerates `data/recent-front-data.js`.
 
 ## Source Troubleshooting
 
@@ -92,6 +100,7 @@ Classify failures before changing adapters:
 - HTTP protection such as 403, 412, CAPTCHA, or WAF: prefer an official feed, public API, Crossref/OpenAlex, or a stable catalog fallback.
 - Parser failure: fetch succeeds but titles, dates, authors, or URLs are wrong; patch the adapter and add or update a focused test.
 - No explicit article date: keep the article in first-seen flow instead of dropping it.
+- Host instability such as `管理科学学报` returning 503 or TLS timeouts: keep the automated fallback rule, preserve prior source state, and let the next successful daily run discover and push missed items by first-seen date.
 
 Do not mark a source ready unless the live probe returns usable article samples or a documented automated fallback.
 

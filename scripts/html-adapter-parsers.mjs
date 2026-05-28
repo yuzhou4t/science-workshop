@@ -95,3 +95,23 @@ export function parseAscIssueListArticles(html = "", baseUrl = "", issueDateText
   }
   return articles.filter((article) => article.title && article.url);
 }
+
+export function parseJmscReaderIssueArticles(html = "", baseUrl = "") {
+  const articles = [];
+  const articleRegex = /(20\d{6})\s*<a\b[^>]*href=["']([^"']*view_abstract\.aspx[^"']*)["'][^>]*>([\s\S]*?)<\/a>([\s\S]*?)(?=20\d{6}\s*<a\b|版权所有|$)/gi;
+  for (const match of String(html).matchAll(articleRegex)) {
+    const [, , href, titleHtml, tailHtml] = match;
+    const tailText = stripTags(tailHtml);
+    const issueMatch = tailText.match(/(20\d{2})\s*,?\s*\(?\s*(\d{1,2})\s*\)?\s*:/);
+    const authorsText = issueMatch ? tailText.slice(0, issueMatch.index).trim() : "";
+    articles.push({
+      title: stripTags(titleHtml),
+      url: normalizeUrl(href, baseUrl),
+      authors: normalizeAuthors(authorsText),
+      author_source: authorsText ? "reader_issue" : "",
+      issue_date: issueDate(issueMatch?.[1], issueMatch?.[2]),
+      date_source: issueMatch ? "reader_issue" : "",
+    });
+  }
+  return articles.filter((article) => article.title && article.url);
+}

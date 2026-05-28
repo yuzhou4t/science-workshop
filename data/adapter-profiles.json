@@ -69,7 +69,7 @@
       "render_required": false,
       "fields": ["title", "url", "issue", "date", "authors"],
       "article_url_patterns": ["/jmsc/article/abstract/{id}", "/article/{id}", "/paper/{id}"],
-      "next_action": "管理科学学报先从 issue/browser 找最新期，再进入期号页抽 article/abstract。"
+      "next_action": "管理科学学报先从 issue/browser 找最新期，再进入期号页抽 article/abstract；站点抖动时兜底到 ch/reader/issue_query.aspx。"
     },
     {
       "id": "association-custom",
@@ -108,7 +108,7 @@
     { "journal_id": "j6", "journal_name": "管理世界", "platform_id": "cnki-cbpt", "status": "替代期次索引", "source_url": "https://glsj.cbpt.cnki.net/WKB/WebPublication/wkTextContent.aspx?colType=4&tp=gklb&mid=glsj", "adapter_rule": { "kind": "macrodatas-issue-list", "journal_title": "管理世界", "search_terms": ["管理世界 {year}年第", "管理世界 {previous_year}年第"], "list_base_url": "https://www.macrodatas.cn/list/1/0/0/" } },
     { "journal_id": "j8", "journal_name": "公共管理学报", "platform_id": "cnki-cbpt", "status": "静态规则", "source_url": "https://gggl.cbpt.cnki.net/portal", "adapter_rule": { "kind": "cnki-portal-paper" } },
     { "journal_id": "j7", "journal_name": "南开管理评论", "platform_id": "university-custom", "status": "替代期次索引", "source_url": "https://nbr.nankai.edu.cn/nkglpl/home", "adapter_rule": { "kind": "macrodatas-issue-list", "journal_title": "南开管理评论", "search_terms": ["南开管理评论 {year}年第", "南开管理评论 {previous_year}年第"], "list_base_url": "https://www.macrodatas.cn/list/1/0/0/" } },
-    { "journal_id": "j9", "journal_name": "管理科学学报", "platform_id": "university-custom", "status": "期号规则", "source_url": "https://jmsc.tju.edu.cn/jmsc/issue/browser", "adapter_rule": { "kind": "jmsc-issue-html" } },
+    { "journal_id": "j9", "journal_name": "管理科学学报", "platform_id": "university-custom", "status": "期号规则", "source_url": "https://jmsc.tju.edu.cn/jmsc/issue/browser", "adapter_rule": { "kind": "jmsc-issue-html", "reader_issue_url": "https://jmsc.tju.edu.cn/ch/reader/issue_query.aspx" } },
     { "journal_id": "j10", "journal_name": "中国行政管理", "platform_id": "association-custom", "status": "维普自动目录", "source_url": "https://www.cqvip.com/journal/81961X", "adapter_rule": { "kind": "cqvip-journal-html", "vip_journal_id": "81961X" } },
     { "journal_id": "j11", "journal_name": "会计研究", "platform_id": "association-custom", "status": "新官网当期列表", "source_url": "https://www.asc.net.cn/AccountingResearch/NewestArticleListCS.aspx", "adapter_rule": { "kind": "asc-current-issue-html", "year_span": 2 } },
     { "journal_id": "j15", "journal_name": "ACCOUNTING REVIEW", "platform_id": "publisher-html", "status": "开放元数据兜底", "source_url": "https://publications.aaahq.org/accounting-review", "adapter_rule": { "kind": "open-metadata-works", "issns": ["0001-4826", "1558-7967"], "doi_prefixes": ["10.2308"], "fallback_services": ["crossref", "openalex"] } },

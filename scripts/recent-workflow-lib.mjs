@@ -89,10 +89,33 @@ function normalizedDoi(value = "") {
   return match ? match[0].replace(/[.,;:)\]]+$/, "").toLowerCase() : "";
 }
 
+function normalizedUrlForIdentity(value = "") {
+  const raw = String(value || "").trim();
+  if (!raw) return "";
+  try {
+    const url = new URL(raw);
+    url.hash = "";
+    url.hostname = url.hostname.toLowerCase();
+    for (const key of [...url.searchParams.keys()]) {
+      if (/^utm_/i.test(key) || ["sign", "expireTime", "expires", "_t", "timestamp", "token"].includes(key)) {
+        url.searchParams.delete(key);
+      }
+    }
+    if (/cqvip\.com$/i.test(url.hostname) && /\/doc\/journal\/\d+/i.test(url.pathname)) {
+      url.searchParams.delete("resourceId");
+      url.searchParams.delete("type");
+    }
+    url.searchParams.sort();
+    return url.toString().replace(/\/$/, "").toLowerCase();
+  } catch {
+    return raw.split("#")[0].replace(/\/$/, "").toLowerCase();
+  }
+}
+
 function articleIdentity(source, article) {
   const doi = normalizedDoi(article.doi || article.url);
   if (doi) return `doi:${doi}`;
-  const url = String(article.url || "").split("#")[0].replace(/\/$/, "").toLowerCase();
+  const url = normalizedUrlForIdentity(article.url);
   if (url) return `url:${url}`;
   return `title:${String(article.title || "").replace(/\s+/g, " ").trim().toLowerCase()}::${article.date || article.issue_date || article.published_at || ""}`;
 }
@@ -232,7 +255,7 @@ export function buildRecentWorkflow(results, options) {
     until,
     daily_initialized: Boolean(options.daily || options.previousState?.daily_initialized),
     article_ids: [],
-    first_seen_by_id: {},
+    first_seen_by_id: Object.fromEntries(firstSeenBefore),
     sources: {},
   };
   const recent = [];
@@ -288,7 +311,12 @@ export function buildRecentWorkflow(results, options) {
     }
   }
 
-  sourceState.article_ids = Object.values(sourceState.sources).flatMap((source) => source.article_ids);
+  sourceState.article_ids = [
+    ...new Set([
+      ...seenBefore,
+      ...Object.values(sourceState.sources).flatMap((source) => source.article_ids),
+    ]),
+  ];
   const recentArticles = sortArticles(dedupeById(recent));
   const undatedCandidates = sortArticles(dedupeById(undated));
   const pushArticles = sortArticles(dedupeById(pushQueue));
