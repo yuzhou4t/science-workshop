@@ -5,7 +5,7 @@ window.ADAPTER_PROFILE_DATA = {
     "direct_article_feeds": 5,
     "adapter_sources": 17,
     "platform_profiles": 7,
-    "ready_rules": 17,
+    "ready_rules": 14,
     "fallback_rules": 7
   },
   "direct_article_feeds": [
@@ -86,12 +86,13 @@ window.ADAPTER_PROFILE_DATA = {
       "render_required": true,
       "fields": [
         "title",
-        "url",
+        "official_url",
+        "pdf_url",
         "issue",
         "authors",
         "abstract"
       ],
-      "next_action": "公共管理学报可直接抓 paper 页面；管理世界出现验证码，先列入人工/浏览器兜底。",
+      "next_action": "公共管理学报可直接抓 paper 页面；管理世界主站验证码阻断时只允许 Macrodatas 做发现源，需二跳解析官方 PDF/详情后才能作为可点击文章链接。",
       "journals": [
         "j6",
         "j8"
@@ -104,12 +105,13 @@ window.ADAPTER_PROFILE_DATA = {
       "render_required": false,
       "fields": [
         "title",
-        "url",
+        "official_url",
+        "pdf_url",
         "issue",
         "date",
         "authors"
       ],
-      "next_action": "管理科学学报先从 issue/browser 找最新期，再进入期号页抽 article/abstract；站点抖动时兜底到 ch/reader/issue_query.aspx。",
+      "next_action": "管理科学学报先从 issue/browser 找最新期，再进入期号页抽 article/abstract；站点抖动时兜底到 ch/reader/issue_query.aspx。南开管理评论只允许 Macrodatas 做发现源，需二跳解析官方 PDF/详情。",
       "journals": [
         "j7",
         "j9"
@@ -122,11 +124,12 @@ window.ADAPTER_PROFILE_DATA = {
       "render_required": false,
       "fields": [
         "title",
-        "url",
+        "official_url",
+        "pdf_url",
         "issue",
         "date"
       ],
-      "next_action": "会计研究切换到 asc.net.cn 当期列表；中国行政管理走维普 SSR 目录作为自动化替代源。",
+      "next_action": "会计研究切换到 asc.net.cn 当期列表；中国行政管理的维普 SSR 目录只能做发现源，需解析官网或官方 PDF 后才展示可点击链接。",
       "journals": [
         "j10",
         "j11"
@@ -279,15 +282,16 @@ window.ADAPTER_PROFILE_DATA = {
       "strategy": "动态渲染 + 接口嗅探",
       "fields": [
         "title",
-        "url",
+        "official_url",
+        "pdf_url",
         "issue",
         "authors",
         "abstract"
       ],
-      "status": "替代期次索引",
+      "status": "待官方PDF解析",
       "source_url": "https://glsj.cbpt.cnki.net/WKB/WebPublication/wkTextContent.aspx?colType=4&tp=gklb&mid=glsj",
       "adapter_kind": "macrodatas-issue-list",
-      "next_action": "公共管理学报可直接抓 paper 页面；管理世界出现验证码，先列入人工/浏览器兜底。",
+      "next_action": "公共管理学报可直接抓 paper 页面；管理世界主站验证码阻断时只允许 Macrodatas 做发现源，需二跳解析官方 PDF/详情后才能作为可点击文章链接。",
       "render_required": true
     },
     {
@@ -298,7 +302,8 @@ window.ADAPTER_PROFILE_DATA = {
       "strategy": "动态渲染 + 接口嗅探",
       "fields": [
         "title",
-        "url",
+        "official_url",
+        "pdf_url",
         "issue",
         "authors",
         "abstract"
@@ -306,7 +311,7 @@ window.ADAPTER_PROFILE_DATA = {
       "status": "静态规则",
       "source_url": "https://gggl.cbpt.cnki.net/portal",
       "adapter_kind": "cnki-portal-paper",
-      "next_action": "公共管理学报可直接抓 paper 页面；管理世界出现验证码，先列入人工/浏览器兜底。",
+      "next_action": "公共管理学报可直接抓 paper 页面；管理世界主站验证码阻断时只允许 Macrodatas 做发现源，需二跳解析官方 PDF/详情后才能作为可点击文章链接。",
       "render_required": true
     },
     {
@@ -317,15 +322,16 @@ window.ADAPTER_PROFILE_DATA = {
       "strategy": "CSS/XPath，单刊参数化",
       "fields": [
         "title",
-        "url",
+        "official_url",
+        "pdf_url",
         "issue",
         "date",
         "authors"
       ],
-      "status": "替代期次索引",
+      "status": "待官方PDF解析",
       "source_url": "https://nbr.nankai.edu.cn/nkglpl/home",
       "adapter_kind": "macrodatas-issue-list",
-      "next_action": "管理科学学报先从 issue/browser 找最新期，再进入期号页抽 article/abstract；站点抖动时兜底到 ch/reader/issue_query.aspx。",
+      "next_action": "管理科学学报先从 issue/browser 找最新期，再进入期号页抽 article/abstract；站点抖动时兜底到 ch/reader/issue_query.aspx。南开管理评论只允许 Macrodatas 做发现源，需二跳解析官方 PDF/详情。",
       "render_required": false
     },
     {
@@ -336,7 +342,8 @@ window.ADAPTER_PROFILE_DATA = {
       "strategy": "CSS/XPath，单刊参数化",
       "fields": [
         "title",
-        "url",
+        "official_url",
+        "pdf_url",
         "issue",
         "date",
         "authors"
@@ -344,7 +351,7 @@ window.ADAPTER_PROFILE_DATA = {
       "status": "期号规则",
       "source_url": "https://jmsc.tju.edu.cn/jmsc/issue/browser",
       "adapter_kind": "jmsc-issue-html",
-      "next_action": "管理科学学报先从 issue/browser 找最新期，再进入期号页抽 article/abstract；站点抖动时兜底到 ch/reader/issue_query.aspx。",
+      "next_action": "管理科学学报先从 issue/browser 找最新期，再进入期号页抽 article/abstract；站点抖动时兜底到 ch/reader/issue_query.aspx。南开管理评论只允许 Macrodatas 做发现源，需二跳解析官方 PDF/详情。",
       "render_required": false
     },
     {
@@ -355,14 +362,15 @@ window.ADAPTER_PROFILE_DATA = {
       "strategy": "先修 URL，再静态抽取",
       "fields": [
         "title",
-        "url",
+        "official_url",
+        "pdf_url",
         "issue",
         "date"
       ],
-      "status": "维普自动目录",
+      "status": "待官方PDF解析",
       "source_url": "https://www.cqvip.com/journal/81961X",
       "adapter_kind": "cqvip-journal-html",
-      "next_action": "会计研究切换到 asc.net.cn 当期列表；中国行政管理走维普 SSR 目录作为自动化替代源。",
+      "next_action": "会计研究切换到 asc.net.cn 当期列表；中国行政管理的维普 SSR 目录只能做发现源，需解析官网或官方 PDF 后才展示可点击链接。",
       "render_required": false
     },
     {
@@ -373,14 +381,15 @@ window.ADAPTER_PROFILE_DATA = {
       "strategy": "先修 URL，再静态抽取",
       "fields": [
         "title",
-        "url",
+        "official_url",
+        "pdf_url",
         "issue",
         "date"
       ],
       "status": "新官网当期列表",
       "source_url": "https://www.asc.net.cn/AccountingResearch/NewestArticleListCS.aspx",
       "adapter_kind": "asc-current-issue-html",
-      "next_action": "会计研究切换到 asc.net.cn 当期列表；中国行政管理走维普 SSR 目录作为自动化替代源。",
+      "next_action": "会计研究切换到 asc.net.cn 当期列表；中国行政管理的维普 SSR 目录只能做发现源，需解析官网或官方 PDF 后才展示可点击链接。",
       "render_required": false
     },
     {

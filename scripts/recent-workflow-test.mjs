@@ -273,6 +273,9 @@ const macrodatasDirectoryRun = buildRecentWorkflow([
 });
 
 assert.equal(macrodatasDirectoryRun.summary.push_queue_articles, 2);
+assert.deepEqual(macrodatasDirectoryRun.push_queue.map((article) => article.link_status), ["needs_official_pdf", "needs_official_pdf"]);
+assert.deepEqual(macrodatasDirectoryRun.push_queue.map((article) => article.url), ["", ""]);
+assert.equal(macrodatasDirectoryRun.push_queue.every((article) => article.discovery_url.includes("macrodatas.cn/article/1779681420")), true);
 
 const volatileUrlFirstRun = buildRecentWorkflow([
   {
@@ -328,6 +331,9 @@ const volatileUrlSecondRun = buildRecentWorkflow([
 
 assert.equal(volatileUrlFirstRun.summary.push_queue_articles, 1);
 assert.equal(volatileUrlSecondRun.summary.push_queue_articles, 0);
+assert.equal(volatileUrlFirstRun.push_queue[0].link_status, "needs_official_pdf");
+assert.equal(volatileUrlFirstRun.push_queue[0].url, "");
+assert.equal(volatileUrlFirstRun.push_queue[0].discovery_url.includes("cqvip.com/doc/journal/7203343027"), true);
 assert.equal(volatileUrlSecondRun.source_state.article_ids[0], volatileUrlFirstRun.source_state.article_ids[0]);
 
 const blockedSourceRun = buildRecentWorkflow([

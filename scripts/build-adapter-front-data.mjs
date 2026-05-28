@@ -45,7 +45,7 @@ export function buildAdapterFrontData(registry) {
       adapter_sources: adapterQueue.length,
       platform_profiles: platformProfiles.length,
       ready_rules: adapterQueue.filter((item) => item.adapter_kind && !/待/.test(item.status)).length,
-      fallback_rules: adapterQueue.filter((item) => /替代|兜底|维普|开放元数据|DOI/.test(item.status)).length,
+      fallback_rules: adapterQueue.filter((item) => /替代|兜底|维普|开放元数据|DOI|待官方PDF/.test(item.status)).length,
     },
     direct_article_feeds: directFeeds,
     platform_profiles: platformProfiles,

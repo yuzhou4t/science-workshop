@@ -1,5 +1,7 @@
 import { createHash } from "node:crypto";
 
+import { normalizeArticleLink } from "./article-link-policy.mjs";
+
 const canonicalJournalIds = new Map([
   ["j1", "j14"],
 ]);
@@ -117,7 +119,8 @@ function normalizedUrlForIdentity(value = "") {
 function articleIdentity(source, article) {
   const doi = normalizedDoi(article.doi || article.url);
   if (doi) return `doi:${doi}`;
-  const url = normalizedUrlForIdentity(article.url);
+  const articleLink = normalizeArticleLink(source, article);
+  const url = normalizedUrlForIdentity(articleLink.url || articleLink.official_url || articleLink.discovery_url);
   if (url) return `url:${url}`;
   return `title:${String(article.title || "").replace(/\s+/g, " ").trim().toLowerCase()}::${article.date || article.issue_date || article.published_at || ""}`;
 }
@@ -155,6 +158,7 @@ function sourceArticles(source) {
 
 function toWorkflowArticle(source, article, options, previousIds, previousFirstSeenById) {
   const id = stableArticleId(source, article);
+  const articleLink = normalizeArticleLink(source, article);
   const fallbackDateInfo = normalizeWorkflowDate(article.date);
   const publishedDateInfo = normalizeWorkflowDate(article.published_at || (fallbackDateInfo.precision === "day" ? article.date : ""));
   const issueDateInfo = normalizeWorkflowDate(article.issue_date || (fallbackDateInfo.precision === "month" ? article.date : ""));
@@ -206,7 +210,12 @@ function toWorkflowArticle(source, article, options, previousIds, previousFirstS
     probe_url: source.probe_url,
     extraction_rule: source.extraction_rule,
     title: article.title,
-    url: article.url || "",
+    url: articleLink.url,
+    official_url: articleLink.official_url,
+    pdf_url: articleLink.pdf_url,
+    discovery_url: articleLink.discovery_url,
+    link_status: articleLink.link_status,
+    link_note: articleLink.link_note,
     authors: article.authors || "",
     published_at: publishedDateInfo.status === "known" && publishedDateInfo.precision === "day" ? publishedDateInfo.normalized : "",
     issue_date: issueDateInfo.status === "known" ? issueDateInfo.normalized : "",

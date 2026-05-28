@@ -781,6 +781,15 @@
         color: var(--accent-hover);
       }
 
+      .timeline-title.disabled {
+        color: var(--text-1);
+        cursor: default;
+      }
+
+      .timeline-title.disabled:hover {
+        color: var(--text-1);
+      }
+
       .timeline-summary {
         display: -webkit-box;
         margin: 6px 0 0;
@@ -1994,9 +2003,9 @@
 
       const rssProbeOverrides = {
         j1: { type: "scraper", typeLabel: "DOI 反推", status: "适配已接入", feedLabel: "AFA forthcoming DOI", parser: "afa-forthcoming-doi", interval: "每周检查" },
-        j6: { type: "scraper", typeLabel: "替代期次索引", status: "适配已接入", feedLabel: "Macrodatas 期次发现", parser: "macrodatas-issue-list", interval: "每日检查" },
-        j7: { type: "scraper", typeLabel: "替代期次索引", status: "适配已接入", feedLabel: "Macrodatas 期次发现", parser: "macrodatas-issue-list", interval: "每日检查" },
-        j10: { type: "scraper", typeLabel: "授权索引", status: "适配已接入", feedLabel: "CQVIP SSR 目录", parser: "cqvip-journal-html", interval: "每周检查" },
+        j6: { type: "scraper", typeLabel: "替代期次发现", status: "待官方PDF解析", feedLabel: "Macrodatas 仅发现", parser: "macrodatas-issue-list", interval: "每日检查" },
+        j7: { type: "scraper", typeLabel: "替代期次发现", status: "待官方PDF解析", feedLabel: "Macrodatas 仅发现", parser: "macrodatas-issue-list", interval: "每日检查" },
+        j10: { type: "scraper", typeLabel: "第三方目录发现", status: "待官方PDF解析", feedLabel: "CQVIP 仅发现", parser: "cqvip-journal-html", interval: "每周检查" },
         j11: { type: "scraper", typeLabel: "新官网目录", status: "适配已接入", feedLabel: "ASC 当期列表", parser: "asc-current-issue-html", interval: "每周检查" },
         j13: { type: "rss", typeLabel: "官方 Feed", status: "RSS 已接入", feedLabel: "AOM eTOC RSS", parser: "atypon-etoc", interval: "每周检查", feedUrl: "https://journals.aom.org/action/showFeed?jc=amr&type=etoc&feed=rss" },
         j14: { type: "rss", typeLabel: "官方 Feed", status: "RSS 已接入", feedLabel: "Wiley eTOC RSS", parser: "wiley-etoc", interval: "每周检查", feedUrl: "https://onlinelibrary.wiley.com/action/showFeed?jc=15406261&type=etoc&feed=rss" },
@@ -2107,7 +2116,7 @@
           strategy: "动态渲染 + 接口嗅探",
           journals: ["j6", "j8"],
           fields: ["title", "url", "issue", "authors", "abstract"],
-          next: "公共管理学报走 CNKI paper 链接；管理世界主站验证码阻断，当前使用 Macrodatas 期次索引自动兜底。"
+          next: "公共管理学报走 CNKI paper 链接；管理世界主站验证码阻断时只用 Macrodatas 发现条目，不能作为最终可点击链接。"
         },
         {
           id: "university-custom",
@@ -2115,7 +2124,7 @@
           strategy: "CSS/XPath，单刊参数化",
           journals: ["j7", "j9"],
           fields: ["title", "url", "issue", "date", "authors"],
-          next: "管理科学学报走期号页；南开管理评论主站页面防护，当前使用 Macrodatas 期次索引自动兜底。"
+          next: "管理科学学报走期号页；南开管理评论主站页面防护时只用 Macrodatas 发现条目，需解析官方 PDF/详情后展示。"
         },
         {
           id: "association-custom",
@@ -2205,6 +2214,7 @@
           const authorText = row.authors ? `作者：${row.authors}` : "作者信息待补全";
           const publishedText = row.published_at ? `首发：${formatDate(row.published_at)}` : "";
           const issueText = row.issue_date ? `期号：${formatDateLabel(row.issue_date)}` : "";
+          const linkText = row.link_status === "needs_official_pdf" ? "待解析官方 PDF" : "";
           const dateText = [publishedText, issueText].filter(Boolean).join(" · ");
           return {
             id: `wf-${row.id}`,
@@ -2219,14 +2229,19 @@
             issueDate: row.issue_date || "",
             kind,
             title: row.title,
-            summary: [authorText, dateText, row.extraction_rule].filter(Boolean).join(" · "),
+            summary: [authorText, dateText, row.extraction_rule, linkText].filter(Boolean).join(" · "),
             url: row.url,
+            discoveryUrl: row.discovery_url || "",
+            officialUrl: row.official_url || "",
+            pdfUrl: row.pdf_url || "",
+            linkStatus: row.link_status || "",
+            linkNote: row.link_note || "",
             subject: journal.subject,
             lang: journal.lang,
             rating: journal.rating,
             pushBasis: row.push_basis,
-            tags: [journal.subject, journal.lang, journal.rating, kind],
-            status: row.published_at || row.issue_date ? "normal" : "warn"
+            tags: [journal.subject, journal.lang, journal.rating, kind, row.link_status === "needs_official_pdf" ? "待官方PDF" : ""].filter(Boolean),
+            status: row.link_status === "needs_official_pdf" || (!row.published_at && !row.issue_date) ? "warn" : "normal"
           };
         }).sort((a, b) => b.dateStart.localeCompare(a.dateStart) || a.title.localeCompare(b.title, "zh-Hans-CN"));
       }
@@ -2272,6 +2287,7 @@
       function timelineTagClass(tag) {
         const classes = [];
         if (tag === "中文" || tag === "英文") classes.push("cyan");
+        if (tag === "待官方PDF") classes.push("amber");
         const ratingClass = ratingTagClass(tag);
         if (ratingClass) classes.push(ratingClass);
         return classes.join(" ");
@@ -2419,7 +2435,7 @@
                 <div class="timeline-source">${escapeHtml(journal.name)} · ${escapeHtml(article.kind)}</div>
                 <span class="score ${scoreClass}">${escapeHtml(journal.rating)}</span>
               </div>
-              <a class="timeline-title" href="${validUrl(article.url) ? escapeHtml(article.url) : "#"}" target="_blank" rel="noopener noreferrer">${escapeHtml(article.title)}</a>
+              ${timelineTitle(article)}
               <p class="timeline-summary">${escapeHtml(article.summary)}</p>
               <div class="tags">
                 ${article.tags.map((tag) => {
@@ -2430,6 +2446,13 @@
             </div>
           </article>
         `;
+      }
+
+      function timelineTitle(article) {
+        if (!validUrl(article.url)) {
+          return `<span class="timeline-title disabled" title="该条目还没有解析到官方 PDF 或官方文章详情页">${escapeHtml(article.title)}</span>`;
+        }
+        return `<a class="timeline-title" href="${escapeHtml(article.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(article.title)}</a>`;
       }
 
       function renderDetail() {
@@ -2611,14 +2634,14 @@
 
       function adapterStatusClass(status = "") {
         if (/复核|非论文|失败|阻断/.test(status)) return "bad";
-        if (/待写|待确认|需适配|待探测/.test(status)) return "warn";
+        if (/待写|待确认|需适配|待探测|待官方PDF/.test(status)) return "warn";
         return "ok";
       }
 
       function renderAdapterStats() {
         const directFeeds = adapterFrontData?.summary?.direct_article_feeds ?? journals.filter((journal) => journal.sourceStatus === "RSS 已接入").length;
         const readyRules = adapterQueue.filter((item) => adapterStatusClass(item.status) === "ok").length;
-        const fallbackRules = adapterQueue.filter((item) => /替代|兜底|维普|开放元数据|DOI/.test(item.status)).length;
+        const fallbackRules = adapterQueue.filter((item) => /替代|兜底|维普|开放元数据|DOI|待官方PDF/.test(item.status)).length;
         const attentionCount = adapterQueue.filter((item) => adapterStatusClass(item.status) !== "ok").length;
         const cnQueue = adapterQueue.filter((item) => journalById(item.journalId).lang === "中文").length;
         $("#adapterStats").innerHTML = [

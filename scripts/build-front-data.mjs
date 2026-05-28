@@ -1,6 +1,8 @@
 import { readdir, readFile, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 
+import { normalizeArticleLink } from "./article-link-policy.mjs";
+
 const dataDir = new URL("../data/", import.meta.url);
 const outputPath = new URL("../data/recent-front-data.js", import.meta.url);
 const historyPath = new URL("../data/push-history.json", import.meta.url);
@@ -42,13 +44,19 @@ async function resolveWorkflowPath() {
 }
 
 function compactArticle(article) {
+  const articleLink = normalizeArticleLink(article, article);
   return {
     id: article.id,
     journal_id: article.journal_id,
     source_journal_id: article.source_journal_id || article.journal_id,
     journal_name: article.journal_name,
     title: article.title,
-    url: article.url,
+    url: articleLink.url,
+    official_url: articleLink.official_url,
+    pdf_url: articleLink.pdf_url,
+    discovery_url: articleLink.discovery_url,
+    link_status: articleLink.link_status,
+    link_note: articleLink.link_note,
     authors: article.authors || "",
     published_at: article.published_at || "",
     issue_date: article.issue_date || "",

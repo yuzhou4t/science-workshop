@@ -22,17 +22,19 @@ Science Workshop is a static frontend plus local Node.js crawler scripts. It is 
 - `adapter_queue`: 17 sources that need HTML, public API, DOI, or metadata adapters.
 - `platform_profiles`: 7 platform families that describe extraction strategy and expected fields.
 
-The current source set is 22 article-ready sources. Some sources use official feeds, while others use automated fallbacks when official pages are protected or do not expose article-level RSS.
+The current source set has 22 monitored sources. A source can discover article metadata before it has a verified official article/PDF link, so the frontend now keeps `url` only for official detail/PDF links and moves directory-only fallback links into `discovery_url`.
 
 Important fallback patterns:
 
 - AJCass JSON APIs for `经济研究` and `中国农村经济`.
 - Legacy or static HTML rules for `中国工业经济`, `世界经济`, `金融研究`, `公共管理学报`, `管理科学学报`, `AMERICAN ECONOMIC REVIEW`, and `ADMINISTRATIVE SCIENCE QUARTERLY`.
 - `管理科学学报` first uses its current issue-browser pages and falls back to the older `ch/reader/issue_query.aspx` page, which exposes title, authors, and issue metadata in one page when the host is reachable.
-- Macrodatas issue/article-section pages for protected Chinese journal catalog pages such as `管理世界` and `南开管理评论`. These pages expose titles, authors, abstracts, and review-cycle notes, but they are not official full-text article pages.
-- CQVIP catalog extraction for `中国行政管理`.
+- Macrodatas issue/article-section pages for protected Chinese journal catalog pages such as `管理世界` and `南开管理评论`. These pages expose titles, authors, abstracts, and review-cycle notes, but they are discovery sources only; entries stay `needs_official_pdf` until an official detail/PDF link is resolved.
+- CQVIP catalog extraction for `中国行政管理`. CQVIP links are also discovery-only under the same official-link policy.
 - ASC current issue pages for `会计研究`.
 - Crossref/OpenAlex metadata fallback for publisher pages that return 403.
+
+`scripts/article-link-policy.mjs` is the gatekeeper for clickable article links. Rules such as `macrodatas-issue-list` and `cqvip-journal-html` cannot populate the frontend click URL directly; they must first be resolved to an official `official_url` or `pdf_url`.
 
 `scripts/recent-workflow-lib.mjs` canonicalizes `j1` into `j14` so `JOURNAL OF FINANCE` forthcoming-page extraction and Wiley RSS extraction do not create duplicate journal cards.
 

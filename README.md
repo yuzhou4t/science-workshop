@@ -21,6 +21,7 @@ open index.html
 ```bash
 node scripts/adapter-fallback-test.mjs
 node scripts/fetch-retry-policy-test.mjs
+node scripts/article-link-policy-test.mjs
 node scripts/recent-workflow-test.mjs
 node scripts/front-data-history-test.mjs
 node scripts/html-adapter-parsers-test.mjs
@@ -47,6 +48,7 @@ node scripts/build-front-data.mjs --reset-history --workflow=data/recent-article
 - `data/recent-front-data.js`：前端页面实际读取的文章推送数据，由累计推送历史生成。
 - `data/source-state.json`：每日自动运行时使用的去重和首次发现记录。
 - `scripts/build-adapter-front-data.mjs`：把 `data/adapter-profiles.json` 转换成前端适配器工作台数据。
+- `scripts/article-link-policy.mjs`：控制哪些链接可以作为前端可点击论文链接；目录页、第三方发现页会保留为 `discovery_url`，等待官方 PDF/详情解析。
 - `scripts/fetch-articles-smoke-test.mjs`：真实抓取入口，会访问 RSS、官网页面、替代目录页或开放元数据接口。
 - `scripts/build-front-data.mjs`：把抓取结果转换成前端能展示的数据。
 - `scripts/run-daily-workflow.mjs`：每日自动检查入口，只检查当天窗口并按首次发现去重。
@@ -64,7 +66,8 @@ node scripts/build-front-data.mjs --reset-history --workflow=data/recent-article
 
 - 期刊数据源：22 个。
 - 最近一次真实探测可用数据源：22 个。
-- 前端累计展示文章：217 篇。
+- 前端累计展示文章：227 篇。
+- 其中 30 篇目前只完成发现，仍待解析官方 PDF/详情链接；前端不会再把目录页或第三方目录页当成可点击论文链接。
 - 今日新增推送文章：26 篇。
 - 每日自动任务的去重状态已写入 `data/source-state.json`。
 - `管理科学学报` 已可从新版期号页解析；旧版 reader 期号页可作为备用解析入口，单源探测可返回 10 篇当期文章。

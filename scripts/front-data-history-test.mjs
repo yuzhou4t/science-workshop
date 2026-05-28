@@ -51,6 +51,18 @@ const workflow = {
       display_date: "2026-05-28",
       push_basis: "first_seen",
     },
+    {
+      id: "fallback-1",
+      journal_id: "j6",
+      journal_name: "兜底期刊",
+      title: "目录页发现但未解析官方 PDF 的文章",
+      url: "https://www.macrodatas.cn/article/1779681420#:~:text=%E7%9B%AE%E5%BD%95",
+      extraction_rule: "macrodatas-issue-list",
+      authors: "A",
+      first_seen_at: "2026-05-28",
+      display_date: "2026-05-28",
+      push_basis: "first_seen",
+    },
   ],
 };
 
@@ -58,15 +70,18 @@ const history = mergePushHistory(existingHistory, workflow, {
   workflowFile: "data/recent-articles-2026-05-28_2026-05-28.json",
 });
 
-assert.equal(history.articles.length, 2);
-assert.deepEqual(history.articles.map((article) => article.id), ["new-1", "old-1"]);
+assert.equal(history.articles.length, 3);
+assert.deepEqual([...history.articles.map((article) => article.id)].sort(), ["fallback-1", "new-1", "old-1"]);
 assert.equal(history.articles.find((article) => article.id === "old-1").first_seen_at, "2026-05-27");
 assert.equal(history.articles.find((article) => article.id === "old-1").authors, "补全作者");
-assert.equal(history.summary.history_articles, 2);
+assert.equal(history.articles.find((article) => article.id === "fallback-1").url, "");
+assert.equal(history.articles.find((article) => article.id === "fallback-1").link_status, "needs_official_pdf");
+assert.equal(history.articles.find((article) => article.id === "fallback-1").discovery_url.includes("macrodatas.cn/article/1779681420"), true);
+assert.equal(history.summary.history_articles, 3);
 assert.equal(history.summary.last_workflow_file, "data/recent-articles-2026-05-28_2026-05-28.json");
 
 const frontData = frontDataFromHistory(history);
-assert.equal(frontData.summary.push_queue_articles, 2);
-assert.deepEqual(frontData.push_queue.map((article) => article.id), ["new-1", "old-1"]);
+assert.equal(frontData.summary.push_queue_articles, 3);
+assert.deepEqual([...frontData.push_queue.map((article) => article.id)].sort(), ["fallback-1", "new-1", "old-1"]);
 
 console.log("front data history rules ok");

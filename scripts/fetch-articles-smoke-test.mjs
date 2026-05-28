@@ -3,6 +3,7 @@ import { readFile, writeFile } from "node:fs/promises";
 import vm from "node:vm";
 import { promisify } from "node:util";
 
+import { normalizeArticleLink } from "./article-link-policy.mjs";
 import { doiFromUrl, extractDateHints, extractHtmlArticleHints, extractMetadataArticleHints } from "./date-enhancement-lib.mjs";
 import { shouldRetryWithCurlStatus } from "./fetch-retry-policy.mjs";
 import { parseAscIssueListArticles, parseCieCurrentArticles, parseJmscReaderIssueArticles } from "./html-adapter-parsers.mjs";
@@ -1148,12 +1149,13 @@ async function testDirectFeed(feed) {
   const response = await fetchText(feed.feed_url, 10000);
   const allArticles = response.ok ? parseXmlFeed(response.text, response.finalUrl) : [];
   const filteredArticles = allArticles.filter((article) => looksLikeArticleTitle(article.title) && !isNonArticleTitle(article.title));
-  const articles = await enrichArticlesWithDetailMetadata(filteredArticles.slice(0, cliOptions.articleLimit), {
+  const enrichedArticles = await enrichArticlesWithDetailMetadata(filteredArticles.slice(0, cliOptions.articleLimit), {
     limit: Math.min(cliOptions.articleLimit, 30),
     timeoutMs: 12000,
     ifMissingAuthors: true,
     ifMissingPublished: true,
   });
+  const articles = normalizeArticlesForLinkPolicy({ extraction_rule: feed.parser_profile }, enrichedArticles);
   return {
     type: "direct_rss",
     journal_id: feed.journal_id,
@@ -1181,7 +1183,7 @@ async function testAdapterSource(item) {
   try {
     const extraction = await extractAdapterArticles(item);
     const filteredArticles = extraction.articles.filter((article) => looksLikeArticleTitle(article.title) && !isNonArticleTitle(article.title));
-    const articles = filteredArticles.slice(0, cliOptions.articleLimit);
+    const articles = normalizeArticlesForLinkPolicy({ extraction_rule: item.adapter_rule?.kind || item.platform_id }, filteredArticles.slice(0, cliOptions.articleLimit));
     return {
       type: "adapter_source",
       journal_id: item.journal_id,
@@ -1227,6 +1229,21 @@ async function testAdapterSource(item) {
       error: error.message,
     };
   }
+}
+
+function normalizeArticlesForLinkPolicy(source, articles) {
+  return articles.map((article) => {
+    const articleLink = normalizeArticleLink(source, article);
+    return {
+      ...article,
+      url: articleLink.url,
+      official_url: articleLink.official_url,
+      pdf_url: articleLink.pdf_url,
+      discovery_url: articleLink.discovery_url,
+      link_status: articleLink.link_status,
+      link_note: articleLink.link_note,
+    };
+  });
 }
 
 const directSources = registry.direct_article_feeds.filter((item) => sourceMatches(item, cliOptions.source));

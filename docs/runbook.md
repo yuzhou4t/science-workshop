@@ -48,7 +48,13 @@ Run only one journal source while debugging an adapter:
 node scripts/fetch-articles-smoke-test.mjs --source=j9
 ```
 
-For Macrodatas-backed sources such as `j6` (`管理世界`), article links point to text-fragment sections inside an issue/abstract page. They are useful for title, author, abstract, and review-cycle extraction, but they should not be described as official full-text article pages.
+For discovery-only fallback sources such as `j6` (`管理世界`, Macrodatas) and `j10` (`中国行政管理`, CQVIP), the fallback page must not be used as the frontend article link. Keep it in `discovery_url`; only populate `url` after resolving an official article detail page or official PDF URL.
+
+Check current unresolved official-link work:
+
+```bash
+node -e 'const fs=require("fs"); const raw=fs.readFileSync("data/recent-front-data.js","utf8"); const data=JSON.parse(raw.replace(/^window\.RECENT_WORKFLOW_DATA = /,"").replace(/;\s*$/,"")); console.log(data.push_queue.filter(a=>a.link_status==="needs_official_pdf").map(a=>`${a.journal_name}: ${a.title}`).join("\n"))'
+```
 
 Rebuild frontend data from a workflow file:
 
