@@ -48,6 +48,8 @@ Run only one journal source while debugging an adapter:
 node scripts/fetch-articles-smoke-test.mjs --source=j9
 ```
 
+For Macrodatas-backed sources such as `j6` (`管理世界`), article links point to text-fragment sections inside an issue/abstract page. They are useful for title, author, abstract, and review-cycle extraction, but they should not be described as official full-text article pages.
+
 Rebuild frontend data from a workflow file:
 
 ```bash

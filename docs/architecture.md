@@ -29,7 +29,7 @@ Important fallback patterns:
 - AJCass JSON APIs for `经济研究` and `中国农村经济`.
 - Legacy or static HTML rules for `中国工业经济`, `世界经济`, `金融研究`, `公共管理学报`, `管理科学学报`, `AMERICAN ECONOMIC REVIEW`, and `ADMINISTRATIVE SCIENCE QUARTERLY`.
 - `管理科学学报` first uses its current issue-browser pages and falls back to the older `ch/reader/issue_query.aspx` page, which exposes title, authors, and issue metadata in one page when the host is reachable.
-- Macrodatas issue lists for protected Chinese journal catalog pages such as `管理世界` and `南开管理评论`.
+- Macrodatas issue/article-section pages for protected Chinese journal catalog pages such as `管理世界` and `南开管理评论`. These pages expose titles, authors, abstracts, and review-cycle notes, but they are not official full-text article pages.
 - CQVIP catalog extraction for `中国行政管理`.
 - ASC current issue pages for `会计研究`.
 - Crossref/OpenAlex metadata fallback for publisher pages that return 403.

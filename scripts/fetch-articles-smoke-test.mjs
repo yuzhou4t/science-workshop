@@ -6,6 +6,7 @@ import { promisify } from "node:util";
 import { doiFromUrl, extractDateHints, extractHtmlArticleHints, extractMetadataArticleHints } from "./date-enhancement-lib.mjs";
 import { shouldRetryWithCurlStatus } from "./fetch-retry-policy.mjs";
 import { parseAscIssueListArticles, parseCieCurrentArticles, parseJmscReaderIssueArticles } from "./html-adapter-parsers.mjs";
+import { macrodatasArticleSectionUrl } from "./macrodatas-url.mjs";
 import { addDays, buildRecentWorkflow, dateOnly } from "./recent-workflow-lib.mjs";
 
 const execFileAsync = promisify(execFile);
@@ -150,7 +151,7 @@ function cleanArticleUrl(url) {
   const fixed = url.replace(/\?&/, "?").replace(/&&/g, "&");
   try {
     const parsed = new URL(fixed);
-    if (!parsed.hash.startsWith("#/issueDetail") && !/^#directory-\d+$/i.test(parsed.hash)) parsed.hash = "";
+    if (!parsed.hash.startsWith("#/issueDetail") && !/^#directory-\d+$/i.test(parsed.hash) && !parsed.hash.startsWith("#:~:text=")) parsed.hash = "";
     for (const key of [...parsed.searchParams.keys()]) {
       if (/^utm_/i.test(key) || key === "af" || key === "from" || key === "_gl") parsed.searchParams.delete(key);
     }
@@ -933,7 +934,7 @@ function parseMacrodatasDirectoryArticles(html, pageUrl) {
     if (!looksLikeArticleTitle(title)) continue;
     articles.push({
       title,
-      url: `${cleanArticleUrl(pageUrl)}#directory-${match[1]}`,
+      url: macrodatasArticleSectionUrl(cleanArticleUrl(pageUrl), title),
       date: releaseDate,
       authors: stripTags(match[3]),
     });
@@ -953,7 +954,7 @@ function parseMacrodatasDirectoryArticles(html, pageUrl) {
     if (!looksLikeArticleTitle(title)) continue;
     articles.push({
       title,
-      url: `${cleanArticleUrl(pageUrl)}#directory-${match[1]}`,
+      url: macrodatasArticleSectionUrl(cleanArticleUrl(pageUrl), title),
       date: releaseDate,
     });
   }

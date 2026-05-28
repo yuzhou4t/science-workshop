@@ -243,6 +243,37 @@ const rotatedFeedFourthRun = buildRecentWorkflow([
 assert.equal(rotatedFeedThirdRun.summary.push_queue_articles, 0);
 assert.equal(rotatedFeedFourthRun.summary.push_queue_articles, 0);
 
+const macrodatasDirectoryRun = buildRecentWorkflow([
+  {
+    journal_id: "j-macrodatas",
+    journal_name: "目录页期刊",
+    type: "adapter_source",
+    source_url: "https://example.test/source",
+    probe_url: "https://www.macrodatas.cn/article/1779681420",
+    extraction_rule: "macrodatas-issue-list",
+    usable_as_data_source: true,
+    articles: [
+      {
+        title: "目录页中的第一篇文章",
+        url: "https://www.macrodatas.cn/article/1779681420#:~:text=%E7%9B%AE%E5%BD%95%E9%A1%B5%E4%B8%AD%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0",
+        date: "2026-05-25",
+      },
+      {
+        title: "目录页中的第二篇文章",
+        url: "https://www.macrodatas.cn/article/1779681420#:~:text=%E7%9B%AE%E5%BD%95%E9%A1%B5%E4%B8%AD%E7%9A%84%E7%AC%AC%E4%BA%8C%E7%AF%87%E6%96%87%E7%AB%A0",
+        date: "2026-05-25",
+      },
+    ],
+  },
+], {
+  since: "2026-05-25",
+  until: "2026-05-25",
+  checkedAt: "2026-05-25T10:00:00.000Z",
+  previousState: {},
+});
+
+assert.equal(macrodatasDirectoryRun.summary.push_queue_articles, 2);
+
 const volatileUrlFirstRun = buildRecentWorkflow([
   {
     journal_id: "j-cqvip",

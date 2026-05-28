@@ -94,8 +94,10 @@ function normalizedUrlForIdentity(value = "") {
   if (!raw) return "";
   try {
     const url = new URL(raw);
-    url.hash = "";
     url.hostname = url.hostname.toLowerCase();
+    if (!/macrodatas\.cn$/i.test(url.hostname) || !url.hash.startsWith("#:~:text=")) {
+      url.hash = "";
+    }
     for (const key of [...url.searchParams.keys()]) {
       if (/^utm_/i.test(key) || ["sign", "expireTime", "expires", "_t", "timestamp", "token"].includes(key)) {
         url.searchParams.delete(key);
