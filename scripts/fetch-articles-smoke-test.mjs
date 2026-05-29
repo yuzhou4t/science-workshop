@@ -8,7 +8,7 @@ import { doiFromUrl, extractDateHints, extractHtmlArticleHints, extractMetadataA
 import { shouldRetryWithCurlStatus } from "./fetch-retry-policy.mjs";
 import { parseAscIssueListArticles, parseCieCurrentArticles, parseJmscReaderIssueArticles } from "./html-adapter-parsers.mjs";
 import { macrodatasArticleSectionUrl } from "./macrodatas-url.mjs";
-import { parseNcpssdIssueArticles, resolveNcpssdArticle } from "./official-link-resolvers.mjs";
+import { parseNcpssdIssueArticles, resolveCnkiSequentialArticles, resolveNcpssdArticle } from "./official-link-resolvers.mjs";
 import { addDays, buildRecentWorkflow, dateOnly } from "./recent-workflow-lib.mjs";
 
 const execFileAsync = promisify(execFile);
@@ -917,8 +917,13 @@ function officialResolverUrl(resolver = {}, context = {}) {
     .replace(/\{issue\}/g, context.issue);
 }
 
-async function resolveOfficialLinks(item, articles, notes, context = {}) {
-  const resolver = item.adapter_rule?.official_resolver;
+function officialResolvers(rule = {}) {
+  const resolvers = Array.isArray(rule.official_resolvers) ? [...rule.official_resolvers] : [];
+  if (rule.official_resolver) resolvers.push(rule.official_resolver);
+  return resolvers;
+}
+
+async function resolveNcpssdOfficialLinks(resolver, articles, notes, context) {
   const issueUrl = officialResolverUrl(resolver, context);
   if (resolver?.kind !== "ncpssd-issue-html" || !issueUrl || !articles.length) return articles;
 
@@ -955,6 +960,24 @@ async function resolveOfficialLinks(item, articles, notes, context = {}) {
     };
   });
   notes.push(`official_resolved:${resolvedCount}/${articles.length}`);
+  return resolvedArticles;
+}
+
+async function resolveOfficialLinks(item, articles, notes, context = {}) {
+  let resolvedArticles = articles;
+  for (const resolver of officialResolvers(item.adapter_rule)) {
+    if (resolver.kind === "ncpssd-issue-html") {
+      resolvedArticles = await resolveNcpssdOfficialLinks(resolver, resolvedArticles, notes, context);
+    } else if (resolver.kind === "cnki-cjfd-sequential") {
+      const nextArticles = resolveCnkiSequentialArticles(resolvedArticles, resolver, context);
+      const resolvedCount = nextArticles.filter((article, index) => article.official_url && article.official_url !== resolvedArticles[index]?.official_url).length;
+      if (resolvedCount) {
+        notes.push("official_resolver:cnki_cjfd_sequential");
+        notes.push(`official_resolved_paid:${resolvedCount}/${resolvedArticles.length}`);
+      }
+      resolvedArticles = nextArticles;
+    }
+  }
   return resolvedArticles;
 }
 

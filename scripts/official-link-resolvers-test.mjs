@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import {
   compactArticleTitle,
   parseNcpssdIssueArticles,
+  resolveCnkiSequentialArticles,
   resolveNcpssdArticle,
 } from "./official-link-resolvers.mjs";
 
@@ -84,5 +85,26 @@ assert.equal(secureArticles[0].id, "GLSJ2026005008");
 assert.equal(secureArticles[0].authors, "罗俊; 潘佳艺; 邹乐豪");
 assert.equal(secureArticles[0].official_url, "https://www.ncpssd.cn/Literature/secure/articleinfo?params=encrypted-demo");
 assert.equal(secureArticles[0].reader_url, "https://www.ncpssd.cn/Literature/readurl?id=GLSJ2026005008");
+
+const cnkiSequentialArticles = resolveCnkiSequentialArticles(
+  [
+    { title: "科技强国建设中的双重创新动力源——一个知识流创新链分析框架及其考证" },
+    { title: "超越经济激励：平台经济中的评论激励机制、市场交易行为与社会福利" },
+  ],
+  {
+    journal_code: "GLSJ",
+    access_model: "paid",
+    url_template: "https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CJFD&filename={filename}",
+  },
+  { year: "2026", issue: "5" },
+);
+
+assert.equal(cnkiSequentialArticles[0].cnki_filename, "GLSJ202605001");
+assert.equal(cnkiSequentialArticles[0].official_source, "cnki");
+assert.equal(cnkiSequentialArticles[0].access_model, "paid");
+assert.equal(
+  cnkiSequentialArticles[1].official_url,
+  "https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CJFD&filename=GLSJ202605002",
+);
 
 console.log("official link resolver rules ok");

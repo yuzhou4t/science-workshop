@@ -23,6 +23,7 @@ assert.equal(ruleFor("j10").kind, "cqvip-journal-html", "中国行政管理 shou
 assert.equal(ruleFor("j10").official_resolver?.kind, "ncpssd-issue-html", "中国行政管理 should resolve CQVIP discovery records to NCPSD article details");
 assert.equal(ruleFor("j6").official_resolver?.kind, "ncpssd-issue-html", "管理世界 should resolve Macrodatas discovery records to NCPSD article details");
 assert.match(ruleFor("j6").official_resolver?.issue_url_template || "", /\{year\}.*\{issue\}/, "管理世界 NCPSD resolver should follow the discovered issue");
+assert.ok(ruleFor("j6").official_resolvers?.some((resolver) => resolver.kind === "cnki-cjfd-sequential"), "管理世界 should fall back to paid CNKI article detail pages");
 assert.equal(ruleFor("j7").official_resolver?.kind, "ncpssd-issue-html", "南开管理评论 should try NCPSD article details when the discovered issue is listed");
 assert.match(ruleFor("j7").official_resolver?.issue_url_template || "", /\{year\}.*\{issue\}/, "南开管理评论 NCPSD resolver should follow the discovered issue");
 

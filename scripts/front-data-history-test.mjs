@@ -90,6 +90,23 @@ const workflow = {
       display_date: "2026-05-28",
       push_basis: "first_seen",
     },
+    {
+      id: "paid-1",
+      journal_id: "j6",
+      journal_name: "管理世界",
+      title: "已经补好知网付费详情的文章",
+      url: "https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CJFD&filename=GLSJ202605008",
+      official_url: "https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CJFD&filename=GLSJ202605008",
+      discovery_url: "https://www.macrodatas.cn/article/1779681420#:~:text=demo",
+      link_status: "official_paid_detail",
+      access_model: "paid",
+      official_source: "cnki",
+      authors: "A",
+      first_seen_at: "2026-05-27",
+      display_date: "2026-05-27",
+      push_basis: "first_seen",
+      extraction_rule: "macrodatas-issue-list",
+    },
   ],
 };
 
@@ -97,8 +114,8 @@ const history = mergePushHistory(existingHistory, workflow, {
   workflowFile: "data/recent-articles-2026-05-28_2026-05-28.json",
 });
 
-assert.equal(history.articles.length, 4);
-assert.deepEqual([...history.articles.map((article) => article.id)].sort(), ["fallback-1", "new-1", "old-1", "resolved-1"]);
+assert.equal(history.articles.length, 5);
+assert.deepEqual([...history.articles.map((article) => article.id)].sort(), ["fallback-1", "new-1", "old-1", "paid-1", "resolved-1"]);
 assert.equal(history.articles.find((article) => article.id === "old-1").first_seen_at, "2026-05-27");
 assert.equal(history.articles.find((article) => article.id === "old-1").authors, "补全作者");
 assert.equal(history.articles.find((article) => article.id === "fallback-1").url, "");
@@ -107,12 +124,16 @@ assert.equal(history.articles.find((article) => article.id === "fallback-1").dis
 assert.equal(history.articles.find((article) => article.id === "resolved-1").url, "https://www.ncpssd.org/Literature/articleinfo?id=demo");
 assert.equal(history.articles.find((article) => article.id === "resolved-1").link_status, "official_detail");
 assert.equal(history.articles.find((article) => article.id === "resolved-1").discovery_url.includes("cqvip.com/doc/journal/123"), true);
-assert.equal(history.summary.history_articles, 4);
+assert.equal(history.articles.find((article) => article.id === "paid-1").link_status, "official_paid_detail");
+assert.equal(history.articles.find((article) => article.id === "paid-1").access_model, "paid");
+assert.equal(history.articles.find((article) => article.id === "paid-1").official_source, "cnki");
+assert.equal(history.summary.history_articles, 5);
 assert.equal(history.summary.last_workflow_file, "data/recent-articles-2026-05-28_2026-05-28.json");
 
 const frontData = frontDataFromHistory(history);
-assert.equal(frontData.summary.push_queue_articles, 4);
-assert.deepEqual([...frontData.push_queue.map((article) => article.id)].sort(), ["fallback-1", "new-1", "old-1", "resolved-1"]);
+assert.equal(frontData.summary.push_queue_articles, 5);
+assert.deepEqual([...frontData.push_queue.map((article) => article.id)].sort(), ["fallback-1", "new-1", "old-1", "paid-1", "resolved-1"]);
+assert.equal(frontData.push_queue.find((article) => article.id === "paid-1").link_status, "official_paid_detail");
 
 const dedupedHistory = mergePushHistory(
   {

@@ -18,7 +18,7 @@ The frontend history currently merges through `data/recent-articles-2026-05-29_2
 - `history_articles`: 244.
 - `new_push_queue_articles` from the 2026-05-29 daily run: 33.
 - `data/recent-front-data.js` and `data/push-history.json` both contain 244 unique article IDs.
-- Remaining discovery-only links: 28, currently `南开管理评论` 17 and `管理世界` 11.
+- Remaining discovery-only links: 17, currently all from `南开管理评论`.
 
 The daily dedupe state is initialized in `data/source-state.json`. Rebuilding frontend data now appends into `data/push-history.json`, so a one-day run does not overwrite the visible timeline with only that day.
 
@@ -33,7 +33,8 @@ The daily dedupe state is initialized in `data/source-state.json`. Rebuilding fr
 - Chinese sources without RSS use automated adapters or fallback catalog sources instead of manual uploads.
 - `管理科学学报` has both current issue-browser extraction and older reader issue-page fallback. The latest local live probe returned READY, and the single-source probe returned 10 current-issue articles.
 - `中国行政管理` uses CQVIP only as a discovery catalog and resolves the current issue to NCPSD article detail pages before frontend display.
-- `管理世界` and `南开管理评论` use Macrodatas only for discovery, then try an NCPSD official-detail resolver built from the discovered year/issue. On 2026-05-29 both single-source live probes returned articles, but NCPSD returned no candidates for the target issues, so their records correctly remain `needs_official_pdf`.
+- `管理世界` uses Macrodatas only for discovery, then resolves the current issue to CNKI CJFD paid detail entries by discovered year/issue and article order. The 2026年第5期 probe returned 11 articles and all 11 are now `official_paid_detail`.
+- `南开管理评论` uses Macrodatas only for discovery, then tries an NCPSD official-detail resolver built from the discovered year/issue. On 2026-05-29 the single-source live probe returned 17 articles, but NCPSD returned no candidates for the target issue, so those records correctly remain `needs_official_pdf`.
 - A local macOS LaunchAgent runs the daily workflow at 10:00.
 
 ## Remaining Work

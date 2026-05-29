@@ -200,7 +200,7 @@ function toWorkflowArticle(source, article, options, previousIds, previousFirstS
       ? "issue_date"
       : "first_seen_at";
 
-  return {
+  const workflowArticle = {
     id,
     journal_id: canonicalJournalId(source.journal_id),
     source_journal_id: source.journal_id,
@@ -231,6 +231,10 @@ function toWorkflowArticle(source, article, options, previousIds, previousFirstS
     observed_at: options.checkedAt,
     is_new: isNew,
   };
+  for (const key of ["access_model", "official_source", "cnki_filename"]) {
+    if (article[key]) workflowArticle[key] = article[key];
+  }
+  return workflowArticle;
 }
 
 function dedupeById(items) {

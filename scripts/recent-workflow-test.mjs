@@ -413,6 +413,38 @@ assert.equal(dailyDiscoveryRun.push_queue[0].inclusion_reason, "new_discovery_ou
 assert.equal(dailyDiscoveryRun.push_queue[0].first_seen_at, "2026-05-27");
 assert.equal(dailyDiscoveryRun.push_queue[0].published_at, "2026-04-01");
 
+const paidOfficialRun = buildRecentWorkflow([
+  {
+    journal_id: "j6",
+    journal_name: "管理世界",
+    type: "adapter_source",
+    source_url: "https://example.test/paid",
+    probe_url: "https://example.test/paid",
+    extraction_rule: "macrodatas-issue-list",
+    usable_as_data_source: true,
+    articles: [
+      {
+        title: "已上架知网付费详情的文章",
+        url: "https://www.macrodatas.cn/article/1779681420#:~:text=demo",
+        official_url: "https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CJFD&filename=GLSJ202605008",
+        access_model: "paid",
+        official_source: "cnki",
+        date: "2026-05-25",
+      },
+    ],
+  },
+], {
+  since: "2026-05-25",
+  until: "2026-05-25",
+  checkedAt: "2026-05-27T10:00:00.000Z",
+  previousState: {},
+});
+
+assert.equal(paidOfficialRun.push_queue[0].url, "https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CJFD&filename=GLSJ202605008");
+assert.equal(paidOfficialRun.push_queue[0].link_status, "official_paid_detail");
+assert.equal(paidOfficialRun.push_queue[0].access_model, "paid");
+assert.equal(paidOfficialRun.push_queue[0].official_source, "cnki");
+
 const baselineRun = buildRecentWorkflow(probeResults, {
   since: "2026-04-25",
   until: "2026-05-25",

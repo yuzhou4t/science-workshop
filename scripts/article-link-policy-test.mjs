@@ -42,6 +42,21 @@ assert.equal(
 assert.equal(resolvedCqvipLink.discovery_url.includes("cqvip.com/doc/journal/7203343027"), true);
 assert.equal(resolvedCqvipLink.link_status, "official_detail");
 
+const paidCnkiLink = normalizeArticleLink(
+  { extraction_rule: "macrodatas-issue-list" },
+  {
+    title: "知网正式付费入口文章",
+    url: "https://www.macrodatas.cn/article/1779681420#:~:text=%E7%9B%AE%E5%BD%95",
+    official_url: "https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CJFD&filename=GLSJ202605008",
+    access_model: "paid",
+  },
+);
+
+assert.equal(paidCnkiLink.url, "https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CJFD&filename=GLSJ202605008");
+assert.equal(paidCnkiLink.discovery_url.includes("macrodatas.cn/article/1779681420"), true);
+assert.equal(paidCnkiLink.link_status, "official_paid_detail");
+assert.equal(paidCnkiLink.link_note, "official_paid_access");
+
 const officialLink = normalizeArticleLink(
   { extraction_rule: "aea-forthcoming-html" },
   {

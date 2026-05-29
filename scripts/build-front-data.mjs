@@ -46,7 +46,7 @@ async function resolveWorkflowPath() {
 
 function compactArticle(article) {
   const articleLink = normalizeArticleLink(article, article);
-  return {
+  const compacted = {
     id: article.id,
     journal_id: article.journal_id,
     source_journal_id: article.source_journal_id || article.journal_id,
@@ -68,6 +68,10 @@ function compactArticle(article) {
     extraction_rule: article.extraction_rule || "",
     date_source: article.date_source || "",
   };
+  for (const key of ["access_model", "official_source", "cnki_filename"]) {
+    if (article[key]) compacted[key] = article[key];
+  }
+  return compacted;
 }
 
 function minDate(a = "", b = "") {
@@ -127,8 +131,9 @@ function mergeArticle(existing, incoming) {
     display_date_basis: incoming.display_date_basis || existing.display_date_basis || "",
     push_basis: existing.push_basis || incoming.push_basis || "",
   };
-  const existingResolved = ["official_pdf", "official_detail"].includes(existing.link_status) || existing.official_url || existing.pdf_url;
-  const incomingResolved = ["official_pdf", "official_detail"].includes(incoming.link_status) || incoming.official_url || incoming.pdf_url;
+  const resolvedStatuses = ["official_pdf", "official_detail", "official_paid_detail"];
+  const existingResolved = resolvedStatuses.includes(existing.link_status) || existing.official_url || existing.pdf_url;
+  const incomingResolved = resolvedStatuses.includes(incoming.link_status) || incoming.official_url || incoming.pdf_url;
   if (existingResolved && !incomingResolved) {
     return {
       ...merged,
@@ -138,6 +143,9 @@ function mergeArticle(existing, incoming) {
       discovery_url: incoming.discovery_url || existing.discovery_url || "",
       link_status: existing.link_status,
       link_note: existing.link_note,
+      access_model: existing.access_model || "",
+      official_source: existing.official_source || "",
+      cnki_filename: existing.cnki_filename || "",
     };
   }
   return merged;

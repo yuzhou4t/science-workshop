@@ -5,7 +5,7 @@ window.ADAPTER_PROFILE_DATA = {
     "direct_article_feeds": 5,
     "adapter_sources": 17,
     "platform_profiles": 7,
-    "ready_rules": 15,
+    "ready_rules": 16,
     "fallback_rules": 4
   },
   "direct_article_feeds": [
@@ -92,7 +92,7 @@ window.ADAPTER_PROFILE_DATA = {
         "authors",
         "abstract"
       ],
-      "next_action": "公共管理学报可直接抓 paper 页面；管理世界主站验证码阻断时先用 Macrodatas 做发现源，再按发现到的期号尝试 NCPSD 官方详情升级；官方未上架前仍保持 discovery_url。",
+      "next_action": "公共管理学报可直接抓 paper 页面；管理世界主站验证码阻断时先用 Macrodatas 做发现源，再按期号和目录顺序补到 CNKI CJFD 付费详情入口；Macrodatas 仅保留为 discovery_url。",
       "journals": [
         "j6",
         "j8"
@@ -288,10 +288,10 @@ window.ADAPTER_PROFILE_DATA = {
         "authors",
         "abstract"
       ],
-      "status": "待官方详情上架",
+      "status": "知网付费详情解析",
       "source_url": "https://glsj.cbpt.cnki.net/WKB/WebPublication/wkTextContent.aspx?colType=4&tp=gklb&mid=glsj",
       "adapter_kind": "macrodatas-issue-list",
-      "next_action": "公共管理学报可直接抓 paper 页面；管理世界主站验证码阻断时先用 Macrodatas 做发现源，再按发现到的期号尝试 NCPSD 官方详情升级；官方未上架前仍保持 discovery_url。",
+      "next_action": "公共管理学报可直接抓 paper 页面；管理世界主站验证码阻断时先用 Macrodatas 做发现源，再按期号和目录顺序补到 CNKI CJFD 付费详情入口；Macrodatas 仅保留为 discovery_url。",
       "render_required": true
     },
     {
@@ -311,7 +311,7 @@ window.ADAPTER_PROFILE_DATA = {
       "status": "静态规则",
       "source_url": "https://gggl.cbpt.cnki.net/portal",
       "adapter_kind": "cnki-portal-paper",
-      "next_action": "公共管理学报可直接抓 paper 页面；管理世界主站验证码阻断时先用 Macrodatas 做发现源，再按发现到的期号尝试 NCPSD 官方详情升级；官方未上架前仍保持 discovery_url。",
+      "next_action": "公共管理学报可直接抓 paper 页面；管理世界主站验证码阻断时先用 Macrodatas 做发现源，再按期号和目录顺序补到 CNKI CJFD 付费详情入口；Macrodatas 仅保留为 discovery_url。",
       "render_required": true
     },
     {

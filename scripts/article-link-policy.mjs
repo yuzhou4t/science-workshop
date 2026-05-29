@@ -21,6 +21,7 @@ export function normalizeArticleLink(source = {}, article = source) {
   const officialUrl = firstValue(article.official_url);
   const rawUrl = firstValue(article.url);
   const rawDiscoveryUrl = firstValue(article.discovery_url);
+  const accessModel = firstValue(article.access_model, source.access_model);
 
   if (pdfUrl) {
     return {
@@ -34,13 +35,14 @@ export function normalizeArticleLink(source = {}, article = source) {
   }
 
   if (officialUrl) {
+    const isPaidAccess = accessModel === "paid";
     return {
       url: officialUrl,
       official_url: officialUrl,
       pdf_url: isPdfUrl(officialUrl) ? officialUrl : "",
       discovery_url: rawDiscoveryUrl || (rawUrl && rawUrl !== officialUrl ? rawUrl : ""),
-      link_status: isPdfUrl(officialUrl) ? "official_pdf" : "official_detail",
-      link_note: isPdfUrl(officialUrl) ? "official_pdf_resolved" : "official_detail_page",
+      link_status: isPdfUrl(officialUrl) ? "official_pdf" : isPaidAccess ? "official_paid_detail" : "official_detail",
+      link_note: isPdfUrl(officialUrl) ? "official_pdf_resolved" : isPaidAccess ? "official_paid_access" : "official_detail_page",
     };
   }
 

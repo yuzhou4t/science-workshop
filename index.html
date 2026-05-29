@@ -2003,7 +2003,7 @@
 
       const rssProbeOverrides = {
         j1: { type: "scraper", typeLabel: "DOI 反推", status: "适配已接入", feedLabel: "AFA forthcoming DOI", parser: "afa-forthcoming-doi", interval: "每周检查" },
-        j6: { type: "scraper", typeLabel: "替代期次发现", status: "待官方PDF解析", feedLabel: "Macrodatas 仅发现", parser: "macrodatas-issue-list", interval: "每日检查" },
+        j6: { type: "scraper", typeLabel: "替代期次发现", status: "知网付费详情解析", feedLabel: "Macrodatas + CNKI", parser: "macrodatas-issue-list", interval: "每日检查" },
         j7: { type: "scraper", typeLabel: "替代期次发现", status: "待官方PDF解析", feedLabel: "Macrodatas 仅发现", parser: "macrodatas-issue-list", interval: "每日检查" },
         j10: { type: "scraper", typeLabel: "第三方目录发现", status: "待官方PDF解析", feedLabel: "CQVIP 仅发现", parser: "cqvip-journal-html", interval: "每周检查" },
         j11: { type: "scraper", typeLabel: "新官网目录", status: "适配已接入", feedLabel: "ASC 当期列表", parser: "asc-current-issue-html", interval: "每周检查" },
@@ -2214,7 +2214,11 @@
           const authorText = row.authors ? `作者：${row.authors}` : "作者信息待补全";
           const publishedText = row.published_at ? `首发：${formatDate(row.published_at)}` : "";
           const issueText = row.issue_date ? `期号：${formatDateLabel(row.issue_date)}` : "";
-          const linkText = row.link_status === "needs_official_pdf" ? "待解析官方 PDF" : "";
+          const linkText = row.link_status === "needs_official_pdf"
+            ? "已发现，待官方全文入口"
+            : row.link_status === "official_paid_detail"
+              ? "知网付费全文入口"
+              : "";
           const dateText = [publishedText, issueText].filter(Boolean).join(" · ");
           return {
             id: `wf-${row.id}`,
@@ -2240,7 +2244,7 @@
             lang: journal.lang,
             rating: journal.rating,
             pushBasis: row.push_basis,
-            tags: [journal.subject, journal.lang, journal.rating, kind, row.link_status === "needs_official_pdf" ? "待官方PDF" : ""].filter(Boolean),
+            tags: [journal.subject, journal.lang, journal.rating, kind, row.link_status === "needs_official_pdf" ? "待官方PDF" : row.link_status === "official_paid_detail" ? "知网付费" : ""].filter(Boolean),
             status: row.link_status === "needs_official_pdf" || (!row.published_at && !row.issue_date) ? "warn" : "normal"
           };
         }).sort((a, b) => b.dateStart.localeCompare(a.dateStart) || a.title.localeCompare(b.title, "zh-Hans-CN"));
@@ -2288,6 +2292,7 @@
         const classes = [];
         if (tag === "中文" || tag === "英文") classes.push("cyan");
         if (tag === "待官方PDF") classes.push("amber");
+        if (tag === "知网付费") classes.push("cyan");
         const ratingClass = ratingTagClass(tag);
         if (ratingClass) classes.push(ratingClass);
         return classes.join(" ");
