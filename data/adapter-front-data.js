@@ -1,12 +1,12 @@
 window.ADAPTER_PROFILE_DATA = {
   "version": "0.1.0",
-  "updated_at": "2026-05-25",
+  "updated_at": "2026-05-29",
   "summary": {
     "direct_article_feeds": 5,
     "adapter_sources": 17,
     "platform_profiles": 7,
-    "ready_rules": 14,
-    "fallback_rules": 7
+    "ready_rules": 15,
+    "fallback_rules": 6
   },
   "direct_article_feeds": [
     {
@@ -129,7 +129,7 @@ window.ADAPTER_PROFILE_DATA = {
         "issue",
         "date"
       ],
-      "next_action": "会计研究切换到 asc.net.cn 当期列表；中国行政管理的维普 SSR 目录只能做发现源，需解析官网或官方 PDF 后才展示可点击链接。",
+      "next_action": "会计研究切换到 asc.net.cn 当期列表；中国行政管理用维普 SSR 目录发现条目，再用 NCPSD 期号页解析文章详情；维普链接只保留为 discovery_url。",
       "journals": [
         "j10",
         "j11"
@@ -367,10 +367,10 @@ window.ADAPTER_PROFILE_DATA = {
         "issue",
         "date"
       ],
-      "status": "待官方PDF解析",
+      "status": "文献中心详情解析",
       "source_url": "https://www.cqvip.com/journal/81961X",
       "adapter_kind": "cqvip-journal-html",
-      "next_action": "会计研究切换到 asc.net.cn 当期列表；中国行政管理的维普 SSR 目录只能做发现源，需解析官网或官方 PDF 后才展示可点击链接。",
+      "next_action": "会计研究切换到 asc.net.cn 当期列表；中国行政管理用维普 SSR 目录发现条目，再用 NCPSD 期号页解析文章详情；维普链接只保留为 discovery_url。",
       "render_required": false
     },
     {
@@ -389,7 +389,7 @@ window.ADAPTER_PROFILE_DATA = {
       "status": "新官网当期列表",
       "source_url": "https://www.asc.net.cn/AccountingResearch/NewestArticleListCS.aspx",
       "adapter_kind": "asc-current-issue-html",
-      "next_action": "会计研究切换到 asc.net.cn 当期列表；中国行政管理的维普 SSR 目录只能做发现源，需解析官网或官方 PDF 后才展示可点击链接。",
+      "next_action": "会计研究切换到 asc.net.cn 当期列表；中国行政管理用维普 SSR 目录发现条目，再用 NCPSD 期号页解析文章详情；维普链接只保留为 discovery_url。",
       "render_required": false
     },
     {

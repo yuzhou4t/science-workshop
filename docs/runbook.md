@@ -48,7 +48,7 @@ Run only one journal source while debugging an adapter:
 node scripts/fetch-articles-smoke-test.mjs --source=j9
 ```
 
-For discovery-only fallback sources such as `j6` (`管理世界`, Macrodatas) and `j10` (`中国行政管理`, CQVIP), the fallback page must not be used as the frontend article link. Keep it in `discovery_url`; only populate `url` after resolving an official article detail page or official PDF URL.
+For discovery-only fallback sources such as `j6` (`管理世界`, Macrodatas) and `j7` (`南开管理评论`, Macrodatas), the fallback page must not be used as the frontend article link. Keep it in `discovery_url`; only populate `url` after resolving an official article detail page or official PDF URL. `j10` (`中国行政管理`) still uses CQVIP for discovery, but its current rule resolves matching titles to NCPSD article detail pages before the frontend receives them.
 
 Check current unresolved official-link work:
 

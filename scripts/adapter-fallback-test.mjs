@@ -20,6 +20,7 @@ for (const journalId of ["j15", "j18", "j19"]) {
 
 assert.equal(ruleFor("j11").kind, "asc-current-issue-html", "会计研究 should use the current ASC issue endpoint");
 assert.equal(ruleFor("j10").kind, "cqvip-journal-html", "中国行政管理 should use the CQVIP SSR catalog fallback");
+assert.equal(ruleFor("j10").official_resolver?.kind, "ncpssd-issue-html", "中国行政管理 should resolve CQVIP discovery records to NCPSD article details");
 
 for (const journalId of ["j6", "j7"]) {
   const rule = ruleFor(journalId);

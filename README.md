@@ -22,6 +22,7 @@ open index.html
 node scripts/adapter-fallback-test.mjs
 node scripts/fetch-retry-policy-test.mjs
 node scripts/article-link-policy-test.mjs
+node scripts/official-link-resolvers-test.mjs
 node scripts/recent-workflow-test.mjs
 node scripts/front-data-history-test.mjs
 node scripts/html-adapter-parsers-test.mjs
@@ -62,15 +63,16 @@ node scripts/build-front-data.mjs --reset-history --workflow=data/recent-article
 
 ## 当前状态
 
-截至 2026-05-28，前端参考数据已合并 `data/recent-articles-2026-04-27_2026-05-27.json` 和 `data/recent-articles-2026-05-28_2026-05-28.json`。
+截至 2026-05-29，前端参考数据已合并到 `data/recent-articles-2026-05-29_2026-05-29.json`，并保留累计推送历史。
 
 - 期刊数据源：22 个。
 - 最近一次真实探测可用数据源：22 个。
-- 前端累计展示文章：227 篇。
-- 其中 30 篇目前只完成发现，仍待解析官方 PDF/详情链接；前端不会再把目录页或第三方目录页当成可点击论文链接。
-- 今日新增推送文章：26 篇。
+- 前端累计展示文章：244 篇。
+- 其中 28 篇目前只完成发现，仍待解析官方 PDF/详情链接；前端不会再把目录页或第三方目录页当成可点击论文链接。
+- 今日新增推送文章：33 篇。
 - 每日自动任务的去重状态已写入 `data/source-state.json`。
 - `管理科学学报` 已可从新版期号页解析；旧版 reader 期号页可作为备用解析入口，单源探测可返回 10 篇当期文章。
+- `中国行政管理` 先用维普目录发现当期条目，再用国家哲学社会科学文献中心期号页匹配到可点击的文章详情页；维普链接仅保留为 `discovery_url`。
 
 ## 每日自动检查
 

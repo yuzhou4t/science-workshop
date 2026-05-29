@@ -8,6 +8,7 @@ import { doiFromUrl, extractDateHints, extractHtmlArticleHints, extractMetadataA
 import { shouldRetryWithCurlStatus } from "./fetch-retry-policy.mjs";
 import { parseAscIssueListArticles, parseCieCurrentArticles, parseJmscReaderIssueArticles } from "./html-adapter-parsers.mjs";
 import { macrodatasArticleSectionUrl } from "./macrodatas-url.mjs";
+import { parseNcpssdIssueArticles, resolveNcpssdArticle } from "./official-link-resolvers.mjs";
 import { addDays, buildRecentWorkflow, dateOnly } from "./recent-workflow-lib.mjs";
 
 const execFileAsync = promisify(execFile);
@@ -893,13 +894,48 @@ async function extractCqvipJournalHtml(item) {
   }).filter((article) => looksLikeArticleTitle(article.title));
 
   if (!articles.length) notes.push("catalog_records_not_found");
+  const resolvedArticles = await resolveCqvipOfficialLinks(item, dedupeArticles(articles), notes);
   return {
     response,
     probe_url: item.source_url,
-    articles: dedupeArticles(articles),
+    articles: resolvedArticles,
     candidate_count: fetchData?.catalog?.count || articles.length,
-    notes: issueLabel ? [`issue:${issueLabel}`, "fallback_source:cqvip"] : ["fallback_source:cqvip", ...notes],
+    notes: issueLabel ? [`issue:${issueLabel}`, "fallback_source:cqvip", ...notes] : ["fallback_source:cqvip", ...notes],
   };
+}
+
+async function resolveCqvipOfficialLinks(item, articles, notes) {
+  const resolver = item.adapter_rule?.official_resolver;
+  if (resolver?.kind !== "ncpssd-issue-html" || !resolver.issue_url || !articles.length) return articles;
+
+  const response = await fetchText(resolver.issue_url, 16000, { Referer: "https://www.ncpssd.org/" });
+  notes.push("official_resolver:ncpssd_issue");
+  if (!response.ok) {
+    notes.push(`official_resolver_failed:${response.status || "ERR"}`);
+    return articles;
+  }
+
+  const candidates = parseNcpssdIssueArticles(response.text, response.finalUrl);
+  if (!candidates.length) {
+    notes.push("official_resolver_candidates_not_found");
+    return articles;
+  }
+
+  let resolvedCount = 0;
+  const resolvedArticles = articles.map((article) => {
+    const official = resolveNcpssdArticle(article, candidates);
+    if (!official) return article;
+    resolvedCount += 1;
+    return {
+      ...article,
+      official_url: official.official_url,
+      reader_url: official.reader_url,
+      authors: article.authors || official.authors,
+      official_source: "ncpssd",
+    };
+  });
+  notes.push(`official_resolved:${resolvedCount}/${articles.length}`);
+  return resolvedArticles;
 }
 
 function expandMacrodatasSearchTerms(rule) {

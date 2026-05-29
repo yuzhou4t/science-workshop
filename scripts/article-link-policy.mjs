@@ -33,6 +33,17 @@ export function normalizeArticleLink(source = {}, article = source) {
     };
   }
 
+  if (officialUrl) {
+    return {
+      url: officialUrl,
+      official_url: officialUrl,
+      pdf_url: isPdfUrl(officialUrl) ? officialUrl : "",
+      discovery_url: rawDiscoveryUrl || (rawUrl && rawUrl !== officialUrl ? rawUrl : ""),
+      link_status: isPdfUrl(officialUrl) ? "official_pdf" : "official_detail",
+      link_note: isPdfUrl(officialUrl) ? "official_pdf_resolved" : "official_detail_page",
+    };
+  }
+
   if (fallbackDirectoryRules.has(extractionRule)) {
     return {
       url: "",

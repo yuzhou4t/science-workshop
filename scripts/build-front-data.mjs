@@ -2,6 +2,7 @@ import { readdir, readFile, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 
 import { normalizeArticleLink } from "./article-link-policy.mjs";
+import { compactArticleTitle } from "./official-link-resolvers.mjs";
 
 const dataDir = new URL("../data/", import.meta.url);
 const outputPath = new URL("../data/recent-front-data.js", import.meta.url);
@@ -75,12 +76,49 @@ function minDate(a = "", b = "") {
   return a <= b ? a : b;
 }
 
+function normalizedHistoryUrl(value = "") {
+  const raw = String(value || "").trim();
+  if (!raw) return "";
+  try {
+    const url = new URL(raw);
+    url.hostname = url.hostname.toLowerCase();
+    if (!/macrodatas\.cn$/i.test(url.hostname) || !url.hash.startsWith("#:~:text=")) url.hash = "";
+    for (const key of [...url.searchParams.keys()]) {
+      if (/^utm_/i.test(key) || ["sign", "expireTime", "expires", "_t", "timestamp", "token"].includes(key)) {
+        url.searchParams.delete(key);
+      }
+    }
+    url.searchParams.sort();
+    return url.toString().replace(/\/$/, "").toLowerCase();
+  } catch {
+    return raw.split("#")[0].replace(/\/$/, "").toLowerCase();
+  }
+}
+
+function articleUrlHistoryKey(article) {
+  const articleLink = normalizeArticleLink(article, article);
+  const url = normalizedHistoryUrl(articleLink.url || articleLink.official_url || articleLink.discovery_url);
+  return url ? `${article.journal_id || article.source_journal_id || ""}::url::${url}` : "";
+}
+
+function articleTitleHistoryKey(article) {
+  const title = compactArticleTitle(article.title || "");
+  if (!title) return "";
+  return [
+    article.journal_id || article.source_journal_id || "",
+    "title",
+    title,
+    article.published_at || article.issue_date || article.display_date || "",
+  ].join("::");
+}
+
 function mergeArticle(existing, incoming) {
   if (!existing) return incoming;
   const firstSeenAt = minDate(existing.first_seen_at, incoming.first_seen_at);
-  return {
+  const merged = {
     ...existing,
     ...incoming,
+    id: existing.id || incoming.id,
     authors: incoming.authors || existing.authors || "",
     published_at: incoming.published_at || existing.published_at || "",
     issue_date: incoming.issue_date || existing.issue_date || "",
@@ -89,6 +127,20 @@ function mergeArticle(existing, incoming) {
     display_date_basis: incoming.display_date_basis || existing.display_date_basis || "",
     push_basis: existing.push_basis || incoming.push_basis || "",
   };
+  const existingResolved = ["official_pdf", "official_detail"].includes(existing.link_status) || existing.official_url || existing.pdf_url;
+  const incomingResolved = ["official_pdf", "official_detail"].includes(incoming.link_status) || incoming.official_url || incoming.pdf_url;
+  if (existingResolved && !incomingResolved) {
+    return {
+      ...merged,
+      url: existing.url,
+      official_url: existing.official_url,
+      pdf_url: existing.pdf_url,
+      discovery_url: incoming.discovery_url || existing.discovery_url || "",
+      link_status: existing.link_status,
+      link_note: existing.link_note,
+    };
+  }
+  return merged;
 }
 
 function sortPushArticles(articles) {
@@ -102,17 +154,30 @@ function sortPushArticles(articles) {
 }
 
 export function mergePushHistory(existingHistory = {}, workflow, options = {}) {
-  const byId = new Map();
-  for (const article of existingHistory.articles || []) {
-    if (article?.id) byId.set(article.id, compactArticle(article));
-  }
-  for (const article of workflow.push_queue || []) {
-    if (!article?.id) continue;
+  const byKey = new Map();
+  const aliasToKey = new Map();
+
+  function upsertArticle(article) {
+    if (!article?.id) return;
     const incoming = compactArticle(article);
-    byId.set(article.id, mergeArticle(byId.get(article.id), incoming));
+    const aliases = [
+      `id:${incoming.id}`,
+      articleUrlHistoryKey(incoming),
+      articleTitleHistoryKey(incoming),
+    ].filter(Boolean);
+    const key = aliases.map((alias) => aliasToKey.get(alias)).find(Boolean) || aliases[1] || aliases[2] || aliases[0];
+    const merged = mergeArticle(byKey.get(key), incoming);
+    byKey.set(key, merged);
+    for (const alias of aliases) aliasToKey.set(alias, key);
+    if (merged.id) aliasToKey.set(`id:${merged.id}`, key);
   }
 
-  const articles = sortPushArticles([...byId.values()]);
+  for (const article of existingHistory.articles || []) upsertArticle(article);
+  for (const article of workflow.push_queue || []) {
+    upsertArticle(article);
+  }
+
+  const articles = sortPushArticles([...byKey.values()]);
   const firstSeenDates = articles.map((article) => article.first_seen_at).filter(Boolean).sort();
   return {
     version: 1,

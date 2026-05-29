@@ -26,6 +26,22 @@ assert.equal(cqvipLink.url, "");
 assert.equal(cqvipLink.discovery_url.includes("cqvip.com/doc/journal/7203343027"), true);
 assert.equal(cqvipLink.link_status, "needs_official_pdf");
 
+const resolvedCqvipLink = normalizeArticleLink(
+  { extraction_rule: "cqvip-journal-html" },
+  {
+    title: "已解析官方详情的维普发现文章",
+    url: "https://www.cqvip.com/doc/journal/7203343027?sign=aaa&expireTime=1795485812689&resourceId=7203343027&type=1",
+    official_url: "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026003003&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+  },
+);
+
+assert.equal(
+  resolvedCqvipLink.url,
+  "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026003003&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+);
+assert.equal(resolvedCqvipLink.discovery_url.includes("cqvip.com/doc/journal/7203343027"), true);
+assert.equal(resolvedCqvipLink.link_status, "official_detail");
+
 const officialLink = normalizeArticleLink(
   { extraction_rule: "aea-forthcoming-html" },
   {
