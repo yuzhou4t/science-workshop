@@ -43,4 +43,46 @@ const resolved = resolveNcpssdArticle(
 assert.equal(resolved.official_url, articles[0].official_url);
 assert.equal(resolved.authors, "庞明礼; 郭雯斐");
 
+const ncpssdMobileSnippetWithTypeArg = `
+  <div class="result-list">
+    <a onclick="openDetail('/Literature/articleinfo?id=NKGLPL2026002003&type=journalArticle&typename=中文期刊文章&nav=1&langType=1','中文期刊文章')"
+       title='技术集群先导平台企业如何助力关键核心技术突破——一项光电产业的探索性案例研究'>
+      技术集群先导平台企业如何助力关键核心技术突破——一项光电产业的探索性案例研究
+    </a>
+    <a onclick="AddHandleCount(this, '中文期刊文章', 'NKGLPL2026002003', 1, -1, '/Literature/readurl?id=NKGLPL2026002003', '81584X', '[F426.6, F273.1]', '技术集群先导平台企业如何助力关键核心技术突破——一项光电产业的探索性案例研究', '李梦雅[1];杨德林[2];邹济[2];郝晨[3];李浩[4]', '南开管理评论')">
+      下载全文&gt;&gt;
+    </a>
+  </div>
+`;
+
+const mobileArticles = parseNcpssdIssueArticles(ncpssdMobileSnippetWithTypeArg, "https://m.ncpssd.cn/journal/details?gch=81584X");
+
+assert.equal(mobileArticles.length, 1);
+assert.equal(mobileArticles[0].id, "NKGLPL2026002003");
+assert.equal(mobileArticles[0].authors, "李梦雅; 杨德林; 邹济; 郝晨; 李浩");
+assert.equal(
+  mobileArticles[0].official_url,
+  "https://m.ncpssd.cn/Literature/articleinfo?id=NKGLPL2026002003&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+);
+
+const ncpssdPcSecureSnippet = `
+  <div class="result-list">
+    <a onclick="openDetail('/Literature/secure/articleinfo?params=encrypted-demo')"
+       title='超越经济激励：平台经济中的评论激励机制、市场交易行为与社会福利'>
+      超越经济激励：平台经济中的评论激励机制、市场交易行为与社会福利
+    </a>
+    <a onclick="AddHandleCount(this, '中文期刊文章', 'GLSJ2026005008', 1, -1, '/Literature/readurl?id=GLSJ2026005008', '95499X', '[F49]', '超越经济激励：平台经济中的评论激励机制、市场交易行为与社会福利', '罗俊[1];潘佳艺[1];邹乐豪[1]', '管理世界')">
+      下载全文&gt;&gt;
+    </a>
+  </div>
+`;
+
+const secureArticles = parseNcpssdIssueArticles(ncpssdPcSecureSnippet, "https://www.ncpssd.cn/journal/details?gch=95499X");
+
+assert.equal(secureArticles.length, 1);
+assert.equal(secureArticles[0].id, "GLSJ2026005008");
+assert.equal(secureArticles[0].authors, "罗俊; 潘佳艺; 邹乐豪");
+assert.equal(secureArticles[0].official_url, "https://www.ncpssd.cn/Literature/secure/articleinfo?params=encrypted-demo");
+assert.equal(secureArticles[0].reader_url, "https://www.ncpssd.cn/Literature/readurl?id=GLSJ2026005008");
+
 console.log("official link resolver rules ok");

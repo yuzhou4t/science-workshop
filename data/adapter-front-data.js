@@ -6,7 +6,7 @@ window.ADAPTER_PROFILE_DATA = {
     "adapter_sources": 17,
     "platform_profiles": 7,
     "ready_rules": 15,
-    "fallback_rules": 6
+    "fallback_rules": 4
   },
   "direct_article_feeds": [
     {
@@ -92,7 +92,7 @@ window.ADAPTER_PROFILE_DATA = {
         "authors",
         "abstract"
       ],
-      "next_action": "公共管理学报可直接抓 paper 页面；管理世界主站验证码阻断时只允许 Macrodatas 做发现源，需二跳解析官方 PDF/详情后才能作为可点击文章链接。",
+      "next_action": "公共管理学报可直接抓 paper 页面；管理世界主站验证码阻断时先用 Macrodatas 做发现源，再按发现到的期号尝试 NCPSD 官方详情升级；官方未上架前仍保持 discovery_url。",
       "journals": [
         "j6",
         "j8"
@@ -111,7 +111,7 @@ window.ADAPTER_PROFILE_DATA = {
         "date",
         "authors"
       ],
-      "next_action": "管理科学学报先从 issue/browser 找最新期，再进入期号页抽 article/abstract；站点抖动时兜底到 ch/reader/issue_query.aspx。南开管理评论只允许 Macrodatas 做发现源，需二跳解析官方 PDF/详情。",
+      "next_action": "管理科学学报先从 issue/browser 找最新期，再进入期号页抽 article/abstract；站点抖动时兜底到 ch/reader/issue_query.aspx。南开管理评论先用 Macrodatas 做发现源，再按发现到的期号尝试 NCPSD 官方详情升级。",
       "journals": [
         "j7",
         "j9"
@@ -288,10 +288,10 @@ window.ADAPTER_PROFILE_DATA = {
         "authors",
         "abstract"
       ],
-      "status": "待官方PDF解析",
+      "status": "待官方详情上架",
       "source_url": "https://glsj.cbpt.cnki.net/WKB/WebPublication/wkTextContent.aspx?colType=4&tp=gklb&mid=glsj",
       "adapter_kind": "macrodatas-issue-list",
-      "next_action": "公共管理学报可直接抓 paper 页面；管理世界主站验证码阻断时只允许 Macrodatas 做发现源，需二跳解析官方 PDF/详情后才能作为可点击文章链接。",
+      "next_action": "公共管理学报可直接抓 paper 页面；管理世界主站验证码阻断时先用 Macrodatas 做发现源，再按发现到的期号尝试 NCPSD 官方详情升级；官方未上架前仍保持 discovery_url。",
       "render_required": true
     },
     {
@@ -311,7 +311,7 @@ window.ADAPTER_PROFILE_DATA = {
       "status": "静态规则",
       "source_url": "https://gggl.cbpt.cnki.net/portal",
       "adapter_kind": "cnki-portal-paper",
-      "next_action": "公共管理学报可直接抓 paper 页面；管理世界主站验证码阻断时只允许 Macrodatas 做发现源，需二跳解析官方 PDF/详情后才能作为可点击文章链接。",
+      "next_action": "公共管理学报可直接抓 paper 页面；管理世界主站验证码阻断时先用 Macrodatas 做发现源，再按发现到的期号尝试 NCPSD 官方详情升级；官方未上架前仍保持 discovery_url。",
       "render_required": true
     },
     {
@@ -328,10 +328,10 @@ window.ADAPTER_PROFILE_DATA = {
         "date",
         "authors"
       ],
-      "status": "待官方PDF解析",
+      "status": "待官方详情上架",
       "source_url": "https://nbr.nankai.edu.cn/nkglpl/home",
       "adapter_kind": "macrodatas-issue-list",
-      "next_action": "管理科学学报先从 issue/browser 找最新期，再进入期号页抽 article/abstract；站点抖动时兜底到 ch/reader/issue_query.aspx。南开管理评论只允许 Macrodatas 做发现源，需二跳解析官方 PDF/详情。",
+      "next_action": "管理科学学报先从 issue/browser 找最新期，再进入期号页抽 article/abstract；站点抖动时兜底到 ch/reader/issue_query.aspx。南开管理评论先用 Macrodatas 做发现源，再按发现到的期号尝试 NCPSD 官方详情升级。",
       "render_required": false
     },
     {
@@ -351,7 +351,7 @@ window.ADAPTER_PROFILE_DATA = {
       "status": "期号规则",
       "source_url": "https://jmsc.tju.edu.cn/jmsc/issue/browser",
       "adapter_kind": "jmsc-issue-html",
-      "next_action": "管理科学学报先从 issue/browser 找最新期，再进入期号页抽 article/abstract；站点抖动时兜底到 ch/reader/issue_query.aspx。南开管理评论只允许 Macrodatas 做发现源，需二跳解析官方 PDF/详情。",
+      "next_action": "管理科学学报先从 issue/browser 找最新期，再进入期号页抽 article/abstract；站点抖动时兜底到 ch/reader/issue_query.aspx。南开管理评论先用 Macrodatas 做发现源，再按发现到的期号尝试 NCPSD 官方详情升级。",
       "render_required": false
     },
     {

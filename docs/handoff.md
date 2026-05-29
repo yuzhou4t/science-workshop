@@ -33,6 +33,7 @@ The daily dedupe state is initialized in `data/source-state.json`. Rebuilding fr
 - Chinese sources without RSS use automated adapters or fallback catalog sources instead of manual uploads.
 - `管理科学学报` has both current issue-browser extraction and older reader issue-page fallback. The latest local live probe returned READY, and the single-source probe returned 10 current-issue articles.
 - `中国行政管理` uses CQVIP only as a discovery catalog and resolves the current issue to NCPSD article detail pages before frontend display.
+- `管理世界` and `南开管理评论` use Macrodatas only for discovery, then try an NCPSD official-detail resolver built from the discovered year/issue. On 2026-05-29 both single-source live probes returned articles, but NCPSD returned no candidates for the target issues, so their records correctly remain `needs_official_pdf`.
 - A local macOS LaunchAgent runs the daily workflow at 10:00.
 
 ## Remaining Work

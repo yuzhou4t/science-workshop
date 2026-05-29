@@ -73,6 +73,7 @@ node scripts/build-front-data.mjs --reset-history --workflow=data/recent-article
 - 每日自动任务的去重状态已写入 `data/source-state.json`。
 - `管理科学学报` 已可从新版期号页解析；旧版 reader 期号页可作为备用解析入口，单源探测可返回 10 篇当期文章。
 - `中国行政管理` 先用维普目录发现当期条目，再用国家哲学社会科学文献中心期号页匹配到可点击的文章详情页；维普链接仅保留为 `discovery_url`。
+- `管理世界` 和 `南开管理评论` 目前先用 Macrodatas 发现当期文章，再按发现到的期号尝试国家哲学社会科学文献中心详情页升级；截至 2026-05-29，目标期号在文献中心仍未返回文章候选，所以仍保持 `needs_official_pdf`。
 
 ## 每日自动检查
 

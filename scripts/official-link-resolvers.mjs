@@ -59,6 +59,11 @@ function articleIdFromUrl(url = "") {
   }
 }
 
+function articleIdFromHandleCall(context = "") {
+  const handleCall = context.match(/(?:ViewHandleCount|AddHandleCount)\(([\s\S]*?)\)/i)?.[1] || "";
+  return parseSingleQuotedArgs(handleCall).find((arg) => /^[A-Z0-9]*20\d{2}\d{3,}$/i.test(arg)) || "";
+}
+
 function parseSingleQuotedArgs(call = "") {
   return [...call.matchAll(/'([^']*)'/g)].map((match) => decodeHtml(match[1]));
 }
@@ -72,7 +77,7 @@ function authorsFromContext(context = "", title = "") {
 }
 
 export function parseNcpssdIssueArticles(html = "", baseUrl = "https://www.ncpssd.org/") {
-  const detailRegex = /<a\b(?=[^>]*openDetail\(\s*['"]([^'"]*\/Literature\/articleinfo\?[^'"]+)['"]\s*\))[^>]*>[\s\S]*?<\/a>/gi;
+  const detailRegex = /<a\b(?=[^>]*openDetail\(\s*['"]([^'"]*\/Literature\/(?:secure\/)?articleinfo\?[^'"]+)['"](?:\s*,[^)]*)?\))[^>]*>[\s\S]*?<\/a>/gi;
   const matches = [...String(html).matchAll(detailRegex)];
   const articles = matches.map((match, index) => {
     const anchorHtml = match[0];
@@ -80,16 +85,17 @@ export function parseNcpssdIssueArticles(html = "", baseUrl = "https://www.ncpss
     const titleAttr = openingTag.match(/\btitle=(["'])([\s\S]*?)\1/i)?.[2] || "";
     const title = stripTags(titleAttr || anchorHtml);
     const officialUrl = normalizeUrl(match[1], baseUrl);
-    const id = articleIdFromUrl(officialUrl);
     const nextIndex = matches[index + 1]?.index ?? Math.min(String(html).length, match.index + 2400);
     const context = String(html).slice(match.index, nextIndex);
     const readerPath = context.match(/['"]([^'"]*\/Literature\/readurl\?id=[^'"]+)['"]/i)?.[1] || "";
+    const readerUrl = normalizeUrl(readerPath, baseUrl);
+    const id = articleIdFromUrl(officialUrl) || articleIdFromUrl(readerUrl) || articleIdFromHandleCall(context);
 
     return {
       id,
       title,
       official_url: officialUrl,
-      reader_url: normalizeUrl(readerPath, baseUrl),
+      reader_url: readerUrl,
       authors: authorsFromContext(context, title),
     };
   }).filter((article) => article.id && article.title && article.official_url);

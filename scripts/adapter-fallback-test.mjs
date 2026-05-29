@@ -21,6 +21,10 @@ for (const journalId of ["j15", "j18", "j19"]) {
 assert.equal(ruleFor("j11").kind, "asc-current-issue-html", "会计研究 should use the current ASC issue endpoint");
 assert.equal(ruleFor("j10").kind, "cqvip-journal-html", "中国行政管理 should use the CQVIP SSR catalog fallback");
 assert.equal(ruleFor("j10").official_resolver?.kind, "ncpssd-issue-html", "中国行政管理 should resolve CQVIP discovery records to NCPSD article details");
+assert.equal(ruleFor("j6").official_resolver?.kind, "ncpssd-issue-html", "管理世界 should resolve Macrodatas discovery records to NCPSD article details");
+assert.match(ruleFor("j6").official_resolver?.issue_url_template || "", /\{year\}.*\{issue\}/, "管理世界 NCPSD resolver should follow the discovered issue");
+assert.equal(ruleFor("j7").official_resolver?.kind, "ncpssd-issue-html", "南开管理评论 should try NCPSD article details when the discovered issue is listed");
+assert.match(ruleFor("j7").official_resolver?.issue_url_template || "", /\{year\}.*\{issue\}/, "南开管理评论 NCPSD resolver should follow the discovered issue");
 
 for (const journalId of ["j6", "j7"]) {
   const rule = ruleFor(journalId);

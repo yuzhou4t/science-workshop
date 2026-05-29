@@ -475,6 +475,11 @@ function issueSortKey(value = "") {
   return match ? Number(match[1]) * 100 + Number(match[2]) : 0;
 }
 
+function issuePartsFromTitle(value = "") {
+  const match = compactText(value).match(/(20\d{2})年第?(\d{1,2})期/);
+  return match ? { year: match[1], issue: match[2] } : {};
+}
+
 function datePartsToIso(dateParts) {
   const parts = dateParts?.["date-parts"]?.[0] || [];
   if (!parts.length) return "";
@@ -894,7 +899,7 @@ async function extractCqvipJournalHtml(item) {
   }).filter((article) => looksLikeArticleTitle(article.title));
 
   if (!articles.length) notes.push("catalog_records_not_found");
-  const resolvedArticles = await resolveCqvipOfficialLinks(item, dedupeArticles(articles), notes);
+  const resolvedArticles = await resolveOfficialLinks(item, dedupeArticles(articles), notes);
   return {
     response,
     probe_url: item.source_url,
@@ -904,11 +909,26 @@ async function extractCqvipJournalHtml(item) {
   };
 }
 
-async function resolveCqvipOfficialLinks(item, articles, notes) {
-  const resolver = item.adapter_rule?.official_resolver;
-  if (resolver?.kind !== "ncpssd-issue-html" || !resolver.issue_url || !articles.length) return articles;
+function officialResolverUrl(resolver = {}, context = {}) {
+  if (resolver.issue_url) return resolver.issue_url;
+  if (!resolver.issue_url_template || !context.year || !context.issue) return "";
+  return resolver.issue_url_template
+    .replace(/\{year\}/g, context.year)
+    .replace(/\{issue\}/g, context.issue);
+}
 
-  const response = await fetchText(resolver.issue_url, 16000, { Referer: "https://www.ncpssd.org/" });
+async function resolveOfficialLinks(item, articles, notes, context = {}) {
+  const resolver = item.adapter_rule?.official_resolver;
+  const issueUrl = officialResolverUrl(resolver, context);
+  if (resolver?.kind !== "ncpssd-issue-html" || !issueUrl || !articles.length) return articles;
+
+  let referer = "https://www.ncpssd.org/";
+  try {
+    referer = new URL("/", issueUrl).toString();
+  } catch {
+    // Keep the default literature-center referer.
+  }
+  const response = await fetchText(issueUrl, 16000, { Referer: referer });
   notes.push("official_resolver:ncpssd_issue");
   if (!response.ok) {
     notes.push(`official_resolver_failed:${response.status || "ERR"}`);
@@ -1029,11 +1049,12 @@ async function extractMacrodatasIssueList(item) {
   const issueResponse = await fetchText(selectedIssue.url, 15000);
   const articles = issueResponse.ok ? parseMacrodatasDirectoryArticles(issueResponse.text, issueResponse.finalUrl) : [];
   if (!articles.length) notes.push("directory_not_found");
+  const resolvedArticles = await resolveOfficialLinks(item, dedupeArticles(articles), notes, issuePartsFromTitle(selectedIssue.title));
 
   return {
     response: issueResponse,
     probe_url: selectedIssue.url,
-    articles,
+    articles: resolvedArticles,
     candidate_count: issueLinks.length,
     notes: [...notes, `issue_candidates:${issueLinks.length}`, `issue:${compactText(selectedIssue.title).match(/20\d{2}年第?\d{1,2}期/)?.[0] || selectedIssue.title}`],
   };
