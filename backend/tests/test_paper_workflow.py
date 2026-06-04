@@ -2,8 +2,29 @@ import zipfile
 
 import pytest
 
+from app.models.job import JobStatus, NodeStatus, WorkflowType
 from app.services.deepseek_client import DeepSeekClient, _extract_message_content
+from app.services.docx_exporter import DocxExporter
 from app.services.mineru_client import MineruClient, _extract_mineru_zip, _extract_task_id
+from app.storage.job_store import JobStore
+from app.workflows.events import EventBroker
+from app.workflows.paper_reading import PaperReadingWorkflow
+
+
+class FailingDeepSeekClient:
+    def __init__(self, failed_node_id: str, message: str) -> None:
+        self.failed_node_id = failed_node_id
+        self.message = message
+
+    async def generate(self, node_id: str, prompt: str) -> str:
+        if node_id == self.failed_node_id:
+            raise RuntimeError(self.message)
+        return f"# {node_id}\n\nMock output for prompt length {len(prompt)}."
+
+
+class FailingMineruClient:
+    async def parse_pdf_to_markdown(self, pdf_path) -> None:
+        raise RuntimeError("mineru boom")
 
 
 @pytest.mark.asyncio
@@ -110,3 +131,104 @@ def test_mineru_cos_object_key_does_not_include_original_filename(tmp_path) -> N
     assert object_key.endswith(".pdf")
     assert pdf.name not in object_key
     assert "Sensitive" not in object_key
+
+
+@pytest.mark.asyncio
+async def test_paper_workflow_creates_evidence_chain(tmp_path) -> None:
+    store = JobStore(tmp_path / "jobs", retention_days=7)
+    job = store.create_job(WorkflowType.PAPER_READING, template_id="africa-reading")
+    pdf_path = store.job_dir(job.job_id) / "input" / "input.pdf"
+    pdf_path.write_bytes(b"%PDF-1.4 mock")
+
+    workflow = PaperReadingWorkflow(
+        store=store,
+        events=EventBroker(),
+        mineru=MineruClient(use_mock=True),
+        deepseek=DeepSeekClient(api_key="", base_url="https://example.invalid", model="mock", use_mock=True),
+        docx_exporter=DocxExporter(),
+    )
+
+    completed = await workflow.run(job.job_id, pdf_path)
+
+    assert completed.status == JobStatus.COMPLETED
+    assert (store.job_dir(job.job_id) / "extraction" / "extracted.md").exists()
+    assert (store.job_dir(job.job_id) / "nodes" / "basic_info.md").exists()
+    assert (store.job_dir(job.job_id) / "nodes" / "basic_info.json").exists()
+    assert (store.job_dir(job.job_id) / "nodes" / "method_data_figures.md").exists()
+    assert (store.job_dir(job.job_id) / "nodes" / "method_data_figures.json").exists()
+    assert (store.job_dir(job.job_id) / "nodes" / "formula_metrics.md").exists()
+    assert (store.job_dir(job.job_id) / "nodes" / "formula_metrics.json").exists()
+    assert (store.job_dir(job.job_id) / "nodes" / "draft.md").exists()
+    assert (store.job_dir(job.job_id) / "nodes" / "final.md").exists()
+    assert (store.job_dir(job.job_id) / "exports" / "final.docx").exists()
+
+
+@pytest.mark.asyncio
+async def test_paper_workflow_marks_document_extraction_failed_on_error(tmp_path) -> None:
+    store = JobStore(tmp_path / "jobs", retention_days=7)
+    job = store.create_job(WorkflowType.PAPER_READING, template_id="africa-reading")
+    pdf_path = store.job_dir(job.job_id) / "input" / "input.pdf"
+    pdf_path.write_bytes(b"%PDF-1.4 mock")
+    workflow = PaperReadingWorkflow(
+        store=store,
+        events=EventBroker(),
+        mineru=FailingMineruClient(),
+        deepseek=DeepSeekClient(api_key="", base_url="https://example.invalid", model="mock", use_mock=True),
+        docx_exporter=DocxExporter(),
+    )
+
+    with pytest.raises(RuntimeError, match="mineru boom"):
+        await workflow.run(job.job_id, pdf_path)
+
+    reloaded = store.load_job(job.job_id)
+    assert reloaded.status == JobStatus.FAILED
+    assert reloaded.nodes["document_extraction"].status == NodeStatus.FAILED
+    assert "mineru boom" in reloaded.nodes["document_extraction"].error
+
+
+@pytest.mark.asyncio
+async def test_paper_workflow_marks_basic_info_failed_on_error(tmp_path) -> None:
+    store = JobStore(tmp_path / "jobs", retention_days=7)
+    job = store.create_job(WorkflowType.PAPER_READING, template_id="africa-reading")
+    pdf_path = store.job_dir(job.job_id) / "input" / "input.pdf"
+    pdf_path.write_bytes(b"%PDF-1.4 mock")
+    failure_message = "basic info failed"
+    workflow = PaperReadingWorkflow(
+        store=store,
+        events=EventBroker(),
+        mineru=MineruClient(use_mock=True),
+        deepseek=FailingDeepSeekClient("basic_info", failure_message),
+        docx_exporter=DocxExporter(),
+    )
+
+    with pytest.raises(RuntimeError, match=failure_message):
+        await workflow.run(job.job_id, pdf_path)
+
+    reloaded = store.load_job(job.job_id)
+    assert reloaded.status == JobStatus.FAILED
+    assert reloaded.nodes["basic_info"].status == NodeStatus.FAILED
+    assert failure_message in reloaded.nodes["basic_info"].error
+
+
+@pytest.mark.asyncio
+async def test_paper_workflow_marks_draft_failed_on_error(tmp_path) -> None:
+    store = JobStore(tmp_path / "jobs", retention_days=7)
+    job = store.create_job(WorkflowType.PAPER_READING, template_id="africa-reading")
+    pdf_path = store.job_dir(job.job_id) / "input" / "input.pdf"
+    pdf_path.write_bytes(b"%PDF-1.4 mock")
+    failure_message = "draft failed"
+    workflow = PaperReadingWorkflow(
+        store=store,
+        events=EventBroker(),
+        mineru=MineruClient(use_mock=True),
+        deepseek=FailingDeepSeekClient("draft", failure_message),
+        docx_exporter=DocxExporter(),
+    )
+
+    with pytest.raises(RuntimeError, match=failure_message):
+        await workflow.run(job.job_id, pdf_path)
+
+    reloaded = store.load_job(job.job_id)
+    assert reloaded.status == JobStatus.FAILED
+    assert reloaded.nodes["draft"].status == NodeStatus.FAILED
+    assert failure_message in reloaded.nodes["draft"].error
