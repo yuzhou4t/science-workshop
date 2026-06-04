@@ -1,8 +1,10 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from app.api import jobs
 from app.core.config import get_settings
 from app.storage.job_store import JobStore
+from app.workflows.events import EventBroker
 
 
 def create_app() -> FastAPI:
@@ -10,6 +12,7 @@ def create_app() -> FastAPI:
     app = FastAPI(title="Science Workshop Workflow API")
     app.state.settings = settings
     app.state.job_store = JobStore(settings.workflow_storage_dir, settings.workflow_retention_days)
+    app.state.event_broker = EventBroker()
     app.state.job_store.cleanup_expired_jobs()
 
     app.add_middleware(
@@ -24,6 +27,8 @@ def create_app() -> FastAPI:
     def health() -> dict[str, str]:
         settings.workflow_storage_dir.mkdir(parents=True, exist_ok=True)
         return {"status": "ok"}
+
+    app.include_router(jobs.router)
 
     return app
 
