@@ -8,7 +8,7 @@ import { doiFromUrl, extractDateHints, extractHtmlArticleHints, extractMetadataA
 import { shouldRetryWithCurlStatus } from "./fetch-retry-policy.mjs";
 import { parseAscIssueListArticles, parseCieCurrentArticles, parseJmscReaderIssueArticles } from "./html-adapter-parsers.mjs";
 import { macrodatasArticleSectionUrl } from "./macrodatas-url.mjs";
-import { parseNcpssdIssueArticles, resolveCnkiSequentialArticles, resolveNcpssdArticle } from "./official-link-resolvers.mjs";
+import { parseNcpssdIssueArticles, resolveCnkiSequentialArticles, resolveNcpssdOfficialArticle } from "./official-link-resolvers.mjs";
 import { addDays, buildRecentWorkflow, dateOnly } from "./recent-workflow-lib.mjs";
 
 const execFileAsync = promisify(execFile);
@@ -515,6 +515,16 @@ function articleRouteFromSource(sourceUrl, id) {
   return `${origin}/#/issueDetail?id=${id}`;
 }
 
+function ajcassFileUrlFromSource(sourceUrl, filePath = "") {
+  const cleanPath = String(filePath || "").trim();
+  if (!cleanPath) return "";
+  try {
+    return new URL(cleanPath, originFromSource(sourceUrl)).toString();
+  } catch {
+    return cleanPath;
+  }
+}
+
 function flattenAjcassArticles(payload) {
   const rows = [];
   const walk = (value) => {
@@ -546,12 +556,18 @@ async function extractAjcassCurrentApi(item) {
   if (response.ok) {
     try {
       const payload = JSON.parse(response.text);
-      articles = flattenAjcassArticles(payload).map((row) => ({
-        title: stripTags(row.title),
-        url: articleRouteFromSource(item.source_url, row.id),
-        date: row.year && row.issue ? `${row.year}-${String(row.issue).padStart(2, "0")}` : "",
-        authors: stripTags(row.authors || ""),
-      })).filter((article) => looksLikeArticleTitle(article.title));
+      articles = flattenAjcassArticles(payload).map((row) => {
+        const pdfUrl = ajcassFileUrlFromSource(item.source_url, row.filePath);
+        const discoveryUrl = articleRouteFromSource(item.source_url, row.id);
+        return {
+          title: stripTags(row.title),
+          url: pdfUrl,
+          pdf_url: pdfUrl,
+          discovery_url: discoveryUrl,
+          date: row.year && row.issue ? `${row.year}-${String(row.issue).padStart(2, "0")}` : "",
+          authors: stripTags(row.authors || ""),
+        };
+      }).filter((article) => looksLikeArticleTitle(article.title));
     } catch (error) {
       notes.push(`json_parse_failed: ${error.message}`);
     }
@@ -948,16 +964,10 @@ async function resolveNcpssdOfficialLinks(resolver, articles, notes, context) {
 
   let resolvedCount = 0;
   const resolvedArticles = articles.map((article) => {
-    const official = resolveNcpssdArticle(article, candidates);
-    if (!official) return article;
+    const officialArticle = resolveNcpssdOfficialArticle(article, candidates);
+    if (!officialArticle) return article;
     resolvedCount += 1;
-    return {
-      ...article,
-      official_url: official.official_url,
-      reader_url: official.reader_url,
-      authors: article.authors || official.authors,
-      official_source: "ncpssd",
-    };
+    return officialArticle;
   });
   notes.push(`official_resolved:${resolvedCount}/${articles.length}`);
   return resolvedArticles;

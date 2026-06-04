@@ -22,12 +22,15 @@ open index.html
 node scripts/adapter-fallback-test.mjs
 node scripts/fetch-retry-policy-test.mjs
 node scripts/article-link-policy-test.mjs
+node scripts/ajcass-link-policy-test.mjs
 node scripts/official-link-resolvers-test.mjs
+node scripts/macrodatas-url-test.mjs
 node scripts/recent-workflow-test.mjs
 node scripts/front-data-history-test.mjs
 node scripts/html-adapter-parsers-test.mjs
 node scripts/date-enhancement-test.mjs
 node scripts/launchd-plist-test.mjs
+node scripts/build-adapter-front-data-test.mjs
 node scripts/adapter-smoke-test.mjs
 ```
 
@@ -42,7 +45,7 @@ node scripts/build-front-data.mjs --reset-history --workflow=data/recent-article
 
 - `index.html`：前端原型页面，包含文章推送流、数据源汇总、筛选器和预留的转换功能入口。
 - `data/adapter-profiles.json`：期刊数据源规则表，目前包含 5 个直接 RSS/eTOC 来源和 17 个页面适配来源。
-- `data/fetch-smoke-results.json`：最近一次真实探测所有数据源后的结果。
+- `data/fetch-smoke-results.json`：全量真实探测所有数据源后的结果。
 - `data/adapter-front-data.js`：前端“适配器工作台”读取的真实注册表状态。
 - `data/recent-articles-*.json`：某个日期范围或某天的抓取工作流输出。
 - `data/push-history.json`：前端累计推送历史，会按文章 ID 去重并保留最早首次发现日。
@@ -59,22 +62,22 @@ node scripts/build-front-data.mjs --reset-history --workflow=data/recent-article
 
 - [架构说明](docs/architecture.md)：数据流、数据源模型、日期模型和前端展示逻辑。
 - [运行手册](docs/runbook.md)：日常运行、定时任务、检查命令和排障方法。
-- [交接记录](docs/handoff.md)：2026-05-27 的项目状态、已完成内容和后续工作。
+- [交接记录](docs/handoff.md)：当前项目状态、已完成内容和后续工作。
 
 ## 当前状态
 
-截至 2026-05-29，前端参考数据已合并到 `data/recent-articles-2026-05-29_2026-05-29.json`，并保留累计推送历史。
+截至 2026-06-04，前端参考数据已合并到 `data/recent-articles-2026-06-04_2026-06-04.json`，并保留累计推送历史。
 
 - 期刊数据源：22 个。
-- 最近一次真实探测可用数据源：22 个。
-- 前端累计展示文章：244 篇。
+- 2026-06-04 本地日常运行可用来源：21 / 22 个；`中国行政管理` 在该次运行中因 CQVIP 请求 22 秒超时暂时 blocked。
+- 前端累计展示文章：326 篇，`data/recent-front-data.js` 和 `data/push-history.json` 均为 326 个唯一文章 ID。
 - 其中 17 篇目前只完成发现，仍待解析官方 PDF/详情链接；前端不会再把目录页或第三方目录页当成可点击论文链接。
-- 今日新增推送文章：33 篇。
+- 2026-06-04 本地日常运行新增推送文章：24 篇。
 - 每日自动任务的去重状态已写入 `data/source-state.json`。
-- `管理科学学报` 已可从新版期号页解析；旧版 reader 期号页可作为备用解析入口，单源探测可返回 10 篇当期文章。
-- `中国行政管理` 先用维普目录发现当期条目，再用国家哲学社会科学文献中心期号页匹配到可点击的文章详情页；维普链接仅保留为 `discovery_url`。
-- `管理世界` 先用 Macrodatas 发现当期文章，再按期号和目录顺序补到知网正式付费详情入口；2026年第5期 11 篇已转为 `official_paid_detail`。
-- `南开管理评论` 目前先用 Macrodatas 发现当期文章，再按发现到的期号尝试国家哲学社会科学文献中心详情页升级；截至 2026-05-29，目标期号在文献中心仍未返回文章候选，所以仍保持 `needs_official_pdf`。
+- `管理科学学报` 已可从新版期号页解析；旧版 reader 期号页可作为备用解析入口，2026-06-04 日常运行返回 11 篇当期文章。
+- `中国行政管理` 先用维普目录发现当期条目，再用国家哲学社会科学文献中心期号页匹配到可点击的文章详情页；维普链接仅保留为 `discovery_url`。若 CQVIP 单次超时，先按网络/保护问题排查，不要直接改解析规则。
+- `管理世界` 先用 Macrodatas 发现当期文章，再用国家哲学社会科学文献中心移动端期号页按标题匹配到官方单篇详情页；2026年第5期 11 篇已解析到 `Literature/articleinfo` 链接，官方页内再按权限提供阅读/下载入口。
+- `南开管理评论` 目前先用 Macrodatas 发现当期文章，再按发现到的期号尝试国家哲学社会科学文献中心详情页升级；截至 2026-06-04，17 篇条目仍保持 `needs_official_pdf`。
 
 ## 每日自动检查
 

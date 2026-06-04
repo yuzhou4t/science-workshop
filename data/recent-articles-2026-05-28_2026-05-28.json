@@ -231,7 +231,7 @@
       "probe_url": "https://api.ajcass.com/api/SiteWebApi/GetCurrentPeriodMutiChannel?JournalID=201606270007",
       "extraction_rule": "ajcass-current-api",
       "title": "论巩固和完善农村基本经营制度",
-      "url": "https://zgncjj.ajcass.com/#/issueDetail?id=122803",
+      "url": "https://zgncjj.ajcass.com/UploadFile/Issue/201606270007/2026/5//20260513105720274WU_FILE_0.pdf",
       "authors": "胡凌啸",
       "published_at": "",
       "issue_date": "2026-05",
@@ -245,7 +245,12 @@
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "",
       "observed_at": "2026-05-28T02:06:03.465Z",
-      "is_new": false
+      "is_new": false,
+      "official_url": "https://zgncjj.ajcass.com/UploadFile/Issue/201606270007/2026/5//20260513105720274WU_FILE_0.pdf",
+      "pdf_url": "https://zgncjj.ajcass.com/UploadFile/Issue/201606270007/2026/5//20260513105720274WU_FILE_0.pdf",
+      "discovery_url": "https://zgncjj.ajcass.com/#/issueDetail?id=122803",
+      "link_status": "official_pdf",
+      "link_note": "official_pdf_resolved"
     }
   ],
   "undated_candidates": [

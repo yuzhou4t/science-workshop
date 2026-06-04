@@ -1895,7 +1895,7 @@
       "probe_url": "https://api.ajcass.com/api/SiteWebApi/GetCurrentPeriodMutiChannel?JournalID=201606270007",
       "extraction_rule": "ajcass-current-api",
       "title": "论巩固和完善农村基本经营制度",
-      "url": "https://zgncjj.ajcass.com/#/issueDetail?id=122803",
+      "url": "https://zgncjj.ajcass.com/UploadFile/Issue/201606270007/2026/5//20260513105720274WU_FILE_0.pdf",
       "authors": "胡凌啸",
       "published_at": "",
       "issue_date": "2026-05",
@@ -1909,7 +1909,12 @@
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
       "observed_at": "2026-05-27T05:48:22.816Z",
-      "is_new": true
+      "is_new": true,
+      "official_url": "https://zgncjj.ajcass.com/UploadFile/Issue/201606270007/2026/5//20260513105720274WU_FILE_0.pdf",
+      "pdf_url": "https://zgncjj.ajcass.com/UploadFile/Issue/201606270007/2026/5//20260513105720274WU_FILE_0.pdf",
+      "discovery_url": "https://zgncjj.ajcass.com/#/issueDetail?id=122803",
+      "link_status": "official_pdf",
+      "link_note": "official_pdf_resolved"
     },
     {
       "id": "61feb76ae788c08e",
@@ -2727,7 +2732,7 @@
       "probe_url": "https://api.ajcass.com/api/SiteWebApi/GetCurrentPeriodMutiChannel?JournalID=201803050001",
       "extraction_rule": "ajcass-current-api",
       "title": "构建中国经济学自主知识体系丨中国经济学的继承性、民族性问题探讨——学习贯彻习近平总书记在哲学社会科学工作座谈会上的重要讲话精神",
-      "url": "https://erj.ajcass.com/#/issueDetail?id=122885",
+      "url": "https://erj.ajcass.com/UploadFile/Issue/201803050001/2026/5//20260521111450WU_FILE_0.pdf",
       "authors": "裴长洪",
       "published_at": "",
       "issue_date": "2026-04",
@@ -2741,7 +2746,12 @@
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
       "observed_at": "2026-05-27T05:48:22.816Z",
-      "is_new": true
+      "is_new": true,
+      "official_url": "https://erj.ajcass.com/UploadFile/Issue/201803050001/2026/5//20260521111450WU_FILE_0.pdf",
+      "pdf_url": "https://erj.ajcass.com/UploadFile/Issue/201803050001/2026/5//20260521111450WU_FILE_0.pdf",
+      "discovery_url": "https://erj.ajcass.com/#/issueDetail?id=122885",
+      "link_status": "official_pdf",
+      "link_note": "official_pdf_resolved"
     },
     {
       "id": "71922550003587b7",
@@ -7749,7 +7759,7 @@
       "probe_url": "https://api.ajcass.com/api/SiteWebApi/GetCurrentPeriodMutiChannel?JournalID=201606270007",
       "extraction_rule": "ajcass-current-api",
       "title": "论巩固和完善农村基本经营制度",
-      "url": "https://zgncjj.ajcass.com/#/issueDetail?id=122803",
+      "url": "https://zgncjj.ajcass.com/UploadFile/Issue/201606270007/2026/5//20260513105720274WU_FILE_0.pdf",
       "authors": "胡凌啸",
       "published_at": "",
       "issue_date": "2026-05",
@@ -7763,7 +7773,12 @@
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
       "observed_at": "2026-05-27T05:48:22.816Z",
-      "is_new": true
+      "is_new": true,
+      "official_url": "https://zgncjj.ajcass.com/UploadFile/Issue/201606270007/2026/5//20260513105720274WU_FILE_0.pdf",
+      "pdf_url": "https://zgncjj.ajcass.com/UploadFile/Issue/201606270007/2026/5//20260513105720274WU_FILE_0.pdf",
+      "discovery_url": "https://zgncjj.ajcass.com/#/issueDetail?id=122803",
+      "link_status": "official_pdf",
+      "link_note": "official_pdf_resolved"
     },
     {
       "id": "61feb76ae788c08e",
@@ -8581,7 +8596,7 @@
       "probe_url": "https://api.ajcass.com/api/SiteWebApi/GetCurrentPeriodMutiChannel?JournalID=201803050001",
       "extraction_rule": "ajcass-current-api",
       "title": "构建中国经济学自主知识体系丨中国经济学的继承性、民族性问题探讨——学习贯彻习近平总书记在哲学社会科学工作座谈会上的重要讲话精神",
-      "url": "https://erj.ajcass.com/#/issueDetail?id=122885",
+      "url": "https://erj.ajcass.com/UploadFile/Issue/201803050001/2026/5//20260521111450WU_FILE_0.pdf",
       "authors": "裴长洪",
       "published_at": "",
       "issue_date": "2026-04",
@@ -8595,7 +8610,12 @@
       "inclusion_reason": "issue_overlaps_window",
       "push_basis": "issue_date",
       "observed_at": "2026-05-27T05:48:22.816Z",
-      "is_new": true
+      "is_new": true,
+      "official_url": "https://erj.ajcass.com/UploadFile/Issue/201803050001/2026/5//20260521111450WU_FILE_0.pdf",
+      "pdf_url": "https://erj.ajcass.com/UploadFile/Issue/201803050001/2026/5//20260521111450WU_FILE_0.pdf",
+      "discovery_url": "https://erj.ajcass.com/#/issueDetail?id=122885",
+      "link_status": "official_pdf",
+      "link_note": "official_pdf_resolved"
     },
     {
       "id": "71922550003587b7",

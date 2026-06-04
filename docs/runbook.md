@@ -23,6 +23,10 @@ Run the pure checks before committing script or frontend-data changes:
 ```bash
 node scripts/adapter-fallback-test.mjs
 node scripts/fetch-retry-policy-test.mjs
+node scripts/article-link-policy-test.mjs
+node scripts/ajcass-link-policy-test.mjs
+node scripts/official-link-resolvers-test.mjs
+node scripts/macrodatas-url-test.mjs
 node scripts/recent-workflow-test.mjs
 node scripts/front-data-history-test.mjs
 node scripts/html-adapter-parsers-test.mjs
@@ -31,6 +35,7 @@ node scripts/launchd-plist-test.mjs
 node scripts/build-adapter-front-data-test.mjs
 node scripts/adapter-smoke-test.mjs
 node --check scripts/fetch-articles-smoke-test.mjs
+node --check scripts/build-front-data.mjs
 node --check scripts/build-adapter-front-data.mjs
 node --check scripts/run-daily-workflow.mjs
 node --check scripts/install-daily-launchd.mjs
@@ -48,7 +53,7 @@ Run only one journal source while debugging an adapter:
 node scripts/fetch-articles-smoke-test.mjs --source=j9
 ```
 
-For discovery-only fallback sources such as `j6` (`管理世界`, Macrodatas) and `j7` (`南开管理评论`, Macrodatas), the fallback page must not be used as the frontend article link. `j6` now upgrades discovered records to CNKI CJFD paid detail pages by year/issue and article order; keep Macrodatas in `discovery_url` and mark these rows `official_paid_detail`. `j7` still tries an NCPSD official-detail resolver from the discovered year/issue, but leaves `url` empty when NCPSD has not listed that issue yet. `j10` (`中国行政管理`) still uses CQVIP for discovery, but its current rule resolves matching titles to NCPSD article detail pages before the frontend receives them.
+For discovery-only fallback sources such as `j6` (`管理世界`, Macrodatas) and `j7` (`南开管理评论`, Macrodatas), the fallback page must not be used as the frontend article link. `j6` now queries the NCPSD mobile issue page from the discovered year/issue, matches titles, and exposes `Literature/articleinfo` as the official single-article link. Keep `Literature/readurl` as auxiliary metadata only, because direct external clicks can redirect to login. `j7` leaves `url` empty when NCPSD has not listed matching article pages yet. Do not build CNKI links from issue order alone; those links can land on the wrong article and should remain `needs_official_pdf` until title-level matching confirms an official destination. `j10` (`中国行政管理`) still uses CQVIP for discovery, but its current rule resolves matching titles to NCPSD article detail pages before the frontend receives them.
 
 Check current unresolved official-link work:
 
@@ -115,6 +120,7 @@ Classify failures before changing adapters:
 - Parser failure: fetch succeeds but titles, dates, authors, or URLs are wrong; patch the adapter and add or update a focused test.
 - No explicit article date: keep the article in first-seen flow instead of dropping it.
 - Host instability such as `管理科学学报` returning 503 or TLS timeouts: keep the automated fallback rule, preserve prior source state, and let the next successful daily run discover and push missed items by first-seen date.
+- A single `中国行政管理` / CQVIP timeout such as `curl: (28) Operation timed out after 22002 milliseconds` should be treated as network/protection first. Preserve the existing NCPSD resolver rule and retry the same source before changing parser code.
 
 Do not mark a source ready unless the live probe returns usable article samples or a documented automated fallback.
 

@@ -4,6 +4,7 @@ import {
   compactArticleTitle,
   parseNcpssdIssueArticles,
   resolveCnkiSequentialArticles,
+  resolveNcpssdOfficialArticle,
   resolveNcpssdArticle,
 } from "./official-link-resolvers.mjs";
 
@@ -44,6 +45,18 @@ const resolved = resolveNcpssdArticle(
 assert.equal(resolved.official_url, articles[0].official_url);
 assert.equal(resolved.authors, "庞明礼; 郭雯斐");
 
+const resolvedOfficialArticle = resolveNcpssdOfficialArticle(
+  { title: "“钉钉子”的技术:重大决策落实的工作机制" },
+  articles,
+);
+
+assert.equal(
+  resolvedOfficialArticle.official_url,
+  "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026003003&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+);
+assert.equal(resolvedOfficialArticle.reader_url, "https://www.ncpssd.org/Literature/readurl?id=ZGXZGL2026003003");
+assert.equal(resolvedOfficialArticle.official_source, "ncpssd");
+
 const ncpssdMobileSnippetWithTypeArg = `
   <div class="result-list">
     <a onclick="openDetail('/Literature/articleinfo?id=NKGLPL2026002003&type=journalArticle&typename=中文期刊文章&nav=1&langType=1','中文期刊文章')"
@@ -65,6 +78,31 @@ assert.equal(
   mobileArticles[0].official_url,
   "https://m.ncpssd.cn/Literature/articleinfo?id=NKGLPL2026002003&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
 );
+
+const managementWorldMobileSnippet = `
+  <div class="result-list">
+    <a onclick="openDetail('/Literature/articleinfo?id=GLSJ2026005001&type=journalArticle&typename=中文期刊文章&nav=1&langType=1','中文期刊文章')"
+       title='科技强国建设中的双重创新动力源——一个知识流创新链分析框架及其考证'>
+      科技强国建设中的双重创新动力源——一个知识流创新链分析框架及其考证
+    </a>
+    <a onclick="AddHandleCount(this, '中文期刊文章', 'GLSJ2026005001', 1, -1, '/Literature/readurl?id=GLSJ2026005001', '95499X', '[F273.1]', '科技强国建设中的双重创新动力源——一个知识流创新链分析框架及其考证', '易先忠[1];潘锐[2];张亚斌[3]', '管理世界')">
+      下载全文&gt;&gt;
+    </a>
+  </div>
+`;
+
+const managementWorldArticles = parseNcpssdIssueArticles(managementWorldMobileSnippet, "https://m.ncpssd.cn/journal/details?gch=95499X");
+const managementWorldOfficial = resolveNcpssdOfficialArticle(
+  { title: "科技强国建设中的双重创新动力源——一个知识流创新链分析框架及其考证" },
+  managementWorldArticles,
+);
+
+assert.equal(
+  managementWorldOfficial.official_url,
+  "https://m.ncpssd.cn/Literature/articleinfo?id=GLSJ2026005001&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+);
+assert.equal(managementWorldOfficial.reader_url, "https://m.ncpssd.cn/Literature/readurl?id=GLSJ2026005001");
+assert.equal(managementWorldOfficial.authors, "易先忠; 潘锐; 张亚斌");
 
 const ncpssdPcSecureSnippet = `
   <div class="result-list">
@@ -99,11 +137,28 @@ const cnkiSequentialArticles = resolveCnkiSequentialArticles(
   { year: "2026", issue: "5" },
 );
 
-assert.equal(cnkiSequentialArticles[0].cnki_filename, "GLSJ202605001");
-assert.equal(cnkiSequentialArticles[0].official_source, "cnki");
-assert.equal(cnkiSequentialArticles[0].access_model, "paid");
+assert.equal(cnkiSequentialArticles[0].official_url, undefined);
+assert.equal(cnkiSequentialArticles[0].cnki_filename, undefined);
+
+const explicitlyAllowedCnkiSequentialArticles = resolveCnkiSequentialArticles(
+  [
+    { title: "科技强国建设中的双重创新动力源——一个知识流创新链分析框架及其考证" },
+    { title: "超越经济激励：平台经济中的评论激励机制、市场交易行为与社会福利" },
+  ],
+  {
+    journal_code: "GLSJ",
+    access_model: "paid",
+    allow_unverified_sequence: true,
+    url_template: "https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CJFD&filename={filename}",
+  },
+  { year: "2026", issue: "5" },
+);
+
+assert.equal(explicitlyAllowedCnkiSequentialArticles[0].cnki_filename, "GLSJ202605001");
+assert.equal(explicitlyAllowedCnkiSequentialArticles[0].official_source, "cnki");
+assert.equal(explicitlyAllowedCnkiSequentialArticles[0].access_model, "paid");
 assert.equal(
-  cnkiSequentialArticles[1].official_url,
+  explicitlyAllowedCnkiSequentialArticles[1].official_url,
   "https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CJFD&filename=GLSJ202605002",
 );
 

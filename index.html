@@ -155,6 +155,7 @@
         border: 1.5px solid rgba(var(--accent-rgb), 0.72);
         border-radius: 999px;
         box-shadow: inset 0 0 0 2px rgba(var(--accent-rgb), 0.07), 0 0 24px rgba(var(--accent-rgb), 0.22);
+        transform-origin: 50% 50%;
       }
 
       .brand-orbit::before {
@@ -698,6 +699,7 @@
         background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
         cursor: pointer;
         transition: border-color 0.18s ease, background 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+        transform-origin: 50% 50%;
       }
 
       :root[data-theme="light"] .timeline-card {
@@ -1915,6 +1917,7 @@
       </main>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="data/adapter-front-data.js"></script>
     <script src="data/recent-front-data.js"></script>
     <script>
@@ -2309,6 +2312,135 @@
 
       const $ = (selector) => document.querySelector(selector);
       const $$ = (selector) => Array.from(document.querySelectorAll(selector));
+      const selectorText = (value) => String(value ?? "").replace(/\\/g, "\\\\").replace(/"/g, "\\\"");
+
+      const motion = (() => {
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+        const maxItems = 32;
+
+        function canRun() {
+          return Boolean(window.gsap) && !reduceMotion.matches;
+        }
+
+        function limited(selector, root = document, count = maxItems) {
+          return Array.from(root.querySelectorAll(selector)).slice(0, count);
+        }
+
+        function animateIn(targets, vars = {}) {
+          if (!canRun()) return;
+          const items = Array.from(targets || []).filter(Boolean);
+          if (!items.length) return;
+          gsap.killTweensOf(items);
+          gsap.set(items, { willChange: "transform, opacity" });
+          gsap.from(items, {
+            autoAlpha: 0,
+            y: 6,
+            duration: 0.26,
+            stagger: { each: 0.025, from: "start" },
+            clearProps: "opacity,visibility,transform,willChange",
+            ...vars
+          });
+        }
+
+        function init() {
+          if (!window.gsap) return;
+          gsap.defaults({ duration: 0.28, ease: "power2.out", overwrite: "auto" });
+          if (!canRun()) return;
+          gsap.to(".brand-orbit", {
+            rotation: 360,
+            duration: 18,
+            ease: "none",
+            repeat: -1,
+            transformOrigin: "50% 50%"
+          });
+          animateIn($$(".brand, .side-link:not(.side-soon), .theme-toggle"), {
+            x: -8,
+            y: 0,
+            duration: 0.42,
+            stagger: { each: 0.035, from: "start" }
+          });
+        }
+
+        function filters() {
+          const panel = $("#filterPanel");
+          if (!panel?.open) return;
+          animateIn($$("#filterPanel .seg-item, #classificationStage .filter-chip, #classificationStage .filter-empty-hint"), {
+            y: 5,
+            duration: 0.22,
+            stagger: { each: 0.018, from: "start" }
+          });
+        }
+
+        function timeline(mode = "full") {
+          if (mode === "selected") {
+            selectedArticle();
+            return;
+          }
+          const root = $("#timeline");
+          if (!root) return;
+          animateIn(limited(".timeline-card", root), {
+            y: 10,
+            scale: 0.996,
+            duration: 0.32,
+            stagger: { each: 0.022, from: "start" }
+          });
+          animateIn(limited(".timeline-dot", root), {
+            y: 0,
+            scale: 0.65,
+            duration: 0.24,
+            stagger: { each: 0.018, from: "start" },
+            transformOrigin: "50% 50%"
+          });
+        }
+
+        function selectedArticle() {
+          if (!canRun()) return;
+          const card = document.querySelector(`[data-article-id="${selectorText(selectedArticleId)}"]`);
+          if (!card) return;
+          const dot = card.closest(".timeline-item")?.querySelector(".timeline-dot");
+          gsap.killTweensOf([card, dot].filter(Boolean));
+          gsap.set(card, { willChange: "transform" });
+          gsap.fromTo(card, { scale: 0.992 }, {
+            scale: 1,
+            duration: 0.22,
+            clearProps: "transform,willChange"
+          });
+          if (dot) {
+            gsap.set(dot, { willChange: "transform" });
+            gsap.fromTo(dot, { scale: 1.7 }, {
+              scale: 1,
+              duration: 0.36,
+              ease: "back.out(2)",
+              transformOrigin: "50% 50%",
+              clearProps: "transform,willChange"
+            });
+          }
+        }
+
+        function statuses(root = document) {
+          const scope = typeof root === "string" ? $(root) : root;
+          if (!scope) return;
+          animateIn(limited(".url-status", scope, 24), {
+            y: 0,
+            scale: 0.97,
+            duration: 0.22,
+            stagger: { each: 0.012, from: "start" }
+          });
+        }
+
+        function page(view) {
+          const pageNode = document.querySelector(`[data-page="${selectorText(view)}"]`);
+          if (!pageNode || pageNode.hidden) return;
+          animateIn(limited(".page-header, .panel, .placeholder-card", pageNode, 10), {
+            y: 8,
+            duration: 0.3,
+            stagger: { each: 0.035, from: "start" }
+          });
+          statuses(pageNode);
+        }
+
+        return { init, filters, timeline, selectedArticle, statuses, page };
+      })();
 
       function journalById(id) {
         return journals.find((journal) => journal.id === canonicalJournalId(id)) || journals[0];
@@ -2378,6 +2510,7 @@
           </div>
         `;
         renderFilterSummary();
+        motion.filters();
       }
 
       function renderFilterSummary() {
@@ -2394,7 +2527,7 @@
         $("#activeFilterSummary").textContent = parts.length ? parts.join(" / ") : "先选中文或英文，再展开学科和期刊";
       }
 
-      function renderTimeline() {
+      function renderTimeline(animation = "full") {
         const items = filteredArticles();
         if (!items.length) {
           $("#timeline").innerHTML = `<div class="empty">没有匹配的推送条目</div>`;
@@ -2425,6 +2558,7 @@
         }).join("");
         renderStats();
         renderFilterSummary();
+        motion.timeline(animation);
       }
 
       function renderTimelineItem(article) {
@@ -2599,6 +2733,7 @@
             <td>${urlStatus(journal.sampleOk, journal.sample)}</td>
           </tr>
         `).join("");
+        motion.statuses("#sourceRows");
       }
 
       function sourceMode(journal) {
@@ -2682,6 +2817,7 @@
             </details>
           `;
         }).join("");
+        motion.statuses("#adapterProfiles");
       }
 
       function renderAdapterRows() {
@@ -2704,6 +2840,7 @@
             </tr>
           `;
         }).join("") : `<tr><td colspan="7"><div class="empty">没有匹配的适配任务</div></td></tr>`;
+        motion.statuses("#adapterRows");
       }
 
       function renderAll() {
@@ -2722,6 +2859,7 @@
         $$("[data-page]").forEach((page) => page.hidden = page.dataset.page !== view);
         $$(".side-link").forEach((button) => button.classList.toggle("active", button.dataset.view === view));
         $("#appShell").classList.remove("sidebar-open");
+        motion.page(view);
       }
 
       $("#classificationStage").addEventListener("click", (event) => {
@@ -2789,7 +2927,7 @@
         if (!article) return;
         selectedArticleId = article.id;
         selectedJournalId = article.journalId;
-        renderTimeline();
+        renderTimeline("selected");
       });
 
       $("#clearJournalFilter").addEventListener("click", () => {
@@ -2854,7 +2992,11 @@
         });
       });
 
+      $("#filterPanel").addEventListener("toggle", () => motion.filters());
+
+      motion.init();
       renderAll();
+      motion.page("tracking");
     </script>
   </body>
 </html>

@@ -60,7 +60,7 @@
       "render_required": true,
       "fields": ["title", "official_url", "pdf_url", "issue", "authors", "abstract"],
       "article_url_patterns": ["/portal/journal/portal/client/paper/{paperId}"],
-      "next_action": "公共管理学报可直接抓 paper 页面；管理世界主站验证码阻断时先用 Macrodatas 做发现源，再按期号和目录顺序补到 CNKI CJFD 付费详情入口；Macrodatas 仅保留为 discovery_url。"
+      "next_action": "公共管理学报可直接抓 paper 页面；管理世界主站验证码阻断时先用 Macrodatas 做发现源，再用 NCPSD 移动端期号页按标题匹配官方单篇详情页；Macrodatas 仅保留为 discovery_url。"
     },
     {
       "id": "university-custom",
@@ -105,7 +105,7 @@
     { "journal_id": "j12", "journal_name": "中国农村经济", "platform_id": "ajcass", "status": "接口规则", "source_url": "https://zgncjj.ajcass.com/#/", "adapter_rule": { "kind": "ajcass-current-api", "journal_platform_id": 201606270007 } },
     { "journal_id": "j3", "journal_name": "世界经济", "platform_id": "cn-journal-cms", "status": "静态规则", "source_url": "https://sjjj.magtech.com.cn/CN/home", "adapter_rule": { "kind": "magtech-cn-html" } },
     { "journal_id": "j5", "journal_name": "金融研究", "platform_id": "cn-journal-cms", "status": "静态规则", "source_url": "http://www.jryj.org.cn/CN/1002-7246/home.shtml", "adapter_rule": { "kind": "jryj-html" } },
-    { "journal_id": "j6", "journal_name": "管理世界", "platform_id": "cnki-cbpt", "status": "知网付费详情解析", "source_url": "https://glsj.cbpt.cnki.net/WKB/WebPublication/wkTextContent.aspx?colType=4&tp=gklb&mid=glsj", "adapter_rule": { "kind": "macrodatas-issue-list", "journal_title": "管理世界", "search_terms": ["管理世界 {year}年第", "管理世界 {previous_year}年第"], "list_base_url": "https://www.macrodatas.cn/list/1/0/0/", "official_resolvers": [{ "kind": "cnki-cjfd-sequential", "journal_code": "GLSJ", "access_model": "paid", "url_template": "https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CJFD&filename={filename}" }], "official_resolver": { "kind": "ncpssd-issue-html", "issue_url_template": "https://www.ncpssd.cn/journal/details?gch=95499X&langType=1&nav=1&years={year}&num={issue}" } } },
+    { "journal_id": "j6", "journal_name": "管理世界", "platform_id": "cnki-cbpt", "status": "文献中心单篇解析", "source_url": "https://glsj.cbpt.cnki.net/WKB/WebPublication/wkTextContent.aspx?colType=4&tp=gklb&mid=glsj", "adapter_rule": { "kind": "macrodatas-issue-list", "journal_title": "管理世界", "search_terms": ["管理世界 {year}年第", "管理世界 {previous_year}年第"], "list_base_url": "https://www.macrodatas.cn/list/1/0/0/", "official_resolver": { "kind": "ncpssd-issue-html", "issue_url_template": "https://m.ncpssd.cn/journal/details?gch=95499X&langType=1&nav=1&years={year}&num={issue}" } } },
     { "journal_id": "j8", "journal_name": "公共管理学报", "platform_id": "cnki-cbpt", "status": "静态规则", "source_url": "https://gggl.cbpt.cnki.net/portal", "adapter_rule": { "kind": "cnki-portal-paper" } },
     { "journal_id": "j7", "journal_name": "南开管理评论", "platform_id": "university-custom", "status": "待官方详情上架", "source_url": "https://nbr.nankai.edu.cn/nkglpl/home", "adapter_rule": { "kind": "macrodatas-issue-list", "journal_title": "南开管理评论", "search_terms": ["南开管理评论 {year}年第", "南开管理评论 {previous_year}年第"], "list_base_url": "https://www.macrodatas.cn/list/1/0/0/", "official_resolver": { "kind": "ncpssd-issue-html", "issue_url_template": "https://m.ncpssd.cn/journal/details?gch=81584X&langType=1&nav=1&years={year}&num={issue}" } } },
     { "journal_id": "j9", "journal_name": "管理科学学报", "platform_id": "university-custom", "status": "期号规则", "source_url": "https://jmsc.tju.edu.cn/jmsc/issue/browser", "adapter_rule": { "kind": "jmsc-issue-html", "reader_issue_url": "https://jmsc.tju.edu.cn/ch/reader/issue_query.aspx" } },

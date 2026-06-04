@@ -68,7 +68,7 @@ function compactArticle(article) {
     extraction_rule: article.extraction_rule || "",
     date_source: article.date_source || "",
   };
-  for (const key of ["access_model", "official_source", "cnki_filename"]) {
+  for (const key of ["access_model", "official_source", "cnki_filename", "reader_url"]) {
     if (article[key]) compacted[key] = article[key];
   }
   return compacted;
@@ -146,6 +146,7 @@ function mergeArticle(existing, incoming) {
       access_model: existing.access_model || "",
       official_source: existing.official_source || "",
       cnki_filename: existing.cnki_filename || "",
+      reader_url: existing.reader_url || "",
     };
   }
   return merged;

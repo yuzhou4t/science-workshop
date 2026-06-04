@@ -109,6 +109,18 @@ export function resolveNcpssdArticle(article = {}, ncpssdArticles = []) {
   return ncpssdArticles.find((candidate) => compactArticleTitle(candidate.title) === target) || null;
 }
 
+export function resolveNcpssdOfficialArticle(article = {}, ncpssdArticles = []) {
+  const official = resolveNcpssdArticle(article, ncpssdArticles);
+  if (!official) return null;
+  return {
+    ...article,
+    official_url: official.official_url,
+    reader_url: official.reader_url,
+    authors: article.authors || official.authors,
+    official_source: "ncpssd",
+  };
+}
+
 function padIssuePart(value = "", width) {
   return String(value || "").replace(/\D/g, "").padStart(width, "0");
 }
@@ -122,6 +134,8 @@ function cnkiCjfdFilename(resolver = {}, context = {}, index = 0) {
 }
 
 export function resolveCnkiSequentialArticles(articles = [], resolver = {}, context = {}) {
+  if (!resolver.allow_unverified_sequence) return articles;
+
   const template = resolver.url_template || "https://kns.cnki.net/kcms/detail/detail.aspx?dbcode=CJFD&filename={filename}";
   return articles.map((article, index) => {
     if (article.official_url && !resolver.overwrite) return article;

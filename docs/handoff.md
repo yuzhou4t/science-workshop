@@ -2,23 +2,24 @@
 
 ## Snapshot
 
-Status on 2026-05-29:
+Status on 2026-06-04:
 
 - Prototype path: `/Users/yuzhou4tc/Public/工作坊/journal-workshop-prototype`.
 - Frontend entry: `index.html`.
 - Source registry: `data/adapter-profiles.json`.
-- Latest live probe ready sources: 22 of 22.
+- Latest daily run ready sources: 21 of 22; `中国行政管理` timed out against CQVIP in that run.
 - Direct article RSS/eTOC feeds: 5.
 - Adapter-based sources: 17.
 - Local daily scheduler: installed as `com.science-workshop.daily`.
 - Codex app automation `science-workshop`: paused to avoid duplicate daily runs.
 
-The frontend history currently merges through `data/recent-articles-2026-05-29_2026-05-29.json`:
+The frontend history currently merges through `data/recent-articles-2026-06-04_2026-06-04.json`:
 
-- `history_articles`: 244.
-- `new_push_queue_articles` from the 2026-05-29 daily run: 33.
-- `data/recent-front-data.js` and `data/push-history.json` both contain 244 unique article IDs.
+- `history_articles`: 326.
+- `new_push_queue_articles` from the 2026-06-04 daily run: 24.
+- `data/recent-front-data.js` and `data/push-history.json` both contain 326 unique article IDs.
 - Remaining discovery-only links: 17, currently all from `南开管理评论`.
+- `data/source-state.json` is initialized and tracks 511 first-seen article IDs.
 
 The daily dedupe state is initialized in `data/source-state.json`. Rebuilding frontend data now appends into `data/push-history.json`, so a one-day run does not overwrite the visible timeline with only that day.
 
@@ -31,15 +32,15 @@ The daily dedupe state is initialized in `data/source-state.json`. Rebuilding fr
 - Date display separates first-seen push timing from article publication date and issue date.
 - `JOURNAL OF FINANCE` duplicate inputs are canonicalized into one journal identity.
 - Chinese sources without RSS use automated adapters or fallback catalog sources instead of manual uploads.
-- `管理科学学报` has both current issue-browser extraction and older reader issue-page fallback. The latest local live probe returned READY, and the single-source probe returned 10 current-issue articles.
-- `中国行政管理` uses CQVIP only as a discovery catalog and resolves the current issue to NCPSD article detail pages before frontend display.
-- `管理世界` uses Macrodatas only for discovery, then resolves the current issue to CNKI CJFD paid detail entries by discovered year/issue and article order. The 2026年第5期 probe returned 11 articles and all 11 are now `official_paid_detail`.
-- `南开管理评论` uses Macrodatas only for discovery, then tries an NCPSD official-detail resolver built from the discovered year/issue. On 2026-05-29 the single-source live probe returned 17 articles, but NCPSD returned no candidates for the target issue, so those records correctly remain `needs_official_pdf`.
+- `管理科学学报` has both current issue-browser extraction and older reader issue-page fallback. The 2026-06-04 daily run returned READY with 11 current-issue articles.
+- `中国行政管理` uses CQVIP only as a discovery catalog and resolves the current issue to NCPSD article detail pages before frontend display. Its 2026-06-04 timeout should be treated as network/protection first, not a parser regression.
+- `管理世界` uses Macrodatas only for discovery, then queries the NCPSD mobile issue page and matches official titles to `Literature/articleinfo` single-article pages. `Literature/readurl` is kept only as auxiliary reader/download metadata because direct external clicks can redirect to login. The previous CNKI CJFD sequence resolver was removed because issue-order filenames can point to the wrong article; the 2026年第5期 live probe now resolves 11/11 records to official NCPSD single-article links.
+- `南开管理评论` uses Macrodatas only for discovery, then tries an NCPSD official-detail resolver built from the discovered year/issue. As of 2026-06-04, 17 records correctly remain `needs_official_pdf`.
 - A local macOS LaunchAgent runs the daily workflow at 10:00.
 
 ## Remaining Work
 
-- Watch `logs/daily-workflow.log` after several scheduled runs to confirm the local network behaves consistently.
+- Watch `logs/daily-workflow.log` after scheduled runs to confirm whether the `中国行政管理` CQVIP timeout recurs.
 - Continue improving exact publication-date extraction for forthcoming or issue-only sources when their detail pages expose stronger metadata.
 - Add a user-facing data-source intake flow for future Excel/CSV upload or single-source submission.
 - Decide how online deployment should store state before publishing; `data/source-state.json` is currently local-file state.
