@@ -3,6 +3,8 @@ from urllib.parse import quote
 from fastapi import APIRouter, HTTPException, Request
 from fastapi.responses import Response, StreamingResponse
 
+from app.models.job import Artifact
+from app.services.docx_exporter import DocxExporter
 from app.storage.job_store import JobNotFoundError
 
 router = APIRouter(prefix="/api/jobs", tags=["jobs"])
@@ -54,6 +56,26 @@ def get_artifact(job_id: str, artifact_name: str, request: Request) -> Response:
         media_type=artifact.media_type,
         headers={"Content-Disposition": _content_disposition_for_download(artifact.name)},
     )
+
+
+@router.post("/{job_id}/export/docx")
+def export_docx(job_id: str, request: Request) -> dict[str, str]:
+    store = request.app.state.job_store
+    try:
+        job = store.load_job(job_id)
+        markdown_data, _artifact = store.read_artifact_bytes(job_id, "final.md")
+    except (JobNotFoundError, OSError) as exc:
+        raise HTTPException(status_code=404, detail="Final markdown not found") from exc
+
+    output_path = store.job_dir(job_id) / "exports" / "final.docx"
+    DocxExporter().export_markdown(markdown_data.decode("utf-8"), output_path)
+    job.artifacts["final.docx"] = Artifact(
+        name="final.docx",
+        relative_path="exports/final.docx",
+        media_type="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    )
+    store.save_job(job)
+    return {"artifact": "final.docx"}
 
 
 @router.get("/{job_id}/events")

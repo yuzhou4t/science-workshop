@@ -51,6 +51,25 @@ def test_artifact_download_uses_safe_content_disposition_for_non_ascii_filename(
     assert "filename*=UTF-8''%E7%BB%88%E7%A8%BF.md" in content_disposition
 
 
+def test_docx_export_creates_downloadable_docx_artifact(client: TestClient) -> None:
+    store = client.app.state.job_store
+    job = store.create_job(WorkflowType.PAPER_READING, template_id="africa-reading")
+    store.write_text_artifact(job, "nodes/final.md", "# 主标题\n\n正文")
+
+    response = client.post(f"/api/jobs/{job.job_id}/export/docx")
+
+    assert response.status_code == 200
+    assert response.json() == {"artifact": "final.docx"}
+
+    artifact_response = client.get(f"/api/jobs/{job.job_id}/artifacts/final.docx")
+
+    assert artifact_response.status_code == 200
+    assert artifact_response.headers["content-type"].startswith(
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    )
+    assert artifact_response.content.startswith(b"PK")
+
+
 def test_missing_job_returns_404(client: TestClient) -> None:
     response = client.get("/api/jobs/missing")
 
