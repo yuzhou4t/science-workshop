@@ -1,2 +1,4 @@
 logs/*.log
 data/fetch-smoke-results-*.json
+.superpowers/
+.worktrees/
