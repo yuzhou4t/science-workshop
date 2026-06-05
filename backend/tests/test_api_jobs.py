@@ -1,3 +1,5 @@
+import json
+
 import pytest
 from fastapi.testclient import TestClient
 
@@ -96,6 +98,136 @@ def test_create_paper_reading_job_uploads_pdf(client: TestClient) -> None:
         "relative_path": "input/input.pdf",
         "media_type": "application/pdf",
     }
+
+
+def test_create_wechat_writing_job_with_source_text_completes_in_mock_mode(client: TestClient) -> None:
+    response = client.post(
+        "/api/workflows/wechat-writing/jobs",
+        data={
+            "source_text": "论文精读材料正文",
+            "article_id": "article-1",
+            "template_id": "africa-reading",
+        },
+    )
+
+    assert response.status_code == 200
+    body = response.json()
+    assert body["workflow_type"] == "wechat_writing"
+    assert body["status"] == "completed"
+    assert body["job_id"]
+    assert body["artifacts"]["source_bundle.json"]["relative_path"] == "input/source_bundle.json"
+
+
+def test_create_wechat_writing_job_can_use_paper_reading_job_evidence_without_source_text(
+    client: TestClient,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    store = client.app.state.job_store
+    paper_job = store.create_job(WorkflowType.PAPER_READING, template_id="africa-reading")
+    store.write_text_artifact(paper_job, "nodes/final.md", "# Referenced final\n\nFinal evidence content")
+    store.write_text_artifact(paper_job, "nodes/basic_info.md", "Basic evidence content")
+    store.write_text_artifact(paper_job, "extraction/extracted.md", "Extracted evidence content")
+    captured_prompts: list[tuple[str, str]] = []
+
+    class CapturingDeepSeekClient:
+        def __init__(self, *args, **kwargs) -> None:
+            pass
+
+        async def generate(self, node_id: str, prompt: str) -> str:
+            captured_prompts.append((node_id, prompt))
+            return f"# {node_id}\n\nCaptured prompt length {len(prompt)}"
+
+    monkeypatch.setattr("app.api.wechat_writing.DeepSeekClient", CapturingDeepSeekClient)
+
+    response = client.post(
+        "/api/workflows/wechat-writing/jobs",
+        data={"paper_reading_job_id": paper_job.job_id, "template_id": "africa-reading"},
+    )
+
+    assert response.status_code == 200
+    body = response.json()
+    assert body["workflow_type"] == "wechat_writing"
+    assert body["status"] == "completed"
+    source_bundle_path = store.job_dir(body["job_id"]) / "input" / "source_bundle.json"
+    source_bundle = json.loads(source_bundle_path.read_text(encoding="utf-8"))
+    assert "Final evidence content" in json.dumps(source_bundle, ensure_ascii=False)
+    assert "Extracted evidence content" in json.dumps(source_bundle, ensure_ascii=False)
+    assert any("Final evidence content" in prompt for _node_id, prompt in captured_prompts)
+
+
+def test_create_wechat_writing_job_rejects_missing_paper_reading_job(client: TestClient) -> None:
+    response = client.post(
+        "/api/workflows/wechat-writing/jobs",
+        data={"paper_reading_job_id": "missing"},
+    )
+
+    assert response.status_code == 404
+    assert response.json()["detail"] == "Referenced paper-reading job not found"
+
+
+def test_create_wechat_writing_job_rejects_empty_source(client: TestClient) -> None:
+    response = client.post("/api/workflows/wechat-writing/jobs", data={})
+
+    assert response.status_code == 400
+    assert response.json()["detail"] == "source_text or paper_reading_job_id with evidence is required"
+
+
+def test_patch_job_node_updates_safe_artifact_and_returns_rerun_plan(client: TestClient) -> None:
+    store = client.app.state.job_store
+    job = store.create_job(WorkflowType.PAPER_READING, template_id="africa-reading")
+
+    response = client.patch(
+        f"/api/jobs/{job.job_id}/nodes/formula_metrics",
+        json={"content": "# revised metrics"},
+    )
+
+    assert response.status_code == 200
+    assert response.json() == {
+        "job_id": job.job_id,
+        "node_id": "formula_metrics",
+        "rerun_required": ["draft", "final", "docx_export"],
+    }
+    assert (store.job_dir(job.job_id) / "nodes" / "formula_metrics.md").read_text(encoding="utf-8") == "# revised metrics"
+    reloaded = store.load_job(job.job_id)
+    assert reloaded.nodes["formula_metrics"].output_artifacts == ["formula_metrics.md"]
+
+
+@pytest.mark.parametrize("node_id", ["unknown", "..%2Fescape"])
+def test_patch_job_node_rejects_invalid_or_unsafe_node_ids(client: TestClient, node_id: str) -> None:
+    store = client.app.state.job_store
+    job = store.create_job(WorkflowType.PAPER_READING, template_id="africa-reading")
+
+    response = client.patch(
+        f"/api/jobs/{job.job_id}/nodes/{node_id}",
+        json={"content": "should not write"},
+    )
+
+    assert response.status_code in {400, 404}
+    assert not (store.job_dir(job.job_id) / "nodes" / "unknown.md").exists()
+    assert not (store.job_dir(job.job_id) / "escape.md").exists()
+
+
+def test_rerun_returns_downstream_plan_for_valid_node(client: TestClient) -> None:
+    store = client.app.state.job_store
+    job = store.create_job(WorkflowType.PAPER_READING, template_id="africa-reading")
+
+    response = client.post(f"/api/jobs/{job.job_id}/rerun", json={"from_node": "formula_metrics"})
+
+    assert response.status_code == 200
+    assert response.json() == {
+        "job_id": job.job_id,
+        "from_node": "formula_metrics",
+        "will_rerun": ["draft", "final", "docx_export"],
+    }
+
+
+def test_rerun_rejects_invalid_node(client: TestClient) -> None:
+    store = client.app.state.job_store
+    job = store.create_job(WorkflowType.PAPER_READING, template_id="africa-reading")
+
+    response = client.post(f"/api/jobs/{job.job_id}/rerun", json={"from_node": "../final"})
+
+    assert response.status_code == 400
 
 
 @pytest.mark.parametrize(
