@@ -40,6 +40,32 @@ class ProgressMineruClient:
         return MineruResult(markdown="# Extracted\n\nGrounded content.", assets=[])
 
 
+class FallbackUploadMineruClient(MineruClient):
+    def __init__(self) -> None:
+        super().__init__(api_key="key", base_url="https://mineru.example.test")
+        self.task_url = ""
+        self.used_fallback_upload = False
+
+    async def _upload_to_cos(self, pdf_path):
+        raise RuntimeError("cos upload timed out")
+
+    async def _upload_to_mineru_file(self, pdf_path):
+        self.used_fallback_upload = True
+        from app.services.mineru_client import CosUpload
+
+        return CosUpload(file_url="https://mineru.example.test/uploaded.pdf", object_key="")
+
+    async def _create_task(self, file_url: str) -> str:
+        self.task_url = file_url
+        return "task-1"
+
+    async def _wait_for_completion(self, task_id: str, progress_callback=None, max_wait: int = 300) -> str:
+        return "https://mineru.example.test/result.zip"
+
+    async def _download_and_extract(self, zip_url: str, asset_dir) -> MineruResult:
+        return MineruResult(markdown="# Extracted by fallback upload", assets=[])
+
+
 class CapturingDeepSeekClient:
     def __init__(self) -> None:
         self.prompts: dict[str, str] = {}
@@ -302,6 +328,52 @@ def test_mineru_cos_object_key_does_not_include_original_filename(tmp_path) -> N
     assert object_key.endswith(".pdf")
     assert pdf.name not in object_key
     assert "Sensitive" not in object_key
+
+
+@pytest.mark.asyncio
+async def test_mineru_cos_upload_retries_transient_errors(tmp_path, monkeypatch) -> None:
+    pdf = tmp_path / "paper.pdf"
+    pdf.write_bytes(b"%PDF-1.4 mock")
+
+    class FlakyCosClient:
+        def __init__(self) -> None:
+            self.put_calls = 0
+
+        def put_object(self, **kwargs):
+            self.put_calls += 1
+            if self.put_calls == 1:
+                raise RuntimeError("write operation timed out")
+            return {"ETag": "ok"}
+
+        def get_presigned_url(self, **kwargs):
+            return "https://cos.example.test/paper.pdf"
+
+    cos_client = FlakyCosClient()
+    monkeypatch.setattr("app.services.mineru_client.COS_UPLOAD_RETRY_DELAY_SECONDS", 0, raising=False)
+    client = MineruClient(
+        cos_secret_id="secret-id",
+        cos_secret_key="secret-key",
+        cos_bucket="bucket-123",
+    )
+    monkeypatch.setattr(client, "_cos_client", lambda: cos_client)
+
+    upload = await client._upload_to_cos(pdf)
+
+    assert upload.file_url == "https://cos.example.test/paper.pdf"
+    assert cos_client.put_calls == 2
+
+
+@pytest.mark.asyncio
+async def test_mineru_parse_falls_back_to_builtin_upload_when_cos_fails(tmp_path) -> None:
+    pdf = tmp_path / "paper.pdf"
+    pdf.write_bytes(b"%PDF-1.4 mock")
+    client = FallbackUploadMineruClient()
+
+    result = await client.parse_pdf_to_markdown(pdf)
+
+    assert result.markdown == "# Extracted by fallback upload"
+    assert client.used_fallback_upload is True
+    assert client.task_url == "https://mineru.example.test/uploaded.pdf"
 
 
 @pytest.mark.asyncio

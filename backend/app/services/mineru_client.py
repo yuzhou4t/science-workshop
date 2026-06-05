@@ -17,6 +17,8 @@ MAX_ZIP_UNCOMPRESSED_BYTES = 250 * 1024 * 1024
 COS_SIGNED_URL_EXPIRES_SECONDS = 3600
 MINERU_MAX_ATTEMPTS = 3
 MINERU_RETRY_DELAY_SECONDS = 1
+COS_UPLOAD_MAX_ATTEMPTS = 3
+COS_UPLOAD_RETRY_DELAY_SECONDS = 1
 
 RETRYABLE_MINERU_ERRORS = (
     httpx.ConnectError,
@@ -179,9 +181,9 @@ class MineruClient:
             raise RuntimeError("MINERU_API_KEY is required when mock mode is disabled")
         upload_result: CosUpload | None = None
         try:
-            await self._emit_progress(progress_callback, "document_extraction", 12, "正在上传 PDF 到 COS", {})
-            upload_result = await self._upload_to_cos(pdf_path)
-            await self._emit_progress(progress_callback, "document_extraction", 20, "COS 上传完成，正在创建 MinerU 任务", {})
+            await self._emit_progress(progress_callback, "document_extraction", 12, "正在上传 PDF 供 MinerU 解析", {})
+            upload_result = await self._upload_pdf_for_mineru(pdf_path)
+            await self._emit_progress(progress_callback, "document_extraction", 20, "PDF 上传完成，正在创建 MinerU 任务", {})
             task_id = await self._create_task(upload_result.file_url)
             await self._emit_progress(
                 progress_callback,
@@ -194,7 +196,7 @@ class MineruClient:
             await self._emit_progress(progress_callback, "document_extraction", 85, "MinerU 解析完成，正在下载结果", {})
             return await self._download_and_extract(zip_url, pdf_path.parent / "mineru_assets")
         finally:
-            if upload_result is not None:
+            if upload_result is not None and upload_result.object_key:
                 try:
                     await self._delete_cos_object(upload_result.object_key)
                 except Exception:
@@ -239,8 +241,57 @@ class MineruClient:
                 Expired=COS_SIGNED_URL_EXPIRES_SECONDS,
             )
 
-        file_url = await asyncio.get_running_loop().run_in_executor(None, upload_sync)
+        file_url = await self._run_cos_upload_with_retries(upload_sync)
         return CosUpload(file_url=file_url, object_key=object_key)
+
+    async def _upload_pdf_for_mineru(self, pdf_path: Path) -> CosUpload:
+        try:
+            return await self._upload_to_cos(pdf_path)
+        except Exception as exc:
+            logger.warning("COS upload failed; falling back to MinerU upload: %s", exc)
+            return await self._upload_to_mineru_file(pdf_path)
+
+    async def _run_cos_upload_with_retries(self, upload_sync) -> str:
+        last_error: Exception | None = None
+        for attempt in range(1, COS_UPLOAD_MAX_ATTEMPTS + 1):
+            try:
+                return await asyncio.get_running_loop().run_in_executor(None, upload_sync)
+            except Exception as exc:
+                last_error = exc
+                if attempt == COS_UPLOAD_MAX_ATTEMPTS:
+                    break
+                await asyncio.sleep(COS_UPLOAD_RETRY_DELAY_SECONDS)
+        raise RuntimeError(f"COS upload failed after {COS_UPLOAD_MAX_ATTEMPTS} attempts: {last_error}") from last_error
+
+    async def _upload_to_mineru_file(self, pdf_path: Path) -> CosUpload:
+        headers = {"Authorization": f"Bearer {self.api_key}", "Content-Type": "application/json"}
+        payload = {
+            "files": [{"name": pdf_path.name, "data_id": f"mineru_{uuid4().hex[:8]}"}],
+            "model_version": "vlm",
+        }
+        async with httpx.AsyncClient(timeout=120.0) as client:
+            response = await self._request_with_retries(
+                lambda: client.post(f"{self.base_url}/api/v4/file-urls/batch", headers=headers, json=payload)
+            )
+            body = response.json()
+            upload_url = self._extract_upload_url(body)
+            upload_response = await self._request_with_retries(
+                lambda: client.put(upload_url, content=pdf_path.read_bytes())
+            )
+            upload_response.raise_for_status()
+        return CosUpload(file_url=upload_url, object_key="")
+
+    def _extract_upload_url(self, body: object) -> str:
+        if not isinstance(body, dict) or body.get("code") != 0:
+            message = body.get("msg") if isinstance(body, dict) else None
+            raise RuntimeError(message if isinstance(message, str) and message else "MinerU upload URL request failed")
+        data = body.get("data")
+        if not isinstance(data, dict):
+            raise RuntimeError("MinerU upload URL response missing data")
+        file_urls = data.get("file_urls")
+        if not isinstance(file_urls, list) or not file_urls or not isinstance(file_urls[0], str):
+            raise RuntimeError("MinerU upload URL response missing file URL")
+        return file_urls[0]
 
     async def _delete_cos_object(self, object_key: str) -> None:
         if not all([self.cos_secret_id, self.cos_secret_key, self.cos_bucket]):
