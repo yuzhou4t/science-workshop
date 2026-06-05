@@ -42,6 +42,13 @@ const required = [
   "formatWorkflowElapsed",
   "EventSource",
   "MinerU 正在解析第",
+  "workflow-preview",
+  "workflow-editor-toolbar",
+  "renderMarkdownPreview",
+  "bindWorkflowEditorPreview",
+  "setWorkflowEditorContent",
+  "预览",
+  "编辑",
   "/api/workflows/paper-reading/jobs",
   "/api/workflows/wechat-writing/jobs",
 ];

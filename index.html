@@ -1820,6 +1820,114 @@
         line-height: 1.7;
       }
 
+      .workflow-editor-shell {
+        display: grid;
+        gap: 8px;
+      }
+
+      .workflow-editor-toolbar {
+        display: flex;
+        justify-content: flex-end;
+        gap: 6px;
+      }
+
+      .workflow-editor-mode {
+        min-height: 30px;
+        padding: 0 12px;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        background: var(--surface-0);
+        color: var(--text-2);
+        cursor: pointer;
+        font-size: 12px;
+      }
+
+      .workflow-editor-mode.is-active {
+        border-color: rgba(var(--accent-rgb), 0.55);
+        background: rgba(var(--accent-rgb), 0.14);
+        color: var(--accent);
+      }
+
+      .workflow-preview {
+        width: 100%;
+        min-height: 360px;
+        max-height: 680px;
+        overflow: auto;
+        padding: 18px;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        background: var(--surface-0);
+        color: var(--text-0);
+        line-height: 1.75;
+      }
+
+      .workflow-preview:empty::before {
+        content: attr(data-placeholder);
+        color: var(--text-3);
+      }
+
+      .markdown-body h1,
+      .markdown-body h2,
+      .markdown-body h3,
+      .markdown-body h4 {
+        margin: 1.15em 0 0.55em;
+        color: var(--text-0);
+        line-height: 1.35;
+      }
+
+      .markdown-body h1 {
+        margin-top: 0;
+        font-size: 22px;
+      }
+
+      .markdown-body h2 {
+        font-size: 18px;
+      }
+
+      .markdown-body h3 {
+        font-size: 15px;
+      }
+
+      .markdown-body p,
+      .markdown-body ul,
+      .markdown-body ol,
+      .markdown-body blockquote {
+        margin: 0 0 0.85em;
+      }
+
+      .markdown-body ul,
+      .markdown-body ol {
+        padding-left: 1.35em;
+      }
+
+      .markdown-body li + li {
+        margin-top: 0.35em;
+      }
+
+      .markdown-body blockquote {
+        padding-left: 12px;
+        border-left: 3px solid rgba(var(--accent-rgb), 0.5);
+        color: var(--text-1);
+      }
+
+      .markdown-body code {
+        padding: 1px 5px;
+        border-radius: 4px;
+        background: rgba(var(--accent-rgb), 0.1);
+        color: var(--text-0);
+        font-size: 0.94em;
+      }
+
+      .markdown-body .markdown-link {
+        color: var(--accent);
+      }
+
+      .markdown-body hr {
+        margin: 1.2em 0;
+        border: 0;
+        border-top: 1px solid var(--border);
+      }
+
       .workflow-source {
         min-height: 132px;
         resize: vertical;
@@ -2301,10 +2409,17 @@
                 <div id="paperReadingStatus" class="workflow-status" aria-live="polite">等待上传 PDF</div>
                 <div class="workflow-evidence" aria-label="论文精读产物">
                   <div class="workflow-evidence-card"><strong>节点证据链</strong><span>抽取、方法、图表、公式会保留为可追溯材料。</span></div>
-                  <div class="workflow-evidence-card"><strong>终稿编辑</strong><span>完成后可在这里直接改 Markdown 终稿。</span></div>
+                  <div class="workflow-evidence-card"><strong>终稿编辑</strong><span>完成后默认排版预览，也可切换编辑终稿。</span></div>
                   <div class="workflow-evidence-card"><strong>Word 导出</strong><span>导出前会同步当前编辑内容。</span></div>
                 </div>
-                <textarea id="paperReadingEditor" class="field workflow-editor" rows="18" placeholder="精读终稿会显示在这里，可编辑后导出 Word"></textarea>
+                <div class="workflow-editor-shell" data-workflow-editor-shell="paper-reading">
+                  <div class="workflow-editor-toolbar" aria-label="论文精读终稿显示模式">
+                    <button class="workflow-editor-mode is-active" type="button" data-workflow-mode="preview">预览</button>
+                    <button class="workflow-editor-mode" type="button" data-workflow-mode="edit">编辑</button>
+                  </div>
+                  <article id="paperReadingPreview" class="workflow-preview markdown-body" data-placeholder="精读终稿会显示在这里，可编辑后导出 Word" tabindex="0"></article>
+                  <textarea id="paperReadingEditor" class="field workflow-editor" rows="18" placeholder="精读终稿会显示在这里，可编辑后导出 Word" hidden></textarea>
+                </div>
                 <div class="workflow-export-row">
                   <button class="btn btn-ghost" id="paperReadingExport" type="button">导出 Word</button>
                 </div>
@@ -2358,7 +2473,14 @@
                   <div class="workflow-evidence-card"><strong>角度提炼</strong><span>先稳住面向读者和文章主张。</span></div>
                   <div class="workflow-evidence-card"><strong>终稿导出</strong><span>浏览器内编辑后再生成 Word。</span></div>
                 </div>
-                <textarea id="wechatWritingEditor" class="field workflow-editor" rows="18" placeholder="公众号终稿会显示在这里，可编辑后导出 Word"></textarea>
+                <div class="workflow-editor-shell" data-workflow-editor-shell="wechat-writing">
+                  <div class="workflow-editor-toolbar" aria-label="公众号终稿显示模式">
+                    <button class="workflow-editor-mode is-active" type="button" data-workflow-mode="preview">预览</button>
+                    <button class="workflow-editor-mode" type="button" data-workflow-mode="edit">编辑</button>
+                  </div>
+                  <article id="wechatWritingPreview" class="workflow-preview markdown-body" data-placeholder="公众号终稿会显示在这里，可编辑后导出 Word" tabindex="0"></article>
+                  <textarea id="wechatWritingEditor" class="field workflow-editor" rows="18" placeholder="公众号终稿会显示在这里，可编辑后导出 Word" hidden></textarea>
+                </div>
                 <div class="workflow-export-row">
                   <button class="btn btn-ghost" id="wechatWritingExport" type="button">导出 Word</button>
                 </div>
@@ -2872,6 +2994,7 @@
         wechatWriting: ""
       };
       const workflowStepDetails = {};
+      const workflowEditorBindings = new WeakMap();
       const sleep = (ms) => new Promise((resolve) => window.setTimeout(resolve, ms));
 
       async function workflowErrorMessage(response, fallback) {
@@ -2902,6 +3025,156 @@
         statusNode.textContent = text;
         statusNode.classList.remove("running", "complete", "error");
         if (state) statusNode.classList.add(state);
+      }
+
+      function escapeMarkdownHtml(value) {
+        return String(value || "").replace(/[&<>"']/g, (char) => ({
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&#039;"
+        }[char]));
+      }
+
+      function renderInlineMarkdown(value) {
+        return escapeMarkdownHtml(value)
+          .replace(/`([^`]+)`/g, "<code>$1</code>")
+          .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<span class="markdown-link">$1（$2）</span>')
+          .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+          .replace(/__([^_]+)__/g, "<strong>$1</strong>")
+          .replace(/\*([^*]+)\*/g, "<em>$1</em>")
+          .replace(/_([^_]+)_/g, "<em>$1</em>");
+      }
+
+      function renderMarkdownPreview(markdown) {
+        const lines = String(markdown || "").replace(/\r\n?/g, "\n").split("\n");
+        const html = [];
+        let listType = "";
+        let paragraph = [];
+
+        const closeList = () => {
+          if (!listType) return;
+          html.push(`</${listType}>`);
+          listType = "";
+        };
+        const flushParagraph = () => {
+          if (!paragraph.length) return;
+          closeList();
+          html.push(`<p>${renderInlineMarkdown(paragraph.join(" "))}</p>`);
+          paragraph = [];
+        };
+        const openList = (type) => {
+          flushParagraph();
+          if (listType === type) return;
+          closeList();
+          html.push(`<${type}>`);
+          listType = type;
+        };
+
+        lines.forEach((rawLine) => {
+          const line = rawLine.trim();
+          if (!line) {
+            flushParagraph();
+            closeList();
+            return;
+          }
+          if (/^[-*_]{3,}$/.test(line)) {
+            flushParagraph();
+            closeList();
+            html.push("<hr />");
+            return;
+          }
+          const heading = line.match(/^(#{1,6})\s+(.+)$/);
+          if (heading) {
+            flushParagraph();
+            closeList();
+            const level = Math.min(heading[1].length, 4);
+            html.push(`<h${level}>${renderInlineMarkdown(heading[2])}</h${level}>`);
+            return;
+          }
+          const partHeading = line.match(/^(PART\d+)(?:\s+(.+))?$/i);
+          if (partHeading) {
+            flushParagraph();
+            closeList();
+            const title = [partHeading[1].toUpperCase(), partHeading[2]].filter(Boolean).join(" ");
+            html.push(`<h2>${renderInlineMarkdown(title)}</h2>`);
+            return;
+          }
+          if (/^(引用格式|结语)$/.test(line)) {
+            flushParagraph();
+            closeList();
+            html.push(`<h2>${renderInlineMarkdown(line)}</h2>`);
+            return;
+          }
+          if (/^0\d$/.test(line)) {
+            flushParagraph();
+            closeList();
+            html.push(`<h3>${renderInlineMarkdown(line)}</h3>`);
+            return;
+          }
+          const ordered = line.match(/^\d+[\.)]\s+(.+)$/);
+          if (ordered) {
+            openList("ol");
+            html.push(`<li>${renderInlineMarkdown(ordered[1])}</li>`);
+            return;
+          }
+          const bullet = line.match(/^(?:[-*+]\s+|◆\s*)(.+)$/);
+          if (bullet) {
+            openList("ul");
+            html.push(`<li>${renderInlineMarkdown(bullet[1])}</li>`);
+            return;
+          }
+          if (line.startsWith("> ")) {
+            flushParagraph();
+            closeList();
+            html.push(`<blockquote>${renderInlineMarkdown(line.slice(2).trim())}</blockquote>`);
+            return;
+          }
+          closeList();
+          paragraph.push(line);
+        });
+        flushParagraph();
+        closeList();
+        return html.join("");
+      }
+
+      function bindWorkflowEditorPreview(textarea, preview, shell) {
+        if (!textarea || !preview || !shell) return null;
+        const buttons = Array.from(shell.querySelectorAll("[data-workflow-mode]"));
+        const render = () => {
+          preview.innerHTML = renderMarkdownPreview(textarea.value);
+        };
+        const setMode = (mode) => {
+          const isEdit = mode === "edit";
+          shell.dataset.mode = isEdit ? "edit" : "preview";
+          textarea.hidden = !isEdit;
+          preview.hidden = isEdit;
+          buttons.forEach((button) => {
+            const active = button.dataset.workflowMode === (isEdit ? "edit" : "preview");
+            button.classList.toggle("is-active", active);
+            button.setAttribute("aria-pressed", active ? "true" : "false");
+          });
+          if (!isEdit) render();
+        };
+        textarea.addEventListener("input", render);
+        buttons.forEach((button) => {
+          button.addEventListener("click", () => setMode(button.dataset.workflowMode || "preview"));
+        });
+        const binding = { render, setMode };
+        workflowEditorBindings.set(textarea, binding);
+        render();
+        setMode("preview");
+        return binding;
+      }
+
+      function setWorkflowEditorContent(textarea, content, mode = "preview") {
+        if (!textarea) return;
+        textarea.value = content || "";
+        const binding = workflowEditorBindings.get(textarea);
+        if (!binding) return;
+        binding.render();
+        binding.setMode(mode);
       }
 
       function clearWorkflowStepDetails(workflow) {
@@ -3153,8 +3426,11 @@
         const paperForm = $("#paperReadingForm");
         const paperStatus = $("#paperReadingStatus");
         const paperEditor = $("#paperReadingEditor");
+        const paperPreview = $("#paperReadingPreview");
+        const paperShell = document.querySelector('[data-workflow-editor-shell="paper-reading"]');
         const paperExport = $("#paperReadingExport");
         const wechatPaperJobId = $("#wechatPaperJobId");
+        bindWorkflowEditorPreview(paperEditor, paperPreview, paperShell);
 
         if (paperForm && paperStatus && paperEditor) {
           paperForm.addEventListener("submit", async (event) => {
@@ -3162,13 +3438,13 @@
             setWorkflowStatus(paperStatus, "论文精读任务已提交...", "running");
             clearWorkflowStepDetails("paper-reading");
             updateWorkflowProgress("paper-reading", "running");
-            paperEditor.value = "";
+            setWorkflowEditorContent(paperEditor, "");
             try {
               const job = await createPaperReadingJob(paperForm);
               workflowJobs.paperReading = job.job_id;
               if (wechatPaperJobId) wechatPaperJobId.value = job.job_id;
               const completed = job.status === "completed" ? job : await waitForWorkflowCompletion(job.job_id, paperStatus, "paper-reading");
-              paperEditor.value = await fetchWorkflowArtifact(completed.job_id, "final.md");
+              setWorkflowEditorContent(paperEditor, await fetchWorkflowArtifact(completed.job_id, "final.md"));
               setWorkflowStatus(paperStatus, "论文精读完成，可编辑后导出 Word", "complete");
               updateWorkflowProgress("paper-reading", "complete");
             } catch (error) {
@@ -3197,7 +3473,10 @@
         const wechatForm = $("#wechatWritingForm");
         const wechatStatus = $("#wechatWritingStatus");
         const wechatEditor = $("#wechatWritingEditor");
+        const wechatPreview = $("#wechatWritingPreview");
+        const wechatShell = document.querySelector('[data-workflow-editor-shell="wechat-writing"]');
         const wechatExport = $("#wechatWritingExport");
+        bindWorkflowEditorPreview(wechatEditor, wechatPreview, wechatShell);
 
         if (wechatForm && wechatStatus && wechatEditor) {
           wechatForm.addEventListener("submit", async (event) => {
@@ -3211,12 +3490,12 @@
             setWorkflowStatus(wechatStatus, "公众号文章写作任务已提交...", "running");
             clearWorkflowStepDetails("wechat-writing");
             updateWorkflowProgress("wechat-writing", "running");
-            wechatEditor.value = "";
+            setWorkflowEditorContent(wechatEditor, "");
             try {
               const job = await createWechatWritingJob(wechatForm);
               workflowJobs.wechatWriting = job.job_id;
               const completed = job.status === "completed" ? job : await waitForWorkflowCompletion(job.job_id, wechatStatus, "wechat-writing");
-              wechatEditor.value = await fetchWorkflowArtifact(completed.job_id, "final.md");
+              setWorkflowEditorContent(wechatEditor, await fetchWorkflowArtifact(completed.job_id, "final.md"));
               setWorkflowStatus(wechatStatus, "公众号文章写作完成，可编辑后导出 Word", "complete");
               updateWorkflowProgress("wechat-writing", "complete");
             } catch (error) {
