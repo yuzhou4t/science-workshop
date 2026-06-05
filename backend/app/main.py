@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api import jobs
+from app.api import jobs, paper_reading
 from app.core.config import get_settings
 from app.storage.job_store import JobStore
 from app.workflows.events import EventBroker
@@ -29,6 +29,7 @@ def create_app() -> FastAPI:
         return {"status": "ok"}
 
     app.include_router(jobs.router)
+    app.include_router(paper_reading.router)
 
     return app
 
