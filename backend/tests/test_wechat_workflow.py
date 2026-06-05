@@ -16,6 +16,15 @@ class CancellingDeepSeekClient:
         raise asyncio.CancelledError()
 
 
+def _workflow(tmp_path) -> WeChatWritingWorkflow:
+    return WeChatWritingWorkflow(
+        store=JobStore(tmp_path / "jobs", retention_days=7),
+        events=EventBroker(),
+        deepseek=DeepSeekClient(api_key="", base_url="https://example.invalid", model="mock", use_mock=True),
+        docx_exporter=DocxExporter(),
+    )
+
+
 @pytest.mark.asyncio
 async def test_mock_wechat_workflow_creates_article_artifacts(tmp_path) -> None:
     store = JobStore(tmp_path / "jobs", retention_days=7)
@@ -67,3 +76,43 @@ async def test_wechat_workflow_marks_cancelled_node_failed(tmp_path) -> None:
     assert reloaded.status == JobStatus.FAILED
     assert reloaded.nodes["angle"].status == NodeStatus.FAILED
     assert "cancelled" in reloaded.nodes["angle"].error.lower()
+
+
+def test_wechat_angle_prompt_extracts_reference_article_plan(tmp_path) -> None:
+    workflow = _workflow(tmp_path)
+
+    prompt = workflow._angle_prompt({"source_text": "论文材料"})
+
+    assert "目标读者" in prompt
+    assert "核心主张" in prompt
+    assert "必须出现的数据、公式或图表" in prompt
+    assert "PART结构" in prompt
+    assert "不确定信息" in prompt
+
+
+def test_wechat_draft_prompt_uses_reference_public_account_structure(tmp_path) -> None:
+    workflow = _workflow(tmp_path)
+
+    prompt = workflow._draft_prompt({"source_text": "论文材料"}, "写作角度")
+
+    assert "PART01 研究背景" in prompt
+    assert "PART02 核心发现" in prompt
+    assert "PART03 进一步讨论" in prompt
+    assert "PART04 研究框架与方法" in prompt
+    assert "PART05 核心数据" in prompt
+    assert "4个主要结论" in prompt
+    assert "◆" in prompt
+    assert "图表" in prompt
+    assert "公式" in prompt
+    assert "引用格式" in prompt
+    assert "结语" in prompt
+
+
+def test_wechat_final_prompt_preserves_structure_without_new_claims(tmp_path) -> None:
+    workflow = _workflow(tmp_path)
+
+    prompt = workflow._final_prompt("公众号初稿")
+
+    assert "保留 PART01-PART05" in prompt
+    assert "不得新增材料外事实" in prompt
+    assert "删除提示词痕迹" in prompt

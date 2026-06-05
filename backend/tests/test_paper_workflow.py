@@ -383,6 +383,14 @@ async def test_paper_workflow_draft_prompt_is_source_locked(tmp_path) -> None:
     assert "不得引入材料外事实" in prompt
     assert "材料中未明确说明" in prompt
     assert "不要写“颠覆认知”“手术刀”“悲情叙事”等材料外修辞" in prompt
+    assert "PART01 研究背景" in prompt
+    assert "PART02 核心发现" in prompt
+    assert "PART03 进一步讨论" in prompt
+    assert "PART04 研究框架与方法" in prompt
+    assert "PART05 核心数据" in prompt
+    assert "研究范式" in prompt
+    assert "公式" in prompt
+    assert "图表逐图解读" in prompt
 
 
 @pytest.mark.asyncio
@@ -403,6 +411,61 @@ async def test_paper_workflow_final_prompt_prevents_new_claims(tmp_path) -> None
     prompt = deepseek.prompts["final"]
     assert "不得新增草稿中没有的作者机构、数字、案例、判断或延伸问题" in prompt
     assert "删除材料外修辞" in prompt
+    assert "保留 PART01-PART05" in prompt
+
+
+def test_paper_workflow_basic_prompt_asks_for_reader_first_explanation(tmp_path) -> None:
+    workflow = PaperReadingWorkflow(
+        store=JobStore(tmp_path / "jobs", retention_days=7),
+        events=EventBroker(),
+        mineru=MineruClient(use_mock=True),
+        deepseek=DeepSeekClient(api_key="", base_url="https://example.invalid", model="mock", use_mock=True),
+        docx_exporter=DocxExporter(),
+    )
+
+    prompt = workflow._basic_prompt("# Paper")
+
+    assert "论文主线" in prompt
+    assert "研究贡献" in prompt
+    assert "读者要先理解什么" in prompt
+
+
+def test_paper_workflow_method_prompt_requires_paradigm_and_figure_reading(tmp_path) -> None:
+    workflow = PaperReadingWorkflow(
+        store=JobStore(tmp_path / "jobs", retention_days=7),
+        events=EventBroker(),
+        mineru=MineruClient(use_mock=True),
+        deepseek=DeepSeekClient(api_key="", base_url="https://example.invalid", model="mock", use_mock=True),
+        docx_exporter=DocxExporter(),
+    )
+
+    prompt = workflow._method_prompt("# Paper")
+
+    assert "研究范式识别" in prompt
+    assert "为什么这个范式适合本文问题" in prompt
+    assert "范式的局限" in prompt
+    assert "图表逐图解读" in prompt
+    assert "图号" in prompt
+    assert "变量" in prompt
+    assert "读图方法" in prompt
+
+
+def test_paper_workflow_formula_prompt_requires_symbol_and_logic_explanation(tmp_path) -> None:
+    workflow = PaperReadingWorkflow(
+        store=JobStore(tmp_path / "jobs", retention_days=7),
+        events=EventBroker(),
+        mineru=MineruClient(use_mock=True),
+        deepseek=DeepSeekClient(api_key="", base_url="https://example.invalid", model="mock", use_mock=True),
+        docx_exporter=DocxExporter(),
+    )
+
+    prompt = workflow._formula_prompt("# Paper")
+
+    assert "每个符号" in prompt
+    assert "计算步骤" in prompt
+    assert "白话解释" in prompt
+    assert "这个公式回答什么问题" in prompt
+    assert "假设与局限" in prompt
 
 
 @pytest.mark.asyncio
