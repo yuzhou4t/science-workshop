@@ -1,4 +1,5 @@
 from docx import Document
+from docx.oxml.ns import qn
 
 from app.services.docx_exporter import DocxExporter
 
@@ -64,3 +65,45 @@ def test_export_markdown_to_docx_makes_latex_formula_readable(tmp_path) -> None:
     assert "\\frac" not in joined
     assert "$" not in joined
     assert "^2" not in joined
+
+
+def test_export_markdown_to_docx_uses_simsun_for_document_styles(tmp_path) -> None:
+    output = tmp_path / "final.docx"
+    exporter = DocxExporter()
+
+    exporter.export_markdown("# 主标题\n\n这是一段正文。", output)
+
+    doc = Document(output)
+    normal_fonts = doc.styles["Normal"].element.rPr.rFonts
+    title_fonts = doc.styles["Title"].element.rPr.rFonts
+    assert doc.styles["Normal"].font.name == "SimSun"
+    assert normal_fonts.get(qn("w:eastAsia")) == "SimSun"
+    assert doc.styles["Title"].font.name == "SimSun"
+    assert title_fonts.get(qn("w:eastAsia")) == "SimSun"
+    assert doc.paragraphs[0].style.name == "Title"
+
+
+def test_export_markdown_to_docx_inserts_default_editable_title_when_missing(tmp_path) -> None:
+    output = tmp_path / "final.docx"
+    exporter = DocxExporter()
+
+    exporter.export_markdown("这是一段没有标题的正文。", output)
+
+    doc = Document(output)
+    assert doc.paragraphs[0].text == "研读非洲｜第X期"
+    assert doc.paragraphs[0].style.name == "Title"
+    assert doc.core_properties.title == "研读非洲｜第X期"
+    assert doc.paragraphs[1].text == "这是一段没有标题的正文。"
+
+
+def test_export_markdown_to_docx_uses_public_account_title_line_as_word_title(tmp_path) -> None:
+    output = tmp_path / "final.docx"
+    exporter = DocxExporter()
+
+    exporter.export_markdown("【研读非洲｜第10期】从支付普惠到金融深化\n\n图片\n\n正文。", output)
+
+    doc = Document(output)
+    assert doc.paragraphs[0].text == "【研读非洲｜第10期】从支付普惠到金融深化"
+    assert doc.paragraphs[0].style.name == "Title"
+    assert doc.core_properties.title == "【研读非洲｜第10期】从支付普惠到金融深化"
+    assert [paragraph.text for paragraph in doc.paragraphs].count("研读非洲｜第X期") == 0

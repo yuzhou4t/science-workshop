@@ -2,9 +2,13 @@ import re
 from pathlib import Path
 
 from docx import Document
+from docx.oxml import OxmlElement
+from docx.oxml.ns import qn
+from docx.shared import Pt
 
 
 HEADING_RE = re.compile(r"^(#{1,6})\s+(.+)$")
+PUBLIC_ACCOUNT_TITLE_RE = re.compile(r"^【[^】]+】.+$")
 ORDERED_LIST_RE = re.compile(r"^\d+[\.)]\s+(.+)$")
 BULLET_LIST_RE = re.compile(r"^[-*+]\s+(.+)$")
 INLINE_TOKEN_RE = re.compile(r"(\$\$[^$]+\$\$|\$[^$]+\$|\*\*[^*]+\*\*|__[^_]+__|`[^`]+`|\*[^*]+\*|\[[^\]]+\]\([^)]+\))")
@@ -29,23 +33,35 @@ LATEX_SYMBOLS = {
     r"\sum": "Σ",
 }
 SUPERSCRIPT_DIGITS = str.maketrans("0123456789+-=()", "⁰¹²³⁴⁵⁶⁷⁸⁹⁺⁻⁼⁽⁾")
+DEFAULT_DOCUMENT_TITLE = "研读非洲｜第X期"
+WORD_FONT_NAME = "SimSun"
 
 
 class DocxExporter:
-    def export_markdown(self, markdown: str, output_path: Path) -> Path:
+    def export_markdown(self, markdown: str, output_path: Path, default_title: str = DEFAULT_DOCUMENT_TITLE) -> Path:
         output_path.parent.mkdir(parents=True, exist_ok=True)
         document = Document()
+        self._configure_document_styles(document)
         in_formula_block = False
+        title_written = False
         for raw_line in markdown.splitlines():
             line = raw_line.strip()
             if not line:
                 continue
+            if not title_written:
+                title = self._title_from_first_line(line)
+                if title is not None:
+                    self._add_title(document, title)
+                    title_written = True
+                    continue
+                self._add_title(document, default_title)
+                title_written = True
             if line == "$$":
                 in_formula_block = not in_formula_block
                 continue
             if in_formula_block:
                 paragraph = document.add_paragraph()
-                paragraph.add_run(self._readable_latex(line))
+                self._add_run(paragraph, self._readable_latex(line))
                 continue
             if set(line) <= {"-", "*", "_"} and len(line) >= 3:
                 continue
@@ -68,8 +84,49 @@ class DocxExporter:
             else:
                 paragraph = document.add_paragraph()
                 self._add_inline_runs(paragraph, line)
+        if not title_written:
+            self._add_title(document, default_title)
         document.save(output_path)
         return output_path
+
+    def _configure_document_styles(self, document: Document) -> None:
+        self._set_style_font(document.styles["Normal"], WORD_FONT_NAME, size=12)
+        self._set_style_font(document.styles["Title"], WORD_FONT_NAME, size=20, bold=True)
+        for level in range(1, 7):
+            self._set_style_font(document.styles[f"Heading {level}"], WORD_FONT_NAME, bold=True)
+        for style_name in ["List Number", "List Bullet", "Intense Quote"]:
+            if style_name in document.styles:
+                self._set_style_font(document.styles[style_name], WORD_FONT_NAME)
+
+    def _set_style_font(self, style, font_name: str, size: int | None = None, bold: bool | None = None) -> None:
+        style.font.name = font_name
+        if size is not None:
+            style.font.size = Pt(size)
+        if bold is not None:
+            style.font.bold = bold
+        self._set_element_font(style.element, font_name)
+
+    def _set_element_font(self, element, font_name: str) -> None:
+        r_pr = element.get_or_add_rPr()
+        r_fonts = r_pr.rFonts
+        if r_fonts is None:
+            r_fonts = OxmlElement("w:rFonts")
+            r_pr.append(r_fonts)
+        for attribute in ["ascii", "hAnsi", "eastAsia", "cs"]:
+            r_fonts.set(qn(f"w:{attribute}"), font_name)
+
+    def _add_title(self, document: Document, title: str) -> None:
+        paragraph = document.add_paragraph(style="Title")
+        self._add_inline_runs(paragraph, title)
+        document.core_properties.title = title
+
+    def _title_from_first_line(self, line: str) -> str | None:
+        heading = HEADING_RE.match(line)
+        if heading and len(heading.group(1)) == 1:
+            return heading.group(2).strip()
+        if PUBLIC_ACCOUNT_TITLE_RE.match(line):
+            return line
+        return None
 
     def _add_inline_runs(self, paragraph, text: str) -> None:
         for token in INLINE_TOKEN_RE.split(text):
@@ -77,21 +134,27 @@ class DocxExporter:
                 continue
             link = LINK_RE.match(token)
             if token.startswith(("**", "__")) and token.endswith(("**", "__")):
-                run = paragraph.add_run(token[2:-2])
+                run = self._add_run(paragraph, token[2:-2])
                 run.bold = True
             elif token.startswith("$$") and token.endswith("$$"):
-                paragraph.add_run(self._readable_latex(token[2:-2]))
+                self._add_run(paragraph, self._readable_latex(token[2:-2]))
             elif token.startswith("$") and token.endswith("$"):
-                paragraph.add_run(self._readable_latex(token[1:-1]))
+                self._add_run(paragraph, self._readable_latex(token[1:-1]))
             elif token.startswith("`") and token.endswith("`"):
-                paragraph.add_run(token[1:-1])
+                self._add_run(paragraph, token[1:-1])
             elif token.startswith(("*", "_")) and token.endswith(("*", "_")):
-                run = paragraph.add_run(token[1:-1])
+                run = self._add_run(paragraph, token[1:-1])
                 run.italic = True
             elif link:
-                paragraph.add_run(f"{link.group(1)}（{link.group(2)}）")
+                self._add_run(paragraph, f"{link.group(1)}（{link.group(2)}）")
             else:
-                paragraph.add_run(token)
+                self._add_run(paragraph, token)
+
+    def _add_run(self, paragraph, text: str):
+        run = paragraph.add_run(text)
+        run.font.name = WORD_FONT_NAME
+        run._element.rPr.rFonts.set(qn("w:eastAsia"), WORD_FONT_NAME)
+        return run
 
     def _readable_latex(self, formula: str) -> str:
         text = formula.strip()
