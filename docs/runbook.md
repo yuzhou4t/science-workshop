@@ -41,6 +41,54 @@ node --check scripts/run-daily-workflow.mjs
 node --check scripts/install-daily-launchd.mjs
 ```
 
+## Local Workflow Backend
+
+Install and run the local FastAPI workflow backend:
+
+```bash
+cd backend
+python3.11 -m venv .venv
+. .venv/bin/activate
+python -m pip install -r requirements.txt
+cp .env.example .env
+uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
+```
+
+For mock-mode smoke tests, set `WORKFLOW_USE_MOCKS=true` in `backend/.env`. Real MinerU and DeepSeek runs require:
+
+```text
+DEEPSEEK_API_KEY
+MINERU_API_KEY
+TENCENT_COS_SECRET_ID
+TENCENT_COS_SECRET_KEY
+TENCENT_COS_REGION
+TENCENT_COS_BUCKET
+```
+
+Run backend tests:
+
+```bash
+cd backend
+. .venv/bin/activate
+python -m pytest -v
+```
+
+Create a mock paper-reading job:
+
+```bash
+curl -s -X POST http://127.0.0.1:8000/api/workflows/paper-reading/jobs \
+  -F "template_id=africa-reading" \
+  -F "file=@/path/to/paper.pdf"
+```
+
+Create a mock WeChat writing job:
+
+```bash
+curl -s -X POST http://127.0.0.1:8000/api/workflows/wechat-writing/jobs \
+  -F "source_text=这是一段补充材料" \
+  -F "template_id=africa-reading"
+```
+
 Run the live probe when network behavior matters:
 
 ```bash

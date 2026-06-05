@@ -46,6 +46,15 @@ The daily dedupe state is initialized in `data/source-state.json`. Rebuilding fr
 - Decide how online deployment should store state before publishing; `data/source-state.json` is currently local-file state.
 - Add conversion workflows for turning selected journal articles into public-account drafts after the tracking workflow stabilizes.
 
+## Workflow Backend Additions
+
+- Local FastAPI backend lives in `backend/`.
+- Mock mode is controlled by `WORKFLOW_USE_MOCKS=true`.
+- Workflow job artifacts are stored under `backend/storage/workflow_jobs/` by default and are ignored by git.
+- Paper reading supports PDF upload, MinerU/DeepSeek adapters, full evidence-chain artifacts, final Markdown, and DOCX export.
+- WeChat writing supports source text, tracked article id, paper-reading job id, final Markdown, and DOCX export.
+- Job artifacts are retained for `WORKFLOW_RETENTION_DAYS`, defaulting to 7 days.
+
 ## Useful Commands
 
 Run the daily workflow manually:
