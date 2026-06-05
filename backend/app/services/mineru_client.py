@@ -14,6 +14,15 @@ import httpx
 MAX_ZIP_FILES = 200
 MAX_ZIP_UNCOMPRESSED_BYTES = 250 * 1024 * 1024
 COS_SIGNED_URL_EXPIRES_SECONDS = 3600
+MINERU_MAX_ATTEMPTS = 3
+MINERU_RETRY_DELAY_SECONDS = 1
+
+RETRYABLE_MINERU_ERRORS = (
+    httpx.ConnectError,
+    httpx.ConnectTimeout,
+    httpx.ReadTimeout,
+    httpx.RemoteProtocolError,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -221,8 +230,9 @@ class MineruClient:
         }
         headers = {"Authorization": f"Bearer {self.api_key}", "Content-Type": "application/json"}
         async with httpx.AsyncClient(timeout=30.0) as client:
-            response = await client.post(f"{self.base_url}/api/v4/extract/task", headers=headers, json=payload)
-            response.raise_for_status()
+            response = await self._request_with_retries(
+                lambda: client.post(f"{self.base_url}/api/v4/extract/task", headers=headers, json=payload)
+            )
             body = response.json()
             return _extract_task_id(body)
 
@@ -231,8 +241,9 @@ class MineruClient:
         started = time.time()
         async with httpx.AsyncClient(timeout=30.0) as client:
             while time.time() - started < max_wait:
-                response = await client.get(f"{self.base_url}/api/v4/extract/task/{task_id}", headers=headers)
-                response.raise_for_status()
+                response = await self._request_with_retries(
+                    lambda: client.get(f"{self.base_url}/api/v4/extract/task/{task_id}", headers=headers)
+                )
                 body = response.json()
                 zip_url = _parse_task_state(body)
                 if zip_url is not None:
@@ -243,8 +254,7 @@ class MineruClient:
     async def _download_and_extract(self, zip_url: str, asset_dir: Path) -> MineruResult:
         asset_dir.mkdir(parents=True, exist_ok=True)
         async with httpx.AsyncClient(timeout=120.0) as client:
-            response = await client.get(zip_url)
-            response.raise_for_status()
+            response = await self._request_with_retries(lambda: client.get(zip_url))
         zip_path = asset_dir / "mineru_result.zip"
         zip_path.write_bytes(response.content)
         extract_dir = asset_dir / "extracted"
@@ -257,3 +267,24 @@ class MineruClient:
             if path.is_file() and path.suffix.lower() in {".png", ".jpg", ".jpeg"}
         ]
         return MineruResult(markdown=markdown, assets=assets)
+
+    async def _request_with_retries(self, request_factory) -> httpx.Response:
+        last_error: Exception | None = None
+        for attempt in range(1, MINERU_MAX_ATTEMPTS + 1):
+            try:
+                response = await request_factory()
+                response.raise_for_status()
+                return response
+            except RETRYABLE_MINERU_ERRORS as exc:
+                last_error = exc
+                if attempt == MINERU_MAX_ATTEMPTS:
+                    break
+                await asyncio.sleep(MINERU_RETRY_DELAY_SECONDS)
+            except httpx.HTTPStatusError as exc:
+                detail = exc.response.text[:300] if exc.response is not None else ""
+                message = f"MinerU request failed: HTTP {exc.response.status_code}"
+                if detail:
+                    message = f"{message}: {detail}"
+                raise RuntimeError(message) from exc
+        error_name = type(last_error).__name__ if last_error is not None else "UnknownError"
+        raise RuntimeError(f"MinerU request failed: {error_name}") from last_error

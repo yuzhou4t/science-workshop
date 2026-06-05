@@ -118,6 +118,61 @@ def test_mineru_task_creation_missing_task_id_raises_runtime_error() -> None:
         _extract_task_id({"code": 0, "data": {}})
 
 
+@pytest.mark.asyncio
+async def test_mineru_create_task_retries_transient_connection_errors(monkeypatch) -> None:
+    class FlakyAsyncClient:
+        calls = 0
+
+        def __init__(self, timeout: float) -> None:
+            self.timeout = timeout
+
+        async def __aenter__(self):
+            return self
+
+        async def __aexit__(self, exc_type, exc, traceback) -> None:
+            return None
+
+        async def post(self, url, headers, json):
+            FlakyAsyncClient.calls += 1
+            request = httpx.Request("POST", url)
+            if FlakyAsyncClient.calls == 1:
+                raise httpx.ConnectError("", request=request)
+            return httpx.Response(200, json={"code": 0, "data": {"task_id": "task-1"}}, request=request)
+
+    monkeypatch.setattr("app.services.mineru_client.httpx.AsyncClient", FlakyAsyncClient)
+    monkeypatch.setattr("app.services.mineru_client.MINERU_RETRY_DELAY_SECONDS", 0, raising=False)
+    client = MineruClient(api_key="key", base_url="https://mineru.example.test")
+
+    task_id = await client._create_task("https://cos.example.test/paper.pdf")
+
+    assert task_id == "task-1"
+    assert FlakyAsyncClient.calls == 2
+
+
+@pytest.mark.asyncio
+async def test_mineru_connection_errors_are_readable(monkeypatch) -> None:
+    class FailingAsyncClient:
+        def __init__(self, timeout: float) -> None:
+            self.timeout = timeout
+
+        async def __aenter__(self):
+            return self
+
+        async def __aexit__(self, exc_type, exc, traceback) -> None:
+            return None
+
+        async def post(self, url, headers, json):
+            request = httpx.Request("POST", url)
+            raise httpx.ConnectError("", request=request)
+
+    monkeypatch.setattr("app.services.mineru_client.httpx.AsyncClient", FailingAsyncClient)
+    monkeypatch.setattr("app.services.mineru_client.MINERU_RETRY_DELAY_SECONDS", 0, raising=False)
+    client = MineruClient(api_key="key", base_url="https://mineru.example.test")
+
+    with pytest.raises(RuntimeError, match="MinerU request failed: ConnectError"):
+        await client._create_task("https://cos.example.test/paper.pdf")
+
+
 @pytest.mark.parametrize("body", [None, []])
 def test_mineru_task_creation_non_object_response_raises_runtime_error(body) -> None:
     with pytest.raises(RuntimeError, match="MinerU task response missing task_id"):
