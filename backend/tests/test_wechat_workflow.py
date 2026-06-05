@@ -96,12 +96,10 @@ def test_wechat_draft_prompt_uses_reference_public_account_structure(tmp_path) -
     prompt = workflow._draft_prompt({"source_text": "论文材料"}, "写作角度")
 
     assert "PART01 研究背景" in prompt
-    assert "PART02 核心发现" in prompt
-    assert "PART03 进一步讨论" in prompt
-    assert "PART04 研究框架与方法" in prompt
-    assert "PART05 核心数据" in prompt
-    assert "4个主要结论" in prompt
-    assert "◆" in prompt
+    assert "PART02 发展现状" in prompt
+    assert "PART03 进一步研究" in prompt
+    assert "PART04 结论与建议" in prompt
+    assert "01、02、03" in prompt
     assert "图表" in prompt
     assert "公式" in prompt
     assert "LaTeX" in prompt
@@ -110,12 +108,33 @@ def test_wechat_draft_prompt_uses_reference_public_account_structure(tmp_path) -
     assert "结语" in prompt
 
 
+def test_wechat_draft_prompt_matches_africa_public_account_sample_format(tmp_path) -> None:
+    workflow = _workflow(tmp_path)
+
+    prompt = workflow._draft_prompt({"source_text": "报告材料"}, "写作角度")
+
+    assert "【研读非洲｜第X期】" in prompt
+    assert "单独一行写“图片”" in prompt
+    assert "PART01" in prompt
+    assert "研究背景" in prompt
+    assert "PART02" in prompt
+    assert "发展现状" in prompt
+    assert "01" in prompt
+    assert "PART03" in prompt
+    assert "进一步研究" in prompt
+    assert "PART04" in prompt
+    assert "结论与建议" in prompt
+    assert "引用格式:" in prompt
+    assert "数智非洲聚焦大数据、人工智能与非洲研究的有机结合" in prompt
+
+
 def test_wechat_final_prompt_preserves_structure_without_new_claims(tmp_path) -> None:
     workflow = _workflow(tmp_path)
 
     prompt = workflow._final_prompt("公众号初稿")
 
-    assert "保留 PART01-PART05" in prompt
+    assert "保留【研读非洲｜第X期】标题" in prompt
+    assert "PART01-PART04" in prompt
     assert "不得新增材料外事实" in prompt
     assert "删除提示词痕迹" in prompt
     assert "保留 LaTeX 公式块" in prompt
