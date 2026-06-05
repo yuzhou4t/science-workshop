@@ -11,6 +11,10 @@ const required = [
   'data-page="wechat-writing"',
   'data-workflow-panel="paper-reading"',
   'data-workflow-panel="wechat-writing"',
+  'data-workflow-stage="paper-reading"',
+  'data-workflow-stage="wechat-writing"',
+  'data-workflow-chain-rail="paper-reading"',
+  'data-workflow-chain-rail="wechat-writing"',
   'data-workflow-chain="paper-reading"',
   'data-workflow-chain="wechat-writing"',
   'id="wechatMaterials"',
@@ -52,6 +56,16 @@ const missingPages = sidebarViews.filter((view) => !pageViews.has(view));
 if (missingPages.length > 0) {
   console.error(`Sidebar views without matching pages: ${missingPages.join(", ")}`);
   process.exit(1);
+}
+
+for (const workflow of ["paper-reading", "wechat-writing"]) {
+  const railPattern = new RegExp(
+    `<aside[^>]+data-workflow-chain-rail="${workflow}"[\\s\\S]*?<ol class="workflow-chain" data-workflow-chain="${workflow}"`,
+  );
+  if (!railPattern.test(html)) {
+    console.error(`Workflow chain must live in right rail: ${workflow}`);
+    process.exit(1);
+  }
 }
 
 console.log("workflow UI markers ok");
