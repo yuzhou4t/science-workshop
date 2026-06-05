@@ -66,6 +66,55 @@ class FallbackUploadMineruClient(MineruClient):
         return MineruResult(markdown="# Extracted by fallback upload", assets=[])
 
 
+class LocalSuccessMineruClient(MineruClient):
+    def __init__(self) -> None:
+        super().__init__(api_key="key", base_url="https://mineru.example.test")
+        self.upload_attempted = False
+
+    async def _extract_pdf_locally(self, pdf_path):
+        return MineruResult(markdown="Local extracted paper text " * 80, assets=[])
+
+    async def _upload_pdf_for_mineru(self, pdf_path):
+        self.upload_attempted = True
+        raise RuntimeError("cloud upload should not run")
+
+
+class LocalTooShortMineruClient(FallbackUploadMineruClient):
+    def __init__(self) -> None:
+        super().__init__()
+        self.local_attempted = False
+
+    async def _extract_pdf_locally(self, pdf_path):
+        self.local_attempted = True
+        return MineruResult(markdown="too short", assets=[])
+
+
+class LocalMineruPreferredClient(MineruClient):
+    def __init__(self) -> None:
+        super().__init__(api_key="key", base_url="https://mineru.example.test")
+        self.text_attempted = False
+
+    async def _extract_pdf_with_local_mineru(self, pdf_path):
+        return MineruResult(markdown="MinerU local extracted paper text " * 80, assets=[])
+
+    async def _extract_pdf_text_locally(self, pdf_path):
+        self.text_attempted = True
+        return MineruResult(markdown="text fallback should not run", assets=[])
+
+
+class LocalMineruTooShortThenTextClient(MineruClient):
+    def __init__(self) -> None:
+        super().__init__(api_key="key", base_url="https://mineru.example.test")
+        self.text_attempted = False
+
+    async def _extract_pdf_with_local_mineru(self, pdf_path):
+        return MineruResult(markdown="too short", assets=[])
+
+    async def _extract_pdf_text_locally(self, pdf_path):
+        self.text_attempted = True
+        return MineruResult(markdown="Text extracted paper text " * 80, assets=[])
+
+
 class CapturingDeepSeekClient:
     def __init__(self) -> None:
         self.prompts: dict[str, str] = {}
@@ -374,6 +423,57 @@ async def test_mineru_parse_falls_back_to_builtin_upload_when_cos_fails(tmp_path
     assert result.markdown == "# Extracted by fallback upload"
     assert client.used_fallback_upload is True
     assert client.task_url == "https://mineru.example.test/uploaded.pdf"
+
+
+@pytest.mark.asyncio
+async def test_mineru_parse_uses_local_extraction_before_cloud_upload(tmp_path) -> None:
+    pdf = tmp_path / "paper.pdf"
+    pdf.write_bytes(b"%PDF-1.4 mock")
+    client = LocalSuccessMineruClient()
+
+    result = await client.parse_pdf_to_markdown(pdf)
+
+    assert result.markdown.startswith("Local extracted paper text")
+    assert client.upload_attempted is False
+
+
+@pytest.mark.asyncio
+async def test_mineru_parse_falls_back_to_cloud_when_local_extraction_is_too_short(tmp_path) -> None:
+    pdf = tmp_path / "paper.pdf"
+    pdf.write_bytes(b"%PDF-1.4 mock")
+    client = LocalTooShortMineruClient()
+
+    result = await client.parse_pdf_to_markdown(pdf)
+
+    assert result.markdown == "# Extracted by fallback upload"
+    assert client.local_attempted is True
+    assert client.used_fallback_upload is True
+
+
+@pytest.mark.asyncio
+async def test_local_extraction_prefers_local_mineru_before_text_fallback(tmp_path) -> None:
+    pdf = tmp_path / "paper.pdf"
+    pdf.write_bytes(b"%PDF-1.4 mock")
+    client = LocalMineruPreferredClient()
+
+    result = await client._extract_pdf_locally(pdf)
+
+    assert result is not None
+    assert result.markdown.startswith("MinerU local extracted paper text")
+    assert client.text_attempted is False
+
+
+@pytest.mark.asyncio
+async def test_local_extraction_uses_text_when_local_mineru_is_too_short(tmp_path) -> None:
+    pdf = tmp_path / "paper.pdf"
+    pdf.write_bytes(b"%PDF-1.4 mock")
+    client = LocalMineruTooShortThenTextClient()
+
+    result = await client._extract_pdf_locally(pdf)
+
+    assert result is not None
+    assert result.markdown.startswith("Text extracted paper text")
+    assert client.text_attempted is True
 
 
 @pytest.mark.asyncio

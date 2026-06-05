@@ -14,6 +14,8 @@ import httpx
 
 MAX_ZIP_FILES = 200
 MAX_ZIP_UNCOMPRESSED_BYTES = 250 * 1024 * 1024
+LOCAL_EXTRACTION_MIN_CHARS = 1200
+LOCAL_MINERU_TIMEOUT_SECONDS = 180
 COS_SIGNED_URL_EXPIRES_SECONDS = 3600
 MINERU_MAX_ATTEMPTS = 3
 MINERU_RETRY_DELAY_SECONDS = 1
@@ -181,6 +183,12 @@ class MineruClient:
             raise RuntimeError("MINERU_API_KEY is required when mock mode is disabled")
         upload_result: CosUpload | None = None
         try:
+            await self._emit_progress(progress_callback, "document_extraction", 8, "正在尝试本地解析 PDF", {})
+            local_result = await self._extract_pdf_locally(pdf_path)
+            if self._local_extraction_is_usable(local_result):
+                await self._emit_progress(progress_callback, "document_extraction", 25, "本地 PDF 解析完成", {})
+                return local_result
+            await self._emit_progress(progress_callback, "document_extraction", 10, "本地解析不足，改用 MinerU 云端解析", {})
             await self._emit_progress(progress_callback, "document_extraction", 12, "正在上传 PDF 供 MinerU 解析", {})
             upload_result = await self._upload_pdf_for_mineru(pdf_path)
             await self._emit_progress(progress_callback, "document_extraction", 20, "PDF 上传完成，正在创建 MinerU 任务", {})
@@ -204,6 +212,117 @@ class MineruClient:
 
     def _cos_object_key(self, pdf_path: Path) -> str:
         return f"mineru/{uuid4().hex}.pdf"
+
+    async def _extract_pdf_locally(self, pdf_path: Path) -> MineruResult | None:
+        mineru_result = await self._extract_pdf_with_local_mineru(pdf_path)
+        if self._local_extraction_is_usable(mineru_result):
+            return mineru_result
+        if mineru_result is not None:
+            logger.info("Local MinerU extraction was too short; trying local text extraction")
+        return await self._extract_pdf_text_locally(pdf_path)
+
+    async def _extract_pdf_with_local_mineru(self, pdf_path: Path) -> MineruResult | None:
+        command = self._local_mineru_command()
+        if command is None:
+            logger.info("MinerU CLI is not installed; skipping local MinerU extraction")
+            return None
+
+        try:
+            output_dir = pdf_path.parent / f"mineru_local_{uuid4().hex}"
+            output_dir.mkdir(parents=True, exist_ok=True)
+            process = await asyncio.create_subprocess_exec(
+                command,
+                "-p",
+                str(pdf_path),
+                "-o",
+                str(output_dir),
+                "-b",
+                "pipeline",
+                "-m",
+                "txt",
+                stdout=asyncio.subprocess.PIPE,
+                stderr=asyncio.subprocess.PIPE,
+            )
+            try:
+                stdout, stderr = await asyncio.wait_for(
+                    process.communicate(),
+                    timeout=LOCAL_MINERU_TIMEOUT_SECONDS,
+                )
+            except TimeoutError:
+                process.kill()
+                stdout, stderr = await process.communicate()
+                logger.warning(
+                    "Local MinerU extraction timed out after %s seconds: %s",
+                    LOCAL_MINERU_TIMEOUT_SECONDS,
+                    self._process_output_excerpt(stdout, stderr),
+                )
+                return None
+            if process.returncode != 0:
+                logger.warning("Local MinerU extraction failed: %s", self._process_output_excerpt(stdout, stderr))
+                return None
+            return self._read_local_mineru_result(output_dir, pdf_path.stem)
+        except Exception as exc:
+            logger.warning("Local MinerU extraction failed; falling back to other parsers: %s", exc)
+            return None
+
+    def _local_mineru_command(self) -> str | None:
+        command = shutil.which("mineru")
+        if command:
+            return command
+        homebrew_command = Path("/opt/homebrew/bin/mineru")
+        if homebrew_command.exists():
+            return str(homebrew_command)
+        return None
+
+    def _process_output_excerpt(self, stdout: bytes, stderr: bytes, max_chars: int = 1200) -> str:
+        output = b"\n".join(part for part in [stdout, stderr] if part)
+        return output.decode("utf-8", errors="replace")[-max_chars:]
+
+    def _read_local_mineru_result(self, output_dir: Path, pdf_stem: str) -> MineruResult | None:
+        markdown_paths = sorted(output_dir.rglob(f"{pdf_stem}.md")) or sorted(output_dir.rglob("*.md"))
+        for markdown_path in markdown_paths:
+            markdown = markdown_path.read_text(encoding="utf-8", errors="replace").strip()
+            if not markdown:
+                continue
+            assets = [
+                asset
+                for asset in markdown_path.parent.rglob("*")
+                if asset.is_file() and asset.suffix.lower() not in {".md", ".json", ".pdf"}
+            ]
+            return MineruResult(markdown=markdown, assets=assets)
+        logger.info("Local MinerU completed but no Markdown output was found in %s", output_dir)
+        return None
+
+    async def _extract_pdf_text_locally(self, pdf_path: Path) -> MineruResult | None:
+        try:
+            from pypdf import PdfReader
+        except ImportError:
+            logger.info("pypdf is not installed; skipping local PDF extraction")
+            return None
+
+        def extract_sync() -> str:
+            reader = PdfReader(str(pdf_path))
+            parts = []
+            for index, page in enumerate(reader.pages, start=1):
+                text = (page.extract_text() or "").strip()
+                if text:
+                    parts.append(f"## 第 {index} 页\n\n{text}")
+            return "\n\n".join(parts).strip()
+
+        try:
+            markdown = await asyncio.get_running_loop().run_in_executor(None, extract_sync)
+        except Exception as exc:
+            logger.warning("Local PDF extraction failed; falling back to MinerU cloud parsing: %s", exc)
+            return None
+        if not markdown:
+            return None
+        return MineruResult(markdown=markdown, assets=[])
+
+    def _local_extraction_is_usable(self, result: MineruResult | None) -> bool:
+        if result is None:
+            return False
+        text_length = len("".join(result.markdown.split()))
+        return text_length >= LOCAL_EXTRACTION_MIN_CHARS
 
     def _cos_client(self):
         from qcloud_cos import CosConfig, CosS3Client
