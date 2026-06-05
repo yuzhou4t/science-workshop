@@ -4,6 +4,7 @@ import shutil
 import stat
 import time
 import zipfile
+from collections.abc import Awaitable, Callable
 from dataclasses import dataclass
 from pathlib import Path, PurePosixPath
 from uuid import uuid4
@@ -25,6 +26,7 @@ RETRYABLE_MINERU_ERRORS = (
 )
 
 logger = logging.getLogger(__name__)
+ProgressCallback = Callable[[str, float, str, dict], Awaitable[None]]
 
 
 @dataclass(frozen=True)
@@ -74,6 +76,23 @@ def _parse_task_state(body: object) -> str | None:
         message = data.get("err_msg")
         raise RuntimeError(message if isinstance(message, str) and message else "MinerU task failed")
     return None
+
+
+def _extract_progress_message(body: object) -> tuple[float, str, dict] | None:
+    if not isinstance(body, dict):
+        return None
+    data = body.get("data")
+    if not isinstance(data, dict) or data.get("state") != "running":
+        return None
+    progress = data.get("extract_progress")
+    if not isinstance(progress, dict):
+        return None
+    extracted = progress.get("extracted_pages")
+    total = progress.get("total_pages")
+    if not isinstance(extracted, int) or not isinstance(total, int) or total <= 0:
+        return None
+    percent = 35 + min(45, round((extracted / total) * 45, 1))
+    return percent, f"MinerU 正在解析第 {extracted}/{total} 页", {"extracted_pages": extracted, "total_pages": total}
 
 
 def _validate_zip_members(
@@ -146,7 +165,11 @@ class MineruClient:
         self.cos_region = cos_region
         self.cos_bucket = cos_bucket
 
-    async def parse_pdf_to_markdown(self, pdf_path: Path) -> MineruResult:
+    async def parse_pdf_to_markdown(
+        self,
+        pdf_path: Path,
+        progress_callback: ProgressCallback | None = None,
+    ) -> MineruResult:
         if self.use_mock:
             return MineruResult(
                 markdown="# Mock Extracted Paper\n\nThis is mock MinerU Markdown.",
@@ -156,9 +179,19 @@ class MineruClient:
             raise RuntimeError("MINERU_API_KEY is required when mock mode is disabled")
         upload_result: CosUpload | None = None
         try:
+            await self._emit_progress(progress_callback, "document_extraction", 12, "正在上传 PDF 到 COS", {})
             upload_result = await self._upload_to_cos(pdf_path)
+            await self._emit_progress(progress_callback, "document_extraction", 20, "COS 上传完成，正在创建 MinerU 任务", {})
             task_id = await self._create_task(upload_result.file_url)
-            zip_url = await self._wait_for_completion(task_id)
+            await self._emit_progress(
+                progress_callback,
+                "document_extraction",
+                30,
+                "MinerU 任务已创建，等待解析结果",
+                {"task_id": task_id},
+            )
+            zip_url = await self._wait_for_completion(task_id, progress_callback)
+            await self._emit_progress(progress_callback, "document_extraction", 85, "MinerU 解析完成，正在下载结果", {})
             return await self._download_and_extract(zip_url, pdf_path.parent / "mineru_assets")
         finally:
             if upload_result is not None:
@@ -236,7 +269,12 @@ class MineruClient:
             body = response.json()
             return _extract_task_id(body)
 
-    async def _wait_for_completion(self, task_id: str, max_wait: int = 300) -> str:
+    async def _wait_for_completion(
+        self,
+        task_id: str,
+        progress_callback: ProgressCallback | None = None,
+        max_wait: int = 300,
+    ) -> str:
         headers = {"Authorization": f"Bearer {self.api_key}", "Content-Type": "application/json"}
         started = time.time()
         async with httpx.AsyncClient(timeout=30.0) as client:
@@ -248,6 +286,10 @@ class MineruClient:
                 zip_url = _parse_task_state(body)
                 if zip_url is not None:
                     return zip_url
+                progress = _extract_progress_message(body)
+                if progress is not None:
+                    percent, message, data = progress
+                    await self._emit_progress(progress_callback, "document_extraction", percent, message, data)
                 await asyncio.sleep(5)
         raise TimeoutError("MinerU task timed out")
 
@@ -288,3 +330,14 @@ class MineruClient:
                 raise RuntimeError(message) from exc
         error_name = type(last_error).__name__ if last_error is not None else "UnknownError"
         raise RuntimeError(f"MinerU request failed: {error_name}") from last_error
+
+    async def _emit_progress(
+        self,
+        progress_callback: ProgressCallback | None,
+        node_id: str,
+        progress: float,
+        message: str,
+        data: dict,
+    ) -> None:
+        if progress_callback is not None:
+            await progress_callback(node_id, progress, message, data)

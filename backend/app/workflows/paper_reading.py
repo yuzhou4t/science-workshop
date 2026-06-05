@@ -51,7 +51,10 @@ class PaperReadingWorkflow:
         self.store.set_node_status(job, "document_extraction", NodeStatus.RUNNING)
         await self.events.publish(job.job_id, "progress", "document_extraction", "MinerU 正在提取 PDF", 10, {})
         try:
-            result = await self.mineru.parse_pdf_to_markdown(pdf_path)
+            async def publish_progress(node_id: str, progress: float, message: str, data: dict) -> None:
+                await self.events.publish(job.job_id, "progress", node_id, message, progress, data)
+
+            result = await self.mineru.parse_pdf_to_markdown(pdf_path, progress_callback=publish_progress)
             self.store.write_text_artifact(job, "extraction/extracted.md", result.markdown)
             self.store.set_node_status(job, "document_extraction", NodeStatus.COMPLETED, ["extracted.md"])
             await self.events.publish(job.job_id, "progress", "document_extraction", "MinerU 提取完成", 25, {})
@@ -77,7 +80,17 @@ class PaperReadingWorkflow:
     async def _draft(self, job: WorkflowJob, basic: str, method: str, formula: str) -> str:
         self.store.set_node_status(job, "draft", NodeStatus.RUNNING)
         try:
-            prompt = f"整合以下材料，写成研读非洲公众号精读初稿。\n\n{basic}\n\n{method}\n\n{formula}"
+            prompt = (
+                "你正在写论文精读初稿。必须严格依据下方三份上游证据材料，不得引入材料外事实、机构归属、"
+                "作者身份、夸张评价、延伸讨论或案例。\n"
+                "硬性规则：\n"
+                "1. 每个核心数字、结论、方法和图表解释都必须能在材料中找到对应依据。\n"
+                "2. 不要写“颠覆认知”“手术刀”“悲情叙事”等材料外修辞。\n"
+                "3. 如果材料未明确说明某项信息，写“材料中未明确说明”，不要补全。\n"
+                "4. 输出中文 Markdown，结构包括：标题、文献信息、导语、研究背景、核心发现、研究设计与方法、"
+                "图表数据、进一步讨论、结论、引用格式、结语。\n\n"
+                f"【基础信息抽取】\n{basic}\n\n【方法数据与图表抽取】\n{method}\n\n【公式指标抽取】\n{formula}"
+            )
             draft = await self.deepseek.generate("draft", prompt)
             self.store.write_text_artifact(job, "nodes/draft.md", draft)
             self.store.set_node_status(job, "draft", NodeStatus.COMPLETED, ["draft.md"])
@@ -89,7 +102,12 @@ class PaperReadingWorkflow:
     async def _finalize(self, job: WorkflowJob, draft: str) -> str:
         self.store.set_node_status(job, "final", NodeStatus.RUNNING)
         try:
-            prompt = f"清理提示词残留、JSON 残留和附录残留，输出公众号终稿 Markdown。\n\n{draft}"
+            prompt = (
+                "清理提示词残留、JSON 残留和附录残留，输出公众号终稿 Markdown。\n"
+                "只允许在不改变事实含义的前提下润色；不得新增草稿中没有的作者机构、数字、案例、判断或延伸问题。"
+                "删除材料外修辞和无法由草稿证据支持的泛化表达。\n\n"
+                f"{draft}"
+            )
             final = await self.deepseek.generate("final", prompt)
             self.store.write_text_artifact(job, "nodes/final.md", final)
             self.store.set_node_status(job, "final", NodeStatus.COMPLETED, ["final.md"])

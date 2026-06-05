@@ -314,8 +314,77 @@
         transition: var(--theme-transition);
       }
 
+      .breath-surface {
+        transform-origin: 50% 50%;
+        will-change: transform;
+      }
+
       .page-header {
         padding: 18px 18px 14px;
+      }
+
+      .status-dock {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .status-card {
+        min-width: 0;
+        position: relative;
+        overflow: hidden;
+        padding: 13px 14px;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        background: var(--surface-card);
+        box-shadow: var(--shadow-card);
+      }
+
+      .status-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-top: 1px solid rgba(var(--accent-rgb), 0.18);
+        background: linear-gradient(90deg, rgba(var(--accent-rgb), 0.1), transparent 56%);
+        opacity: 0.72;
+        pointer-events: none;
+      }
+
+      .status-card.warn::before {
+        border-top-color: rgba(251, 191, 36, 0.22);
+        background: linear-gradient(90deg, rgba(251, 191, 36, 0.12), transparent 56%);
+      }
+
+      .status-card.ok::before {
+        border-top-color: rgba(52, 211, 153, 0.22);
+        background: linear-gradient(90deg, rgba(52, 211, 153, 0.1), transparent 56%);
+      }
+
+      .status-card span,
+      .status-card strong {
+        position: relative;
+      }
+
+      .status-card span {
+        display: block;
+        overflow: hidden;
+        color: var(--text-2);
+        font-family: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+        font-size: 10px;
+        text-overflow: ellipsis;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      .status-card strong {
+        display: block;
+        margin-top: 5px;
+        overflow: hidden;
+        color: var(--text-0);
+        font-size: 18px;
+        line-height: 1.1;
+        text-overflow: ellipsis;
+        white-space: nowrap;
       }
 
       .header-row {
@@ -648,6 +717,7 @@
       }
 
       .timeline-day-items {
+        --rail-scale: 1;
         position: relative;
         display: grid;
         gap: 0;
@@ -660,7 +730,8 @@
         bottom: 0;
         left: calc(var(--tl-time-w) + (var(--tl-rail-w) / 2));
         width: 1px;
-        transform: translateX(-50%);
+        transform: translateX(-50%) scaleY(var(--rail-scale));
+        transform-origin: 50% 0;
         background: var(--border-emphasis);
       }
 
@@ -720,6 +791,10 @@
         background: linear-gradient(180deg, #ffffff, #f8fbff);
         border-color: var(--border-emphasis);
         box-shadow: var(--shadow-card-hover);
+      }
+
+      .timeline-card.warn {
+        border-color: rgba(251, 191, 36, 0.18);
       }
 
       .timeline-card-head {
@@ -802,6 +877,46 @@
         color: var(--text-1);
         font-size: 12.5px;
         line-height: 1.62;
+      }
+
+      .timeline-actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        margin-top: 10px;
+        flex-wrap: wrap;
+      }
+
+      .status-pill {
+        min-height: 28px;
+        max-width: 100%;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        overflow: hidden;
+        padding: 5px 9px;
+        border: 1px solid rgba(52, 211, 153, 0.28);
+        border-radius: 999px;
+        background: rgba(52, 211, 153, 0.08);
+        color: var(--emerald);
+        font-family: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+        font-size: 10.5px;
+        line-height: 1;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .status-pill.warn {
+        border-color: rgba(251, 191, 36, 0.3);
+        background: rgba(251, 191, 36, 0.1);
+        color: var(--amber);
+      }
+
+      .status-pill.paid {
+        border-color: rgba(var(--accent-rgb), 0.3);
+        background: rgba(var(--accent-rgb), 0.1);
+        color: var(--accent);
       }
 
       .tags {
@@ -1036,6 +1151,19 @@
         font-family: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
         font-size: 10.5px;
         line-height: 1.45;
+      }
+
+      .interface-note {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 11px 12px;
+        border: 1px solid rgba(251, 191, 36, 0.22);
+        border-radius: var(--radius-sm);
+        background: rgba(251, 191, 36, 0.07);
+        color: var(--text-1);
+        font-size: 12px;
       }
 
       .ingest-grid {
@@ -1504,8 +1632,10 @@
 
       .workflow-chain li {
         min-width: 0;
+        position: relative;
         display: grid;
         gap: 6px;
+        overflow: hidden;
         padding: 12px;
         border: 1px solid var(--border);
         border-radius: var(--radius-sm);
@@ -1513,7 +1643,38 @@
         color: var(--text-1);
       }
 
+      .workflow-chain li.is-active {
+        border-color: rgba(var(--accent-rgb), 0.35);
+        background: linear-gradient(180deg, rgba(var(--accent-rgb), 0.13), rgba(var(--accent-rgb), 0.045));
+      }
+
+      .workflow-chain.is-running li.is-active::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(110deg, transparent 0%, rgba(var(--accent-rgb), 0.2) 44%, transparent 72%);
+        transform: translateX(-110%);
+        animation: workflow-sheen 1.8s ease-in-out infinite;
+        pointer-events: none;
+      }
+
+      .workflow-chain li.is-complete {
+        border-color: rgba(52, 211, 153, 0.26);
+      }
+
+      .workflow-chain li.is-complete span {
+        background: rgba(52, 211, 153, 0.14);
+        color: var(--emerald);
+      }
+
+      .workflow-chain li.is-error {
+        border-color: rgba(251, 113, 133, 0.34);
+        background: rgba(251, 113, 133, 0.07);
+      }
+
       .workflow-chain span {
+        position: relative;
+        z-index: 1;
         width: 24px;
         height: 24px;
         display: grid;
@@ -1526,11 +1687,36 @@
       }
 
       .workflow-chain strong {
+        position: relative;
+        z-index: 1;
         overflow-wrap: anywhere;
         color: var(--text-0);
         font-size: 12px;
         font-weight: 700;
         line-height: 1.35;
+      }
+
+      .workflow-chain small {
+        position: relative;
+        z-index: 1;
+        color: var(--text-2);
+        font-size: 11px;
+        line-height: 1.35;
+      }
+
+      @keyframes workflow-sheen {
+        from {
+          transform: translateX(-110%);
+        }
+        to {
+          transform: translateX(110%);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .workflow-chain.is-running li.is-active::after {
+          animation: none;
+        }
       }
 
       .workflow-panel {
@@ -1584,6 +1770,46 @@
         padding: 6px 0;
         color: var(--text-1);
         font-size: 12.5px;
+      }
+
+      .workflow-status.running {
+        color: var(--accent);
+      }
+
+      .workflow-status.complete {
+        color: var(--emerald);
+      }
+
+      .workflow-status.error {
+        color: var(--rose);
+      }
+
+      .workflow-evidence {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      .workflow-evidence-card {
+        min-width: 0;
+        padding: 10px;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        background: var(--surface-0);
+      }
+
+      .workflow-evidence-card strong {
+        display: block;
+        color: var(--text-0);
+        font-size: 12px;
+      }
+
+      .workflow-evidence-card span {
+        display: block;
+        margin-top: 4px;
+        color: var(--text-2);
+        font-size: 11px;
+        line-height: 1.4;
       }
 
       .workflow-editor {
@@ -1677,8 +1903,10 @@
         .rss-pipeline,
         .endpoint-list,
         .adapter-summary,
+        .status-dock,
         .adapter-profile-grid,
         .placeholder-grid,
+        .workflow-evidence,
         .workflow-chain,
         .workflow-board {
           grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1718,9 +1946,11 @@
         .rss-pipeline,
         .endpoint-list,
         .adapter-summary,
+        .status-dock,
         .adapter-profile-grid,
         .placeholder-grid,
         .workflow-stage-layout,
+        .workflow-evidence,
         .workflow-chain,
         .workflow-board,
         .workflow-form-row {
@@ -1854,6 +2084,7 @@
             </details>
           </section>
 
+          <section class="status-dock" id="statusDock" aria-label="工作台运行状态"></section>
           <section class="timeline" id="timeline"></section>
           <footer class="metrics-footer" id="trackingStats"></footer>
         </section>
@@ -1957,7 +2188,11 @@
                     <option>每月检查</option>
                     <option>每日检查</option>
                   </select>
-                  <button class="btn btn-primary" type="button">加入待校验</button>
+                  <button class="btn btn-primary" type="button" aria-disabled="true" title="接口预留，当前来源仍以本地注册表为准">预留接口</button>
+                </div>
+                <div class="interface-note">
+                  <span>当前来源写入仍以本地注册表和抓取脚本为准，这里只展示未来接入入口。</span>
+                  <span class="status-pill warn">reserved</span>
                 </div>
               </div>
             </details>
@@ -2051,7 +2286,7 @@
 
           <section class="workflow-stage-layout" data-workflow-stage="paper-reading">
             <section class="workflow-board workflow-board-single" aria-label="论文精读工作流">
-              <section class="workflow-panel" data-workflow-panel="paper-reading" id="paperReadingPanel">
+              <section class="workflow-panel breath-surface" data-workflow-panel="paper-reading" id="paperReadingPanel">
                 <div class="workflow-header">
                   <h2>论文精读</h2>
                   <p>上传 PDF，生成“研读非洲”式精读稿，并保留完整证据链。</p>
@@ -2064,6 +2299,11 @@
                   <input id="paperTemplateId" name="template_id" type="hidden" value="africa-reading" />
                 </form>
                 <div id="paperReadingStatus" class="workflow-status" aria-live="polite">等待上传 PDF</div>
+                <div class="workflow-evidence" aria-label="论文精读产物">
+                  <div class="workflow-evidence-card"><strong>节点证据链</strong><span>抽取、方法、图表、公式会保留为可追溯材料。</span></div>
+                  <div class="workflow-evidence-card"><strong>终稿编辑</strong><span>完成后可在这里直接改 Markdown 终稿。</span></div>
+                  <div class="workflow-evidence-card"><strong>Word 导出</strong><span>导出前会同步当前编辑内容。</span></div>
+                </div>
                 <textarea id="paperReadingEditor" class="field workflow-editor" rows="18" placeholder="精读终稿会显示在这里，可编辑后导出 Word"></textarea>
                 <div class="workflow-export-row">
                   <button class="btn btn-ghost" id="paperReadingExport" type="button">导出 Word</button>
@@ -2074,12 +2314,12 @@
             <aside class="workflow-chain-rail" data-workflow-chain-rail="paper-reading">
               <h2 class="workflow-chain-title">工作链路</h2>
               <ol class="workflow-chain" data-workflow-chain="paper-reading" aria-label="论文精读完整链路">
-                <li><span>01</span><strong>上传 PDF</strong></li>
-                <li><span>02</span><strong>文档提取器</strong></li>
-                <li><span>03</span><strong>基础信息抽取</strong></li>
-                <li><span>04</span><strong>方法图表与公式指标</strong></li>
-                <li><span>05</span><strong>公众号精读撰写</strong></li>
-                <li><span>06</span><strong>终稿校准与 Word</strong></li>
+                <li data-node-step="0" class="is-active"><span>01</span><strong>上传 PDF</strong><small>等待文件</small></li>
+                <li data-node-step="1"><span>02</span><strong>文档提取器</strong><small>待运行</small></li>
+                <li data-node-step="2"><span>03</span><strong>基础信息抽取</strong><small>待运行</small></li>
+                <li data-node-step="3"><span>04</span><strong>方法图表与公式指标</strong><small>待运行</small></li>
+                <li data-node-step="4"><span>05</span><strong>公众号精读撰写</strong><small>待运行</small></li>
+                <li data-node-step="5"><span>06</span><strong>终稿校准与 Word</strong><small>待运行</small></li>
               </ol>
             </aside>
           </section>
@@ -2097,7 +2337,7 @@
 
           <section class="workflow-stage-layout" data-workflow-stage="wechat-writing">
             <section class="workflow-board workflow-board-single" aria-label="公众号文章写作工作流">
-              <section class="workflow-panel" data-workflow-panel="wechat-writing" id="wechatWritingPanel">
+              <section class="workflow-panel breath-surface" data-workflow-panel="wechat-writing" id="wechatWritingPanel">
                 <div class="workflow-header">
                   <h2>公众号文章写作</h2>
                   <p>接入论文精读结果、期刊追踪条目或补充材料，生成可编辑公众号稿。</p>
@@ -2113,6 +2353,11 @@
                   <input id="wechatTemplateId" name="template_id" type="hidden" value="africa-reading" />
                 </form>
                 <div id="wechatWritingStatus" class="workflow-status" aria-live="polite">等待材料或论文精读结果</div>
+                <div class="workflow-evidence" aria-label="公众号写作产物">
+                  <div class="workflow-evidence-card"><strong>材料包</strong><span>可接追踪条目、PDF、文本或论文精读结果。</span></div>
+                  <div class="workflow-evidence-card"><strong>角度提炼</strong><span>先稳住面向读者和文章主张。</span></div>
+                  <div class="workflow-evidence-card"><strong>终稿导出</strong><span>浏览器内编辑后再生成 Word。</span></div>
+                </div>
                 <textarea id="wechatWritingEditor" class="field workflow-editor" rows="18" placeholder="公众号终稿会显示在这里，可编辑后导出 Word"></textarea>
                 <div class="workflow-export-row">
                   <button class="btn btn-ghost" id="wechatWritingExport" type="button">导出 Word</button>
@@ -2123,12 +2368,12 @@
             <aside class="workflow-chain-rail" data-workflow-chain-rail="wechat-writing">
               <h2 class="workflow-chain-title">工作链路</h2>
               <ol class="workflow-chain" data-workflow-chain="wechat-writing" aria-label="公众号文章写作完整链路">
-                <li><span>01</span><strong>上传或粘贴材料</strong></li>
-                <li><span>02</span><strong>关联论文精读证据</strong></li>
-                <li><span>03</span><strong>写作角度提炼</strong></li>
-                <li><span>04</span><strong>公众号初稿生成</strong></li>
-                <li><span>05</span><strong>终稿校准</strong></li>
-                <li><span>06</span><strong>Markdown 与 Word</strong></li>
+                <li data-node-step="0" class="is-active"><span>01</span><strong>上传或粘贴材料</strong><small>等待材料</small></li>
+                <li data-node-step="1"><span>02</span><strong>关联论文精读证据</strong><small>可选</small></li>
+                <li data-node-step="2"><span>03</span><strong>写作角度提炼</strong><small>待运行</small></li>
+                <li data-node-step="3"><span>04</span><strong>公众号初稿生成</strong><small>待运行</small></li>
+                <li data-node-step="4"><span>05</span><strong>终稿校准</strong><small>待运行</small></li>
+                <li data-node-step="5"><span>06</span><strong>Markdown 与 Word</strong><small>待运行</small></li>
               </ol>
             </aside>
           </section>
@@ -2509,6 +2754,7 @@
           const dateText = [publishedText, issueText].filter(Boolean).join(" · ");
           return {
             id: `wf-${row.id}`,
+            sourceArticleId: row.id,
             journalId,
             sourceJournalId: row.source_journal_id || row.journal_id,
             date: pushDate,
@@ -2602,10 +2848,30 @@
       const WORKFLOW_POLL_FAST_ATTEMPTS = 2;
       const WORKFLOW_POLL_FAST_DELAY_MS = 600;
       const WORKFLOW_POLL_DELAY_MS = 1500;
+      const WORKFLOW_MINERU_PAGE_MESSAGE_PREFIX = "MinerU 正在解析第";
+      const WORKFLOW_NODE_STEPS = {
+        "paper-reading": {
+          document_extraction: 1,
+          basic_info: 2,
+          method_data_figures: 3,
+          formula_metrics: 3,
+          draft: 4,
+          final: 5,
+          docx_export: 5
+        },
+        "wechat-writing": {
+          angle: 2,
+          article_draft: 3,
+          article_final: 4,
+          final: 5,
+          docx_export: 5
+        }
+      };
       const workflowJobs = {
         paperReading: "",
         wechatWriting: ""
       };
+      const workflowStepDetails = {};
       const sleep = (ms) => new Promise((resolve) => window.setTimeout(resolve, ms));
 
       async function workflowErrorMessage(response, fallback) {
@@ -2629,6 +2895,122 @@
           return `${fallback}: 无法连接本地工作流后端，请先启动 FastAPI 服务（${WORKFLOW_API_BASE}）`;
         }
         return message || fallback;
+      }
+
+      function setWorkflowStatus(statusNode, text, state = "") {
+        if (!statusNode) return;
+        statusNode.textContent = text;
+        statusNode.classList.remove("running", "complete", "error");
+        if (state) statusNode.classList.add(state);
+      }
+
+      function clearWorkflowStepDetails(workflow) {
+        workflowStepDetails[workflow] = {};
+      }
+
+      function setWorkflowStepDetail(workflow, stepIndex, detail) {
+        if (!workflowStepDetails[workflow]) workflowStepDetails[workflow] = {};
+        if (detail) workflowStepDetails[workflow][stepIndex] = detail;
+      }
+
+      function workflowStepForNode(workflow, nodeId) {
+        return WORKFLOW_NODE_STEPS[workflow]?.[nodeId];
+      }
+
+      function workflowActiveStepFromJob(workflow, job) {
+        const nodes = Object.values(job?.nodes || {});
+        const failed = nodes.find((node) => node.status === "failed");
+        const running = nodes.find((node) => node.status === "running");
+        const target = failed || running;
+        if (target) return workflowStepForNode(workflow, target.node_id) ?? 1;
+        return job?.status === "completed" ? undefined : 1;
+      }
+
+      function workflowActiveDetail(workflow, activeStep) {
+        return workflowStepDetails[workflow]?.[activeStep] || "";
+      }
+
+      function updateWorkflowProgress(workflow, state, options = {}) {
+        const chain = document.querySelector(`[data-workflow-chain="${selectorText(workflow)}"]`);
+        const steps = chain ? Array.from(chain.querySelectorAll("[data-node-step]")) : [];
+        if (!steps.length) return;
+        chain.classList.toggle("is-running", state === "running");
+        const activeStep = state === "complete" ? steps.length : state === "idle" ? 0 : options.activeStep ?? 1;
+        if (Number.isInteger(options.detailStep) && options.detailText) {
+          setWorkflowStepDetail(workflow, options.detailStep, options.detailText);
+        }
+        steps.forEach((step, index) => {
+          step.classList.toggle("is-complete", state === "complete" || index < activeStep);
+          step.classList.toggle("is-active", state !== "complete" && index === activeStep);
+          step.classList.toggle("is-error", state === "error" && index === activeStep);
+          const note = step.querySelector("small");
+          if (!note) return;
+          step.dataset.idleNote = step.dataset.idleNote || note.textContent;
+          if (state === "complete") {
+            note.textContent = "完成";
+          } else if (state === "error" && index === activeStep) {
+            note.textContent = "需要处理";
+          } else if (index < activeStep) {
+            note.textContent = "已通过";
+          } else if (index === activeStep) {
+            note.textContent = state === "running" ? workflowActiveDetail(workflow, activeStep) || "运行中" : step.dataset.idleNote;
+          } else {
+            note.textContent = step.dataset.idleNote;
+          }
+        });
+        motion.workflow(workflow);
+      }
+
+      function updateWorkflowProgressFromJob(workflow, job) {
+        if (!workflow) return;
+        if (job.status === "completed") {
+          updateWorkflowProgress(workflow, "complete");
+          return;
+        }
+        const activeStep = workflowActiveStepFromJob(workflow, job);
+        updateWorkflowProgress(workflow, job.status === "failed" ? "error" : "running", { activeStep });
+      }
+
+      function subscribeWorkflowEvents(jobId, statusNode, workflow) {
+        if (!workflow || typeof EventSource !== "function") return () => {};
+        const source = new EventSource(`${WORKFLOW_API_BASE}/api/jobs/${encodeURIComponent(jobId)}/events`);
+        const handleProgress = (event) => {
+          try {
+            const payload = JSON.parse(event.data);
+            const step = workflowStepForNode(workflow, payload.node_id);
+            if (!Number.isInteger(step)) return;
+            updateWorkflowProgress(workflow, "running", {
+              activeStep: step,
+              detailStep: step,
+              detailText: payload.message
+            });
+            setWorkflowStatus(statusNode, payload.message, "running");
+          } catch {
+            // Ignore malformed progress events; polling remains the source of truth.
+          }
+        };
+        const handleDone = () => {
+          updateWorkflowProgress(workflow, "complete");
+          source.close();
+        };
+        const handleFailed = (event) => {
+          try {
+            const payload = JSON.parse(event.data);
+            const step = workflowStepForNode(workflow, payload.node_id) ?? 1;
+            updateWorkflowProgress(workflow, "error", {
+              activeStep: step,
+              detailStep: step,
+              detailText: payload.message || "需要处理"
+            });
+          } catch {
+            updateWorkflowProgress(workflow, "error");
+          }
+          source.close();
+        };
+        source.addEventListener("progress", handleProgress);
+        source.addEventListener("completed", handleDone);
+        source.addEventListener("failed", handleFailed);
+        return () => source.close();
       }
 
       function formHasUploadedFiles(formData, fieldName) {
@@ -2678,17 +3060,26 @@
         return "排队中";
       }
 
-      async function waitForWorkflowCompletion(jobId, statusNode) {
-        for (let attempt = 0; attempt < WORKFLOW_POLL_MAX_ATTEMPTS; attempt += 1) {
-          const job = await fetchWorkflowJob(jobId);
-          if (statusNode) statusNode.textContent = `任务${workflowStatusLabel(job.status)}...`;
-          if (job.status === "completed") return job;
-          if (job.status === "failed" || job.status === "expired") {
-            throw new Error(`任务${workflowStatusLabel(job.status)}`);
+      async function waitForWorkflowCompletion(jobId, statusNode, workflow) {
+        const closeEvents = subscribeWorkflowEvents(jobId, statusNode, workflow);
+        try {
+          for (let attempt = 0; attempt < WORKFLOW_POLL_MAX_ATTEMPTS; attempt += 1) {
+            const job = await fetchWorkflowJob(jobId);
+            const activeStep = workflow ? workflowActiveStepFromJob(workflow, job) : undefined;
+            const detail = workflow ? workflowActiveDetail(workflow, activeStep) : "";
+            setWorkflowStatus(statusNode, detail || `任务${workflowStatusLabel(job.status)}...`, "running");
+            if (workflow) updateWorkflowProgressFromJob(workflow, job);
+            if (job.status === "completed") return job;
+            if (job.status === "failed" || job.status === "expired") {
+              if (workflow) updateWorkflowProgressFromJob(workflow, job);
+              throw new Error(`任务${workflowStatusLabel(job.status)}`);
+            }
+            await sleep(attempt < WORKFLOW_POLL_FAST_ATTEMPTS ? WORKFLOW_POLL_FAST_DELAY_MS : WORKFLOW_POLL_DELAY_MS);
           }
-          await sleep(attempt < WORKFLOW_POLL_FAST_ATTEMPTS ? WORKFLOW_POLL_FAST_DELAY_MS : WORKFLOW_POLL_DELAY_MS);
+          throw new Error("任务仍在运行，请稍后刷新状态或重新打开页面查看");
+        } finally {
+          closeEvents();
         }
-        throw new Error("任务仍在运行，请稍后刷新状态或重新打开页面查看");
       }
 
       async function updateWorkflowFinal(jobId, content) {
@@ -2734,17 +3125,21 @@
         if (paperForm && paperStatus && paperEditor) {
           paperForm.addEventListener("submit", async (event) => {
             event.preventDefault();
-            paperStatus.textContent = "论文精读任务已提交...";
+            setWorkflowStatus(paperStatus, "论文精读任务已提交...", "running");
+            clearWorkflowStepDetails("paper-reading");
+            updateWorkflowProgress("paper-reading", "running");
             paperEditor.value = "";
             try {
               const job = await createPaperReadingJob(paperForm);
               workflowJobs.paperReading = job.job_id;
               if (wechatPaperJobId) wechatPaperJobId.value = job.job_id;
-              const completed = job.status === "completed" ? job : await waitForWorkflowCompletion(job.job_id, paperStatus);
+              const completed = job.status === "completed" ? job : await waitForWorkflowCompletion(job.job_id, paperStatus, "paper-reading");
               paperEditor.value = await fetchWorkflowArtifact(completed.job_id, "final.md");
-              paperStatus.textContent = "论文精读完成，可编辑后导出 Word";
+              setWorkflowStatus(paperStatus, "论文精读完成，可编辑后导出 Word", "complete");
+              updateWorkflowProgress("paper-reading", "complete");
             } catch (error) {
-              paperStatus.textContent = workflowDisplayError(error, "论文精读请求失败");
+              setWorkflowStatus(paperStatus, workflowDisplayError(error, "论文精读请求失败"), "error");
+              updateWorkflowProgress("paper-reading", "error");
             }
           });
         }
@@ -2752,15 +3147,15 @@
         if (paperExport && paperStatus && paperEditor) {
           paperExport.addEventListener("click", async () => {
             if (!workflowJobs.paperReading) {
-              paperStatus.textContent = "请先创建论文精读任务，再导出 Word";
+              setWorkflowStatus(paperStatus, "请先创建论文精读任务，再导出 Word", "error");
               return;
             }
-            paperStatus.textContent = "正在同步编辑内容并导出 Word...";
+            setWorkflowStatus(paperStatus, "正在同步编辑内容并导出 Word...", "running");
             try {
               await exportWorkflowDocx(workflowJobs.paperReading, paperEditor.value);
-              paperStatus.textContent = "Word 已开始下载";
+              setWorkflowStatus(paperStatus, "Word 已开始下载", "complete");
             } catch (error) {
-              paperStatus.textContent = workflowDisplayError(error, "论文精读导出失败");
+              setWorkflowStatus(paperStatus, workflowDisplayError(error, "论文精读导出失败"), "error");
             }
           });
         }
@@ -2776,19 +3171,23 @@
             const formData = new FormData(wechatForm);
             const hasMaterials = formHasUploadedFiles(formData, "materials");
             if (!String(formData.get("source_text") || "").trim() && !String(formData.get("paper_reading_job_id") || "").trim() && !hasMaterials) {
-              wechatStatus.textContent = "请先上传文件、粘贴材料，或先完成一次论文精读";
+              setWorkflowStatus(wechatStatus, "请先上传文件、粘贴材料，或先完成一次论文精读", "error");
               return;
             }
-            wechatStatus.textContent = "公众号文章写作任务已提交...";
+            setWorkflowStatus(wechatStatus, "公众号文章写作任务已提交...", "running");
+            clearWorkflowStepDetails("wechat-writing");
+            updateWorkflowProgress("wechat-writing", "running");
             wechatEditor.value = "";
             try {
               const job = await createWechatWritingJob(wechatForm);
               workflowJobs.wechatWriting = job.job_id;
-              const completed = job.status === "completed" ? job : await waitForWorkflowCompletion(job.job_id, wechatStatus);
+              const completed = job.status === "completed" ? job : await waitForWorkflowCompletion(job.job_id, wechatStatus, "wechat-writing");
               wechatEditor.value = await fetchWorkflowArtifact(completed.job_id, "final.md");
-              wechatStatus.textContent = "公众号文章写作完成，可编辑后导出 Word";
+              setWorkflowStatus(wechatStatus, "公众号文章写作完成，可编辑后导出 Word", "complete");
+              updateWorkflowProgress("wechat-writing", "complete");
             } catch (error) {
-              wechatStatus.textContent = workflowDisplayError(error, "公众号写作请求失败");
+              setWorkflowStatus(wechatStatus, workflowDisplayError(error, "公众号写作请求失败"), "error");
+              updateWorkflowProgress("wechat-writing", "error");
             }
           });
         }
@@ -2796,15 +3195,15 @@
         if (wechatExport && wechatStatus && wechatEditor) {
           wechatExport.addEventListener("click", async () => {
             if (!workflowJobs.wechatWriting) {
-              wechatStatus.textContent = "请先创建公众号写作任务，再导出 Word";
+              setWorkflowStatus(wechatStatus, "请先创建公众号写作任务，再导出 Word", "error");
               return;
             }
-            wechatStatus.textContent = "正在同步编辑内容并导出 Word...";
+            setWorkflowStatus(wechatStatus, "正在同步编辑内容并导出 Word...", "running");
             try {
               await exportWorkflowDocx(workflowJobs.wechatWriting, wechatEditor.value);
-              wechatStatus.textContent = "Word 已开始下载";
+              setWorkflowStatus(wechatStatus, "Word 已开始下载", "complete");
             } catch (error) {
-              wechatStatus.textContent = workflowDisplayError(error, "公众号写作导出失败");
+              setWorkflowStatus(wechatStatus, workflowDisplayError(error, "公众号写作导出失败"), "error");
             }
           });
         }
@@ -2813,6 +3212,7 @@
       const motion = (() => {
         const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
         const maxItems = 32;
+        const breathingItems = new WeakSet();
 
         function canRun() {
           return Boolean(window.gsap) && !reduceMotion.matches;
@@ -2838,6 +3238,24 @@
           });
         }
 
+        function breathe(targets, vars = {}) {
+          if (!canRun()) return;
+          const items = Array.from(targets || []).filter((item) => item && !breathingItems.has(item));
+          if (!items.length) return;
+          items.forEach((item) => breathingItems.add(item));
+          gsap.set(items, { willChange: "transform" });
+          gsap.to(items, {
+            y: -2,
+            scale: 1.004,
+            duration: 2.6,
+            ease: "sine.inOut",
+            repeat: -1,
+            yoyo: true,
+            stagger: { each: 0.24, from: "start" },
+            ...vars
+          });
+        }
+
         function init() {
           if (!window.gsap) return;
           gsap.defaults({ duration: 0.28, ease: "power2.out", overwrite: "auto" });
@@ -2854,6 +3272,12 @@
             y: 0,
             duration: 0.42,
             stagger: { each: 0.035, from: "start" }
+          });
+          breathe($$(".brand, .theme-toggle"), {
+            y: -1,
+            scale: 1.003,
+            duration: 3.4,
+            stagger: { each: 0.4, from: "start" }
           });
         }
 
@@ -2874,6 +3298,17 @@
           }
           const root = $("#timeline");
           if (!root) return;
+          if (canRun()) {
+            const rails = limited(".timeline-day-items", root, 16);
+            gsap.set(rails, { "--rail-scale": 0 });
+            gsap.to(rails, {
+              "--rail-scale": 1,
+              duration: 0.52,
+              ease: "power2.out",
+              stagger: { each: 0.035, from: "start" },
+              overwrite: "auto"
+            });
+          }
           animateIn(limited(".timeline-card", root), {
             y: 10,
             scale: 0.996,
@@ -2924,18 +3359,70 @@
           });
         }
 
+        function dashboard() {
+          const dock = $("#statusDock");
+          if (!dock) return;
+          animateIn(limited(".status-card", dock, 8), {
+            y: 8,
+            scale: 0.99,
+            duration: 0.34,
+            stagger: { each: 0.035, from: "start" }
+          });
+        }
+
+        function workflow(workflowName) {
+          const rail = document.querySelector(`[data-workflow-chain="${selectorText(workflowName)}"]`);
+          if (!rail) return;
+          if (!canRun()) return;
+          gsap.killTweensOf(limited("li, li span", rail, 12));
+        }
+
+        function composeTransfer(trigger) {
+          if (!canRun() || !trigger) return Promise.resolve();
+          const card = trigger.closest(".timeline-card");
+          const pill = card?.querySelector(".status-pill");
+          const targets = [trigger, pill].filter(Boolean);
+          return new Promise((resolve) => {
+            const tl = gsap.timeline({
+              defaults: { ease: "power2.out", overwrite: "auto" },
+              onComplete: resolve
+            });
+            gsap.killTweensOf(targets);
+            tl.to(trigger, { scale: 0.94, duration: 0.08 })
+              .to(trigger, { scale: 1.04, duration: 0.14, ease: "back.out(2)" })
+              .to(trigger, { scale: 1, duration: 0.08, clearProps: "transform" });
+            if (pill) {
+              tl.fromTo(pill, { scale: 0.96 }, {
+                scale: 1.04,
+                duration: 0.14,
+                yoyo: true,
+                repeat: 1,
+                clearProps: "transform"
+              }, 0);
+            }
+          });
+        }
+
         function page(view) {
           const pageNode = document.querySelector(`[data-page="${selectorText(view)}"]`);
           if (!pageNode || pageNode.hidden) return;
-          animateIn(limited(".page-header, .panel, .placeholder-card", pageNode, 10), {
+          animateIn(limited(".page-header, .panel, .placeholder-card, .workflow-panel", pageNode, 10), {
             y: 8,
             duration: 0.3,
             stagger: { each: 0.035, from: "start" }
           });
           statuses(pageNode);
+          breathe(limited(".breath-surface", pageNode, 3), {
+            y: -2,
+            scale: 1.002,
+            duration: 3.2,
+            stagger: { each: 0.32, from: "start" }
+          });
+          if (view === "tracking") dashboard();
+          if (view === "paper-reading" || view === "wechat-writing") workflow(view);
         }
 
-        return { init, filters, timeline, selectedArticle, statuses, page };
+        return { init, filters, timeline, selectedArticle, statuses, dashboard, workflow, composeTransfer, page };
       })();
 
       function journalById(id) {
@@ -2964,6 +3451,28 @@
         const from = activeDateFrom || "0000-01-01";
         const to = activeDateTo || "9999-12-31";
         return article.dateEnd >= from && article.dateStart <= to;
+      }
+
+      function renderStatusDock() {
+        const summary = workflowData.summary || {};
+        const unresolved = articles.filter((article) => article.linkStatus === "needs_official_pdf").length;
+        const ready = summary.sources_ready ?? adapterQueue.filter((item) => adapterStatusClass(item.status) === "ok").length;
+        const totalSources = summary.sources_total ?? journals.length;
+        const newPush = summary.new_push_queue_articles ?? 0;
+        const checkedAt = isoDateOnly(summary.checked_at || workflowToday());
+        $("#statusDock").innerHTML = [
+          ["最近检查", checkedAt, "ok"],
+          ["累计文章", summary.history_articles || articles.length, "ok"],
+          ["今日新增", newPush, newPush ? "ok" : ""],
+          ["Ready 来源", `${ready}/${totalSources}`, ready === totalSources ? "ok" : "warn"],
+          ["待官方入口", unresolved, unresolved ? "warn" : "ok"]
+        ].map(([label, value, state]) => `
+          <div class="status-card breath-surface ${state}">
+            <span>${escapeHtml(label)}</span>
+            <strong>${escapeHtml(value)}</strong>
+          </div>
+        `).join("");
+        motion.dashboard();
       }
 
       function renderStats() {
@@ -3061,11 +3570,12 @@
         const journal = journalById(article.journalId);
         const dotColor = article.status === "warn" ? "rgba(251,191,36,.82)" : "rgba(34,211,238,.72)";
         const scoreClass = ratingScoreClass(journal.rating);
+        const linkMeta = linkStatusMeta(article);
         return `
           <article class="timeline-item">
             <div class="timeline-spacer" aria-hidden="true"></div>
             <div class="timeline-rail" aria-hidden="true"><span class="timeline-dot" style="--dot:${dotColor}"></span></div>
-            <div class="timeline-card ${article.id === selectedArticleId ? "selected" : ""}" data-article-id="${article.id}">
+            <div class="timeline-card ${article.status === "warn" ? "warn" : ""} ${article.id === selectedArticleId ? "selected" : ""}" data-article-id="${article.id}">
               <div class="timeline-card-head">
                 <div class="timeline-source">${escapeHtml(journal.name)} · ${escapeHtml(article.kind)}</div>
                 <span class="score ${scoreClass}">${escapeHtml(journal.rating)}</span>
@@ -3078,9 +3588,26 @@
                   return `<span class="tag ${timelineTagClass(tag)}">${escapeHtml(label)}</span>`;
                 }).join("")}
               </div>
+              <div class="timeline-actions">
+                <span class="status-pill ${linkMeta.className}">${escapeHtml(linkMeta.label)}</span>
+                <button class="btn btn-sm btn-ghost" type="button" data-article-compose="${article.id}">写成公众号稿</button>
+              </div>
             </div>
           </article>
         `;
+      }
+
+      function linkStatusMeta(article) {
+        if (article.linkStatus === "needs_official_pdf") {
+          return { label: "待官方入口", className: "warn" };
+        }
+        if (article.linkStatus === "official_paid_detail") {
+          return { label: "付费官方入口", className: "paid" };
+        }
+        if (validUrl(article.url)) {
+          return { label: "官方入口已解析", className: "" };
+        }
+        return { label: "发现源待确认", className: "warn" };
       }
 
       function timelineTitle(article) {
@@ -3141,6 +3668,28 @@
       function sourceLink(label, url, ok) {
         const disabled = !ok || !validUrl(url);
         return `<a class="source-link ${disabled ? "disabled" : ""}" href="${disabled ? "#" : escapeHtml(url)}" target="_blank" rel="noopener noreferrer"><span>${escapeHtml(label)}</span><span class="mono">${escapeHtml(cleanUrlLabel(url))}</span></a>`;
+      }
+
+      function seedWechatFromArticle(article) {
+        const journal = journalById(article.journalId);
+        const sourceText = $("#wechatSourceText");
+        const articleId = $("#wechatArticleId");
+        if (articleId) articleId.value = article.sourceArticleId || article.id;
+        if (sourceText) {
+          sourceText.value = [
+            `追踪条目：${article.title}`,
+            `期刊：${journal.name}（${journal.subject} / ${journal.rating}）`,
+            `推送日期：${formatDateLabel(article.pushDate || article.date)}`,
+            article.publishedAt ? `首发日期：${formatDateLabel(article.publishedAt)}` : "",
+            article.issueDate ? `期号：${formatDateLabel(article.issueDate)}` : "",
+            article.summary ? `摘要线索：${article.summary}` : "",
+            article.linkNote ? `链接备注：${article.linkNote}` : "",
+            "写作要求：请基于该条目生成适合工作坊公众号的选题/初稿，保留来源边界，不补造未确认事实。"
+          ].filter(Boolean).join("\n");
+        }
+        setWorkflowStatus($("#wechatWritingStatus"), "已带入追踪条目，可补充材料后生成文章");
+        updateWorkflowProgress("wechat-writing", "idle");
+        switchView("wechat-writing");
       }
 
       function formatDate(date) {
@@ -3347,6 +3896,7 @@
       function renderAll() {
         renderFilters();
         syncDateInputs();
+        renderStatusDock();
         renderTimeline();
         renderSourceSummary();
         renderSourceRows();
@@ -3421,7 +3971,16 @@
         applyDateRange("", "");
       });
 
-      $("#timeline").addEventListener("click", (event) => {
+      $("#timeline").addEventListener("click", async (event) => {
+        const compose = event.target.closest("[data-article-compose]");
+        if (compose) {
+          const article = articles.find((item) => item.id === compose.dataset.articleCompose);
+          if (article) {
+            await motion.composeTransfer(compose);
+            seedWechatFromArticle(article);
+          }
+          return;
+        }
         const card = event.target.closest("[data-article-id]");
         if (!card) return;
         const article = articles.find((item) => item.id === card.dataset.articleId);

@@ -6,7 +6,7 @@ import pytest
 from app.models.job import JobStatus, NodeStatus, WorkflowType
 from app.services.deepseek_client import DeepSeekClient, _extract_message_content
 from app.services.docx_exporter import DocxExporter
-from app.services.mineru_client import MineruClient, _extract_mineru_zip, _extract_task_id
+from app.services.mineru_client import MineruClient, MineruResult, _extract_mineru_zip, _extract_progress_message, _extract_task_id
 from app.storage.job_store import JobStore
 from app.workflows.events import EventBroker
 from app.workflows.paper_reading import PaperReadingWorkflow
@@ -24,8 +24,46 @@ class FailingDeepSeekClient:
 
 
 class FailingMineruClient:
-    async def parse_pdf_to_markdown(self, pdf_path) -> None:
+    async def parse_pdf_to_markdown(self, pdf_path, progress_callback=None) -> None:
         raise RuntimeError("mineru boom")
+
+
+class ProgressMineruClient:
+    async def parse_pdf_to_markdown(self, pdf_path, progress_callback=None) -> MineruResult:
+        if progress_callback is not None:
+            await progress_callback(
+                "document_extraction",
+                57.5,
+                "MinerU 正在解析第 8/23 页",
+                {"extracted_pages": 8, "total_pages": 23},
+            )
+        return MineruResult(markdown="# Extracted\n\nGrounded content.", assets=[])
+
+
+class CapturingDeepSeekClient:
+    def __init__(self) -> None:
+        self.prompts: dict[str, str] = {}
+
+    async def generate(self, node_id: str, prompt: str) -> str:
+        self.prompts[node_id] = prompt
+        return f"# {node_id}\n\nGrounded output."
+
+
+class RecordingEvents:
+    def __init__(self) -> None:
+        self.items = []
+
+    async def publish(self, job_id: str, event: str, node_id: str, message: str, progress: float, data=None):
+        self.items.append(
+            {
+                "job_id": job_id,
+                "event": event,
+                "node_id": node_id,
+                "message": message,
+                "progress": progress,
+                "data": data or {},
+            }
+        )
 
 
 @pytest.mark.asyncio
@@ -116,6 +154,24 @@ async def test_deepseek_connection_errors_are_readable(monkeypatch) -> None:
 def test_mineru_task_creation_missing_task_id_raises_runtime_error() -> None:
     with pytest.raises(RuntimeError, match="MinerU task response missing task_id"):
         _extract_task_id({"code": 0, "data": {}})
+
+
+def test_mineru_extract_progress_message_reports_page_count() -> None:
+    progress = _extract_progress_message(
+        {
+            "code": 0,
+            "data": {
+                "state": "running",
+                "extract_progress": {"extracted_pages": 8, "total_pages": 23},
+            },
+        }
+    )
+
+    assert progress == (
+        50.7,
+        "MinerU 正在解析第 8/23 页",
+        {"extracted_pages": 8, "total_pages": 23},
+    )
 
 
 @pytest.mark.asyncio
@@ -276,6 +332,73 @@ async def test_paper_workflow_creates_evidence_chain(tmp_path) -> None:
     assert (store.job_dir(job.job_id) / "nodes" / "draft.md").exists()
     assert (store.job_dir(job.job_id) / "nodes" / "final.md").exists()
     assert (store.job_dir(job.job_id) / "exports" / "final.docx").exists()
+
+
+@pytest.mark.asyncio
+async def test_paper_workflow_publishes_mineru_page_progress(tmp_path) -> None:
+    store = JobStore(tmp_path / "jobs", retention_days=7)
+    job = store.create_job(WorkflowType.PAPER_READING, template_id="africa-reading")
+    pdf_path = store.job_dir(job.job_id) / "input" / "input.pdf"
+    pdf_path.write_bytes(b"%PDF-1.4 mock")
+    events = RecordingEvents()
+    workflow = PaperReadingWorkflow(
+        store=store,
+        events=events,
+        mineru=ProgressMineruClient(),
+        deepseek=DeepSeekClient(api_key="", base_url="https://example.invalid", model="mock", use_mock=True),
+        docx_exporter=DocxExporter(),
+    )
+
+    await workflow.run(job.job_id, pdf_path)
+
+    assert any(
+        item["node_id"] == "document_extraction"
+        and item["message"] == "MinerU 正在解析第 8/23 页"
+        and item["data"] == {"extracted_pages": 8, "total_pages": 23}
+        for item in events.items
+    )
+
+
+@pytest.mark.asyncio
+async def test_paper_workflow_draft_prompt_is_source_locked(tmp_path) -> None:
+    store = JobStore(tmp_path / "jobs", retention_days=7)
+    job = store.create_job(WorkflowType.PAPER_READING, template_id="africa-reading")
+    deepseek = CapturingDeepSeekClient()
+    workflow = PaperReadingWorkflow(
+        store=store,
+        events=EventBroker(),
+        mineru=MineruClient(use_mock=True),
+        deepseek=deepseek,
+        docx_exporter=DocxExporter(),
+    )
+
+    await workflow._draft(job, "basic evidence", "method evidence", "formula evidence")
+
+    prompt = deepseek.prompts["draft"]
+    assert "必须严格依据下方三份上游证据材料" in prompt
+    assert "不得引入材料外事实" in prompt
+    assert "材料中未明确说明" in prompt
+    assert "不要写“颠覆认知”“手术刀”“悲情叙事”等材料外修辞" in prompt
+
+
+@pytest.mark.asyncio
+async def test_paper_workflow_final_prompt_prevents_new_claims(tmp_path) -> None:
+    store = JobStore(tmp_path / "jobs", retention_days=7)
+    job = store.create_job(WorkflowType.PAPER_READING, template_id="africa-reading")
+    deepseek = CapturingDeepSeekClient()
+    workflow = PaperReadingWorkflow(
+        store=store,
+        events=EventBroker(),
+        mineru=MineruClient(use_mock=True),
+        deepseek=deepseek,
+        docx_exporter=DocxExporter(),
+    )
+
+    await workflow._finalize(job, "draft evidence")
+
+    prompt = deepseek.prompts["final"]
+    assert "不得新增草稿中没有的作者机构、数字、案例、判断或延伸问题" in prompt
+    assert "删除材料外修辞" in prompt
 
 
 @pytest.mark.asyncio
