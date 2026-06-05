@@ -104,6 +104,8 @@ def test_wechat_draft_prompt_uses_reference_public_account_structure(tmp_path) -
     assert "◆" in prompt
     assert "图表" in prompt
     assert "公式" in prompt
+    assert "LaTeX" in prompt
+    assert "$$" in prompt
     assert "引用格式" in prompt
     assert "结语" in prompt
 
@@ -116,3 +118,4 @@ def test_wechat_final_prompt_preserves_structure_without_new_claims(tmp_path) ->
     assert "保留 PART01-PART05" in prompt
     assert "不得新增材料外事实" in prompt
     assert "删除提示词痕迹" in prompt
+    assert "保留 LaTeX 公式块" in prompt

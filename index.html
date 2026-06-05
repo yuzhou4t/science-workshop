@@ -4,6 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>工作坊期刊情报台</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;600;700;900&family=Inter:wght@400;500;600;700&display=swap"
+    />
     <style>
       :root {
         --bg-0: #0b0f1a;
@@ -28,11 +34,14 @@
         --amber: #fbbf24;
         --rose: #fb7185;
         --nav-width: 236px;
-        --radius: 12px;
-        --radius-sm: 8px;
-        --radius-lg: 16px;
-        --shadow-card: 0 18px 48px rgba(0, 0, 0, 0.24);
-        --shadow-card-hover: 0 24px 56px rgba(0, 0, 0, 0.32);
+        --radius: 13px;
+        --radius-sm: 9px;
+        --radius-lg: 18px;
+        --shadow-card: 0 1px 1px rgba(0, 0, 0, 0.2), 0 12px 30px -14px rgba(0, 0, 0, 0.55);
+        --shadow-card-hover: 0 2px 4px rgba(0, 0, 0, 0.24), 0 26px 56px -20px rgba(0, 0, 0, 0.62);
+        --ring: 0 0 0 3px rgba(var(--accent-rgb), 0.16);
+        --glow: 0 0 0 1px rgba(var(--accent-rgb), 0.18), 0 8px 26px -10px rgba(var(--accent-rgb), 0.4);
+        --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
         --theme-transition: background-color 220ms ease, background 220ms ease, color 180ms ease, border-color 180ms ease, box-shadow 220ms ease;
         color-scheme: dark;
       }
@@ -81,12 +90,26 @@
         margin: 0;
         min-height: 100%;
         background:
-          radial-gradient(circle at 82% -10%, rgba(var(--accent-rgb), 0.12), transparent 32rem),
-          linear-gradient(180deg, var(--bg-0), var(--bg-1));
+          radial-gradient(1100px 520px at 84% -8%, rgba(var(--accent-rgb), 0.13), transparent 60%),
+          radial-gradient(900px 600px at -6% 4%, rgba(129, 140, 248, 0.07), transparent 58%),
+          linear-gradient(180deg, var(--bg-0) 0%, var(--bg-1) 60%, var(--bg-0) 100%);
+        background-attachment: fixed;
         color: var(--text-0);
         font-family: "IBM Plex Sans", "Inter", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
         font-size: 14px;
         line-height: 1.55;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+        font-feature-settings: "kern" 1, "liga" 1;
+      }
+
+      :root[data-theme="light"] body {
+        background:
+          radial-gradient(1100px 520px at 84% -8%, rgba(var(--accent-rgb), 0.08), transparent 60%),
+          radial-gradient(900px 600px at -6% 4%, rgba(99, 102, 241, 0.05), transparent 58%),
+          linear-gradient(180deg, var(--bg-0) 0%, var(--bg-1) 100%);
+        background-attachment: fixed;
       }
 
       a {
@@ -98,6 +121,44 @@
       select,
       textarea {
         font: inherit;
+      }
+
+      ::selection {
+        background: rgba(var(--accent-rgb), 0.28);
+        color: var(--text-0);
+      }
+
+      * {
+        scrollbar-width: thin;
+        scrollbar-color: var(--border-emphasis) transparent;
+      }
+
+      :root[data-theme="light"] * {
+        scrollbar-color: rgba(15, 23, 42, 0.16) transparent;
+      }
+
+      :root[data-theme="light"] *::-webkit-scrollbar-thumb {
+        background-color: rgba(15, 23, 42, 0.16);
+      }
+
+      *::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+      }
+
+      *::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      *::-webkit-scrollbar-thumb {
+        border: 3px solid transparent;
+        border-radius: 999px;
+        background-clip: padding-box;
+        background-color: var(--border-emphasis);
+      }
+
+      *::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(var(--accent-rgb), 0.5);
       }
 
       .app-shell {
@@ -209,6 +270,7 @@
       }
 
       .side-link {
+        position: relative;
         width: 100%;
         min-height: 40px;
         display: flex;
@@ -222,7 +284,7 @@
         cursor: pointer;
         text-align: left;
         text-decoration: none;
-        transition: background 0.1s ease, color 0.1s ease, border-color 0.1s ease;
+        transition: background 0.16s var(--ease-out), color 0.16s var(--ease-out), border-color 0.16s var(--ease-out);
       }
 
       .side-link:hover {
@@ -233,9 +295,26 @@
 
       .side-link.active {
         border-color: rgba(var(--accent-rgb), 0.28);
-        background: linear-gradient(90deg, rgba(var(--accent-rgb), 0.18), rgba(var(--accent-rgb), 0.06));
+        background: linear-gradient(90deg, rgba(var(--accent-rgb), 0.18), rgba(var(--accent-rgb), 0.04));
         color: var(--accent);
         box-shadow: inset 0 1px 0 var(--surface-0);
+      }
+
+      .side-link.active::before {
+        content: "";
+        position: absolute;
+        left: -4px;
+        top: 50%;
+        height: 18px;
+        width: 3px;
+        border-radius: 999px;
+        background: var(--accent);
+        box-shadow: 0 0 12px rgba(var(--accent-rgb), 0.6);
+        transform: translateY(-50%);
+      }
+
+      .side-link.active .side-icon {
+        filter: drop-shadow(0 0 6px rgba(var(--accent-rgb), 0.45));
       }
 
       .side-icon {
@@ -310,8 +389,17 @@
         border: 1px solid var(--border);
         border-radius: var(--radius);
         background: var(--surface-card);
-        box-shadow: var(--shadow-card);
+        box-shadow: var(--shadow-card), inset 0 1px 0 rgba(255, 255, 255, 0.045);
         transition: var(--theme-transition);
+      }
+
+      :root[data-theme="light"] .card,
+      :root[data-theme="light"] .panel {
+        box-shadow: var(--shadow-card), inset 0 1px 0 rgba(15, 23, 42, 0.04);
+      }
+
+      :root[data-theme="light"] .sidebar {
+        background: linear-gradient(180deg, rgba(15, 23, 42, 0.028), rgba(15, 23, 42, 0.012));
       }
 
       .breath-surface {
@@ -410,9 +498,11 @@
       .title {
         margin: 0;
         font-family: "Noto Serif SC", "Songti SC", Georgia, serif;
-        font-size: 24px;
+        font-size: 25px;
+        font-weight: 700;
+        font-optical-sizing: auto;
         line-height: 1.25;
-        letter-spacing: -0.02em;
+        letter-spacing: -0.01em;
       }
 
       .subtitle {
@@ -623,9 +713,9 @@
       }
 
       .field:focus {
-        border-color: rgba(var(--accent-rgb), 0.45);
+        border-color: rgba(var(--accent-rgb), 0.5);
         background: var(--surface-2);
-        box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.12);
+        box-shadow: var(--ring);
       }
 
       .field::placeholder {
@@ -648,22 +738,36 @@
         line-height: 1;
         white-space: nowrap;
         text-decoration: none;
-        transition: background 0.12s ease, border-color 0.12s ease, transform 80ms ease, color 0.12s ease;
+        transition: background 0.16s var(--ease-out), border-color 0.16s var(--ease-out), transform 0.12s var(--ease-out), box-shadow 0.16s var(--ease-out), color 0.16s var(--ease-out);
       }
 
       .btn:hover {
         border-color: var(--border-emphasis);
         background: var(--surface-2);
+        transform: translateY(-1px);
+        box-shadow: var(--shadow-card);
       }
 
       .btn:active {
-        transform: scale(0.98);
+        transform: translateY(0) scale(0.985);
+        box-shadow: none;
+      }
+
+      .btn:focus-visible {
+        outline: none;
+        box-shadow: var(--ring);
       }
 
       .btn-primary {
-        border-color: rgba(var(--accent-rgb), 0.34);
-        background: linear-gradient(180deg, rgba(var(--accent-rgb), 0.22), rgba(var(--accent-rgb), 0.11));
+        border-color: rgba(var(--accent-rgb), 0.4);
+        background: linear-gradient(180deg, rgba(var(--accent-rgb), 0.24), rgba(var(--accent-rgb), 0.12));
         color: var(--accent);
+      }
+
+      .btn-primary:hover {
+        border-color: rgba(var(--accent-rgb), 0.55);
+        background: linear-gradient(180deg, rgba(var(--accent-rgb), 0.3), rgba(var(--accent-rgb), 0.15));
+        box-shadow: var(--glow);
       }
 
       .btn-ghost {
@@ -755,11 +859,11 @@
         position: absolute;
         top: var(--tl-dot-top);
         left: 50%;
-        width: 8px;
-        height: 8px;
+        width: 9px;
+        height: 9px;
         border-radius: 999px;
-        background: var(--dot, rgba(52, 211, 153, 0.72));
-        box-shadow: 0 0 0 1px var(--border-emphasis);
+        background: var(--dot, rgba(52, 211, 153, 0.85));
+        box-shadow: 0 0 0 4px var(--bg-0), 0 0 0 5px var(--border-emphasis), 0 0 12px var(--dot, rgba(52, 211, 153, 0.55));
         transform: translateX(-50%);
       }
 
@@ -778,11 +882,17 @@
         background: var(--surface-card);
       }
 
-      .timeline-card:hover,
-      .timeline-card.selected {
+      .timeline-card:hover {
         border-color: var(--border-strong);
         background: var(--surface-2);
-        box-shadow: var(--shadow-card);
+        box-shadow: var(--shadow-card-hover);
+        transform: translateY(-2px);
+      }
+
+      .timeline-card.selected {
+        border-color: rgba(var(--accent-rgb), 0.45);
+        background: var(--surface-2);
+        box-shadow: var(--shadow-card), inset 0 0 0 1px rgba(var(--accent-rgb), 0.18);
         transform: translateY(-1px);
       }
 
@@ -975,6 +1085,7 @@
         margin: 0;
         font-family: "Noto Serif SC", "Songti SC", Georgia, serif;
         font-size: 19px;
+        font-weight: 700;
         letter-spacing: -0.01em;
       }
 
@@ -1741,6 +1852,7 @@
         margin: 0;
         font-family: "Noto Serif SC", "Songti SC", Georgia, serif;
         font-size: 19px;
+        font-weight: 700;
         line-height: 1.3;
       }
 
@@ -1863,7 +1975,7 @@
 
       .workflow-preview:empty::before {
         content: attr(data-placeholder);
-        color: var(--text-3);
+        color: var(--text-2);
       }
 
       .markdown-body h1,
@@ -1916,6 +2028,35 @@
         background: rgba(var(--accent-rgb), 0.1);
         color: var(--text-0);
         font-size: 0.94em;
+      }
+
+      .markdown-formula {
+        display: inline-block;
+        max-width: 100%;
+        padding: 2px 6px;
+        border-radius: 5px;
+        background: rgba(var(--accent-rgb), 0.08);
+        color: var(--text-0);
+        font-family: "IBM Plex Sans", "Inter", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+        line-height: 1.7;
+        overflow-x: auto;
+        vertical-align: middle;
+      }
+
+      .markdown-formula-block {
+        display: block;
+        margin: 0.9em 0;
+        padding: 12px 14px;
+        border: 1px solid rgba(var(--accent-rgb), 0.25);
+        border-radius: var(--radius-sm);
+        background: rgba(var(--accent-rgb), 0.1);
+        text-align: center;
+        font-size: 16px;
+      }
+
+      .markdown-formula sub,
+      .markdown-formula sup {
+        line-height: 0;
       }
 
       .markdown-body .markdown-link {
@@ -2995,6 +3136,25 @@
       };
       const workflowStepDetails = {};
       const workflowEditorBindings = new WeakMap();
+      const FORMULA_SYMBOLS = {
+        "\\approx": "≈",
+        "\\sim": "∼",
+        "\\leq": "≤",
+        "\\geq": "≥",
+        "\\neq": "≠",
+        "\\times": "×",
+        "\\cdot": "·",
+        "\\alpha": "α",
+        "\\beta": "β",
+        "\\gamma": "γ",
+        "\\delta": "δ",
+        "\\Delta": "Δ",
+        "\\lambda": "λ",
+        "\\mu": "μ",
+        "\\rho": "ρ",
+        "\\sigma": "σ",
+        "\\sum": "Σ"
+      };
       const sleep = (ms) => new Promise((resolve) => window.setTimeout(resolve, ms));
 
       async function workflowErrorMessage(response, fallback) {
@@ -3037,14 +3197,46 @@
         }[char]));
       }
 
-      function renderInlineMarkdown(value) {
+      function renderReadableFormula(formula) {
+        let text = String(formula || "").trim();
+        text = text
+          .replace(/\\frac\{([^{}]+)\}\{([^{}]+)\}/g, "($1) / $2")
+          .replace(/\\mathrm\{([^{}]+)\}/g, "$1")
+          .replace(/\\text\{([^{}]+)\}/g, "$1")
+          .replace(/\\left|\\right/g, "");
+        Object.entries(FORMULA_SYMBOLS).forEach(([source, target]) => {
+          text = text.split(source).join(target);
+        });
+        text = escapeMarkdownHtml(text.replace(/\\/g, "").replace(/\s+/g, " "));
+        return text
+          .replace(/\^\{([^{}]+)\}/g, "<sup>$1</sup>")
+          .replace(/\^([A-Za-z0-9+\-=()]+)/g, "<sup>$1</sup>")
+          .replace(/_\{([^{}]+)\}/g, "<sub>$1</sub>")
+          .replace(/_([A-Za-z0-9]+)/g, "<sub>$1</sub>");
+      }
+
+      function renderInlineTextSegment(value) {
         return escapeMarkdownHtml(value)
           .replace(/`([^`]+)`/g, "<code>$1</code>")
           .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<span class="markdown-link">$1（$2）</span>')
           .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
           .replace(/__([^_]+)__/g, "<strong>$1</strong>")
-          .replace(/\*([^*]+)\*/g, "<em>$1</em>")
-          .replace(/_([^_]+)_/g, "<em>$1</em>");
+          .replace(/\*([^*]+)\*/g, "<em>$1</em>");
+      }
+
+      function renderInlineMarkdown(value) {
+        return String(value || "")
+          .split(/(\$\$[^$]+\$\$|\$[^$]+\$)/g)
+          .map((segment) => {
+            if (segment.startsWith("$$") && segment.endsWith("$$")) {
+              return `<span class="markdown-formula">${renderReadableFormula(segment.slice(2, -2))}</span>`;
+            }
+            if (segment.startsWith("$") && segment.endsWith("$")) {
+              return `<span class="markdown-formula">${renderReadableFormula(segment.slice(1, -1))}</span>`;
+            }
+            return renderInlineTextSegment(segment);
+          })
+          .join("");
       }
 
       function renderMarkdownPreview(markdown) {
@@ -3052,6 +3244,8 @@
         const html = [];
         let listType = "";
         let paragraph = [];
+        let inFormulaBlock = false;
+        let formulaLines = [];
 
         const closeList = () => {
           if (!listType) return;
@@ -3071,9 +3265,32 @@
           html.push(`<${type}>`);
           listType = type;
         };
+        const flushFormulaBlock = () => {
+          if (!formulaLines.length) return;
+          flushParagraph();
+          closeList();
+          html.push(`<div class="markdown-formula markdown-formula-block">${renderReadableFormula(formulaLines.join(" "))}</div>`);
+          formulaLines = [];
+        };
 
         lines.forEach((rawLine) => {
           const line = rawLine.trim();
+          if (line === "$$") {
+            if (inFormulaBlock) {
+              inFormulaBlock = false;
+              flushFormulaBlock();
+            } else {
+              flushParagraph();
+              closeList();
+              inFormulaBlock = true;
+              formulaLines = [];
+            }
+            return;
+          }
+          if (inFormulaBlock) {
+            if (line) formulaLines.push(line);
+            return;
+          }
           if (!line) {
             flushParagraph();
             closeList();
@@ -3134,6 +3351,7 @@
           closeList();
           paragraph.push(line);
         });
+        if (inFormulaBlock) flushFormulaBlock();
         flushParagraph();
         closeList();
         return html.join("");

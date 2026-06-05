@@ -391,6 +391,8 @@ async def test_paper_workflow_draft_prompt_is_source_locked(tmp_path) -> None:
     assert "研究范式" in prompt
     assert "公式" in prompt
     assert "图表逐图解读" in prompt
+    assert "LaTeX" in prompt
+    assert "$$" in prompt
 
 
 @pytest.mark.asyncio
@@ -412,6 +414,7 @@ async def test_paper_workflow_final_prompt_prevents_new_claims(tmp_path) -> None
     assert "不得新增草稿中没有的作者机构、数字、案例、判断或延伸问题" in prompt
     assert "删除材料外修辞" in prompt
     assert "保留 PART01-PART05" in prompt
+    assert "保留 LaTeX 公式块" in prompt
 
 
 def test_paper_workflow_basic_prompt_asks_for_reader_first_explanation(tmp_path) -> None:
@@ -466,6 +469,9 @@ def test_paper_workflow_formula_prompt_requires_symbol_and_logic_explanation(tmp
     assert "白话解释" in prompt
     assert "这个公式回答什么问题" in prompt
     assert "假设与局限" in prompt
+    assert "LaTeX" in prompt
+    assert "$$" in prompt
+    assert "不要把公式写成一串普通文字" in prompt
 
 
 @pytest.mark.asyncio

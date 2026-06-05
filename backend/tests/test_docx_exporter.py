@@ -43,3 +43,24 @@ def test_export_markdown_to_docx_converts_common_markdown_markers(tmp_path) -> N
     assert "#" not in joined
     assert "**" not in joined
     assert "1. 第一条" not in joined
+
+
+def test_export_markdown_to_docx_makes_latex_formula_readable(tmp_path) -> None:
+    output = tmp_path / "final.docx"
+    exporter = DocxExporter()
+
+    exporter.export_markdown(
+        "核心公式：$A_B \\approx k^2 / n_b$。\n\n"
+        "$$\n"
+        "PRR_r = \\frac{RC_r - RU_r}{RD_r}\n"
+        "$$\n",
+        output,
+    )
+
+    doc = Document(output)
+    joined = "\n".join(paragraph.text for paragraph in doc.paragraphs)
+    assert "A_B ≈ k² / n_b" in joined
+    assert "PRR_r = (RC_r - RU_r) / RD_r" in joined
+    assert "\\frac" not in joined
+    assert "$" not in joined
+    assert "^2" not in joined
