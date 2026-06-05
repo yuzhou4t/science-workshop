@@ -1462,6 +1462,10 @@
         gap: 14px;
       }
 
+      .workflow-board.workflow-board-single {
+        grid-template-columns: minmax(0, 980px);
+      }
+
       .workflow-panel {
         min-width: 0;
         display: grid;
@@ -1697,26 +1701,14 @@
             <svg class="side-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17h7"/><path d="M4 7h16"/><path d="M4 12h12"/><path d="M15 17h5"/><path d="m17 15 2 2-2 2"/></svg>
             <span>适配器工作台</span>
           </button>
-          <button class="side-link" data-view="workflows">
-            <svg class="side-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18H6z"/><path d="M9 7h6"/><path d="M9 11h6"/><path d="m8 16 2 2 5-5"/></svg>
-            <span>精读写作</span>
-          </button>
-          <div class="side-group">Reserved</div>
-          <button class="side-link side-soon" data-view="reserved">
+          <div class="side-group">内容工作流</div>
+          <button class="side-link" data-view="paper-reading">
             <svg class="side-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18H6z"/><path d="M9 7h6"/><path d="M9 11h6"/><path d="M9 15h4"/></svg>
-            <span>公众号转换</span>
+            <span>论文精读</span>
           </button>
-          <button class="side-link side-soon" data-view="reserved">
+          <button class="side-link" data-view="wechat-writing">
             <svg class="side-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
-            <span>选题重写</span>
-          </button>
-          <button class="side-link side-soon" data-view="reserved">
-            <svg class="side-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22v-5"/><path d="M9 8V2"/><path d="M15 8V2"/><path d="M18 8v3a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3V8Z"/></svg>
-            <span>推送设置</span>
-          </button>
-          <button class="side-link side-soon" data-view="reserved">
-            <svg class="side-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l3 2"/></svg>
-            <span>任务监控</span>
+            <span>公众号写作</span>
           </button>
         </nav>
         <div class="side-footer">
@@ -1969,21 +1961,17 @@
           </section>
         </section>
 
-        <section class="page" data-page="workflows" hidden>
+        <section class="page" data-page="paper-reading" hidden>
           <section class="card page-header">
             <div class="header-row">
               <div class="header-main">
-                <h1 class="title">论文精读与公众号写作</h1>
-                <div class="subtitle">上传 PDF 或粘贴材料，生成可编辑 Markdown，并导出 Word 终稿</div>
-              </div>
-              <div class="header-actions">
-                <a class="btn btn-primary" href="#paperReadingPanel">论文精读</a>
-                <a class="btn btn-ghost" href="#wechatWritingPanel">公众号文章写作</a>
+                <h1 class="title">论文精读</h1>
+                <div class="subtitle">上传 PDF，生成“研读非洲”式精读稿，并保留完整证据链</div>
               </div>
             </div>
           </section>
 
-          <section class="workflow-board" aria-label="论文精读与公众号写作工作流">
+          <section class="workflow-board workflow-board-single" aria-label="论文精读工作流">
             <section class="workflow-panel" data-workflow-panel="paper-reading" id="paperReadingPanel">
               <div class="workflow-header">
                 <h2>论文精读</h2>
@@ -2002,7 +1990,20 @@
                 <button class="btn btn-ghost" id="paperReadingExport" type="button">导出 Word</button>
               </div>
             </section>
+          </section>
+        </section>
 
+        <section class="page" data-page="wechat-writing" hidden>
+          <section class="card page-header">
+            <div class="header-row">
+              <div class="header-main">
+                <h1 class="title">公众号文章写作</h1>
+                <div class="subtitle">接入论文精读结果、期刊追踪条目或补充材料，生成可编辑公众号稿</div>
+              </div>
+            </div>
+          </section>
+
+          <section class="workflow-board workflow-board-single" aria-label="公众号文章写作工作流">
             <section class="workflow-panel" data-workflow-panel="wechat-writing" id="wechatWritingPanel">
               <div class="workflow-header">
                 <h2>公众号文章写作</h2>
@@ -2025,40 +2026,6 @@
             </section>
           </section>
         </section>
-
-        <section class="page" data-page="reserved" hidden>
-          <section class="card page-header">
-            <div class="header-row">
-              <div>
-                <h1 class="title">后续能力预留区</h1>
-                <div class="subtitle">把“期刊追踪”继续接到选题、改写、公众号排版与推送任务</div>
-              </div>
-            </div>
-          </section>
-          <section class="placeholder-grid">
-            <article class="placeholder-card">
-              <div>
-                <span class="pill">Module 01</span>
-                <h3>论文转公众号文章</h3>
-                <p>输入文章 URL 后生成标题、摘要、导语、结构化小节与配图建议。</p>
-              </div>
-            </article>
-            <article class="placeholder-card">
-              <div>
-                <span class="pill">Module 02</span>
-                <h3>选题池与优先级</h3>
-                <p>按学科、期刊等级、发布时间和主题热度给内容排序。</p>
-              </div>
-            </article>
-            <article class="placeholder-card">
-              <div>
-                <span class="pill">Module 03</span>
-                <h3>抓取任务监控</h3>
-                <p>显示每个期刊的抓取状态、异常来源、最近成功时间与人工复核入口。</p>
-              </div>
-            </article>
-          </section>
-        </section>
       </main>
     </div>
 
@@ -2066,6 +2033,7 @@
     <script src="data/adapter-front-data.js"></script>
     <script src="data/recent-front-data.js"></script>
     <script>
+      const adapterFrontData = window.ADAPTER_PROFILE_DATA || null;
       const rawJournals = [
         ["1", "JOURNAL OF FINANCE", "BUSINESS,FINANCE", "", "0022-1082", "https://afajof.org/journal-of-finance/", "https://afajof.org/journal-of-finance/", "https://afajof.org/forthcoming-articles/", "A"],
         ["2", "经济研究", "经济学", "中国社会科学院经济研究所", "11-1081/F", "https://erj.ajcass.com/#/index", "https://erj.ajcass.com/#/search?keywords=%E4%BA%BA&year=2025&issue=11", "https://erj.ajcass.com/#/issue?id=122648&year=2026&issue=3", "A"],
@@ -2149,11 +2117,75 @@
         };
       }
 
-      const rssProbeOverrides = {
+      const directFeedLabels = {
+        "atypon-etoc": "Atypon eTOC RSS",
+        "wiley-etoc": "Wiley eTOC RSS"
+      };
+
+      const adapterFeedLabels = {
+        "ajcass-current-api": "非 Feed：AJCass JSON API",
+        "cie-legacy-html": "非 Feed：AJCass 静态 HTML",
+        "magtech-cn-html": "非 Feed：官网 HTML 目录",
+        "jryj-html": "非 Feed：官网 HTML 目录",
+        "macrodatas-issue-list": "非 Feed：Macrodatas 发现 + NCPSD 详情",
+        "cnki-portal-paper": "非 Feed：CNKI portal 文章页",
+        "jmsc-issue-html": "非 Feed：官网期号页 HTML",
+        "cqvip-journal-html": "非 Feed：CQVIP 发现 + NCPSD 详情",
+        "asc-current-issue-html": "非 Feed：ASC 当期列表",
+        "open-metadata-works": "非 Feed：Crossref / OpenAlex",
+        "aea-forthcoming-html": "非 Feed：AEA forthcoming HTML",
+        "afa-forthcoming-doi": "非 Feed：AFA forthcoming DOI",
+        "asq-sage-links": "非 Feed：Cornell / Sage DOI"
+      };
+
+      function adapterSourceType(kind = "") {
+        if (kind.includes("api")) return "api";
+        if (kind === "open-metadata-works") return "metadata";
+        return "scraper";
+      }
+
+      function adapterSourceTypeLabel(kind = "") {
+        if (kind.includes("api")) return "API 接口";
+        if (kind === "open-metadata-works") return "开放元数据";
+        if (/macrodatas|cqvip/.test(kind)) return "发现 + 官方解析";
+        if (/doi/.test(kind)) return "DOI 反推";
+        return "页面适配";
+      }
+
+      function buildRegistrySourceOverrides() {
+        const overrides = {};
+        for (const feed of adapterFrontData?.direct_article_feeds || []) {
+          const label = directFeedLabels[feed.parser_profile] || feed.parser_profile || "官方 Feed";
+          overrides[feed.journal_id] = {
+            type: "rss",
+            typeLabel: "官方 Feed",
+            status: "RSS 已接入",
+            feedLabel: `${label} · ${cleanUrlLabel(feed.feed_url)}`,
+            parser: feed.parser_profile || "rss",
+            interval: "每周检查",
+            feedUrl: feed.feed_url || ""
+          };
+        }
+        for (const item of adapterFrontData?.adapter_queue || []) {
+          const kind = item.adapter_kind || "adapter-rule";
+          overrides[item.journal_id] = {
+            type: adapterSourceType(kind),
+            typeLabel: adapterSourceTypeLabel(kind),
+            status: item.status || "适配规则",
+            feedLabel: adapterFeedLabels[kind] || `非 Feed：${kind}`,
+            parser: kind,
+            interval: "每周检查",
+            feedUrl: ""
+          };
+        }
+        return overrides;
+      }
+
+      const fallbackProbeOverrides = {
         j1: { type: "scraper", typeLabel: "DOI 反推", status: "适配已接入", feedLabel: "AFA forthcoming DOI", parser: "afa-forthcoming-doi", interval: "每周检查" },
-        j6: { type: "scraper", typeLabel: "替代期次发现", status: "知网付费详情解析", feedLabel: "Macrodatas + CNKI", parser: "macrodatas-issue-list", interval: "每日检查" },
-        j7: { type: "scraper", typeLabel: "替代期次发现", status: "待官方PDF解析", feedLabel: "Macrodatas 仅发现", parser: "macrodatas-issue-list", interval: "每日检查" },
-        j10: { type: "scraper", typeLabel: "第三方目录发现", status: "待官方PDF解析", feedLabel: "CQVIP 仅发现", parser: "cqvip-journal-html", interval: "每周检查" },
+        j6: { type: "scraper", typeLabel: "发现 + 官方解析", status: "文献中心单篇解析", feedLabel: "非 Feed：Macrodatas 发现 + NCPSD 详情", parser: "macrodatas-issue-list", interval: "每日检查" },
+        j7: { type: "scraper", typeLabel: "发现 + 官方解析", status: "待官方详情上架", feedLabel: "非 Feed：Macrodatas 发现 + NCPSD 详情", parser: "macrodatas-issue-list", interval: "每日检查" },
+        j10: { type: "scraper", typeLabel: "发现 + 官方解析", status: "文献中心详情解析", feedLabel: "非 Feed：CQVIP 发现 + NCPSD 详情", parser: "cqvip-journal-html", interval: "每周检查" },
         j11: { type: "scraper", typeLabel: "新官网目录", status: "适配已接入", feedLabel: "ASC 当期列表", parser: "asc-current-issue-html", interval: "每周检查" },
         j13: { type: "rss", typeLabel: "官方 Feed", status: "RSS 已接入", feedLabel: "AOM eTOC RSS", parser: "atypon-etoc", interval: "每周检查", feedUrl: "https://journals.aom.org/action/showFeed?jc=amr&type=etoc&feed=rss" },
         j14: { type: "rss", typeLabel: "官方 Feed", status: "RSS 已接入", feedLabel: "Wiley eTOC RSS", parser: "wiley-etoc", interval: "每周检查", feedUrl: "https://onlinelibrary.wiley.com/action/showFeed?jc=15406261&type=etoc&feed=rss" },
@@ -2166,6 +2198,7 @@
         j21: { type: "rss", typeLabel: "官方 Feed", status: "RSS 已接入", feedLabel: "AOM eTOC RSS", parser: "atypon-etoc", interval: "每周检查", feedUrl: "https://journals.aom.org/action/showFeed?jc=amj&type=etoc&feed=rss" },
         j22: { type: "scraper", typeLabel: "目录适配", status: "适配已接入", feedLabel: "Cornell / Sage DOI", parser: "asq-sage-links", interval: "每周检查" }
       };
+      const rssProbeOverrides = { ...fallbackProbeOverrides, ...buildRegistrySourceOverrides() };
 
       const journalAliases = {
         j1: "j14"
@@ -2300,7 +2333,6 @@
         }
       ];
 
-      const adapterFrontData = window.ADAPTER_PROFILE_DATA || null;
       const registryAdapterQueue = (adapterFrontData?.adapter_queue || []).map((item) => {
         const journal = journalById(item.journal_id);
         return {
@@ -3087,11 +3119,16 @@
 
       function feedStatus(journal) {
         const sources = journal.sourceEntries || [journal];
-        const cls = sources.every((source) => /已接入/.test(source.sourceStatus)) ? "ok" : journal.sourceType === "manual" ? "bad" : "warn";
+        const realFeeds = sources.filter((source) => validUrl(source.feedUrl));
+        const cls = realFeeds.length ? "ok" : journal.sourceType === "manual" ? "bad" : "warn";
+        const label = realFeeds.length ? `${realFeeds.length} 个真实 Feed` : "无真实 Feed";
+        const details = sources.map((source) => source.feedUrl
+          ? source.feedLabel
+          : `${source.feedLabel}（${source.sourceStatus}）`).join(" / ");
         return `
           <div class="source-mode">
-            <span class="url-status ${cls}">${cls === "ok" ? "●" : "!"} ${escapeHtml(journal.sourceStatus)}</span>
-            <span>${escapeHtml(sources.map((source) => source.feedLabel).join(" / "))}</span>
+            <span class="url-status ${cls}">${cls === "ok" ? "●" : "!"} ${escapeHtml(label)}</span>
+            <span>${escapeHtml(details)}</span>
           </div>
         `;
       }
