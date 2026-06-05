@@ -1937,6 +1937,21 @@
         gap: 8px;
       }
 
+      .workflow-title-field {
+        display: grid;
+        gap: 6px;
+      }
+
+      .workflow-title-field label {
+        color: var(--text-2);
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .workflow-title-input {
+        font-weight: 700;
+      }
+
       .workflow-editor-toolbar {
         display: flex;
         justify-content: flex-end;
@@ -2615,6 +2630,10 @@
                   <div class="workflow-evidence-card"><strong>终稿导出</strong><span>浏览器内编辑后再生成 Word。</span></div>
                 </div>
                 <div class="workflow-editor-shell" data-workflow-editor-shell="wechat-writing">
+                  <div class="workflow-title-field">
+                    <label for="wechatWritingTitle">文章标题</label>
+                    <input class="field workflow-title-input" id="wechatWritingTitle" type="text" value="【研读非洲｜第X期】" />
+                  </div>
                   <div class="workflow-editor-toolbar" aria-label="公众号终稿显示模式">
                     <button class="workflow-editor-mode is-active" type="button" data-workflow-mode="preview">预览</button>
                     <button class="workflow-editor-mode" type="button" data-workflow-mode="edit">编辑</button>
@@ -3112,6 +3131,7 @@
       const WORKFLOW_POLL_FAST_DELAY_MS = 600;
       const WORKFLOW_POLL_DELAY_MS = 1500;
       const WORKFLOW_MINERU_PAGE_MESSAGE_PREFIX = "MinerU 正在解析第";
+      const DEFAULT_WECHAT_TITLE = "【研读非洲｜第X期】";
       const WORKFLOW_NODE_STEPS = {
         "paper-reading": {
           document_extraction: 1,
@@ -3393,6 +3413,31 @@
         if (!binding) return;
         binding.render();
         binding.setMode(mode);
+      }
+
+      function normalizeWorkflowTitle(line) {
+        return String(line || "").replace(/^#\s+/, "").replace(/^\*\*(.+)\*\*$/, "$1").trim();
+      }
+
+      function splitWorkflowTitle(content, fallbackTitle = DEFAULT_WECHAT_TITLE) {
+        const text = String(content || "").replace(/\r\n/g, "\n");
+        const lines = text.split("\n");
+        const firstIndex = lines.findIndex((line) => line.trim());
+        if (firstIndex === -1) return { title: fallbackTitle, body: "" };
+        const firstLine = lines[firstIndex].trim();
+        const isTitleLine = /^#\s+/.test(firstLine) || /^【[^】]+】/.test(firstLine);
+        if (!isTitleLine) return { title: fallbackTitle, body: text.trimStart() };
+        const bodyLines = lines.slice(0, firstIndex).concat(lines.slice(firstIndex + 1));
+        return {
+          title: normalizeWorkflowTitle(firstLine) || fallbackTitle,
+          body: bodyLines.join("\n").replace(/^\s+/, "")
+        };
+      }
+
+      function composeWechatMarkdownForExport(title, body) {
+        const cleanTitle = String(title || "").trim() || DEFAULT_WECHAT_TITLE;
+        const cleanBody = String(body || "").trimStart();
+        return cleanBody ? `# ${cleanTitle}\n\n${cleanBody}` : `# ${cleanTitle}`;
       }
 
       function clearWorkflowStepDetails(workflow) {
@@ -3690,6 +3735,7 @@
 
         const wechatForm = $("#wechatWritingForm");
         const wechatStatus = $("#wechatWritingStatus");
+        const wechatTitle = $("#wechatWritingTitle");
         const wechatEditor = $("#wechatWritingEditor");
         const wechatPreview = $("#wechatWritingPreview");
         const wechatShell = document.querySelector('[data-workflow-editor-shell="wechat-writing"]');
@@ -3708,12 +3754,16 @@
             setWorkflowStatus(wechatStatus, "公众号文章写作任务已提交...", "running");
             clearWorkflowStepDetails("wechat-writing");
             updateWorkflowProgress("wechat-writing", "running");
+            if (wechatTitle) wechatTitle.value = DEFAULT_WECHAT_TITLE;
             setWorkflowEditorContent(wechatEditor, "");
             try {
               const job = await createWechatWritingJob(wechatForm);
               workflowJobs.wechatWriting = job.job_id;
               const completed = job.status === "completed" ? job : await waitForWorkflowCompletion(job.job_id, wechatStatus, "wechat-writing");
-              setWorkflowEditorContent(wechatEditor, await fetchWorkflowArtifact(completed.job_id, "final.md"));
+              const finalMarkdown = await fetchWorkflowArtifact(completed.job_id, "final.md");
+              const split = splitWorkflowTitle(finalMarkdown);
+              if (wechatTitle) wechatTitle.value = split.title;
+              setWorkflowEditorContent(wechatEditor, split.body);
               setWorkflowStatus(wechatStatus, "公众号文章写作完成，可编辑后导出 Word", "complete");
               updateWorkflowProgress("wechat-writing", "complete");
             } catch (error) {
@@ -3731,7 +3781,7 @@
             }
             setWorkflowStatus(wechatStatus, "正在同步编辑内容并导出 Word...", "running");
             try {
-              await exportWorkflowDocx(workflowJobs.wechatWriting, wechatEditor.value);
+              await exportWorkflowDocx(workflowJobs.wechatWriting, composeWechatMarkdownForExport(wechatTitle?.value, wechatEditor.value));
               setWorkflowStatus(wechatStatus, "Word 已开始下载", "complete");
             } catch (error) {
               setWorkflowStatus(wechatStatus, workflowDisplayError(error, "公众号写作导出失败"), "error");

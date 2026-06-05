@@ -25,6 +25,7 @@ SAFE_EVIDENCE_ARTIFACTS = (
     ("extracted.md", "extraction/extracted.md"),
 )
 UPLOAD_CHUNK_SIZE = 1024 * 1024
+PDF_MEDIA_TYPE = "application/pdf"
 
 
 def _log_background_workflow_result(task: asyncio.Task, job_id: str) -> None:
@@ -45,6 +46,48 @@ def _background_workflow_callback(job_id: str):
 
 def _is_text_media_type(media_type: str) -> bool:
     return media_type.startswith("text/") or media_type == "application/json"
+
+
+def _is_pdf_material(path: Path, media_type: str) -> bool:
+    return media_type == PDF_MEDIA_TYPE or path.suffix.lower() == ".pdf"
+
+
+def _decode_text_chunks(chunks: list[bytes]) -> str:
+    if not chunks:
+        return ""
+    try:
+        return b"".join(chunks).decode("utf-8-sig")
+    except UnicodeDecodeError:
+        return ""
+
+
+def _extract_pdf_text(path: Path) -> str:
+    try:
+        from pypdf import PdfReader
+    except ImportError:
+        logger.warning("pypdf is not installed; cannot extract uploaded WeChat PDF material")
+        return ""
+
+    try:
+        reader = PdfReader(str(path))
+        parts = []
+        for page_index, page in enumerate(reader.pages, start=1):
+            text = (page.extract_text() or "").strip()
+            if text:
+                parts.append(f"## 第 {page_index} 页\n\n{text}")
+        return "\n\n".join(parts).strip()
+    except Exception as exc:
+        logger.warning("Failed to extract uploaded WeChat PDF material %s: %s", path, exc)
+        return ""
+
+
+def _extract_stored_material_content(path: Path, media_type: str, chunks: list[bytes]) -> str:
+    text_content = _decode_text_chunks(chunks)
+    if text_content:
+        return text_content
+    if _is_pdf_material(path, media_type):
+        return _extract_pdf_text(path)
+    return ""
 
 
 def _safe_material_filename(filename: str, fallback: str) -> str:
@@ -95,12 +138,7 @@ async def _write_uploaded_materials(
                 if _is_text_media_type(media_type):
                     chunks.append(chunk)
 
-        text_content = ""
-        if chunks:
-            try:
-                text_content = b"".join(chunks).decode("utf-8-sig")
-            except UnicodeDecodeError:
-                text_content = ""
+        text_content = _extract_stored_material_content(path, media_type, chunks)
 
         relative_path = f"input/materials/{filename}"
         job.artifacts[filename] = Artifact(name=filename, relative_path=relative_path, media_type=media_type)

@@ -128,6 +128,17 @@ def test_wechat_draft_prompt_matches_africa_public_account_sample_format(tmp_pat
     assert "数智非洲聚焦大数据、人工智能与非洲研究的有机结合" in prompt
 
 
+def test_wechat_draft_prompt_rejects_template_placeholders(tmp_path) -> None:
+    workflow = _workflow(tmp_path)
+
+    prompt = workflow._draft_prompt({"source_text": "报告材料"}, "写作角度")
+
+    assert "不得输出方括号占位" in prompt
+    assert "不要单独输出“导语”" in prompt
+    assert "每个 PART 标题、图片占位和分节标题都必须单独成行" in prompt
+    assert "不能把示例说明写进正文" in prompt
+
+
 def test_wechat_final_prompt_preserves_structure_without_new_claims(tmp_path) -> None:
     workflow = _workflow(tmp_path)
 
@@ -138,3 +149,13 @@ def test_wechat_final_prompt_preserves_structure_without_new_claims(tmp_path) ->
     assert "不得新增材料外事实" in prompt
     assert "删除提示词痕迹" in prompt
     assert "保留 LaTeX 公式块" in prompt
+
+
+def test_wechat_final_prompt_removes_template_placeholders(tmp_path) -> None:
+    workflow = _workflow(tmp_path)
+
+    prompt = workflow._final_prompt("公众号初稿")
+
+    assert "删除方括号占位" in prompt
+    assert "删除“请根据实际填入”" in prompt
+    assert "不要输出未完成模板" in prompt

@@ -138,6 +138,33 @@ def test_create_wechat_writing_job_accepts_uploaded_material_file(client: TestCl
     assert body["artifacts"]["补充材料.md"]["relative_path"] == "input/materials/补充材料.md"
 
 
+def test_create_wechat_writing_job_extracts_uploaded_pdf_material_content(
+    client: TestClient,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    def fake_extract(path, media_type, chunks):
+        assert path.name == "paper.pdf"
+        assert media_type == "application/pdf"
+        assert chunks == []
+        return "PDF 提取出的正文"
+
+    monkeypatch.setattr("app.api.wechat_writing._extract_stored_material_content", fake_extract, raising=False)
+
+    response = client.post(
+        "/api/workflows/wechat-writing/jobs",
+        data={"template_id": "africa-reading"},
+        files={"materials": ("paper.pdf", b"%PDF-1.4 mock", "application/pdf")},
+    )
+
+    assert response.status_code == 200
+    body = response.json()
+    store = client.app.state.job_store
+    source_bundle_path = store.job_dir(body["job_id"]) / "input" / "source_bundle.json"
+    source_bundle = json.loads(source_bundle_path.read_text(encoding="utf-8"))
+    assert source_bundle["uploaded_materials"][0]["filename"] == "paper.pdf"
+    assert source_bundle["uploaded_materials"][0]["content"] == "PDF 提取出的正文"
+
+
 def test_create_wechat_writing_job_can_use_paper_reading_job_evidence_without_source_text(
     client: TestClient,
     monkeypatch: pytest.MonkeyPatch,
