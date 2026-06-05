@@ -153,4 +153,15 @@ class WeChatWritingWorkflow:
                 continue
             artifact = str(item.get("artifact", "evidence"))
             parts.append(f"【{artifact}】\n{content}")
+        for item in source_bundle.get("uploaded_materials", []):
+            if not isinstance(item, dict):
+                continue
+            filename = str(item.get("filename", "uploaded material"))
+            content = str(item.get("content", "")).strip()
+            if content:
+                parts.append(f"【上传文件：{filename}】\n{content}")
+            else:
+                media_type = str(item.get("media_type", "application/octet-stream"))
+                size_bytes = item.get("size_bytes", 0)
+                parts.append(f"【上传文件：{filename}】\n文件已保存，类型：{media_type}，大小：{size_bytes} bytes。")
         return "\n\n".join(parts)

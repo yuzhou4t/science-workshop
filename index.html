@@ -1466,6 +1466,46 @@
         grid-template-columns: minmax(0, 980px);
       }
 
+      .workflow-chain {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 8px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .workflow-chain li {
+        min-width: 0;
+        display: grid;
+        gap: 6px;
+        padding: 12px;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        background: var(--surface-card);
+        color: var(--text-1);
+      }
+
+      .workflow-chain span {
+        width: 24px;
+        height: 24px;
+        display: grid;
+        place-items: center;
+        border-radius: 999px;
+        background: rgba(var(--accent-rgb), 0.12);
+        color: var(--accent);
+        font-family: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+        font-size: 11px;
+      }
+
+      .workflow-chain strong {
+        overflow-wrap: anywhere;
+        color: var(--text-0);
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 1.35;
+      }
+
       .workflow-panel {
         min-width: 0;
         display: grid;
@@ -1612,6 +1652,7 @@
         .adapter-summary,
         .adapter-profile-grid,
         .placeholder-grid,
+        .workflow-chain,
         .workflow-board {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
@@ -1644,6 +1685,7 @@
         .adapter-summary,
         .adapter-profile-grid,
         .placeholder-grid,
+        .workflow-chain,
         .workflow-board,
         .workflow-form-row {
           grid-template-columns: 1fr;
@@ -1971,6 +2013,15 @@
             </div>
           </section>
 
+          <ol class="workflow-chain" data-workflow-chain="paper-reading" aria-label="论文精读完整链路">
+            <li><span>01</span><strong>上传 PDF</strong></li>
+            <li><span>02</span><strong>文档提取器</strong></li>
+            <li><span>03</span><strong>基础信息抽取</strong></li>
+            <li><span>04</span><strong>方法图表与公式指标</strong></li>
+            <li><span>05</span><strong>公众号精读撰写</strong></li>
+            <li><span>06</span><strong>终稿校准与 Word</strong></li>
+          </ol>
+
           <section class="workflow-board workflow-board-single" aria-label="论文精读工作流">
             <section class="workflow-panel" data-workflow-panel="paper-reading" id="paperReadingPanel">
               <div class="workflow-header">
@@ -2003,6 +2054,15 @@
             </div>
           </section>
 
+          <ol class="workflow-chain" data-workflow-chain="wechat-writing" aria-label="公众号文章写作完整链路">
+            <li><span>01</span><strong>上传或粘贴材料</strong></li>
+            <li><span>02</span><strong>关联论文精读证据</strong></li>
+            <li><span>03</span><strong>写作角度提炼</strong></li>
+            <li><span>04</span><strong>公众号初稿生成</strong></li>
+            <li><span>05</span><strong>终稿校准</strong></li>
+            <li><span>06</span><strong>Markdown 与 Word</strong></li>
+          </ol>
+
           <section class="workflow-board workflow-board-single" aria-label="公众号文章写作工作流">
             <section class="workflow-panel" data-workflow-panel="wechat-writing" id="wechatWritingPanel">
               <div class="workflow-header">
@@ -2010,13 +2070,14 @@
                 <p>接入论文精读结果、期刊追踪条目或补充材料，生成可编辑公众号稿。</p>
               </div>
               <form id="wechatWritingForm" class="workflow-form">
+                <div class="workflow-form-row">
+                  <input class="field" id="wechatMaterials" name="materials" type="file" accept=".pdf,.txt,.md,.markdown,.json,text/plain,text/markdown,application/pdf,application/json" multiple />
+                  <button class="btn btn-primary" type="submit">生成文章</button>
+                </div>
                 <textarea class="field workflow-source" id="wechatSourceText" name="source_text" rows="6" placeholder="粘贴补充材料或写作要求"></textarea>
                 <input id="wechatArticleId" name="article_id" type="hidden" value="" />
                 <input id="wechatPaperJobId" name="paper_reading_job_id" type="hidden" value="" />
                 <input id="wechatTemplateId" name="template_id" type="hidden" value="africa-reading" />
-                <div class="workflow-export-row">
-                  <button class="btn btn-primary" type="submit">生成文章</button>
-                </div>
               </form>
               <div id="wechatWritingStatus" class="workflow-status" aria-live="polite">等待材料或论文精读结果</div>
               <textarea id="wechatWritingEditor" class="field workflow-editor" rows="18" placeholder="公众号终稿会显示在这里，可编辑后导出 Word"></textarea>
@@ -2516,6 +2577,23 @@
         return detail ? `${fallback}: ${detail}` : `${fallback}: ${response.status}`;
       }
 
+      function workflowDisplayError(error, fallback) {
+        const message = error?.message || String(error || "");
+        if (/Load failed|Failed to fetch|NetworkError/i.test(message)) {
+          return `${fallback}: 无法连接本地工作流后端，请先启动 FastAPI 服务（${WORKFLOW_API_BASE}）`;
+        }
+        return message || fallback;
+      }
+
+      function formHasUploadedFiles(formData, fieldName) {
+        return formData.getAll(fieldName).some((item) => (
+          item
+          && typeof item === "object"
+          && typeof item.name === "string"
+          && item.name.trim()
+        ));
+      }
+
       async function createPaperReadingJob(form) {
         const response = await fetch(`${WORKFLOW_API_BASE}/api/workflows/paper-reading/jobs`, {
           method: "POST",
@@ -2620,7 +2698,7 @@
               paperEditor.value = await fetchWorkflowArtifact(completed.job_id, "final.md");
               paperStatus.textContent = "论文精读完成，可编辑后导出 Word";
             } catch (error) {
-              paperStatus.textContent = error.message;
+              paperStatus.textContent = workflowDisplayError(error, "论文精读请求失败");
             }
           });
         }
@@ -2636,7 +2714,7 @@
               await exportWorkflowDocx(workflowJobs.paperReading, paperEditor.value);
               paperStatus.textContent = "Word 已开始下载";
             } catch (error) {
-              paperStatus.textContent = error.message;
+              paperStatus.textContent = workflowDisplayError(error, "论文精读导出失败");
             }
           });
         }
@@ -2650,8 +2728,9 @@
           wechatForm.addEventListener("submit", async (event) => {
             event.preventDefault();
             const formData = new FormData(wechatForm);
-            if (!String(formData.get("source_text") || "").trim() && !String(formData.get("paper_reading_job_id") || "").trim()) {
-              wechatStatus.textContent = "请先粘贴材料，或先完成一次论文精读";
+            const hasMaterials = formHasUploadedFiles(formData, "materials");
+            if (!String(formData.get("source_text") || "").trim() && !String(formData.get("paper_reading_job_id") || "").trim() && !hasMaterials) {
+              wechatStatus.textContent = "请先上传文件、粘贴材料，或先完成一次论文精读";
               return;
             }
             wechatStatus.textContent = "公众号文章写作任务已提交...";
@@ -2663,7 +2742,7 @@
               wechatEditor.value = await fetchWorkflowArtifact(completed.job_id, "final.md");
               wechatStatus.textContent = "公众号文章写作完成，可编辑后导出 Word";
             } catch (error) {
-              wechatStatus.textContent = error.message;
+              wechatStatus.textContent = workflowDisplayError(error, "公众号写作请求失败");
             }
           });
         }
@@ -2679,7 +2758,7 @@
               await exportWorkflowDocx(workflowJobs.wechatWriting, wechatEditor.value);
               wechatStatus.textContent = "Word 已开始下载";
             } catch (error) {
-              wechatStatus.textContent = error.message;
+              wechatStatus.textContent = workflowDisplayError(error, "公众号写作导出失败");
             }
           });
         }

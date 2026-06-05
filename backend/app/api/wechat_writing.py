@@ -1,11 +1,12 @@
 import asyncio
 import json
 import logging
+from pathlib import Path
 from typing import Any
 
-from fastapi import APIRouter, Form, HTTPException, Request
+from fastapi import APIRouter, File, Form, HTTPException, Request, UploadFile
 
-from app.models.job import WorkflowType
+from app.models.job import Artifact, WorkflowType
 from app.services.deepseek_client import DeepSeekClient
 from app.services.docx_exporter import DocxExporter
 from app.storage.job_store import JobNotFoundError
@@ -23,6 +24,7 @@ SAFE_EVIDENCE_ARTIFACTS = (
     ("formula_metrics.md", "nodes/formula_metrics.md"),
     ("extracted.md", "extraction/extracted.md"),
 )
+UPLOAD_CHUNK_SIZE = 1024 * 1024
 
 
 def _log_background_workflow_result(task: asyncio.Task, job_id: str) -> None:
@@ -43,6 +45,77 @@ def _background_workflow_callback(job_id: str):
 
 def _is_text_media_type(media_type: str) -> bool:
     return media_type.startswith("text/") or media_type == "application/json"
+
+
+def _safe_material_filename(filename: str, fallback: str) -> str:
+    safe_name = Path(filename.replace("\\", "/")).name.strip()
+    safe_name = safe_name.replace("\r", "").replace("\n", "").replace('"', "")
+    return safe_name or fallback
+
+
+def _unique_material_filename(upload_dir: Path, filename: str) -> str:
+    candidate = filename
+    stem = Path(filename).stem or "material"
+    suffix = Path(filename).suffix
+    counter = 2
+    while (upload_dir / candidate).exists():
+        candidate = f"{stem}-{counter}{suffix}"
+        counter += 1
+    return candidate
+
+
+async def _write_uploaded_materials(
+    store,
+    job,
+    materials: list[UploadFile],
+    max_bytes: int,
+) -> list[dict[str, Any]]:
+    upload_dir = store.job_dir(job.job_id) / "input" / "materials"
+    upload_dir.mkdir(parents=True, exist_ok=True)
+    uploaded: list[dict[str, Any]] = []
+
+    for index, material in enumerate(materials, start=1):
+        if not material.filename:
+            continue
+        media_type = material.content_type or "application/octet-stream"
+        filename = _unique_material_filename(
+            upload_dir,
+            _safe_material_filename(material.filename, f"material-{index}"),
+        )
+        path = upload_dir / filename
+        bytes_written = 0
+        chunks: list[bytes] = []
+        with path.open("wb") as output:
+            while chunk := await material.read(UPLOAD_CHUNK_SIZE):
+                bytes_written += len(chunk)
+                if bytes_written > max_bytes:
+                    path.unlink(missing_ok=True)
+                    raise HTTPException(status_code=413, detail="Uploaded material is too large")
+                output.write(chunk)
+                if _is_text_media_type(media_type):
+                    chunks.append(chunk)
+
+        text_content = ""
+        if chunks:
+            try:
+                text_content = b"".join(chunks).decode("utf-8-sig")
+            except UnicodeDecodeError:
+                text_content = ""
+
+        relative_path = f"input/materials/{filename}"
+        job.artifacts[filename] = Artifact(name=filename, relative_path=relative_path, media_type=media_type)
+        uploaded.append(
+            {
+                "filename": filename,
+                "relative_path": relative_path,
+                "media_type": media_type,
+                "size_bytes": bytes_written,
+                "content": text_content,
+            }
+        )
+
+    store.save_job(job)
+    return uploaded
 
 
 def _read_referenced_text_artifact(store, referenced_job, artifact_name: str, fallback_relative_path: str) -> dict | None:
@@ -93,22 +166,31 @@ async def create_wechat_writing_job(
     article_id: str = Form(""),
     paper_reading_job_id: str = Form(""),
     template_id: str = Form("africa-reading"),
+    materials: list[UploadFile] | None = File(None),
 ) -> dict:
     settings = request.app.state.settings
     store = request.app.state.job_store
     evidence_chain = []
     if paper_reading_job_id:
         evidence_chain = _collect_paper_reading_evidence(store, paper_reading_job_id)
-    if not source_text.strip() and not evidence_chain:
-        raise HTTPException(status_code=400, detail="source_text or paper_reading_job_id with evidence is required")
+    incoming_materials = [material for material in materials or [] if material.filename]
+    if not source_text.strip() and not evidence_chain and not incoming_materials:
+        raise HTTPException(status_code=400, detail="source_text, paper_reading_job_id with evidence, or uploaded materials are required")
 
     job = store.create_job(WorkflowType.WECHAT_WRITING, template_id=template_id)
+    uploaded_materials = await _write_uploaded_materials(
+        store,
+        job,
+        incoming_materials,
+        settings.paper_reading_max_upload_bytes,
+    )
     source_bundle = {
         "source_text": source_text,
         "article_id": article_id,
         "paper_reading_job_id": paper_reading_job_id,
         "template_id": template_id,
         "evidence_chain": evidence_chain,
+        "uploaded_materials": uploaded_materials,
     }
     store.write_text_artifact(
         job,

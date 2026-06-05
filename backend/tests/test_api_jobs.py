@@ -118,6 +118,26 @@ def test_create_wechat_writing_job_with_source_text_completes_in_mock_mode(clien
     assert body["artifacts"]["source_bundle.json"]["relative_path"] == "input/source_bundle.json"
 
 
+def test_create_wechat_writing_job_accepts_uploaded_material_file(client: TestClient) -> None:
+    response = client.post(
+        "/api/workflows/wechat-writing/jobs",
+        data={"template_id": "africa-reading"},
+        files={"materials": ("补充材料.md", "上传材料正文".encode("utf-8"), "text/markdown")},
+    )
+
+    assert response.status_code == 200
+    body = response.json()
+    assert body["workflow_type"] == "wechat_writing"
+    assert body["status"] == "completed"
+
+    store = client.app.state.job_store
+    source_bundle_path = store.job_dir(body["job_id"]) / "input" / "source_bundle.json"
+    source_bundle = json.loads(source_bundle_path.read_text(encoding="utf-8"))
+    assert source_bundle["uploaded_materials"][0]["filename"] == "补充材料.md"
+    assert source_bundle["uploaded_materials"][0]["content"] == "上传材料正文"
+    assert body["artifacts"]["补充材料.md"]["relative_path"] == "input/materials/补充材料.md"
+
+
 def test_create_wechat_writing_job_can_use_paper_reading_job_evidence_without_source_text(
     client: TestClient,
     monkeypatch: pytest.MonkeyPatch,
@@ -169,7 +189,7 @@ def test_create_wechat_writing_job_rejects_empty_source(client: TestClient) -> N
     response = client.post("/api/workflows/wechat-writing/jobs", data={})
 
     assert response.status_code == 400
-    assert response.json()["detail"] == "source_text or paper_reading_job_id with evidence is required"
+    assert response.json()["detail"] == "source_text, paper_reading_job_id with evidence, or uploaded materials are required"
 
 
 def test_patch_job_node_updates_safe_artifact_and_returns_rerun_plan(client: TestClient) -> None:
