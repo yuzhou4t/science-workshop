@@ -1,5 +1,6 @@
 import zipfile
 
+import httpx
 import pytest
 
 from app.models.job import JobStatus, NodeStatus, WorkflowType
@@ -51,6 +52,65 @@ async def test_mock_deepseek_returns_node_text() -> None:
 def test_deepseek_malformed_response_raises_runtime_error() -> None:
     with pytest.raises(RuntimeError, match="DeepSeek response missing message content"):
         _extract_message_content({"choices": []})
+
+
+@pytest.mark.asyncio
+async def test_deepseek_retries_transient_connection_errors(monkeypatch) -> None:
+    class FlakyAsyncClient:
+        calls = 0
+
+        def __init__(self, timeout: float) -> None:
+            self.timeout = timeout
+
+        async def __aenter__(self):
+            return self
+
+        async def __aexit__(self, exc_type, exc, traceback) -> None:
+            return None
+
+        async def post(self, url, headers, json):
+            FlakyAsyncClient.calls += 1
+            request = httpx.Request("POST", url)
+            if FlakyAsyncClient.calls == 1:
+                raise httpx.ConnectError("", request=request)
+            return httpx.Response(
+                200,
+                json={"choices": [{"message": {"content": "retry ok"}}]},
+                request=request,
+            )
+
+    monkeypatch.setattr("app.services.deepseek_client.httpx.AsyncClient", FlakyAsyncClient)
+    monkeypatch.setattr("app.services.deepseek_client.DEEPSEEK_RETRY_DELAY_SECONDS", 0, raising=False)
+    client = DeepSeekClient(api_key="key", base_url="https://api.example.test", model="deepseek")
+
+    result = await client.generate("draft", "test")
+
+    assert result == "retry ok"
+    assert FlakyAsyncClient.calls == 2
+
+
+@pytest.mark.asyncio
+async def test_deepseek_connection_errors_are_readable(monkeypatch) -> None:
+    class FailingAsyncClient:
+        def __init__(self, timeout: float) -> None:
+            self.timeout = timeout
+
+        async def __aenter__(self):
+            return self
+
+        async def __aexit__(self, exc_type, exc, traceback) -> None:
+            return None
+
+        async def post(self, url, headers, json):
+            request = httpx.Request("POST", url)
+            raise httpx.ConnectError("", request=request)
+
+    monkeypatch.setattr("app.services.deepseek_client.httpx.AsyncClient", FailingAsyncClient)
+    monkeypatch.setattr("app.services.deepseek_client.DEEPSEEK_RETRY_DELAY_SECONDS", 0, raising=False)
+    client = DeepSeekClient(api_key="key", base_url="https://api.example.test", model="deepseek")
+
+    with pytest.raises(RuntimeError, match="DeepSeek request failed: ConnectError"):
+        await client.generate("draft", "test")
 
 
 def test_mineru_task_creation_missing_task_id_raises_runtime_error() -> None:
