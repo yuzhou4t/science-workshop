@@ -9,6 +9,7 @@ const required = [
   'data-workflow-panel="wechat-writing"',
   "createPaperReadingJob",
   "createWechatWritingJob",
+  "WORKFLOW_POLL_MAX_ATTEMPTS = 420",
   "/api/workflows/paper-reading/jobs",
   "/api/workflows/wechat-writing/jobs",
 ];

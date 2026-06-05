@@ -2459,6 +2459,10 @@
       const $$ = (selector) => Array.from(document.querySelectorAll(selector));
       const selectorText = (value) => String(value ?? "").replace(/\\/g, "\\\\").replace(/"/g, "\\\"");
       const WORKFLOW_API_BASE = "http://127.0.0.1:8000";
+      const WORKFLOW_POLL_MAX_ATTEMPTS = 420;
+      const WORKFLOW_POLL_FAST_ATTEMPTS = 2;
+      const WORKFLOW_POLL_FAST_DELAY_MS = 600;
+      const WORKFLOW_POLL_DELAY_MS = 1500;
       const workflowJobs = {
         paperReading: "",
         wechatWriting: ""
@@ -2519,14 +2523,14 @@
       }
 
       async function waitForWorkflowCompletion(jobId, statusNode) {
-        for (let attempt = 0; attempt < 60; attempt += 1) {
+        for (let attempt = 0; attempt < WORKFLOW_POLL_MAX_ATTEMPTS; attempt += 1) {
           const job = await fetchWorkflowJob(jobId);
           if (statusNode) statusNode.textContent = `任务${workflowStatusLabel(job.status)}...`;
           if (job.status === "completed") return job;
           if (job.status === "failed" || job.status === "expired") {
             throw new Error(`任务${workflowStatusLabel(job.status)}`);
           }
-          await sleep(attempt < 2 ? 600 : 1500);
+          await sleep(attempt < WORKFLOW_POLL_FAST_ATTEMPTS ? WORKFLOW_POLL_FAST_DELAY_MS : WORKFLOW_POLL_DELAY_MS);
         }
         throw new Error("任务仍在运行，请稍后刷新状态或重新打开页面查看");
       }
