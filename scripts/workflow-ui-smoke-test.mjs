@@ -38,6 +38,8 @@ const required = [
   "WORKFLOW_NODE_STEPS",
   "workflowStepDetails",
   "subscribeWorkflowEvents",
+  "workflowNodeDetailFromJob",
+  "formatWorkflowElapsed",
   "EventSource",
   "MinerU 正在解析第",
   "/api/workflows/paper-reading/jobs",

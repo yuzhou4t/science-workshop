@@ -2917,13 +2917,40 @@
         return WORKFLOW_NODE_STEPS[workflow]?.[nodeId];
       }
 
-      function workflowActiveStepFromJob(workflow, job) {
+      function workflowRunningNode(job) {
         const nodes = Object.values(job?.nodes || {});
-        const failed = nodes.find((node) => node.status === "failed");
-        const running = nodes.find((node) => node.status === "running");
-        const target = failed || running;
+        return nodes.find((node) => node.status === "failed") || nodes.find((node) => node.status === "running") || null;
+      }
+
+      function workflowActiveStepFromJob(workflow, job) {
+        const target = workflowRunningNode(job);
         if (target) return workflowStepForNode(workflow, target.node_id) ?? 1;
         return job?.status === "completed" ? undefined : 1;
+      }
+
+      function formatWorkflowElapsed(startedAt) {
+        const started = Date.parse(startedAt || "");
+        if (!Number.isFinite(started)) return "";
+        const elapsedSeconds = Math.max(0, Math.round((Date.now() - started) / 1000));
+        const minutes = Math.floor(elapsedSeconds / 60);
+        const seconds = elapsedSeconds % 60;
+        if (minutes <= 0) return `${seconds} 秒`;
+        return `${minutes} 分 ${String(seconds).padStart(2, "0")} 秒`;
+      }
+
+      function workflowNodeDetailFromJob(workflow, job, node) {
+        if (!node) return "";
+        const message = node.message || "";
+        if (workflow === "paper-reading" && node.node_id === "document_extraction" && node.status === "running") {
+          const pageData = node.data || {};
+          if (Number.isInteger(pageData.extracted_pages) && Number.isInteger(pageData.total_pages) && pageData.total_pages > 0) {
+            return `${WORKFLOW_MINERU_PAGE_MESSAGE_PREFIX} ${pageData.extracted_pages}/${pageData.total_pages} 页`;
+          }
+          const elapsed = formatWorkflowElapsed(job?.created_at);
+          const base = message || "正在解析 PDF";
+          return elapsed ? `${base}，已用时 ${elapsed}` : base;
+        }
+        return message;
       }
 
       function workflowActiveDetail(workflow, activeStep) {
@@ -2968,7 +2995,13 @@
           return;
         }
         const activeStep = workflowActiveStepFromJob(workflow, job);
-        updateWorkflowProgress(workflow, job.status === "failed" ? "error" : "running", { activeStep });
+        const node = workflowRunningNode(job);
+        const detail = workflowNodeDetailFromJob(workflow, job, node);
+        updateWorkflowProgress(workflow, job.status === "failed" ? "error" : "running", {
+          activeStep,
+          detailStep: activeStep,
+          detailText: detail
+        });
       }
 
       function subscribeWorkflowEvents(jobId, statusNode, workflow) {
@@ -3066,7 +3099,8 @@
           for (let attempt = 0; attempt < WORKFLOW_POLL_MAX_ATTEMPTS; attempt += 1) {
             const job = await fetchWorkflowJob(jobId);
             const activeStep = workflow ? workflowActiveStepFromJob(workflow, job) : undefined;
-            const detail = workflow ? workflowActiveDetail(workflow, activeStep) : "";
+            const node = workflow ? workflowRunningNode(job) : null;
+            const detail = workflow ? workflowNodeDetailFromJob(workflow, job, node) || workflowActiveDetail(workflow, activeStep) : "";
             setWorkflowStatus(statusNode, detail || `任务${workflowStatusLabel(job.status)}...`, "running");
             if (workflow) updateWorkflowProgressFromJob(workflow, job);
             if (job.status === "completed") return job;

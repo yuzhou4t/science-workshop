@@ -32,6 +32,9 @@ class NodeState(BaseModel):
     status: NodeStatus = NodeStatus.PENDING
     input_artifacts: list[str] = Field(default_factory=list)
     output_artifacts: list[str] = Field(default_factory=list)
+    message: str = ""
+    progress: float = 0
+    data: dict = Field(default_factory=dict)
     error: str = ""
     retry_count: int = 0
     updated_at: datetime = Field(default_factory=lambda: datetime.now(UTC))

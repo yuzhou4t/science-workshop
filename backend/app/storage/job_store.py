@@ -70,13 +70,40 @@ class JobStore:
         status: NodeStatus,
         output_artifacts: list[str] | None = None,
         error: str = "",
+        message: str = "",
+        progress: float | None = None,
+        data: dict | None = None,
     ) -> WorkflowJob:
         node = job.nodes.get(node_id, NodeState(node_id=node_id))
         node.status = status
         node.error = error
+        if message:
+            node.message = message
+        if progress is not None:
+            node.progress = progress
+        if data is not None:
+            node.data = data
         node.updated_at = datetime.now(UTC)
         if output_artifacts is not None:
             node.output_artifacts = output_artifacts
+        job.nodes[node_id] = node
+        self.save_job(job)
+        return job
+
+    def set_node_progress(
+        self,
+        job: WorkflowJob,
+        node_id: str,
+        message: str,
+        progress: float,
+        data: dict | None = None,
+    ) -> WorkflowJob:
+        node = job.nodes.get(node_id, NodeState(node_id=node_id))
+        node.status = NodeStatus.RUNNING
+        node.message = message
+        node.progress = progress
+        node.data = data or {}
+        node.updated_at = datetime.now(UTC)
         job.nodes[node_id] = node
         self.save_job(job)
         return job

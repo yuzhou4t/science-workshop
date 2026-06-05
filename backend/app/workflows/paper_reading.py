@@ -48,15 +48,29 @@ class PaperReadingWorkflow:
             raise
 
     async def _extract(self, job: WorkflowJob, pdf_path: Path):
-        self.store.set_node_status(job, "document_extraction", NodeStatus.RUNNING)
+        self.store.set_node_status(
+            job,
+            "document_extraction",
+            NodeStatus.RUNNING,
+            message="MinerU 正在提取 PDF",
+            progress=10,
+        )
         await self.events.publish(job.job_id, "progress", "document_extraction", "MinerU 正在提取 PDF", 10, {})
         try:
             async def publish_progress(node_id: str, progress: float, message: str, data: dict) -> None:
+                self.store.set_node_progress(job, node_id, message, progress, data)
                 await self.events.publish(job.job_id, "progress", node_id, message, progress, data)
 
             result = await self.mineru.parse_pdf_to_markdown(pdf_path, progress_callback=publish_progress)
             self.store.write_text_artifact(job, "extraction/extracted.md", result.markdown)
-            self.store.set_node_status(job, "document_extraction", NodeStatus.COMPLETED, ["extracted.md"])
+            self.store.set_node_status(
+                job,
+                "document_extraction",
+                NodeStatus.COMPLETED,
+                ["extracted.md"],
+                message="MinerU 提取完成",
+                progress=25,
+            )
             await self.events.publish(job.job_id, "progress", "document_extraction", "MinerU 提取完成", 25, {})
             return result
         except Exception as exc:
@@ -64,8 +78,9 @@ class PaperReadingWorkflow:
             raise
 
     async def _llm_node(self, job: WorkflowJob, node_id: str, prompt: str) -> str:
-        self.store.set_node_status(job, node_id, NodeStatus.RUNNING)
-        await self.events.publish(job.job_id, "progress", node_id, f"{node_id} 正在生成", 40, {})
+        message = f"{node_id} 正在生成"
+        self.store.set_node_status(job, node_id, NodeStatus.RUNNING, message=message, progress=40)
+        await self.events.publish(job.job_id, "progress", node_id, message, 40, {})
         try:
             content = await self.deepseek.generate(node_id, prompt)
             self.store.write_text_artifact(job, f"nodes/{node_id}.md", content)
@@ -78,7 +93,7 @@ class PaperReadingWorkflow:
             raise
 
     async def _draft(self, job: WorkflowJob, basic: str, method: str, formula: str) -> str:
-        self.store.set_node_status(job, "draft", NodeStatus.RUNNING)
+        self.store.set_node_status(job, "draft", NodeStatus.RUNNING, message="公众号精读初稿正在生成", progress=75)
         try:
             prompt = (
                 "你正在写论文精读初稿。必须严格依据下方三份上游证据材料，不得引入材料外事实、机构归属、"
@@ -100,7 +115,7 @@ class PaperReadingWorkflow:
             raise
 
     async def _finalize(self, job: WorkflowJob, draft: str) -> str:
-        self.store.set_node_status(job, "final", NodeStatus.RUNNING)
+        self.store.set_node_status(job, "final", NodeStatus.RUNNING, message="终稿正在校准", progress=90)
         try:
             prompt = (
                 "清理提示词残留、JSON 残留和附录残留，输出公众号终稿 Markdown。\n"
@@ -117,7 +132,7 @@ class PaperReadingWorkflow:
             raise
 
     def _export_docx(self, job: WorkflowJob, final_markdown: str) -> None:
-        self.store.set_node_status(job, "docx_export", NodeStatus.RUNNING)
+        self.store.set_node_status(job, "docx_export", NodeStatus.RUNNING, message="Word 正在导出", progress=98)
         try:
             output_path = self.store.job_dir(job.job_id) / "exports" / "final.docx"
             self.docx_exporter.export_markdown(final_markdown, output_path)

@@ -351,6 +351,10 @@ async def test_paper_workflow_publishes_mineru_page_progress(tmp_path) -> None:
 
     await workflow.run(job.job_id, pdf_path)
 
+    reloaded = store.load_job(job.job_id)
+    document_node = reloaded.nodes["document_extraction"]
+    assert document_node.message == "MinerU 提取完成"
+    assert document_node.progress == 25
     assert any(
         item["node_id"] == "document_extraction"
         and item["message"] == "MinerU 正在解析第 8/23 页"
