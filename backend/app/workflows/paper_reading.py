@@ -49,8 +49,7 @@ class PaperReadingWorkflow:
             method = await self._llm_node(job, "method_data_figures", self._method_prompt(result.markdown))
             formula = await self._llm_node(job, "formula_metrics", self._formula_prompt(result.markdown))
             draft = await self._draft(job, basic, method, formula)
-            final = await self._finalize(job, draft)
-            self._export_docx(job, final)
+            await self._finalize(job, draft)
             job.status = JobStatus.COMPLETED
             self.store.save_job(job)
             await self.events.publish(job.job_id, "completed", "workflow", "论文精读完成", 100, {})

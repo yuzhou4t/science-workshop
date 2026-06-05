@@ -49,7 +49,8 @@ async def test_mock_wechat_workflow_creates_article_artifacts(tmp_path) -> None:
     assert (job_dir / "nodes" / "angle.md").exists()
     assert (job_dir / "nodes" / "article_final.md").exists()
     assert (job_dir / "nodes" / "final.md").exists()
-    assert (job_dir / "exports" / "final.docx").exists()
+    assert not (job_dir / "exports" / "final.docx").exists()
+    assert "final.docx" not in completed.artifacts
 
 
 @pytest.mark.asyncio

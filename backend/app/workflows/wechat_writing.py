@@ -100,8 +100,7 @@ class WeChatWritingWorkflow:
             angle = await self._llm_node(job, "angle", self._angle_prompt(source_bundle), 20)
             draft = await self._llm_node(job, "article_draft", self._draft_prompt(source_bundle, angle), 45)
             article_final = await self._llm_node(job, "article_final", self._final_prompt(draft), 70)
-            final = self._mirror_final(job, article_final)
-            self._export_docx(job, final)
+            self._mirror_final(job, article_final)
             job.status = JobStatus.COMPLETED
             self.store.save_job(job)
             await self.events.publish(job.job_id, "completed", "workflow", "公众号写作完成", 100, {})

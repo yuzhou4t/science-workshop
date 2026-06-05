@@ -503,7 +503,8 @@ async def test_paper_workflow_creates_evidence_chain(tmp_path) -> None:
     assert (store.job_dir(job.job_id) / "nodes" / "formula_metrics.json").exists()
     assert (store.job_dir(job.job_id) / "nodes" / "draft.md").exists()
     assert (store.job_dir(job.job_id) / "nodes" / "final.md").exists()
-    assert (store.job_dir(job.job_id) / "exports" / "final.docx").exists()
+    assert not (store.job_dir(job.job_id) / "exports" / "final.docx").exists()
+    assert "final.docx" not in completed.artifacts
 
 
 @pytest.mark.asyncio
