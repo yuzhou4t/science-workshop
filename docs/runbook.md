@@ -205,7 +205,7 @@ The installed job:
 - Label: `com.science-workshop.daily`
 - Plist: `/Users/yuzhou4tc/Library/LaunchAgents/com.science-workshop.daily.plist`
 - Schedule: daily at 10:00 local time
-- Command: `node scripts/run-daily-workflow.mjs`
+- Command: `node scripts/run-daily-publish.mjs`
 - Working directory: `/Users/yuzhou4tc/Public/工作坊/journal-workshop-prototype`
 
 Check scheduler state:
@@ -230,6 +230,8 @@ Daily workflow logs:
 The daily script writes a one-day workflow file such as `data/recent-articles-2026-05-28_2026-05-28.json`. If no new push articles are found, `data/recent-front-data.js` is left unchanged. If new articles are found, `scripts/build-front-data.mjs` merges them into `data/push-history.json` and regenerates `data/recent-front-data.js`.
 
 If new push articles are found, the daily script then runs abstract backfill for the same first-seen date. Backfill files update `data/push-history.json` and `data/recent-front-data.js` but do not rewrite `data/source-state.json`.
+
+After the daily workflow finishes, `scripts/run-daily-publish.mjs` commits only the generated daily data files plus cumulative state files and pushes them to `origin/main`, which lets Vercel deploy the refreshed static page. If the git index already has staged files, the publish step skips to avoid mixing user work into the automated commit.
 
 ## Source Troubleshooting
 

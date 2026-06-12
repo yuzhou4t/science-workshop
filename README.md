@@ -31,6 +31,7 @@ node scripts/html-adapter-parsers-test.mjs
 node scripts/date-enhancement-test.mjs
 node scripts/pdf-abstract-backfill-test.mjs
 node scripts/daily-abstract-backfill-test.mjs
+node --check scripts/run-daily-publish.mjs
 node scripts/launchd-plist-test.mjs
 node scripts/build-adapter-front-data-test.mjs
 node scripts/adapter-smoke-test.mjs
@@ -59,6 +60,7 @@ node scripts/build-front-data.mjs --reset-history --workflow=data/recent-article
 - `scripts/fetch-articles-smoke-test.mjs`：真实抓取入口，会访问 RSS、官网页面、替代目录页或开放元数据接口。
 - `scripts/build-front-data.mjs`：把抓取结果转换成前端能展示的数据。
 - `scripts/run-daily-workflow.mjs`：每日自动检查入口，只检查当天窗口并按首次发现去重；发现新推送后会触发当天新增文章的摘要回填。
+- `scripts/run-daily-publish.mjs`：每日发布入口，先运行每日检查，再把当天生成的数据文件提交并推送到 GitHub，触发 Vercel 更新。
 - `scripts/backfill-daily-abstracts.mjs`：每日摘要回填编排入口，只处理指定 `first_seen_at` 的新增文章。
 - `scripts/backfill-ncpssd-abstracts.mjs`：直接用 NCPSD article API 补已有 NCPSD 详情页的摘要。
 - `scripts/backfill-ncpssd-issue-abstracts.mjs`：按 NCPSD 期号页定位 `中国工业经济`、`会计研究` 等文章，再补摘要。
@@ -100,7 +102,7 @@ node scripts/build-front-data.mjs --reset-history --workflow=data/recent-article
 它会每天本地时间 10:00 运行：
 
 ```bash
-node scripts/run-daily-workflow.mjs
+node scripts/run-daily-publish.mjs
 ```
 
 运行日志在：
@@ -108,4 +110,4 @@ node scripts/run-daily-workflow.mjs
 - `logs/daily-workflow.log`
 - `logs/daily-workflow.error.log`
 
-如果当天没有新文章，前端数据不会被空结果覆盖；如果发现新文章，脚本会先合并到 `data/push-history.json`，再更新 `data/recent-front-data.js`，随后只针对当天 `first_seen_at` 的新增文章运行摘要回填。页面默认展示累计推送历史，日期筛选只是缩小查看范围。
+如果当天没有新文章，前端数据不会被空结果覆盖；如果发现新文章，脚本会先合并到 `data/push-history.json`，再更新 `data/recent-front-data.js`，随后只针对当天 `first_seen_at` 的新增文章运行摘要回填。发布入口只提交当天生成的数据文件和累计状态文件，推送到 `origin/main` 后由 Vercel 自动部署。页面默认展示累计推送历史，日期筛选只是缩小查看范围。

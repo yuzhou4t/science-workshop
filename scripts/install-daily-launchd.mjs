@@ -9,6 +9,7 @@ import {
   DAILY_WORKFLOW_HOUR,
   DAILY_WORKFLOW_LABEL,
   DAILY_WORKFLOW_MINUTE,
+  DAILY_WORKFLOW_SCRIPT,
   dailyWorkflowPlist,
 } from "./launchd-plist.mjs";
 
@@ -50,6 +51,6 @@ await runLaunchctl(["enable", `${guiTarget}/${DAILY_WORKFLOW_LABEL}`]);
 console.log(`Installed ${DAILY_WORKFLOW_LABEL}`);
 console.log(`Plist: ${plistPath}`);
 console.log(`Schedule: every day at ${String(DAILY_WORKFLOW_HOUR).padStart(2, "0")}:${String(DAILY_WORKFLOW_MINUTE).padStart(2, "0")}`);
-console.log(`Workflow: ${path.join(projectDir, "scripts", "run-daily-workflow.mjs")}`);
+console.log(`Workflow: ${path.join(projectDir, DAILY_WORKFLOW_SCRIPT)}`);
 console.log(`Logs: ${path.join(projectDir, "logs", "daily-workflow.log")}`);
 console.log(`Errors: ${path.join(projectDir, "logs", "daily-workflow.error.log")}`);

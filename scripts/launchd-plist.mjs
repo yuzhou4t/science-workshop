@@ -3,6 +3,7 @@ import path from "node:path";
 export const DAILY_WORKFLOW_LABEL = "com.science-workshop.daily";
 export const DAILY_WORKFLOW_HOUR = 10;
 export const DAILY_WORKFLOW_MINUTE = 0;
+export const DAILY_WORKFLOW_SCRIPT = "scripts/run-daily-publish.mjs";
 
 function assertClockPart(name, value, max) {
   if (!Number.isInteger(value) || value < 0 || value > max) {
@@ -57,7 +58,7 @@ export function dailyWorkflowPlist({
   <key>ProgramArguments</key>
   <array>
     <string>${escapeXml(nodePath)}</string>
-    <string>scripts/run-daily-workflow.mjs</string>
+    <string>${escapeXml(DAILY_WORKFLOW_SCRIPT)}</string>
   </array>
   <key>WorkingDirectory</key>
   <string>${escapeXml(projectDir)}</string>

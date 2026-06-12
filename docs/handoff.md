@@ -47,7 +47,7 @@ The daily dedupe state is initialized in `data/source-state.json`. Rebuilding fr
 - English journal abstract backfill uses Crossref/OpenAlex, with Semantic Scholar available as an optional DOI lookup; protected publisher pages should not be bypassed.
 - `管理世界` uses Macrodatas only for discovery, then queries the NCPSD mobile issue page and matches official titles to `Literature/articleinfo` single-article pages. `Literature/readurl` is kept only as auxiliary reader/download metadata because direct external clicks can redirect to login. The previous CNKI CJFD sequence resolver was removed because issue-order filenames can point to the wrong article; the 2026年第5期 live probe now resolves 11/11 records to official NCPSD single-article links.
 - `南开管理评论` uses Macrodatas only for discovery, then tries an NCPSD official-detail resolver built from the discovered year/issue. As of 2026-06-04, 17 records correctly remain `needs_official_pdf`.
-- A local macOS LaunchAgent runs the daily workflow at 10:00.
+- A local macOS LaunchAgent runs the daily publish workflow at 10:00. It runs the daily article workflow, commits generated data files, and pushes `origin/main` for Vercel deployment.
 
 ## Remaining Work
 
@@ -56,7 +56,7 @@ The daily dedupe state is initialized in `data/source-state.json`. Rebuilding fr
 - Retry `中国工业经济` 2026-04/2026-05 and `会计研究` 2026-04 through NCPSD after those issues appear on NCPSD.
 - Continue improving exact publication-date extraction for forthcoming or issue-only sources when their detail pages expose stronger metadata.
 - Add a user-facing data-source intake flow for future Excel/CSV upload or single-source submission.
-- Decide how online deployment should store state before publishing; `data/source-state.json` is currently local-file state.
+- Watch the automated GitHub push after scheduled runs; if authentication expires, rerun the publish command manually after refreshing local git credentials.
 - Add conversion workflows for turning selected journal articles into public-account drafts after the tracking workflow stabilizes.
 
 ## Workflow Backend Additions
