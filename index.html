@@ -3684,8 +3684,11 @@
       const WORKFLOW_POLL_FAST_ATTEMPTS = 2;
       const WORKFLOW_POLL_FAST_DELAY_MS = 600;
       const WORKFLOW_POLL_DELAY_MS = 1500;
+      const WORKFLOW_UPLOAD_CHUNK_BYTES = 1024 * 1024;
+      const WORKFLOW_INLINE_TEXT_LIMIT_BYTES = 512 * 1024;
       const WORKFLOW_MINERU_PAGE_MESSAGE_PREFIX = "MinerU 正在解析第";
       const DEFAULT_WECHAT_TITLE = "【研读非洲｜第X期】";
+      const workflowTextEncoder = new TextEncoder();
       const WORKFLOW_NODE_STEPS = {
         "paper-reading": {
           document_extraction: 1,
@@ -4242,6 +4245,92 @@
         ));
       }
 
+      function workflowUploadedFiles(formData, fieldName) {
+        return formData.getAll(fieldName).filter((item) => (
+          item
+          && typeof item === "object"
+          && typeof item.name === "string"
+          && item.name.trim()
+          && typeof item.size === "number"
+          && item.size > 0
+        ));
+      }
+
+      function workflowTextBytes(value) {
+        return workflowTextEncoder.encode(String(value || "")).length;
+      }
+
+      function workflowFileLabel(file, index) {
+        return file?.name?.trim() || `material-${index}`;
+      }
+
+      async function uploadWechatMaterialBlob(blob, filename, mediaType, statusNode, itemIndex, itemTotal) {
+        const totalChunks = Math.max(1, Math.ceil(blob.size / WORKFLOW_UPLOAD_CHUNK_BYTES));
+        setWorkflowStatus(statusNode, `正在上传材料 ${itemIndex}/${itemTotal}: ${filename}`, "running");
+        const initResponse = await fetch(`${WORKFLOW_API_BASE}/api/workflows/wechat-writing/material-uploads`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            filename,
+            media_type: mediaType || "application/octet-stream",
+            size_bytes: blob.size,
+            total_chunks: totalChunks
+          })
+        });
+        if (!initResponse.ok) throw new Error(await workflowErrorMessage(initResponse, "材料上传初始化失败"));
+        const upload = await initResponse.json();
+        const chunkSize = Math.min(Number(upload.chunk_size_bytes) || WORKFLOW_UPLOAD_CHUNK_BYTES, WORKFLOW_UPLOAD_CHUNK_BYTES);
+
+        for (let chunkIndex = 0; chunkIndex < totalChunks; chunkIndex += 1) {
+          const start = chunkIndex * chunkSize;
+          const chunk = blob.slice(start, Math.min(blob.size, start + chunkSize));
+          setWorkflowStatus(statusNode, `正在上传材料 ${itemIndex}/${itemTotal}: ${filename} (${chunkIndex + 1}/${totalChunks})`, "running");
+          const chunkResponse = await fetch(`${WORKFLOW_API_BASE}/api/workflows/wechat-writing/material-uploads/${encodeURIComponent(upload.upload_id)}/chunks/${chunkIndex}`, {
+            method: "PUT",
+            headers: { "Content-Type": "application/octet-stream" },
+            body: chunk
+          });
+          if (!chunkResponse.ok) throw new Error(await workflowErrorMessage(chunkResponse, "材料分片上传失败"));
+        }
+        return upload.upload_id;
+      }
+
+      async function buildWechatWritingJobForm(form, statusNode) {
+        const sourceFormData = new FormData(form);
+        const jobFormData = new FormData();
+        const uploadIds = [];
+        const sourceText = String(sourceFormData.get("source_text") || "");
+        const materialFiles = workflowUploadedFiles(sourceFormData, "materials");
+        const largeSourceText = workflowTextBytes(sourceText) > WORKFLOW_INLINE_TEXT_LIMIT_BYTES;
+        const uploadItems = [
+          ...(largeSourceText && sourceText.trim()
+            ? [{
+              filename: "手动输入.md",
+              mediaType: "text/markdown; charset=utf-8",
+              blob: new Blob([sourceText], { type: "text/markdown; charset=utf-8" })
+            }]
+            : []),
+          ...materialFiles.map((file, index) => ({
+            filename: workflowFileLabel(file, index + 1),
+            mediaType: file.type || "application/octet-stream",
+            blob: file
+          }))
+        ];
+
+        ["article_id", "paper_reading_job_id", "template_id"].forEach((name) => {
+          jobFormData.set(name, String(sourceFormData.get(name) || ""));
+        });
+        jobFormData.set("source_text", largeSourceText ? "" : sourceText);
+
+        for (let index = 0; index < uploadItems.length; index += 1) {
+          const item = uploadItems[index];
+          const uploadId = await uploadWechatMaterialBlob(item.blob, item.filename, item.mediaType, statusNode, index + 1, uploadItems.length);
+          uploadIds.push(uploadId);
+        }
+        if (uploadIds.length) jobFormData.set("material_upload_ids", JSON.stringify(uploadIds));
+        return jobFormData;
+      }
+
       async function createPaperReadingJob(form) {
         const response = await fetch(`${WORKFLOW_API_BASE}/api/workflows/paper-reading/jobs`, {
           method: "POST",
@@ -4251,10 +4340,11 @@
         return response.json();
       }
 
-      async function createWechatWritingJob(form) {
+      async function createWechatWritingJob(form, statusNode) {
+        const body = await buildWechatWritingJobForm(form, statusNode);
         const response = await fetch(`${WORKFLOW_API_BASE}/api/workflows/wechat-writing/jobs`, {
           method: "POST",
-          body: new FormData(form)
+          body
         });
         if (!response.ok) throw new Error(await workflowErrorMessage(response, "公众号写作任务创建失败"));
         return response.json();
@@ -4436,7 +4526,7 @@
             setWorkflowEditorContent(wechatEditor, "");
             updateWorkflowMetrics("wechat-writing", "");
             try {
-              const job = await createWechatWritingJob(wechatForm);
+              const job = await createWechatWritingJob(wechatForm, wechatStatus);
               workflowJobs.wechatWriting = job.job_id;
               const completed = job.status === "completed" ? job : await waitForWorkflowCompletion(job.job_id, wechatStatus, "wechat-writing");
               const finalMarkdown = await fetchWorkflowArtifact(completed.job_id, "final.md");

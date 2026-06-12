@@ -169,6 +169,51 @@ def test_create_wechat_writing_job_accepts_uploaded_material_file(client: TestCl
     assert body["artifacts"]["补充材料.md"]["relative_path"] == "input/materials/补充材料.md"
 
 
+def test_create_wechat_writing_job_accepts_chunked_material_upload(client: TestClient) -> None:
+    init_response = client.post(
+        "/api/workflows/wechat-writing/material-uploads",
+        json={
+            "filename": "长材料.md",
+            "media_type": "text/markdown",
+            "size_bytes": len("第一段材料第二段材料".encode("utf-8")),
+            "total_chunks": 2,
+        },
+    )
+    assert init_response.status_code == 200
+    upload_id = init_response.json()["upload_id"]
+
+    chunk_1 = client.put(
+        f"/api/workflows/wechat-writing/material-uploads/{upload_id}/chunks/0",
+        content="第一段材料".encode("utf-8"),
+    )
+    chunk_2 = client.put(
+        f"/api/workflows/wechat-writing/material-uploads/{upload_id}/chunks/1",
+        content="第二段材料".encode("utf-8"),
+    )
+
+    assert chunk_1.status_code == 200
+    assert chunk_2.status_code == 200
+    assert chunk_2.json()["complete"] is True
+
+    response = client.post(
+        "/api/workflows/wechat-writing/jobs",
+        data={
+            "template_id": "africa-reading",
+            "material_upload_ids": json.dumps([upload_id]),
+        },
+    )
+
+    assert response.status_code == 200
+    body = response.json()
+    store = client.app.state.job_store
+    source_bundle_path = store.job_dir(body["job_id"]) / "input" / "source_bundle.json"
+    source_bundle = json.loads(source_bundle_path.read_text(encoding="utf-8"))
+    assert source_bundle["uploaded_materials"][0]["filename"] == "长材料.md"
+    assert source_bundle["uploaded_materials"][0]["content"] == "第一段材料第二段材料"
+    assert body["artifacts"]["长材料.md"]["relative_path"] == "input/materials/长材料.md"
+    assert not (store.root / "_uploads" / "wechat-materials" / upload_id).exists()
+
+
 def test_create_wechat_writing_job_extracts_uploaded_pdf_material_content(
     client: TestClient,
     monkeypatch: pytest.MonkeyPatch,
