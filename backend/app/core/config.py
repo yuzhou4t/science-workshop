@@ -22,6 +22,7 @@ class Settings(BaseSettings):
     workflow_storage_dir: Path = Field(default=Path("storage/workflow_jobs"), alias="WORKFLOW_STORAGE_DIR")
     workflow_retention_days: int = Field(default=7, alias="WORKFLOW_RETENTION_DAYS")
     workflow_use_mocks: bool = Field(default=False, alias="WORKFLOW_USE_MOCKS")
+    science_workshop_proxy_secret: str = Field(default="", alias="SCIENCE_WORKSHOP_PROXY_SECRET")
     paper_reading_max_upload_bytes: int = Field(
         default=25 * 1024 * 1024,
         alias="PAPER_READING_MAX_UPLOAD_BYTES",

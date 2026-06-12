@@ -1,10 +1,15 @@
-from fastapi import FastAPI
+import secrets
+
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
 
 from app.api import issue_toc_export, jobs, paper_reading, wechat_writing
 from app.core.config import get_settings
 from app.storage.job_store import JobStore
 from app.workflows.events import EventBroker
+
+PROTECTED_PREFIXES = ("/api/workflows", "/api/jobs")
 
 
 def create_app() -> FastAPI:
@@ -27,6 +32,15 @@ def create_app() -> FastAPI:
     def health() -> dict[str, str]:
         settings.workflow_storage_dir.mkdir(parents=True, exist_ok=True)
         return {"status": "ok"}
+
+    @app.middleware("http")
+    async def require_proxy_secret(request: Request, call_next):
+        proxy_secret = request.app.state.settings.science_workshop_proxy_secret
+        if proxy_secret and request.url.path.startswith(PROTECTED_PREFIXES):
+            header_secret = request.headers.get("x-science-workshop-proxy-secret", "")
+            if not secrets.compare_digest(header_secret, proxy_secret):
+                return JSONResponse({"detail": "Unauthorized"}, status_code=401)
+        return await call_next(request)
 
     app.include_router(jobs.router)
     app.include_router(paper_reading.router)

@@ -1225,6 +1225,67 @@
         background: rgba(241, 245, 249, 0.62);
       }
 
+      .workshop-login-dialog {
+        position: fixed;
+        inset: 0;
+        z-index: 90;
+        display: grid;
+        place-items: center;
+        padding: 20px;
+        background: rgba(2, 6, 23, 0.58);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+
+      :root[data-theme="light"] .workshop-login-dialog {
+        background: rgba(241, 245, 249, 0.68);
+      }
+
+      .workshop-login-backdrop {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        background: transparent;
+      }
+
+      .workshop-login-card {
+        position: relative;
+        z-index: 1;
+        width: min(100%, 380px);
+        padding: 18px;
+        border: 1px solid rgba(var(--accent-rgb), 0.24);
+        border-radius: 14px;
+        background: var(--bg-1);
+        box-shadow: 0 28px 90px -34px rgba(0, 0, 0, 0.78);
+      }
+
+      .workshop-login-card h2 {
+        margin: 0;
+        color: var(--text-1);
+        font-size: 18px;
+      }
+
+      .workshop-login-card p {
+        margin: 6px 0 14px;
+        color: var(--text-2);
+        font-size: 12.5px;
+        line-height: 1.6;
+      }
+
+      .workshop-login-form {
+        display: grid;
+        gap: 10px;
+      }
+
+      .workshop-login-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 8px;
+        margin-top: 2px;
+      }
+
       .abstract-modal-backdrop {
         position: absolute;
         inset: 0;
@@ -3054,6 +3115,22 @@
       <button class="abstract-modal-backdrop" type="button" data-abstract-dismiss aria-label="关闭摘要"></button>
       <section class="abstract-popover" role="dialog" aria-modal="true" aria-labelledby="abstractModalTitle" aria-describedby="abstractModalBody"></section>
     </div>
+    <div class="workshop-login-dialog" id="workshopLoginDialog" hidden>
+      <button class="workshop-login-backdrop" type="button" data-workshop-login-cancel aria-label="关闭登录"></button>
+      <section class="workshop-login-card" role="dialog" aria-modal="true" aria-labelledby="workshopLoginTitle">
+        <h2 id="workshopLoginTitle">工作流登录</h2>
+        <p>登录后可调用论文精读、公众号写作和目录导出。</p>
+        <form class="workshop-login-form" id="workshopLoginForm">
+          <input class="field" id="workshopLoginUsername" name="username" autocomplete="username" placeholder="账号" required />
+          <input class="field" id="workshopLoginPassword" name="password" type="password" autocomplete="current-password" placeholder="密码" required />
+          <div class="workshop-login-actions">
+            <button class="btn btn-ghost" type="button" data-workshop-login-cancel>取消</button>
+            <button class="btn btn-primary" type="submit">登录</button>
+          </div>
+        </form>
+        <div id="workshopLoginStatus" class="workflow-status" aria-live="polite"></div>
+      </section>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="data/adapter-front-data.js"></script>
@@ -3719,6 +3796,10 @@
       };
       const workflowStepDetails = {};
       const workflowEditorBindings = new WeakMap();
+      const workshopAuthState = {
+        authenticated: false,
+        pending: null
+      };
       const FORMULA_SYMBOLS = {
         "\\approx": "≈",
         "\\sim": "∼",
@@ -3739,6 +3820,90 @@
         "\\sum": "Σ"
       };
       const sleep = (ms) => new Promise((resolve) => window.setTimeout(resolve, ms));
+
+      function workflowAuthAvailable() {
+        if (window.location.protocol === "file:") return false;
+        if (WORKFLOW_API_BASE.startsWith("/")) return true;
+        try {
+          return new URL(WORKFLOW_API_BASE, window.location.href).origin === window.location.origin;
+        } catch {
+          return false;
+        }
+      }
+
+      function setWorkshopLoginStatus(text, state = "") {
+        setWorkflowStatus($("#workshopLoginStatus"), text, state);
+      }
+
+      function openWorkshopLoginDialog() {
+        const dialog = $("#workshopLoginDialog");
+        if (!dialog) return;
+        dialog.hidden = false;
+        setWorkshopLoginStatus("");
+        window.setTimeout(() => $("#workshopLoginUsername")?.focus(), 0);
+      }
+
+      function closeWorkshopLoginDialog() {
+        const dialog = $("#workshopLoginDialog");
+        if (dialog) dialog.hidden = true;
+        $("#workshopLoginPassword").value = "";
+      }
+
+      function requestWorkshopLogin() {
+        if (workshopAuthState.pending) return workshopAuthState.pending.promise;
+        openWorkshopLoginDialog();
+        workshopAuthState.pending = {};
+        workshopAuthState.pending.promise = new Promise((resolve, reject) => {
+          workshopAuthState.pending.resolve = resolve;
+          workshopAuthState.pending.reject = reject;
+        });
+        return workshopAuthState.pending.promise;
+      }
+
+      function resolveWorkshopLogin() {
+        const pending = workshopAuthState.pending;
+        workshopAuthState.pending = null;
+        closeWorkshopLoginDialog();
+        pending?.resolve();
+      }
+
+      function cancelWorkshopLogin() {
+        const pending = workshopAuthState.pending;
+        workshopAuthState.pending = null;
+        closeWorkshopLoginDialog();
+        pending?.reject(new Error("需要登录后才能调用工作流"));
+      }
+
+      async function refreshWorkshopAuth() {
+        if (!workflowAuthAvailable()) return false;
+        try {
+          const response = await fetch("/api/auth/me", {
+            cache: "no-store",
+            credentials: "same-origin"
+          });
+          const payload = await response.json();
+          workshopAuthState.authenticated = Boolean(payload.authenticated);
+          return workshopAuthState.authenticated;
+        } catch {
+          workshopAuthState.authenticated = false;
+          return false;
+        }
+      }
+
+      async function ensureWorkshopAuthenticated() {
+        if (workshopAuthState.authenticated) return;
+        if (await refreshWorkshopAuth()) return;
+        await requestWorkshopLogin();
+      }
+
+      async function workshopFetch(url, options = {}) {
+        const requestOptions = { ...options, credentials: "same-origin" };
+        const response = await fetch(url, requestOptions);
+        if (response.status !== 401 || !workflowAuthAvailable()) return response;
+        workshopAuthState.authenticated = false;
+        await ensureWorkshopAuthenticated();
+        return fetch(url, requestOptions);
+      }
 
       async function workflowErrorMessage(response, fallback) {
         let detail = "";
@@ -4267,7 +4432,7 @@
       async function uploadWechatMaterialBlob(blob, filename, mediaType, statusNode, itemIndex, itemTotal) {
         const totalChunks = Math.max(1, Math.ceil(blob.size / WORKFLOW_UPLOAD_CHUNK_BYTES));
         setWorkflowStatus(statusNode, `正在上传材料 ${itemIndex}/${itemTotal}: ${filename}`, "running");
-        const initResponse = await fetch(`${WORKFLOW_API_BASE}/api/workflows/wechat-writing/material-uploads`, {
+        const initResponse = await workshopFetch(`${WORKFLOW_API_BASE}/api/workflows/wechat-writing/material-uploads`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -4285,7 +4450,7 @@
           const start = chunkIndex * chunkSize;
           const chunk = blob.slice(start, Math.min(blob.size, start + chunkSize));
           setWorkflowStatus(statusNode, `正在上传材料 ${itemIndex}/${itemTotal}: ${filename} (${chunkIndex + 1}/${totalChunks})`, "running");
-          const chunkResponse = await fetch(`${WORKFLOW_API_BASE}/api/workflows/wechat-writing/material-uploads/${encodeURIComponent(upload.upload_id)}/chunks/${chunkIndex}`, {
+          const chunkResponse = await workshopFetch(`${WORKFLOW_API_BASE}/api/workflows/wechat-writing/material-uploads/${encodeURIComponent(upload.upload_id)}/chunks/${chunkIndex}`, {
             method: "PUT",
             headers: { "Content-Type": "application/octet-stream" },
             body: chunk
@@ -4332,7 +4497,7 @@
       }
 
       async function createPaperReadingJob(form) {
-        const response = await fetch(`${WORKFLOW_API_BASE}/api/workflows/paper-reading/jobs`, {
+        const response = await workshopFetch(`${WORKFLOW_API_BASE}/api/workflows/paper-reading/jobs`, {
           method: "POST",
           body: new FormData(form)
         });
@@ -4342,7 +4507,7 @@
 
       async function createWechatWritingJob(form, statusNode) {
         const body = await buildWechatWritingJobForm(form, statusNode);
-        const response = await fetch(`${WORKFLOW_API_BASE}/api/workflows/wechat-writing/jobs`, {
+        const response = await workshopFetch(`${WORKFLOW_API_BASE}/api/workflows/wechat-writing/jobs`, {
           method: "POST",
           body
         });
@@ -4351,7 +4516,7 @@
       }
 
       async function createIssueTocExportJob(payload) {
-        const response = await fetch(`${WORKFLOW_API_BASE}/api/workflows/issue-toc-export/jobs`, {
+        const response = await workshopFetch(`${WORKFLOW_API_BASE}/api/workflows/issue-toc-export/jobs`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload)
@@ -4361,13 +4526,13 @@
       }
 
       async function fetchWorkflowJob(jobId) {
-        const response = await fetch(`${WORKFLOW_API_BASE}/api/jobs/${encodeURIComponent(jobId)}`);
+        const response = await workshopFetch(`${WORKFLOW_API_BASE}/api/jobs/${encodeURIComponent(jobId)}`);
         if (!response.ok) throw new Error(await workflowErrorMessage(response, "读取任务状态失败"));
         return response.json();
       }
 
       async function fetchWorkflowArtifact(jobId, artifactName) {
-        const response = await fetch(`${WORKFLOW_API_BASE}/api/jobs/${encodeURIComponent(jobId)}/artifacts/${encodeURIComponent(artifactName)}`);
+        const response = await workshopFetch(`${WORKFLOW_API_BASE}/api/jobs/${encodeURIComponent(jobId)}/artifacts/${encodeURIComponent(artifactName)}`);
         if (!response.ok) throw new Error(await workflowErrorMessage(response, "读取产物失败"));
         return response.text();
       }
@@ -4404,7 +4569,7 @@
       }
 
       async function updateWorkflowFinal(jobId, content) {
-        const response = await fetch(`${WORKFLOW_API_BASE}/api/jobs/${encodeURIComponent(jobId)}/nodes/final`, {
+        const response = await workshopFetch(`${WORKFLOW_API_BASE}/api/jobs/${encodeURIComponent(jobId)}/nodes/final`, {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ content })
@@ -4414,7 +4579,7 @@
       }
 
       async function downloadWorkflowArtifact(jobId, artifactName) {
-        const response = await fetch(`${WORKFLOW_API_BASE}/api/jobs/${encodeURIComponent(jobId)}/artifacts/${encodeURIComponent(artifactName)}`);
+        const response = await workshopFetch(`${WORKFLOW_API_BASE}/api/jobs/${encodeURIComponent(jobId)}/artifacts/${encodeURIComponent(artifactName)}`);
         if (!response.ok) throw new Error(await workflowErrorMessage(response, "下载产物失败"));
         const blob = await response.blob();
         const url = URL.createObjectURL(blob);
@@ -4429,11 +4594,45 @@
 
       async function exportWorkflowDocx(jobId, content) {
         await updateWorkflowFinal(jobId, content);
-        const response = await fetch(`${WORKFLOW_API_BASE}/api/jobs/${encodeURIComponent(jobId)}/export/docx`, {
+        const response = await workshopFetch(`${WORKFLOW_API_BASE}/api/jobs/${encodeURIComponent(jobId)}/export/docx`, {
           method: "POST"
         });
         if (!response.ok) throw new Error(await workflowErrorMessage(response, "导出 Word 失败"));
         await downloadWorkflowArtifact(jobId, "final.docx");
+      }
+
+      function attachWorkshopLogin() {
+        const form = $("#workshopLoginForm");
+        if (!form) return;
+        form.addEventListener("submit", async (event) => {
+          event.preventDefault();
+          const payload = {
+            username: $("#workshopLoginUsername").value.trim(),
+            password: $("#workshopLoginPassword").value
+          };
+          setWorkshopLoginStatus("正在登录...", "running");
+          try {
+            const response = await fetch("/api/auth/login", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              credentials: "same-origin",
+              body: JSON.stringify(payload)
+            });
+            if (!response.ok) throw new Error(await workflowErrorMessage(response, "登录失败"));
+            workshopAuthState.authenticated = true;
+            setWorkshopLoginStatus("登录成功", "complete");
+            resolveWorkshopLogin();
+          } catch (error) {
+            workshopAuthState.authenticated = false;
+            setWorkshopLoginStatus(workflowDisplayError(error, "登录失败"), "error");
+          }
+        });
+
+        $$("[data-workshop-login-cancel]").forEach((button) => {
+          button.addEventListener("click", cancelWorkshopLogin);
+        });
+
+        refreshWorkshopAuth();
       }
 
       function attachWorkflowForms() {
@@ -5759,6 +5958,7 @@
 
       $("#filterPanel").addEventListener("toggle", () => motion.filters());
 
+      attachWorkshopLogin();
       attachWorkflowForms();
       motion.init();
       renderAll();

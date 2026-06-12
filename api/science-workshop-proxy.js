@@ -1,4 +1,10 @@
 const { Readable } = require("node:stream");
+const {
+  PROXY_SECRET_HEADER,
+  isProtectedBackendPath,
+  readSession,
+  writeJson,
+} = require("./workshop-auth.js");
 
 const BACKEND_ORIGIN = process.env.SCIENCE_WORKSHOP_BACKEND_ORIGIN || "http://106.53.153.215";
 const BACKEND_PREFIX = process.env.SCIENCE_WORKSHOP_BACKEND_PREFIX || "/science-workshop-api";
@@ -35,7 +41,7 @@ function requestHeaders(req) {
   const headers = new Headers();
   for (const [name, value] of Object.entries(req.headers || {})) {
     const lower = name.toLowerCase();
-    if (HOP_BY_HOP_HEADERS.has(lower) || lower === "host") continue;
+    if (HOP_BY_HOP_HEADERS.has(lower) || lower === "host" || lower === PROXY_SECRET_HEADER) continue;
     if (Array.isArray(value)) {
       for (const item of value) headers.append(name, item);
     } else if (value != null) {
@@ -65,11 +71,22 @@ function copyResponseHeaders(upstream, res) {
 module.exports = async function scienceWorkshopProxy(req, res) {
   const target = new URL(backendPathFromRequest(req), BACKEND_ORIGIN);
   const body = requestBody(req);
+  const protectedRoute = isProtectedBackendPath(target.pathname);
+
+  if (protectedRoute && !readSession(req.headers.cookie || "")) {
+    writeJson(res, 401, { detail: "Unauthorized" });
+    return;
+  }
+
+  const headers = requestHeaders(req);
+  if (process.env.SCIENCE_WORKSHOP_PROXY_SECRET) {
+    headers.set(PROXY_SECRET_HEADER, process.env.SCIENCE_WORKSHOP_PROXY_SECRET);
+  }
 
   try {
     const upstream = await fetch(target, {
       method: req.method,
-      headers: requestHeaders(req),
+      headers,
       body,
       ...(body ? { duplex: "half" } : {}),
       redirect: "manual",

@@ -109,6 +109,25 @@ Keep deploys split by sensitivity:
 - Leave only required firewall ports open. For this deployment: 22 for SSH, 80 for HTTP, and 443 only after TLS is configured.
 - Back up Nginx config and `api.env` before edits, then run `nginx -t` before reload.
 
+Workflow calls from the Vercel page are protected by a signed session cookie at the Vercel proxy layer and by a shared proxy secret at the FastAPI layer. Set these values outside the repository:
+
+```text
+Vercel environment variables:
+WORKSHOP_AUTH_USERNAME=<login username>
+WORKSHOP_AUTH_PASSWORD_HASH=<scrypt password hash>
+WORKSHOP_SESSION_SECRET=<random session signing secret>
+SCIENCE_WORKSHOP_PROXY_SECRET=<same value as backend>
+
+Backend /opt/science-workshop/api.env:
+SCIENCE_WORKSHOP_PROXY_SECRET=<same value as Vercel>
+```
+
+Generate the password hash locally with:
+
+```bash
+node -e "const c=require('node:crypto');const p=process.argv[1];const s=c.randomBytes(16).toString('base64url');console.log('scrypt:'+s+':'+c.scryptSync(p,s,32).toString('base64url'));" '<password>'
+```
+
 Current production health checks:
 
 ```bash
