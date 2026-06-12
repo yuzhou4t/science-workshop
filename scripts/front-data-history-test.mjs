@@ -74,6 +74,8 @@ const workflow = {
       url: "https://www.macrodatas.cn/article/1779681420#:~:text=%E7%9B%AE%E5%BD%95",
       extraction_rule: "macrodatas-issue-list",
       authors: "A",
+      abstract: "目录页补到的摘要",
+      keywords: ["目录", "摘要"],
       first_seen_at: "2026-05-28",
       display_date: "2026-05-28",
       push_basis: "first_seen",
@@ -121,6 +123,8 @@ assert.equal(history.articles.find((article) => article.id === "old-1").authors,
 assert.equal(history.articles.find((article) => article.id === "fallback-1").url, "");
 assert.equal(history.articles.find((article) => article.id === "fallback-1").link_status, "needs_official_pdf");
 assert.equal(history.articles.find((article) => article.id === "fallback-1").discovery_url.includes("macrodatas.cn/article/1779681420"), true);
+assert.equal(history.articles.find((article) => article.id === "fallback-1").abstract, "目录页补到的摘要");
+assert.deepEqual(history.articles.find((article) => article.id === "fallback-1").keywords, ["目录", "摘要"]);
 assert.equal(history.articles.find((article) => article.id === "resolved-1").url, "https://www.ncpssd.org/Literature/articleinfo?id=demo");
 assert.equal(history.articles.find((article) => article.id === "resolved-1").link_status, "official_detail");
 assert.equal(history.articles.find((article) => article.id === "resolved-1").discovery_url.includes("cqvip.com/doc/journal/123"), true);
@@ -134,6 +138,8 @@ const frontData = frontDataFromHistory(history);
 assert.equal(frontData.summary.push_queue_articles, 5);
 assert.deepEqual([...frontData.push_queue.map((article) => article.id)].sort(), ["fallback-1", "new-1", "old-1", "paid-1", "resolved-1"]);
 assert.equal(frontData.push_queue.find((article) => article.id === "paid-1").link_status, "official_paid_detail");
+assert.equal(frontData.push_queue.find((article) => article.id === "fallback-1").abstract, "目录页补到的摘要");
+assert.deepEqual(frontData.push_queue.find((article) => article.id === "fallback-1").keywords, ["目录", "摘要"]);
 
 const dedupedHistory = mergePushHistory(
   {
@@ -168,5 +174,58 @@ const dedupedHistory = mergePushHistory(
 assert.equal(dedupedHistory.articles.length, 1);
 assert.equal(dedupedHistory.articles[0].id, "cqvip-old-a");
 assert.equal(dedupedHistory.articles[0].first_seen_at, "2026-05-26");
+
+const abstractBackfillHistory = mergePushHistory(
+  {
+    version: 1,
+    articles: [
+      {
+        id: "abstract-date-1",
+        journal_id: "j8",
+        journal_name: "公共管理学报",
+        title: "只需要补摘要的文章",
+        url: "https://example.test/detail",
+        published_at: "2026-05-29",
+        issue_date: "",
+        display_date: "2026-05-29",
+        display_date_basis: "published_at",
+        first_seen_at: "2026-05-31",
+      },
+    ],
+  },
+  {
+    summary: {
+      checked_at: "2026-06-06T02:00:00.000Z",
+      sources_total: 1,
+      sources_ready: 1,
+      push_queue_articles: 1,
+      abstract_backfill: true,
+    },
+    push_queue: [
+      {
+        id: "abstract-date-1",
+        journal_id: "j8",
+        journal_name: "公共管理学报",
+        title: "只需要补摘要的文章",
+        url: "https://example.test/detail",
+        published_at: "",
+        issue_date: "2022-04",
+        display_date: "2022-04",
+        display_date_basis: "issue_date",
+        first_seen_at: "2026-06-06",
+        abstract: "这是稍后从详情页补到的摘要。",
+        keywords: ["摘要回填"],
+      },
+    ],
+  },
+);
+
+const abstractBackfillArticle = abstractBackfillHistory.articles[0];
+assert.equal(abstractBackfillArticle.published_at, "2026-05-29");
+assert.equal(abstractBackfillArticle.issue_date, "");
+assert.equal(abstractBackfillArticle.display_date, "2026-05-29");
+assert.equal(abstractBackfillArticle.display_date_basis, "published_at");
+assert.equal(abstractBackfillArticle.abstract, "这是稍后从详情页补到的摘要。");
+assert.deepEqual(abstractBackfillArticle.keywords, ["摘要回填"]);
 
 console.log("front data history rules ok");

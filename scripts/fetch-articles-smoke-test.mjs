@@ -6,7 +6,12 @@ import { promisify } from "node:util";
 import { normalizeArticleLink } from "./article-link-policy.mjs";
 import { doiFromUrl, extractDateHints, extractHtmlArticleHints, extractMetadataArticleHints } from "./date-enhancement-lib.mjs";
 import { shouldRetryWithCurlStatus } from "./fetch-retry-policy.mjs";
-import { parseAscIssueListArticles, parseCieCurrentArticles, parseJmscReaderIssueArticles } from "./html-adapter-parsers.mjs";
+import {
+  parseAscIssueListArticles,
+  parseCieCurrentArticles,
+  parseJmscReaderIssueArticles,
+  parseMacrodatasIssuePageArticles,
+} from "./html-adapter-parsers.mjs";
 import { macrodatasArticleSectionUrl } from "./macrodatas-url.mjs";
 import { parseNcpssdIssueArticles, resolveCnkiSequentialArticles, resolveNcpssdOfficialArticle } from "./official-link-resolvers.mjs";
 import { addDays, buildRecentWorkflow, dateOnly } from "./recent-workflow-lib.mjs";
@@ -365,6 +370,8 @@ function mergeDateHints(article, hints = {}) {
 function needsDetailMetadata(article, options = {}) {
   if (!/^https?:\/\//i.test(article.url || "")) return false;
   const missingAuthors = Boolean(options.ifMissingAuthors) && !article.authors;
+  const missingAbstract = Boolean(options.ifMissingAbstract) && !article.abstract;
+  if (missingAbstract) return true;
   if (options.ifMissingPublished) return missingAuthors || !article.published_at;
   const missingDate = !article.published_at && !article.issue_date && !article.date;
   return missingAuthors || missingDate;
@@ -374,6 +381,74 @@ function needsDoiMetadata(article, options = {}) {
   const missingAuthors = Boolean(options.ifMissingAuthors) && !article.authors;
   const missingPublished = options.ifMissingPublished ? !article.published_at : !article.published_at && !article.issue_date && !article.date;
   return missingAuthors || missingPublished;
+}
+
+function ncpssdArticleParams(url = "") {
+  try {
+    const parsed = new URL(url);
+    if (!/\.ncpssd\.org$/i.test(parsed.hostname)) return {};
+    const id = parsed.searchParams.get("id") || "";
+    if (!id) return {};
+    const type = parsed.searchParams.get("typename") || "中文期刊文章";
+    return { id, type };
+  } catch {
+    return {};
+  }
+}
+
+function splitNcpssdKeywords(value = "") {
+  const seen = new Set();
+  const keywords = [];
+  for (const raw of stripTags(value).split(/[;；,，、]+/)) {
+    const keyword = raw.trim();
+    const key = keyword.toLowerCase();
+    if (!keyword || seen.has(key)) continue;
+    seen.add(key);
+    keywords.push(keyword);
+  }
+  return keywords;
+}
+
+async function fetchNcpssdArticleHints(article, timeoutMs) {
+  const params = ncpssdArticleParams(article.url || article.official_url || "");
+  if (!params.id) return {};
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    const response = await fetch("https://www.ncpssd.org/articleinfoHandler/getjournalarticletable", {
+      method: "POST",
+      headers: {
+        ...headers,
+        Accept: "application/json, text/javascript, */*; q=0.01",
+        "Content-Type": "application/json; charset=utf-8",
+        "X-Requested-With": "XMLHttpRequest",
+        Referer: article.url || article.official_url || "https://www.ncpssd.org/",
+      },
+      body: JSON.stringify({ lngid: params.id, type: params.type, pageType: 1 }),
+      signal: controller.signal,
+    });
+    if (!response.ok) return {};
+    const payload = await response.json();
+    const data = payload?.data || {};
+    const hints = {};
+    const abstract = stripTags(data.remarkc || data.remark || "");
+    if (abstract && abstract !== "暂无") hints.abstract = abstract;
+    const keywords = splitNcpssdKeywords(data.keywordc || data.keyword || "");
+    if (keywords.length) hints.keywords = keywords;
+    if (!article.authors && data.showwriter) {
+      hints.authors = splitNcpssdKeywords(data.showwriter).join(", ");
+      hints.author_source = "ncpssd_article_api";
+    }
+    if (!article.issue_date && data.years && data.num) {
+      hints.issue_date = `${data.years}-${String(data.num).padStart(2, "0")}`;
+      hints.date_source = "ncpssd_article_api";
+    }
+    return hints;
+  } catch {
+    return {};
+  } finally {
+    clearTimeout(timer);
+  }
 }
 
 async function enrichArticlesWithDetailMetadata(articles, options = {}) {
@@ -389,9 +464,13 @@ async function enrichArticlesWithDetailMetadata(articles, options = {}) {
     checked += 1;
     try {
       let merged = article;
-      const response = await fetchText(article.url, timeoutMs);
-      if (response.ok) {
-        merged = mergeDateHints(merged, extractHtmlArticleHints({ url: response.finalUrl || article.url, context: response.text }));
+      const ncpssdHints = await fetchNcpssdArticleHints(merged, timeoutMs);
+      if (Object.keys(ncpssdHints).length) merged = mergeDateHints(merged, ncpssdHints);
+      if (needsDetailMetadata(merged, options)) {
+        const response = await fetchText(article.url, timeoutMs);
+        if (response.ok) {
+          merged = mergeDateHints(merged, extractHtmlArticleHints({ url: response.finalUrl || article.url, context: response.text }));
+        }
       }
       if (needsDoiMetadata(merged, options)) {
         merged = mergeDateHints(merged, await fetchDoiMetadataArticleHints(merged, timeoutMs));
@@ -412,20 +491,35 @@ async function fetchDoiMetadataArticleHints(article, timeoutMs) {
   const doi = doiFromUrl(article.url || "");
   if (!doi) return {};
   const metadataUrl = `https://api.crossref.org/works/${encodeURIComponent(doi)}`;
+  let crossrefHints = {};
   for (let attempt = 0; attempt < 2; attempt += 1) {
     const response = await fetchText(metadataUrl, Math.max(timeoutMs, 15000), {
       Accept: "application/json,*/*",
     });
     if (response.ok) {
       try {
-        const hints = extractMetadataArticleHints(JSON.parse(response.text));
-        if (Object.keys(hints).length) return hints;
+        crossrefHints = extractMetadataArticleHints(JSON.parse(response.text));
+        if (crossrefHints.abstract) return crossrefHints;
+        break;
       } catch {
-        return {};
+        break;
       }
     }
     if (attempt === 0) await new Promise((resolve) => setTimeout(resolve, 750));
   }
+  const openAlexUrl = `https://api.openalex.org/works/doi:${encodeURIComponent(`https://doi.org/${doi}`)}`;
+  const openAlexResponse = await fetchText(openAlexUrl, Math.max(timeoutMs, 15000), {
+    Accept: "application/json,*/*",
+  });
+  if (openAlexResponse.ok) {
+    try {
+      const openAlexHints = extractMetadataArticleHints(JSON.parse(openAlexResponse.text));
+      if (Object.keys(openAlexHints).length) return { ...crossrefHints, ...openAlexHints };
+    } catch {
+      return crossrefHints;
+    }
+  }
+  if (Object.keys(crossrefHints).length) return crossrefHints;
   return {};
 }
 
@@ -478,6 +572,10 @@ function issueSortKey(value = "") {
 function issuePartsFromTitle(value = "") {
   const match = compactText(value).match(/(20\d{2})年第?(\d{1,2})期/);
   return match ? { year: match[1], issue: match[2] } : {};
+}
+
+function issueDateFromParts(parts = {}) {
+  return parts.year && parts.issue ? `${parts.year}-${String(parts.issue).padStart(2, "0")}` : "";
 }
 
 function datePartsToIso(dateParts) {
@@ -757,7 +855,8 @@ async function extractJmscIssueHtml(item) {
     limit: 30,
     timeoutMs: 11000,
     ifMissingAuthors: true,
-      ifMissingPublished: true,
+    ifMissingPublished: true,
+    ifMissingAbstract: true,
     });
   if (!articles.length) return extractJmscReaderIssueFallback(item, issueResponse, [...notes, `issue_candidates:${issueLinks.length}`]);
 
@@ -1015,42 +1114,6 @@ function parseMacrodatasIssueLinks(html, baseUrl, journalTitle) {
     .sort((a, b) => b.issue_key - a.issue_key);
 }
 
-function parseMacrodatasDirectoryArticles(html, pageUrl) {
-  const releaseDate = html.match(/document\.write\("([^"]{10})/)?.[1] || "";
-  const articles = [];
-  const entryRegex = /<p[^>]*>\s*(\d{2})\s+([\s\S]*?)<\/p>\s*<p[^>]*style=["'][^"']*color:[^"']*["'][^>]*>([\s\S]*?)<\/p>/gi;
-  for (const match of html.matchAll(entryRegex)) {
-    const title = stripTags(match[2]);
-    if (!looksLikeArticleTitle(title)) continue;
-    articles.push({
-      title,
-      url: macrodatasArticleSectionUrl(cleanArticleUrl(pageUrl), title),
-      date: releaseDate,
-      authors: stripTags(match[3]),
-    });
-  }
-
-  if (articles.length) return dedupeArticles(articles);
-
-  const text = stripTags(html);
-  let directory = text.slice(Math.max(0, text.indexOf("目录")));
-  const firstItemIndex = directory.search(/\b01\s+/);
-  if (firstItemIndex >= 0) directory = directory.slice(firstItemIndex);
-  const firstDetailIndex = directory.search(/#\s*01\s*#/);
-  if (firstDetailIndex > 0) directory = directory.slice(0, firstDetailIndex);
-  const fallbackRegex = /(?:^|\s)(\d{2})\s+(.+?)(?=\s+\d{2}\s+|$)/g;
-  for (const match of directory.matchAll(fallbackRegex)) {
-    const title = match[2].trim();
-    if (!looksLikeArticleTitle(title)) continue;
-    articles.push({
-      title,
-      url: macrodatasArticleSectionUrl(cleanArticleUrl(pageUrl), title),
-      date: releaseDate,
-    });
-  }
-  return dedupeArticles(articles);
-}
-
 async function extractMacrodatasIssueList(item) {
   const rule = item.adapter_rule || {};
   const listBaseUrl = rule.list_base_url || "https://www.macrodatas.cn/list/1/0/0/";
@@ -1079,10 +1142,16 @@ async function extractMacrodatasIssueList(item) {
   }
 
   const selectedIssue = issueLinks[0];
+  const selectedIssueParts = issuePartsFromTitle(selectedIssue.title);
+  const selectedIssueDate = issueDateFromParts(selectedIssueParts);
   const issueResponse = await fetchText(selectedIssue.url, 15000);
-  const articles = issueResponse.ok ? parseMacrodatasDirectoryArticles(issueResponse.text, issueResponse.finalUrl) : [];
+  const articles = issueResponse.ok ? parseMacrodatasIssuePageArticles(issueResponse.text, cleanArticleUrl(issueResponse.finalUrl)).map((article) => ({
+    ...article,
+    issue_date: article.issue_date || selectedIssueDate,
+    date_source: article.date_source || (selectedIssueDate ? "macrodatas_issue_title" : ""),
+  })) : [];
   if (!articles.length) notes.push("directory_not_found");
-  const resolvedArticles = await resolveOfficialLinks(item, dedupeArticles(articles), notes, issuePartsFromTitle(selectedIssue.title));
+  const resolvedArticles = await resolveOfficialLinks(item, dedupeArticles(articles), notes, selectedIssueParts);
 
   return {
     response: issueResponse,
@@ -1109,6 +1178,7 @@ async function extractAfaForthcomingDoi(item) {
       timeoutMs: 12000,
       ifMissingAuthors: true,
       ifMissingPublished: true,
+      ifMissingAbstract: true,
     }),
   };
 }
@@ -1141,6 +1211,7 @@ async function extractAeaForthcomingHtml(item) {
     timeoutMs: 12000,
     ifMissingAuthors: true,
     ifMissingPublished: true,
+    ifMissingAbstract: true,
   });
   return { response, probe_url: item.source_url, articles, candidate_count: articles.length, notes: ["forthcoming_articles_no_issue"] };
 }
@@ -1169,12 +1240,12 @@ async function extractAdapterArticles(item) {
       return extractHtmlByPatterns(item, {
         include: [/\/CN\/Y20\d{2}\/V\d+\/I\d+\/\d+/i],
         exclude: [/#bccl/i, /archive_by_years/i, /\/CN\/Y20\d{2}\/V\d+\/I\d+$/i],
-      }, 11000, { detailDateHints: { limit: 30, timeoutMs: 11000, ifMissingAuthors: true, ifMissingPublished: true } });
+      }, 11000, { detailDateHints: { limit: 30, timeoutMs: 11000, ifMissingAuthors: true, ifMissingPublished: true, ifMissingAbstract: true } });
     case "jryj-html":
       return extractHtmlByPatterns(item, {
         include: [/\/CN\/abstract\/abstract\d+\.shtml/i, /\/CN\/Y20\d{2}\/V\d+\/I\d+\/\d+/i],
         exclude: [/\/CN\/column\//i, /volumn/i, /showOldVolumnList/i],
-      }, 11000, { detailDateHints: { limit: 30, timeoutMs: 10000, ifMissingAuthors: true, ifMissingPublished: true } });
+      }, 11000, { detailDateHints: { limit: 30, timeoutMs: 10000, ifMissingAuthors: true, ifMissingPublished: true, ifMissingAbstract: true } });
     case "cnki-captcha-check":
       return extractCnkiCaptchaCheck(item);
     case "macrodatas-issue-list":
@@ -1183,7 +1254,7 @@ async function extractAdapterArticles(item) {
       return extractHtmlByPatterns(item, {
         include: [/\/portal\/journal\/portal\/client\/paper\/[a-z0-9-]+/i],
         exclude: [/\/editor\b/i, /admin/i, /login/i],
-      }, 13000, { detailDateHints: { limit: 20, timeoutMs: 11000 } });
+      }, 13000, { detailDateHints: { limit: 20, timeoutMs: 11000, ifMissingAbstract: true } });
     case "nankai-protected-html":
       return extractNankaiProtectedHtml(item);
     case "jmsc-issue-html":
@@ -1213,7 +1284,7 @@ async function extractAdapterArticles(item) {
     case "asq-sage-links":
       return extractHtmlByPatterns(item, {
         include: [/journals\.sagepub\.com\/doi\/(full|abs)\/10\.1177\//i],
-      }, 13000, { sourceDateHints: true, detailDateHints: { limit: 20, timeoutMs: 11000, ifMissingPublished: true, ifMissingAuthors: true } });
+      }, 13000, { sourceDateHints: true, detailDateHints: { limit: 20, timeoutMs: 11000, ifMissingPublished: true, ifMissingAuthors: true, ifMissingAbstract: true } });
     default:
       return extractHtmlByPatterns(item, {
         include: [/article|abstract|paper|doi|content|detail/i],
@@ -1244,6 +1315,7 @@ async function testDirectFeed(feed) {
     timeoutMs: 12000,
     ifMissingAuthors: true,
     ifMissingPublished: true,
+    ifMissingAbstract: true,
   });
   const articles = normalizeArticlesForLinkPolicy({ extraction_rule: feed.parser_profile }, enrichedArticles);
   return {

@@ -6,6 +6,7 @@ Project-specific instructions for agents working in Science Workshop.
 - Do not push to GitHub unless the user explicitly asks. Local git commits are fine for checkpoints.
 - Preserve `data/source-state.json` semantics: it is the dedupe and first-seen state for daily runs.
 - Use `scripts/run-daily-workflow.mjs` as the daily entrypoint. It should initialize a baseline once and only update frontend data when new push articles exist.
+- Keep daily abstract enrichment attached to the daily flow: newly pushed articles should be merged first, then `scripts/backfill-daily-abstracts.mjs --first-seen-at=<date>` should backfill only that first-seen date.
 - Keep frontend article data cumulative: `scripts/build-front-data.mjs` should merge new workflow output into `data/push-history.json`, then regenerate `data/recent-front-data.js`.
 - Keep `j1 -> j14` canonicalization for `JOURNAL OF FINANCE`; otherwise AFA forthcoming and Wiley RSS entries duplicate the same journal.
 - For source failures, classify network/protection/parser/data-quality before changing rules. Prefer automated fallback sources over manual upload.

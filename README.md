@@ -29,6 +29,8 @@ node scripts/recent-workflow-test.mjs
 node scripts/front-data-history-test.mjs
 node scripts/html-adapter-parsers-test.mjs
 node scripts/date-enhancement-test.mjs
+node scripts/pdf-abstract-backfill-test.mjs
+node scripts/daily-abstract-backfill-test.mjs
 node scripts/launchd-plist-test.mjs
 node scripts/build-adapter-front-data-test.mjs
 node scripts/adapter-smoke-test.mjs
@@ -51,11 +53,18 @@ node scripts/build-front-data.mjs --reset-history --workflow=data/recent-article
 - `data/push-history.json`：前端累计推送历史，会按文章 ID 去重并保留最早首次发现日。
 - `data/recent-front-data.js`：前端页面实际读取的文章推送数据，由累计推送历史生成。
 - `data/source-state.json`：每日自动运行时使用的去重和首次发现记录。
+- `data/.pdf-cache/abstract-backfill/`：PDF 摘要回填缓存目录，已被 `.gitignore` 忽略。
 - `scripts/build-adapter-front-data.mjs`：把 `data/adapter-profiles.json` 转换成前端适配器工作台数据。
 - `scripts/article-link-policy.mjs`：控制哪些链接可以作为前端可点击论文链接；目录页、第三方发现页会保留为 `discovery_url`，等待官方 PDF/详情解析。
 - `scripts/fetch-articles-smoke-test.mjs`：真实抓取入口，会访问 RSS、官网页面、替代目录页或开放元数据接口。
 - `scripts/build-front-data.mjs`：把抓取结果转换成前端能展示的数据。
-- `scripts/run-daily-workflow.mjs`：每日自动检查入口，只检查当天窗口并按首次发现去重。
+- `scripts/run-daily-workflow.mjs`：每日自动检查入口，只检查当天窗口并按首次发现去重；发现新推送后会触发当天新增文章的摘要回填。
+- `scripts/backfill-daily-abstracts.mjs`：每日摘要回填编排入口，只处理指定 `first_seen_at` 的新增文章。
+- `scripts/backfill-ncpssd-abstracts.mjs`：直接用 NCPSD article API 补已有 NCPSD 详情页的摘要。
+- `scripts/backfill-ncpssd-issue-abstracts.mjs`：按 NCPSD 期号页定位 `中国工业经济`、`会计研究` 等文章，再补摘要。
+- `scripts/backfill-pdf-abstracts.mjs`：从 PDF 文本层或 OCR 提取摘要，主要用于 `经济研究` 和 `中国农村经济`。
+- `scripts/backfill-english-metadata-abstracts.mjs`：用 Crossref/OpenAlex 等开放元数据补英文期刊摘要。
+- `scripts/backfill-macrodatas-abstracts.mjs`：用 Macrodatas 期号页作为中文期刊摘要兜底。
 - `scripts/install-daily-launchd.mjs`：安装或刷新 macOS 本机定时任务。
 
 ## 进一步文档
@@ -66,18 +75,19 @@ node scripts/build-front-data.mjs --reset-history --workflow=data/recent-article
 
 ## 当前状态
 
-截至 2026-06-04，前端参考数据已合并到 `data/recent-articles-2026-06-04_2026-06-04.json`，并保留累计推送历史。
+截至 2026-06-06，前端参考数据保留累计推送历史，并已接入摘要回填链路。
 
 - 期刊数据源：22 个。
-- 2026-06-04 本地日常运行可用来源：21 / 22 个；`中国行政管理` 在该次运行中因 CQVIP 请求 22 秒超时暂时 blocked。
-- 前端累计展示文章：326 篇，`data/recent-front-data.js` 和 `data/push-history.json` 均为 326 个唯一文章 ID。
-- 其中 17 篇目前只完成发现，仍待解析官方 PDF/详情链接；前端不会再把目录页或第三方目录页当成可点击论文链接。
-- 2026-06-04 本地日常运行新增推送文章：24 篇。
-- 每日自动任务的去重状态已写入 `data/source-state.json`。
+- 前端累计展示文章：379 篇，`data/recent-front-data.js` 和 `data/push-history.json` 均为 379 个唯一文章 ID。
+- 已补摘要文章：309 篇；剩余 70 篇没有摘要，其中 `中国工业经济` 18 篇、`会计研究` 13 篇、英文期刊 38 篇、`中国农村经济` 1 篇。
+- 每日自动任务的去重状态写入 `data/source-state.json`；摘要回填只补 `data/push-history.json` / `data/recent-front-data.js`，不改每日去重状态。
+- `scripts/run-daily-workflow.mjs` 在新推送合并后自动运行 `scripts/backfill-daily-abstracts.mjs --first-seen-at=<date>`，尽量给当天新增文章补摘要。
 - `管理科学学报` 已可从新版期号页解析；旧版 reader 期号页可作为备用解析入口，2026-06-04 日常运行返回 11 篇当期文章。
-- `中国行政管理` 先用维普目录发现当期条目，再用国家哲学社会科学文献中心期号页匹配到可点击的文章详情页；维普链接仅保留为 `discovery_url`。若 CQVIP 单次超时，先按网络/保护问题排查，不要直接改解析规则。
+- `中国行政管理` 先用维普目录发现当期条目，再用国家哲学社会科学文献中心期号页匹配到可点击的文章详情页；维普链接仅保留为 `discovery_url`。摘要回填优先走 NCPSD article API 慢队列。
+- `中国工业经济` 和 `会计研究` 的官网详情页可能遇到访问验证或登录页；摘要回填优先尝试 NCPSD 期号页 + article API，未上架期次保留缺口。
+- `中国农村经济` 官方 PDF 多为扫描件；摘要回填先尝试 PDF 文本层，失败后可用 `tesseract` + `poppler` OCR。
 - `管理世界` 先用 Macrodatas 发现当期文章，再用国家哲学社会科学文献中心移动端期号页按标题匹配到官方单篇详情页；2026年第5期 11 篇已解析到 `Literature/articleinfo` 链接，官方页内再按权限提供阅读/下载入口。
-- `南开管理评论` 目前先用 Macrodatas 发现当期文章，再按发现到的期号尝试国家哲学社会科学文献中心详情页升级；截至 2026-06-04，17 篇条目仍保持 `needs_official_pdf`。
+- `南开管理评论` 先用 Macrodatas 发现当期文章，再按发现到的期号尝试国家哲学社会科学文献中心详情页升级；未解析到官方全文入口时保持 `needs_official_pdf`。
 
 ## 每日自动检查
 
@@ -98,4 +108,4 @@ node scripts/run-daily-workflow.mjs
 - `logs/daily-workflow.log`
 - `logs/daily-workflow.error.log`
 
-如果当天没有新文章，前端数据不会被空结果覆盖；如果发现新文章，脚本会先合并到 `data/push-history.json`，再更新 `data/recent-front-data.js`。页面默认展示累计推送历史，日期筛选只是缩小查看范围。
+如果当天没有新文章，前端数据不会被空结果覆盖；如果发现新文章，脚本会先合并到 `data/push-history.json`，再更新 `data/recent-front-data.js`，随后只针对当天 `first_seen_at` 的新增文章运行摘要回填。页面默认展示累计推送历史，日期筛选只是缩小查看范围。

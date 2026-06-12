@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 
 import {
   compactArticleTitle,
+  issueDateFromNcpssdArticleId,
   parseNcpssdIssueArticles,
   resolveCnkiSequentialArticles,
   resolveNcpssdOfficialArticle,
@@ -31,6 +32,8 @@ assert.equal(articles.length, 1);
 assert.equal(articles[0].id, "ZGXZGL2026003003");
 assert.equal(articles[0].title, "“钉钉子”的技术：重大决策落实的工作机制");
 assert.equal(articles[0].authors, "庞明礼; 郭雯斐");
+assert.equal(articles[0].issue_date, "2026-03");
+assert.equal(articles[0].date_source, "ncpssd_article_id");
 assert.equal(
   articles[0].official_url,
   "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026003003&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
@@ -74,6 +77,7 @@ const mobileArticles = parseNcpssdIssueArticles(ncpssdMobileSnippetWithTypeArg, 
 assert.equal(mobileArticles.length, 1);
 assert.equal(mobileArticles[0].id, "NKGLPL2026002003");
 assert.equal(mobileArticles[0].authors, "李梦雅; 杨德林; 邹济; 郝晨; 李浩");
+assert.equal(mobileArticles[0].issue_date, "2026-02");
 assert.equal(
   mobileArticles[0].official_url,
   "https://m.ncpssd.cn/Literature/articleinfo?id=NKGLPL2026002003&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
@@ -103,6 +107,7 @@ assert.equal(
 );
 assert.equal(managementWorldOfficial.reader_url, "https://m.ncpssd.cn/Literature/readurl?id=GLSJ2026005001");
 assert.equal(managementWorldOfficial.authors, "易先忠; 潘锐; 张亚斌");
+assert.equal(managementWorldOfficial.issue_date, "2026-05");
 
 const ncpssdPcSecureSnippet = `
   <div class="result-list">
@@ -121,8 +126,12 @@ const secureArticles = parseNcpssdIssueArticles(ncpssdPcSecureSnippet, "https://
 assert.equal(secureArticles.length, 1);
 assert.equal(secureArticles[0].id, "GLSJ2026005008");
 assert.equal(secureArticles[0].authors, "罗俊; 潘佳艺; 邹乐豪");
+assert.equal(secureArticles[0].issue_date, "2026-05");
 assert.equal(secureArticles[0].official_url, "https://www.ncpssd.cn/Literature/secure/articleinfo?params=encrypted-demo");
 assert.equal(secureArticles[0].reader_url, "https://www.ncpssd.cn/Literature/readurl?id=GLSJ2026005008");
+
+assert.equal(issueDateFromNcpssdArticleId("GLSJ2026005009"), "2026-05");
+assert.equal(issueDateFromNcpssdArticleId("NKGLPL2026013001"), "");
 
 const cnkiSequentialArticles = resolveCnkiSequentialArticles(
   [

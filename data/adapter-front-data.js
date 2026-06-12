@@ -44,6 +44,7 @@ window.ADAPTER_PROFILE_DATA = {
     {
       "id": "ajcass",
       "name": "AJCass 社科院平台",
+      "description": "社科院期刊群使用的平台，优先读取公开目录接口；旧版页面再用 HTML 规则抽取。",
       "strategy": "公开 JSON 接口优先，旧版站点走静态 HTML",
       "render_required": true,
       "fields": [
@@ -64,6 +65,7 @@ window.ADAPTER_PROFILE_DATA = {
     {
       "id": "cn-journal-cms",
       "name": "中文期刊 CMS / Magtech",
+      "description": "国内期刊常见建站模板，期号页和文章页结构较固定，适合用 CSS/XPath 抽取。",
       "strategy": "CSS/XPath 静态抽取",
       "render_required": false,
       "fields": [
@@ -82,6 +84,7 @@ window.ADAPTER_PROFILE_DATA = {
     {
       "id": "cnki-cbpt",
       "name": "CNKI / 采编平台",
+      "description": "知网采编或 CNKI portal 系统，页面可能动态加载或有验证，必要时用替代发现源。",
       "strategy": "动态渲染 + 接口嗅探",
       "render_required": true,
       "fields": [
@@ -101,6 +104,7 @@ window.ADAPTER_PROFILE_DATA = {
     {
       "id": "university-custom",
       "name": "高校自建站",
+      "description": "高校院系自己维护的期刊站，每本刊页面结构不同，需要单刊规则。",
       "strategy": "CSS/XPath，单刊参数化",
       "render_required": false,
       "fields": [
@@ -119,7 +123,8 @@ window.ADAPTER_PROFILE_DATA = {
     },
     {
       "id": "association-custom",
-      "name": "协会 / 自建系统",
+      "name": "学会/协会官网系统",
+      "description": "学会、协会或期刊编辑部维护的官网列表页，不是统一平台，按各站目录单独适配。",
       "strategy": "先修 URL，再静态抽取",
       "render_required": false,
       "fields": [
@@ -138,6 +143,7 @@ window.ADAPTER_PROFILE_DATA = {
     {
       "id": "publisher-html",
       "name": "英文出版平台页面",
+      "description": "英文出版社或学会平台页面，能抓 HTML 就抓；遇到访问限制时走开放元数据兜底。",
       "strategy": "出版平台模板 + 反爬兜底",
       "render_required": true,
       "fields": [
@@ -159,6 +165,7 @@ window.ADAPTER_PROFILE_DATA = {
     {
       "id": "non-article-feed",
       "name": "非论文 RSS 来源",
+      "description": "源头有 RSS 或列表，但不是标准论文条目，需要排除公告并从 DOI 或文章页反推。",
       "strategy": "排除公告/评论 RSS，改抓文章页",
       "render_required": false,
       "fields": [
@@ -181,6 +188,7 @@ window.ADAPTER_PROFILE_DATA = {
       "journal_name": "经济研究",
       "platform_id": "ajcass",
       "platform_name": "AJCass 社科院平台",
+      "platform_description": "社科院期刊群使用的平台，优先读取公开目录接口；旧版页面再用 HTML 规则抽取。",
       "strategy": "公开 JSON 接口优先，旧版站点走静态 HTML",
       "fields": [
         "title",
@@ -201,6 +209,7 @@ window.ADAPTER_PROFILE_DATA = {
       "journal_name": "中国工业经济",
       "platform_id": "ajcass",
       "platform_name": "AJCass 社科院平台",
+      "platform_description": "社科院期刊群使用的平台，优先读取公开目录接口；旧版页面再用 HTML 规则抽取。",
       "strategy": "公开 JSON 接口优先，旧版站点走静态 HTML",
       "fields": [
         "title",
@@ -221,6 +230,7 @@ window.ADAPTER_PROFILE_DATA = {
       "journal_name": "中国农村经济",
       "platform_id": "ajcass",
       "platform_name": "AJCass 社科院平台",
+      "platform_description": "社科院期刊群使用的平台，优先读取公开目录接口；旧版页面再用 HTML 规则抽取。",
       "strategy": "公开 JSON 接口优先，旧版站点走静态 HTML",
       "fields": [
         "title",
@@ -241,6 +251,7 @@ window.ADAPTER_PROFILE_DATA = {
       "journal_name": "世界经济",
       "platform_id": "cn-journal-cms",
       "platform_name": "中文期刊 CMS / Magtech",
+      "platform_description": "国内期刊常见建站模板，期号页和文章页结构较固定，适合用 CSS/XPath 抽取。",
       "strategy": "CSS/XPath 静态抽取",
       "fields": [
         "title",
@@ -260,6 +271,7 @@ window.ADAPTER_PROFILE_DATA = {
       "journal_name": "金融研究",
       "platform_id": "cn-journal-cms",
       "platform_name": "中文期刊 CMS / Magtech",
+      "platform_description": "国内期刊常见建站模板，期号页和文章页结构较固定，适合用 CSS/XPath 抽取。",
       "strategy": "CSS/XPath 静态抽取",
       "fields": [
         "title",
@@ -279,6 +291,7 @@ window.ADAPTER_PROFILE_DATA = {
       "journal_name": "管理世界",
       "platform_id": "cnki-cbpt",
       "platform_name": "CNKI / 采编平台",
+      "platform_description": "知网采编或 CNKI portal 系统，页面可能动态加载或有验证，必要时用替代发现源。",
       "strategy": "动态渲染 + 接口嗅探",
       "fields": [
         "title",
@@ -299,6 +312,7 @@ window.ADAPTER_PROFILE_DATA = {
       "journal_name": "公共管理学报",
       "platform_id": "cnki-cbpt",
       "platform_name": "CNKI / 采编平台",
+      "platform_description": "知网采编或 CNKI portal 系统，页面可能动态加载或有验证，必要时用替代发现源。",
       "strategy": "动态渲染 + 接口嗅探",
       "fields": [
         "title",
@@ -319,6 +333,7 @@ window.ADAPTER_PROFILE_DATA = {
       "journal_name": "南开管理评论",
       "platform_id": "university-custom",
       "platform_name": "高校自建站",
+      "platform_description": "高校院系自己维护的期刊站，每本刊页面结构不同，需要单刊规则。",
       "strategy": "CSS/XPath，单刊参数化",
       "fields": [
         "title",
@@ -339,6 +354,7 @@ window.ADAPTER_PROFILE_DATA = {
       "journal_name": "管理科学学报",
       "platform_id": "university-custom",
       "platform_name": "高校自建站",
+      "platform_description": "高校院系自己维护的期刊站，每本刊页面结构不同，需要单刊规则。",
       "strategy": "CSS/XPath，单刊参数化",
       "fields": [
         "title",
@@ -358,7 +374,8 @@ window.ADAPTER_PROFILE_DATA = {
       "journal_id": "j10",
       "journal_name": "中国行政管理",
       "platform_id": "association-custom",
-      "platform_name": "协会 / 自建系统",
+      "platform_name": "学会/协会官网系统",
+      "platform_description": "学会、协会或期刊编辑部维护的官网列表页，不是统一平台，按各站目录单独适配。",
       "strategy": "先修 URL，再静态抽取",
       "fields": [
         "title",
@@ -377,7 +394,8 @@ window.ADAPTER_PROFILE_DATA = {
       "journal_id": "j11",
       "journal_name": "会计研究",
       "platform_id": "association-custom",
-      "platform_name": "协会 / 自建系统",
+      "platform_name": "学会/协会官网系统",
+      "platform_description": "学会、协会或期刊编辑部维护的官网列表页，不是统一平台，按各站目录单独适配。",
       "strategy": "先修 URL，再静态抽取",
       "fields": [
         "title",
@@ -397,6 +415,7 @@ window.ADAPTER_PROFILE_DATA = {
       "journal_name": "ACCOUNTING REVIEW",
       "platform_id": "publisher-html",
       "platform_name": "英文出版平台页面",
+      "platform_description": "英文出版社或学会平台页面，能抓 HTML 就抓；遇到访问限制时走开放元数据兜底。",
       "strategy": "出版平台模板 + 反爬兜底",
       "fields": [
         "title",
@@ -417,6 +436,7 @@ window.ADAPTER_PROFILE_DATA = {
       "journal_name": "AMERICAN ECONOMIC REVIEW",
       "platform_id": "publisher-html",
       "platform_name": "英文出版平台页面",
+      "platform_description": "英文出版社或学会平台页面，能抓 HTML 就抓；遇到访问限制时走开放元数据兜底。",
       "strategy": "出版平台模板 + 反爬兜底",
       "fields": [
         "title",
@@ -437,6 +457,7 @@ window.ADAPTER_PROFILE_DATA = {
       "journal_name": "QUARTERLY JOURNAL OF ECONOMICS",
       "platform_id": "publisher-html",
       "platform_name": "英文出版平台页面",
+      "platform_description": "英文出版社或学会平台页面，能抓 HTML 就抓；遇到访问限制时走开放元数据兜底。",
       "strategy": "出版平台模板 + 反爬兜底",
       "fields": [
         "title",
@@ -457,6 +478,7 @@ window.ADAPTER_PROFILE_DATA = {
       "journal_name": "REVIEW OF ECONOMIC STUDIES",
       "platform_id": "publisher-html",
       "platform_name": "英文出版平台页面",
+      "platform_description": "英文出版社或学会平台页面，能抓 HTML 就抓；遇到访问限制时走开放元数据兜底。",
       "strategy": "出版平台模板 + 反爬兜底",
       "fields": [
         "title",
@@ -477,6 +499,7 @@ window.ADAPTER_PROFILE_DATA = {
       "journal_name": "JOURNAL OF FINANCE",
       "platform_id": "non-article-feed",
       "platform_name": "非论文 RSS 来源",
+      "platform_description": "源头有 RSS 或列表，但不是标准论文条目，需要排除公告并从 DOI 或文章页反推。",
       "strategy": "排除公告/评论 RSS，改抓文章页",
       "fields": [
         "title",
@@ -496,6 +519,7 @@ window.ADAPTER_PROFILE_DATA = {
       "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
       "platform_id": "non-article-feed",
       "platform_name": "非论文 RSS 来源",
+      "platform_description": "源头有 RSS 或列表，但不是标准论文条目，需要排除公告并从 DOI 或文章页反推。",
       "strategy": "排除公告/评论 RSS，改抓文章页",
       "fields": [
         "title",

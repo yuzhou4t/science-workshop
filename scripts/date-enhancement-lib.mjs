@@ -219,16 +219,113 @@ export function extractMetadataAuthorHints(payload = {}) {
   } : {};
 }
 
+function abstractFromInvertedIndex(index = {}) {
+  const words = [];
+  for (const [word, positions] of Object.entries(index || {})) {
+    for (const position of positions || []) words[position] = word;
+  }
+  return words.filter(Boolean).join(" ");
+}
+
+export function extractMetadataAbstractHints(payload = {}) {
+  const metadata = payload.message || payload;
+  const abstract = cleanAbstract(metadata.abstract || abstractFromInvertedIndex(metadata.abstract_inverted_index));
+  return abstract ? { abstract } : {};
+}
+
 export function extractMetadataArticleHints(payload = {}) {
   return {
     ...extractMetadataAuthorHints(payload),
     ...extractMetadataDateHints(payload),
+    ...extractMetadataAbstractHints(payload),
   };
+}
+
+function cleanAbstract(value = "") {
+  let cleaned = stripTags(value)
+    .replace(/^(?:摘要|Abstract)\s*[:：]?\s*/i, "")
+    .replace(/\s*(?:关键词|Key\s*words?|Keywords)\s*[:：][\s\S]*$/i, "")
+    .replace(/\s*服务\s+把本文推荐给朋友[\s\S]*$/i, "")
+    .trim();
+  const nestedAbstract = cleaned.match(/^(?:参考文献|补充材料|相关文章|推荐阅读|下载|PDF|\s)+摘要\s+([\s\S]+)$/i);
+  if (nestedAbstract) cleaned = nestedAbstract[1].trim();
+  if (["参考文献", "补充材料", "相关文章", "推荐阅读", "下载", "PDF", "输出"].some((prefix) => cleaned.startsWith(prefix))) {
+    const nestedIndex = cleaned.lastIndexOf("摘要 ");
+    if (nestedIndex > 0) cleaned = cleaned.slice(nestedIndex + "摘要 ".length).trim();
+  }
+  return cleaned;
+}
+
+function bodyAbstractCandidates(context = "") {
+  const text = stripTags(context);
+  const candidates = [];
+  const abstractRegex = /(?:^|\s)(?:摘要|Abstract)\s*[:：]?\s*([\s\S]*?)(?=\s+(?:关键词|Key\s*words?|Keywords|Summary|服务|参考文献|基金项目|中图分类号|作者简介|收稿日期|$))/gi;
+  for (const match of text.matchAll(abstractRegex)) {
+    const candidate = cleanAbstract(match[1]);
+    if (candidate.length < 20) continue;
+    if (/^(参考文献|补充材料|相关文章|推荐阅读|下载|PDF)\b/i.test(candidate)) continue;
+    candidates.push(candidate);
+  }
+  return candidates.sort((a, b) => {
+    const zhOrder = /[\u3400-\u9fff]/.test(b) - /[\u3400-\u9fff]/.test(a);
+    if (zhOrder) return zhOrder;
+    return b.length - a.length;
+  });
+}
+
+function parseKeywords(value = "", splitWhitespace = false) {
+  const normalized = stripTags(value).replace(/^(?:关键词|Key\s*words?|Keywords)\s*[:：]\s*/i, "");
+  const separator = splitWhitespace ? /[\s,，、;；]+/ : /[,，、;；]+/;
+  const seen = new Set();
+  const keywords = [];
+  for (const keyword of normalized
+    .split(separator)
+    .map((keyword) => keyword.trim())
+    .filter(Boolean)) {
+    const key = keyword.toLowerCase();
+    if (seen.has(key)) continue;
+    seen.add(key);
+    keywords.push(keyword);
+  }
+  return keywords;
+}
+
+function looksLikeNcpssdArticleShell(context = "") {
+  return /\/articleinfoHandler\/getjournalarticletable/i.test(context)
+    && /\bid=["']ftl_urlId["']/i.test(context);
+}
+
+export function extractHtmlAbstractHints(context = "") {
+  const metaAbstract = firstMetaContent(context, [
+    "citation_abstract",
+    "DC.Description",
+    "dc.description",
+  ]);
+  const result = {};
+  if (!metaAbstract && looksLikeNcpssdArticleShell(context)) return result;
+
+  const abstract = cleanAbstract(metaAbstract)
+    || bodyAbstractCandidates(context)[0]
+    || cleanAbstract(stripTags(context).match(/(?:摘要|Abstract)\s*[:：]\s*([\s\S]{20,}?)(?:\s*(?:关键词|Key\s*words?|Keywords)\s*[:：]|$)/i)?.[1] || "");
+  if (abstract) result.abstract = abstract;
+
+  const metaKeywords = [
+    ...metaContents(context, "citation_keywords"),
+    ...metaContents(context, "keywords"),
+    ...metaContents(context, "DC.Subject"),
+    ...metaContents(context, "dc.subject"),
+  ].join(";");
+  const bodyKeywords = stripTags(context).match(/(?:关键词|Key\s*words?|Keywords)\s*[:：]\s*([\s\S]*?)(?:\s*(?:摘要|Abstract|Key\s*words?|Keywords|Downloads?|Preview|Journals?|基金项目|中图分类号|JEL|作者简介|参考文献|收稿日期|$))/i)?.[1] || "";
+  const splitBodyKeywordsOnWhitespace = !/[;,，、；]/.test(bodyKeywords) && /[\u3400-\u9fff]/.test(bodyKeywords);
+  const keywords = parseKeywords(metaKeywords || bodyKeywords, !metaKeywords && splitBodyKeywordsOnWhitespace);
+  if (keywords.length) result.keywords = keywords;
+  return result;
 }
 
 export function extractHtmlArticleHints({ url = "", context = "" } = {}) {
   return {
     ...extractHtmlAuthorHints(context),
+    ...extractHtmlAbstractHints(context),
     ...extractDateHints({ url, context }),
   };
 }

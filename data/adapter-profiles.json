@@ -38,6 +38,7 @@
     {
       "id": "ajcass",
       "name": "AJCass 社科院平台",
+      "description": "社科院期刊群使用的平台，优先读取公开目录接口；旧版页面再用 HTML 规则抽取。",
       "strategy": "公开 JSON 接口优先，旧版站点走静态 HTML",
       "render_required": true,
       "fields": ["title", "url", "issue", "year", "authors", "abstract"],
@@ -47,6 +48,7 @@
     {
       "id": "cn-journal-cms",
       "name": "中文期刊 CMS / Magtech",
+      "description": "国内期刊常见建站模板，期号页和文章页结构较固定，适合用 CSS/XPath 抽取。",
       "strategy": "CSS/XPath 静态抽取",
       "render_required": false,
       "fields": ["title", "url", "issue", "date", "authors"],
@@ -56,6 +58,7 @@
     {
       "id": "cnki-cbpt",
       "name": "CNKI / 采编平台",
+      "description": "知网采编或 CNKI portal 系统，页面可能动态加载或有验证，必要时用替代发现源。",
       "strategy": "动态渲染 + 接口嗅探",
       "render_required": true,
       "fields": ["title", "official_url", "pdf_url", "issue", "authors", "abstract"],
@@ -65,6 +68,7 @@
     {
       "id": "university-custom",
       "name": "高校自建站",
+      "description": "高校院系自己维护的期刊站，每本刊页面结构不同，需要单刊规则。",
       "strategy": "CSS/XPath，单刊参数化",
       "render_required": false,
       "fields": ["title", "official_url", "pdf_url", "issue", "date", "authors"],
@@ -73,7 +77,8 @@
     },
     {
       "id": "association-custom",
-      "name": "协会 / 自建系统",
+      "name": "学会/协会官网系统",
+      "description": "学会、协会或期刊编辑部维护的官网列表页，不是统一平台，按各站目录单独适配。",
       "strategy": "先修 URL，再静态抽取",
       "render_required": false,
       "fields": ["title", "official_url", "pdf_url", "issue", "date"],
@@ -83,6 +88,7 @@
     {
       "id": "publisher-html",
       "name": "英文出版平台页面",
+      "description": "英文出版社或学会平台页面，能抓 HTML 就抓；遇到访问限制时走开放元数据兜底。",
       "strategy": "出版平台模板 + 反爬兜底",
       "render_required": true,
       "fields": ["title", "url", "doi", "issue", "date", "authors"],
@@ -92,6 +98,7 @@
     {
       "id": "non-article-feed",
       "name": "非论文 RSS 来源",
+      "description": "源头有 RSS 或列表，但不是标准论文条目，需要排除公告并从 DOI 或文章页反推。",
       "strategy": "排除公告/评论 RSS，改抓文章页",
       "render_required": false,
       "fields": ["title", "url", "issue", "date", "authors"],

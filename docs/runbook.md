@@ -31,6 +31,8 @@ node scripts/recent-workflow-test.mjs
 node scripts/front-data-history-test.mjs
 node scripts/html-adapter-parsers-test.mjs
 node scripts/date-enhancement-test.mjs
+node scripts/pdf-abstract-backfill-test.mjs
+node scripts/daily-abstract-backfill-test.mjs
 node scripts/launchd-plist-test.mjs
 node scripts/build-adapter-front-data-test.mjs
 node scripts/adapter-smoke-test.mjs
@@ -38,6 +40,12 @@ node --check scripts/fetch-articles-smoke-test.mjs
 node --check scripts/build-front-data.mjs
 node --check scripts/build-adapter-front-data.mjs
 node --check scripts/run-daily-workflow.mjs
+node --check scripts/backfill-daily-abstracts.mjs
+node --check scripts/backfill-ncpssd-abstracts.mjs
+node --check scripts/backfill-ncpssd-issue-abstracts.mjs
+node --check scripts/backfill-pdf-abstracts.mjs
+node --check scripts/backfill-english-metadata-abstracts.mjs
+node --check scripts/backfill-macrodatas-abstracts.mjs
 node --check scripts/install-daily-launchd.mjs
 ```
 
@@ -89,6 +97,26 @@ curl -s -X POST http://127.0.0.1:8000/api/workflows/wechat-writing/jobs \
   -F "template_id=africa-reading"
 ```
 
+## Backend Deployment
+
+Keep deploys split by sensitivity:
+
+- Commit application code, Docker files, tests, and public frontend data to GitHub.
+- Keep `.env`, `api.env`, DeepSeek keys, MinerU keys, and Tencent COS secrets only on the server.
+- Upload backend code with SSH/SCP/rsync or by pulling Git on the server. Do not upload local virtualenvs, storage, caches, logs, or secrets.
+- Build the Docker image on the server from `backend/Dockerfile`; run it with `--env-file /opt/science-workshop/api.env`.
+- Bind the API container to localhost, for example `127.0.0.1:18080:8000`, then expose it through Nginx at `/science-workshop-api/`.
+- Leave only required firewall ports open. For this deployment: 22 for SSH, 80 for HTTP, and 443 only after TLS is configured.
+- Back up Nginx config and `api.env` before edits, then run `nginx -t` before reload.
+
+Current production health checks:
+
+```bash
+curl -s http://127.0.0.1:18080/api/health
+curl -s http://106.53.153.215/science-workshop-api/api/health
+curl -s https://journal-workshop-prototype.vercel.app/science-workshop-api/api/health
+```
+
 Run the live probe when network behavior matters:
 
 ```bash
@@ -115,6 +143,48 @@ Rebuild frontend data from a workflow file:
 node scripts/build-adapter-front-data.mjs
 node scripts/build-front-data.mjs --workflow=data/recent-articles-2026-04-27_2026-05-27.json
 ```
+
+## Abstract Backfill
+
+Daily runs automatically attempt abstract backfill after new push articles are merged. To run the same backfill manually for one first-seen date:
+
+```bash
+node scripts/backfill-daily-abstracts.mjs --first-seen-at=2026-06-06
+```
+
+This command only targets articles in `data/push-history.json` whose `first_seen_at` equals the requested date and whose `abstract` is still missing. It writes per-source files such as:
+
+- `data/recent-articles-daily-ncpssd-direct-<date>.json`
+- `data/recent-articles-daily-ncpssd-issue-<date>.json`
+- `data/recent-articles-daily-pdf-<date>.json`
+- `data/recent-articles-daily-english-metadata-<date>.json`
+- `data/recent-articles-daily-macrodatas-<date>.json`
+
+Successful backfill files are merged automatically by the daily backfill script through `scripts/build-front-data.mjs`. To inspect or rerun one source directly:
+
+```bash
+node scripts/backfill-ncpssd-abstracts.mjs --first-seen-at=2026-06-06 --timeout-ms=30000 --delay-ms=8000 --retries=3
+node scripts/backfill-ncpssd-issue-abstracts.mjs --first-seen-at=2026-06-06 --journals=中国工业经济,会计研究 --timeout-ms=25000 --delay-ms=5000 --retries=3
+node scripts/backfill-pdf-abstracts.mjs --first-seen-at=2026-06-06 --journals=经济研究,中国农村经济 --ocr --fetch-timeout-ms=180000 --pages=3
+node scripts/backfill-english-metadata-abstracts.mjs --first-seen-at=2026-06-06 --timeout-ms=15000 --delay-ms=1200
+node scripts/backfill-macrodatas-abstracts.mjs --first-seen-at=2026-06-06 --journals=中国工业经济,会计研究
+```
+
+OCR for scanned official PDFs requires:
+
+```bash
+tesseract --version
+pdftoppm -v
+tesseract --list-langs | rg 'chi_sim|eng'
+```
+
+Install missing OCR dependencies with Homebrew:
+
+```bash
+/opt/homebrew/bin/brew install tesseract tesseract-lang poppler
+```
+
+PDF and OCR caches live under `data/.pdf-cache/` and are ignored by git. Delete an individual cached PDF only when a prior download was incomplete or `pypdf` / `pdftoppm` reports a corrupt file.
 
 Use `--reset-history` only when intentionally reseeding the whole frontend history:
 
@@ -159,6 +229,8 @@ Daily workflow logs:
 
 The daily script writes a one-day workflow file such as `data/recent-articles-2026-05-28_2026-05-28.json`. If no new push articles are found, `data/recent-front-data.js` is left unchanged. If new articles are found, `scripts/build-front-data.mjs` merges them into `data/push-history.json` and regenerates `data/recent-front-data.js`.
 
+If new push articles are found, the daily script then runs abstract backfill for the same first-seen date. Backfill files update `data/push-history.json` and `data/recent-front-data.js` but do not rewrite `data/source-state.json`.
+
 ## Source Troubleshooting
 
 Classify failures before changing adapters:
@@ -169,6 +241,10 @@ Classify failures before changing adapters:
 - No explicit article date: keep the article in first-seen flow instead of dropping it.
 - Host instability such as `管理科学学报` returning 503 or TLS timeouts: keep the automated fallback rule, preserve prior source state, and let the next successful daily run discover and push missed items by first-seen date.
 - A single `中国行政管理` / CQVIP timeout such as `curl: (28) Operation timed out after 22002 milliseconds` should be treated as network/protection first. Preserve the existing NCPSD resolver rule and retry the same source before changing parser code.
+- NCPSD article API failures with `json_parse_failed`, `fetch failed`, or `timeout` are usually request timing or transient network problems. Retry with slower spacing, such as `--delay-ms=8000 --retries=3`, before changing parser code.
+- `中国工业经济` and `会计研究` official detail pages can return WAF/verification or login pages. Do not bypass those pages; try `scripts/backfill-ncpssd-issue-abstracts.mjs` first. If an NCPSD issue page returns zero candidates for a needed issue, keep the article visible without an abstract and retry after that issue is listed.
+- `中国农村经济` official PDFs may be scanned images. Use PDF text extraction first, then OCR. If OCR text has no `摘要` / `关键词` block, the article may be a meeting review or similar non-standard item rather than an extraction failure.
+- English publisher pages protected by Cloudflare or 403 should be backfilled only from open metadata sources. If Crossref/OpenAlex/Semantic Scholar do not expose an abstract, leave the article without an abstract rather than scraping protected pages.
 
 Do not mark a source ready unless the live probe returns usable article samples or a documented automated fallback.
 

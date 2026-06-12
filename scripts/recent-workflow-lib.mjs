@@ -231,7 +231,7 @@ function toWorkflowArticle(source, article, options, previousIds, previousFirstS
     observed_at: options.checkedAt,
     is_new: isNew,
   };
-  for (const key of ["access_model", "official_source", "cnki_filename", "reader_url"]) {
+  for (const key of ["access_model", "official_source", "cnki_filename", "reader_url", "abstract", "keywords"]) {
     if (article[key]) workflowArticle[key] = article[key];
   }
   return workflowArticle;

@@ -1,0 +1,665 @@
+{
+  "summary": {
+    "checked_at": "2026-06-05T17:36:57.850Z",
+    "since": "2000-01-01",
+    "until": "2026-06-06",
+    "sources_total": 22,
+    "sources_ready": 20,
+    "push_queue_articles": 2,
+    "abstract_backfill": true,
+    "backfill_sources": [
+      "history-url-ncpssd-api"
+    ],
+    "history_url_backfill": true
+  },
+  "push_queue": [
+    {
+      "id": "385561f9f9702c18",
+      "journal_id": "j10",
+      "source_journal_id": "j10",
+      "journal_name": "中国行政管理",
+      "title": "“钉钉子”的技术:重大决策落实的工作机制",
+      "url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026003003&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+      "official_url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026003003&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+      "pdf_url": "",
+      "discovery_url": "https://www.cqvip.com/doc/journal/7203343027?sign=4e2454a923799a980bfb45d58930dc3423801c3afe71ac3d955562731c9a13ee&expireTime=1796177114656&resourceId=7203343027&type=1",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "庞明礼, 郭雯斐",
+      "published_at": "",
+      "issue_date": "2026-03",
+      "first_seen_at": "2026-05-28",
+      "display_date": "2026-03",
+      "display_date_basis": "issue_date",
+      "push_basis": "first_seen",
+      "extraction_rule": "cqvip-journal-html",
+      "date_source": "",
+      "official_source": "ncpssd",
+      "abstract": "重大决策是指党中央围绕治国理政中根本性、方向性、全局性的关键领域和重大问题，所作出的重大战略安排、重点任务规划、关键政策举措。党的二十大、二十届三中和四中全会均强调完善重大决策部署落实机制，并提出“以钉钉子精神抓好改革落实”。本文认为，“钉钉子”不仅是一种精神和作风要求，更是一门将准度、力度、牢固度相统一的协同工作机制。准度要求准确理解决策精神，避免目标异化；力度强调通过任务书、时间表、优先序构建科学的压力传导路径；牢固度则依托督查与评价机制保障执行的持续性与稳定性。本文旨在回应如何落实党中央的决策部署和改革要求，并呼吁公共行政学研究加大对“工作方法”的关注，将“如何做以及如何做好”的操作性问题带回分析视野。",
+      "keywords": [
+        "重大决策",
+        "政策执行",
+        "钉钉子",
+        "工作机制",
+        "工作方法"
+      ]
+    },
+    {
+      "id": "2e057528cfea564e",
+      "journal_id": "j10",
+      "source_journal_id": "j10",
+      "journal_name": "中国行政管理",
+      "title": "“选择式自主”:社会组织可持续发展的新范式",
+      "url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026003009&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+      "official_url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026003009&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+      "pdf_url": "",
+      "discovery_url": "https://www.cqvip.com/doc/journal/7203343033?sign=edac222f740b6a7ee82fd35c64a38e5a55619e92b417df9d1cec78f5b647bbe2&expireTime=1796177114656&resourceId=7203343033&type=1",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "刘蕾, 何书仪",
+      "published_at": "",
+      "issue_date": "2026-03",
+      "first_seen_at": "2026-05-28",
+      "display_date": "2026-03",
+      "display_date_basis": "issue_date",
+      "push_basis": "first_seen",
+      "extraction_rule": "cqvip-journal-html",
+      "date_source": "",
+      "official_source": "ncpssd",
+      "abstract": "在中国政府购买公共服务退潮的背景下，传统“依附式自主”的社会组织发展模式因结构性依赖与能动性抑制而陷入困境，难以有效解释部分社会组织主动寻求突破的实践现象。本文通过对Y省K市S社会组织的可持续发展历程的观察发现：社会组织可通过“环境-能力-战略”的动态耦合，形成以策略性选择为途径、以“不独立但自主”为内核的可持续状态。进而表现为：通过能力赋能战略调适重塑组织发展环境、以主动选择为核心逻辑、在“结构性约束”中实现“能动性释放”。最终通过主体性的能动复位、资源逻辑的结构再造、制度角色的本质升级等方式推动社会组织实现从“依附式自主”走向“选择式自主”的可持续发展范式跃迁。",
+      "keywords": [
+        "社会组织",
+        "可持续发展",
+        "“环境-能力-战略”",
+        "“选择式自主”"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "article": {
+        "id": "385561f9f9702c18",
+        "journal_id": "j10",
+        "source_journal_id": "j10",
+        "journal_name": "中国行政管理",
+        "title": "“钉钉子”的技术:重大决策落实的工作机制",
+        "url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026003003&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "official_url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026003003&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "pdf_url": "",
+        "discovery_url": "https://www.cqvip.com/doc/journal/7203343027?sign=4e2454a923799a980bfb45d58930dc3423801c3afe71ac3d955562731c9a13ee&expireTime=1796177114656&resourceId=7203343027&type=1",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "庞明礼, 郭雯斐",
+        "published_at": "",
+        "issue_date": "2026-03",
+        "first_seen_at": "2026-05-28",
+        "display_date": "2026-03",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "cqvip-journal-html",
+        "date_source": "",
+        "official_source": "ncpssd",
+        "abstract": "重大决策是指党中央围绕治国理政中根本性、方向性、全局性的关键领域和重大问题，所作出的重大战略安排、重点任务规划、关键政策举措。党的二十大、二十届三中和四中全会均强调完善重大决策部署落实机制，并提出“以钉钉子精神抓好改革落实”。本文认为，“钉钉子”不仅是一种精神和作风要求，更是一门将准度、力度、牢固度相统一的协同工作机制。准度要求准确理解决策精神，避免目标异化；力度强调通过任务书、时间表、优先序构建科学的压力传导路径；牢固度则依托督查与评价机制保障执行的持续性与稳定性。本文旨在回应如何落实党中央的决策部署和改革要求，并呼吁公共行政学研究加大对“工作方法”的关注，将“如何做以及如何做好”的操作性问题带回分析视野。",
+        "keywords": [
+          "重大决策",
+          "政策执行",
+          "钉钉子",
+          "工作机制",
+          "工作方法"
+        ]
+      },
+      "response": {
+        "status": 200
+      },
+      "addedAbstract": true,
+      "keywords": 5
+    },
+    {
+      "article": {
+        "id": "6b313eb121dc33d6",
+        "journal_id": "j10",
+        "source_journal_id": "j10",
+        "journal_name": "中国行政管理",
+        "title": "“数字帕金森”:数字治理中的任务冗余再生产",
+        "url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026003007&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "official_url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026003007&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "pdf_url": "",
+        "discovery_url": "https://www.cqvip.com/doc/journal/7203343031?sign=2492fe666c0b56fa6cccfbe90796fac2dd6c24badb0d762ca36035513159d4d4&expireTime=1796177114656&resourceId=7203343031&type=1",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "邓崧, 杨迪",
+        "published_at": "",
+        "issue_date": "2026-03",
+        "first_seen_at": "2026-05-28",
+        "display_date": "2026-03",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "cqvip-journal-html",
+        "date_source": "",
+        "official_source": "ncpssd"
+      },
+      "response": {
+        "status": 0
+      },
+      "addedAbstract": false,
+      "keywords": 0
+    },
+    {
+      "article": {
+        "id": "2e057528cfea564e",
+        "journal_id": "j10",
+        "source_journal_id": "j10",
+        "journal_name": "中国行政管理",
+        "title": "“选择式自主”:社会组织可持续发展的新范式",
+        "url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026003009&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "official_url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026003009&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "pdf_url": "",
+        "discovery_url": "https://www.cqvip.com/doc/journal/7203343033?sign=edac222f740b6a7ee82fd35c64a38e5a55619e92b417df9d1cec78f5b647bbe2&expireTime=1796177114656&resourceId=7203343033&type=1",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "刘蕾, 何书仪",
+        "published_at": "",
+        "issue_date": "2026-03",
+        "first_seen_at": "2026-05-28",
+        "display_date": "2026-03",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "cqvip-journal-html",
+        "date_source": "",
+        "official_source": "ncpssd",
+        "abstract": "在中国政府购买公共服务退潮的背景下，传统“依附式自主”的社会组织发展模式因结构性依赖与能动性抑制而陷入困境，难以有效解释部分社会组织主动寻求突破的实践现象。本文通过对Y省K市S社会组织的可持续发展历程的观察发现：社会组织可通过“环境-能力-战略”的动态耦合，形成以策略性选择为途径、以“不独立但自主”为内核的可持续状态。进而表现为：通过能力赋能战略调适重塑组织发展环境、以主动选择为核心逻辑、在“结构性约束”中实现“能动性释放”。最终通过主体性的能动复位、资源逻辑的结构再造、制度角色的本质升级等方式推动社会组织实现从“依附式自主”走向“选择式自主”的可持续发展范式跃迁。",
+        "keywords": [
+          "社会组织",
+          "可持续发展",
+          "“环境-能力-战略”",
+          "“选择式自主”"
+        ]
+      },
+      "response": {
+        "status": 200
+      },
+      "addedAbstract": true,
+      "keywords": 4
+    },
+    {
+      "article": {
+        "id": "6a4d16759d75f0b5",
+        "journal_id": "j10",
+        "source_journal_id": "j10",
+        "journal_name": "中国行政管理",
+        "title": "把公共性带回来:社区慈善事业治理的路径选择",
+        "url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026003008&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "official_url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026003008&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "pdf_url": "",
+        "discovery_url": "https://www.cqvip.com/doc/journal/7203343032?sign=509844ec68855a30c62d80be3522b4ed8207084e157747acc78f688fbe0fd176&expireTime=1796177114656&resourceId=7203343032&type=1",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "舒文, 郑功成",
+        "published_at": "",
+        "issue_date": "2026-03",
+        "first_seen_at": "2026-05-28",
+        "display_date": "2026-03",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "cqvip-journal-html",
+        "date_source": "",
+        "official_source": "ncpssd"
+      },
+      "response": {
+        "status": 0
+      },
+      "addedAbstract": false,
+      "keywords": 0
+    },
+    {
+      "article": {
+        "id": "291ab3d79ab650d4",
+        "journal_id": "j10",
+        "source_journal_id": "j10",
+        "journal_name": "中国行政管理",
+        "title": "从制度到行动:基层减负的层级传导与长效机制",
+        "url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026003004&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "official_url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026003004&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "pdf_url": "",
+        "discovery_url": "https://www.cqvip.com/doc/journal/7203343028?sign=a68a9e6e21f378efec447b28593feb598d4c8fc983a4472fe678fc1d9115cc63&expireTime=1796177114656&resourceId=7203343028&type=1",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "王锐, 倪星",
+        "published_at": "",
+        "issue_date": "2026-03",
+        "first_seen_at": "2026-05-28",
+        "display_date": "2026-03",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "cqvip-journal-html",
+        "date_source": "",
+        "official_source": "ncpssd"
+      },
+      "response": {
+        "status": 0
+      },
+      "addedAbstract": false,
+      "keywords": 0
+    },
+    {
+      "article": {
+        "id": "663c159c70427cc2",
+        "journal_id": "j10",
+        "source_journal_id": "j10",
+        "journal_name": "中国行政管理",
+        "title": "复合型公共空间:社交平台驱动的乡村公共空间新样态",
+        "url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026003015&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "official_url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026003015&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "pdf_url": "",
+        "discovery_url": "https://www.cqvip.com/doc/journal/7203343039?sign=712c7d4de611073216ed5603694c12a648a0e3fddb6897747f1fcc5695fc58fe&expireTime=1795659733618&resourceId=7203343039&type=1",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "王承禹, 张旋",
+        "published_at": "",
+        "issue_date": "2026-03",
+        "first_seen_at": "2026-05-28",
+        "display_date": "2026-03",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "cqvip-journal-html",
+        "date_source": "",
+        "official_source": "ncpssd"
+      },
+      "response": {
+        "status": 0
+      },
+      "addedAbstract": false,
+      "keywords": 0
+    },
+    {
+      "article": {
+        "id": "db7b260bf3ec9b7f",
+        "journal_id": "j10",
+        "source_journal_id": "j10",
+        "journal_name": "中国行政管理",
+        "title": "基层“信用积分制”运行的实践错位与优化路径",
+        "url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026003010&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "official_url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026003010&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "pdf_url": "",
+        "discovery_url": "https://www.cqvip.com/doc/journal/7203343034?sign=d8cd115ff9f4af93221c0cb803a9231089010a93cfbe57ff6f282c1fd408585e&expireTime=1795659733618&resourceId=7203343034&type=1",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "朱博宇, 沈圣兰, 黄璜",
+        "published_at": "",
+        "issue_date": "2026-03",
+        "first_seen_at": "2026-05-28",
+        "display_date": "2026-03",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "cqvip-journal-html",
+        "date_source": "",
+        "official_source": "ncpssd"
+      },
+      "response": {
+        "status": 0
+      },
+      "addedAbstract": false,
+      "keywords": 0
+    },
+    {
+      "article": {
+        "id": "643f8da3e4ebed1e",
+        "journal_id": "j10",
+        "source_journal_id": "j10",
+        "journal_name": "中国行政管理",
+        "title": "建构基于“有效的政府治理”标识性概念的中国政府治理理论框架",
+        "url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026003011&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "official_url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026003011&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "pdf_url": "",
+        "discovery_url": "https://www.cqvip.com/doc/journal/7203343035?sign=e65799a4ed55b8d4337109c7a29e049f242f5fe9c952ecf1fdc2924c9f3cd4cb&expireTime=1795659733618&resourceId=7203343035&type=1",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "李瑞昌",
+        "published_at": "",
+        "issue_date": "2026-03",
+        "first_seen_at": "2026-05-28",
+        "display_date": "2026-03",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "cqvip-journal-html",
+        "date_source": "",
+        "official_source": "ncpssd"
+      },
+      "response": {
+        "status": 0
+      },
+      "addedAbstract": false,
+      "keywords": 0
+    },
+    {
+      "article": {
+        "id": "7c75fa73a2e235b8",
+        "journal_id": "j10",
+        "source_journal_id": "j10",
+        "journal_name": "中国行政管理",
+        "title": "内蒙古大学公共管理学院简介",
+        "url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026003001&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "official_url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026003001&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "pdf_url": "",
+        "discovery_url": "https://www.cqvip.com/doc/journal/7203343025?sign=090721e2c947b863663ff6a2ad6b57a4df76bb39d66fa9638a929166f52cfbe8&expireTime=1795659733618&resourceId=7203343025&type=1",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "白维军",
+        "published_at": "",
+        "issue_date": "2026-03",
+        "first_seen_at": "2026-05-28",
+        "display_date": "2026-03",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "cqvip-journal-html",
+        "date_source": "",
+        "official_source": "ncpssd"
+      },
+      "response": {
+        "status": 0
+      },
+      "addedAbstract": false,
+      "keywords": 0
+    },
+    {
+      "article": {
+        "id": "f7676796a5b954e3",
+        "journal_id": "j10",
+        "source_journal_id": "j10",
+        "journal_name": "中国行政管理",
+        "title": "人工智能的科林格里奇困境与安全监管的敏捷性调适",
+        "url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026003006&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "official_url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026003006&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "pdf_url": "",
+        "discovery_url": "https://www.cqvip.com/doc/journal/7203343030?sign=f50ac85d69680a8616d3830d75fa6289e1533aeb9e8764563f2a40ada60f11b8&expireTime=1796177114656&resourceId=7203343030&type=1",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "张乐, 赵爽爽",
+        "published_at": "",
+        "issue_date": "2026-03",
+        "first_seen_at": "2026-05-28",
+        "display_date": "2026-03",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "cqvip-journal-html",
+        "date_source": "",
+        "official_source": "ncpssd"
+      },
+      "response": {
+        "status": 0
+      },
+      "addedAbstract": false,
+      "keywords": 0
+    },
+    {
+      "article": {
+        "id": "e09c92bdf5282834",
+        "journal_id": "j10",
+        "source_journal_id": "j10",
+        "journal_name": "中国行政管理",
+        "title": "数字赋能乡村治理现代化的优化路径",
+        "url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026003017&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "official_url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026003017&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "pdf_url": "",
+        "discovery_url": "https://www.cqvip.com/doc/journal/7203343041?sign=449cb5a3e6ab88accd10e43d70037d28e0942c591b0e2c29c5273e8b40408c88&expireTime=1795659733618&resourceId=7203343041&type=1",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "李俊清, 毋世扬",
+        "published_at": "",
+        "issue_date": "2026-03",
+        "first_seen_at": "2026-05-28",
+        "display_date": "2026-03",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "cqvip-journal-html",
+        "date_source": "",
+        "official_source": "ncpssd"
+      },
+      "response": {
+        "status": 0
+      },
+      "addedAbstract": false,
+      "keywords": 0
+    },
+    {
+      "article": {
+        "id": "c03326a7b8bde27a",
+        "journal_id": "j10",
+        "source_journal_id": "j10",
+        "journal_name": "中国行政管理",
+        "title": "数字技术驱动乡村公共服务共同生产的影响因素与实践逻辑",
+        "url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026003013&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "official_url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026003013&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "pdf_url": "",
+        "discovery_url": "https://www.cqvip.com/doc/journal/7203343037?sign=cbed90b39f3024101d6471b3d205379cf5ff133d7aead603ad11a022aa7e78d5&expireTime=1795659733618&resourceId=7203343037&type=1",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "王洛忠, 徐成铭",
+        "published_at": "",
+        "issue_date": "2026-03",
+        "first_seen_at": "2026-05-28",
+        "display_date": "2026-03",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "cqvip-journal-html",
+        "date_source": "",
+        "official_source": "ncpssd"
+      },
+      "response": {
+        "status": 0
+      },
+      "addedAbstract": false,
+      "keywords": 0
+    },
+    {
+      "article": {
+        "id": "f0e0e2abc54b8cf2",
+        "journal_id": "j10",
+        "source_journal_id": "j10",
+        "journal_name": "中国行政管理",
+        "title": "数字生态何以影响乡村韧性治理绩效",
+        "url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026003014&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "official_url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026003014&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "pdf_url": "",
+        "discovery_url": "https://www.cqvip.com/doc/journal/7203343038?sign=8a2c431b6c0976477b22a76c021efd4072d3f3189968a7bd65cee1b4e2a54999&expireTime=1795659733618&resourceId=7203343038&type=1",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "陈浩天, 肖延玉",
+        "published_at": "",
+        "issue_date": "2026-03",
+        "first_seen_at": "2026-05-28",
+        "display_date": "2026-03",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "cqvip-journal-html",
+        "date_source": "",
+        "official_source": "ncpssd"
+      },
+      "response": {
+        "status": 0
+      },
+      "addedAbstract": false,
+      "keywords": 0
+    },
+    {
+      "article": {
+        "id": "463fca554994bba9",
+        "journal_id": "j10",
+        "source_journal_id": "j10",
+        "journal_name": "中国行政管理",
+        "title": "以科技人才集聚促进京津冀城市群高质量协同发展",
+        "url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026003016&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "official_url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026003016&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "pdf_url": "",
+        "discovery_url": "https://www.cqvip.com/doc/journal/7203343040?sign=6361daee0ac2646bdd3cad9438c3af1cb6610f41173956f1bb77dbfd8a0239f6&expireTime=1795659733618&resourceId=7203343040&type=1",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "魏华颖, 李子昂, 孙宏皓",
+        "published_at": "",
+        "issue_date": "2026-03",
+        "first_seen_at": "2026-05-28",
+        "display_date": "2026-03",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "cqvip-journal-html",
+        "date_source": "",
+        "official_source": "ncpssd"
+      },
+      "response": {
+        "status": 0
+      },
+      "addedAbstract": false,
+      "keywords": 0
+    },
+    {
+      "article": {
+        "id": "e51c9ac37f902b0a",
+        "journal_id": "j10",
+        "source_journal_id": "j10",
+        "journal_name": "中国行政管理",
+        "title": "以全生命周期服务改革推动营商环境优化",
+        "url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026003018&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "official_url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026003018&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "pdf_url": "",
+        "discovery_url": "https://www.cqvip.com/doc/journal/7203343042?sign=3fea3886eba222a6603ebb402c6675b5c0be36042cc957a2c04143b9368783e0&expireTime=1795659733618&resourceId=7203343042&type=1",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "杨畅, 彭伟, 黄凌筱",
+        "published_at": "",
+        "issue_date": "2026-03",
+        "first_seen_at": "2026-05-28",
+        "display_date": "2026-03",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "cqvip-journal-html",
+        "date_source": "",
+        "official_source": "ncpssd"
+      },
+      "response": {
+        "status": 0
+      },
+      "addedAbstract": false,
+      "keywords": 0
+    },
+    {
+      "article": {
+        "id": "fc6e1b88b19c432e",
+        "journal_id": "j10",
+        "source_journal_id": "j10",
+        "journal_name": "中国行政管理",
+        "title": "以制度建设为主线统筹发展和安全",
+        "url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026003002&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "official_url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026003002&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "pdf_url": "",
+        "discovery_url": "https://www.cqvip.com/doc/journal/7203343026?sign=1b3ac17eedf9b01f623ea6923184d04c2ba81551fb1134bf3b8ac761a2d1e156&expireTime=1796177114656&resourceId=7203343026&type=1",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "王浦劬, 连雨欣",
+        "published_at": "",
+        "issue_date": "2026-03",
+        "first_seen_at": "2026-05-28",
+        "display_date": "2026-03",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "cqvip-journal-html",
+        "date_source": "",
+        "official_source": "ncpssd"
+      },
+      "response": {
+        "status": 0
+      },
+      "addedAbstract": false,
+      "keywords": 0
+    },
+    {
+      "article": {
+        "id": "a6167b08cd82c5a2",
+        "journal_id": "j10",
+        "source_journal_id": "j10",
+        "journal_name": "中国行政管理",
+        "title": "政府数字平台何以走出难以为继困境?——基于生态系统视角的对比案例研究",
+        "url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026003005&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "official_url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026003005&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "pdf_url": "",
+        "discovery_url": "https://www.cqvip.com/doc/journal/7203343029?sign=05fd9aa94285118c86322c6be1c1824b95e26cc5eb858d18b04e38bf62eb1c7c&expireTime=1796177114656&resourceId=7203343029&type=1",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "付宁, 林婕, 祝哲",
+        "published_at": "",
+        "issue_date": "2026-03",
+        "first_seen_at": "2026-05-28",
+        "display_date": "2026-03",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "cqvip-journal-html",
+        "date_source": "",
+        "official_source": "ncpssd"
+      },
+      "response": {
+        "status": 0
+      },
+      "addedAbstract": false,
+      "keywords": 0
+    },
+    {
+      "article": {
+        "id": "a74b3b9c332c8112",
+        "journal_id": "j10",
+        "source_journal_id": "j10",
+        "journal_name": "中国行政管理",
+        "title": "中国银联积极服务政府促消费 双轮驱动激活市场新动能",
+        "url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026003019&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "official_url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026003019&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "pdf_url": "",
+        "discovery_url": "https://www.cqvip.com/doc/journal/7203343043?sign=175ea7fb680678d8bd899a4e0f199dd56b077d7989fee76a1f815f019a6576e4&expireTime=1795659733618&resourceId=7203343043&type=1",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "韩永琛",
+        "published_at": "",
+        "issue_date": "2026-03",
+        "first_seen_at": "2026-05-28",
+        "display_date": "2026-03",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "cqvip-journal-html",
+        "date_source": "",
+        "official_source": "ncpssd"
+      },
+      "response": {
+        "status": 0
+      },
+      "addedAbstract": false,
+      "keywords": 0
+    },
+    {
+      "article": {
+        "id": "fb273f487c465b7b",
+        "journal_id": "j10",
+        "source_journal_id": "j10",
+        "journal_name": "中国行政管理",
+        "title": "重新发现治理:评价理论的视角",
+        "url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026003012&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "official_url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026003012&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "pdf_url": "",
+        "discovery_url": "https://www.cqvip.com/doc/journal/7203343036?sign=214bc39e43eff1c67da6e45a808eab7c90bf7e7e68c0990262ff9812361b605d&expireTime=1795659733618&resourceId=7203343036&type=1",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "张乾友",
+        "published_at": "",
+        "issue_date": "2026-03",
+        "first_seen_at": "2026-05-28",
+        "display_date": "2026-03",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "cqvip-journal-html",
+        "date_source": "",
+        "official_source": "ncpssd"
+      },
+      "response": {
+        "status": 0
+      },
+      "addedAbstract": false,
+      "keywords": 0
+    }
+  ]
+}

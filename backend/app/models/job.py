@@ -9,6 +9,7 @@ from pydantic import BaseModel, Field
 class WorkflowType(StrEnum):
     PAPER_READING = "paper_reading"
     WECHAT_WRITING = "wechat_writing"
+    ISSUE_TOC_EXPORT = "issue_toc_export"
 
 
 class JobStatus(StrEnum):

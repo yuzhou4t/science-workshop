@@ -1,0 +1,129 @@
+{
+  "summary": {
+    "checked_at": "2026-06-12T02:59:23.780Z",
+    "since": "2000-01-01",
+    "until": "2026-06-12",
+    "sources_total": 22,
+    "sources_ready": 22,
+    "push_queue_articles": 1,
+    "abstract_backfill": true,
+    "english_metadata_backfill": true,
+    "semantic_scholar": false,
+    "backfill_sources": [
+      "crossref-doi",
+      "openalex-doi",
+      "openalex-title"
+    ]
+  },
+  "push_queue": [
+    {
+      "id": "2a7be57bd233511b",
+      "journal_id": "j19",
+      "source_journal_id": "j19",
+      "journal_name": "REVIEW OF ECONOMIC STUDIES",
+      "title": "Spatial Implications of Telecommuting",
+      "url": "https://doi.org/10.1093/restud/rdag057",
+      "official_url": "https://doi.org/10.1093/restud/rdag057",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Matthew J Delventhal, Andrii Parkhomenko",
+      "published_at": "2026-06-11",
+      "issue_date": "",
+      "first_seen_at": "2026-06-12",
+      "display_date": "2026-06-11",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "open-metadata-works",
+      "date_source": "",
+      "abstract": "We build a quantitative spatial model in which some workers can substitute on-site effort with work done from home. Ability and propensity to telecommute vary by education and industry. We quantify our framework to match the distribution of jobs and residents across 4,502 U.S. locations. Then we simulate permanent increases in the attractiveness and productivity of telework that lead to greater adoption of hybrid and fully remote work. To validate our model, we show that our results are positively correlated with local changes in residents, jobs, and housing costs since 2019. The rise of telework results in a rich non-monotonic pattern of reallocations of residents and jobs within and across cities. Workers who can telecommute experience welfare gains, and those who cannot suffer losses. Broader access to jobs reduces wage inequality across residential locations, and heralds a partial reversal in the spatial concentration of talent and spending power known as the “Great Divergence.”"
+    }
+  ],
+  "results": [
+    {
+      "article": {
+        "id": "2a7be57bd233511b",
+        "journal_id": "j19",
+        "source_journal_id": "j19",
+        "journal_name": "REVIEW OF ECONOMIC STUDIES",
+        "title": "Spatial Implications of Telecommuting",
+        "url": "https://doi.org/10.1093/restud/rdag057",
+        "official_url": "https://doi.org/10.1093/restud/rdag057",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Matthew J Delventhal, Andrii Parkhomenko",
+        "published_at": "2026-06-11",
+        "issue_date": "",
+        "first_seen_at": "2026-06-12",
+        "display_date": "2026-06-11",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "open-metadata-works",
+        "date_source": "",
+        "abstract": "We build a quantitative spatial model in which some workers can substitute on-site effort with work done from home. Ability and propensity to telecommute vary by education and industry. We quantify our framework to match the distribution of jobs and residents across 4,502 U.S. locations. Then we simulate permanent increases in the attractiveness and productivity of telework that lead to greater adoption of hybrid and fully remote work. To validate our model, we show that our results are positively correlated with local changes in residents, jobs, and housing costs since 2019. The rise of telework results in a rich non-monotonic pattern of reallocations of residents and jobs within and across cities. Workers who can telecommute experience welfare gains, and those who cannot suffer losses. Broader access to jobs reduces wage inequality across residential locations, and heralds a partial reversal in the spatial concentration of talent and spending power known as the “Great Divergence.”"
+      },
+      "addedAbstract": true,
+      "source": "crossref",
+      "matched_title": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": true,
+          "hints": {
+            "abstract": "We build a quantitative spatial model in which some workers can substitute on-site effort with work done from home. Ability and propensity to telecommute vary by education and industry. We quantify our framework to match the distribution of jobs and residents across 4,502 U.S. locations. Then we simulate permanent increases in the attractiveness and productivity of telework that lead to greater adoption of hybrid and fully remote work. To validate our model, we show that our results are positively correlated with local changes in residents, jobs, and housing costs since 2019. The rise of telework results in a rich non-monotonic pattern of reallocations of residents and jobs within and across cities. Workers who can telecommute experience welfare gains, and those who cannot suffer losses. Broader access to jobs reduces wage inequality across residential locations, and heralds a partial reversal in the spatial concentration of talent and spending power known as the “Great Divergence.”"
+          },
+          "status": 200
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "6caaa728b40bb61d",
+        "journal_id": "j13",
+        "source_journal_id": "j13",
+        "journal_name": "ACADEMY OF MANAGEMENT REVIEW",
+        "title": "Opening and Closing the Configurational Theorizing Gateway with Explicit Decision Rules—An Extension of Campbell and Fiss’ “Tackling the Complexity Challenge: When and How to Engage in Configurational and Hybrid Theorizing”",
+        "url": "https://journals.aom.org/doi/abs/10.5465/amr.2026.0121",
+        "official_url": "https://journals.aom.org/doi/abs/10.5465/amr.2026.0121",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Yannick Griep, Kevin S. Cruz",
+        "published_at": "2026-06-10",
+        "issue_date": "",
+        "first_seen_at": "2026-06-12",
+        "display_date": "2026-06-10",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "atypon-etoc",
+        "date_source": "metadata_published"
+      },
+      "addedAbstract": false,
+      "source": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-doi",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-title",
+          "ok": false,
+          "status": 200,
+          "error": "no_strict_title_abstract"
+        }
+      ]
+    }
+  ]
+}

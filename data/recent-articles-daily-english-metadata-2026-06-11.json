@@ -1,0 +1,144 @@
+{
+  "summary": {
+    "checked_at": "2026-06-11T02:15:53.127Z",
+    "since": "2000-01-01",
+    "until": "2026-06-11",
+    "sources_total": 22,
+    "sources_ready": 22,
+    "push_queue_articles": 2,
+    "abstract_backfill": true,
+    "english_metadata_backfill": true,
+    "semantic_scholar": false,
+    "backfill_sources": [
+      "crossref-doi",
+      "openalex-doi",
+      "openalex-title"
+    ]
+  },
+  "push_queue": [
+    {
+      "id": "57e3238941d9a3bd",
+      "journal_id": "j19",
+      "source_journal_id": "j19",
+      "journal_name": "REVIEW OF ECONOMIC STUDIES",
+      "title": "A Temporary VAT Cut as Unconventional Fiscal Policy",
+      "url": "https://doi.org/10.1093/restud/rdag055",
+      "official_url": "https://doi.org/10.1093/restud/rdag055",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Rüdiger Bachmann, Benjamin Born, Olga Goldfayn-Frank, Georgi Kocharkov, Ralph Luetticke",
+      "published_at": "2026-06-10",
+      "issue_date": "",
+      "first_seen_at": "2026-06-11",
+      "display_date": "2026-06-10",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "open-metadata-works",
+      "date_source": "",
+      "abstract": "We exploit Germany’s temporary three-percentage-point VAT cut in the second half of 2020 to study the spending response to unconventional fiscal policy. We use survey and scanner data on household consumption expenditures and their perceived pass-through of the tax change into prices, and a HANK model to quantify the effects of this VAT policy. The survey and scanner data show that the temporary VAT reduction led to a relative increase in durable and, to a lesser extent, semi-durable spending for individuals with high perceived pass-through. According to the HANK model, the VAT policy increased total aggregate consumption spending by 4.4 percent on impact."
+    },
+    {
+      "id": "391c62976bca49bf",
+      "journal_id": "j15",
+      "source_journal_id": "j15",
+      "journal_name": "ACCOUNTING REVIEW",
+      "title": "The Academics of Standard Setting: A Field Study of Financial Reporting Standard Setters’ Engagement with Academic Research",
+      "url": "https://doi.org/10.2308/tar-2024-0289",
+      "official_url": "https://doi.org/10.2308/tar-2024-0289",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Shannon Garavaglia, Christie Hayne, Cassie Mongold",
+      "published_at": "2026-06-10",
+      "issue_date": "",
+      "first_seen_at": "2026-06-11",
+      "display_date": "2026-06-10",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "open-metadata-works",
+      "date_source": "",
+      "abstract": "Financial reporting standard-setting bodies are expected to include academic research in their decision-making processes. However, little is known about whether, why, and how they engage with research. We interview staff from two major accounting standard-setting bodies and, using the information seeking and communication model as a theoretical lens, identify factors shaping their research engagement. These factors include perceptions of academic research, search difficulties, and challenges with assessing the credibility and utility of academic research. Our findings reveal an unstructured, idiosyncratic approach to information seeking, a reliance on academic papers over direct researcher interaction, a significant lack of two-way communication, and concerns relating to incentive differences between academics and standard setters. These structural issues limit the extent to which academic research can inform standard setting. We provide insights on improving the inclusion of academic research in the standard-setting decision-making process and contribute to broader discussions on research relevance. JEL Classifications: M41; M48."
+    }
+  ],
+  "results": [
+    {
+      "article": {
+        "id": "57e3238941d9a3bd",
+        "journal_id": "j19",
+        "source_journal_id": "j19",
+        "journal_name": "REVIEW OF ECONOMIC STUDIES",
+        "title": "A Temporary VAT Cut as Unconventional Fiscal Policy",
+        "url": "https://doi.org/10.1093/restud/rdag055",
+        "official_url": "https://doi.org/10.1093/restud/rdag055",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Rüdiger Bachmann, Benjamin Born, Olga Goldfayn-Frank, Georgi Kocharkov, Ralph Luetticke",
+        "published_at": "2026-06-10",
+        "issue_date": "",
+        "first_seen_at": "2026-06-11",
+        "display_date": "2026-06-10",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "open-metadata-works",
+        "date_source": "",
+        "abstract": "We exploit Germany’s temporary three-percentage-point VAT cut in the second half of 2020 to study the spending response to unconventional fiscal policy. We use survey and scanner data on household consumption expenditures and their perceived pass-through of the tax change into prices, and a HANK model to quantify the effects of this VAT policy. The survey and scanner data show that the temporary VAT reduction led to a relative increase in durable and, to a lesser extent, semi-durable spending for individuals with high perceived pass-through. According to the HANK model, the VAT policy increased total aggregate consumption spending by 4.4 percent on impact."
+      },
+      "addedAbstract": true,
+      "source": "crossref",
+      "matched_title": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": true,
+          "hints": {
+            "abstract": "We exploit Germany’s temporary three-percentage-point VAT cut in the second half of 2020 to study the spending response to unconventional fiscal policy. We use survey and scanner data on household consumption expenditures and their perceived pass-through of the tax change into prices, and a HANK model to quantify the effects of this VAT policy. The survey and scanner data show that the temporary VAT reduction led to a relative increase in durable and, to a lesser extent, semi-durable spending for individuals with high perceived pass-through. According to the HANK model, the VAT policy increased total aggregate consumption spending by 4.4 percent on impact."
+          },
+          "status": 200
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "391c62976bca49bf",
+        "journal_id": "j15",
+        "source_journal_id": "j15",
+        "journal_name": "ACCOUNTING REVIEW",
+        "title": "The Academics of Standard Setting: A Field Study of Financial Reporting Standard Setters’ Engagement with Academic Research",
+        "url": "https://doi.org/10.2308/tar-2024-0289",
+        "official_url": "https://doi.org/10.2308/tar-2024-0289",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Shannon Garavaglia, Christie Hayne, Cassie Mongold",
+        "published_at": "2026-06-10",
+        "issue_date": "",
+        "first_seen_at": "2026-06-11",
+        "display_date": "2026-06-10",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "open-metadata-works",
+        "date_source": "",
+        "abstract": "Financial reporting standard-setting bodies are expected to include academic research in their decision-making processes. However, little is known about whether, why, and how they engage with research. We interview staff from two major accounting standard-setting bodies and, using the information seeking and communication model as a theoretical lens, identify factors shaping their research engagement. These factors include perceptions of academic research, search difficulties, and challenges with assessing the credibility and utility of academic research. Our findings reveal an unstructured, idiosyncratic approach to information seeking, a reliance on academic papers over direct researcher interaction, a significant lack of two-way communication, and concerns relating to incentive differences between academics and standard setters. These structural issues limit the extent to which academic research can inform standard setting. We provide insights on improving the inclusion of academic research in the standard-setting decision-making process and contribute to broader discussions on research relevance. JEL Classifications: M41; M48."
+      },
+      "addedAbstract": true,
+      "source": "crossref",
+      "matched_title": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": true,
+          "hints": {
+            "abstract": "Financial reporting standard-setting bodies are expected to include academic research in their decision-making processes. However, little is known about whether, why, and how they engage with research. We interview staff from two major accounting standard-setting bodies and, using the information seeking and communication model as a theoretical lens, identify factors shaping their research engagement. These factors include perceptions of academic research, search difficulties, and challenges with assessing the credibility and utility of academic research. Our findings reveal an unstructured, idiosyncratic approach to information seeking, a reliance on academic papers over direct researcher interaction, a significant lack of two-way communication, and concerns relating to incentive differences between academics and standard setters. These structural issues limit the extent to which academic research can inform standard setting. We provide insights on improving the inclusion of academic research in the standard-setting decision-making process and contribute to broader discussions on research relevance. JEL Classifications: M41; M48."
+          },
+          "status": 200
+        }
+      ]
+    }
+  ]
+}

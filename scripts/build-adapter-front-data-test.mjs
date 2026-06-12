@@ -17,6 +17,7 @@ const frontData = buildAdapterFrontData({
     {
       id: "ajcass",
       name: "AJCass 社科院平台",
+      description: "社科院期刊群使用的平台。",
       strategy: "公开 JSON 接口优先",
       render_required: true,
       fields: ["title", "url", "issue", "authors"],
@@ -38,8 +39,10 @@ const frontData = buildAdapterFrontData({
 assert.equal(frontData.summary.direct_article_feeds, 1);
 assert.equal(frontData.summary.adapter_sources, 1);
 assert.equal(frontData.platform_profiles[0].journals.length, 1);
+assert.equal(frontData.platform_profiles[0].description, "社科院期刊群使用的平台。");
 assert.equal(frontData.adapter_queue[0].status, "接口规则");
 assert.equal(frontData.adapter_queue[0].adapter_kind, "ajcass-current-api");
+assert.equal(frontData.adapter_queue[0].platform_description, "社科院期刊群使用的平台。");
 assert.notEqual(frontData.adapter_queue[0].status, "规则待写");
 
 console.log("adapter front data rules ok");

@@ -1,0 +1,89 @@
+{
+  "version": 1,
+  "topics": [
+    {
+      "id": "africa",
+      "label": "非洲",
+      "keywords": [
+        "非洲",
+        "Africa",
+        "African",
+        "Sub-Saharan",
+        "Sub Saharan",
+        "撒哈拉以南",
+        "尼日利亚",
+        "Nigeria",
+        "Uganda",
+        "乌干达",
+        "Kenya",
+        "肯尼亚",
+        "Ghana",
+        "加纳",
+        "Ethiopia",
+        "埃塞俄比亚",
+        "South Africa",
+        "南非",
+        "Egypt",
+        "埃及",
+        "Tanzania",
+        "坦桑尼亚",
+        "Morocco",
+        "摩洛哥",
+        "Senegal",
+        "塞内加尔",
+        "Rwanda",
+        "卢旺达",
+        "Zambia",
+        "赞比亚",
+        "Zimbabwe",
+        "津巴布韦",
+        "Congo",
+        "刚果"
+      ]
+    }
+  ],
+  "disciplines": [
+    {
+      "id": "economics",
+      "label": "经济学",
+      "subject_keywords": ["ECONOMICS", "AMERICAN ECONOMIC REVIEW", "QUARTERLY JOURNAL OF ECONOMICS", "REVIEW OF ECONOMIC STUDIES", "经济学", "经济"],
+      "keywords": ["economics", "economic", "risk sharing", "welfare", "trade", "labor", "market", "growth", "发展", "贸易", "增长", "风险分担"]
+    },
+    {
+      "id": "management",
+      "label": "管理学",
+      "subject_keywords": ["管理学", "MANAGEMENT", "ACADEMY OF MANAGEMENT", "南开管理评论", "管理科学学报"],
+      "keywords": ["management", "organization", "strategy", "innovation", "商业生态系统", "组织", "战略", "创新", "供应链", "企业"]
+    },
+    {
+      "id": "finance",
+      "label": "金融",
+      "subject_keywords": ["BUSINESS,FINANCE", "JOURNAL OF FINANCE", "金融"],
+      "keywords": ["finance", "financial", "capital market", "liquidity", "融资", "资本市场", "金融", "流动性", "投资"]
+    },
+    {
+      "id": "accounting",
+      "label": "会计",
+      "subject_keywords": ["ACCOUNTING", "会计研究", "会计"],
+      "keywords": ["accounting", "audit", "earnings", "disclosure", "会计", "审计", "盈余", "披露"]
+    },
+    {
+      "id": "public_admin",
+      "label": "公共管理",
+      "subject_keywords": ["公共管理", "中国行政管理"],
+      "keywords": ["public administration", "policy", "governance", "regulation", "公共管理", "治理", "政策", "监管", "政府"]
+    },
+    {
+      "id": "environment_geography",
+      "label": "环境/地理",
+      "subject_keywords": ["地理", "环境"],
+      "keywords": ["climate", "environment", "geography", "drought", "flood", "气候", "环境", "地理", "干旱", "洪水"]
+    },
+    {
+      "id": "population_development",
+      "label": "人口与发展",
+      "subject_keywords": ["人口", "发展"],
+      "keywords": ["population", "migration", "health", "development", "人口", "迁移", "健康", "发展"]
+    }
+  ]
+}

@@ -10,6 +10,7 @@ export function buildAdapterFrontData(registry) {
       journal_name: item.journal_name,
       platform_id: item.platform_id,
       platform_name: profile.name || item.platform_id,
+      platform_description: profile.description || "",
       strategy: profile.strategy || "",
       fields: profile.fields || [],
       status: item.status || "规则待确认",
@@ -23,6 +24,7 @@ export function buildAdapterFrontData(registry) {
   const platformProfiles = (registry.platform_profiles || []).map((profile) => ({
     id: profile.id,
     name: profile.name,
+    description: profile.description || "",
     strategy: profile.strategy,
     render_required: Boolean(profile.render_required),
     fields: profile.fields || [],

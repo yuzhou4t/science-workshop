@@ -1,0 +1,87 @@
+{
+  "summary": {
+    "checked_at": "2026-06-06T07:17:43.469Z",
+    "since": "2000-01-01",
+    "until": "2026-06-06",
+    "sources_total": 22,
+    "sources_ready": 20,
+    "push_queue_articles": 1,
+    "abstract_backfill": true,
+    "backfill_sources": [
+      "cnki-portal-paper-detail"
+    ]
+  },
+  "push_queue": [
+    {
+      "id": "18699e7bc64ab958",
+      "journal_id": "j8",
+      "source_journal_id": "j8",
+      "journal_name": "公共管理学报",
+      "title": "算法—情境冲突下基层人机协同中的策略性调适——基于Y市S镇秸秆禁烧的案例分析",
+      "url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/939c12014e9cfe4fbead1778b850c707",
+      "official_url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/939c12014e9cfe4fbead1778b850c707",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "钟伟军, 解晓燕",
+      "published_at": "2026-04-13",
+      "issue_date": "2019-04",
+      "first_seen_at": "2026-05-28",
+      "display_date": "2026-04-13",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "cnki-portal-paper",
+      "date_source": "meta_published",
+      "abstract": "人工智能（AI）技术在基层治理中的应用不断推动着基层治理数字化的深度转型，也引发人机协同的问题。本研究旨在揭示算法标准化逻辑与基层复杂情境之间的冲突机理及缓解机制，基于“技术与制度的双重调适”理论框架，采用案例研究方法，以Y市S镇秸秆禁烧实践为分析对象，系统考察了人工智能应用引发的责任失衡与基层应对策略。研究发现：人工智能技术强化了纵向问责，提升了处置效率，但也造成算法与治理情境的紧张关系。催生出基层干部的策略性应对行为，包括人工复核下的证据化叙事、技术操作权下放下的人机赛跑及时段性默契下的差异化运作等。这种策略性人机调适模式虽然能修正技术偏差，缓解多重责任压力，但由于并未改变制度偏差，而蕴含着数字形式主义与算法规则虚化等风险。在人工智能不断嵌入基层的背景下，需要建构规范化的调适机制以实现有效的人机协同。本研究不仅为分析中国特殊情境下人工智能嵌入基层治理的具体机制提供了新的分析视角，也为反思我国基层治理的数字化转型提供了有价值的启示。",
+      "keywords": [
+        "人机协同",
+        "基层治理",
+        "策略性调适",
+        "秸秆禁烧",
+        "算法—情境冲突"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "article": {
+        "id": "18699e7bc64ab958",
+        "journal_id": "j8",
+        "source_journal_id": "j8",
+        "journal_name": "公共管理学报",
+        "title": "算法—情境冲突下基层人机协同中的策略性调适——基于Y市S镇秸秆禁烧的案例分析",
+        "url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/939c12014e9cfe4fbead1778b850c707",
+        "official_url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/939c12014e9cfe4fbead1778b850c707",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "钟伟军, 解晓燕",
+        "published_at": "2026-04-13",
+        "issue_date": "2019-04",
+        "first_seen_at": "2026-05-28",
+        "display_date": "2026-04-13",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "cnki-portal-paper",
+        "date_source": "meta_published",
+        "abstract": "人工智能（AI）技术在基层治理中的应用不断推动着基层治理数字化的深度转型，也引发人机协同的问题。本研究旨在揭示算法标准化逻辑与基层复杂情境之间的冲突机理及缓解机制，基于“技术与制度的双重调适”理论框架，采用案例研究方法，以Y市S镇秸秆禁烧实践为分析对象，系统考察了人工智能应用引发的责任失衡与基层应对策略。研究发现：人工智能技术强化了纵向问责，提升了处置效率，但也造成算法与治理情境的紧张关系。催生出基层干部的策略性应对行为，包括人工复核下的证据化叙事、技术操作权下放下的人机赛跑及时段性默契下的差异化运作等。这种策略性人机调适模式虽然能修正技术偏差，缓解多重责任压力，但由于并未改变制度偏差，而蕴含着数字形式主义与算法规则虚化等风险。在人工智能不断嵌入基层的背景下，需要建构规范化的调适机制以实现有效的人机协同。本研究不仅为分析中国特殊情境下人工智能嵌入基层治理的具体机制提供了新的分析视角，也为反思我国基层治理的数字化转型提供了有价值的启示。",
+        "keywords": [
+          "人机协同",
+          "基层治理",
+          "策略性调适",
+          "秸秆禁烧",
+          "算法—情境冲突"
+        ]
+      },
+      "response": {
+        "ok": true,
+        "status": 200,
+        "url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/939c12014e9cfe4fbead1778b850c707"
+      },
+      "addedAbstract": true,
+      "keywords": 5
+    }
+  ]
+}

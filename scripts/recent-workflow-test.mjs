@@ -257,6 +257,8 @@ const macrodatasDirectoryRun = buildRecentWorkflow([
         title: "目录页中的第一篇文章",
         url: "https://www.macrodatas.cn/article/1779681420#:~:text=%E7%9B%AE%E5%BD%95%E9%A1%B5%E4%B8%AD%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0",
         date: "2026-05-25",
+        abstract: "第一篇文章的摘要",
+        keywords: ["关键词一", "关键词二"],
       },
       {
         title: "目录页中的第二篇文章",
@@ -276,6 +278,9 @@ assert.equal(macrodatasDirectoryRun.summary.push_queue_articles, 2);
 assert.deepEqual(macrodatasDirectoryRun.push_queue.map((article) => article.link_status), ["needs_official_pdf", "needs_official_pdf"]);
 assert.deepEqual(macrodatasDirectoryRun.push_queue.map((article) => article.url), ["", ""]);
 assert.equal(macrodatasDirectoryRun.push_queue.every((article) => article.discovery_url.includes("macrodatas.cn/article/1779681420")), true);
+const macrodatasArticleWithAbstract = macrodatasDirectoryRun.push_queue.find((article) => article.title === "目录页中的第一篇文章");
+assert.equal(macrodatasArticleWithAbstract.abstract, "第一篇文章的摘要");
+assert.deepEqual(macrodatasArticleWithAbstract.keywords, ["关键词一", "关键词二"]);
 
 const volatileUrlFirstRun = buildRecentWorkflow([
   {

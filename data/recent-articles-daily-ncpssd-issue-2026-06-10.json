@@ -1,0 +1,422 @@
+{
+  "summary": {
+    "checked_at": "2026-06-10T02:16:03.020Z",
+    "since": "2000-01-01",
+    "until": "2026-06-10",
+    "sources_total": 22,
+    "sources_ready": 22,
+    "push_queue_articles": 0,
+    "abstract_backfill": true,
+    "ncpssd_issue_backfill": true,
+    "backfill_sources": [
+      "ncpssd-mobile-issue",
+      "ncpssd-article-api"
+    ]
+  },
+  "push_queue": [],
+  "results": [
+    {
+      "article": {
+        "id": "fafa4a06d3bdf9a2",
+        "journal_id": "j11",
+        "source_journal_id": "j11",
+        "journal_name": "会计研究",
+        "title": "地方债管理体制改革与企业资本结构动态调整",
+        "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=8D313590-58B3-4720-B256-5D9C324C03B9&ID=32FCEF59-EA94-4536-A19B-D6AC6AE95927",
+        "official_url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=8D313590-58B3-4720-B256-5D9C324C03B9&ID=32FCEF59-EA94-4536-A19B-D6AC6AE95927",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "宋建波 等",
+        "published_at": "",
+        "issue_date": "2026-05",
+        "first_seen_at": "2026-06-10",
+        "display_date": "2026-05",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "asc-current-issue-html",
+        "date_source": "issue_loop"
+      },
+      "addedAbstract": false,
+      "response": {
+        "status": 200,
+        "error": "title_not_found",
+        "issue_url": "https://m.ncpssd.cn/journal/details?gch=96456X&langType=1&nav=1&years=2026&num=5",
+        "candidates": 0
+      }
+    },
+    {
+      "article": {
+        "id": "00b10ba179e137ab",
+        "journal_id": "j11",
+        "source_journal_id": "j11",
+        "journal_name": "会计研究",
+        "title": "父子共同决策:“掏空手段”还是“长期选择”——基于企业股价崩...",
+        "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=427D87AE-B00D-4171-A097-C34C21A97E51&ID=32FCEF59-EA94-4536-A19B-D6AC6AE95927",
+        "official_url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=427D87AE-B00D-4171-A097-C34C21A97E51&ID=32FCEF59-EA94-4536-A19B-D6AC6AE95927",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "苏春 等",
+        "published_at": "",
+        "issue_date": "2026-05",
+        "first_seen_at": "2026-06-10",
+        "display_date": "2026-05",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "asc-current-issue-html",
+        "date_source": "issue_loop"
+      },
+      "addedAbstract": false,
+      "response": {
+        "status": 200,
+        "error": "title_not_found",
+        "issue_url": "https://m.ncpssd.cn/journal/details?gch=96456X&langType=1&nav=1&years=2026&num=5",
+        "candidates": 0
+      }
+    },
+    {
+      "article": {
+        "id": "aeeba2953788eeef",
+        "journal_id": "j11",
+        "source_journal_id": "j11",
+        "journal_name": "会计研究",
+        "title": "高管大数据思维与企业创新水平——基于机器学习的研究",
+        "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=6ABC47AF-41CC-49DF-8FFA-36B91B123344&ID=32FCEF59-EA94-4536-A19B-D6AC6AE95927",
+        "official_url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=6ABC47AF-41CC-49DF-8FFA-36B91B123344&ID=32FCEF59-EA94-4536-A19B-D6AC6AE95927",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "唐雪松 等",
+        "published_at": "",
+        "issue_date": "2026-05",
+        "first_seen_at": "2026-06-10",
+        "display_date": "2026-05",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "asc-current-issue-html",
+        "date_source": "issue_loop"
+      },
+      "addedAbstract": false,
+      "response": {
+        "status": 200,
+        "error": "title_not_found",
+        "issue_url": "https://m.ncpssd.cn/journal/details?gch=96456X&langType=1&nav=1&years=2026&num=5",
+        "candidates": 0
+      }
+    },
+    {
+      "article": {
+        "id": "ae009f39e25015d1",
+        "journal_id": "j11",
+        "source_journal_id": "j11",
+        "journal_name": "会计研究",
+        "title": "极端气候风险与企业合并范围异化",
+        "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=A6AEBFA6-E39E-46D0-9329-DF2DF478B75C&ID=32FCEF59-EA94-4536-A19B-D6AC6AE95927",
+        "official_url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=A6AEBFA6-E39E-46D0-9329-DF2DF478B75C&ID=32FCEF59-EA94-4536-A19B-D6AC6AE95927",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "王成龙 等",
+        "published_at": "",
+        "issue_date": "2026-05",
+        "first_seen_at": "2026-06-10",
+        "display_date": "2026-05",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "asc-current-issue-html",
+        "date_source": "issue_loop"
+      },
+      "addedAbstract": false,
+      "response": {
+        "status": 200,
+        "error": "title_not_found",
+        "issue_url": "https://m.ncpssd.cn/journal/details?gch=96456X&langType=1&nav=1&years=2026&num=5",
+        "candidates": 0
+      }
+    },
+    {
+      "article": {
+        "id": "1c18a90af083e3ed",
+        "journal_id": "j11",
+        "source_journal_id": "j11",
+        "journal_name": "会计研究",
+        "title": "内部人减持会利用投资者乐观预期吗——来自业绩说明会的证据",
+        "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=C89CF557-0766-466E-8BA3-2036E61B32D5&ID=32FCEF59-EA94-4536-A19B-D6AC6AE95927",
+        "official_url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=C89CF557-0766-466E-8BA3-2036E61B32D5&ID=32FCEF59-EA94-4536-A19B-D6AC6AE95927",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "李弄文 等",
+        "published_at": "",
+        "issue_date": "2026-05",
+        "first_seen_at": "2026-06-10",
+        "display_date": "2026-05",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "asc-current-issue-html",
+        "date_source": "issue_loop"
+      },
+      "addedAbstract": false,
+      "response": {
+        "status": 200,
+        "error": "title_not_found",
+        "issue_url": "https://m.ncpssd.cn/journal/details?gch=96456X&langType=1&nav=1&years=2026&num=5",
+        "candidates": 0
+      }
+    },
+    {
+      "article": {
+        "id": "1be0c0629ba7d66d",
+        "journal_id": "j11",
+        "source_journal_id": "j11",
+        "journal_name": "会计研究",
+        "title": "企业组织文化与管理会计成效——基于A集团平衡计分卡实践分析",
+        "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=FA33F43F-D4EF-4706-9D4C-17DD539B5B46&ID=32FCEF59-EA94-4536-A19B-D6AC6AE95927",
+        "official_url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=FA33F43F-D4EF-4706-9D4C-17DD539B5B46&ID=32FCEF59-EA94-4536-A19B-D6AC6AE95927",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "郭姗 等",
+        "published_at": "",
+        "issue_date": "2026-05",
+        "first_seen_at": "2026-06-10",
+        "display_date": "2026-05",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "asc-current-issue-html",
+        "date_source": "issue_loop"
+      },
+      "addedAbstract": false,
+      "response": {
+        "status": 200,
+        "error": "title_not_found",
+        "issue_url": "https://m.ncpssd.cn/journal/details?gch=96456X&langType=1&nav=1&years=2026&num=5",
+        "candidates": 0
+      }
+    },
+    {
+      "article": {
+        "id": "2236a6708617acec",
+        "journal_id": "j11",
+        "source_journal_id": "j11",
+        "journal_name": "会计研究",
+        "title": "司法改善与公司价值:来自司法改革的经验证据",
+        "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=42A7AB03-A9B8-4822-8BDA-4A215BE5D69A&ID=32FCEF59-EA94-4536-A19B-D6AC6AE95927",
+        "official_url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=42A7AB03-A9B8-4822-8BDA-4A215BE5D69A&ID=32FCEF59-EA94-4536-A19B-D6AC6AE95927",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "吴思锐 等",
+        "published_at": "",
+        "issue_date": "2026-05",
+        "first_seen_at": "2026-06-10",
+        "display_date": "2026-05",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "asc-current-issue-html",
+        "date_source": "issue_loop"
+      },
+      "addedAbstract": false,
+      "response": {
+        "status": 200,
+        "error": "title_not_found",
+        "issue_url": "https://m.ncpssd.cn/journal/details?gch=96456X&langType=1&nav=1&years=2026&num=5",
+        "candidates": 0
+      }
+    },
+    {
+      "article": {
+        "id": "12d4c0d064e3fefe",
+        "journal_id": "j11",
+        "source_journal_id": "j11",
+        "journal_name": "会计研究",
+        "title": "证券审计业务资质管制放松诱发了审计意见购买吗",
+        "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=9946925A-E68C-4C9E-A298-41458F4FBE4D&ID=32FCEF59-EA94-4536-A19B-D6AC6AE95927",
+        "official_url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=9946925A-E68C-4C9E-A298-41458F4FBE4D&ID=32FCEF59-EA94-4536-A19B-D6AC6AE95927",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "曾泉 等",
+        "published_at": "",
+        "issue_date": "2026-05",
+        "first_seen_at": "2026-06-10",
+        "display_date": "2026-05",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "asc-current-issue-html",
+        "date_source": "issue_loop"
+      },
+      "addedAbstract": false,
+      "response": {
+        "status": 200,
+        "error": "title_not_found",
+        "issue_url": "https://m.ncpssd.cn/journal/details?gch=96456X&langType=1&nav=1&years=2026&num=5",
+        "candidates": 0
+      }
+    },
+    {
+      "article": {
+        "id": "77e30fbeaeec33f0",
+        "journal_id": "j11",
+        "source_journal_id": "j11",
+        "journal_name": "会计研究",
+        "title": "政府财会监督与企业债务期限结构调整",
+        "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=31B6C653-B616-4B6D-B100-B393EEF583B7&ID=32FCEF59-EA94-4536-A19B-D6AC6AE95927",
+        "official_url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=31B6C653-B616-4B6D-B100-B393EEF583B7&ID=32FCEF59-EA94-4536-A19B-D6AC6AE95927",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "刘子怡 等",
+        "published_at": "",
+        "issue_date": "2026-05",
+        "first_seen_at": "2026-06-10",
+        "display_date": "2026-05",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "asc-current-issue-html",
+        "date_source": "issue_loop"
+      },
+      "addedAbstract": false,
+      "response": {
+        "status": 200,
+        "error": "title_not_found",
+        "issue_url": "https://m.ncpssd.cn/journal/details?gch=96456X&langType=1&nav=1&years=2026&num=5",
+        "candidates": 0
+      }
+    },
+    {
+      "article": {
+        "id": "e31ab5285e2edd9c",
+        "journal_id": "j11",
+        "source_journal_id": "j11",
+        "journal_name": "会计研究",
+        "title": "政府采购订单影响审计师收费决策吗",
+        "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=A0642C1C-75D3-43B9-98C3-74620D4B094C&ID=32FCEF59-EA94-4536-A19B-D6AC6AE95927",
+        "official_url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=A0642C1C-75D3-43B9-98C3-74620D4B094C&ID=32FCEF59-EA94-4536-A19B-D6AC6AE95927",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "江琳 等",
+        "published_at": "",
+        "issue_date": "2026-05",
+        "first_seen_at": "2026-06-10",
+        "display_date": "2026-05",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "asc-current-issue-html",
+        "date_source": "issue_loop"
+      },
+      "addedAbstract": false,
+      "response": {
+        "status": 200,
+        "error": "title_not_found",
+        "issue_url": "https://m.ncpssd.cn/journal/details?gch=96456X&langType=1&nav=1&years=2026&num=5",
+        "candidates": 0
+      }
+    },
+    {
+      "article": {
+        "id": "e988339371fd3f61",
+        "journal_id": "j11",
+        "source_journal_id": "j11",
+        "journal_name": "会计研究",
+        "title": "政府数字化转型与企业“经济—环境”绩效双赢:来自“大数据局”...",
+        "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=EBDED64D-3A64-440E-AAA8-084E971BB8F4&ID=32FCEF59-EA94-4536-A19B-D6AC6AE95927",
+        "official_url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=EBDED64D-3A64-440E-AAA8-084E971BB8F4&ID=32FCEF59-EA94-4536-A19B-D6AC6AE95927",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "曾辉祥 等",
+        "published_at": "",
+        "issue_date": "2026-05",
+        "first_seen_at": "2026-06-10",
+        "display_date": "2026-05",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "asc-current-issue-html",
+        "date_source": "issue_loop"
+      },
+      "addedAbstract": false,
+      "response": {
+        "status": 200,
+        "error": "title_not_found",
+        "issue_url": "https://m.ncpssd.cn/journal/details?gch=96456X&langType=1&nav=1&years=2026&num=5",
+        "candidates": 0
+      }
+    },
+    {
+      "article": {
+        "id": "4280746850083bbf",
+        "journal_id": "j11",
+        "source_journal_id": "j11",
+        "journal_name": "会计研究",
+        "title": "资本市场法律制度变革与会计师事务所变更——基于新《证券法》的...",
+        "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=251208E6-80E2-400B-BC2D-56B6A75179A4&ID=32FCEF59-EA94-4536-A19B-D6AC6AE95927",
+        "official_url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=251208E6-80E2-400B-BC2D-56B6A75179A4&ID=32FCEF59-EA94-4536-A19B-D6AC6AE95927",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "黄欣怡 等",
+        "published_at": "",
+        "issue_date": "2026-05",
+        "first_seen_at": "2026-06-10",
+        "display_date": "2026-05",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "asc-current-issue-html",
+        "date_source": "issue_loop"
+      },
+      "addedAbstract": false,
+      "response": {
+        "status": 200,
+        "error": "title_not_found",
+        "issue_url": "https://m.ncpssd.cn/journal/details?gch=96456X&langType=1&nav=1&years=2026&num=5",
+        "candidates": 0
+      }
+    },
+    {
+      "article": {
+        "id": "c2c3fd2bcc5a6157",
+        "journal_id": "j11",
+        "source_journal_id": "j11",
+        "journal_name": "会计研究",
+        "title": "资源环境审计协同:理论缘起与实现机制研究",
+        "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=9D1672CC-744D-4451-BBC8-3DE631BF7A70&ID=32FCEF59-EA94-4536-A19B-D6AC6AE95927",
+        "official_url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=9D1672CC-744D-4451-BBC8-3DE631BF7A70&ID=32FCEF59-EA94-4536-A19B-D6AC6AE95927",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "崔雯雯",
+        "published_at": "",
+        "issue_date": "2026-05",
+        "first_seen_at": "2026-06-10",
+        "display_date": "2026-05",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "asc-current-issue-html",
+        "date_source": "issue_loop"
+      },
+      "addedAbstract": false,
+      "response": {
+        "status": 200,
+        "error": "title_not_found",
+        "issue_url": "https://m.ncpssd.cn/journal/details?gch=96456X&langType=1&nav=1&years=2026&num=5",
+        "candidates": 0
+      }
+    }
+  ]
+}

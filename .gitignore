@@ -1,5 +1,8 @@
 logs/*.log
 data/fetch-smoke-results-*.json
+data/.pdf-cache/
+.DS_Store
+.claude/
 .venv/
 backend/.venv/
 backend/.env
@@ -10,3 +13,4 @@ backend/tests/**/__pycache__/
 backend/storage/
 .superpowers/
 .worktrees/
+.vercel

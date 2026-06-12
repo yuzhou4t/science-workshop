@@ -1,0 +1,216 @@
+{
+  "summary": {
+    "checked_at": "2026-06-06T07:09:16.210Z",
+    "since": "2000-01-01",
+    "until": "2026-06-06",
+    "sources_total": 22,
+    "sources_ready": 21,
+    "push_queue_articles": 0,
+    "abstract_backfill": true,
+    "ncpssd_api_backfill": true,
+    "backfill_sources": [
+      "ncpssd-article-api"
+    ]
+  },
+  "push_queue": [],
+  "results": [
+    {
+      "article": {
+        "id": "7c539d04921fc9c2",
+        "journal_id": "j10",
+        "source_journal_id": "j10",
+        "journal_name": "中国行政管理",
+        "title": "地方政府改革与组织多样化——基于“制度环境-地方负责人-组织环境”三角框架的多案例研究",
+        "url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026004009&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "official_url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026004009&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "pdf_url": "",
+        "discovery_url": "https://www.cqvip.com/doc/journal/7203589701?sign=0e15e65b8867f35a2fb04600dfb381e19d684654b0512806b916039d383b61cf&expireTime=1796263309090&resourceId=7203589701&type=1",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "门钰璐, 张小劲, 王丛虎",
+        "published_at": "",
+        "issue_date": "2026-04",
+        "first_seen_at": "2026-06-06",
+        "display_date": "2026-04",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "cqvip-journal-html",
+        "date_source": "",
+        "official_source": "ncpssd",
+        "reader_url": "https://www.ncpssd.org/Literature/readurl?id=ZGXZGL2026004009"
+      },
+      "addedAbstract": false,
+      "keywords": 0,
+      "response": {
+        "status": 0,
+        "attempt": 3,
+        "error": "fetch failed"
+      }
+    },
+    {
+      "article": {
+        "id": "47322f9b54501375",
+        "journal_id": "j10",
+        "source_journal_id": "j10",
+        "journal_name": "中国行政管理",
+        "title": "多重任务逻辑如何塑造执行偏好——事故隐患治理的任务属性与决策权衡",
+        "url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026004014&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "official_url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026004014&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "pdf_url": "",
+        "discovery_url": "https://www.cqvip.com/doc/journal/7203589706?sign=0ef77bc7559403168985e33864938869a63f4ccad37df336227e9f36306e8726&expireTime=1796263309090&resourceId=7203589706&type=1",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "于翔, 李智超",
+        "published_at": "",
+        "issue_date": "2026-04",
+        "first_seen_at": "2026-06-06",
+        "display_date": "2026-04",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "cqvip-journal-html",
+        "date_source": "",
+        "official_source": "ncpssd",
+        "reader_url": "https://www.ncpssd.org/Literature/readurl?id=ZGXZGL2026004014"
+      },
+      "addedAbstract": false,
+      "keywords": 0,
+      "response": {
+        "status": 200,
+        "attempt": 3,
+        "error": "json_parse_failed"
+      }
+    },
+    {
+      "article": {
+        "id": "4f3ffcbf699e7d98",
+        "journal_id": "j10",
+        "source_journal_id": "j10",
+        "journal_name": "中国行政管理",
+        "title": "机关资产管理效能因何而异?——基于产权理论的探析",
+        "url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026004008&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "official_url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026004008&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "pdf_url": "",
+        "discovery_url": "https://www.cqvip.com/doc/journal/7203589700?sign=63223aba13605cb3d53964ce523288be017e2c8745f31ea31975559712cf6153&expireTime=1796263309090&resourceId=7203589700&type=1",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "郭宏樟, 李妍",
+        "published_at": "",
+        "issue_date": "2026-04",
+        "first_seen_at": "2026-06-06",
+        "display_date": "2026-04",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "cqvip-journal-html",
+        "date_source": "",
+        "official_source": "ncpssd",
+        "reader_url": "https://www.ncpssd.org/Literature/readurl?id=ZGXZGL2026004008"
+      },
+      "addedAbstract": false,
+      "keywords": 0,
+      "response": {
+        "status": 200,
+        "attempt": 3,
+        "error": "json_parse_failed"
+      }
+    },
+    {
+      "article": {
+        "id": "fca55a3ee38b8569",
+        "journal_id": "j10",
+        "source_journal_id": "j10",
+        "journal_name": "中国行政管理",
+        "title": "农村集体经济组织赋能互助养老的价值机理与共创进路",
+        "url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026004012&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "official_url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026004012&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "pdf_url": "",
+        "discovery_url": "https://www.cqvip.com/doc/journal/7203589704?sign=46b795c4d7f443d933cb4d6d5de6e73d2aba132a04e25295af1f05879cf84928&expireTime=1796263309090&resourceId=7203589704&type=1",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "张明, 谢根瑞, 陈志杰",
+        "published_at": "",
+        "issue_date": "2026-04",
+        "first_seen_at": "2026-06-06",
+        "display_date": "2026-04",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "cqvip-journal-html",
+        "date_source": "",
+        "official_source": "ncpssd",
+        "reader_url": "https://www.ncpssd.org/Literature/readurl?id=ZGXZGL2026004012"
+      },
+      "addedAbstract": false,
+      "keywords": 0,
+      "response": {
+        "status": 200,
+        "attempt": 3,
+        "error": "json_parse_failed"
+      }
+    },
+    {
+      "article": {
+        "id": "22f4bb6e9ec9a477",
+        "journal_id": "j10",
+        "source_journal_id": "j10",
+        "journal_name": "中国行政管理",
+        "title": "企业服务热线驱动营商环境优化的实践路径",
+        "url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026004015&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "official_url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026004015&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "pdf_url": "",
+        "discovery_url": "https://www.cqvip.com/doc/journal/7203589707?sign=d15620806865c227506a5b9b7b3a6518b490e2426b9e104757faad2544f5466c&expireTime=1796263309090&resourceId=7203589707&type=1",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "宋大伟",
+        "published_at": "",
+        "issue_date": "2026-04",
+        "first_seen_at": "2026-06-06",
+        "display_date": "2026-04",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "cqvip-journal-html",
+        "date_source": "",
+        "official_source": "ncpssd",
+        "reader_url": "https://www.ncpssd.org/Literature/readurl?id=ZGXZGL2026004015"
+      },
+      "addedAbstract": false,
+      "keywords": 0,
+      "response": {
+        "status": 200,
+        "attempt": 3,
+        "error": "json_parse_failed"
+      }
+    },
+    {
+      "article": {
+        "id": "9f7d68943cca3926",
+        "journal_id": "j10",
+        "source_journal_id": "j10",
+        "journal_name": "中国行政管理",
+        "title": "认知—适配—共鸣:“接诉即办”的国际认同与跨域推介",
+        "url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026004004&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "official_url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026004004&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "pdf_url": "",
+        "discovery_url": "https://www.cqvip.com/doc/journal/7203589696?sign=7ce32976c05f572c84e044c245db086066081c1125378d5e9e46ee4bf3657090&expireTime=1796263309090&resourceId=7203589696&type=1",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "原珂, 黄腾龙",
+        "published_at": "",
+        "issue_date": "2026-04",
+        "first_seen_at": "2026-06-06",
+        "display_date": "2026-04",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "cqvip-journal-html",
+        "date_source": "",
+        "official_source": "ncpssd",
+        "reader_url": "https://www.ncpssd.org/Literature/readurl?id=ZGXZGL2026004004"
+      },
+      "addedAbstract": false,
+      "keywords": 0,
+      "response": {
+        "status": 200,
+        "attempt": 3,
+        "error": "json_parse_failed"
+      }
+    }
+  ]
+}

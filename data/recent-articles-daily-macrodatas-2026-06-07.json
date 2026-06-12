@@ -1,0 +1,29 @@
+{
+  "summary": {
+    "checked_at": "2026-06-07T02:39:34.982Z",
+    "since": "2000-01-01",
+    "until": "2026-06-07",
+    "sources_total": 22,
+    "sources_ready": 1,
+    "push_queue_articles": 0,
+    "abstract_backfill": true,
+    "macrodatas_abstract_backfill": true,
+    "backfill_sources": [
+      "macrodatas-issue-page"
+    ]
+  },
+  "push_queue": [],
+  "results": [
+    {
+      "journal": "会计研究",
+      "discovery_url": "https://www.macrodatas.cn/list/1/0/0/%E4%BC%9A%E8%AE%A1%E7%A0%94%E7%A9%B6%202026%E5%B9%B4%E7%AC%AC",
+      "discovery_status": 200,
+      "discovered_issues": 2,
+      "discovered_issue_titles": [
+        "《 会计 研究 》2024 年第 5期论文、摘要 马克数据网: 发布 数据来源：《会计研究》2024年第5期 --> --> 免费交流 其他数据",
+        "《 会计 研究 》2024 年第 5期论文、摘要 2024-09-23 09:54:53 --> 马克数据网: 发布 数据来源：《会计研究》2024年第5期 --> --> --> --> --> --> --> -->"
+      ],
+      "addedAbstract": false
+    }
+  ]
+}

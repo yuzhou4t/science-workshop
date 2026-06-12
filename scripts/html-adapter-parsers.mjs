@@ -1,3 +1,5 @@
+import { macrodatasArticleSectionUrl } from "./macrodatas-url.mjs";
+
 function decodeEntities(value = "") {
   return String(value)
     .replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, "$1")
@@ -51,6 +53,63 @@ function partialAuthors(value = "") {
 
 function issueDate(year, issue) {
   return year && issue ? `${year}-${String(issue).padStart(2, "0")}` : "";
+}
+
+function compactText(value = "") {
+  return stripTags(value)
+    .normalize("NFKC")
+    .replace(/[：﹕]/g, ":")
+    .replace(/[‐‑‒–—]/g, "-")
+    .replace(/\s+/g, "")
+    .trim();
+}
+
+function parseMacrodatasKeywords(value = "") {
+  return stripTags(value)
+    .split(/[\s,，、;；]+/)
+    .map((keyword) => keyword.trim())
+    .filter(Boolean);
+}
+
+function parseMacrodatasDetailSections(html = "") {
+  const text = stripTags(html);
+  const details = [];
+  const sectionRegex = /#\s*(\d{2})\s*#([\s\S]*?)(?=#\s*\d{2}\s*#|$)/g;
+  for (const match of text.matchAll(sectionRegex)) {
+    const section = match[2];
+    const title = section.match(/题目[:：]\s*([\s\S]*?)\s*作者[:：]/)?.[1]?.trim() || "";
+    const abstract = section.match(/摘要[:：]\s*([\s\S]*?)\s*关键词[:：]/)?.[1]?.trim() || "";
+    const keywordText = section.match(/关键词[:：]\s*([\s\S]*?)(?:\s*录用周期[:：]|\s*马克相关数据[:：]|\s*收稿时间[:：]|$)/)?.[1] || "";
+    details.push({
+      number: match[1],
+      title,
+      title_key: compactText(title),
+      abstract,
+      keywords: parseMacrodatasKeywords(keywordText),
+    });
+  }
+  return details;
+}
+
+function enrichMacrodatasArticle(article, detail) {
+  if (!detail) return article;
+  return {
+    ...article,
+    abstract: detail.abstract || article.abstract || "",
+    keywords: detail.keywords?.length ? detail.keywords : article.keywords || [],
+  };
+}
+
+function dedupeByTitle(items) {
+  const seen = new Set();
+  const deduped = [];
+  for (const item of items) {
+    const key = compactText(item.title);
+    if (!key || seen.has(key)) continue;
+    seen.add(key);
+    deduped.push(item);
+  }
+  return deduped;
 }
 
 export function parseCieCurrentArticles(html = "", baseUrl = "") {
@@ -134,4 +193,48 @@ export function parseJmscReaderIssueArticles(html = "", baseUrl = "") {
     });
   }
   return articles.filter((article) => article.title && article.url);
+}
+
+export function parseMacrodatasIssuePageArticles(html = "", pageUrl = "") {
+  const releaseDate = String(html).match(/document\.write\("([^"]{10})/)?.[1] || "";
+  const details = parseMacrodatasDetailSections(html);
+  const detailByTitle = new Map(details.filter((detail) => detail.title_key).map((detail) => [detail.title_key, detail]));
+  const detailByNumber = new Map(details.map((detail) => [detail.number, detail]));
+  const articles = [];
+  const entryRegex = /<p[^>]*>\s*(\d{2})\s+([\s\S]*?)<\/p>\s*<p[^>]*style=["'][^"']*color:[^"']*["'][^>]*>([\s\S]*?)<\/p>/gi;
+  for (const match of String(html).matchAll(entryRegex)) {
+    const number = match[1];
+    const title = stripTags(match[2]);
+    if (!title) continue;
+    const detail = detailByTitle.get(compactText(title)) || detailByNumber.get(number);
+    articles.push(enrichMacrodatasArticle({
+      title,
+      url: macrodatasArticleSectionUrl(pageUrl, title),
+      date: releaseDate,
+      authors: stripTags(match[3]),
+    }, detail));
+  }
+
+  if (articles.length) return dedupeByTitle(articles);
+
+  const text = stripTags(html);
+  let directory = text.slice(Math.max(0, text.indexOf("目录")));
+  const firstItemIndex = directory.search(/\b01\s+/);
+  if (firstItemIndex >= 0) directory = directory.slice(firstItemIndex);
+  const firstDetailIndex = directory.search(/#\s*01\s*#/);
+  if (firstDetailIndex > 0) directory = directory.slice(0, firstDetailIndex);
+  const fallbackRegex = /(?:^|\s)(\d{2})\s+(.+?)(?=\s+\d{2}\s+|$)/g;
+  for (const match of directory.matchAll(fallbackRegex)) {
+    const number = match[1];
+    const title = match[2].trim();
+    if (!title) continue;
+    const detail = detailByTitle.get(compactText(title)) || detailByNumber.get(number);
+    articles.push(enrichMacrodatasArticle({
+      title,
+      url: macrodatasArticleSectionUrl(pageUrl, title),
+      date: releaseDate,
+      authors: "",
+    }, detail));
+  }
+  return dedupeByTitle(articles);
 }

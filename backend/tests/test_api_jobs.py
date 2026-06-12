@@ -118,6 +118,37 @@ def test_create_wechat_writing_job_with_source_text_completes_in_mock_mode(clien
     assert body["artifacts"]["source_bundle.json"]["relative_path"] == "input/source_bundle.json"
 
 
+def test_create_issue_toc_export_job_completes_with_structured_issue(client: TestClient) -> None:
+    response = client.post(
+        "/api/workflows/issue-toc-export/jobs",
+        json={
+            "journal_name": "地理研究",
+            "year": 2026,
+            "volume": 45,
+            "issue": 5,
+            "article_count": 17,
+            "columns": ["气候演化与环境健康", "城市地理", "人口高质量发展", "旅游地理"],
+            "online_note": "全文已在知网上线",
+            "articles": [
+                {
+                    "section": "新文推介",
+                    "title": "4.2 ka BP气候恶化事件对汾河流域史前遗址时空分布的影响及其社会响应",
+                    "authors": "张洁琼，田庆春，张仲伍，高江涛",
+                    "abstract": "基于ArcGIS软件运用核密度估计与最近邻指数等方法，探究气候事件影响。",
+                    "keywords": ["汾河流域", "史前遗址", "4.2 ka BP气候恶化事件"],
+                }
+            ],
+        },
+    )
+
+    assert response.status_code == 200
+    body = response.json()
+    assert body["workflow_type"] == "issue_toc_export"
+    assert body["status"] == "completed"
+    assert body["artifacts"]["issue_toc.json"]["relative_path"] == "input/issue_toc.json"
+    assert body["artifacts"]["final.md"]["relative_path"] == "nodes/final.md"
+
+
 def test_create_wechat_writing_job_accepts_uploaded_material_file(client: TestClient) -> None:
     response = client.post(
         "/api/workflows/wechat-writing/jobs",

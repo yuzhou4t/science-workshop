@@ -35,6 +35,7 @@ await runNodeScript("scripts/fetch-articles-smoke-test.mjs", args);
 const workflow = JSON.parse(await readFile(new URL(`../${workflowFile}`, import.meta.url), "utf8"));
 if (workflow.summary.push_queue_articles > 0) {
   await runNodeScript("scripts/build-front-data.mjs", [`--workflow=${workflowFile}`]);
+  await runNodeScript("scripts/backfill-daily-abstracts.mjs", [`--first-seen-at=${today}`]);
 } else if (!previousState.daily_initialized) {
   console.log(`Daily baseline initialized for ${today}; front data left unchanged.`);
 } else {

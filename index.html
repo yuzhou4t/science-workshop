@@ -12,33 +12,33 @@
     />
     <style>
       :root {
-        --bg-0: #0b0f1a;
-        --bg-1: #111827;
-        --bg-2: #1e293b;
-        --surface-0: rgba(255, 255, 255, 0.03);
-        --surface-1: rgba(255, 255, 255, 0.05);
-        --surface-2: rgba(255, 255, 255, 0.08);
-        --surface-card: rgba(255, 255, 255, 0.045);
-        --surface-elevated: linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.035));
-        --text-0: #f1f5f9;
-        --text-1: #94a3b8;
+        --bg-0: #090d16;
+        --bg-1: #0f1422;
+        --bg-2: #161c2c;
+        --surface-0: rgba(255, 255, 255, 0.015);
+        --surface-1: rgba(255, 255, 255, 0.03);
+        --surface-2: rgba(255, 255, 255, 0.05);
+        --surface-card: rgba(13, 18, 30, 0.85);
+        --surface-elevated: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+        --text-0: #f8fafc;
+        --text-1: #cbd5e1;
         --text-2: #64748b;
-        --border: rgba(255, 255, 255, 0.07);
-        --border-strong: rgba(255, 255, 255, 0.12);
-        --border-soft: rgba(255, 255, 255, 0.045);
-        --border-emphasis: rgba(255, 255, 255, 0.2);
-        --accent: #22d3ee;
-        --accent-rgb: 34, 211, 238;
-        --accent-hover: #67e8f9;
+        --border: rgba(255, 255, 255, 0.035);
+        --border-strong: rgba(255, 255, 255, 0.08);
+        --border-soft: rgba(255, 255, 255, 0.02);
+        --border-emphasis: rgba(255, 255, 255, 0.16);
+        --accent: #14b8a6;
+        --accent-rgb: 20, 184, 166;
+        --accent-hover: #2dd4bf;
         --emerald: #34d399;
         --amber: #fbbf24;
         --rose: #fb7185;
         --nav-width: 236px;
-        --radius: 13px;
+        --radius: 14px;
         --radius-sm: 9px;
-        --radius-lg: 18px;
-        --shadow-card: 0 1px 1px rgba(0, 0, 0, 0.2), 0 12px 30px -14px rgba(0, 0, 0, 0.55);
-        --shadow-card-hover: 0 2px 4px rgba(0, 0, 0, 0.24), 0 26px 56px -20px rgba(0, 0, 0, 0.62);
+        --radius-lg: 20px;
+        --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.35);
+        --shadow-card-hover: 0 12px 40px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(var(--accent-rgb), 0.2);
         --ring: 0 0 0 3px rgba(var(--accent-rgb), 0.16);
         --glow: 0 0 0 1px rgba(var(--accent-rgb), 0.18), 0 8px 26px -10px rgba(var(--accent-rgb), 0.4);
         --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
@@ -47,29 +47,29 @@
       }
 
       :root[data-theme="light"] {
-        --bg-0: #fafbfc;
-        --bg-1: #f1f4f8;
+        --bg-0: #f8fafc;
+        --bg-1: #f1f5f9;
         --bg-2: #e2e8f0;
-        --surface-0: rgba(15, 23, 42, 0.025);
-        --surface-1: rgba(15, 23, 42, 0.04);
-        --surface-2: rgba(15, 23, 42, 0.06);
-        --surface-card: #ffffff;
+        --surface-0: rgba(15, 23, 42, 0.015);
+        --surface-1: rgba(15, 23, 42, 0.03);
+        --surface-2: rgba(15, 23, 42, 0.05);
+        --surface-card: rgba(255, 255, 255, 0.75);
         --surface-elevated: linear-gradient(180deg, #ffffff, rgba(255, 255, 255, 0.62));
         --text-0: #0f172a;
         --text-1: #475569;
-        --text-2: #64748b;
-        --border: rgba(15, 23, 42, 0.08);
-        --border-strong: rgba(15, 23, 42, 0.14);
-        --border-soft: rgba(15, 23, 42, 0.05);
-        --border-emphasis: rgba(15, 23, 42, 0.22);
-        --accent: #0891b2;
-        --accent-rgb: 8, 145, 178;
-        --accent-hover: #155e75;
+        --text-2: #94a3b8;
+        --border: rgba(15, 23, 42, 0.05);
+        --border-strong: rgba(15, 23, 42, 0.09);
+        --border-soft: rgba(15, 23, 42, 0.03);
+        --border-emphasis: rgba(15, 23, 42, 0.16);
+        --accent: #0f766e;
+        --accent-rgb: 15, 118, 110;
+        --accent-hover: #115e59;
         --emerald: #047857;
         --amber: #b45309;
         --rose: #be123c;
-        --shadow-card: 0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px rgba(15, 23, 42, 0.06);
-        --shadow-card-hover: 0 1px 2px rgba(15, 23, 42, 0.06), 0 16px 32px rgba(15, 23, 42, 0.1);
+        --shadow-card: 0 4px 20px rgba(15, 23, 42, 0.03), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+        --shadow-card-hover: 0 10px 30px rgba(15, 23, 42, 0.07), 0 0 0 1px rgba(var(--accent-rgb), 0.1);
         color-scheme: light;
       }
 
@@ -89,10 +89,7 @@
       body {
         margin: 0;
         min-height: 100%;
-        background:
-          radial-gradient(1100px 520px at 84% -8%, rgba(var(--accent-rgb), 0.13), transparent 60%),
-          radial-gradient(900px 600px at -6% 4%, rgba(129, 140, 248, 0.07), transparent 58%),
-          linear-gradient(180deg, var(--bg-0) 0%, var(--bg-1) 60%, var(--bg-0) 100%);
+        background: linear-gradient(180deg, var(--bg-0) 0%, var(--bg-1) 60%, var(--bg-0) 100%);
         background-attachment: fixed;
         color: var(--text-0);
         font-family: "IBM Plex Sans", "Inter", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
@@ -104,10 +101,14 @@
         font-feature-settings: "kern" 1, "liga" 1;
       }
 
+      body.abstract-modal-open {
+        overflow: hidden;
+      }
+
       :root[data-theme="light"] body {
         background:
-          radial-gradient(1100px 520px at 84% -8%, rgba(var(--accent-rgb), 0.08), transparent 60%),
-          radial-gradient(900px 600px at -6% 4%, rgba(99, 102, 241, 0.05), transparent 58%),
+          radial-gradient(1200px 600px at 80% -10%, rgba(99, 102, 241, 0.05), transparent 50%),
+          radial-gradient(1000px 500px at 10% 20%, rgba(20, 184, 166, 0.04), transparent 50%),
           linear-gradient(180deg, var(--bg-0) 0%, var(--bg-1) 100%);
         background-attachment: fixed;
       }
@@ -176,7 +177,9 @@
         gap: 10px;
         padding: 18px 12px 14px;
         border-right: 1px solid var(--border);
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.018));
+        background: rgba(9, 13, 22, 0.65);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
         overflow: hidden;
       }
 
@@ -389,17 +392,21 @@
         border: 1px solid var(--border);
         border-radius: var(--radius);
         background: var(--surface-card);
-        box-shadow: var(--shadow-card), inset 0 1px 0 rgba(255, 255, 255, 0.045);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        box-shadow: var(--shadow-card);
         transition: var(--theme-transition);
       }
 
       :root[data-theme="light"] .card,
       :root[data-theme="light"] .panel {
-        box-shadow: var(--shadow-card), inset 0 1px 0 rgba(15, 23, 42, 0.04);
+        box-shadow: var(--shadow-card);
       }
 
       :root[data-theme="light"] .sidebar {
-        background: linear-gradient(180deg, rgba(15, 23, 42, 0.028), rgba(15, 23, 42, 0.012));
+        background: rgba(255, 255, 255, 0.65);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
       }
 
       .breath-surface {
@@ -425,6 +432,8 @@
         border: 1px solid var(--border);
         border-radius: var(--radius);
         background: var(--surface-card);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
         box-shadow: var(--shadow-card);
       }
 
@@ -722,6 +731,40 @@
         color: var(--text-2);
       }
 
+      input[type="file"].field {
+        padding: 20px;
+        border: 1px dashed var(--border-emphasis);
+        background: rgba(var(--accent-rgb), 0.02);
+        color: var(--text-1);
+        cursor: pointer;
+        transition: all 0.25s ease;
+      }
+
+      input[type="file"].field:hover,
+      input[type="file"].field:focus {
+        border-color: var(--accent);
+        background: rgba(var(--accent-rgb), 0.08);
+        box-shadow: 0 0 0 4px rgba(var(--accent-rgb), 0.1);
+      }
+
+      input[type="file"].field::file-selector-button {
+        padding: 6px 12px;
+        margin-right: 12px;
+        border: 1px solid var(--border-strong);
+        border-radius: 8px;
+        background: var(--surface-2);
+        color: var(--text-0);
+        font-family: inherit;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      input[type="file"].field::file-selector-button:hover {
+        border-color: var(--accent);
+        background: rgba(var(--accent-rgb), 0.1);
+        color: var(--accent);
+      }
+
       .btn {
         min-height: 38px;
         display: inline-flex;
@@ -795,6 +838,148 @@
         gap: 18px;
       }
 
+      .topic-search {
+        display: grid;
+        gap: 14px;
+        margin: 18px 0;
+        padding: 16px;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        background: var(--surface-0);
+      }
+
+      .topic-search-head {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+
+      .topic-search-title {
+        margin: 0;
+        color: var(--text-0);
+        font-size: 16px;
+        font-weight: 850;
+        line-height: 1.25;
+      }
+
+      .topic-search-subtitle {
+        margin-top: 5px;
+        color: var(--text-2);
+        font-size: 12.5px;
+        line-height: 1.6;
+      }
+
+      .topic-search-count {
+        min-height: 30px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 5px 10px;
+        border: 1px solid rgba(var(--accent-rgb), 0.24);
+        border-radius: 999px;
+        background: rgba(var(--accent-rgb), 0.08);
+        color: var(--accent);
+        font-family: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+        font-size: 11px;
+        font-weight: 800;
+      }
+
+      .topic-search-controls {
+        display: grid;
+        gap: 10px;
+      }
+
+      .topic-search-row {
+        display: grid;
+        gap: 7px;
+      }
+
+      .topic-search-label {
+        color: var(--text-2);
+        font-family: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .topic-search-results {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 10px;
+      }
+
+      .topic-search-result {
+        display: grid;
+        gap: 9px;
+        padding: 12px;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        background: var(--surface-card);
+      }
+
+      .topic-search-result-head,
+      .topic-search-actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .topic-search-source {
+        min-width: 0;
+        overflow: hidden;
+        color: var(--text-2);
+        font-size: 11px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .topic-search-title-link {
+        color: var(--text-0);
+        font-size: 14px;
+        font-weight: 800;
+        line-height: 1.45;
+        text-decoration: none;
+      }
+
+      .topic-search-title-link:hover {
+        color: var(--accent-hover);
+      }
+
+      .topic-search-evidence {
+        color: var(--text-1);
+        font-size: 12px;
+        line-height: 1.55;
+      }
+
+      .search-highlight {
+        border-radius: 4px;
+        background: rgba(251, 191, 36, 0.28);
+        color: var(--text-0);
+        padding: 0 2px;
+      }
+
+      .topic-search-empty {
+        padding: 12px;
+        border: 1px dashed var(--border);
+        border-radius: var(--radius);
+        color: var(--text-2);
+        font-size: 12.5px;
+      }
+
+      .topic-search-notice {
+        padding: 9px 11px;
+        border: 1px solid rgba(251, 191, 36, 0.2);
+        border-radius: var(--radius-sm);
+        background: rgba(251, 191, 36, 0.07);
+        color: var(--text-1);
+        font-size: 12px;
+        line-height: 1.55;
+      }
+
       .timeline-day {
         display: grid;
         gap: 10px;
@@ -833,10 +1018,10 @@
         top: 0;
         bottom: 0;
         left: calc(var(--tl-time-w) + (var(--tl-rail-w) / 2));
-        width: 1px;
+        width: 2px;
         transform: translateX(-50%) scaleY(var(--rail-scale));
         transform-origin: 50% 0;
-        background: var(--border-emphasis);
+        background: linear-gradient(180deg, var(--border-emphasis) 0%, rgba(255, 255, 255, 0.03) 90%, transparent 100%);
       }
 
       .timeline-item {
@@ -863,19 +1048,33 @@
         height: 9px;
         border-radius: 999px;
         background: var(--dot, rgba(52, 211, 153, 0.85));
-        box-shadow: 0 0 0 4px var(--bg-0), 0 0 0 5px var(--border-emphasis), 0 0 12px var(--dot, rgba(52, 211, 153, 0.55));
+        box-shadow: 0 0 0 4px var(--bg-0), 0 0 0 5px var(--border-emphasis), 0 0 16px 2px var(--dot, rgba(52, 211, 153, 0.65));
         transform: translateX(-50%);
+        transition: box-shadow 0.2s ease, transform 0.2s ease;
       }
 
       .timeline-card {
         min-width: 0;
+        position: relative;
         padding: 14px 16px;
         border: 1px solid var(--border);
         border-radius: 16px;
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
+        background: radial-gradient(120% 120% at 50% 0%, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0.015) 100%);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
         cursor: pointer;
-        transition: border-color 0.18s ease, background 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+        transition: border-color 0.25s cubic-bezier(0.16, 1, 0.3, 1), background 0.25s ease, box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
         transform-origin: 50% 50%;
+        overflow: hidden;
+      }
+
+      .timeline-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 16px;
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+        pointer-events: none;
       }
 
       :root[data-theme="light"] .timeline-card {
@@ -883,17 +1082,17 @@
       }
 
       .timeline-card:hover {
-        border-color: var(--border-strong);
-        background: var(--surface-2);
-        box-shadow: var(--shadow-card-hover);
+        border-color: rgba(var(--accent-rgb), 0.35);
+        background: radial-gradient(120% 120% at 50% 0%, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.03) 100%);
+        box-shadow: 0 8px 32px -8px rgba(0, 0, 0, 0.3), 0 0 24px -4px rgba(var(--accent-rgb), 0.18);
         transform: translateY(-2px);
       }
 
       .timeline-card.selected {
-        border-color: rgba(var(--accent-rgb), 0.45);
+        border-color: rgba(var(--accent-rgb), 0.34);
         background: var(--surface-2);
-        box-shadow: var(--shadow-card), inset 0 0 0 1px rgba(var(--accent-rgb), 0.18);
-        transform: translateY(-1px);
+        box-shadow: var(--shadow-card), inset 0 0 0 1px rgba(var(--accent-rgb), 0.12);
+        transform: translateY(-0.5px);
       }
 
       :root[data-theme="light"] .timeline-card:hover,
@@ -904,7 +1103,7 @@
       }
 
       .timeline-card.warn {
-        border-color: rgba(251, 191, 36, 0.18);
+        border-color: rgba(210, 173, 100, 0.18);
       }
 
       .timeline-card-head {
@@ -998,6 +1197,114 @@
         flex-wrap: wrap;
       }
 
+      .timeline-abstract-inline {
+        margin-top: 10px;
+        padding: 10px 11px;
+        border: 1px solid rgba(var(--accent-rgb), 0.18);
+        border-radius: 12px;
+        background: rgba(var(--accent-rgb), 0.07);
+        color: var(--text-1);
+        font-size: 12.5px;
+        line-height: 1.72;
+      }
+
+      .timeline-abstract-inline p {
+        margin: 0;
+      }
+
+      .abstract-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 80;
+        background: rgba(2, 6, 23, 0.46);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+      }
+
+      :root[data-theme="light"] .abstract-modal {
+        background: rgba(241, 245, 249, 0.62);
+      }
+
+      .abstract-modal-backdrop {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+        background: transparent;
+        cursor: default;
+      }
+
+      .abstract-popover {
+        position: absolute;
+        top: var(--abstract-top, 88px);
+        left: var(--abstract-left, 50%);
+        width: var(--abstract-width, 560px);
+        height: var(--abstract-height, 160px);
+        overflow: auto;
+        padding: 14px 15px;
+        border: 1px solid rgba(var(--accent-rgb), 0.22);
+        border-radius: 16px;
+        background: linear-gradient(180deg, rgba(var(--accent-rgb), 0.12), rgba(var(--accent-rgb), 0.06)), var(--bg-1);
+        box-shadow: 0 22px 70px -26px rgba(0, 0, 0, 0.78), inset 0 0 0 1px rgba(var(--accent-rgb), 0.08);
+        color: var(--text-1);
+        font-size: 12.8px;
+        line-height: 1.72;
+      }
+
+      :root[data-theme="light"] .abstract-popover {
+        background: linear-gradient(180deg, rgba(var(--accent-rgb), 0.1), rgba(var(--accent-rgb), 0.045)), #ffffff;
+      }
+
+      .abstract-popover p {
+        margin: 8px 0 0;
+      }
+
+      .timeline-abstract-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        margin-bottom: 7px;
+      }
+
+      .timeline-abstract-label {
+        color: var(--text-0);
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      .timeline-abstract-close {
+        border: 0;
+        background: transparent;
+        color: var(--text-2);
+        cursor: pointer;
+        font: inherit;
+        font-size: 12px;
+        font-weight: 700;
+        padding: 0;
+      }
+
+      .timeline-abstract-close:hover {
+        color: var(--accent-hover);
+      }
+
+      .timeline-keywords {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 8px;
+      }
+
+      .timeline-keyword {
+        padding: 3px 7px;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: var(--surface-card);
+        color: var(--text-2);
+        font-size: 11px;
+      }
+
       .status-pill {
         min-height: 28px;
         max-width: 100%;
@@ -1006,10 +1313,10 @@
         gap: 6px;
         overflow: hidden;
         padding: 5px 9px;
-        border: 1px solid rgba(52, 211, 153, 0.28);
+        border: 1px solid rgba(var(--accent-rgb), 0.22);
         border-radius: 999px;
-        background: rgba(52, 211, 153, 0.08);
-        color: var(--emerald);
+        background: rgba(var(--accent-rgb), 0.07);
+        color: var(--accent);
         font-family: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
         font-size: 10.5px;
         line-height: 1;
@@ -1018,15 +1325,21 @@
       }
 
       .status-pill.warn {
-        border-color: rgba(251, 191, 36, 0.3);
-        background: rgba(251, 191, 36, 0.1);
+        border-color: rgba(210, 173, 100, 0.26);
+        background: rgba(210, 173, 100, 0.08);
         color: var(--amber);
       }
 
       .status-pill.paid {
-        border-color: rgba(var(--accent-rgb), 0.3);
-        background: rgba(var(--accent-rgb), 0.1);
+        border-color: rgba(var(--accent-rgb), 0.22);
+        background: rgba(var(--accent-rgb), 0.07);
         color: var(--accent);
+      }
+
+      .status-pill.no-abstract {
+        border-color: rgba(148, 163, 184, 0.22);
+        background: rgba(148, 163, 184, 0.08);
+        color: var(--text-2);
       }
 
       .tags {
@@ -1049,128 +1362,28 @@
       }
 
       .tag.cyan {
-        background: rgba(var(--accent-rgb), 0.13);
+        background: rgba(var(--accent-rgb), 0.09);
         color: var(--accent);
       }
 
       .tag.rating-a {
-        background: rgba(var(--accent-rgb), 0.13);
+        background: rgba(var(--accent-rgb), 0.09);
         color: var(--accent);
       }
 
       .tag.rating-aplus {
-        background: rgba(251, 191, 36, 0.12);
+        background: rgba(210, 173, 100, 0.09);
         color: var(--amber);
       }
 
       .tag.emerald {
-        background: rgba(52, 211, 153, 0.12);
+        background: rgba(123, 200, 177, 0.09);
         color: var(--emerald);
       }
 
       .tag.amber {
-        background: rgba(251, 191, 36, 0.12);
+        background: rgba(210, 173, 100, 0.09);
         color: var(--amber);
-      }
-
-      .detail-panel {
-        position: sticky;
-        top: 24px;
-        display: grid;
-        gap: 14px;
-        padding: 16px;
-      }
-
-      .panel-title {
-        margin: 0;
-        font-family: "Noto Serif SC", "Songti SC", Georgia, serif;
-        font-size: 19px;
-        font-weight: 700;
-        letter-spacing: -0.01em;
-      }
-
-      .panel-subtitle {
-        margin: 4px 0 0;
-        color: var(--text-1);
-        font-size: 12.5px;
-      }
-
-      .detail-meta {
-        display: grid;
-        gap: 8px;
-      }
-
-      .meta-row {
-        display: grid;
-        grid-template-columns: 88px minmax(0, 1fr);
-        gap: 10px;
-        padding: 8px 0;
-        border-top: 1px solid var(--border-soft);
-      }
-
-      .meta-label {
-        color: var(--text-2);
-        font-size: 12px;
-      }
-
-      .meta-value {
-        min-width: 0;
-        overflow-wrap: anywhere;
-        color: var(--text-0);
-        font-size: 12.5px;
-      }
-
-      .link-stack {
-        display: grid;
-        gap: 8px;
-      }
-
-      .source-link {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 10px;
-        padding: 10px 12px;
-        border: 1px solid var(--border);
-        border-radius: var(--radius-sm);
-        background: var(--surface-0);
-        color: var(--text-1);
-        text-decoration: none;
-      }
-
-      .source-link:hover {
-        border-color: rgba(var(--accent-rgb), 0.35);
-        color: var(--accent);
-      }
-
-      .source-link.disabled {
-        opacity: 0.45;
-        pointer-events: none;
-      }
-
-      .mini-list {
-        display: grid;
-        gap: 8px;
-      }
-
-      .mini-item {
-        padding: 10px;
-        border: 1px solid var(--border);
-        border-radius: var(--radius-sm);
-        background: var(--surface-0);
-      }
-
-      .mini-title {
-        margin: 0;
-        color: var(--text-0);
-        font-size: 12.5px;
-        font-weight: 750;
-      }
-
-      .mini-meta {
-        margin-top: 4px;
-        color: var(--text-2);
-        font-size: 11px;
       }
 
       .metrics-footer {
@@ -1752,11 +1965,15 @@
         border-radius: var(--radius-sm);
         background: var(--surface-card);
         color: var(--text-1);
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
       }
 
       .workflow-chain li.is-active {
-        border-color: rgba(var(--accent-rgb), 0.35);
-        background: linear-gradient(180deg, rgba(var(--accent-rgb), 0.13), rgba(var(--accent-rgb), 0.045));
+        border-color: var(--accent);
+        background: linear-gradient(180deg, rgba(var(--accent-rgb), 0.18), rgba(var(--accent-rgb), 0.045));
+        box-shadow: 0 0 24px -6px rgba(var(--accent-rgb), 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+        transform: scale(1.015);
+        z-index: 2;
       }
 
       .workflow-chain.is-running li.is-active::after {
@@ -1904,23 +2121,43 @@
 
       .workflow-evidence-card {
         min-width: 0;
-        padding: 10px;
+        position: relative;
+        display: grid;
+        gap: 3px;
+        padding: 12px 14px;
         border: 1px solid var(--border);
         border-radius: var(--radius-sm);
         background: var(--surface-0);
+        transition: border-color 0.2s ease, background 0.2s ease;
+      }
+
+      .workflow-evidence-card.is-filled {
+        border-color: rgba(var(--accent-rgb), 0.26);
+        background: rgba(var(--accent-rgb), 0.05);
       }
 
       .workflow-evidence-card strong {
         display: block;
         color: var(--text-0);
-        font-size: 12px;
+        font-family: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+        font-size: 23px;
+        font-weight: 700;
+        line-height: 1.05;
+        font-variant-numeric: tabular-nums;
+        transition: color 0.2s ease;
+      }
+
+      .workflow-evidence-card.is-filled strong {
+        color: var(--accent);
       }
 
       .workflow-evidence-card span {
         display: block;
-        margin-top: 4px;
         color: var(--text-2);
-        font-size: 11px;
+        font-family: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+        font-size: 10.5px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
         line-height: 1.4;
       }
 
@@ -1953,26 +2190,44 @@
       }
 
       .workflow-editor-toolbar {
-        display: flex;
-        justify-content: flex-end;
-        gap: 6px;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        width: fit-content;
+        margin-left: auto;
+        padding: 4px;
+        border: 1px solid var(--border-emphasis);
+        border-radius: 999px;
+        background: var(--surface-elevated);
+        box-shadow: inset 0 1px 0 var(--surface-card);
       }
 
       .workflow-editor-mode {
         min-height: 30px;
-        padding: 0 12px;
-        border: 1px solid var(--border);
-        border-radius: var(--radius-sm);
-        background: var(--surface-0);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 6px 18px;
+        border: 0;
+        border-radius: 999px;
+        background: transparent;
         color: var(--text-2);
         cursor: pointer;
-        font-size: 12px;
+        font-family: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+        font-size: 11px;
+        letter-spacing: 0.04em;
+        transition: background 0.12s ease, color 0.12s ease, box-shadow 0.12s ease;
+      }
+
+      .workflow-editor-mode:hover {
+        background: var(--surface-2);
+        color: var(--text-0);
       }
 
       .workflow-editor-mode.is-active {
-        border-color: rgba(var(--accent-rgb), 0.55);
-        background: rgba(var(--accent-rgb), 0.14);
+        background: rgba(var(--accent-rgb), 0.16);
         color: var(--accent);
+        box-shadow: inset 0 0 0 1px rgba(var(--accent-rgb), 0.28), var(--shadow-card);
       }
 
       .workflow-preview {
@@ -2092,19 +2347,31 @@
 
       .workflow-export-row {
         display: flex;
-        justify-content: flex-end;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px 14px;
+        padding-top: 4px;
+        border-top: 1px solid var(--border-soft);
+        flex-wrap: wrap;
+      }
+
+      .workflow-export-hint {
+        min-width: 0;
+        color: var(--text-2);
+        font-size: 12px;
+      }
+
+      .workflow-export-actions {
+        display: flex;
+        align-items: center;
         gap: 8px;
         flex-wrap: wrap;
       }
 
-      @media (max-width: 1120px) {
-        .layout-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .detail-panel {
-          position: static;
-        }
+      .workflow-export-actions .btn svg {
+        width: 15px;
+        height: 15px;
+        flex: 0 0 15px;
       }
 
       @media (max-width: 960px) {
@@ -2134,8 +2401,10 @@
           gap: 8px;
           margin: 0 -16px 12px;
           padding: 8px 12px;
-          border-bottom: 1px solid var(--border);
-          background: color-mix(in srgb, var(--bg-0) 96%, transparent);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+          background: color-mix(in srgb, var(--bg-0) 75%, transparent);
+          backdrop-filter: blur(16px);
+          -webkit-backdrop-filter: blur(16px);
         }
 
         .mobile-brand {
@@ -2265,6 +2534,10 @@
             <svg class="side-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V5"/><path d="M4 12h4l3-6 4 12 3-6h2"/></svg>
             <span>实时追踪</span>
           </button>
+          <button class="side-link" data-view="topic-search">
+            <svg class="side-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/><path d="M8.5 11h5"/><path d="M11 8.5v5"/></svg>
+            <span>主题检索</span>
+          </button>
           <button class="side-link" data-view="sources">
             <svg class="side-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7c0-1.7 3.6-3 8-3s8 1.3 8 3-3.6 3-8 3-8-1.3-8-3Z"/><path d="M4 7v5c0 1.7 3.6 3 8 3s8-1.3 8-3V7"/><path d="M4 12v5c0 1.7 3.6 3 8 3s8-1.3 8-3v-5"/></svg>
             <span>数据源汇总</span>
@@ -2281,6 +2554,10 @@
           <button class="side-link" data-view="wechat-writing">
             <svg class="side-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
             <span>公众号写作</span>
+          </button>
+          <button class="side-link" data-view="issue-toc-export">
+            <svg class="side-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/><path d="M8 8v8"/></svg>
+            <span>目录导出</span>
           </button>
         </nav>
         <div class="side-footer">
@@ -2351,6 +2628,47 @@
           <section class="status-dock" id="statusDock" aria-label="工作台运行状态"></section>
           <section class="timeline" id="timeline"></section>
           <footer class="metrics-footer" id="trackingStats"></footer>
+        </section>
+
+        <section class="page" data-page="topic-search" hidden>
+          <section class="card page-header">
+            <div class="header-row">
+              <div class="header-main">
+                <h1 class="title">主题检索</h1>
+                <div class="subtitle">独立检索累计已爬取文章，按“非洲 + 研究主题学科”聚合命中依据</div>
+              </div>
+              <div class="header-actions">
+                <div class="search-row">
+                  <input class="field" id="topicSearchInput" type="search" placeholder="搜索标题、期刊、学科、命中依据…" />
+                  <button class="btn btn-ghost" id="topicSearchClear" type="button">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+                    清空
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="topic-search" id="topicSearch" aria-label="主题检索">
+            <div class="topic-search-head">
+              <div>
+                <h2 class="topic-search-title" id="topicSearchTitle">非洲专题索引</h2>
+                <div class="topic-search-subtitle" id="topicSearchSubtitle">用关键词词典与离线语义缓存检索累计文章，结果会标注规则命中或语义命中。</div>
+              </div>
+              <div class="topic-search-count" id="topicSearchCount">0 MATCHES</div>
+            </div>
+            <div class="topic-search-notice" id="topicSearchNotice" hidden></div>
+            <div class="topic-search-controls">
+              <div class="topic-search-row">
+                <div class="topic-search-label" id="topicSearchTopicLabel">Topic</div>
+                <div class="filter-chip-list" id="topicSearchTopics"></div>
+              </div>
+              <div class="topic-search-row">
+                <div class="topic-search-label" id="topicSearchDisciplineLabel">Discipline</div>
+                <div class="filter-chip-list" id="topicSearchDisciplines"></div>
+              </div>
+            </div>
+            <div class="topic-search-results" id="topicSearchResults"></div>
+          </section>
         </section>
 
         <section class="page" data-page="sources" hidden>
@@ -2563,10 +2881,10 @@
                   <input id="paperTemplateId" name="template_id" type="hidden" value="africa-reading" />
                 </form>
                 <div id="paperReadingStatus" class="workflow-status" aria-live="polite">等待上传 PDF</div>
-                <div class="workflow-evidence" aria-label="论文精读产物">
-                  <div class="workflow-evidence-card"><strong>节点证据链</strong><span>抽取、方法、图表、公式会保留为可追溯材料。</span></div>
-                  <div class="workflow-evidence-card"><strong>终稿编辑</strong><span>完成后默认排版预览，也可切换编辑终稿。</span></div>
-                  <div class="workflow-evidence-card"><strong>Word 导出</strong><span>导出前会同步当前编辑内容。</span></div>
+                <div class="workflow-evidence" data-workflow-metrics="paper-reading" aria-label="论文精读产物指标">
+                  <div class="workflow-evidence-card"><strong data-metric="words">—</strong><span>字数</span></div>
+                  <div class="workflow-evidence-card"><strong data-metric="sections">—</strong><span>小节</span></div>
+                  <div class="workflow-evidence-card"><strong data-metric="formulas">—</strong><span>公式</span></div>
                 </div>
                 <div class="workflow-editor-shell" data-workflow-editor-shell="paper-reading">
                   <div class="workflow-editor-toolbar" aria-label="论文精读终稿显示模式">
@@ -2577,7 +2895,11 @@
                   <textarea id="paperReadingEditor" class="field workflow-editor" rows="18" placeholder="精读终稿会显示在这里，可编辑后导出 Word" hidden></textarea>
                 </div>
                 <div class="workflow-export-row">
-                  <button class="btn btn-ghost" id="paperReadingExport" type="button">导出 Word</button>
+                  <span class="workflow-export-hint">导出前会自动同步当前编辑内容</span>
+                  <div class="workflow-export-actions">
+                    <button class="btn btn-sm btn-ghost" id="paperReadingCopy" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>复制 Markdown</button>
+                    <button class="btn btn-primary" id="paperReadingExport" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg>导出 Word</button>
+                  </div>
                 </div>
               </section>
             </section>
@@ -2624,10 +2946,10 @@
                   <input id="wechatTemplateId" name="template_id" type="hidden" value="africa-reading" />
                 </form>
                 <div id="wechatWritingStatus" class="workflow-status" aria-live="polite">等待材料或论文精读结果</div>
-                <div class="workflow-evidence" aria-label="公众号写作产物">
-                  <div class="workflow-evidence-card"><strong>材料包</strong><span>可接追踪条目、PDF、文本或论文精读结果。</span></div>
-                  <div class="workflow-evidence-card"><strong>角度提炼</strong><span>先稳住面向读者和文章主张。</span></div>
-                  <div class="workflow-evidence-card"><strong>终稿导出</strong><span>浏览器内编辑后再生成 Word。</span></div>
+                <div class="workflow-evidence" data-workflow-metrics="wechat-writing" aria-label="公众号写作产物指标">
+                  <div class="workflow-evidence-card"><strong data-metric="words">—</strong><span>字数</span></div>
+                  <div class="workflow-evidence-card"><strong data-metric="sections">—</strong><span>小标题</span></div>
+                  <div class="workflow-evidence-card"><strong data-metric="paras">—</strong><span>段落</span></div>
                 </div>
                 <div class="workflow-editor-shell" data-workflow-editor-shell="wechat-writing">
                   <div class="workflow-title-field">
@@ -2642,7 +2964,11 @@
                   <textarea id="wechatWritingEditor" class="field workflow-editor" rows="18" placeholder="公众号终稿会显示在这里，可编辑后导出 Word" hidden></textarea>
                 </div>
                 <div class="workflow-export-row">
-                  <button class="btn btn-ghost" id="wechatWritingExport" type="button">导出 Word</button>
+                  <span class="workflow-export-hint">标题与正文会合并导出，编辑内容即时同步</span>
+                  <div class="workflow-export-actions">
+                    <button class="btn btn-sm btn-ghost" id="wechatWritingCopy" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>复制 Markdown</button>
+                    <button class="btn btn-primary" id="wechatWritingExport" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg>导出 Word</button>
+                  </div>
                 </div>
               </section>
             </section>
@@ -2660,12 +2986,79 @@
             </aside>
           </section>
         </section>
+
+        <section class="page" data-page="issue-toc-export" hidden>
+          <section class="card page-header">
+            <div class="header-row">
+              <div class="header-main">
+                <h1 class="title">期刊目录导出</h1>
+                <div class="subtitle">把某一期期刊的栏目、目次、摘要和关键词整理成可编辑发布稿</div>
+              </div>
+            </div>
+          </section>
+
+          <section class="workflow-stage-layout" data-workflow-stage="issue-toc-export">
+            <section class="workflow-board workflow-board-single" aria-label="期刊目录导出工作流">
+              <section class="workflow-panel breath-surface" data-workflow-panel="issue-toc-export" id="issueTocExportPanel">
+                <div class="workflow-header">
+                  <h2>期刊目录导出</h2>
+                  <p>从已爬取文章生成某一期刊某一期的“目次 + 新文推介 + 摘要 + 关键词”目录稿。</p>
+                </div>
+                <form id="issueTocExportForm" class="workflow-form">
+                  <input id="issueTocTemplateId" name="template_id" type="hidden" value="issue-toc" />
+                  <div class="workflow-form-row">
+                    <select class="field" id="issueTocJournalSelect" aria-label="选择期刊"></select>
+                    <select class="field" id="issueTocIssueSelect" aria-label="选择期号"></select>
+                    <button class="btn btn-primary" type="submit">生成目录稿</button>
+                  </div>
+                </form>
+                <div class="interface-note" id="issueTocSelectionSummary">等待选择已爬取期号</div>
+                <div id="issueTocExportStatus" class="workflow-status" aria-live="polite">等待期号数据</div>
+                <div class="workflow-evidence" data-workflow-metrics="issue-toc-export" aria-label="期刊目录导出产物指标">
+                  <div class="workflow-evidence-card"><strong data-metric="sections">—</strong><span>栏目</span></div>
+                  <div class="workflow-evidence-card"><strong data-metric="papers">—</strong><span>论文</span></div>
+                  <div class="workflow-evidence-card"><strong data-metric="words">—</strong><span>字数</span></div>
+                </div>
+                <div class="workflow-editor-shell" data-workflow-editor-shell="issue-toc-export">
+                  <div class="workflow-editor-toolbar" aria-label="期刊目录稿显示模式">
+                    <button class="workflow-editor-mode is-active" type="button" data-workflow-mode="preview">预览</button>
+                    <button class="workflow-editor-mode" type="button" data-workflow-mode="edit">编辑</button>
+                  </div>
+                  <article id="issueTocExportPreview" class="workflow-preview markdown-body" data-placeholder="目录稿会显示在这里，可编辑后导出 Word" tabindex="0"></article>
+                  <textarea id="issueTocExportEditor" class="field workflow-editor" rows="18" placeholder="目录稿会显示在这里，可编辑后导出 Word" hidden></textarea>
+                </div>
+                <div class="workflow-export-row">
+                  <span class="workflow-export-hint">可先编辑 Markdown，再同步导出 Word</span>
+                  <div class="workflow-export-actions">
+                    <button class="btn btn-sm btn-ghost" id="issueTocExportCopy" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>复制 Markdown</button>
+                    <button class="btn btn-primary" id="issueTocExportWord" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg>导出 Word</button>
+                  </div>
+                </div>
+              </section>
+            </section>
+
+            <aside class="workflow-chain-rail" data-workflow-chain-rail="issue-toc-export">
+              <h2 class="workflow-chain-title">工作链路</h2>
+              <ol class="workflow-chain" data-workflow-chain="issue-toc-export" aria-label="期刊目录导出完整链路">
+                <li data-node-step="0" class="is-active"><span>01</span><strong>选择期刊期号</strong><small>等待选择</small></li>
+                <li data-node-step="1"><span>02</span><strong>目录整理</strong><small>待运行</small></li>
+                <li data-node-step="2"><span>03</span><strong>摘要关键词排版</strong><small>待运行</small></li>
+                <li data-node-step="3"><span>04</span><strong>Markdown 与 Word</strong><small>待运行</small></li>
+              </ol>
+            </aside>
+          </section>
+        </section>
       </main>
+    </div>
+    <div class="abstract-modal" id="abstractModal" hidden>
+      <button class="abstract-modal-backdrop" type="button" data-abstract-dismiss aria-label="关闭摘要"></button>
+      <section class="abstract-popover" role="dialog" aria-modal="true" aria-labelledby="abstractModalTitle" aria-describedby="abstractModalBody"></section>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="data/adapter-front-data.js"></script>
     <script src="data/recent-front-data.js"></script>
+    <script src="data/topic-search-index.js"></script>
     <script>
       const adapterFrontData = window.ADAPTER_PROFILE_DATA || null;
       const rawJournals = [
@@ -2912,6 +3305,7 @@
         {
           id: "ajcass",
           name: "AJCass 社科院平台",
+          description: "社科院期刊群使用的平台，优先读取公开目录接口；旧版页面再用 HTML 规则抽取。",
           strategy: "接口优先，Playwright 兜底",
           journals: ["j2", "j4", "j12"],
           fields: ["title", "url", "issue", "year", "authors", "abstract"],
@@ -2920,6 +3314,7 @@
         {
           id: "cn-journal-cms",
           name: "中文期刊 CMS / Magtech",
+          description: "国内期刊常见建站模板，期号页和文章页结构较固定，适合用 CSS/XPath 抽取。",
           strategy: "CSS/XPath 静态抽取",
           journals: ["j3", "j5"],
           fields: ["title", "url", "issue", "date", "authors"],
@@ -2928,6 +3323,7 @@
         {
           id: "cnki-cbpt",
           name: "CNKI / 采编平台",
+          description: "知网采编或 CNKI portal 系统，页面可能动态加载或有验证，必要时用替代发现源。",
           strategy: "动态渲染 + 接口嗅探",
           journals: ["j6", "j8"],
           fields: ["title", "url", "issue", "authors", "abstract"],
@@ -2936,6 +3332,7 @@
         {
           id: "university-custom",
           name: "高校自建站",
+          description: "高校院系自己维护的期刊站，每本刊页面结构不同，需要单刊规则。",
           strategy: "CSS/XPath，单刊参数化",
           journals: ["j7", "j9"],
           fields: ["title", "url", "issue", "date", "authors"],
@@ -2943,7 +3340,8 @@
         },
         {
           id: "association-custom",
-          name: "协会 / 自建系统",
+          name: "学会/协会官网系统",
+          description: "学会、协会或期刊编辑部维护的官网列表页，不是统一平台，按各站目录单独适配。",
           strategy: "先修 URL，再静态抽取",
           journals: ["j10", "j11"],
           fields: ["title", "url", "issue", "date"],
@@ -2952,6 +3350,7 @@
         {
           id: "publisher-html",
           name: "英文出版平台页面",
+          description: "英文出版社或学会平台页面，能抓 HTML 就抓；遇到访问限制时走开放元数据兜底。",
           strategy: "出版平台模板 + 反爬兜底",
           journals: ["j15", "j16", "j18", "j19"],
           fields: ["title", "url", "doi", "issue", "date", "authors"],
@@ -2960,6 +3359,7 @@
         {
           id: "non-article-feed",
           name: "非论文 RSS 来源",
+          description: "源头有 RSS 或列表，但不是标准论文条目，需要排除公告并从 DOI 或文章页反推。",
           strategy: "排除公告/评论 RSS，改抓文章页",
           journals: ["j1", "j22"],
           fields: ["title", "url", "issue", "date", "authors"],
@@ -2986,6 +3386,7 @@
         ? adapterFrontData.platform_profiles.map((profile) => ({
           id: profile.id,
           name: profile.name,
+          description: profile.description || "",
           strategy: profile.strategy,
           journals: profile.journals || registryAdapterQueue.filter((item) => item.platformId === profile.id).map((item) => item.sourceId),
           fields: profile.fields || [],
@@ -3014,6 +3415,7 @@
       const adapterQueue = registryAdapterQueue.length ? registryAdapterQueue : fallbackAdapterQueue;
 
       const workflowData = window.RECENT_WORKFLOW_DATA || { summary: null, push_queue: [] };
+      const topicSearchData = window.TOPIC_SEARCH_INDEX || { summary: null, topics: [], disciplines: [], results: [] };
 
       function isoDateOnly(value) {
         return String(value || "").slice(0, 10);
@@ -3055,6 +3457,8 @@
             pdfUrl: row.pdf_url || "",
             linkStatus: row.link_status || "",
             linkNote: row.link_note || "",
+            abstract: row.abstract || "",
+            keywords: Array.isArray(row.keywords) ? row.keywords : [],
             subject: journal.subject,
             lang: journal.lang,
             rating: journal.rating,
@@ -3079,6 +3483,8 @@
             title: `${journal.name} 数据源样例`,
             summary: "尚未加载 recent-front-data.js，当前显示期刊数据源样例。",
             url,
+            abstract: "",
+            keywords: [],
             subject: journal.subject,
             lang: journal.lang,
             rating: journal.rating,
@@ -3090,6 +3496,143 @@
       }
 
       const articles = (workflowData.push_queue?.length ? buildWorkflowArticles() : buildFallbackArticles());
+      let activeAbstractArticleId = "";
+      let abstractModalAnchor = { top: 88, left: 320, width: 560, height: 160 };
+      let abstractModalScrollY = 0;
+
+      function crawledIssueRows() {
+        return (workflowData.push_queue || []).filter((row) => row && row.title && row.journal_id && row.issue_date);
+      }
+
+      function crawledRowsForJournal(journalId) {
+        return (workflowData.push_queue || []).filter((row) => row && row.title && canonicalJournalId(row.journal_id) === journalId);
+      }
+
+      function issueLabelFromDate(issueDate) {
+        const value = String(issueDate || "").trim();
+        if (/^\d{4}-\d{2}$/.test(value)) {
+          const [year, month] = value.split("-");
+          return `${year}年${Number(month)}月`;
+        }
+        if (/^\d{4}-\d{2}-\d{2}$/.test(value)) {
+          const [year, month, day] = value.split("-");
+          return `${year}年${Number(month)}月${Number(day)}日`;
+        }
+        return value || "未标明期号";
+      }
+
+      function issueTocJournalOptions() {
+        const grouped = new Map();
+        for (const journal of journals) {
+          grouped.set(journal.id, {
+            journalId: journal.id,
+            journalName: journal.name || journal.id,
+            issueDates: new Set(),
+            articleCount: 0,
+            crawledCount: crawledRowsForJournal(journal.id).length,
+          });
+        }
+        for (const row of crawledIssueRows()) {
+          const journalId = canonicalJournalId(row.journal_id);
+          const current = grouped.get(journalId) || {
+            journalId,
+            journalName: journalById(journalId).name || row.journal_name || journalId,
+            issueDates: new Set(),
+            articleCount: 0,
+            crawledCount: crawledRowsForJournal(journalId).length,
+          };
+          current.issueDates.add(row.issue_date);
+          current.articleCount += 1;
+          current.crawledCount = Math.max(current.crawledCount || 0, current.articleCount);
+          grouped.set(journalId, current);
+        }
+        return Array.from(grouped.values()).sort((a, b) => a.journalName.localeCompare(b.journalName, "zh-Hans-CN"));
+      }
+
+      function issueTocIssueOptions(journalId) {
+        const grouped = new Map();
+        for (const row of crawledIssueRows()) {
+          if (canonicalJournalId(row.journal_id) !== journalId) continue;
+          const current = grouped.get(row.issue_date) || { issueDate: row.issue_date, articleCount: 0 };
+          current.articleCount += 1;
+          grouped.set(row.issue_date, current);
+        }
+        return Array.from(grouped.values()).sort((a, b) => b.issueDate.localeCompare(a.issueDate));
+      }
+
+      function issueTocRowsForSelection(journalId, issueDate) {
+        return crawledIssueRows()
+          .filter((row) => canonicalJournalId(row.journal_id) === journalId && row.issue_date === issueDate)
+          .sort((a, b) => {
+            const aDate = a.published_at || a.display_date || "";
+            const bDate = b.published_at || b.display_date || "";
+            return aDate.localeCompare(bDate) || String(a.title || "").localeCompare(String(b.title || ""), "zh-Hans-CN");
+          });
+      }
+
+      function buildIssueTocPayloadFromSelection(journalId, issueDate) {
+        const rows = issueTocRowsForSelection(journalId, issueDate);
+        if (!rows.length) {
+          throw new Error("当前选择没有可导出的已爬取文章");
+        }
+        const journal = journalById(journalId);
+        return {
+          journal_name: journal.name || rows[0].journal_name || journalId,
+          issue_label: issueLabelFromDate(issueDate),
+          article_count: rows.length,
+          online_note: "已从本地爬取文章记录整理",
+          articles: rows.map((row) => ({
+            section: "本期目录",
+            title: row.title,
+            authors: row.authors || "",
+            abstract: row.abstract || "",
+            keywords: row.keywords || [],
+            url: row.url || row.official_url || row.discovery_url || ""
+          }))
+        };
+      }
+
+      function populateIssueTocControls() {
+        const journalSelect = $("#issueTocJournalSelect");
+        const issueSelect = $("#issueTocIssueSelect");
+        if (!journalSelect || !issueSelect) return;
+        const journalOptions = issueTocJournalOptions();
+        journalSelect.innerHTML = journalOptions.map((item) => (
+          `<option value="${escapeHtml(item.journalId)}">${escapeHtml(item.journalName)}（${item.issueDates.size ? `${item.issueDates.size} 期 / ${item.articleCount} 篇` : "暂无可导出期号"}）</option>`
+        )).join("");
+        journalSelect.disabled = journalOptions.length === 0;
+        updateIssueTocIssueOptions();
+      }
+
+      function updateIssueTocIssueOptions() {
+        const journalSelect = $("#issueTocJournalSelect");
+        const issueSelect = $("#issueTocIssueSelect");
+        const summary = $("#issueTocSelectionSummary");
+        if (!journalSelect || !issueSelect) return;
+        const issueOptions = issueTocIssueOptions(journalSelect.value);
+        const selectedJournal = issueTocJournalOptions().find((item) => item.journalId === journalSelect.value);
+        if (!issueOptions.length) {
+          issueSelect.innerHTML = '<option value="">暂无可导出期号</option>';
+          issueSelect.disabled = true;
+          issueTocSelectedCount = 0;
+          if (summary) {
+            const crawledCount = selectedJournal?.crawledCount || 0;
+            summary.textContent = crawledCount
+              ? `暂无可导出期号：该期刊已有 ${crawledCount} 篇爬取文章，但当前记录缺少 issue_date。`
+              : "暂无可导出期号：该期刊当前还没有可用于目录导出的文章记录。";
+          }
+          return;
+        }
+        issueSelect.innerHTML = issueOptions.map((item) => (
+          `<option value="${escapeHtml(item.issueDate)}">${escapeHtml(issueLabelFromDate(item.issueDate))}（${item.articleCount} 篇）</option>`
+        )).join("");
+        issueSelect.disabled = issueOptions.length === 0;
+        const selectedIssue = issueOptions.find((item) => item.issueDate === issueSelect.value) || issueOptions[0];
+        issueTocSelectedCount = selectedIssue ? selectedIssue.articleCount : 0;
+        if (summary) {
+          summary.textContent = selectedIssue ? `将从已爬取数据导出 ${selectedIssue.articleCount} 篇文章` : "当前没有带期号的爬取文章";
+        }
+      }
 
       function ratingScoreClass(rating) {
         if (rating === "A+") return "aplus";
@@ -3119,13 +3662,24 @@
       let query = "";
       let activeDateFrom = "";
       let activeDateTo = "";
+      let activeTopicId = topicSearchData.topics?.[0]?.id || "africa";
+      let activeTopicDisciplineId = "全部";
+      let activeTopicQuery = "";
       let selectedArticleId = articles[0].id;
       let selectedJournalId = articles[0].journalId;
+      let issueTocSelectedCount = 0;
 
       const $ = (selector) => document.querySelector(selector);
       const $$ = (selector) => Array.from(document.querySelectorAll(selector));
       const selectorText = (value) => String(value ?? "").replace(/\\/g, "\\\\").replace(/"/g, "\\\"");
-      const WORKFLOW_API_BASE = "http://127.0.0.1:8000";
+      const escapeRegExp = (value) => String(value ?? "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      const WORKFLOW_API_BASE = window.WORKFLOW_API_BASE || (
+        window.location.protocol === "file:" ||
+        window.location.hostname === "localhost" ||
+        window.location.hostname === "127.0.0.1"
+          ? "http://127.0.0.1:8000"
+          : "/science-workshop-api"
+      );
       const WORKFLOW_POLL_MAX_ATTEMPTS = 420;
       const WORKFLOW_POLL_FAST_ATTEMPTS = 2;
       const WORKFLOW_POLL_FAST_DELAY_MS = 600;
@@ -3148,11 +3702,17 @@
           article_final: 4,
           final: 5,
           docx_export: 5
+        },
+        "issue-toc-export": {
+          catalog_render: 1,
+          final: 2,
+          docx_export: 3
         }
       };
       const workflowJobs = {
         paperReading: "",
-        wechatWriting: ""
+        wechatWriting: "",
+        issueTocExport: ""
       };
       const workflowStepDetails = {};
       const workflowEditorBindings = new WeakMap();
@@ -3195,7 +3755,7 @@
       function workflowDisplayError(error, fallback) {
         const message = error?.message || String(error || "");
         if (/Load failed|Failed to fetch|NetworkError/i.test(message)) {
-          return `${fallback}: 无法连接本地工作流后端，请先启动 FastAPI 服务（${WORKFLOW_API_BASE}）`;
+          return `${fallback}: 无法连接工作流后端，请检查 FastAPI 服务（${WORKFLOW_API_BASE}）`;
         }
         return message || fallback;
       }
@@ -3205,6 +3765,97 @@
         statusNode.textContent = text;
         statusNode.classList.remove("running", "complete", "error");
         if (state) statusNode.classList.add(state);
+      }
+
+      function countWorkflowWords(md) {
+        const text = String(md || "").replace(/\$\$[\s\S]*?\$\$/g, " ").replace(/[#>*`_~\[\]()!|-]/g, " ");
+        const cjk = (text.match(/[一-鿿]/g) || []).length;
+        const latin = (text.match(/[A-Za-z0-9]+/g) || []).length;
+        return cjk + latin;
+      }
+
+      function countWorkflowHeadings(md) {
+        return (String(md || "").match(/^#{2,4}\s+\S/gm) || []).length;
+      }
+
+      function countWorkflowFormulas(md) {
+        const text = String(md || "");
+        const blocks = (text.match(/\$\$[\s\S]*?\$\$/g) || []).length;
+        const inline = (text.replace(/\$\$[\s\S]*?\$\$/g, "").match(/\$[^$\n]+\$/g) || []).length;
+        return blocks + inline;
+      }
+
+      function countWorkflowParagraphs(md) {
+        return String(md || "")
+          .split(/\n{2,}/)
+          .map((block) => block.trim())
+          .filter((block) => block && !/^#{1,6}\s/.test(block) && !/^[-*+>]\s/.test(block))
+          .length;
+      }
+
+      const WORKFLOW_METRIC_CALC = {
+        words: countWorkflowWords,
+        sections: countWorkflowHeadings,
+        formulas: countWorkflowFormulas,
+        paras: countWorkflowParagraphs
+      };
+
+      function formatWorkflowMetric(value) {
+        if (typeof value !== "number" || !Number.isFinite(value)) return String(value);
+        return value >= 10000 ? `${(value / 10000).toFixed(1)}w` : String(value);
+      }
+
+      function updateWorkflowMetrics(workflow, md, extras = {}) {
+        const container = document.querySelector(`[data-workflow-metrics="${workflow}"]`);
+        if (!container) return;
+        const hasContent = Boolean(String(md || "").trim()) || Object.keys(extras).length > 0;
+        container.querySelectorAll("[data-metric]").forEach((node) => {
+          const key = node.dataset.metric;
+          let value = null;
+          if (key in extras) value = extras[key];
+          else if (WORKFLOW_METRIC_CALC[key]) value = WORKFLOW_METRIC_CALC[key](md);
+          const ready = hasContent && value != null;
+          node.textContent = ready ? formatWorkflowMetric(value) : "—";
+          node.closest(".workflow-evidence-card")?.classList.toggle("is-filled", ready && value !== 0);
+        });
+      }
+
+      async function copyWorkflowMarkdown(markdown, statusNode, label) {
+        const text = String(markdown || "").trim();
+        if (!text) {
+          setWorkflowStatus(statusNode, "暂无可复制的内容，请先生成稿件", "error");
+          return;
+        }
+        const legacyCopy = () => {
+          const area = document.createElement("textarea");
+          area.value = text;
+          area.style.position = "fixed";
+          area.style.opacity = "0";
+          document.body.appendChild(area);
+          area.select();
+          let ok = false;
+          try {
+            ok = document.execCommand("copy");
+          } catch (error) {
+            ok = false;
+          }
+          area.remove();
+          return ok;
+        };
+        try {
+          if (navigator.clipboard?.writeText) {
+            await navigator.clipboard.writeText(text);
+          } else if (!legacyCopy()) {
+            throw new Error("execCommand copy failed");
+          }
+          setWorkflowStatus(statusNode, `${label} Markdown 已复制到剪贴板`, "complete");
+        } catch (error) {
+          if (legacyCopy()) {
+            setWorkflowStatus(statusNode, `${label} Markdown 已复制到剪贴板`, "complete");
+          } else {
+            setWorkflowStatus(statusNode, "复制失败，请手动选择文本复制", "error");
+          }
+        }
       }
 
       function escapeMarkdownHtml(value) {
@@ -3609,6 +4260,16 @@
         return response.json();
       }
 
+      async function createIssueTocExportJob(payload) {
+        const response = await fetch(`${WORKFLOW_API_BASE}/api/workflows/issue-toc-export/jobs`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+        if (!response.ok) throw new Error(await workflowErrorMessage(response, "期刊目录导出任务创建失败"));
+        return response.json();
+      }
+
       async function fetchWorkflowJob(jobId) {
         const response = await fetch(`${WORKFLOW_API_BASE}/api/jobs/${encodeURIComponent(jobId)}`);
         if (!response.ok) throw new Error(await workflowErrorMessage(response, "读取任务状态失败"));
@@ -3692,8 +4353,15 @@
         const paperPreview = $("#paperReadingPreview");
         const paperShell = document.querySelector('[data-workflow-editor-shell="paper-reading"]');
         const paperExport = $("#paperReadingExport");
+        const paperCopy = $("#paperReadingCopy");
         const wechatPaperJobId = $("#wechatPaperJobId");
         bindWorkflowEditorPreview(paperEditor, paperPreview, paperShell);
+        if (paperEditor) {
+          paperEditor.addEventListener("input", () => updateWorkflowMetrics("paper-reading", paperEditor.value));
+        }
+        if (paperCopy && paperEditor) {
+          paperCopy.addEventListener("click", () => copyWorkflowMarkdown(paperEditor.value, paperStatus, "精读稿"));
+        }
 
         if (paperForm && paperStatus && paperEditor) {
           paperForm.addEventListener("submit", async (event) => {
@@ -3702,12 +4370,15 @@
             clearWorkflowStepDetails("paper-reading");
             updateWorkflowProgress("paper-reading", "running");
             setWorkflowEditorContent(paperEditor, "");
+            updateWorkflowMetrics("paper-reading", "");
             try {
               const job = await createPaperReadingJob(paperForm);
               workflowJobs.paperReading = job.job_id;
               if (wechatPaperJobId) wechatPaperJobId.value = job.job_id;
               const completed = job.status === "completed" ? job : await waitForWorkflowCompletion(job.job_id, paperStatus, "paper-reading");
-              setWorkflowEditorContent(paperEditor, await fetchWorkflowArtifact(completed.job_id, "final.md"));
+              const paperMarkdown = await fetchWorkflowArtifact(completed.job_id, "final.md");
+              setWorkflowEditorContent(paperEditor, paperMarkdown);
+              updateWorkflowMetrics("paper-reading", paperMarkdown);
               setWorkflowStatus(paperStatus, "论文精读完成，可编辑后导出 Word", "complete");
               updateWorkflowProgress("paper-reading", "complete");
             } catch (error) {
@@ -3740,7 +4411,14 @@
         const wechatPreview = $("#wechatWritingPreview");
         const wechatShell = document.querySelector('[data-workflow-editor-shell="wechat-writing"]');
         const wechatExport = $("#wechatWritingExport");
+        const wechatCopy = $("#wechatWritingCopy");
         bindWorkflowEditorPreview(wechatEditor, wechatPreview, wechatShell);
+        if (wechatEditor) {
+          wechatEditor.addEventListener("input", () => updateWorkflowMetrics("wechat-writing", wechatEditor.value));
+        }
+        if (wechatCopy && wechatEditor) {
+          wechatCopy.addEventListener("click", () => copyWorkflowMarkdown(composeWechatMarkdownForExport(wechatTitle?.value, wechatEditor.value), wechatStatus, "公众号稿"));
+        }
 
         if (wechatForm && wechatStatus && wechatEditor) {
           wechatForm.addEventListener("submit", async (event) => {
@@ -3756,6 +4434,7 @@
             updateWorkflowProgress("wechat-writing", "running");
             if (wechatTitle) wechatTitle.value = DEFAULT_WECHAT_TITLE;
             setWorkflowEditorContent(wechatEditor, "");
+            updateWorkflowMetrics("wechat-writing", "");
             try {
               const job = await createWechatWritingJob(wechatForm);
               workflowJobs.wechatWriting = job.job_id;
@@ -3764,6 +4443,7 @@
               const split = splitWorkflowTitle(finalMarkdown);
               if (wechatTitle) wechatTitle.value = split.title;
               setWorkflowEditorContent(wechatEditor, split.body);
+              updateWorkflowMetrics("wechat-writing", split.body);
               setWorkflowStatus(wechatStatus, "公众号文章写作完成，可编辑后导出 Word", "complete");
               updateWorkflowProgress("wechat-writing", "complete");
             } catch (error) {
@@ -3785,6 +4465,79 @@
               setWorkflowStatus(wechatStatus, "Word 已开始下载", "complete");
             } catch (error) {
               setWorkflowStatus(wechatStatus, workflowDisplayError(error, "公众号写作导出失败"), "error");
+            }
+          });
+        }
+
+        const issueTocForm = $("#issueTocExportForm");
+        const issueTocStatus = $("#issueTocExportStatus");
+        const issueTocJournalSelect = $("#issueTocJournalSelect");
+        const issueTocIssueSelect = $("#issueTocIssueSelect");
+        const issueTocEditor = $("#issueTocExportEditor");
+        const issueTocPreview = $("#issueTocExportPreview");
+        const issueTocShell = document.querySelector('[data-workflow-editor-shell="issue-toc-export"]');
+        const issueTocExport = $("#issueTocExportWord");
+        const issueTocCopy = $("#issueTocExportCopy");
+        bindWorkflowEditorPreview(issueTocEditor, issueTocPreview, issueTocShell);
+        if (issueTocEditor) {
+          issueTocEditor.addEventListener("input", () => updateWorkflowMetrics("issue-toc-export", issueTocEditor.value, { papers: issueTocSelectedCount }));
+        }
+        if (issueTocCopy && issueTocEditor) {
+          issueTocCopy.addEventListener("click", () => copyWorkflowMarkdown(issueTocEditor.value, issueTocStatus, "目录稿"));
+        }
+        populateIssueTocControls();
+        if (issueTocJournalSelect) {
+          issueTocJournalSelect.addEventListener("change", updateIssueTocIssueOptions);
+        }
+        if (issueTocIssueSelect) {
+          issueTocIssueSelect.addEventListener("change", updateIssueTocIssueOptions);
+        }
+
+        if (issueTocForm && issueTocStatus && issueTocJournalSelect && issueTocIssueSelect && issueTocEditor) {
+          issueTocForm.addEventListener("submit", async (event) => {
+            event.preventDefault();
+            let payload;
+            try {
+              payload = buildIssueTocPayloadFromSelection(issueTocJournalSelect.value, issueTocIssueSelect.value);
+            } catch (error) {
+              setWorkflowStatus(issueTocStatus, workflowDisplayError(error, "期刊目录导出失败"), "error");
+              updateWorkflowProgress("issue-toc-export", "error");
+              return;
+            }
+            payload.template_id = $("#issueTocTemplateId")?.value || "issue-toc";
+            setWorkflowStatus(issueTocStatus, "期刊目录导出任务已提交...", "running");
+            clearWorkflowStepDetails("issue-toc-export");
+            updateWorkflowProgress("issue-toc-export", "running");
+            setWorkflowEditorContent(issueTocEditor, "");
+            updateWorkflowMetrics("issue-toc-export", "");
+            try {
+              const job = await createIssueTocExportJob(payload);
+              workflowJobs.issueTocExport = job.job_id;
+              const completed = job.status === "completed" ? job : await waitForWorkflowCompletion(job.job_id, issueTocStatus, "issue-toc-export");
+              const issueTocMarkdown = await fetchWorkflowArtifact(completed.job_id, "final.md");
+              setWorkflowEditorContent(issueTocEditor, issueTocMarkdown);
+              updateWorkflowMetrics("issue-toc-export", issueTocMarkdown, { papers: issueTocSelectedCount });
+              setWorkflowStatus(issueTocStatus, "期刊目录稿已生成，可编辑后导出 Word", "complete");
+              updateWorkflowProgress("issue-toc-export", "complete");
+            } catch (error) {
+              setWorkflowStatus(issueTocStatus, workflowDisplayError(error, "期刊目录导出失败"), "error");
+              updateWorkflowProgress("issue-toc-export", "error");
+            }
+          });
+        }
+
+        if (issueTocExport && issueTocStatus && issueTocEditor) {
+          issueTocExport.addEventListener("click", async () => {
+            if (!workflowJobs.issueTocExport) {
+              setWorkflowStatus(issueTocStatus, "请先生成目录稿，再导出 Word", "error");
+              return;
+            }
+            setWorkflowStatus(issueTocStatus, "正在同步编辑内容并导出 Word...", "running");
+            try {
+              await exportWorkflowDocx(workflowJobs.issueTocExport, issueTocEditor.value);
+              setWorkflowStatus(issueTocStatus, "Word 已开始下载", "complete");
+            } catch (error) {
+              setWorkflowStatus(issueTocStatus, workflowDisplayError(error, "期刊目录 Word 导出失败"), "error");
             }
           });
         }
@@ -3987,7 +4740,7 @@
         function page(view) {
           const pageNode = document.querySelector(`[data-page="${selectorText(view)}"]`);
           if (!pageNode || pageNode.hidden) return;
-          animateIn(limited(".page-header, .panel, .placeholder-card, .workflow-panel", pageNode, 10), {
+          animateIn(limited(".page-header, .panel, .placeholder-card, .workflow-panel, .topic-search", pageNode, 10), {
             y: 8,
             duration: 0.3,
             stagger: { each: 0.035, from: "start" }
@@ -4000,7 +4753,7 @@
             stagger: { each: 0.32, from: "start" }
           });
           if (view === "tracking") dashboard();
-          if (view === "paper-reading" || view === "wechat-writing") workflow(view);
+          if (view === "paper-reading" || view === "wechat-writing" || view === "issue-toc-export") workflow(view);
         }
 
         return { init, filters, timeline, selectedArticle, statuses, dashboard, workflow, composeTransfer, page };
@@ -4054,6 +4807,163 @@
           </div>
         `).join("");
         motion.dashboard();
+      }
+
+      function topicSearchResults() {
+        const text = activeTopicQuery.trim().toLowerCase();
+        const taggedResults = (topicSearchData.results || []).filter((result) => {
+          const matchesTopic = !activeTopicId || result.topic_id === activeTopicId;
+          const matchesDiscipline = activeTopicDisciplineId === "全部" || (result.disciplines || []).some((discipline) => discipline.id === activeTopicDisciplineId);
+          const haystack = [
+            result.title,
+            result.journal_name,
+            result.authors,
+            result.topic_label,
+            result.match_reason,
+            result.match_field,
+            ...(result.disciplines || []).flatMap((discipline) => [discipline.label, discipline.match_keyword, discipline.match_field]),
+          ].join(" ").toLowerCase();
+          const matchesText = !text || haystack.includes(text);
+          return matchesTopic && matchesDiscipline && matchesText;
+        });
+        if (!text) return taggedResults;
+
+        const taggedArticleIds = new Set(taggedResults.map((result) => result.article_id));
+        const normalResults = articles
+          .map((article) => normalArticleSearchResult(article, text))
+          .filter(Boolean)
+          .filter((result) => !taggedArticleIds.has(result.article_id));
+        return [...taggedResults, ...normalResults].sort((a, b) => String(b.display_date).localeCompare(String(a.display_date)) || a.title.localeCompare(b.title, "zh-Hans-CN"));
+      }
+
+      function normalArticleSearchResult(article, text) {
+        const journal = journalById(article.journalId);
+        const fields = [
+          ["title", article.title],
+          ["journal", journal.name],
+          ["subject", article.subject],
+          ["authors", article.summary],
+          ["abstract", article.abstract],
+          ["keywords", article.keywords?.join(" ")],
+          ["tags", article.tags?.join(" ")]
+        ];
+        const match = fields.find(([, value]) => String(value || "").toLowerCase().includes(text));
+        if (!match) return null;
+        return {
+          article_id: article.sourceArticleId || article.id,
+          article_ui_id: article.id,
+          topic_label: "普通搜索",
+          title: article.title,
+          journal_id: article.journalId,
+          journal_name: journal.name,
+          authors: article.summary,
+          url: article.url,
+          official_url: article.officialUrl,
+          pdf_url: article.pdfUrl,
+          discovery_url: article.discoveryUrl,
+          link_status: article.linkStatus,
+          display_date: article.publishedAt || article.issueDate || article.date,
+          match_mode: "text",
+          match_field: match[0],
+          match_reason: `${match[0]} 包含 “${activeTopicQuery.trim()}”`,
+          confidence: 1,
+          disciplines: [],
+        };
+      }
+
+      function topicSearchDisciplineCounts(results) {
+        return results.reduce((acc, result) => {
+          for (const discipline of result.disciplines || []) {
+            acc[discipline.id] = (acc[discipline.id] || 0) + 1;
+          }
+          return acc;
+        }, {});
+      }
+
+      function topicSearchArticle(result) {
+        return articles.find((article) => article.id === result.article_ui_id || article.sourceArticleId === result.article_id || article.id === `wf-${result.article_id}`) || null;
+      }
+
+      function topicResultUrl(result) {
+        return result.url || result.official_url || result.pdf_url || "";
+      }
+
+      function highlightSearchTerm(value, term = activeTopicQuery.trim()) {
+        const text = String(value || "");
+        if (!term) return escapeHtml(text);
+        const pattern = new RegExp(`(${escapeRegExp(term)})`, "gi");
+        return escapeHtml(text).replace(pattern, '<mark class="search-highlight">$1</mark>');
+      }
+
+      function renderTopicSearch() {
+        const topics = topicSearchData.topics || [];
+        const text = activeTopicQuery.trim();
+        const isLibrarySearch = Boolean(text);
+        const topicResults = (topicSearchData.results || []).filter((result) => result.topic_id === activeTopicId);
+        const visible = topicSearchResults();
+        const disciplineCounts = topicSearchDisciplineCounts(topicResults);
+        const activeTopic = topics.find((topic) => topic.id === activeTopicId) || topics[0] || { id: "africa", label: "非洲" };
+        const taggedVisible = visible.filter((result) => result.match_mode !== "text").length;
+        const normalVisible = visible.length - taggedVisible;
+
+        $("#topicSearchTitle").textContent = isLibrarySearch ? "全库检索结果" : "非洲专题索引";
+        $("#topicSearchSubtitle").textContent = isLibrarySearch
+          ? "正在检索全部累计文章；专题标签只作为命中说明，不代表所有结果属于非洲。"
+          : "用关键词词典与离线语义缓存检索累计文章，结果会标注规则命中或语义命中。";
+        $("#topicSearchTopicLabel").textContent = isLibrarySearch ? "Topic Clues" : "Topic";
+        $("#topicSearchDisciplineLabel").textContent = isLibrarySearch ? "Discipline Clues" : "Discipline";
+        $("#topicSearchNotice").hidden = !isLibrarySearch;
+        $("#topicSearchNotice").textContent = isLibrarySearch
+          ? `“${text}”正在按全库普通搜索返回结果：${normalVisible} 条普通搜索命中，${taggedVisible} 条专题命中。`
+          : "";
+
+        $("#topicSearchTopics").innerHTML = topics.length ? topics.map((topic) => `
+          <button class="filter-chip ${topic.id === activeTopicId && !isLibrarySearch ? "active" : ""}" type="button" data-topic-search="${escapeHtml(topic.id)}">${escapeHtml(topic.label)}</button>
+        `).join("") : `<span class="filter-empty-hint">暂无主题索引</span>`;
+
+        $("#topicSearchDisciplines").innerHTML = [
+          `<button class="filter-chip ${activeTopicDisciplineId === "全部" ? "active" : ""}" type="button" data-topic-search-discipline="全部">${isLibrarySearch ? "全部专题线索" : "全部"} <span class="mono">${topicResults.length}</span></button>`,
+          ...(topicSearchData.disciplines || [])
+            .filter((discipline) => disciplineCounts[discipline.id])
+            .map((discipline) => `<button class="filter-chip ${discipline.id === activeTopicDisciplineId ? "active" : ""}" type="button" data-topic-search-discipline="${escapeHtml(discipline.id)}">${escapeHtml(discipline.label)} <span class="mono">${disciplineCounts[discipline.id]}</span></button>`)
+        ].join("");
+
+        $("#topicSearchCount").textContent = `${visible.length} ${isLibrarySearch ? "RESULTS" : "MATCHES"}`;
+        $("#topicSearchResults").innerHTML = visible.length
+          ? visible.map(renderTopicSearchResult).join("")
+          : `<div class="topic-search-empty">${activeTopicQuery.trim() ? `没有搜索到“${escapeHtml(activeTopicQuery.trim())}”相关的累计文章。` : `当前没有“${escapeHtml(activeTopic.label)}”与所选学科的匹配结果。`}</div>`;
+      }
+
+      function renderTopicSearchResult(result) {
+        const linkedArticle = topicSearchArticle(result);
+        const url = topicResultUrl(result);
+        const hasAbstract = Boolean(linkedArticle?.abstract);
+        const modeLabel = result.match_mode === "semantic" ? "语义命中" : result.match_mode === "text" ? "普通搜索命中" : "规则命中";
+        const confidence = result.match_mode === "semantic" ? ` · 置信度 ${(Number(result.confidence || 0) * 100).toFixed(0)}%` : "";
+        const disciplineLabels = (result.disciplines || []).map((discipline) => discipline.label).join(" / ") || "待归类";
+        const title = validUrl(url)
+          ? `<a class="topic-search-title-link" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">${highlightSearchTerm(result.title)}</a>`
+          : `<span class="topic-search-title-link">${highlightSearchTerm(result.title)}</span>`;
+        return `
+          <article class="topic-search-result">
+            <div class="topic-search-result-head">
+              <div class="topic-search-source">${highlightSearchTerm(result.journal_name || journalById(result.journal_id).name)} · ${escapeHtml(result.display_date || "日期待补")}</div>
+              <span class="status-pill">${escapeHtml(modeLabel)}</span>
+            </div>
+            ${title}
+            <div class="tags">
+              <span class="tag">${highlightSearchTerm(result.topic_label)}</span>
+              ${result.disciplines?.length ? disciplineLabels.split(" / ").map((label) => `<span class="tag">${highlightSearchTerm(label)}</span>`).join("") : ""}
+            </div>
+            <div class="topic-search-evidence">命中依据：${highlightSearchTerm(result.match_reason || "普通搜索/规则索引命中")}${escapeHtml(confidence)}</div>
+            <div class="topic-search-actions">
+              <span class="status-pill ${result.match_mode === "semantic" ? "paid" : ""}">${escapeHtml(result.match_field || "semantic")}</span>
+              ${linkedArticle && !hasAbstract ? `<span class="status-pill no-abstract">暂无摘要</span>` : ""}
+              ${hasAbstract ? `<button class="btn btn-sm btn-ghost" type="button" data-topic-abstract="${escapeHtml(linkedArticle.id)}">显示摘要</button>` : ""}
+              ${linkedArticle ? `<button class="btn btn-sm btn-ghost" type="button" data-topic-article-focus="${escapeHtml(linkedArticle.id)}">在追踪中查看</button>` : ""}
+            </div>
+          </article>
+        `;
       }
 
       function renderStats() {
@@ -4144,6 +5054,7 @@
         }).join("");
         renderStats();
         renderFilterSummary();
+        renderAbstractModal();
         motion.timeline(animation);
       }
 
@@ -4152,6 +5063,7 @@
         const dotColor = article.status === "warn" ? "rgba(251,191,36,.82)" : "rgba(34,211,238,.72)";
         const scoreClass = ratingScoreClass(journal.rating);
         const linkMeta = linkStatusMeta(article);
+        const hasAbstract = Boolean(article.abstract);
         return `
           <article class="timeline-item">
             <div class="timeline-spacer" aria-hidden="true"></div>
@@ -4163,6 +5075,7 @@
               </div>
               ${timelineTitle(article)}
               <p class="timeline-summary">${escapeHtml(article.summary)}</p>
+              ${renderTimelineInlineAbstract(article)}
               <div class="tags">
                 ${article.tags.map((tag) => {
                   const label = tag === journal.rating ? `刊物${tag}` : tag;
@@ -4171,11 +5084,112 @@
               </div>
               <div class="timeline-actions">
                 <span class="status-pill ${linkMeta.className}">${escapeHtml(linkMeta.label)}</span>
+                ${hasAbstract ? "" : `<span class="status-pill no-abstract">暂无摘要</span>`}
                 <button class="btn btn-sm btn-ghost" type="button" data-article-compose="${article.id}">写成公众号稿</button>
               </div>
             </div>
           </article>
         `;
+      }
+
+      function renderTimelineInlineAbstract(article) {
+        if (!article.abstract) return "";
+        const keywords = article.keywords?.length
+          ? `<div class="timeline-keywords">${article.keywords.map((keyword) => `<span class="timeline-keyword">${escapeHtml(keyword)}</span>`).join("")}</div>`
+          : "";
+        return `
+          <div class="timeline-abstract-inline">
+            <p>${escapeHtml(article.abstract)}</p>
+            ${keywords}
+          </div>
+        `;
+      }
+
+      function renderAbstractModal() {
+        const modal = $("#abstractModal");
+        const popover = modal.querySelector(".abstract-popover");
+        const article = articles.find((item) => item.id === activeAbstractArticleId);
+        if (!article?.abstract) {
+          activeAbstractArticleId = "";
+          modal.hidden = true;
+          popover.innerHTML = "";
+          unlockAbstractScroll();
+          return;
+        }
+        modal.style.setProperty("--abstract-top", `${abstractModalAnchor.top}px`);
+        modal.style.setProperty("--abstract-left", `${abstractModalAnchor.left}px`);
+        modal.style.setProperty("--abstract-width", `${abstractModalAnchor.width}px`);
+        modal.style.setProperty("--abstract-height", `${abstractModalAnchor.height}px`);
+        modal.hidden = false;
+        lockAbstractScroll();
+        popover.innerHTML = renderAbstractPopover(article);
+      }
+
+      function renderAbstractPopover(article) {
+        if (!article.abstract) return "";
+        const journal = journalById(article.journalId);
+        const keywords = article.keywords?.length
+          ? `<div class="timeline-keywords">${article.keywords.map((keyword) => `<span class="timeline-keyword">${escapeHtml(keyword)}</span>`).join("")}</div>`
+          : "";
+        return `
+          <div class="timeline-abstract-head">
+            <span class="timeline-abstract-label" id="abstractModalTitle">${escapeHtml(journal.name)} · 摘要</span>
+            <button class="timeline-abstract-close" type="button" data-article-abstract-close="${escapeHtml(article.id)}">关闭</button>
+          </div>
+          <strong class="timeline-title disabled">${escapeHtml(article.title)}</strong>
+          <p id="abstractModalBody">${highlightSearchTerm(article.abstract)}</p>
+          ${keywords}
+        `;
+      }
+
+      function setAbstractModalAnchor(card) {
+        const rect = card.getBoundingClientRect();
+        const width = Math.min(Math.max(rect.width * 1.35, 620), window.innerWidth - 32);
+        const height = Math.min(Math.max(rect.height * 2.2, 420), window.innerHeight - 32);
+        const left = Math.min(Math.max(rect.left, 16), Math.max(16, window.innerWidth - width - 16));
+        const top = Math.min(Math.max(rect.top, 16), Math.max(16, window.innerHeight - height - 16));
+        abstractModalAnchor = {
+          top,
+          left,
+          width,
+          height
+        };
+      }
+
+      function lockAbstractScroll() {
+        if (document.body.classList.contains("abstract-modal-open")) return;
+        abstractModalScrollY = window.scrollY;
+        document.body.classList.add("abstract-modal-open");
+        document.body.style.position = "fixed";
+        document.body.style.top = `-${abstractModalScrollY}px`;
+        document.body.style.left = "0";
+        document.body.style.right = "0";
+        document.body.style.width = "100%";
+      }
+
+      function unlockAbstractScroll() {
+        if (!document.body.classList.contains("abstract-modal-open")) return;
+        document.body.classList.remove("abstract-modal-open");
+        document.body.style.position = "";
+        document.body.style.top = "";
+        document.body.style.left = "";
+        document.body.style.right = "";
+        document.body.style.width = "";
+        window.scrollTo(0, abstractModalScrollY);
+      }
+
+      function openAbstractModal(article, trigger) {
+        selectedArticleId = article.id;
+        selectedJournalId = article.journalId;
+        activeAbstractArticleId = article.id;
+        setAbstractModalAnchor(trigger);
+        renderAbstractModal();
+      }
+
+      function closeAbstractModal() {
+        if (!activeAbstractArticleId) return;
+        activeAbstractArticleId = "";
+        renderAbstractModal();
       }
 
       function linkStatusMeta(article) {
@@ -4196,59 +5210,6 @@
           return `<span class="timeline-title disabled" title="该条目还没有解析到官方 PDF 或官方文章详情页">${escapeHtml(article.title)}</span>`;
         }
         return `<a class="timeline-title" href="${escapeHtml(article.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(article.title)}</a>`;
-      }
-
-      function renderDetail() {
-        const journal = journalById(selectedJournalId);
-        const recent = articlesForJournal(journal.id);
-        $("#detailPanel").innerHTML = `
-          <div>
-            <h2 class="panel-title">${escapeHtml(journal.name)}</h2>
-            <p class="panel-subtitle">${escapeHtml(journal.subject)} · ${escapeHtml(journal.lang)} · ${escapeHtml(journal.rating)} · ${escapeHtml(journal.monitorPlan)}</p>
-          </div>
-          <div class="detail-meta">
-            ${metaRow("CN/ISSN", journal.issn)}
-            ${metaRow("主办单位", journal.sponsor)}
-            ${metaRow("抓取方式", journal.crawlMode)}
-            ${metaRow("状态", journal.health === "ok" ? "链接字段齐全" : journal.issues.join("、"))}
-          </div>
-          <div class="link-stack">
-            ${sourceLink("官网 URL", journal.homepage, journal.homepageOk)}
-            ${sourceLink("过刊 URL", journal.archive, journal.archiveOk)}
-            ${sourceLink("样例文章", journal.sample, journal.sampleOk)}
-          </div>
-          <div>
-            <h3 class="mini-title">最近推送</h3>
-            <div class="mini-list" style="margin-top:8px">
-              ${recent.map((item) => `
-                <div class="mini-item">
-                  <p class="mini-title">${escapeHtml(item.title)}</p>
-                  <div class="mini-meta">${miniDateMeta(item)}</div>
-                </div>
-              `).join("")}
-            </div>
-          </div>
-          <button class="btn btn-primary" data-focus-journal="${journal.id}">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>
-            只看该刊文章
-          </button>
-        `;
-      }
-
-      function miniDateMeta(item) {
-        const parts = [formatDate(item.date)];
-        if (item.publishedAt) parts.push(`首发 ${formatDate(item.publishedAt)}`);
-        if (item.issueDate) parts.push(`期号 ${formatDateLabel(item.issueDate)}`);
-        return parts.map(escapeHtml).join(" · ");
-      }
-
-      function metaRow(label, value) {
-        return `<div class="meta-row"><div class="meta-label">${escapeHtml(label)}</div><div class="meta-value">${escapeHtml(value || "未记录")}</div></div>`;
-      }
-
-      function sourceLink(label, url, ok) {
-        const disabled = !ok || !validUrl(url);
-        return `<a class="source-link ${disabled ? "disabled" : ""}" href="${disabled ? "#" : escapeHtml(url)}" target="_blank" rel="noopener noreferrer"><span>${escapeHtml(label)}</span><span class="mono">${escapeHtml(cleanUrlLabel(url))}</span></a>`;
       }
 
       function seedWechatFromArticle(article) {
@@ -4426,17 +5387,19 @@
       }
 
       function renderAdapterProfiles() {
-        $("#adapterProfiles").innerHTML = adapterProfiles.map((profile, index) => {
+        $("#adapterProfiles").innerHTML = adapterProfiles.map((profile) => {
           const profileJournals = profile.journals.map(journalById);
           const cnCount = profileJournals.filter((journal) => journal.lang === "中文").length;
+          const description = profile.description || profile.strategy;
           return `
-            <details class="adapter-profile" ${index < 3 ? "open" : ""}>
+            <details class="adapter-profile" open>
               <summary>
                 <span class="adapter-profile-title">${escapeHtml(profile.name)}</span>
                 <span class="pill">${profile.journals.length} 刊</span>
               </summary>
               <div class="adapter-profile-body">
-                <p class="adapter-profile-note">${escapeHtml(profile.strategy)}。${escapeHtml(profile.next)}</p>
+                <p class="adapter-profile-note">${escapeHtml(description)}</p>
+                <p class="adapter-profile-note">策略：${escapeHtml(profile.strategy)}。${escapeHtml(profile.next)}</p>
                 <div class="adapter-field-list">
                   <span class="adapter-field">${escapeHtml(cnCount ? `${cnCount} 中文` : "英文来源")}</span>
                   ${profile.fields.map((field) => `<span class="adapter-field">${escapeHtml(field)}</span>`).join("")}
@@ -4478,6 +5441,7 @@
         renderFilters();
         syncDateInputs();
         renderStatusDock();
+        renderTopicSearch();
         renderTimeline();
         renderSourceSummary();
         renderSourceRows();
@@ -4523,6 +5487,58 @@
         renderAll();
       });
 
+      $("#topicSearch").addEventListener("click", (event) => {
+        const topicButton = event.target.closest("[data-topic-search]");
+        const disciplineButton = event.target.closest("[data-topic-search-discipline]");
+        const focusButton = event.target.closest("[data-topic-article-focus]");
+        const abstractButton = event.target.closest("[data-topic-abstract]");
+        if (topicButton) {
+          activeTopicId = topicButton.dataset.topicSearch;
+          activeTopicDisciplineId = "全部";
+          renderTopicSearch();
+          return;
+        }
+        if (disciplineButton) {
+          activeTopicDisciplineId = disciplineButton.dataset.topicSearchDiscipline;
+          renderTopicSearch();
+          return;
+        }
+        if (abstractButton) {
+          const article = articles.find((item) => item.id === abstractButton.dataset.topicAbstract);
+          if (article?.abstract) openAbstractModal(article, abstractButton.closest(".topic-search-result") || abstractButton);
+          return;
+        }
+        if (focusButton) {
+          const article = articles.find((item) => item.id === focusButton.dataset.topicArticleFocus);
+          if (!article) return;
+          selectedArticleId = article.id;
+          selectedJournalId = article.journalId;
+          activeJournalId = "";
+          activeSubject = "全部";
+          activeLanguage = "全部";
+          query = "";
+          activeDateFrom = "";
+          activeDateTo = "";
+          $("#searchInput").value = "";
+          renderAll();
+          switchView("tracking");
+          requestAnimationFrame(() => {
+            document.querySelector(`[data-article-id="${selectorText(article.id)}"]`)?.scrollIntoView({ behavior: "smooth", block: "center" });
+          });
+        }
+      });
+
+      $("#topicSearchInput").addEventListener("input", (event) => {
+        activeTopicQuery = event.target.value;
+        renderTopicSearch();
+      });
+
+      $("#topicSearchClear").addEventListener("click", () => {
+        activeTopicQuery = "";
+        $("#topicSearchInput").value = "";
+        renderTopicSearch();
+      });
+
       $("#searchInput").addEventListener("input", (event) => {
         query = event.target.value;
         renderTimeline();
@@ -4566,9 +5582,27 @@
         if (!card) return;
         const article = articles.find((item) => item.id === card.dataset.articleId);
         if (!article) return;
+        const clickedInteractive = event.target.closest("a, button, input, select, textarea, .timeline-title");
+        if (clickedInteractive) return;
         selectedArticleId = article.id;
         selectedJournalId = article.journalId;
         renderTimeline("selected");
+      });
+
+      $("#abstractModal").addEventListener("click", (event) => {
+        if (!event.target.closest("[data-abstract-dismiss], [data-article-abstract-close]")) return;
+        closeAbstractModal();
+      });
+
+      window.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") closeAbstractModal();
+      });
+
+      window.addEventListener("resize", () => {
+        if (!activeAbstractArticleId) return;
+        const card = document.querySelector(`[data-article-id="${selectorText(activeAbstractArticleId)}"]`);
+        if (card) setAbstractModalAnchor(card);
+        renderAbstractModal();
       });
 
       $("#clearJournalFilter").addEventListener("click", () => {

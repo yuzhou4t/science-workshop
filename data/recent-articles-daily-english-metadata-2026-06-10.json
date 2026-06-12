@@ -1,0 +1,420 @@
+{
+  "summary": {
+    "checked_at": "2026-06-10T02:17:22.423Z",
+    "since": "2000-01-01",
+    "until": "2026-06-10",
+    "sources_total": 22,
+    "sources_ready": 22,
+    "push_queue_articles": 2,
+    "abstract_backfill": true,
+    "english_metadata_backfill": true,
+    "semantic_scholar": false,
+    "backfill_sources": [
+      "crossref-doi",
+      "openalex-doi",
+      "openalex-title"
+    ]
+  },
+  "push_queue": [
+    {
+      "id": "6e7eaeb18f3d03dc",
+      "journal_id": "j19",
+      "source_journal_id": "j19",
+      "journal_name": "REVIEW OF ECONOMIC STUDIES",
+      "title": "Liquidity Traps, Prudential Policies and International Spillovers",
+      "url": "https://doi.org/10.1093/restud/rdag054",
+      "official_url": "https://doi.org/10.1093/restud/rdag054",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Javier Bianchi, Louphou Coulibaly",
+      "published_at": "2026-06-09",
+      "issue_date": "",
+      "first_seen_at": "2026-06-10",
+      "display_date": "2026-06-09",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "open-metadata-works",
+      "date_source": "",
+      "abstract": "We investigate optimal monetary and macroprudential policies in an open economy with aggregate demand externalities and an occasionally binding zero lower bound constraint. Our analysis highlights that the optimal policy balances output stabilization and capital flow management. When macroprudential policy is available, monetary policy stabilizes the output gap. By contrast, when macroprudential policy is not available, monetary policy is used prudentially. However, contrary to a widespread view, raising the interest rate is not necessarily the optimal prudential policy. Finally, we show that international spillovers operate through the world real rate, but macroprudential policies provide insulation from the adverse effects of foreign policies."
+    },
+    {
+      "id": "e80b3c68dcddafa3",
+      "journal_id": "j19",
+      "source_journal_id": "j19",
+      "journal_name": "REVIEW OF ECONOMIC STUDIES",
+      "title": "Quantifying Supply-Side Climate Policies",
+      "url": "https://doi.org/10.1093/restud/rdag024",
+      "official_url": "https://doi.org/10.1093/restud/rdag024",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Lassi Ahlvik, Jørgen Juel Andersen, Jonas Hveding Hamang, Torfinn Harding",
+      "published_at": "2026-06-08",
+      "issue_date": "",
+      "first_seen_at": "2026-06-10",
+      "display_date": "2026-06-08",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "open-metadata-works",
+      "date_source": "",
+      "abstract": "What are the effects of supply-side climate policies in the oil market? We use global company-level data to estimate the impact of 84 reforms of production taxes between 2000 and 2019 on oil production, exploration, and discoveries. We find that higher taxes primarily reduce companies’ exploration expenditures and oil discoveries, and also reduce short-term production of unconventional oil. We then quantify the implications for the oil market using a short- and medium-term dynamic model extending until the end of the century. Imposing a global climate royalty surcharge of 20 percentage points on oil producers reduces average annual emissions from oil by 5–7% in the first 5 years, and 9–20% in the medium term. If only OECD countries adopt this policy, 47–73% of the total emission reductions would be offset by increased production in non-OECD countries in the medium term."
+    }
+  ],
+  "results": [
+    {
+      "article": {
+        "id": "4f1c5a6a8e8b3b38",
+        "journal_id": "j16",
+        "source_journal_id": "j16",
+        "journal_name": "AMERICAN ECONOMIC REVIEW",
+        "title": "Defying Distance? The Provision of Medical Services in the Digital Age",
+        "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20240756",
+        "official_url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20240756",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Amanda Dahlstrand",
+        "published_at": "",
+        "issue_date": "",
+        "first_seen_at": "2026-06-10",
+        "display_date": "2026-06-10",
+        "display_date_basis": "first_seen_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "aea-forthcoming-html",
+        "date_source": "forthcoming_unassigned"
+      },
+      "addedAbstract": false,
+      "source": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": false,
+          "error": "status_404",
+          "status": 404
+        },
+        {
+          "source": "openalex-doi",
+          "ok": false,
+          "error": "status_404",
+          "status": 404
+        },
+        {
+          "source": "openalex-title",
+          "ok": false,
+          "error": "status_400",
+          "status": 400
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "e3224d5d495e1c90",
+        "journal_id": "j16",
+        "source_journal_id": "j16",
+        "journal_name": "AMERICAN ECONOMIC REVIEW",
+        "title": "The Environmental Bias of Corporate Income Taxation",
+        "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20241765",
+        "official_url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20241765",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Luigi Iovino, Thorsten Martin, Julien Sauvagnat",
+        "published_at": "",
+        "issue_date": "",
+        "first_seen_at": "2026-06-10",
+        "display_date": "2026-06-10",
+        "display_date_basis": "first_seen_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "aea-forthcoming-html",
+        "date_source": "forthcoming_unassigned"
+      },
+      "addedAbstract": false,
+      "source": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": false,
+          "error": "status_404",
+          "status": 404
+        },
+        {
+          "source": "openalex-doi",
+          "ok": false,
+          "error": "status_404",
+          "status": 404
+        },
+        {
+          "source": "openalex-title",
+          "ok": false,
+          "status": 200,
+          "error": "no_strict_title_abstract"
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "6e7eaeb18f3d03dc",
+        "journal_id": "j19",
+        "source_journal_id": "j19",
+        "journal_name": "REVIEW OF ECONOMIC STUDIES",
+        "title": "Liquidity Traps, Prudential Policies and International Spillovers",
+        "url": "https://doi.org/10.1093/restud/rdag054",
+        "official_url": "https://doi.org/10.1093/restud/rdag054",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Javier Bianchi, Louphou Coulibaly",
+        "published_at": "2026-06-09",
+        "issue_date": "",
+        "first_seen_at": "2026-06-10",
+        "display_date": "2026-06-09",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "open-metadata-works",
+        "date_source": "",
+        "abstract": "We investigate optimal monetary and macroprudential policies in an open economy with aggregate demand externalities and an occasionally binding zero lower bound constraint. Our analysis highlights that the optimal policy balances output stabilization and capital flow management. When macroprudential policy is available, monetary policy stabilizes the output gap. By contrast, when macroprudential policy is not available, monetary policy is used prudentially. However, contrary to a widespread view, raising the interest rate is not necessarily the optimal prudential policy. Finally, we show that international spillovers operate through the world real rate, but macroprudential policies provide insulation from the adverse effects of foreign policies."
+      },
+      "addedAbstract": true,
+      "source": "crossref",
+      "matched_title": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": true,
+          "hints": {
+            "abstract": "We investigate optimal monetary and macroprudential policies in an open economy with aggregate demand externalities and an occasionally binding zero lower bound constraint. Our analysis highlights that the optimal policy balances output stabilization and capital flow management. When macroprudential policy is available, monetary policy stabilizes the output gap. By contrast, when macroprudential policy is not available, monetary policy is used prudentially. However, contrary to a widespread view, raising the interest rate is not necessarily the optimal prudential policy. Finally, we show that international spillovers operate through the world real rate, but macroprudential policies provide insulation from the adverse effects of foreign policies."
+          },
+          "status": 200
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "1a9c04ab266f6551",
+        "journal_id": "j20",
+        "source_journal_id": "j20",
+        "journal_name": "ECONOMETRICA",
+        "title": "Comment on ‘Fisher–Schultz Lecture: Contracting Over Pharmaceutical Formularies and Rebates’ by Kate Ho and Robin S. Lee",
+        "url": "https://onlinelibrary.wiley.com/doi/10.3982/ECTA23938",
+        "official_url": "https://onlinelibrary.wiley.com/doi/10.3982/ECTA23938",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Sylvia Hristakeva",
+        "published_at": "2026-06-08",
+        "issue_date": "",
+        "first_seen_at": "2026-06-10",
+        "display_date": "2026-06-08",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "wiley-etoc",
+        "date_source": ""
+      },
+      "addedAbstract": false,
+      "source": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-doi",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-title",
+          "ok": false,
+          "status": 200,
+          "error": "no_strict_title_abstract"
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "e80b3c68dcddafa3",
+        "journal_id": "j19",
+        "source_journal_id": "j19",
+        "journal_name": "REVIEW OF ECONOMIC STUDIES",
+        "title": "Quantifying Supply-Side Climate Policies",
+        "url": "https://doi.org/10.1093/restud/rdag024",
+        "official_url": "https://doi.org/10.1093/restud/rdag024",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Lassi Ahlvik, Jørgen Juel Andersen, Jonas Hveding Hamang, Torfinn Harding",
+        "published_at": "2026-06-08",
+        "issue_date": "",
+        "first_seen_at": "2026-06-10",
+        "display_date": "2026-06-08",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "open-metadata-works",
+        "date_source": "",
+        "abstract": "What are the effects of supply-side climate policies in the oil market? We use global company-level data to estimate the impact of 84 reforms of production taxes between 2000 and 2019 on oil production, exploration, and discoveries. We find that higher taxes primarily reduce companies’ exploration expenditures and oil discoveries, and also reduce short-term production of unconventional oil. We then quantify the implications for the oil market using a short- and medium-term dynamic model extending until the end of the century. Imposing a global climate royalty surcharge of 20 percentage points on oil producers reduces average annual emissions from oil by 5–7% in the first 5 years, and 9–20% in the medium term. If only OECD countries adopt this policy, 47–73% of the total emission reductions would be offset by increased production in non-OECD countries in the medium term."
+      },
+      "addedAbstract": true,
+      "source": "crossref",
+      "matched_title": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": true,
+          "hints": {
+            "abstract": "What are the effects of supply-side climate policies in the oil market? We use global company-level data to estimate the impact of 84 reforms of production taxes between 2000 and 2019 on oil production, exploration, and discoveries. We find that higher taxes primarily reduce companies’ exploration expenditures and oil discoveries, and also reduce short-term production of unconventional oil. We then quantify the implications for the oil market using a short- and medium-term dynamic model extending until the end of the century. Imposing a global climate royalty surcharge of 20 percentage points on oil producers reduces average annual emissions from oil by 5–7% in the first 5 years, and 9–20% in the medium term. If only OECD countries adopt this policy, 47–73% of the total emission reductions would be offset by increased production in non-OECD countries in the medium term."
+          },
+          "status": 200
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "295293867873b162",
+        "journal_id": "j20",
+        "source_journal_id": "j20",
+        "journal_name": "ECONOMETRICA",
+        "title": "Reply to comments on ‘Fisher–Schultz Lecture: Contracting Over Pharmaceutical Formularies and Rebates’",
+        "url": "https://onlinelibrary.wiley.com/doi/10.3982/ECTA24816",
+        "official_url": "https://onlinelibrary.wiley.com/doi/10.3982/ECTA24816",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Kate Ho, Robin S. Lee",
+        "published_at": "2026-06-08",
+        "issue_date": "",
+        "first_seen_at": "2026-06-10",
+        "display_date": "2026-06-08",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "wiley-etoc",
+        "date_source": ""
+      },
+      "addedAbstract": false,
+      "source": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-doi",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-title",
+          "ok": false,
+          "status": 200,
+          "error": "no_strict_title_abstract"
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "e734e6bf61e8d4ce",
+        "journal_id": "j14",
+        "source_journal_id": "j14",
+        "journal_name": "JOURNAL OF FINANCE",
+        "title": "Report of the Editor of The Journal of Finance for the Year 2025",
+        "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70061",
+        "official_url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70061",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "ANTOINETTE SCHOAR",
+        "published_at": "2026-06-08",
+        "issue_date": "",
+        "first_seen_at": "2026-06-10",
+        "display_date": "2026-06-08",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "wiley-etoc",
+        "date_source": "metadata_published"
+      },
+      "addedAbstract": false,
+      "source": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-doi",
+          "ok": false,
+          "error": "status_404",
+          "status": 404
+        },
+        {
+          "source": "openalex-title",
+          "ok": false,
+          "status": 200,
+          "error": "no_strict_title_abstract"
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "cde477fca3ad1a42",
+        "journal_id": "j20",
+        "source_journal_id": "j20",
+        "journal_name": "ECONOMETRICA",
+        "title": "The Econometric Society 2025 Annual Report of the President",
+        "url": "https://onlinelibrary.wiley.com/doi/10.3982/ECTA943PRES",
+        "official_url": "https://onlinelibrary.wiley.com/doi/10.3982/ECTA943PRES",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "",
+        "published_at": "2026-06-08",
+        "issue_date": "",
+        "first_seen_at": "2026-06-10",
+        "display_date": "2026-06-08",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "wiley-etoc",
+        "date_source": ""
+      },
+      "addedAbstract": false,
+      "source": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-doi",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-title",
+          "ok": false,
+          "status": 200,
+          "error": "no_strict_title_abstract"
+        }
+      ]
+    }
+  ]
+}

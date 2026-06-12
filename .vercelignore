@@ -1,0 +1,7 @@
+backend/
+logs/
+.pytest_cache/
+.superpowers/
+.worktrees/
+.claude/
+.DS_Store

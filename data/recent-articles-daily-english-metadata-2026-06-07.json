@@ -1,0 +1,20 @@
+{
+  "summary": {
+    "checked_at": "2026-06-07T02:39:29.311Z",
+    "since": "2000-01-01",
+    "until": "2026-06-07",
+    "sources_total": 22,
+    "sources_ready": 1,
+    "push_queue_articles": 0,
+    "abstract_backfill": true,
+    "english_metadata_backfill": true,
+    "semantic_scholar": false,
+    "backfill_sources": [
+      "crossref-doi",
+      "openalex-doi",
+      "openalex-title"
+    ]
+  },
+  "push_queue": [],
+  "results": []
+}

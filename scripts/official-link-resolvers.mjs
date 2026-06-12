@@ -64,6 +64,13 @@ function articleIdFromHandleCall(context = "") {
   return parseSingleQuotedArgs(handleCall).find((arg) => /^[A-Z0-9]*20\d{2}\d{3,}$/i.test(arg)) || "";
 }
 
+export function issueDateFromNcpssdArticleId(value = "") {
+  const match = String(value || "").match(/[A-Z]+(20\d{2})(\d{3})\d+/i);
+  if (!match) return "";
+  const issue = Number(match[2]);
+  return issue >= 1 && issue <= 12 ? `${match[1]}-${String(issue).padStart(2, "0")}` : "";
+}
+
 function parseSingleQuotedArgs(call = "") {
   return [...call.matchAll(/'([^']*)'/g)].map((match) => decodeHtml(match[1]));
 }
@@ -90,6 +97,7 @@ export function parseNcpssdIssueArticles(html = "", baseUrl = "https://www.ncpss
     const readerPath = context.match(/['"]([^'"]*\/Literature\/readurl\?id=[^'"]+)['"]/i)?.[1] || "";
     const readerUrl = normalizeUrl(readerPath, baseUrl);
     const id = articleIdFromUrl(officialUrl) || articleIdFromUrl(readerUrl) || articleIdFromHandleCall(context);
+    const issueDate = issueDateFromNcpssdArticleId(id);
 
     return {
       id,
@@ -97,6 +105,8 @@ export function parseNcpssdIssueArticles(html = "", baseUrl = "https://www.ncpss
       official_url: officialUrl,
       reader_url: readerUrl,
       authors: authorsFromContext(context, title),
+      issue_date: issueDate,
+      date_source: issueDate ? "ncpssd_article_id" : "",
     };
   }).filter((article) => article.id && article.title && article.official_url);
 
@@ -117,6 +127,8 @@ export function resolveNcpssdOfficialArticle(article = {}, ncpssdArticles = []) 
     official_url: official.official_url,
     reader_url: official.reader_url,
     authors: article.authors || official.authors,
+    issue_date: article.issue_date || official.issue_date || "",
+    date_source: article.date_source || official.date_source || "",
     official_source: "ncpssd",
   };
 }

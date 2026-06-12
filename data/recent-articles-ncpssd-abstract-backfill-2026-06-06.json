@@ -1,0 +1,260 @@
+{
+  "summary": {
+    "checked_at": "2026-06-06T07:04:44.272Z",
+    "since": "2000-01-01",
+    "until": "2026-06-06",
+    "sources_total": 22,
+    "sources_ready": 21,
+    "push_queue_articles": 2,
+    "abstract_backfill": true,
+    "ncpssd_api_backfill": true,
+    "backfill_sources": [
+      "ncpssd-article-api"
+    ]
+  },
+  "push_queue": [
+    {
+      "id": "284b5591504f59d1",
+      "journal_id": "j10",
+      "source_journal_id": "j10",
+      "journal_name": "中国行政管理",
+      "title": "“快速回应”能否“高效办成”:基层政府回应加速的机理及其悖论",
+      "url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026004003&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+      "official_url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026004003&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+      "pdf_url": "",
+      "discovery_url": "https://www.cqvip.com/doc/journal/7203589695?sign=dabbdf769152fdb5f29aaa2d8356f688166ddf3fcb4b946a08fa87b3c86458d8&expireTime=1796263309090&resourceId=7203589695&type=1",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "陈文, 肖传龙",
+      "published_at": "",
+      "issue_date": "2026-04",
+      "first_seen_at": "2026-06-06",
+      "display_date": "2026-04",
+      "display_date_basis": "issue_date",
+      "push_basis": "first_seen",
+      "extraction_rule": "cqvip-journal-html",
+      "date_source": "",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.org/Literature/readurl?id=ZGXZGL2026004003",
+      "abstract": "基层政府通过数字治理平台实现流程再造与智能治理，虽能突破传统科层制瓶颈，加快政府回应的速度，但能否同时提升治理效能，学界存有“回应效率论”“回应效能论”和“回应异化论”三种解释模式。文章基于时间治理视角，以S市“民意速办”平台为案例，结合参与式观察与深度访谈，深入剖析基层政府回应何以加速及其悖论。研究发现，制度时间、技术时间与个体时间的交互作用，驱使基层政府回应进入“加速循环”，但“快速回应”并不必然转化为“高效办成”，回应速度与效能之间在整体上呈现“倒U型”关系。据此，依据“高效办成”的实现程度差异，可将回应加速划分为高效率办成、选择性办理、形式化受理与无效性回应四类，以揭示追求速度潜藏的治理失衡。基层政府回应需超越单一速办指标，为复杂诉求的深入研判与协同处理预留弹性的制度与技术时间，实现从民意速办到民意优办转变。",
+      "keywords": [
+        "数字治理",
+        "政府回应",
+        "时间治理",
+        "“民意速办”"
+      ]
+    },
+    {
+      "id": "21b7f94cf4910737",
+      "journal_id": "j10",
+      "source_journal_id": "j10",
+      "journal_name": "中国行政管理",
+      "title": "层级转化与适应性执行:县乡政府指标治理的实践逻辑",
+      "url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026004010&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+      "official_url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026004010&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+      "pdf_url": "",
+      "discovery_url": "https://www.cqvip.com/doc/journal/7203589702?sign=fd1317549b85cd8ce2c8ef5e531ae079ca25c3e81ebae3710762eaaa8a0582c0&expireTime=1796263309090&resourceId=7203589702&type=1",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "何成兵, 田先红",
+      "published_at": "",
+      "issue_date": "2026-04",
+      "first_seen_at": "2026-06-06",
+      "display_date": "2026-04",
+      "display_date_basis": "issue_date",
+      "push_basis": "first_seen",
+      "extraction_rule": "cqvip-journal-html",
+      "date_source": "",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.org/Literature/readurl?id=ZGXZGL2026004010",
+      "abstract": "在政策过程中，政策转化成为政策适应性执行的重要前提。在基层治理标准化、规范化转型背景下，指标逐渐成为政策过程的重要载体，同时也导致了“指标悖论”的产生。县乡政府政策的层级转化过程表明，“指标悖论”与政府政策执行的适应性生产相关。具体而言，一是县级政府通过建构标准化、精细化、数量化的政策指标将公共政策清晰化，并向下分解，以适应行政体制的层级性、规范性等特征；二是乡镇转化则以其具体实践为依据进行能动地指标调适，包括调节、调整和调控，从而适应基层治理情境；三是层级互动实现补充修正。层级转化机制为指标调配、指标生产、多元联结和风险管控。层级转化塑造了县域政策执行的适应性，有利于在县乡范围内形成政策共同体，实现治理缓冲和推动政策的实质性落实。",
+      "keywords": [
+        "政策转化",
+        "政策执行",
+        "指标治理",
+        "县乡治理"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "article": {
+        "id": "284b5591504f59d1",
+        "journal_id": "j10",
+        "source_journal_id": "j10",
+        "journal_name": "中国行政管理",
+        "title": "“快速回应”能否“高效办成”:基层政府回应加速的机理及其悖论",
+        "url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026004003&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "official_url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026004003&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "pdf_url": "",
+        "discovery_url": "https://www.cqvip.com/doc/journal/7203589695?sign=dabbdf769152fdb5f29aaa2d8356f688166ddf3fcb4b946a08fa87b3c86458d8&expireTime=1796263309090&resourceId=7203589695&type=1",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "陈文, 肖传龙",
+        "published_at": "",
+        "issue_date": "2026-04",
+        "first_seen_at": "2026-06-06",
+        "display_date": "2026-04",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "cqvip-journal-html",
+        "date_source": "",
+        "official_source": "ncpssd",
+        "reader_url": "https://www.ncpssd.org/Literature/readurl?id=ZGXZGL2026004003",
+        "abstract": "基层政府通过数字治理平台实现流程再造与智能治理，虽能突破传统科层制瓶颈，加快政府回应的速度，但能否同时提升治理效能，学界存有“回应效率论”“回应效能论”和“回应异化论”三种解释模式。文章基于时间治理视角，以S市“民意速办”平台为案例，结合参与式观察与深度访谈，深入剖析基层政府回应何以加速及其悖论。研究发现，制度时间、技术时间与个体时间的交互作用，驱使基层政府回应进入“加速循环”，但“快速回应”并不必然转化为“高效办成”，回应速度与效能之间在整体上呈现“倒U型”关系。据此，依据“高效办成”的实现程度差异，可将回应加速划分为高效率办成、选择性办理、形式化受理与无效性回应四类，以揭示追求速度潜藏的治理失衡。基层政府回应需超越单一速办指标，为复杂诉求的深入研判与协同处理预留弹性的制度与技术时间，实现从民意速办到民意优办转变。",
+        "keywords": [
+          "数字治理",
+          "政府回应",
+          "时间治理",
+          "“民意速办”"
+        ]
+      },
+      "addedAbstract": true,
+      "keywords": 4,
+      "response": {
+        "status": 200,
+        "attempt": 1,
+        "error": ""
+      }
+    },
+    {
+      "article": {
+        "id": "21b7f94cf4910737",
+        "journal_id": "j10",
+        "source_journal_id": "j10",
+        "journal_name": "中国行政管理",
+        "title": "层级转化与适应性执行:县乡政府指标治理的实践逻辑",
+        "url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026004010&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "official_url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026004010&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "pdf_url": "",
+        "discovery_url": "https://www.cqvip.com/doc/journal/7203589702?sign=fd1317549b85cd8ce2c8ef5e531ae079ca25c3e81ebae3710762eaaa8a0582c0&expireTime=1796263309090&resourceId=7203589702&type=1",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "何成兵, 田先红",
+        "published_at": "",
+        "issue_date": "2026-04",
+        "first_seen_at": "2026-06-06",
+        "display_date": "2026-04",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "cqvip-journal-html",
+        "date_source": "",
+        "official_source": "ncpssd",
+        "reader_url": "https://www.ncpssd.org/Literature/readurl?id=ZGXZGL2026004010",
+        "abstract": "在政策过程中，政策转化成为政策适应性执行的重要前提。在基层治理标准化、规范化转型背景下，指标逐渐成为政策过程的重要载体，同时也导致了“指标悖论”的产生。县乡政府政策的层级转化过程表明，“指标悖论”与政府政策执行的适应性生产相关。具体而言，一是县级政府通过建构标准化、精细化、数量化的政策指标将公共政策清晰化，并向下分解，以适应行政体制的层级性、规范性等特征；二是乡镇转化则以其具体实践为依据进行能动地指标调适，包括调节、调整和调控，从而适应基层治理情境；三是层级互动实现补充修正。层级转化机制为指标调配、指标生产、多元联结和风险管控。层级转化塑造了县域政策执行的适应性，有利于在县乡范围内形成政策共同体，实现治理缓冲和推动政策的实质性落实。",
+        "keywords": [
+          "政策转化",
+          "政策执行",
+          "指标治理",
+          "县乡治理"
+        ]
+      },
+      "addedAbstract": true,
+      "keywords": 4,
+      "response": {
+        "status": 200,
+        "attempt": 1,
+        "error": ""
+      }
+    },
+    {
+      "article": {
+        "id": "7c539d04921fc9c2",
+        "journal_id": "j10",
+        "source_journal_id": "j10",
+        "journal_name": "中国行政管理",
+        "title": "地方政府改革与组织多样化——基于“制度环境-地方负责人-组织环境”三角框架的多案例研究",
+        "url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026004009&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "official_url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026004009&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "pdf_url": "",
+        "discovery_url": "https://www.cqvip.com/doc/journal/7203589701?sign=0e15e65b8867f35a2fb04600dfb381e19d684654b0512806b916039d383b61cf&expireTime=1796263309090&resourceId=7203589701&type=1",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "门钰璐, 张小劲, 王丛虎",
+        "published_at": "",
+        "issue_date": "2026-04",
+        "first_seen_at": "2026-06-06",
+        "display_date": "2026-04",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "cqvip-journal-html",
+        "date_source": "",
+        "official_source": "ncpssd",
+        "reader_url": "https://www.ncpssd.org/Literature/readurl?id=ZGXZGL2026004009"
+      },
+      "addedAbstract": false,
+      "keywords": 0,
+      "response": {
+        "status": 200,
+        "attempt": 3,
+        "error": "json_parse_failed"
+      }
+    },
+    {
+      "article": {
+        "id": "47322f9b54501375",
+        "journal_id": "j10",
+        "source_journal_id": "j10",
+        "journal_name": "中国行政管理",
+        "title": "多重任务逻辑如何塑造执行偏好——事故隐患治理的任务属性与决策权衡",
+        "url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026004014&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "official_url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026004014&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "pdf_url": "",
+        "discovery_url": "https://www.cqvip.com/doc/journal/7203589706?sign=0ef77bc7559403168985e33864938869a63f4ccad37df336227e9f36306e8726&expireTime=1796263309090&resourceId=7203589706&type=1",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "于翔, 李智超",
+        "published_at": "",
+        "issue_date": "2026-04",
+        "first_seen_at": "2026-06-06",
+        "display_date": "2026-04",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "cqvip-journal-html",
+        "date_source": "",
+        "official_source": "ncpssd",
+        "reader_url": "https://www.ncpssd.org/Literature/readurl?id=ZGXZGL2026004014"
+      },
+      "addedAbstract": false,
+      "keywords": 0,
+      "response": {
+        "status": 0,
+        "attempt": 3,
+        "error": "fetch failed"
+      }
+    },
+    {
+      "article": {
+        "id": "4f3ffcbf699e7d98",
+        "journal_id": "j10",
+        "source_journal_id": "j10",
+        "journal_name": "中国行政管理",
+        "title": "机关资产管理效能因何而异?——基于产权理论的探析",
+        "url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026004008&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "official_url": "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026004008&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+        "pdf_url": "",
+        "discovery_url": "https://www.cqvip.com/doc/journal/7203589700?sign=63223aba13605cb3d53964ce523288be017e2c8745f31ea31975559712cf6153&expireTime=1796263309090&resourceId=7203589700&type=1",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "郭宏樟, 李妍",
+        "published_at": "",
+        "issue_date": "2026-04",
+        "first_seen_at": "2026-06-06",
+        "display_date": "2026-04",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "cqvip-journal-html",
+        "date_source": "",
+        "official_source": "ncpssd",
+        "reader_url": "https://www.ncpssd.org/Literature/readurl?id=ZGXZGL2026004008"
+      },
+      "addedAbstract": false,
+      "keywords": 0,
+      "response": {
+        "status": 0,
+        "attempt": 3,
+        "error": "fetch failed"
+      }
+    }
+  ]
+}

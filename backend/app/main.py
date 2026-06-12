@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api import jobs, paper_reading, wechat_writing
+from app.api import issue_toc_export, jobs, paper_reading, wechat_writing
 from app.core.config import get_settings
 from app.storage.job_store import JobStore
 from app.workflows.events import EventBroker
@@ -31,6 +31,7 @@ def create_app() -> FastAPI:
     app.include_router(jobs.router)
     app.include_router(paper_reading.router)
     app.include_router(wechat_writing.router)
+    app.include_router(issue_toc_export.router)
 
     return app
 

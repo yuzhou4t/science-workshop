@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/science-workshop-api/:path*",
+      "destination": "http://106.53.153.215/science-workshop-api/:path*"
+    }
+  ]
+}

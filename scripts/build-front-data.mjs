@@ -2,7 +2,7 @@ import { readdir, readFile, writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 
 import { normalizeArticleLink } from "./article-link-policy.mjs";
-import { compactArticleTitle } from "./official-link-resolvers.mjs";
+import { compactArticleTitle, issueDateFromNcpssdArticleId } from "./official-link-resolvers.mjs";
 
 const dataDir = new URL("../data/", import.meta.url);
 const outputPath = new URL("../data/recent-front-data.js", import.meta.url);
@@ -46,6 +46,14 @@ async function resolveWorkflowPath() {
 
 function compactArticle(article) {
   const articleLink = normalizeArticleLink(article, article);
+  const inferredIssueDate = issueDateFromNcpssdArticleId([
+    articleLink.url,
+    articleLink.official_url,
+    articleLink.reader_url,
+    article.url,
+    article.official_url,
+    article.reader_url,
+  ].filter(Boolean).join(" "));
   const compacted = {
     id: article.id,
     journal_id: article.journal_id,
@@ -60,15 +68,15 @@ function compactArticle(article) {
     link_note: articleLink.link_note,
     authors: article.authors || "",
     published_at: article.published_at || "",
-    issue_date: article.issue_date || "",
+    issue_date: article.issue_date || inferredIssueDate,
     first_seen_at: article.first_seen_at || "",
-    display_date: article.display_date || article.published_at || article.issue_date || article.first_seen_at || "",
+    display_date: article.display_date || article.published_at || article.issue_date || inferredIssueDate || article.first_seen_at || "",
     display_date_basis: article.display_date_basis || "",
     push_basis: article.push_basis || "",
     extraction_rule: article.extraction_rule || "",
-    date_source: article.date_source || "",
+    date_source: article.date_source || (inferredIssueDate ? "ncpssd_article_id" : ""),
   };
-  for (const key of ["access_model", "official_source", "cnki_filename", "reader_url"]) {
+  for (const key of ["access_model", "official_source", "cnki_filename", "reader_url", "abstract", "keywords"]) {
     if (article[key]) compacted[key] = article[key];
   }
   return compacted;
@@ -116,20 +124,25 @@ function articleTitleHistoryKey(article) {
   ].join("::");
 }
 
-function mergeArticle(existing, incoming) {
+function mergeArticle(existing, incoming, options = {}) {
   if (!existing) return incoming;
   const firstSeenAt = minDate(existing.first_seen_at, incoming.first_seen_at);
+  const preserveExistingDates = Boolean(options.preserveExistingDates);
   const merged = {
     ...existing,
     ...incoming,
     id: existing.id || incoming.id,
     authors: incoming.authors || existing.authors || "",
-    published_at: incoming.published_at || existing.published_at || "",
-    issue_date: incoming.issue_date || existing.issue_date || "",
+    published_at: preserveExistingDates ? existing.published_at || "" : incoming.published_at || existing.published_at || "",
+    issue_date: preserveExistingDates ? existing.issue_date || "" : incoming.issue_date || existing.issue_date || "",
     first_seen_at: firstSeenAt,
-    display_date: incoming.display_date || existing.display_date || firstSeenAt,
-    display_date_basis: incoming.display_date_basis || existing.display_date_basis || "",
+    display_date: preserveExistingDates ? existing.display_date || firstSeenAt : incoming.display_date || existing.display_date || firstSeenAt,
+    display_date_basis: preserveExistingDates
+      ? existing.display_date_basis || ""
+      : incoming.display_date_basis || existing.display_date_basis || "",
     push_basis: existing.push_basis || incoming.push_basis || "",
+    abstract: incoming.abstract || existing.abstract || "",
+    keywords: incoming.keywords?.length ? incoming.keywords : existing.keywords || [],
   };
   const resolvedStatuses = ["official_pdf", "official_detail", "official_paid_detail"];
   const existingResolved = resolvedStatuses.includes(existing.link_status) || existing.official_url || existing.pdf_url;
@@ -165,6 +178,9 @@ function sortPushArticles(articles) {
 export function mergePushHistory(existingHistory = {}, workflow, options = {}) {
   const byKey = new Map();
   const aliasToKey = new Map();
+  const mergeOptions = {
+    preserveExistingDates: Boolean(options.preserveExistingDates || workflow.summary?.abstract_backfill),
+  };
 
   function upsertArticle(article) {
     if (!article?.id) return;
@@ -175,7 +191,7 @@ export function mergePushHistory(existingHistory = {}, workflow, options = {}) {
       articleTitleHistoryKey(incoming),
     ].filter(Boolean);
     const key = aliases.map((alias) => aliasToKey.get(alias)).find(Boolean) || aliases[1] || aliases[2] || aliases[0];
-    const merged = mergeArticle(byKey.get(key), incoming);
+    const merged = mergeArticle(byKey.get(key), incoming, mergeOptions);
     byKey.set(key, merged);
     for (const alias of aliases) aliasToKey.set(alias, key);
     if (merged.id) aliasToKey.set(`id:${merged.id}`, key);

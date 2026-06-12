@@ -4,6 +4,7 @@ import {
   parseAscIssueListArticles,
   parseCieCurrentArticles,
   parseJmscReaderIssueArticles,
+  parseMacrodatasIssuePageArticles,
 } from "./html-adapter-parsers.mjs";
 
 const cieArticles = parseCieCurrentArticles(`
@@ -96,6 +97,48 @@ assert.deepEqual(jmscArticles, [
     author_source: "reader_issue",
     issue_date: "2026-04",
     date_source: "reader_issue",
+  },
+]);
+
+const macrodatasArticles = parseMacrodatasIssuePageArticles(`
+  <p>01 科技强国建设中的双重创新动力源——一个知识流创新链分析框架及其考证</p>
+  <p style="color:#666">易先忠，潘锐，张亚斌</p>
+  <p>02 构建中国公共管理自主知识体系的系统性思维和建构性路径</p>
+  <p style="color:#666">薛澜，赵静</p>
+  <h2># 01 #</h2>
+  <p>题目：</p>
+  <p>科技强国建设中的双重创新动力源——一个知识流创新链分析框架及其考证 作者：</p>
+  <p>易先忠（南京审计大学经济学院）</p>
+  <p>摘要：</p>
+  <p>创新链“脱节”困境根植于“科学推动—需求拉动”二分认知范式割裂了两大创新动力源的有机联系。</p>
+  <p>关键词：</p>
+  <p>科技强国 本土需求 科学研究 自主创新 知识流</p>
+  <h2># 02 #</h2>
+  <p>题目：</p>
+  <p>构建中国公共管理自主知识体系的系统性思维和建构性路径 作者：</p>
+  <p>薛澜（清华大学公共管理学院）</p>
+  <p>摘要：</p>
+  <p>中国式现代化、国家治理体系和治理能力紧密相连的公共管理，是中国哲学社会科学自主知识体系构建中不可或缺的重要篇章。</p>
+  <p>关键词：</p>
+  <p>自主知识体系 公共管理学 系统性思维 建构性路径</p>
+`, "https://www.macrodatas.cn/article/1779681420");
+
+assert.deepEqual(macrodatasArticles, [
+  {
+    title: "科技强国建设中的双重创新动力源——一个知识流创新链分析框架及其考证",
+    url: "https://www.macrodatas.cn/article/1779681420#:~:text=%E7%A7%91%E6%8A%80%E5%BC%BA%E5%9B%BD%E5%BB%BA%E8%AE%BE%E4%B8%AD%E7%9A%84%E5%8F%8C%E9%87%8D%E5%88%9B%E6%96%B0%E5%8A%A8%E5%8A%9B%E6%BA%90%E2%80%94%E2%80%94%E4%B8%80%E4%B8%AA%E7%9F%A5%E8%AF%86%E6%B5%81%E5%88%9B%E6%96%B0%E9%93%BE%E5%88%86%E6%9E%90%E6%A1%86%E6%9E%B6%E5%8F%8A%E5%85%B6%E8%80%83%E8%AF%81",
+    date: "",
+    authors: "易先忠，潘锐，张亚斌",
+    abstract: "创新链“脱节”困境根植于“科学推动—需求拉动”二分认知范式割裂了两大创新动力源的有机联系。",
+    keywords: ["科技强国", "本土需求", "科学研究", "自主创新", "知识流"],
+  },
+  {
+    title: "构建中国公共管理自主知识体系的系统性思维和建构性路径",
+    url: "https://www.macrodatas.cn/article/1779681420#:~:text=%E6%9E%84%E5%BB%BA%E4%B8%AD%E5%9B%BD%E5%85%AC%E5%85%B1%E7%AE%A1%E7%90%86%E8%87%AA%E4%B8%BB%E7%9F%A5%E8%AF%86%E4%BD%93%E7%B3%BB%E7%9A%84%E7%B3%BB%E7%BB%9F%E6%80%A7%E6%80%9D%E7%BB%B4%E5%92%8C%E5%BB%BA%E6%9E%84%E6%80%A7%E8%B7%AF%E5%BE%84",
+    date: "",
+    authors: "薛澜，赵静",
+    abstract: "中国式现代化、国家治理体系和治理能力紧密相连的公共管理，是中国哲学社会科学自主知识体系构建中不可或缺的重要篇章。",
+    keywords: ["自主知识体系", "公共管理学", "系统性思维", "建构性路径"],
   },
 ]);
 
