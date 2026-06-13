@@ -10,6 +10,18 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;600;700;900&family=Inter:wght@400;500;600;700&display=swap"
     />
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [["\\(", "\\)"], ["$", "$"]],
+          displayMath: [["\\[", "\\]"], ["$$", "$$"]],
+          processEscapes: true
+        },
+        svg: { fontCache: "global" },
+        startup: { typeset: false }
+      };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
     <style>
       :root {
         --bg-0: #090d16;
@@ -2371,27 +2383,29 @@
       }
 
       .markdown-formula {
-        display: inline-block;
+        display: inline;
         max-width: 100%;
-        padding: 2px 6px;
-        border-radius: 5px;
-        background: rgba(var(--accent-rgb), 0.08);
         color: var(--text-0);
-        font-family: "IBM Plex Sans", "Inter", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
-        line-height: 1.7;
+        font-family: "Cambria Math", "STIX Two Math", "Times New Roman", serif;
+        line-height: 1.55;
         overflow-x: auto;
-        vertical-align: middle;
+        vertical-align: baseline;
       }
 
       .markdown-formula-block {
         display: block;
         margin: 0.9em 0;
-        padding: 12px 14px;
-        border: 1px solid rgba(var(--accent-rgb), 0.25);
-        border-radius: var(--radius-sm);
-        background: rgba(var(--accent-rgb), 0.1);
+        padding: 8px 0;
         text-align: center;
         font-size: 16px;
+      }
+
+      .markdown-formula mjx-container {
+        color: var(--text-0);
+      }
+
+      .markdown-formula-block mjx-container[jax="SVG"][display="true"] {
+        margin: 0;
       }
 
       .markdown-formula sub,
@@ -3811,25 +3825,6 @@
         authenticated: false,
         pending: null
       };
-      const FORMULA_SYMBOLS = {
-        "\\approx": "≈",
-        "\\sim": "∼",
-        "\\leq": "≤",
-        "\\geq": "≥",
-        "\\neq": "≠",
-        "\\times": "×",
-        "\\cdot": "·",
-        "\\alpha": "α",
-        "\\beta": "β",
-        "\\gamma": "γ",
-        "\\delta": "δ",
-        "\\Delta": "Δ",
-        "\\lambda": "λ",
-        "\\mu": "μ",
-        "\\rho": "ρ",
-        "\\sigma": "σ",
-        "\\sum": "Σ"
-      };
       const sleep = (ms) => new Promise((resolve) => window.setTimeout(resolve, ms));
 
       function workflowAuthAvailable() {
@@ -3946,8 +3941,16 @@
         if (state) statusNode.classList.add(state);
       }
 
+      function stripWorkflowMath(md) {
+        return String(md || "")
+          .replace(/\$\$[\s\S]*?\$\$/g, " ")
+          .replace(/\\\[[\s\S]*?\\\]/g, " ")
+          .replace(/\\\([^\n]*?\\\)/g, " ")
+          .replace(/\$[^$\n]+\$/g, " ");
+      }
+
       function countWorkflowWords(md) {
-        const text = String(md || "").replace(/\$\$[\s\S]*?\$\$/g, " ").replace(/[#>*`_~\[\]()!|-]/g, " ");
+        const text = stripWorkflowMath(md).replace(/[#>*`_~\[\]()!|-]/g, " ");
         const cjk = (text.match(/[一-鿿]/g) || []).length;
         const latin = (text.match(/[A-Za-z0-9]+/g) || []).length;
         return cjk + latin;
@@ -3959,8 +3962,9 @@
 
       function countWorkflowFormulas(md) {
         const text = String(md || "");
-        const blocks = (text.match(/\$\$[\s\S]*?\$\$/g) || []).length;
-        const inline = (text.replace(/\$\$[\s\S]*?\$\$/g, "").match(/\$[^$\n]+\$/g) || []).length;
+        const displayPattern = /\$\$[\s\S]*?\$\$|\\\[[\s\S]*?\\\]/g;
+        const blocks = (text.match(displayPattern) || []).length;
+        const inline = (text.replace(displayPattern, "").match(/\\\([^\n]*?\\\)|\$[^$\n]+\$/g) || []).length;
         return blocks + inline;
       }
 
@@ -4048,21 +4052,16 @@
       }
 
       function renderReadableFormula(formula) {
-        let text = String(formula || "").trim();
-        text = text
-          .replace(/\\frac\{([^{}]+)\}\{([^{}]+)\}/g, "($1) / $2")
-          .replace(/\\mathrm\{([^{}]+)\}/g, "$1")
-          .replace(/\\text\{([^{}]+)\}/g, "$1")
-          .replace(/\\left|\\right/g, "");
-        Object.entries(FORMULA_SYMBOLS).forEach(([source, target]) => {
-          text = text.split(source).join(target);
-        });
-        text = escapeMarkdownHtml(text.replace(/\\/g, "").replace(/\s+/g, " "));
-        return text
-          .replace(/\^\{([^{}]+)\}/g, "<sup>$1</sup>")
-          .replace(/\^([A-Za-z0-9+\-=()]+)/g, "<sup>$1</sup>")
-          .replace(/_\{([^{}]+)\}/g, "<sub>$1</sub>")
-          .replace(/_([A-Za-z0-9]+)/g, "<sub>$1</sub>");
+        return escapeMarkdownHtml(String(formula || "").trim());
+      }
+
+      function renderLatexFormula(formula, display = false) {
+        const body = renderReadableFormula(formula);
+        const tag = display ? "div" : "span";
+        const className = display ? "markdown-formula markdown-formula-block" : "markdown-formula";
+        const open = display ? "\\[" : "\\(";
+        const close = display ? "\\]" : "\\)";
+        return `<${tag} class="${className}">${open}${body}${close}</${tag}>`;
       }
 
       function renderInlineTextSegment(value) {
@@ -4076,13 +4075,16 @@
 
       function renderInlineMarkdown(value) {
         return String(value || "")
-          .split(/(\$\$[^$]+\$\$|\$[^$]+\$)/g)
+          .split(/(\$\$[^$\n]+\$\$|\\\([^\n]+?\\\)|\$[^$\n]+\$)/g)
           .map((segment) => {
             if (segment.startsWith("$$") && segment.endsWith("$$")) {
-              return `<span class="markdown-formula">${renderReadableFormula(segment.slice(2, -2))}</span>`;
+              return renderLatexFormula(segment.slice(2, -2));
+            }
+            if (segment.startsWith("\\(") && segment.endsWith("\\)")) {
+              return renderLatexFormula(segment.slice(2, -2));
             }
             if (segment.startsWith("$") && segment.endsWith("$")) {
-              return `<span class="markdown-formula">${renderReadableFormula(segment.slice(1, -1))}</span>`;
+              return renderLatexFormula(segment.slice(1, -1));
             }
             return renderInlineTextSegment(segment);
           })
@@ -4096,6 +4098,7 @@
         let paragraph = [];
         let inFormulaBlock = false;
         let formulaLines = [];
+        let formulaBlockEnd = "";
 
         const closeList = () => {
           if (!listType) return;
@@ -4119,26 +4122,35 @@
           if (!formulaLines.length) return;
           flushParagraph();
           closeList();
-          html.push(`<div class="markdown-formula markdown-formula-block">${renderReadableFormula(formulaLines.join(" "))}</div>`);
+          html.push(renderLatexFormula(formulaLines.join("\n"), true));
           formulaLines = [];
         };
 
         lines.forEach((rawLine) => {
           const line = rawLine.trim();
-          if (line === "$$") {
-            if (inFormulaBlock) {
+          if (inFormulaBlock) {
+            if (line === formulaBlockEnd) {
               inFormulaBlock = false;
+              formulaBlockEnd = "";
               flushFormulaBlock();
-            } else {
-              flushParagraph();
-              closeList();
-              inFormulaBlock = true;
-              formulaLines = [];
+              return;
             }
+            if (line) formulaLines.push(line);
             return;
           }
-          if (inFormulaBlock) {
-            if (line) formulaLines.push(line);
+          const singleLineFormula = line.match(/^\$\$\s*(.+?)\s*\$\$$/) || line.match(/^\\\[\s*(.+?)\s*\\\]$/);
+          if (singleLineFormula) {
+            flushParagraph();
+            closeList();
+            html.push(renderLatexFormula(singleLineFormula[1], true));
+            return;
+          }
+          if (line === "$$" || line === "\\[") {
+            flushParagraph();
+            closeList();
+            inFormulaBlock = true;
+            formulaBlockEnd = line === "$$" ? "$$" : "\\]";
+            formulaLines = [];
             return;
           }
           if (!line) {
@@ -4207,11 +4219,33 @@
         return html.join("");
       }
 
+      function typesetWorkflowMath(root) {
+        if (!root || !root.querySelector(".markdown-formula")) return;
+        const mathjax = window.MathJax;
+        if (!mathjax) return;
+        const run = () => {
+          if (!mathjax.typesetPromise) return;
+          if (!root.isConnected) return;
+          mathjax.typesetClear?.([root]);
+          mathjax.typesetPromise([root]).catch(() => {});
+        };
+        if (mathjax.startup?.promise) {
+          mathjax.startup.promise.then(run).catch(() => {});
+        } else {
+          run();
+        }
+      }
+
+      window.addEventListener("load", () => {
+        document.querySelectorAll(".workflow-preview.markdown-body").forEach(typesetWorkflowMath);
+      });
+
       function bindWorkflowEditorPreview(textarea, preview, shell) {
         if (!textarea || !preview || !shell) return null;
         const buttons = Array.from(shell.querySelectorAll("[data-workflow-mode]"));
         const render = () => {
           preview.innerHTML = renderMarkdownPreview(textarea.value);
+          typesetWorkflowMath(preview);
         };
         const setMode = (mode) => {
           const isEdit = mode === "edit";
