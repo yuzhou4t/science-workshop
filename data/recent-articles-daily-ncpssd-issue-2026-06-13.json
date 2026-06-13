@@ -1,10 +1,10 @@
 {
   "summary": {
-    "checked_at": "2026-06-13T02:07:39.995Z",
+    "checked_at": "2026-06-13T11:41:20.885Z",
     "since": "2000-01-01",
     "until": "2026-06-13",
     "sources_total": 22,
-    "sources_ready": 22,
+    "sources_ready": 20,
     "push_queue_articles": 0,
     "abstract_backfill": true,
     "ncpssd_issue_backfill": true,

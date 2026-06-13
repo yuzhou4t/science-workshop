@@ -1,11 +1,11 @@
 {
   "summary": {
-    "checked_at": "2026-06-13T02:07:49.860Z",
+    "checked_at": "2026-06-13T11:41:45.021Z",
     "since": "2000-01-01",
     "until": "2026-06-13",
     "sources_total": 22,
-    "sources_ready": 22,
-    "push_queue_articles": 0,
+    "sources_ready": 20,
+    "push_queue_articles": 1,
     "abstract_backfill": true,
     "english_metadata_backfill": true,
     "semantic_scholar": false,
@@ -15,8 +15,129 @@
       "openalex-title"
     ]
   },
-  "push_queue": [],
+  "push_queue": [
+    {
+      "id": "0a786a5daede0e00",
+      "journal_id": "j21",
+      "source_journal_id": "j21",
+      "journal_name": "ACADEMY OF MANAGEMENT JOURNAL",
+      "title": "The Social Attribution of Innovation: Uncovering the Heads Behind the Guillotine",
+      "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0314",
+      "official_url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0314",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Paolo Aversa, Paul Gouvard, Maria A. Makarova",
+      "published_at": "2026-06-12",
+      "issue_date": "",
+      "first_seen_at": "2026-06-13",
+      "display_date": "2026-06-12",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "atypon-etoc",
+      "date_source": "metadata_published",
+      "abstract": "Popular narratives often attribute innovations to a few “heroic” figures. Although scholarship has challenged this myth, it typically treats attribution as an issue of credit allocation, separating innovation production from innovator recognition. As a result, we lack an integrated account of how innovations and innovators become progressively linked through social processes of attribution. We address this gap through a microhistorical study of the guillotine, a beheading machine enduringly attributed to—and named after—Dr. Joseph-Ignace Guillotin, a humanist, physician, and politician who did not in fact invent it. Analyzing debates on equality in penal reform during the French Revolution (1788–1792), we develop a process model of attribution grounded in the co-construction of innovations and innovators. We theorize how audiences’ evaluations of a contributor’s engagement with a novel solution escalate into an evaluation–attribution spiral that crystallizes the innovator–innovation link. Our model identifies the mapping of contributors’ engagement onto value-laden problem dimensions as a key mechanism and shows why, once crystallized, attribution persists even as the innovation’s meaning shifts—transferring credit or blame to the attributed actor regardless of material involvement. In doing so, we advance research on innovation production, innovator recognition, and the social construction of technology."
+    }
+  ],
   "results": [
+    {
+      "article": {
+        "id": "c784f7398237b992",
+        "journal_id": "j21",
+        "source_journal_id": "j21",
+        "journal_name": "ACADEMY OF MANAGEMENT JOURNAL",
+        "title": "ChatGPT, a Hype That Teaches: Generative AI and the Collective Accumulation of Technology Literacy on Social Media",
+        "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0536",
+        "official_url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0536",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Hassan Md. Hamadi, Anna Brattström",
+        "published_at": "2026-06-12",
+        "issue_date": "",
+        "first_seen_at": "2026-06-13",
+        "display_date": "2026-06-12",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "atypon-etoc",
+        "date_source": "metadata_published"
+      },
+      "addedAbstract": false,
+      "source": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-doi",
+          "ok": false,
+          "error": "status_404",
+          "status": 404
+        },
+        {
+          "source": "openalex-title",
+          "ok": false,
+          "status": 200,
+          "error": "no_strict_title_abstract"
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "0a786a5daede0e00",
+        "journal_id": "j21",
+        "source_journal_id": "j21",
+        "journal_name": "ACADEMY OF MANAGEMENT JOURNAL",
+        "title": "The Social Attribution of Innovation: Uncovering the Heads Behind the Guillotine",
+        "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0314",
+        "official_url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0314",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Paolo Aversa, Paul Gouvard, Maria A. Makarova",
+        "published_at": "2026-06-12",
+        "issue_date": "",
+        "first_seen_at": "2026-06-13",
+        "display_date": "2026-06-12",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "atypon-etoc",
+        "date_source": "metadata_published",
+        "abstract": "Popular narratives often attribute innovations to a few “heroic” figures. Although scholarship has challenged this myth, it typically treats attribution as an issue of credit allocation, separating innovation production from innovator recognition. As a result, we lack an integrated account of how innovations and innovators become progressively linked through social processes of attribution. We address this gap through a microhistorical study of the guillotine, a beheading machine enduringly attributed to—and named after—Dr. Joseph-Ignace Guillotin, a humanist, physician, and politician who did not in fact invent it. Analyzing debates on equality in penal reform during the French Revolution (1788–1792), we develop a process model of attribution grounded in the co-construction of innovations and innovators. We theorize how audiences’ evaluations of a contributor’s engagement with a novel solution escalate into an evaluation–attribution spiral that crystallizes the innovator–innovation link. Our model identifies the mapping of contributors’ engagement onto value-laden problem dimensions as a key mechanism and shows why, once crystallized, attribution persists even as the innovation’s meaning shifts—transferring credit or blame to the attributed actor regardless of material involvement. In doing so, we advance research on innovation production, innovator recognition, and the social construction of technology."
+      },
+      "addedAbstract": true,
+      "source": "openalex-title",
+      "matched_title": "The social attribution of innovation:Uncovering the heads behind the guillotine",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-doi",
+          "ok": false,
+          "error": "status_404",
+          "status": 404
+        },
+        {
+          "source": "openalex-title",
+          "ok": true,
+          "hints": {
+            "abstract": "Popular narratives often attribute innovations to a few “heroic” figures. Although scholarship has challenged this myth, it typically treats attribution as an issue of credit allocation, separating innovation production from innovator recognition. As a result, we lack an integrated account of how innovations and innovators become progressively linked through social processes of attribution. We address this gap through a microhistorical study of the guillotine, a beheading machine enduringly attributed to—and named after—Dr. Joseph-Ignace Guillotin, a humanist, physician, and politician who did not in fact invent it. Analyzing debates on equality in penal reform during the French Revolution (1788–1792), we develop a process model of attribution grounded in the co-construction of innovations and innovators. We theorize how audiences’ evaluations of a contributor’s engagement with a novel solution escalate into an evaluation–attribution spiral that crystallizes the innovator–innovation link. Our model identifies the mapping of contributors’ engagement onto value-laden problem dimensions as a key mechanism and shows why, once crystallized, attribution persists even as the innovation’s meaning shifts—transferring credit or blame to the attributed actor regardless of material involvement. In doing so, we advance research on innovation production, innovator recognition, and the social construction of technology."
+          },
+          "status": 200,
+          "matched_title": "The social attribution of innovation:Uncovering the heads behind the guillotine"
+        }
+      ]
+    },
     {
       "article": {
         "id": "8c5acb101e91f69b",
