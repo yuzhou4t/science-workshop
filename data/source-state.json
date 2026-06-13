@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "checked_at": "2026-06-12T02:59:12.698Z",
-  "since": "2026-06-12",
-  "until": "2026-06-12",
+  "checked_at": "2026-06-13T02:07:39.783Z",
+  "since": "2026-06-13",
+  "until": "2026-06-13",
   "daily_initialized": true,
   "article_ids": [
     "4abaf132baef2e0d",
@@ -662,7 +662,8 @@
     "2180f2b56565b44a",
     "cd1f308586ffbdfa",
     "ccfd8a3beb0173e1",
-    "2a7be57bd233511b"
+    "2a7be57bd233511b",
+    "8c5acb101e91f69b"
   ],
   "first_seen_by_id": {
     "4abaf132baef2e0d": "2026-06-03",
@@ -1322,7 +1323,8 @@
     "2180f2b56565b44a": "2026-06-12",
     "cd1f308586ffbdfa": "2026-06-12",
     "ccfd8a3beb0173e1": "2026-06-12",
-    "2a7be57bd233511b": "2026-06-12"
+    "2a7be57bd233511b": "2026-06-12",
+    "8c5acb101e91f69b": "2026-06-13"
   },
   "sources": {
     "j13": {
@@ -1384,15 +1386,13 @@
       ],
       "recent_article_ids": [],
       "undated_article_ids": [],
-      "push_article_ids": [
-        "6caaa728b40bb61d"
-      ],
+      "push_article_ids": [],
       "article_count": 50,
       "recent_count": 0,
       "undated_count": 0,
       "issue_dated_count": 0,
-      "push_count": 1,
-      "last_success_at": "2026-06-12T02:59:12.698Z"
+      "push_count": 0,
+      "last_success_at": "2026-06-13T02:07:39.783Z"
     },
     "j14": {
       "journal_name": "JOURNAL OF FINANCE",
@@ -1450,7 +1450,7 @@
       "undated_count": 0,
       "issue_dated_count": 0,
       "push_count": 0,
-      "last_success_at": "2026-06-12T02:59:12.698Z"
+      "last_success_at": "2026-06-13T02:07:39.783Z"
     },
     "j17": {
       "journal_name": "JOURNAL OF POLITICAL ECONOMY",
@@ -1480,7 +1480,7 @@
       "undated_count": 0,
       "issue_dated_count": 0,
       "push_count": 0,
-      "last_success_at": "2026-06-12T02:59:12.698Z"
+      "last_success_at": "2026-06-13T02:07:39.783Z"
     },
     "j20": {
       "journal_name": "ECONOMETRICA",
@@ -1512,7 +1512,7 @@
       "undated_count": 0,
       "issue_dated_count": 0,
       "push_count": 0,
-      "last_success_at": "2026-06-12T02:59:12.698Z"
+      "last_success_at": "2026-06-13T02:07:39.783Z"
     },
     "j21": {
       "journal_name": "ACADEMY OF MANAGEMENT JOURNAL",
@@ -1529,6 +1529,7 @@
         "ad4796486d2bec05",
         "04887877f036b38d",
         "8428b0abe3a89f5b",
+        "8c5acb101e91f69b",
         "3bcb0fc3961b5a6b",
         "5206d430b7fa3733",
         "feabe9376d599255",
@@ -1568,8 +1569,7 @@
         "cff421f11dca9cb8",
         "d2de8effbd363cfe",
         "4769025764d726a9",
-        "9c4cec1963922a8d",
-        "b38683a17ac874c9"
+        "9c4cec1963922a8d"
       ],
       "recent_article_ids": [
         "8cd06a834aa71cfb",
@@ -1583,13 +1583,15 @@
         "8428b0abe3a89f5b"
       ],
       "undated_article_ids": [],
-      "push_article_ids": [],
+      "push_article_ids": [
+        "8c5acb101e91f69b"
+      ],
       "article_count": 50,
       "recent_count": 9,
       "undated_count": 0,
       "issue_dated_count": 0,
-      "push_count": 0,
-      "last_success_at": "2026-06-12T02:59:12.698Z"
+      "push_count": 1,
+      "last_success_at": "2026-06-13T02:07:39.783Z"
     },
     "j2": {
       "journal_name": "经济研究",
@@ -1617,7 +1619,7 @@
       "undated_count": 0,
       "issue_dated_count": 11,
       "push_count": 0,
-      "last_success_at": "2026-06-12T02:59:12.698Z"
+      "last_success_at": "2026-06-13T02:07:39.783Z"
     },
     "j4": {
       "journal_name": "中国工业经济",
@@ -1684,7 +1686,7 @@
       "undated_count": 0,
       "issue_dated_count": 50,
       "push_count": 0,
-      "last_success_at": "2026-06-12T02:59:12.698Z"
+      "last_success_at": "2026-06-13T02:07:39.783Z"
     },
     "j12": {
       "journal_name": "中国农村经济",
@@ -1710,7 +1712,7 @@
       "undated_count": 0,
       "issue_dated_count": 9,
       "push_count": 0,
-      "last_success_at": "2026-06-12T02:59:12.698Z"
+      "last_success_at": "2026-06-13T02:07:39.783Z"
     },
     "j3": {
       "journal_name": "世界经济",
@@ -1736,21 +1738,13 @@
         "cd1f308586ffbdfa"
       ],
       "undated_article_ids": [],
-      "push_article_ids": [
-        "55733b46bee42622",
-        "0a7dc1af256fb586",
-        "b349feab36ba1339",
-        "60867ad56cc5ced7",
-        "5797f15e585fbe4c",
-        "2180f2b56565b44a",
-        "cd1f308586ffbdfa"
-      ],
+      "push_article_ids": [],
       "article_count": 7,
       "recent_count": 7,
       "undated_count": 0,
       "issue_dated_count": 0,
-      "push_count": 7,
-      "last_success_at": "2026-06-12T02:59:12.698Z"
+      "push_count": 0,
+      "last_success_at": "2026-06-13T02:07:39.783Z"
     },
     "j5": {
       "journal_name": "金融研究",
@@ -1799,7 +1793,7 @@
       "undated_count": 0,
       "issue_dated_count": 3,
       "push_count": 0,
-      "last_success_at": "2026-06-12T02:59:12.698Z"
+      "last_success_at": "2026-06-13T02:07:39.783Z"
     },
     "j6": {
       "journal_name": "管理世界",
@@ -1827,7 +1821,7 @@
       "undated_count": 0,
       "issue_dated_count": 0,
       "push_count": 0,
-      "last_success_at": "2026-06-12T02:59:12.698Z"
+      "last_success_at": "2026-06-13T02:07:39.783Z"
     },
     "j8": {
       "journal_name": "公共管理学报",
@@ -1857,15 +1851,13 @@
       "undated_article_ids": [
         "bcf473b71052f9b1"
       ],
-      "push_article_ids": [
-        "ccfd8a3beb0173e1"
-      ],
+      "push_article_ids": [],
       "article_count": 17,
       "recent_count": 0,
       "undated_count": 1,
       "issue_dated_count": 16,
-      "push_count": 1,
-      "last_success_at": "2026-06-12T02:59:12.698Z"
+      "push_count": 0,
+      "last_success_at": "2026-06-13T02:07:39.783Z"
     },
     "j7": {
       "journal_name": "南开管理评论",
@@ -1899,7 +1891,7 @@
       "undated_count": 0,
       "issue_dated_count": 0,
       "push_count": 0,
-      "last_success_at": "2026-06-12T02:59:12.698Z"
+      "last_success_at": "2026-06-13T02:07:39.783Z"
     },
     "j9": {
       "journal_name": "管理科学学报",
@@ -1927,7 +1919,7 @@
       "undated_count": 0,
       "issue_dated_count": 0,
       "push_count": 0,
-      "last_success_at": "2026-06-12T02:59:12.698Z"
+      "last_success_at": "2026-06-13T02:07:39.783Z"
     },
     "j10": {
       "journal_name": "中国行政管理",
@@ -1960,7 +1952,7 @@
       "undated_count": 0,
       "issue_dated_count": 16,
       "push_count": 0,
-      "last_success_at": "2026-06-12T02:59:12.698Z"
+      "last_success_at": "2026-06-13T02:07:39.783Z"
     },
     "j11": {
       "journal_name": "会计研究",
@@ -1990,7 +1982,7 @@
       "undated_count": 0,
       "issue_dated_count": 13,
       "push_count": 0,
-      "last_success_at": "2026-06-12T02:59:12.698Z"
+      "last_success_at": "2026-06-13T02:07:39.783Z"
     },
     "j15": {
       "journal_name": "ACCOUNTING REVIEW",
@@ -2019,7 +2011,7 @@
       "undated_count": 0,
       "issue_dated_count": 0,
       "push_count": 0,
-      "last_success_at": "2026-06-12T02:59:12.698Z"
+      "last_success_at": "2026-06-13T02:07:39.783Z"
     },
     "j16": {
       "journal_name": "AMERICAN ECONOMIC REVIEW",
@@ -2099,7 +2091,7 @@
       "undated_count": 31,
       "issue_dated_count": 0,
       "push_count": 0,
-      "last_success_at": "2026-06-12T02:59:12.698Z"
+      "last_success_at": "2026-06-13T02:07:39.783Z"
     },
     "j18": {
       "journal_name": "QUARTERLY JOURNAL OF ECONOMICS",
@@ -2128,7 +2120,7 @@
       "undated_count": 0,
       "issue_dated_count": 0,
       "push_count": 0,
-      "last_success_at": "2026-06-12T02:59:12.698Z"
+      "last_success_at": "2026-06-13T02:07:39.783Z"
     },
     "j19": {
       "journal_name": "REVIEW OF ECONOMIC STUDIES",
@@ -2151,15 +2143,13 @@
       ],
       "recent_article_ids": [],
       "undated_article_ids": [],
-      "push_article_ids": [
-        "2a7be57bd233511b"
-      ],
+      "push_article_ids": [],
       "article_count": 12,
       "recent_count": 0,
       "undated_count": 0,
       "issue_dated_count": 0,
-      "push_count": 1,
-      "last_success_at": "2026-06-12T02:59:12.698Z"
+      "push_count": 0,
+      "last_success_at": "2026-06-13T02:07:39.783Z"
     },
     "j1": {
       "journal_name": "JOURNAL OF FINANCE",
@@ -2192,7 +2182,7 @@
       "undated_count": 0,
       "issue_dated_count": 0,
       "push_count": 0,
-      "last_success_at": "2026-06-12T02:59:12.698Z"
+      "last_success_at": "2026-06-13T02:07:39.783Z"
     },
     "j22": {
       "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
@@ -2236,7 +2226,7 @@
       "undated_count": 0,
       "issue_dated_count": 0,
       "push_count": 0,
-      "last_success_at": "2026-06-12T02:59:12.698Z"
+      "last_success_at": "2026-06-13T02:07:39.783Z"
     }
   }
 }

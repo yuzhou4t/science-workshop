@@ -1,16 +1,38 @@
 window.RECENT_WORKFLOW_DATA = {
   "summary": {
-    "checked_at": "2026-06-12T02:59:23.780Z",
+    "checked_at": "2026-06-13T02:07:39.783Z",
     "since": "2026-05-25",
-    "until": "2026-06-12",
+    "until": "2026-06-13",
     "sources_total": 22,
     "sources_ready": 22,
-    "history_articles": 452,
-    "push_queue_articles": 452,
+    "history_articles": 453,
+    "push_queue_articles": 453,
     "new_push_queue_articles": 1,
-    "last_workflow_file": "data/recent-articles-daily-english-metadata-2026-06-12.json"
+    "last_workflow_file": "data/recent-articles-2026-06-13_2026-06-13.json"
   },
   "push_queue": [
+    {
+      "id": "8c5acb101e91f69b",
+      "journal_id": "j21",
+      "source_journal_id": "j21",
+      "journal_name": "ACADEMY OF MANAGEMENT JOURNAL",
+      "title": "Trauma at Work: Reframing Experiences to Sustain Engagement",
+      "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.1101",
+      "official_url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.1101",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Madeleine Rauch, Shaz Ansari",
+      "published_at": "2026-06-11",
+      "issue_date": "",
+      "first_seen_at": "2026-06-13",
+      "display_date": "2026-06-11",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "atypon-etoc",
+      "date_source": "metadata_published"
+    },
     {
       "id": "0a7dc1af256fb586",
       "journal_id": "j3",

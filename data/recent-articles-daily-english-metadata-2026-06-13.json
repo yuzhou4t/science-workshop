@@ -1,0 +1,67 @@
+{
+  "summary": {
+    "checked_at": "2026-06-13T02:07:49.860Z",
+    "since": "2000-01-01",
+    "until": "2026-06-13",
+    "sources_total": 22,
+    "sources_ready": 22,
+    "push_queue_articles": 0,
+    "abstract_backfill": true,
+    "english_metadata_backfill": true,
+    "semantic_scholar": false,
+    "backfill_sources": [
+      "crossref-doi",
+      "openalex-doi",
+      "openalex-title"
+    ]
+  },
+  "push_queue": [],
+  "results": [
+    {
+      "article": {
+        "id": "8c5acb101e91f69b",
+        "journal_id": "j21",
+        "source_journal_id": "j21",
+        "journal_name": "ACADEMY OF MANAGEMENT JOURNAL",
+        "title": "Trauma at Work: Reframing Experiences to Sustain Engagement",
+        "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.1101",
+        "official_url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.1101",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Madeleine Rauch, Shaz Ansari",
+        "published_at": "2026-06-11",
+        "issue_date": "",
+        "first_seen_at": "2026-06-13",
+        "display_date": "2026-06-11",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "atypon-etoc",
+        "date_source": "metadata_published"
+      },
+      "addedAbstract": false,
+      "source": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-doi",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-title",
+          "ok": false,
+          "status": 200,
+          "error": "no_strict_title_abstract"
+        }
+      ]
+    }
+  ]
+}

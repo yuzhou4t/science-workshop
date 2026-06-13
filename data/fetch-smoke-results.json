@@ -1,6 +1,6 @@
 {
   "summary": {
-    "checked_at": "2026-06-12T02:59:12.698Z",
+    "checked_at": "2026-06-13T02:07:39.783Z",
     "direct_feeds_total": 5,
     "direct_feeds_ok": 5,
     "adapter_sources_total": 17,
@@ -19,7 +19,7 @@
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 2122,
+      "fetch_ms": 1554,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 50,
@@ -766,7 +766,7 @@
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 4388,
+      "fetch_ms": 2815,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 28,
@@ -1284,7 +1284,7 @@
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1519,
+      "fetch_ms": 1867,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 13,
@@ -1552,7 +1552,7 @@
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1317,
+      "fetch_ms": 1418,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 15,
@@ -1850,11 +1850,11 @@
       "status": 200,
       "content_type": "application/xml;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 3647,
+      "fetch_ms": 2103,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 50,
-      "candidate_count": 52,
+      "candidate_count": 53,
       "articles": [
         {
           "title": "Loosening the Theoretical Reins: A Case for Phenomenon-Driven Research in AMJ",
@@ -1994,6 +1994,21 @@
           "abstract": "Some organizations in stigmatized markets are more successful than others at managing audience perceptions and attracting consumers. Despite extensive research on organizational stigma management, less is known about the conditions under which different strategies drive consumer patronage. This study examines two broad approaches—(1) distancing from the stigmatized market, and (2) displaying associations with the stigmatized market—that operate through opposing mechanisms and offer competing prescriptions for organizations. We consider how group stigma affects dynamics between organizations and consumers to influence the effectiveness of stigma management strategies. We introduce the concept of market-stigmatized groups and predict that the local concentration of these groups moderates the effectiveness of distancing and displaying in generating sales. Examining dispensaries in Washington state’s marijuana market, we find that displaying strategies are associated with lower sales in areas with higher concentrations of Black residents, a market-stigmatized group in this industry, whereas distancing strategies have diverging effects. Our study contributes to stigma research by demonstrating that the effectiveness of stigma management strategies is contingent on the local concentration of market-stigmatized groups, showing how stigmas interact across levels to affect organizational outcomes, and identifying a source of performance heterogeneity in stigmatized markets.",
           "published_at": "",
           "official_url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.0995",
+          "pdf_url": "",
+          "discovery_url": "",
+          "link_status": "official_detail",
+          "link_note": "official_detail_page"
+        },
+        {
+          "title": "Trauma at Work: Reframing Experiences to Sustain Engagement",
+          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.1101",
+          "date": "2026-06-11",
+          "authors": "Madeleine Rauch, Shaz Ansari",
+          "author_source": "",
+          "published_at": "2026-06-11",
+          "date_source": "metadata_published",
+          "issue_date": "",
+          "official_url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.1101",
           "pdf_url": "",
           "discovery_url": "",
           "link_status": "official_detail",
@@ -2313,13 +2328,8 @@
         {
           "title": "Spacing Bodies: The Interplay between Focal and Subsidiary Coordinating",
           "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0300",
-          "date": "2026-03-09",
+          "date": "2026-03-09T04:36:19Z",
           "authors": "Samer Faraj, Karla Sayegh",
-          "author_source": "",
-          "published_at": "2026-03-09",
-          "date_source": "metadata_published",
-          "abstract": "Research on coordination has traditionally focused on social and procedural arrangements that align collective action, yet this perspective often overlooks the embodied, pre-reflective processes that underpin effective coordinating. We draw on the distinction between focal and subsidiary coordinating to argue that focal coordinating—deliberate efforts to structure workflows and align tasks—depends on subsidiary coordinating, which consists of taken-for-granted, backgrounded embodied actions that support joint work. Through an ethnographic study of a neonatal intensive care unit relocation, we find that space change required iterative embodied repairs that targeted subsidiary coordinating, ultimately re-enabling focal coordinating. These repairs involved the reconfiguring of sensory access, inscribing new bodily habits, reallocating who-senses-what, and reorienting intercorporeal action. Our findings contribute to theories of coordinating and space by showing how spatial disruptions cannot be fully addressed through social or procedural adjustments alone, but must involve the reconstruction of embodied subsidiary coordinating.",
-          "issue_date": "",
           "official_url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0300",
           "pdf_url": "",
           "discovery_url": "",
@@ -2534,17 +2544,6 @@
           "discovery_url": "",
           "link_status": "official_detail",
           "link_note": "official_detail_page"
-        },
-        {
-          "title": "Not Just Hearsay and Rumor: How Managers (Actually) Perceive the Credibility of Secondhand Accounts of Employee Voice",
-          "url": "https://journals.aom.org/doi/abs/10.5465/amj.2022.0352",
-          "date": "2025-04-02T01:42:50Z",
-          "authors": "Ethan R. Burris, Taeya M. Howell, Stephen R. Stubben, Kyle T. Welch",
-          "official_url": "https://journals.aom.org/doi/abs/10.5465/amj.2022.0352",
-          "pdf_url": "",
-          "discovery_url": "",
-          "link_status": "official_detail",
-          "link_note": "official_detail_page"
         }
       ],
       "samples": [
@@ -2610,8 +2609,8 @@
       "extraction_rule": "ajcass-current-api",
       "status": 200,
       "content_type": "application/json; charset=utf-8",
-      "transport": "curl",
-      "fetch_ms": 18382,
+      "transport": "fetch",
+      "fetch_ms": 2559,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 11,
@@ -2775,7 +2774,7 @@
         }
       ],
       "notes": [],
-      "error": "timeout"
+      "error": ""
     },
     {
       "type": "adapter_source",
@@ -2788,8 +2787,8 @@
       "extraction_rule": "cie-legacy-html",
       "status": 200,
       "content_type": "text/html; charset=utf-8",
-      "transport": "curl",
-      "fetch_ms": 26056,
+      "transport": "fetch",
+      "fetch_ms": 9974,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 50,
@@ -3490,7 +3489,7 @@
       "notes": [
         "authors_from_current_list"
       ],
-      "error": "timeout"
+      "error": ""
     },
     {
       "type": "adapter_source",
@@ -3503,8 +3502,8 @@
       "extraction_rule": "ajcass-current-api",
       "status": 200,
       "content_type": "application/json; charset=utf-8",
-      "transport": "curl",
-      "fetch_ms": 18307,
+      "transport": "fetch",
+      "fetch_ms": 3506,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 9,
@@ -3646,7 +3645,7 @@
         }
       ],
       "notes": [],
-      "error": "timeout"
+      "error": ""
     },
     {
       "type": "adapter_source",
@@ -3659,8 +3658,8 @@
       "extraction_rule": "magtech-cn-html",
       "status": 200,
       "content_type": "text/html;charset=UTF-8",
-      "transport": "curl",
-      "fetch_ms": 19243,
+      "transport": "fetch",
+      "fetch_ms": 4305,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 7,
@@ -3885,7 +3884,7 @@
         }
       ],
       "notes": [],
-      "error": "timeout"
+      "error": ""
     },
     {
       "type": "adapter_source",
@@ -3899,7 +3898,7 @@
       "status": 200,
       "content_type": "text/html;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 4230,
+      "fetch_ms": 3709,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 32,
@@ -4672,7 +4671,7 @@
       "status": 200,
       "content_type": "text/html; charset=utf-8",
       "transport": "fetch",
-      "fetch_ms": 1278,
+      "fetch_ms": 982,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 11,
@@ -5016,7 +5015,7 @@
       "status": 200,
       "content_type": "text/html;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 3129,
+      "fetch_ms": 3603,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 17,
@@ -5494,7 +5493,7 @@
       "status": 200,
       "content_type": "text/html; charset=utf-8",
       "transport": "fetch",
-      "fetch_ms": 2021,
+      "fetch_ms": 1247,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 17,
@@ -5970,7 +5969,7 @@
       "status": 200,
       "content_type": "text/html; charset=utf-8",
       "transport": "fetch",
-      "fetch_ms": 1025,
+      "fetch_ms": 817,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 11,
@@ -6313,7 +6312,7 @@
       "status": 200,
       "content_type": "text/html; charset=utf-8",
       "transport": "fetch",
-      "fetch_ms": 6489,
+      "fetch_ms": 6734,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 16,
@@ -6330,7 +6329,7 @@
           "date_source": "ncpssd_article_id",
           "official_source": "ncpssd",
           "pdf_url": "",
-          "discovery_url": "https://www.cqvip.com/doc/journal/7203589694?sign=601903c2039340076250db0f2f4f81180de0b3a42852a21e2fd487fba914530b&expireTime=1796783758424&resourceId=7203589694&type=1",
+          "discovery_url": "https://www.cqvip.com/doc/journal/7203589694?sign=5867ca99ea2f7421cf94d134568ca69bc766c6cffc7e9a94f79b47d584d5b220&expireTime=1796868312022&resourceId=7203589694&type=1",
           "link_status": "official_detail",
           "link_note": "official_detail_page"
         },
@@ -6345,7 +6344,7 @@
           "date_source": "ncpssd_article_id",
           "official_source": "ncpssd",
           "pdf_url": "",
-          "discovery_url": "https://www.cqvip.com/doc/journal/7203589695?sign=67265f647500176168a3e2eeeedb68913dfcb158316720c2e10e41ec505345ac&expireTime=1796783758424&resourceId=7203589695&type=1",
+          "discovery_url": "https://www.cqvip.com/doc/journal/7203589695?sign=4b9f63cb9040ec3ed50e33447f1c05c5a3b6174e61916f4d156ee7b6ff28f66e&expireTime=1796868312022&resourceId=7203589695&type=1",
           "link_status": "official_detail",
           "link_note": "official_detail_page"
         },
@@ -6360,7 +6359,7 @@
           "date_source": "ncpssd_article_id",
           "official_source": "ncpssd",
           "pdf_url": "",
-          "discovery_url": "https://www.cqvip.com/doc/journal/7203589696?sign=4e855b9eaa8730752cec5f68bc9304393a6d0ad0c751252cd70a0054a945062f&expireTime=1796783758424&resourceId=7203589696&type=1",
+          "discovery_url": "https://www.cqvip.com/doc/journal/7203589696?sign=ac640efd4ec1b5694da2140291f0089b3686f73c43730d748abb63173bfbf47e&expireTime=1796868312022&resourceId=7203589696&type=1",
           "link_status": "official_detail",
           "link_note": "official_detail_page"
         },
@@ -6375,7 +6374,7 @@
           "date_source": "ncpssd_article_id",
           "official_source": "ncpssd",
           "pdf_url": "",
-          "discovery_url": "https://www.cqvip.com/doc/journal/7203589697?sign=58d0f6067b93f75f67d744c88025f030c54bd96193f2ffcedb8fa5fda56d050c&expireTime=1796783758424&resourceId=7203589697&type=1",
+          "discovery_url": "https://www.cqvip.com/doc/journal/7203589697?sign=35ad7a3f7f27a6d39ac8117f3771dacbca876ed9d0fb669fb593b37888a51b0c&expireTime=1796868312022&resourceId=7203589697&type=1",
           "link_status": "official_detail",
           "link_note": "official_detail_page"
         },
@@ -6390,7 +6389,7 @@
           "date_source": "ncpssd_article_id",
           "official_source": "ncpssd",
           "pdf_url": "",
-          "discovery_url": "https://www.cqvip.com/doc/journal/7203589698?sign=5191d4baf785ee7a1f02a6290aefaaccd8223dc00b70ccfc12f2e7e8bab7fa6a&expireTime=1796783758424&resourceId=7203589698&type=1",
+          "discovery_url": "https://www.cqvip.com/doc/journal/7203589698?sign=529cb8936641c79eceb051d8b56a0d4529c50dd60c77a0b9c8de3b329aaeb2c9&expireTime=1796868312022&resourceId=7203589698&type=1",
           "link_status": "official_detail",
           "link_note": "official_detail_page"
         },
@@ -6405,7 +6404,7 @@
           "date_source": "ncpssd_article_id",
           "official_source": "ncpssd",
           "pdf_url": "",
-          "discovery_url": "https://www.cqvip.com/doc/journal/7203589699?sign=138580d1d2412259e38e5a2509015e2dd431abc48163656123b342a3056a05c4&expireTime=1796783758424&resourceId=7203589699&type=1",
+          "discovery_url": "https://www.cqvip.com/doc/journal/7203589699?sign=7bd5110cd5e876db8bc4c0df554eca6f33c2d8fd0698fef01667ee65f30820f9&expireTime=1796868312022&resourceId=7203589699&type=1",
           "link_status": "official_detail",
           "link_note": "official_detail_page"
         },
@@ -6420,7 +6419,7 @@
           "date_source": "ncpssd_article_id",
           "official_source": "ncpssd",
           "pdf_url": "",
-          "discovery_url": "https://www.cqvip.com/doc/journal/7203589700?sign=79ad9de18927c995cf8168349737ccb81b4dfa6c293c3230bfc82865600253a1&expireTime=1796783758424&resourceId=7203589700&type=1",
+          "discovery_url": "https://www.cqvip.com/doc/journal/7203589700?sign=dafd33e805fff768016b34b636b7c4a450d291f5bdcf115437dd13342c51d2e0&expireTime=1796868312022&resourceId=7203589700&type=1",
           "link_status": "official_detail",
           "link_note": "official_detail_page"
         },
@@ -6435,7 +6434,7 @@
           "date_source": "ncpssd_article_id",
           "official_source": "ncpssd",
           "pdf_url": "",
-          "discovery_url": "https://www.cqvip.com/doc/journal/7203589701?sign=7b8e3bd28ff53d24ac61effa5b932808fbae9c1fd493bd2842c72edb60236913&expireTime=1796783758424&resourceId=7203589701&type=1",
+          "discovery_url": "https://www.cqvip.com/doc/journal/7203589701?sign=ab2f6d240eb4f099dcc7f869d4bf38e727f9c01ff93cfc84a3f7c4eba119d148&expireTime=1796868312022&resourceId=7203589701&type=1",
           "link_status": "official_detail",
           "link_note": "official_detail_page"
         },
@@ -6450,7 +6449,7 @@
           "date_source": "ncpssd_article_id",
           "official_source": "ncpssd",
           "pdf_url": "",
-          "discovery_url": "https://www.cqvip.com/doc/journal/7203589702?sign=ac7712b3e4da0e2b14db84fd711eeda3004c9fae86b666de71515dc92051647a&expireTime=1796783758424&resourceId=7203589702&type=1",
+          "discovery_url": "https://www.cqvip.com/doc/journal/7203589702?sign=afc8e45614e135d80934e4a135b10712349c31873e47c18c64cfb7e62797b671&expireTime=1796868312022&resourceId=7203589702&type=1",
           "link_status": "official_detail",
           "link_note": "official_detail_page"
         },
@@ -6465,7 +6464,7 @@
           "date_source": "ncpssd_article_id",
           "official_source": "ncpssd",
           "pdf_url": "",
-          "discovery_url": "https://www.cqvip.com/doc/journal/7203589703?sign=2ce02bd2429e6e5be7212c2dac70dbfee941e52d5567da8c3114536f44ba003e&expireTime=1796783758424&resourceId=7203589703&type=1",
+          "discovery_url": "https://www.cqvip.com/doc/journal/7203589703?sign=d252cdfba92b85daaea7c4b4f4d7c8e02d27b5ee40b64bce3a2ee90c6f497205&expireTime=1796868312022&resourceId=7203589703&type=1",
           "link_status": "official_detail",
           "link_note": "official_detail_page"
         },
@@ -6480,7 +6479,7 @@
           "date_source": "ncpssd_article_id",
           "official_source": "ncpssd",
           "pdf_url": "",
-          "discovery_url": "https://www.cqvip.com/doc/journal/7203589704?sign=432028c8362813c703f30f816049ca7ee53883416fdba5ba441e9bbd6d665981&expireTime=1796783758424&resourceId=7203589704&type=1",
+          "discovery_url": "https://www.cqvip.com/doc/journal/7203589704?sign=1faf10d9b27fff6df9654ecbbd48da76e9ffc4be53e12e509f90f843e39cc216&expireTime=1796868312022&resourceId=7203589704&type=1",
           "link_status": "official_detail",
           "link_note": "official_detail_page"
         },
@@ -6495,7 +6494,7 @@
           "date_source": "ncpssd_article_id",
           "official_source": "ncpssd",
           "pdf_url": "",
-          "discovery_url": "https://www.cqvip.com/doc/journal/7203589705?sign=f07cc3abee185e2f4ad3b109a916dd33f658c2cb45b2c7c281c9b85b76fe471a&expireTime=1796783758424&resourceId=7203589705&type=1",
+          "discovery_url": "https://www.cqvip.com/doc/journal/7203589705?sign=474a4fb6fbc4de353a19f4f569e35b559920453ade3190ae885c1052238da68d&expireTime=1796868312022&resourceId=7203589705&type=1",
           "link_status": "official_detail",
           "link_note": "official_detail_page"
         },
@@ -6510,7 +6509,7 @@
           "date_source": "ncpssd_article_id",
           "official_source": "ncpssd",
           "pdf_url": "",
-          "discovery_url": "https://www.cqvip.com/doc/journal/7203589706?sign=b23fc125c69444eabc83db4585ac63c9c73842554f5017d586a8d8558723cd87&expireTime=1796783758424&resourceId=7203589706&type=1",
+          "discovery_url": "https://www.cqvip.com/doc/journal/7203589706?sign=4371814417160edd26e839647d6521d34004922d4e127399b0fea686b13d7a92&expireTime=1796868312022&resourceId=7203589706&type=1",
           "link_status": "official_detail",
           "link_note": "official_detail_page"
         },
@@ -6525,7 +6524,7 @@
           "date_source": "ncpssd_article_id",
           "official_source": "ncpssd",
           "pdf_url": "",
-          "discovery_url": "https://www.cqvip.com/doc/journal/7203589707?sign=7072137e04e9798896259dd3772d744375dacd0c4bdc8c916fea2ec8538ce5ce&expireTime=1796783758424&resourceId=7203589707&type=1",
+          "discovery_url": "https://www.cqvip.com/doc/journal/7203589707?sign=2a346da9d1aab49384037be532b3280adead59d27da94b1ea6270cdf1267e37f&expireTime=1796868312022&resourceId=7203589707&type=1",
           "link_status": "official_detail",
           "link_note": "official_detail_page"
         },
@@ -6540,7 +6539,7 @@
           "date_source": "ncpssd_article_id",
           "official_source": "ncpssd",
           "pdf_url": "",
-          "discovery_url": "https://www.cqvip.com/doc/journal/7203589693?sign=c275ce2caff34a806f2e1f64ebdc2f590f124d3e70f6dcefea9fc1c37f93ec4e&expireTime=1796783758424&resourceId=7203589693&type=1",
+          "discovery_url": "https://www.cqvip.com/doc/journal/7203589693?sign=6bc0eac994ce45675d44358e1bbce42bc9db7907b8eace4cc20c3582041fb2c6&expireTime=1796868312022&resourceId=7203589693&type=1",
           "link_status": "official_detail",
           "link_note": "official_detail_page"
         },
@@ -6555,7 +6554,7 @@
           "date_source": "ncpssd_article_id",
           "official_source": "ncpssd",
           "pdf_url": "",
-          "discovery_url": "https://www.cqvip.com/doc/journal/7203589708?sign=f0ca45303dab4b7b62e8880dcb95947eb7375e2cdeb323181bbe64a85dcb218d&expireTime=1796783758424&resourceId=7203589708&type=1",
+          "discovery_url": "https://www.cqvip.com/doc/journal/7203589708?sign=dfae04c1141052421b19663c3e0311b1c279acb7be6a9c39e2a6ea6d3c58de37&expireTime=1796868312022&resourceId=7203589708&type=1",
           "link_status": "official_detail",
           "link_note": "official_detail_page"
         }
@@ -6572,7 +6571,7 @@
           "date_source": "ncpssd_article_id",
           "official_source": "ncpssd",
           "pdf_url": "",
-          "discovery_url": "https://www.cqvip.com/doc/journal/7203589694?sign=601903c2039340076250db0f2f4f81180de0b3a42852a21e2fd487fba914530b&expireTime=1796783758424&resourceId=7203589694&type=1",
+          "discovery_url": "https://www.cqvip.com/doc/journal/7203589694?sign=5867ca99ea2f7421cf94d134568ca69bc766c6cffc7e9a94f79b47d584d5b220&expireTime=1796868312022&resourceId=7203589694&type=1",
           "link_status": "official_detail",
           "link_note": "official_detail_page"
         },
@@ -6587,7 +6586,7 @@
           "date_source": "ncpssd_article_id",
           "official_source": "ncpssd",
           "pdf_url": "",
-          "discovery_url": "https://www.cqvip.com/doc/journal/7203589695?sign=67265f647500176168a3e2eeeedb68913dfcb158316720c2e10e41ec505345ac&expireTime=1796783758424&resourceId=7203589695&type=1",
+          "discovery_url": "https://www.cqvip.com/doc/journal/7203589695?sign=4b9f63cb9040ec3ed50e33447f1c05c5a3b6174e61916f4d156ee7b6ff28f66e&expireTime=1796868312022&resourceId=7203589695&type=1",
           "link_status": "official_detail",
           "link_note": "official_detail_page"
         },
@@ -6602,7 +6601,7 @@
           "date_source": "ncpssd_article_id",
           "official_source": "ncpssd",
           "pdf_url": "",
-          "discovery_url": "https://www.cqvip.com/doc/journal/7203589696?sign=4e855b9eaa8730752cec5f68bc9304393a6d0ad0c751252cd70a0054a945062f&expireTime=1796783758424&resourceId=7203589696&type=1",
+          "discovery_url": "https://www.cqvip.com/doc/journal/7203589696?sign=ac640efd4ec1b5694da2140291f0089b3686f73c43730d748abb63173bfbf47e&expireTime=1796868312022&resourceId=7203589696&type=1",
           "link_status": "official_detail",
           "link_note": "official_detail_page"
         }
@@ -6627,7 +6626,7 @@
       "status": 200,
       "content_type": "text/html;charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 906,
+      "fetch_ms": 832,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 13,
@@ -6862,7 +6861,7 @@
       "status": 200,
       "content_type": "application/json",
       "transport": "fetch",
-      "fetch_ms": 2231,
+      "fetch_ms": 2972,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 12,
@@ -7054,7 +7053,7 @@
       "status": 200,
       "content_type": "text/html; charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 2269,
+      "fetch_ms": 2297,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 31,
@@ -7597,7 +7596,7 @@
       "status": 200,
       "content_type": "application/json",
       "transport": "fetch",
-      "fetch_ms": 2683,
+      "fetch_ms": 3243,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 12,
@@ -7789,7 +7788,7 @@
       "status": 200,
       "content_type": "application/json",
       "transport": "fetch",
-      "fetch_ms": 1675,
+      "fetch_ms": 2545,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 12,
@@ -7981,7 +7980,7 @@
       "status": 200,
       "content_type": "text/html; charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 2074,
+      "fetch_ms": 2437,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 16,
@@ -8307,7 +8306,7 @@
       "status": 200,
       "content_type": "text/html; charset=UTF-8",
       "transport": "fetch",
-      "fetch_ms": 1652,
+      "fetch_ms": 1801,
       "ok": true,
       "usable_as_data_source": true,
       "article_count": 13,
