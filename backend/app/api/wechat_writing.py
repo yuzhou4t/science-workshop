@@ -1,12 +1,16 @@
 import asyncio
 import json
 import logging
+import os
 import shutil
+import tempfile
 from datetime import UTC, datetime
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 from typing import Any
+from urllib.parse import unquote, urlparse
 from uuid import uuid4
 
+import httpx
 from fastapi import APIRouter, File, Form, HTTPException, Request, UploadFile
 from pydantic import BaseModel, Field, field_validator
 
@@ -31,6 +35,7 @@ SAFE_EVIDENCE_ARTIFACTS = (
 UPLOAD_CHUNK_SIZE = 1024 * 1024
 WECHAT_MATERIAL_CHUNK_MAX_BYTES = 2 * 1024 * 1024
 PDF_MEDIA_TYPE = "application/pdf"
+COS_SIGNED_URL_EXPIRES_SECONDS = 600
 
 
 def _log_background_workflow_result(task: asyncio.Task, job_id: str) -> None:
@@ -62,6 +67,20 @@ class MaterialUploadInitRequest(BaseModel):
     media_type: str = "application/octet-stream"
     size_bytes: int = Field(gt=0)
     total_chunks: int = Field(gt=0, le=256)
+
+    @field_validator("filename")
+    @classmethod
+    def filename_required(cls, value: str) -> str:
+        value = value.strip()
+        if not value:
+            raise ValueError("filename is required")
+        return value
+
+
+class MaterialCosUploadInitRequest(BaseModel):
+    filename: str
+    media_type: str = "application/octet-stream"
+    size_bytes: int = Field(gt=0)
 
     @field_validator("filename")
     @classmethod
@@ -139,6 +158,105 @@ def _read_upload_metadata(upload_dir: Path) -> dict[str, Any]:
         raise HTTPException(status_code=400, detail="Material upload metadata is invalid") from exc
 
 
+def _validate_material_cos_object_key(object_key: str) -> str:
+    object_key = object_key.strip()
+    path = PurePosixPath(object_key)
+    if (
+        not object_key
+        or len(object_key) > 1024
+        or object_key.startswith("/")
+        or "\\" in object_key
+        or path.is_absolute()
+        or ".." in path.parts
+        or not path.name
+    ):
+        raise HTTPException(status_code=400, detail="Valid COS material object key required")
+    return object_key
+
+
+def _material_cos_object_key_from_reference(reference: str, settings) -> str:
+    value = reference.strip()
+    if "://" not in value:
+        return _validate_material_cos_object_key(value)
+
+    parsed = urlparse(value)
+    expected_host = f"{settings.tencent_cos_bucket}.cos.{settings.tencent_cos_region}.myqcloud.com"
+    if parsed.scheme != "https" or parsed.netloc != expected_host:
+        raise HTTPException(status_code=400, detail="COS URL must belong to the configured bucket")
+    return _validate_material_cos_object_key(unquote(parsed.path.lstrip("/")))
+
+
+def _new_material_cos_object_key(filename: str) -> str:
+    safe_name = _safe_material_filename(filename, "material")
+    return f"wechat-materials/{uuid4().hex}/{safe_name}"
+
+
+def _media_type_from_filename(filename: str, fallback: str = "application/octet-stream") -> str:
+    fallback = fallback or "application/octet-stream"
+    suffix = Path(filename).suffix.lower()
+    if suffix == ".pdf":
+        return PDF_MEDIA_TYPE
+    if suffix in {".md", ".markdown"}:
+        return "text/markdown"
+    if suffix == ".txt":
+        return "text/plain"
+    if suffix == ".json":
+        return "application/json"
+    return fallback
+
+
+async def _cos_signed_get_url(settings, object_key: str) -> str:
+    if not all([settings.tencent_cos_secret_id, settings.tencent_cos_secret_key, settings.tencent_cos_bucket]):
+        raise HTTPException(status_code=400, detail="Tencent COS settings are required")
+
+    def sign_sync() -> str:
+        from qcloud_cos import CosConfig, CosS3Client
+
+        client = CosS3Client(
+            CosConfig(
+                Region=settings.tencent_cos_region,
+                SecretId=settings.tencent_cos_secret_id,
+                SecretKey=settings.tencent_cos_secret_key,
+                Token=None,
+                Scheme="https",
+            )
+        )
+        return client.get_presigned_url(
+            Method="GET",
+            Bucket=settings.tencent_cos_bucket,
+            Key=object_key,
+            Expired=COS_SIGNED_URL_EXPIRES_SECONDS,
+        )
+
+    return await asyncio.get_running_loop().run_in_executor(None, sign_sync)
+
+
+async def _cos_signed_put_url(settings, object_key: str) -> str:
+    if not all([settings.tencent_cos_secret_id, settings.tencent_cos_secret_key, settings.tencent_cos_bucket]):
+        raise HTTPException(status_code=400, detail="Tencent COS settings are required")
+
+    def sign_sync() -> str:
+        from qcloud_cos import CosConfig, CosS3Client
+
+        client = CosS3Client(
+            CosConfig(
+                Region=settings.tencent_cos_region,
+                SecretId=settings.tencent_cos_secret_id,
+                SecretKey=settings.tencent_cos_secret_key,
+                Token=None,
+                Scheme="https",
+            )
+        )
+        return client.get_presigned_url(
+            Method="PUT",
+            Bucket=settings.tencent_cos_bucket,
+            Key=object_key,
+            Expired=COS_SIGNED_URL_EXPIRES_SECONDS,
+        )
+
+    return await asyncio.get_running_loop().run_in_executor(None, sign_sync)
+
+
 def _parse_material_upload_ids(raw_value: str) -> list[str]:
     raw_value = raw_value.strip()
     if not raw_value:
@@ -150,6 +268,28 @@ def _parse_material_upload_ids(raw_value: str) -> list[str]:
     if not isinstance(value, list):
         raise HTTPException(status_code=400, detail="material_upload_ids must be a list")
     return [_safe_upload_id(str(item).strip()) for item in value if str(item).strip()]
+
+
+def _parse_material_cos_object_keys(raw_value: str, settings) -> list[str]:
+    raw_value = raw_value.strip()
+    if not raw_value:
+        return []
+    try:
+        value = json.loads(raw_value)
+    except json.JSONDecodeError:
+        value = [item.strip() for item in raw_value.split(",")]
+    if not isinstance(value, list):
+        raise HTTPException(status_code=400, detail="material_cos_object_keys must be a list")
+
+    object_keys: list[str] = []
+    for item in value:
+        if isinstance(item, dict):
+            raw_key = str(item.get("object_key") or item.get("cos_object_key") or "").strip()
+        else:
+            raw_key = str(item).strip()
+        if raw_key:
+            object_keys.append(_material_cos_object_key_from_reference(raw_key, settings))
+    return object_keys
 
 
 def _safe_material_filename(filename: str, fallback: str) -> str:
@@ -216,6 +356,83 @@ async def _write_uploaded_materials(
 
     store.save_job(job)
     return uploaded
+
+
+async def _download_cos_material_to_path(url: str, target_path: Path, media_type: str, max_bytes: int) -> tuple[int, list[bytes]]:
+    bytes_written = 0
+    chunks: list[bytes] = []
+    try:
+        async with httpx.AsyncClient(timeout=120.0, follow_redirects=True) as client:
+            async with client.stream("GET", url) as response:
+                if response.status_code == 404:
+                    raise HTTPException(status_code=404, detail="COS material not found")
+                if response.status_code >= 400:
+                    raise HTTPException(status_code=502, detail="COS material download failed")
+                content_length = response.headers.get("content-length")
+                if content_length:
+                    try:
+                        if int(content_length) > max_bytes:
+                            raise HTTPException(status_code=413, detail="Uploaded material is too large")
+                    except ValueError:
+                        pass
+
+                with target_path.open("wb") as output:
+                    async for chunk in response.aiter_bytes(UPLOAD_CHUNK_SIZE):
+                        if not chunk:
+                            continue
+                        bytes_written += len(chunk)
+                        if bytes_written > max_bytes:
+                            raise HTTPException(status_code=413, detail="Uploaded material is too large")
+                        output.write(chunk)
+                        if _is_text_media_type(media_type):
+                            chunks.append(chunk)
+        return bytes_written, chunks
+    except Exception:
+        target_path.unlink(missing_ok=True)
+        raise
+
+
+async def _copy_cos_material_to_job(
+    request: Request,
+    store,
+    job,
+    cos_object_key: str,
+    index: int,
+    max_bytes: int,
+) -> dict[str, Any]:
+    settings = request.app.state.settings
+    object_key = _material_cos_object_key_from_reference(cos_object_key, settings)
+    upload_dir = store.job_dir(job.job_id) / "input" / "materials"
+    upload_dir.mkdir(parents=True, exist_ok=True)
+    filename = _unique_material_filename(
+        upload_dir,
+        _safe_material_filename(PurePosixPath(object_key).name, f"material-{index}"),
+    )
+    media_type = _media_type_from_filename(filename)
+    fd, temp_name = tempfile.mkstemp(prefix="wechat-cos-", suffix=Path(filename).suffix, dir=upload_dir)
+    os.close(fd)
+    temp_path = Path(temp_name)
+
+    signed_url = await _cos_signed_get_url(settings, object_key)
+    bytes_written, chunks = await _download_cos_material_to_path(signed_url, temp_path, media_type, max_bytes)
+
+    target_path = upload_dir / filename
+    try:
+        shutil.move(str(temp_path), target_path)
+    finally:
+        temp_path.unlink(missing_ok=True)
+
+    text_content = _extract_stored_material_content(target_path, media_type, chunks)
+    relative_path = f"input/materials/{filename}"
+    job.artifacts[filename] = Artifact(name=filename, relative_path=relative_path, media_type=media_type)
+    store.save_job(job)
+    return {
+        "filename": filename,
+        "relative_path": relative_path,
+        "media_type": media_type,
+        "size_bytes": bytes_written,
+        "content": text_content,
+    }
 
 
 def _consume_chunked_material_uploads(
@@ -341,6 +558,17 @@ def create_material_upload(payload: MaterialUploadInitRequest, request: Request)
     }
 
 
+@router.post("/cos-uploads")
+async def create_cos_material_upload(payload: MaterialCosUploadInitRequest, request: Request) -> dict[str, Any]:
+    settings = request.app.state.settings
+    if payload.size_bytes > settings.paper_reading_max_upload_bytes:
+        raise HTTPException(status_code=413, detail="Uploaded material is too large")
+
+    object_key = _new_material_cos_object_key(payload.filename)
+    upload_url = await _cos_signed_put_url(settings, object_key)
+    return {"object_key": object_key, "upload_url": upload_url}
+
+
 @router.put("/material-uploads/{upload_id}/chunks/{chunk_index}")
 async def upload_material_chunk(upload_id: str, chunk_index: int, request: Request) -> dict[str, Any]:
     upload_dir = _upload_dir(request, upload_id)
@@ -376,6 +604,7 @@ async def create_wechat_writing_job(
     paper_reading_job_id: str = Form(""),
     template_id: str = Form("africa-reading"),
     material_upload_ids: str = Form(""),
+    material_cos_object_keys: str = Form(""),
     materials: list[UploadFile] | None = File(None),
 ) -> dict:
     settings = request.app.state.settings
@@ -384,8 +613,9 @@ async def create_wechat_writing_job(
     if paper_reading_job_id:
         evidence_chain = _collect_paper_reading_evidence(store, paper_reading_job_id)
     chunked_upload_ids = _parse_material_upload_ids(material_upload_ids)
+    cos_object_keys = _parse_material_cos_object_keys(material_cos_object_keys, settings)
     incoming_materials = [material for material in materials or [] if material.filename]
-    if not source_text.strip() and not evidence_chain and not incoming_materials and not chunked_upload_ids:
+    if not source_text.strip() and not evidence_chain and not incoming_materials and not chunked_upload_ids and not cos_object_keys:
         raise HTTPException(status_code=400, detail="source_text, paper_reading_job_id with evidence, or uploaded materials are required")
 
     job = store.create_job(WorkflowType.WECHAT_WRITING, template_id=template_id)
@@ -404,6 +634,17 @@ async def create_wechat_writing_job(
             settings.paper_reading_max_upload_bytes,
         )
     )
+    for index, object_key in enumerate(cos_object_keys, start=1):
+        uploaded_materials.append(
+            await _copy_cos_material_to_job(
+                request,
+                store,
+                job,
+                object_key,
+                index,
+                settings.paper_reading_max_upload_bytes,
+            )
+        )
     source_bundle = {
         "source_text": source_text,
         "article_id": article_id,

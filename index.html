@@ -3006,6 +3006,7 @@
                   <input id="wechatArticleId" name="article_id" type="hidden" value="" />
                   <input id="wechatPaperJobId" name="paper_reading_job_id" type="hidden" value="" />
                   <input id="wechatTemplateId" name="template_id" type="hidden" value="africa-reading" />
+                  <input id="wechatMaterialCosObjectKeys" name="material_cos_object_keys" type="hidden" value="" />
                 </form>
                 <div id="wechatWritingStatus" class="workflow-status" aria-live="polite">等待材料或论文精读结果</div>
                 <div class="workflow-evidence" data-workflow-metrics="wechat-writing" aria-label="公众号写作产物指标">
@@ -4518,10 +4519,35 @@
         return upload.object_key;
       }
 
+      async function uploadWechatMaterialBlobToCos(blob, filename, mediaType, statusNode, itemIndex, itemTotal) {
+        setWorkflowStatus(statusNode, `正在准备材料 COS 直传 ${itemIndex}/${itemTotal}: ${filename}`, "running");
+        const initResponse = await workshopFetch(`${WORKFLOW_API_BASE}/api/workflows/wechat-writing/cos-uploads`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            filename,
+            media_type: mediaType || "application/octet-stream",
+            size_bytes: blob.size
+          })
+        });
+        if (!initResponse.ok) throw new Error(await workflowErrorMessage(initResponse, "材料 COS 直传初始化失败"));
+        const upload = await initResponse.json();
+        if (!upload.object_key || !upload.upload_url) throw new Error("材料 COS 直传初始化缺少上传地址");
+
+        setWorkflowStatus(statusNode, `正在直传材料到 COS ${itemIndex}/${itemTotal}: ${filename}`, "running");
+        const uploadResponse = await fetch(upload.upload_url, {
+          method: "PUT",
+          body: blob
+        });
+        if (!uploadResponse.ok) throw new Error(`材料 COS 直传失败: HTTP ${uploadResponse.status}`);
+        return upload.object_key;
+      }
+
       async function buildWechatWritingJobForm(form, statusNode) {
         const sourceFormData = new FormData(form);
         const jobFormData = new FormData();
         const uploadIds = [];
+        const cosObjectKeys = [];
         const sourceText = String(sourceFormData.get("source_text") || "");
         const materialFiles = workflowUploadedFiles(sourceFormData, "materials");
         const largeSourceText = workflowTextBytes(sourceText) > WORKFLOW_INLINE_TEXT_LIMIT_BYTES;
@@ -4547,10 +4573,17 @@
 
         for (let index = 0; index < uploadItems.length; index += 1) {
           const item = uploadItems[index];
-          const uploadId = await uploadWechatMaterialBlob(item.blob, item.filename, item.mediaType, statusNode, index + 1, uploadItems.length);
-          uploadIds.push(uploadId);
+          try {
+            const cosObjectKey = await uploadWechatMaterialBlobToCos(item.blob, item.filename, item.mediaType, statusNode, index + 1, uploadItems.length);
+            cosObjectKeys.push(cosObjectKey);
+          } catch (error) {
+            setWorkflowStatus(statusNode, "材料 COS 直传不可用，改用兼容上传...", "running");
+            const uploadId = await uploadWechatMaterialBlob(item.blob, item.filename, item.mediaType, statusNode, index + 1, uploadItems.length);
+            uploadIds.push(uploadId);
+          }
         }
         if (uploadIds.length) jobFormData.set("material_upload_ids", JSON.stringify(uploadIds));
+        if (cosObjectKeys.length) jobFormData.set("material_cos_object_keys", JSON.stringify(cosObjectKeys));
         return jobFormData;
       }
 

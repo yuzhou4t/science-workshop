@@ -343,6 +343,78 @@ def test_create_wechat_writing_job_accepts_chunked_material_upload(client: TestC
     assert not (store.root / "_uploads" / "wechat-materials" / upload_id).exists()
 
 
+def test_create_wechat_writing_job_accepts_cos_material_object_key(
+    client: TestClient,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    from app.api import wechat_writing
+
+    async def copy_cos_material_to_job(request, store, job, cos_object_key, index, max_bytes):
+        assert cos_object_key == "wechat-materials/existing.pdf"
+        material_dir = store.job_dir(job.job_id) / "input" / "materials"
+        material_dir.mkdir(parents=True, exist_ok=True)
+        path = material_dir / "existing.pdf"
+        path.write_bytes(b"%PDF-1.4 existing cos material")
+        return {
+            "filename": "existing.pdf",
+            "relative_path": "input/materials/existing.pdf",
+            "media_type": "application/pdf",
+            "size_bytes": path.stat().st_size,
+            "content": "COS PDF 提取出的正文",
+        }
+
+    monkeypatch.setattr(
+        wechat_writing,
+        "_copy_cos_material_to_job",
+        copy_cos_material_to_job,
+        raising=False,
+    )
+
+    response = client.post(
+        "/api/workflows/wechat-writing/jobs",
+        data={"template_id": "africa-reading", "material_cos_object_keys": json.dumps(["wechat-materials/existing.pdf"])},
+    )
+
+    assert response.status_code == 200
+    body = response.json()
+    store = client.app.state.job_store
+    source_bundle_path = store.job_dir(body["job_id"]) / "input" / "source_bundle.json"
+    source_bundle = json.loads(source_bundle_path.read_text(encoding="utf-8"))
+    assert source_bundle["uploaded_materials"][0]["filename"] == "existing.pdf"
+    assert source_bundle["uploaded_materials"][0]["content"] == "COS PDF 提取出的正文"
+
+
+def test_create_wechat_writing_cos_upload_returns_signed_url(
+    client: TestClient,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    from app.api import wechat_writing
+
+    async def signed_put_url(settings, object_key):
+        return f"https://cos.example.test/{object_key}?sign=put"
+
+    settings = client.app.state.settings
+    settings.tencent_cos_secret_id = "secret-id"
+    settings.tencent_cos_secret_key = "secret-key"
+    settings.tencent_cos_bucket = "bucket-123"
+    monkeypatch.setattr(wechat_writing, "_cos_signed_put_url", signed_put_url, raising=False)
+
+    response = client.post(
+        "/api/workflows/wechat-writing/cos-uploads",
+        json={
+            "filename": "material.pdf",
+            "media_type": "application/pdf",
+            "size_bytes": 18,
+        },
+    )
+
+    assert response.status_code == 200
+    body = response.json()
+    assert body["object_key"].startswith("wechat-materials/")
+    assert body["object_key"].endswith(".pdf")
+    assert body["upload_url"] == f"https://cos.example.test/{body['object_key']}?sign=put"
+
+
 def test_create_wechat_writing_job_extracts_uploaded_pdf_material_content(
     client: TestClient,
     monkeypatch: pytest.MonkeyPatch,
