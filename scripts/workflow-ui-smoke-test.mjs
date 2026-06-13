@@ -85,6 +85,8 @@ const required = [
   "工作流后端",
   "uploadPaperReadingFile",
   "file_upload_id",
+  'id="paperCosObjectKey"',
+  "cos_object_key",
   "WORKFLOW_POLL_MAX_ATTEMPTS = 420",
   "WORKFLOW_NODE_STEPS",
   "workflowStepDetails",

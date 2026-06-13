@@ -2936,9 +2936,10 @@
                 </div>
                 <form id="paperReadingForm" class="workflow-form">
                   <div class="workflow-form-row">
-                    <input class="field" id="paperReadingFile" name="file" type="file" accept="application/pdf" required />
+                    <input class="field" id="paperReadingFile" name="file" type="file" accept="application/pdf" />
                     <button class="btn btn-primary" type="submit">开始精读</button>
                   </div>
+                  <input class="field" id="paperCosObjectKey" name="cos_object_key" type="text" placeholder="COS 对象 Key / 同桶 PDF URL" />
                   <input id="paperTemplateId" name="template_id" type="hidden" value="africa-reading" />
                 </form>
                 <div id="paperReadingStatus" class="workflow-status" aria-live="polite">等待上传 PDF</div>
@@ -4531,11 +4532,18 @@
       async function createPaperReadingJob(form, statusNode) {
         const sourceFormData = new FormData(form);
         const files = workflowUploadedFiles(sourceFormData, "file");
-        if (!files.length) throw new Error("请先选择 PDF 文件");
-        const uploadId = await uploadPaperReadingFile(files[0], statusNode);
+        const cosObjectKey = String(sourceFormData.get("cos_object_key") || "").trim();
+        if (files.length && cosObjectKey) throw new Error("请只选择 PDF 文件或填写 COS 对象 Key 其中一种");
+        if (!files.length && !cosObjectKey) throw new Error("请先选择 PDF 文件或填写 COS 对象 Key");
         const body = new FormData();
         body.set("template_id", String(sourceFormData.get("template_id") || "africa-reading"));
-        body.set("file_upload_id", uploadId);
+        if (cosObjectKey) {
+          setWorkflowStatus(statusNode, "正在引用 COS PDF 创建任务...", "running");
+          body.set("cos_object_key", cosObjectKey);
+        } else {
+          const uploadId = await uploadPaperReadingFile(files[0], statusNode);
+          body.set("file_upload_id", uploadId);
+        }
         const response = await workshopFetch(`${WORKFLOW_API_BASE}/api/workflows/paper-reading/jobs`, {
           method: "POST",
           body

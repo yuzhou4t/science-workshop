@@ -1,6 +1,8 @@
 import json
+from types import SimpleNamespace
 
 import pytest
+from fastapi import HTTPException
 from fastapi.testclient import TestClient
 
 from app.core.config import reset_settings_cache
@@ -139,6 +141,61 @@ def test_create_paper_reading_job_accepts_chunked_pdf_upload(client: TestClient)
     assert body["artifacts"]["input.pdf"]["relative_path"] == "input/input.pdf"
     assert (store.job_dir(body["job_id"]) / "input" / "input.pdf").read_bytes() == pdf_bytes
     assert not (store.root / "_uploads" / "paper-reading" / upload_id).exists()
+
+
+def test_create_paper_reading_job_accepts_cos_pdf_object_key(
+    client: TestClient,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    from app.api import paper_reading
+
+    async def copy_cos_pdf_to_temp(request, cos_object_key, storage_dir, max_bytes):
+        assert cos_object_key == "papers/existing.pdf"
+        temp_path = storage_dir / "_uploads" / "cos-existing.pdf"
+        temp_path.parent.mkdir(parents=True, exist_ok=True)
+        temp_path.write_bytes(b"%PDF-1.4 existing cos pdf")
+        return temp_path
+
+    monkeypatch.setattr(
+        paper_reading,
+        "_copy_cos_pdf_to_temp",
+        copy_cos_pdf_to_temp,
+        raising=False,
+    )
+
+    response = client.post(
+        "/api/workflows/paper-reading/jobs",
+        data={"template_id": "africa-reading", "cos_object_key": "papers/existing.pdf"},
+    )
+
+    assert response.status_code == 200
+    body = response.json()
+    store = client.app.state.job_store
+    assert body["workflow_type"] == "paper_reading"
+    assert body["artifacts"]["input.pdf"]["relative_path"] == "input/input.pdf"
+    assert (store.job_dir(body["job_id"]) / "input" / "input.pdf").read_bytes() == b"%PDF-1.4 existing cos pdf"
+
+
+def test_cos_pdf_reference_accepts_configured_bucket_url() -> None:
+    from app.api.paper_reading import _cos_object_key_from_reference
+
+    settings = SimpleNamespace(tencent_cos_bucket="bucket-123", tencent_cos_region="ap-guangzhou")
+
+    object_key = _cos_object_key_from_reference(
+        "https://bucket-123.cos.ap-guangzhou.myqcloud.com/papers/existing.pdf?sign=abc",
+        settings,
+    )
+
+    assert object_key == "papers/existing.pdf"
+
+
+def test_cos_pdf_reference_rejects_external_url() -> None:
+    from app.api.paper_reading import _cos_object_key_from_reference
+
+    settings = SimpleNamespace(tencent_cos_bucket="bucket-123", tencent_cos_region="ap-guangzhou")
+
+    with pytest.raises(HTTPException):
+        _cos_object_key_from_reference("https://example.com/papers/existing.pdf", settings)
 
 
 def test_create_wechat_writing_job_with_source_text_completes_in_mock_mode(client: TestClient) -> None:
