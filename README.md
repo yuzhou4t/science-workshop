@@ -86,9 +86,9 @@ node scripts/build-front-data.mjs --reset-history --workflow=data/recent-article
 截至 2026-06-13，前端参考数据保留累计推送历史，并已接入摘要回填链路。
 
 - 期刊数据源：22 个。
-- 前端累计展示文章：453 篇，`data/recent-front-data.js` 和 `data/push-history.json` 均为 453 个唯一文章 ID。
-- 已补摘要文章：361 篇；剩余 92 篇没有摘要，其中 `会计研究` 27 篇、`中国工业经济` 18 篇、英文期刊 46 篇、`中国农村经济` 1 篇。
-- 主题检索索引已按 453 篇累计历史重建；当前非洲主题命中 3 篇，语义分类未启用。
+- 前端累计展示文章：455 篇，`data/recent-front-data.js` 和 `data/push-history.json` 均为 455 个唯一文章 ID。
+- 已补摘要文章：362 篇；剩余 93 篇没有摘要，其中 `会计研究` 27 篇、`中国工业经济` 18 篇、英文期刊 47 篇、`中国农村经济` 1 篇。
+- 主题检索索引已按 455 篇累计历史重建；当前非洲主题命中 3 篇，语义分类未启用。
 - 每日自动任务的去重状态写入 `data/source-state.json`；摘要回填只补 `data/push-history.json` / `data/recent-front-data.js`，不改每日去重状态。
 - `scripts/run-daily-workflow.mjs` 在新推送合并后自动运行 `scripts/backfill-daily-abstracts.mjs --first-seen-at=<date>`，尽量给当天新增文章补摘要；随后刷新 `data/topic-search-index.js`，让主题检索覆盖最新累计历史。
 - `管理科学学报` 已可从新版期号页解析；旧版 reader 期号页可作为备用解析入口，2026-06-04 日常运行返回 11 篇当期文章。
@@ -100,13 +100,15 @@ node scripts/build-front-data.mjs --reset-history --workflow=data/recent-article
 
 ## 每日自动检查
 
-本机已经安装 macOS 定时任务：
+生产环境现在由腾讯云服务器执行每日任务；本机 macOS LaunchAgent 已禁用并卸载，避免和服务器重复提交。
 
 ```text
-/Users/yuzhou4tc/Library/LaunchAgents/com.science-workshop.daily.plist
+服务器仓库：/opt/science-workshop/repo
+服务器入口：/opt/science-workshop/run-daily-publish.sh
+服务器定时：0 10 * * *
 ```
 
-它会每天本地时间 10:00 运行：
+服务器入口会每天北京时间 10:00 运行：
 
 ```bash
 node scripts/run-daily-publish.mjs
@@ -114,7 +116,13 @@ node scripts/run-daily-publish.mjs
 
 运行日志在：
 
-- `logs/daily-workflow.log`
-- `logs/daily-workflow.error.log`
+- `/opt/science-workshop/logs/daily-publish.log`
+- `/opt/science-workshop/logs/daily-publish.error.log`
+
+本机备用 LaunchAgent 文件仍保留在：
+
+```text
+/Users/yuzhou4tc/Library/LaunchAgents/com.science-workshop.daily.plist
+```
 
 如果当天没有新文章，前端数据不会被空结果覆盖；如果发现新文章，脚本会先合并到 `data/push-history.json`，再更新 `data/recent-front-data.js`，随后只针对当天 `first_seen_at` 的新增文章运行摘要回填。每日流程结束前会刷新主题检索索引；发布入口只提交当天生成的数据文件、累计状态文件和发生实质变化的主题索引，推送到 `origin/main` 后由 Vercel 自动部署。页面默认展示累计推送历史，日期筛选只是缩小查看范围。

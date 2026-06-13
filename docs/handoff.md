@@ -2,17 +2,18 @@
 
 ## Snapshot
 
-Status on 2026-06-06:
+Status on 2026-06-13 after server scheduler migration:
 
 - Prototype path: `/Users/yuzhou4tc/Public/工作坊/journal-workshop-prototype`.
 - Frontend entry: `index.html`.
 - Source registry: `data/adapter-profiles.json`.
-- Latest cumulative frontend history: 379 unique article IDs.
-- Articles with abstracts: 309 of 379.
+- Latest cumulative frontend history: 455 unique article IDs.
+- Articles with abstracts: 362 of 455.
 - Direct article RSS/eTOC feeds: 5.
 - Adapter-based sources: 17.
-- Local daily scheduler: installed as `com.science-workshop.daily`.
-- Codex app automation `science-workshop`: paused to avoid duplicate daily runs.
+- Production daily scheduler: Tencent Cloud cron runs `/opt/science-workshop/run-daily-publish.sh` at 10:00 Beijing time.
+- Local macOS scheduler: `com.science-workshop.daily` is disabled and unloaded to avoid duplicate daily runs.
+- Codex app automation `science-workshop-2`: active daily health check for the server API, Vercel proxy, and production topic index.
 
 The frontend history currently lives in:
 
@@ -22,8 +23,8 @@ The frontend history currently lives in:
 The remaining abstract gaps are:
 
 - `中国工业经济`: 18, all from 2026-04 and 2026-05; NCPSD has not listed those issues yet.
-- `会计研究`: 13, all from 2026-04; NCPSD has not listed that issue yet.
-- English journals: 38, mostly protected publisher pages, replies, editorials, or book reviews where Crossref/OpenAlex/Semantic Scholar do not expose an abstract.
+- `会计研究`: 27; NCPSD has not listed some pending issues yet.
+- English journals: 47, mostly protected publisher pages, replies, editorials, or book reviews where Crossref/OpenAlex/Semantic Scholar do not expose an abstract.
 - `中国农村经济`: 1, a meeting-review article whose OCR text has no `摘要` / `关键词` block.
 
 The daily dedupe state is initialized in `data/source-state.json`. Rebuilding frontend data now appends into `data/push-history.json`, so a one-day run does not overwrite the visible timeline with only that day.
@@ -47,16 +48,16 @@ The daily dedupe state is initialized in `data/source-state.json`. Rebuilding fr
 - English journal abstract backfill uses Crossref/OpenAlex, with Semantic Scholar available as an optional DOI lookup; protected publisher pages should not be bypassed.
 - `管理世界` uses Macrodatas only for discovery, then queries the NCPSD mobile issue page and matches official titles to `Literature/articleinfo` single-article pages. `Literature/readurl` is kept only as auxiliary reader/download metadata because direct external clicks can redirect to login. The previous CNKI CJFD sequence resolver was removed because issue-order filenames can point to the wrong article; the 2026年第5期 live probe now resolves 11/11 records to official NCPSD single-article links.
 - `南开管理评论` uses Macrodatas only for discovery, then tries an NCPSD official-detail resolver built from the discovered year/issue. As of 2026-06-04, 17 records correctly remain `needs_official_pdf`.
-- A local macOS LaunchAgent runs the daily publish workflow at 10:00. It runs the daily article workflow, commits generated data files, and pushes `origin/main` for Vercel deployment.
+- The Tencent Cloud cron job runs the daily publish workflow at 10:00 Beijing time. It runs the daily article workflow, commits generated data files, and pushes `origin/main` for Vercel deployment. The server repo Git author is configured as `yuzhou4t <aaawdeewfjfjfjfjfj@gmail.com>` so Vercel does not block automated data commits.
 
 ## Remaining Work
 
-- Watch `logs/daily-workflow.log` after scheduled runs to confirm whether the `中国行政管理` CQVIP timeout recurs.
-- Watch daily abstract backfill logs after scheduled runs. Successful backfill files should increase abstract coverage without changing `data/source-state.json`.
+- Watch `/opt/science-workshop/logs/daily-publish.log` after scheduled runs to confirm whether the `中国行政管理` CQVIP timeout recurs.
+- Watch daily abstract backfill output after scheduled runs. Successful backfill files should increase abstract coverage without changing `data/source-state.json`.
 - Retry `中国工业经济` 2026-04/2026-05 and `会计研究` 2026-04 through NCPSD after those issues appear on NCPSD.
 - Continue improving exact publication-date extraction for forthcoming or issue-only sources when their detail pages expose stronger metadata.
 - Add a user-facing data-source intake flow for future Excel/CSV upload or single-source submission.
-- Watch the automated GitHub push after scheduled runs; if authentication expires, rerun the publish command manually after refreshing local git credentials.
+- Watch the automated GitHub push after scheduled runs; the server uses a GitHub deploy key and should fast-forward from `origin/main` before publishing.
 - Add conversion workflows for turning selected journal articles into public-account drafts after the tracking workflow stabilizes.
 
 ## Workflow Backend Additions

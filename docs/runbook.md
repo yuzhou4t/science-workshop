@@ -227,35 +227,52 @@ The builder scans the full `data/push-history.json` article list. It skips rewri
 
 ## Daily Scheduler
 
-Install or refresh the local macOS LaunchAgent:
+Production scheduling runs on the Tencent Cloud server, not the local Mac:
 
-```bash
-node scripts/install-daily-launchd.mjs
+```text
+Server repo: /opt/science-workshop/repo
+Wrapper: /opt/science-workshop/run-daily-publish.sh
+Cron: 0 10 * * *
 ```
 
-The installed job:
+The wrapper fast-forwards `main`, runs `node scripts/run-daily-publish.mjs`, and writes logs to:
 
-- Label: `com.science-workshop.daily`
-- Plist: `/Users/yuzhou4tc/Library/LaunchAgents/com.science-workshop.daily.plist`
-- Schedule: daily at 10:00 local time
-- Command: `node scripts/run-daily-publish.mjs`
-- Working directory: `/Users/yuzhou4tc/Public/工作坊/journal-workshop-prototype`
+- `/opt/science-workshop/logs/daily-publish.log`
+- `/opt/science-workshop/logs/daily-publish.error.log`
 
-Check scheduler state:
+Check server scheduler state:
 
 ```bash
-launchctl print gui/$(id -u)/com.science-workshop.daily
+ssh root@106.53.153.215 'crontab -l'
 ```
 
-Validate the plist:
+Run the server publish workflow manually:
 
 ```bash
-plutil -lint /Users/yuzhou4tc/Library/LaunchAgents/com.science-workshop.daily.plist
+ssh root@106.53.153.215 '/opt/science-workshop/run-daily-publish.sh'
+```
+
+Keep the server repo Git author as the Vercel-recognized account:
+
+```bash
+ssh root@106.53.153.215 'git -C /opt/science-workshop/repo config user.name'
+ssh root@106.53.153.215 'git -C /opt/science-workshop/repo config user.email'
+```
+
+The local macOS LaunchAgent file is retained only as a fallback and is currently disabled/unloaded:
+
+```text
+/Users/yuzhou4tc/Library/LaunchAgents/com.science-workshop.daily.plist
 ```
 
 ## Logs
 
-Daily workflow logs:
+Server scheduled publish logs:
+
+- `/opt/science-workshop/logs/daily-publish.log`
+- `/opt/science-workshop/logs/daily-publish.error.log`
+
+Local manual workflow logs, when `scripts/run-daily-publish.mjs` is run from this Mac:
 
 - `logs/daily-workflow.log`
 - `logs/daily-workflow.error.log`
