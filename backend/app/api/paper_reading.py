@@ -45,6 +45,20 @@ class PaperFileUploadInitRequest(BaseModel):
         return value
 
 
+class PaperCosUploadInitRequest(BaseModel):
+    filename: str
+    media_type: str = PDF_MEDIA_TYPE
+    size_bytes: int = Field(gt=0)
+
+    @field_validator("filename")
+    @classmethod
+    def filename_required(cls, value: str) -> str:
+        value = value.strip()
+        if not value:
+            raise ValueError("filename is required")
+        return value
+
+
 def _validate_pdf_metadata_values(filename: str, media_type: str) -> None:
     if Path(filename).suffix.lower() != ".pdf" or media_type != PDF_MEDIA_TYPE:
         raise HTTPException(status_code=400, detail="PDF upload required")
@@ -80,6 +94,10 @@ def _cos_object_key_from_reference(reference: str, settings) -> str:
     if parsed.scheme != "https" or parsed.netloc != expected_host:
         raise HTTPException(status_code=400, detail="COS URL must belong to the configured bucket")
     return _validate_cos_object_key(unquote(parsed.path.lstrip("/")))
+
+
+def _new_paper_cos_object_key() -> str:
+    return f"paper-reading/{uuid4().hex}.pdf"
 
 
 def _upload_root(request: Request) -> Path:
@@ -129,6 +147,32 @@ async def _cos_signed_get_url(settings, object_key: str) -> str:
         )
         return client.get_presigned_url(
             Method="GET",
+            Bucket=settings.tencent_cos_bucket,
+            Key=object_key,
+            Expired=COS_SIGNED_URL_EXPIRES_SECONDS,
+        )
+
+    return await asyncio.get_running_loop().run_in_executor(None, sign_sync)
+
+
+async def _cos_signed_put_url(settings, object_key: str) -> str:
+    if not all([settings.tencent_cos_secret_id, settings.tencent_cos_secret_key, settings.tencent_cos_bucket]):
+        raise HTTPException(status_code=400, detail="Tencent COS settings are required")
+
+    def sign_sync() -> str:
+        from qcloud_cos import CosConfig, CosS3Client
+
+        client = CosS3Client(
+            CosConfig(
+                Region=settings.tencent_cos_region,
+                SecretId=settings.tencent_cos_secret_id,
+                SecretKey=settings.tencent_cos_secret_key,
+                Token=None,
+                Scheme="https",
+            )
+        )
+        return client.get_presigned_url(
+            Method="PUT",
             Bucket=settings.tencent_cos_bucket,
             Key=object_key,
             Expired=COS_SIGNED_URL_EXPIRES_SECONDS,
@@ -298,6 +342,18 @@ def create_file_upload(payload: PaperFileUploadInitRequest, request: Request) ->
     }
     (upload_dir / "metadata.json").write_text(json.dumps(metadata, ensure_ascii=False, indent=2), encoding="utf-8")
     return {"upload_id": upload_id, "chunk_size_bytes": PAPER_FILE_CHUNK_MAX_BYTES}
+
+
+@router.post("/cos-uploads")
+async def create_cos_upload(payload: PaperCosUploadInitRequest, request: Request) -> dict:
+    settings = request.app.state.settings
+    _validate_pdf_metadata_values(payload.filename, payload.media_type)
+    if payload.size_bytes > settings.paper_reading_max_upload_bytes:
+        raise HTTPException(status_code=413, detail="PDF upload is too large")
+
+    object_key = _new_paper_cos_object_key()
+    upload_url = await _cos_signed_put_url(settings, object_key)
+    return {"object_key": object_key, "upload_url": upload_url}
 
 
 @router.put("/file-uploads/{upload_id}/chunks/{chunk_index}")

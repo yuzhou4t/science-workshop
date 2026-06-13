@@ -2939,7 +2939,7 @@
                     <input class="field" id="paperReadingFile" name="file" type="file" accept="application/pdf" />
                     <button class="btn btn-primary" type="submit">开始精读</button>
                   </div>
-                  <input class="field" id="paperCosObjectKey" name="cos_object_key" type="text" placeholder="COS 对象 Key / 同桶 PDF URL" />
+                  <input id="paperCosObjectKey" name="cos_object_key" type="hidden" value="" />
                   <input id="paperTemplateId" name="template_id" type="hidden" value="africa-reading" />
                 </form>
                 <div id="paperReadingStatus" class="workflow-status" aria-live="polite">等待上传 PDF</div>
@@ -4493,6 +4493,31 @@
         return upload.upload_id;
       }
 
+      async function uploadPaperReadingFileToCos(file, statusNode) {
+        const filename = workflowFileLabel(file, 1);
+        setWorkflowStatus(statusNode, `正在准备 COS 直传: ${filename}`, "running");
+        const initResponse = await workshopFetch(`${WORKFLOW_API_BASE}/api/workflows/paper-reading/cos-uploads`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            filename,
+            media_type: file.type || "application/pdf",
+            size_bytes: file.size
+          })
+        });
+        if (!initResponse.ok) throw new Error(await workflowErrorMessage(initResponse, "COS 直传初始化失败"));
+        const upload = await initResponse.json();
+        if (!upload.object_key || !upload.upload_url) throw new Error("COS 直传初始化缺少上传地址");
+
+        setWorkflowStatus(statusNode, `正在直传 COS: ${filename}`, "running");
+        const uploadResponse = await fetch(upload.upload_url, {
+          method: "PUT",
+          body: file
+        });
+        if (!uploadResponse.ok) throw new Error(`COS 直传失败: HTTP ${uploadResponse.status}`);
+        return upload.object_key;
+      }
+
       async function buildWechatWritingJobForm(form, statusNode) {
         const sourceFormData = new FormData(form);
         const jobFormData = new FormData();
@@ -4532,15 +4557,14 @@
       async function createPaperReadingJob(form, statusNode) {
         const sourceFormData = new FormData(form);
         const files = workflowUploadedFiles(sourceFormData, "file");
-        const cosObjectKey = String(sourceFormData.get("cos_object_key") || "").trim();
-        if (files.length && cosObjectKey) throw new Error("请只选择 PDF 文件或填写 COS 对象 Key 其中一种");
-        if (!files.length && !cosObjectKey) throw new Error("请先选择 PDF 文件或填写 COS 对象 Key");
+        if (!files.length) throw new Error("请先选择 PDF 文件");
         const body = new FormData();
         body.set("template_id", String(sourceFormData.get("template_id") || "africa-reading"));
-        if (cosObjectKey) {
-          setWorkflowStatus(statusNode, "正在引用 COS PDF 创建任务...", "running");
+        try {
+          const cosObjectKey = await uploadPaperReadingFileToCos(files[0], statusNode);
           body.set("cos_object_key", cosObjectKey);
-        } else {
+        } catch (error) {
+          setWorkflowStatus(statusNode, "COS 直传不可用，改用兼容上传...", "running");
           const uploadId = await uploadPaperReadingFile(files[0], statusNode);
           body.set("file_upload_id", uploadId);
         }

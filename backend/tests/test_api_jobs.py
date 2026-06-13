@@ -176,6 +176,37 @@ def test_create_paper_reading_job_accepts_cos_pdf_object_key(
     assert (store.job_dir(body["job_id"]) / "input" / "input.pdf").read_bytes() == b"%PDF-1.4 existing cos pdf"
 
 
+def test_create_paper_reading_cos_upload_returns_signed_url(
+    client: TestClient,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    from app.api import paper_reading
+
+    async def signed_put_url(settings, object_key):
+        return f"https://cos.example.test/{object_key}?sign=put"
+
+    settings = client.app.state.settings
+    settings.tencent_cos_secret_id = "secret-id"
+    settings.tencent_cos_secret_key = "secret-key"
+    settings.tencent_cos_bucket = "bucket-123"
+    monkeypatch.setattr(paper_reading, "_cos_signed_put_url", signed_put_url, raising=False)
+
+    response = client.post(
+        "/api/workflows/paper-reading/cos-uploads",
+        json={
+            "filename": "paper.pdf",
+            "media_type": "application/pdf",
+            "size_bytes": 18,
+        },
+    )
+
+    assert response.status_code == 200
+    body = response.json()
+    assert body["object_key"].startswith("paper-reading/")
+    assert body["object_key"].endswith(".pdf")
+    assert body["upload_url"] == f"https://cos.example.test/{body['object_key']}?sign=put"
+
+
 def test_cos_pdf_reference_accepts_configured_bucket_url() -> None:
     from app.api.paper_reading import _cos_object_key_from_reference
 
