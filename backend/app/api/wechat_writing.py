@@ -19,6 +19,7 @@ from app.services.deepseek_client import DeepSeekClient
 from app.services.docx_exporter import DocxExporter
 from app.storage.job_store import JobNotFoundError
 from app.workflows.wechat_writing import WeChatWritingWorkflow
+from app.workflows.scheduler import WorkflowLimitError, owner_id_from_request
 
 router = APIRouter(prefix="/api/workflows/wechat-writing", tags=["wechat-writing"])
 
@@ -38,20 +39,8 @@ PDF_MEDIA_TYPE = "application/pdf"
 COS_SIGNED_URL_EXPIRES_SECONDS = 600
 
 
-def _log_background_workflow_result(task: asyncio.Task, job_id: str) -> None:
-    try:
-        task.result()
-    except asyncio.CancelledError:
-        logger.warning("WeChat writing workflow task cancelled for job %s", job_id)
-    except Exception:
-        logger.exception("WeChat writing workflow task failed for job %s", job_id)
-
-
-def _background_workflow_callback(job_id: str):
-    def callback(task: asyncio.Task) -> None:
-        _log_background_workflow_result(task, job_id)
-
-    return callback
+def _raise_workflow_limit(exc: WorkflowLimitError) -> None:
+    raise HTTPException(status_code=429, detail=exc.detail) from exc
 
 
 def _is_text_media_type(media_type: str) -> bool:
@@ -618,7 +607,13 @@ async def create_wechat_writing_job(
     if not source_text.strip() and not evidence_chain and not incoming_materials and not chunked_upload_ids and not cos_object_keys:
         raise HTTPException(status_code=400, detail="source_text, paper_reading_job_id with evidence, or uploaded materials are required")
 
-    job = store.create_job(WorkflowType.WECHAT_WRITING, template_id=template_id)
+    owner_id = owner_id_from_request(request)
+    try:
+        request.app.state.workflow_scheduler.ensure_can_submit(owner_id, WorkflowType.WECHAT_WRITING)
+    except WorkflowLimitError as exc:
+        _raise_workflow_limit(exc)
+
+    job = store.create_job(WorkflowType.WECHAT_WRITING, template_id=template_id, owner_id=owner_id)
     uploaded_materials = await _write_uploaded_materials(
         store,
         job,
@@ -674,6 +669,5 @@ async def create_wechat_writing_job(
     if settings.workflow_use_mocks:
         await workflow.run(job.job_id)
     else:
-        task = asyncio.create_task(workflow.run(job.job_id))
-        task.add_done_callback(_background_workflow_callback(job.job_id))
+        await request.app.state.workflow_scheduler.enqueue(job, lambda: workflow.run(job.job_id))
     return store.load_job(job.job_id).model_dump(mode="json")

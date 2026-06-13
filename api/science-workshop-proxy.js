@@ -8,6 +8,7 @@ const {
 
 const BACKEND_ORIGIN = process.env.SCIENCE_WORKSHOP_BACKEND_ORIGIN || "http://106.53.153.215";
 const BACKEND_PREFIX = process.env.SCIENCE_WORKSHOP_BACKEND_PREFIX || "/science-workshop-api";
+const WORKSHOP_USER_HEADER = "x-workshop-user";
 const HOP_BY_HOP_HEADERS = new Set([
   "connection",
   "content-encoding",
@@ -41,7 +42,12 @@ function requestHeaders(req) {
   const headers = new Headers();
   for (const [name, value] of Object.entries(req.headers || {})) {
     const lower = name.toLowerCase();
-    if (HOP_BY_HOP_HEADERS.has(lower) || lower === "host" || lower === PROXY_SECRET_HEADER) continue;
+    if (
+      HOP_BY_HOP_HEADERS.has(lower)
+      || lower === "host"
+      || lower === PROXY_SECRET_HEADER
+      || lower === WORKSHOP_USER_HEADER
+    ) continue;
     if (Array.isArray(value)) {
       for (const item of value) headers.append(name, item);
     } else if (value != null) {
@@ -72,13 +78,17 @@ module.exports = async function scienceWorkshopProxy(req, res) {
   const target = new URL(backendPathFromRequest(req), BACKEND_ORIGIN);
   const body = requestBody(req);
   const protectedRoute = isProtectedBackendPath(target.pathname);
+  const session = readSession(req.headers.cookie || "");
 
-  if (protectedRoute && !readSession(req.headers.cookie || "")) {
+  if (protectedRoute && !session) {
     writeJson(res, 401, { detail: "Unauthorized" });
     return;
   }
 
   const headers = requestHeaders(req);
+  if (protectedRoute && session?.username) {
+    headers.set(WORKSHOP_USER_HEADER, session.username);
+  }
   if (process.env.SCIENCE_WORKSHOP_PROXY_SECRET) {
     headers.set(PROXY_SECRET_HEADER, process.env.SCIENCE_WORKSHOP_PROXY_SECRET);
   }

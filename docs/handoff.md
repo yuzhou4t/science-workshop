@@ -68,6 +68,7 @@ The daily dedupe state is initialized in `data/source-state.json`. Rebuilding fr
 - Paper reading supports PDF upload, MinerU/DeepSeek adapters, full evidence-chain artifacts, final Markdown, and DOCX export.
 - WeChat writing supports source text, tracked article id, paper-reading job id, final Markdown, and DOCX export.
 - Job artifacts are retained for `WORKFLOW_RETENTION_DAYS`, defaulting to 3 days.
+- Workflow jobs now use a lightweight in-process scheduler: 3 total running jobs, 1 paper-reading job, 2 WeChat-writing jobs, 1 running job per user, 2 queued jobs per user, and daily per-user quotas of 3 paper-reading jobs / 10 WeChat-writing jobs.
 
 ## Useful Commands
 

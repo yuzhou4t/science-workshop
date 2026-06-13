@@ -50,6 +50,7 @@ class Artifact(BaseModel):
 class WorkflowJob(BaseModel):
     job_id: str = Field(default_factory=lambda: uuid4().hex)
     workflow_type: WorkflowType
+    owner_id: str = "anonymous"
     template_id: str = "africa-reading"
     status: JobStatus = JobStatus.QUEUED
     created_at: datetime = Field(default_factory=lambda: datetime.now(UTC))

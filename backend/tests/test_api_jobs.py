@@ -6,7 +6,7 @@ from fastapi import HTTPException
 from fastapi.testclient import TestClient
 
 from app.core.config import reset_settings_cache
-from app.models.job import WorkflowType
+from app.models.job import JobStatus, WorkflowType
 
 
 def test_health_endpoint(client: TestClient) -> None:
@@ -245,6 +245,35 @@ def test_create_wechat_writing_job_with_source_text_completes_in_mock_mode(clien
     assert body["status"] == "completed"
     assert body["job_id"]
     assert body["artifacts"]["source_bundle.json"]["relative_path"] == "input/source_bundle.json"
+
+
+def test_create_wechat_writing_job_records_owner_from_proxy_header(client: TestClient) -> None:
+    response = client.post(
+        "/api/workflows/wechat-writing/jobs",
+        data={"source_text": "论文精读材料正文"},
+        headers={"x-workshop-user": "alice"},
+    )
+
+    assert response.status_code == 200
+    assert response.json()["owner_id"] == "alice"
+
+
+def test_create_paper_reading_job_rejects_daily_quota_for_owner(client: TestClient) -> None:
+    store = client.app.state.job_store
+    for _index in range(3):
+        job = store.create_job(WorkflowType.PAPER_READING, template_id="africa-reading", owner_id="alice")
+        job.status = JobStatus.COMPLETED
+        store.save_job(job)
+
+    response = client.post(
+        "/api/workflows/paper-reading/jobs",
+        data={"template_id": "africa-reading"},
+        files={"file": ("paper.pdf", b"%PDF-1.4 mock", "application/pdf")},
+        headers={"x-workshop-user": "alice"},
+    )
+
+    assert response.status_code == 429
+    assert response.json()["detail"] == "User daily paper reading quota reached"
 
 
 def test_create_issue_toc_export_job_completes_with_structured_issue(client: TestClient) -> None:

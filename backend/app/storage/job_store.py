@@ -17,10 +17,11 @@ class JobStore:
         self.retention_days = retention_days
         self.root.mkdir(parents=True, exist_ok=True)
 
-    def create_job(self, workflow_type: WorkflowType, template_id: str) -> WorkflowJob:
+    def create_job(self, workflow_type: WorkflowType, template_id: str, owner_id: str = "anonymous") -> WorkflowJob:
         now = datetime.now(UTC)
         job = WorkflowJob(
             workflow_type=workflow_type,
+            owner_id=owner_id,
             template_id=template_id,
             created_at=now,
             updated_at=now,
@@ -62,6 +63,15 @@ class JobStore:
         if not job_file.exists():
             raise JobNotFoundError(job_id)
         return WorkflowJob.model_validate_json(job_file.read_text(encoding="utf-8"))
+
+    def list_jobs(self) -> list[WorkflowJob]:
+        jobs: list[WorkflowJob] = []
+        for job_file in self.root.glob("*/job.json"):
+            try:
+                jobs.append(WorkflowJob.model_validate_json(job_file.read_text(encoding="utf-8")))
+            except (OSError, ValidationError, ValueError):
+                continue
+        return jobs
 
     def set_node_status(
         self,

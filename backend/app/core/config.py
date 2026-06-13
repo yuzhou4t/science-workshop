@@ -22,6 +22,30 @@ class Settings(BaseSettings):
     workflow_storage_dir: Path = Field(default=Path("storage/workflow_jobs"), alias="WORKFLOW_STORAGE_DIR")
     workflow_retention_days: int = Field(default=3, alias="WORKFLOW_RETENTION_DAYS")
     workflow_use_mocks: bool = Field(default=False, alias="WORKFLOW_USE_MOCKS")
+    workflow_max_running_jobs: int = Field(default=3, alias="WORKFLOW_MAX_RUNNING_JOBS", gt=0)
+    workflow_paper_reading_max_running_jobs: int = Field(
+        default=1,
+        alias="WORKFLOW_PAPER_READING_MAX_RUNNING_JOBS",
+        gt=0,
+    )
+    workflow_wechat_writing_max_running_jobs: int = Field(
+        default=2,
+        alias="WORKFLOW_WECHAT_WRITING_MAX_RUNNING_JOBS",
+        gt=0,
+    )
+    workflow_max_running_jobs_per_user: int = Field(default=1, alias="WORKFLOW_MAX_RUNNING_JOBS_PER_USER", gt=0)
+    workflow_max_queued_jobs_per_user: int = Field(default=2, alias="WORKFLOW_MAX_QUEUED_JOBS_PER_USER", ge=0)
+    workflow_paper_reading_daily_quota_per_user: int = Field(
+        default=3,
+        alias="WORKFLOW_PAPER_READING_DAILY_QUOTA_PER_USER",
+        gt=0,
+    )
+    workflow_wechat_writing_daily_quota_per_user: int = Field(
+        default=10,
+        alias="WORKFLOW_WECHAT_WRITING_DAILY_QUOTA_PER_USER",
+        gt=0,
+    )
+    workflow_quota_timezone: str = Field(default="Asia/Shanghai", alias="WORKFLOW_QUOTA_TIMEZONE")
     science_workshop_proxy_secret: str = Field(default="", alias="SCIENCE_WORKSHOP_PROXY_SECRET")
     paper_reading_max_upload_bytes: int = Field(
         default=25 * 1024 * 1024,

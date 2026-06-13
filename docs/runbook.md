@@ -124,7 +124,17 @@ SCIENCE_WORKSHOP_PROXY_SECRET=<same value as backend>
 Backend /opt/science-workshop/api.env:
 SCIENCE_WORKSHOP_PROXY_SECRET=<same value as Vercel>
 WORKFLOW_RETENTION_DAYS=3
+WORKFLOW_MAX_RUNNING_JOBS=3
+WORKFLOW_PAPER_READING_MAX_RUNNING_JOBS=1
+WORKFLOW_WECHAT_WRITING_MAX_RUNNING_JOBS=2
+WORKFLOW_MAX_RUNNING_JOBS_PER_USER=1
+WORKFLOW_MAX_QUEUED_JOBS_PER_USER=2
+WORKFLOW_PAPER_READING_DAILY_QUOTA_PER_USER=3
+WORKFLOW_WECHAT_WRITING_DAILY_QUOTA_PER_USER=10
+WORKFLOW_QUOTA_TIMEZONE=Asia/Shanghai
 ```
+
+Workflow concurrency is enforced inside the FastAPI process. The current Docker command starts one uvicorn worker, so these limits apply process-wide: at most 3 running workflow jobs, with paper reading capped at 1 running job and WeChat writing capped at 2. A single logged-in user can have 1 running workflow and 2 queued workflows; daily quotas are 3 paper-reading jobs and 10 WeChat-writing jobs per user, counted by the configured quota timezone.
 
 Generate the password hash locally with:
 

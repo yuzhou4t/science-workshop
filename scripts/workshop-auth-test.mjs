@@ -70,6 +70,7 @@ await login(loginRequest, loginResponse);
 assert.equal(loginResponse.statusCode, 200);
 assert.match(loginResponse.headers["set-cookie"], /science_workshop_session=/);
 assert.match(loginResponse.headers["set-cookie"], /Secure/);
+const proxyCookieValue = loginResponse.headers["set-cookie"].match(/science_workshop_session=([^;]+)/)?.[1];
 
 const unauthorizedResponse = createMockResponse();
 await proxy(
@@ -85,9 +86,11 @@ assert.equal(unauthorizedResponse.statusCode, 401);
 assert.equal(JSON.parse(unauthorizedResponse.body).detail, "Unauthorized");
 
 let forwardedSecret = "";
+let forwardedUser = "";
 const originalFetch = globalThis.fetch;
 globalThis.fetch = async (_target, options) => {
   forwardedSecret = options.headers.get("x-science-workshop-proxy-secret");
+  forwardedUser = options.headers.get("x-workshop-user");
   return new Response(null, { status: 204 });
 };
 
@@ -97,8 +100,9 @@ await proxy(
     method: "GET",
     url: "/science-workshop-api/api/jobs/job-1",
     headers: {
-      cookie: `science_workshop_session=${cookieValue}`,
+      cookie: `science_workshop_session=${proxyCookieValue}`,
       "x-science-workshop-proxy-secret": "client-spoofed-secret",
+      "x-workshop-user": "client-spoofed-user",
     },
   },
   authorizedResponse,
@@ -107,5 +111,6 @@ globalThis.fetch = originalFetch;
 
 assert.equal(authorizedResponse.statusCode, 204);
 assert.equal(forwardedSecret, "proxy-secret");
+assert.equal(forwardedUser, "4tc");
 
 console.log("workshop auth helpers ok");

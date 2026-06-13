@@ -8,6 +8,7 @@ from app.api import issue_toc_export, jobs, paper_reading, wechat_writing
 from app.core.config import get_settings
 from app.storage.job_store import JobStore
 from app.workflows.events import EventBroker
+from app.workflows.scheduler import WorkflowScheduler
 
 PROTECTED_PREFIXES = ("/api/workflows", "/api/jobs")
 
@@ -18,6 +19,7 @@ def create_app() -> FastAPI:
     app.state.settings = settings
     app.state.job_store = JobStore(settings.workflow_storage_dir, settings.workflow_retention_days)
     app.state.event_broker = EventBroker()
+    app.state.workflow_scheduler = WorkflowScheduler(app.state.job_store, settings, app.state.event_broker)
     app.state.job_store.cleanup_expired_jobs()
 
     app.add_middleware(

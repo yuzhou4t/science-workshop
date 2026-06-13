@@ -1,6 +1,5 @@
 import asyncio
 import json
-import logging
 import os
 import shutil
 import tempfile
@@ -18,6 +17,7 @@ from app.services.deepseek_client import DeepSeekClient
 from app.services.docx_exporter import DocxExporter
 from app.services.mineru_client import MineruClient
 from app.workflows.paper_reading import PaperReadingWorkflow
+from app.workflows.scheduler import WorkflowLimitError, owner_id_from_request
 
 router = APIRouter(prefix="/api/workflows/paper-reading", tags=["paper-reading"])
 
@@ -26,8 +26,6 @@ PDF_SIGNATURE = b"%PDF-"
 UPLOAD_CHUNK_SIZE = 1024 * 1024
 PAPER_FILE_CHUNK_MAX_BYTES = 2 * 1024 * 1024
 COS_SIGNED_URL_EXPIRES_SECONDS = 600
-
-logger = logging.getLogger(__name__)
 
 
 class PaperFileUploadInitRequest(BaseModel):
@@ -306,20 +304,8 @@ def _consume_chunked_pdf_upload(request: Request, upload_id: str, storage_dir: P
         raise
 
 
-def _log_background_workflow_result(task: asyncio.Task, job_id: str) -> None:
-    try:
-        task.result()
-    except asyncio.CancelledError:
-        logger.warning("Paper reading workflow task cancelled for job %s", job_id)
-    except Exception:
-        logger.exception("Paper reading workflow task failed for job %s", job_id)
-
-
-def _background_workflow_callback(job_id: str):
-    def callback(task: asyncio.Task) -> None:
-        _log_background_workflow_result(task, job_id)
-
-    return callback
+def _raise_workflow_limit(exc: WorkflowLimitError) -> None:
+    raise HTTPException(status_code=429, detail=exc.detail) from exc
 
 
 @router.post("/file-uploads")
@@ -420,7 +406,14 @@ async def create_paper_reading_job(
         )
     else:
         raise HTTPException(status_code=400, detail="PDF upload required")
-    job = store.create_job(WorkflowType.PAPER_READING, template_id=template_id)
+    owner_id = owner_id_from_request(request)
+    try:
+        request.app.state.workflow_scheduler.ensure_can_submit(owner_id, WorkflowType.PAPER_READING)
+    except WorkflowLimitError as exc:
+        temp_pdf_path.unlink(missing_ok=True)
+        _raise_workflow_limit(exc)
+
+    job = store.create_job(WorkflowType.PAPER_READING, template_id=template_id, owner_id=owner_id)
     pdf_path = store.job_dir(job.job_id) / "input" / "input.pdf"
     try:
         shutil.move(str(temp_pdf_path), pdf_path)
@@ -456,6 +449,5 @@ async def create_paper_reading_job(
     if settings.workflow_use_mocks:
         await workflow.run(job.job_id, Path(pdf_path))
     else:
-        task = asyncio.create_task(workflow.run(job.job_id, Path(pdf_path)))
-        task.add_done_callback(_background_workflow_callback(job.job_id))
+        await request.app.state.workflow_scheduler.enqueue(job, lambda: workflow.run(job.job_id, Path(pdf_path)))
     return store.load_job(job.job_id).model_dump(mode="json")
