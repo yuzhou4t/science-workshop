@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 
+import { topicSearchIndexChanged } from "./build-topic-search-index.mjs";
 import { buildTopicSearchIndex } from "./topic-search-lib.mjs";
 
 const tagConfig = {
@@ -85,5 +86,20 @@ assert.equal(index.results.some((item) => item.article_id === "non-africa"), fal
 const noApiIndex = buildTopicSearchIndex({ articles, tagConfig, semanticCache: {}, useSemantic: true, semanticEnabled: false });
 assert.equal(noApiIndex.summary.semantic_enabled, false);
 assert.equal(noApiIndex.summary.matched_articles, 2);
+
+assert.equal(
+  topicSearchIndexChanged({ ...index, updated_at: "2026-06-01T00:00:00.000Z" }, { ...index, updated_at: "2026-06-02T00:00:00.000Z" }),
+  false,
+  "timestamp-only topic index changes should not force a rewrite",
+);
+
+assert.equal(
+  topicSearchIndexChanged(
+    { ...index, updated_at: "2026-06-01T00:00:00.000Z" },
+    { ...index, summary: { ...index.summary, matched_articles: 1 }, updated_at: "2026-06-02T00:00:00.000Z" },
+  ),
+  true,
+  "meaningful topic index changes should be written",
+);
 
 console.log("topic search index ok");

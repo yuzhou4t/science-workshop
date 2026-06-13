@@ -31,6 +31,9 @@ node scripts/html-adapter-parsers-test.mjs
 node scripts/date-enhancement-test.mjs
 node scripts/pdf-abstract-backfill-test.mjs
 node scripts/daily-abstract-backfill-test.mjs
+node scripts/topic-search-index-test.mjs
+node scripts/daily-topic-search-workflow-test.mjs
+node --check scripts/build-topic-search-index.mjs
 node --check scripts/run-daily-publish.mjs
 node scripts/launchd-plist-test.mjs
 node scripts/build-adapter-front-data-test.mjs
@@ -53,12 +56,15 @@ node scripts/build-front-data.mjs --reset-history --workflow=data/recent-article
 - `data/recent-articles-*.json`：某个日期范围或某天的抓取工作流输出。
 - `data/push-history.json`：前端累计推送历史，会按文章 ID 去重并保留最早首次发现日。
 - `data/recent-front-data.js`：前端页面实际读取的文章推送数据，由累计推送历史生成。
+- `data/search-tags.json`：主题检索规则，目前默认包含非洲主题关键词和学科标签。
+- `data/topic-search-index.js`：前端主题检索读取的静态索引，由累计推送历史生成。
 - `data/source-state.json`：每日自动运行时使用的去重和首次发现记录。
 - `data/.pdf-cache/abstract-backfill/`：PDF 摘要回填缓存目录，已被 `.gitignore` 忽略。
 - `scripts/build-adapter-front-data.mjs`：把 `data/adapter-profiles.json` 转换成前端适配器工作台数据。
 - `scripts/article-link-policy.mjs`：控制哪些链接可以作为前端可点击论文链接；目录页、第三方发现页会保留为 `discovery_url`，等待官方 PDF/详情解析。
 - `scripts/fetch-articles-smoke-test.mjs`：真实抓取入口，会访问 RSS、官网页面、替代目录页或开放元数据接口。
 - `scripts/build-front-data.mjs`：把抓取结果转换成前端能展示的数据。
+- `scripts/build-topic-search-index.mjs`：从 `data/push-history.json` 重建主题检索索引；如果只有生成时间变化，不会重写索引文件。
 - `scripts/run-daily-workflow.mjs`：每日自动检查入口，只检查当天窗口并按首次发现去重；发现新推送后会触发当天新增文章的摘要回填。
 - `scripts/run-daily-publish.mjs`：每日发布入口，先运行每日检查，再把当天生成的数据文件提交并推送到 GitHub，触发 Vercel 更新。
 - `scripts/backfill-daily-abstracts.mjs`：每日摘要回填编排入口，只处理指定 `first_seen_at` 的新增文章。
@@ -77,13 +83,14 @@ node scripts/build-front-data.mjs --reset-history --workflow=data/recent-article
 
 ## 当前状态
 
-截至 2026-06-06，前端参考数据保留累计推送历史，并已接入摘要回填链路。
+截至 2026-06-13，前端参考数据保留累计推送历史，并已接入摘要回填链路。
 
 - 期刊数据源：22 个。
-- 前端累计展示文章：379 篇，`data/recent-front-data.js` 和 `data/push-history.json` 均为 379 个唯一文章 ID。
-- 已补摘要文章：309 篇；剩余 70 篇没有摘要，其中 `中国工业经济` 18 篇、`会计研究` 13 篇、英文期刊 38 篇、`中国农村经济` 1 篇。
+- 前端累计展示文章：453 篇，`data/recent-front-data.js` 和 `data/push-history.json` 均为 453 个唯一文章 ID。
+- 已补摘要文章：361 篇；剩余 92 篇没有摘要，其中 `会计研究` 27 篇、`中国工业经济` 18 篇、英文期刊 46 篇、`中国农村经济` 1 篇。
+- 主题检索索引已按 453 篇累计历史重建；当前非洲主题命中 3 篇，语义分类未启用。
 - 每日自动任务的去重状态写入 `data/source-state.json`；摘要回填只补 `data/push-history.json` / `data/recent-front-data.js`，不改每日去重状态。
-- `scripts/run-daily-workflow.mjs` 在新推送合并后自动运行 `scripts/backfill-daily-abstracts.mjs --first-seen-at=<date>`，尽量给当天新增文章补摘要。
+- `scripts/run-daily-workflow.mjs` 在新推送合并后自动运行 `scripts/backfill-daily-abstracts.mjs --first-seen-at=<date>`，尽量给当天新增文章补摘要；随后刷新 `data/topic-search-index.js`，让主题检索覆盖最新累计历史。
 - `管理科学学报` 已可从新版期号页解析；旧版 reader 期号页可作为备用解析入口，2026-06-04 日常运行返回 11 篇当期文章。
 - `中国行政管理` 先用维普目录发现当期条目，再用国家哲学社会科学文献中心期号页匹配到可点击的文章详情页；维普链接仅保留为 `discovery_url`。摘要回填优先走 NCPSD article API 慢队列。
 - `中国工业经济` 和 `会计研究` 的官网详情页可能遇到访问验证或登录页；摘要回填优先尝试 NCPSD 期号页 + article API，未上架期次保留缺口。
@@ -110,4 +117,4 @@ node scripts/run-daily-publish.mjs
 - `logs/daily-workflow.log`
 - `logs/daily-workflow.error.log`
 
-如果当天没有新文章，前端数据不会被空结果覆盖；如果发现新文章，脚本会先合并到 `data/push-history.json`，再更新 `data/recent-front-data.js`，随后只针对当天 `first_seen_at` 的新增文章运行摘要回填。发布入口只提交当天生成的数据文件和累计状态文件，推送到 `origin/main` 后由 Vercel 自动部署。页面默认展示累计推送历史，日期筛选只是缩小查看范围。
+如果当天没有新文章，前端数据不会被空结果覆盖；如果发现新文章，脚本会先合并到 `data/push-history.json`，再更新 `data/recent-front-data.js`，随后只针对当天 `first_seen_at` 的新增文章运行摘要回填。每日流程结束前会刷新主题检索索引；发布入口只提交当天生成的数据文件、累计状态文件和发生实质变化的主题索引，推送到 `origin/main` 后由 Vercel 自动部署。页面默认展示累计推送历史，日期筛选只是缩小查看范围。

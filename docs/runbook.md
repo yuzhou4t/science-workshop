@@ -33,12 +33,15 @@ node scripts/html-adapter-parsers-test.mjs
 node scripts/date-enhancement-test.mjs
 node scripts/pdf-abstract-backfill-test.mjs
 node scripts/daily-abstract-backfill-test.mjs
+node scripts/topic-search-index-test.mjs
+node scripts/daily-topic-search-workflow-test.mjs
 node scripts/launchd-plist-test.mjs
 node scripts/build-adapter-front-data-test.mjs
 node scripts/adapter-smoke-test.mjs
 node --check scripts/fetch-articles-smoke-test.mjs
 node --check scripts/build-front-data.mjs
 node --check scripts/build-adapter-front-data.mjs
+node --check scripts/build-topic-search-index.mjs
 node --check scripts/run-daily-workflow.mjs
 node --check scripts/backfill-daily-abstracts.mjs
 node --check scripts/backfill-ncpssd-abstracts.mjs
@@ -212,6 +215,16 @@ Use `--reset-history` only when intentionally reseeding the whole frontend histo
 node scripts/build-front-data.mjs --reset-history --workflow=data/recent-articles-2026-04-27_2026-05-27.json
 ```
 
+## Topic Search Index
+
+The frontend topic-search page reads `data/topic-search-index.js`. Rebuild it from the cumulative push history after changing `data/search-tags.json` or after manually changing `data/push-history.json`:
+
+```bash
+node scripts/build-topic-search-index.mjs
+```
+
+The builder scans the full `data/push-history.json` article list. It skips rewriting `data/topic-search-index.js` when only `updated_at` would change, so it is safe to run from a daily job without creating timestamp-only commits.
+
 ## Daily Scheduler
 
 Install or refresh the local macOS LaunchAgent:
@@ -251,7 +264,7 @@ The daily script writes a one-day workflow file such as `data/recent-articles-20
 
 If new push articles are found, the daily script then runs abstract backfill for the same first-seen date. Backfill files update `data/push-history.json` and `data/recent-front-data.js` but do not rewrite `data/source-state.json`.
 
-After the daily workflow finishes, `scripts/run-daily-publish.mjs` commits only the generated daily data files plus cumulative state files and pushes them to `origin/main`, which lets Vercel deploy the refreshed static page. If the git index already has staged files, the publish step skips to avoid mixing user work into the automated commit.
+After front-data and abstract-backfill work, the daily script refreshes `data/topic-search-index.js` from the cumulative push history. After the daily workflow finishes, `scripts/run-daily-publish.mjs` commits only the generated daily data files plus cumulative state files and the topic-search index, then pushes them to `origin/main`, which lets Vercel deploy the refreshed static page. If the git index already has staged files, the publish step skips to avoid mixing user work into the automated commit.
 
 ## Source Troubleshooting
 

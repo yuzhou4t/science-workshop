@@ -13,6 +13,7 @@ const dailyGeneratedFiles = [
   "data/source-state.json",
   "data/push-history.json",
   "data/recent-front-data.js",
+  "data/topic-search-index.js",
   `data/recent-articles-${today}_${today}.json`,
   `data/recent-articles-daily-ncpssd-direct-${today}.json`,
   `data/recent-articles-daily-ncpssd-issue-${today}.json`,

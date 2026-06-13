@@ -41,3 +41,5 @@ if (workflow.summary.push_queue_articles > 0) {
 } else {
   console.log(`No new push articles for ${today}; front data left unchanged.`);
 }
+
+await runNodeScript("scripts/build-topic-search-index.mjs");

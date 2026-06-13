@@ -9,6 +9,7 @@ const semanticCachePath = new URL("../data/topic-search-semantic-cache.json", im
 const outputPath = new URL("../data/topic-search-index.js", import.meta.url);
 const DEFAULT_DEEPSEEK_BASE_URL = "https://api.deepseek.com";
 const DEFAULT_DEEPSEEK_MODEL = "deepseek-chat";
+const TOPIC_SEARCH_INDEX_PREFIX = "window.TOPIC_SEARCH_INDEX = ";
 
 function cliFlag(name) {
   return process.argv.slice(2).includes(name);
@@ -21,6 +22,29 @@ async function readJsonIfExists(url, fallback) {
     if (error.code === "ENOENT") return fallback;
     throw error;
   }
+}
+
+async function readTopicSearchIndexIfExists(url) {
+  try {
+    const raw = await readFile(url, "utf8");
+    const jsonText = raw
+      .trim()
+      .replace(/^window\.TOPIC_SEARCH_INDEX\s*=\s*/, "")
+      .replace(/;\s*$/, "");
+    return JSON.parse(jsonText);
+  } catch (error) {
+    if (error.code === "ENOENT") return null;
+    throw error;
+  }
+}
+
+function comparableTopicSearchIndex(index) {
+  if (!index) return null;
+  return { ...index, updated_at: "" };
+}
+
+export function topicSearchIndexChanged(existingIndex, nextIndex) {
+  return JSON.stringify(comparableTopicSearchIndex(existingIndex)) !== JSON.stringify(comparableTopicSearchIndex(nextIndex));
 }
 
 function textFingerprint(article = {}) {
@@ -147,7 +171,16 @@ async function main() {
     semanticEnabled,
   });
 
-  await writeFile(outputPath, `window.TOPIC_SEARCH_INDEX = ${JSON.stringify(index, null, 2)};\n`, "utf8");
+  const existingIndex = await readTopicSearchIndexIfExists(outputPath);
+  if (!topicSearchIndexChanged(existingIndex, index)) {
+    console.log(`topic search index unchanged (${index.summary.matched_articles} matched / ${index.summary.total_articles} articles)`);
+    if (useSemantic && !semanticEnabled) {
+      console.log("semantic classification skipped: DEEPSEEK_API_KEY is not set");
+    }
+    return;
+  }
+
+  await writeFile(outputPath, `${TOPIC_SEARCH_INDEX_PREFIX}${JSON.stringify(index, null, 2)};\n`, "utf8");
   console.log(`wrote ${outputPath.pathname} (${index.summary.matched_articles} matched / ${index.summary.total_articles} articles)`);
   if (useSemantic && !semanticEnabled) {
     console.log("semantic classification skipped: DEEPSEEK_API_KEY is not set");
