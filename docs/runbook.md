@@ -120,6 +120,7 @@ SCIENCE_WORKSHOP_PROXY_SECRET=<same value as backend>
 
 Backend /opt/science-workshop/api.env:
 SCIENCE_WORKSHOP_PROXY_SECRET=<same value as Vercel>
+WORKFLOW_RETENTION_DAYS=3
 ```
 
 Generate the password hash locally with:

@@ -18,7 +18,7 @@ The first implementation should complete the local backend workflow before expan
 - PDF extraction: use MinerU, with Tencent COS as the temporary transfer path, following the reference approach in `/Users/yuzhou4tc/Public/公文/renhang_smartreport`.
 - Job status: use SSE for realtime progress and polling as the recovery fallback.
 - Storage: save each job as a local directory with JSON status files and artifacts.
-- Retention: keep complete job evidence chains for 7 days by default, then delete expired job directories.
+- Retention: keep complete job evidence chains for 3 days by default, then delete expired job directories.
 - Scope: paper reading is end-to-end in v1; WeChat writing is lightweight but usable in v1.
 - Output: backend saves the full evidence chain; frontend exposes editable article text and Word export.
 - Figures and formulas: embed assets in Word when extraction is reliable; otherwise keep explanations, source references, and placeholders.
@@ -153,7 +153,7 @@ storage/workflow_jobs/{job_id}/
 
 Retention behavior:
 
-- Complete evidence chains are retained for 7 days by default.
+- Complete evidence chains are retained for 3 days by default.
 - Expired job directories are removed by a backend cleanup routine.
 - Opening an expired job should return a clear "result expired, rerun required" response.
 
@@ -247,7 +247,7 @@ TENCENT_COS_REGION
 TENCENT_COS_BUCKET
 
 WORKFLOW_STORAGE_DIR
-WORKFLOW_RETENTION_DAYS=7
+WORKFLOW_RETENTION_DAYS=3
 ```
 
 The design assumes local development first. Deployment storage and hosted secret management are out of scope for v1.

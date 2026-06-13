@@ -148,7 +148,7 @@ TENCENT_COS_REGION=ap-guangzhou
 TENCENT_COS_BUCKET=
 
 WORKFLOW_STORAGE_DIR=storage/workflow_jobs
-WORKFLOW_RETENTION_DAYS=7
+WORKFLOW_RETENTION_DAYS=3
 WORKFLOW_USE_MOCKS=true
 ```
 
@@ -179,7 +179,7 @@ class Settings(BaseSettings):
     tencent_cos_bucket: str = Field(default="", alias="TENCENT_COS_BUCKET")
 
     workflow_storage_dir: Path = Field(default=Path("storage/workflow_jobs"), alias="WORKFLOW_STORAGE_DIR")
-    workflow_retention_days: int = Field(default=7, alias="WORKFLOW_RETENTION_DAYS")
+    workflow_retention_days: int = Field(default=3, alias="WORKFLOW_RETENTION_DAYS")
     workflow_use_mocks: bool = Field(default=False, alias="WORKFLOW_USE_MOCKS")
 
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", extra="ignore")
@@ -2105,7 +2105,7 @@ Append to `docs/handoff.md`:
 - Workflow job artifacts are stored under `backend/storage/workflow_jobs/` by default and are ignored by git.
 - Paper reading supports PDF upload, MinerU/DeepSeek adapters, full evidence-chain artifacts, final Markdown, and DOCX export.
 - WeChat writing supports source text, tracked article id, paper-reading job id, final Markdown, and DOCX export.
-- Job artifacts are retained for `WORKFLOW_RETENTION_DAYS`, defaulting to 7 days.
+- Job artifacts are retained for `WORKFLOW_RETENTION_DAYS`, defaulting to 3 days.
 ```
 
 - [ ] **Step 3: Run backend, frontend, and docs checks**
