@@ -4460,6 +4460,38 @@
         return upload.upload_id;
       }
 
+      async function uploadPaperReadingFile(file, statusNode) {
+        const filename = workflowFileLabel(file, 1);
+        const totalChunks = Math.max(1, Math.ceil(file.size / WORKFLOW_UPLOAD_CHUNK_BYTES));
+        setWorkflowStatus(statusNode, `正在上传论文: ${filename}`, "running");
+        const initResponse = await workshopFetch(`${WORKFLOW_API_BASE}/api/workflows/paper-reading/file-uploads`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            filename,
+            media_type: file.type || "application/pdf",
+            size_bytes: file.size,
+            total_chunks: totalChunks
+          })
+        });
+        if (!initResponse.ok) throw new Error(await workflowErrorMessage(initResponse, "论文上传初始化失败"));
+        const upload = await initResponse.json();
+        const chunkSize = Math.min(Number(upload.chunk_size_bytes) || WORKFLOW_UPLOAD_CHUNK_BYTES, WORKFLOW_UPLOAD_CHUNK_BYTES);
+
+        for (let chunkIndex = 0; chunkIndex < totalChunks; chunkIndex += 1) {
+          const start = chunkIndex * chunkSize;
+          const chunk = file.slice(start, Math.min(file.size, start + chunkSize));
+          setWorkflowStatus(statusNode, `正在上传论文: ${filename} (${chunkIndex + 1}/${totalChunks})`, "running");
+          const chunkResponse = await workshopFetch(`${WORKFLOW_API_BASE}/api/workflows/paper-reading/file-uploads/${encodeURIComponent(upload.upload_id)}/chunks/${chunkIndex}`, {
+            method: "PUT",
+            headers: { "Content-Type": "application/octet-stream" },
+            body: chunk
+          });
+          if (!chunkResponse.ok) throw new Error(await workflowErrorMessage(chunkResponse, "论文分片上传失败"));
+        }
+        return upload.upload_id;
+      }
+
       async function buildWechatWritingJobForm(form, statusNode) {
         const sourceFormData = new FormData(form);
         const jobFormData = new FormData();
@@ -4496,10 +4528,17 @@
         return jobFormData;
       }
 
-      async function createPaperReadingJob(form) {
+      async function createPaperReadingJob(form, statusNode) {
+        const sourceFormData = new FormData(form);
+        const files = workflowUploadedFiles(sourceFormData, "file");
+        if (!files.length) throw new Error("请先选择 PDF 文件");
+        const uploadId = await uploadPaperReadingFile(files[0], statusNode);
+        const body = new FormData();
+        body.set("template_id", String(sourceFormData.get("template_id") || "africa-reading"));
+        body.set("file_upload_id", uploadId);
         const response = await workshopFetch(`${WORKFLOW_API_BASE}/api/workflows/paper-reading/jobs`, {
           method: "POST",
-          body: new FormData(form)
+          body
         });
         if (!response.ok) throw new Error(await workflowErrorMessage(response, "论文精读任务创建失败"));
         return response.json();
@@ -4661,7 +4700,7 @@
             setWorkflowEditorContent(paperEditor, "");
             updateWorkflowMetrics("paper-reading", "");
             try {
-              const job = await createPaperReadingJob(paperForm);
+              const job = await createPaperReadingJob(paperForm, paperStatus);
               workflowJobs.paperReading = job.job_id;
               if (wechatPaperJobId) wechatPaperJobId.value = job.job_id;
               const completed = job.status === "completed" ? job : await waitForWorkflowCompletion(job.job_id, paperStatus, "paper-reading");

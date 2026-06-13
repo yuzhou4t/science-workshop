@@ -1,11 +1,15 @@
 import asyncio
+import json
 import logging
 import os
 import shutil
 import tempfile
+from datetime import UTC, datetime
 from pathlib import Path
+from uuid import uuid4
 
 from fastapi import APIRouter, File, Form, HTTPException, Request, UploadFile
+from pydantic import BaseModel, Field, field_validator
 
 from app.models.job import Artifact, WorkflowType
 from app.services.deepseek_client import DeepSeekClient
@@ -18,14 +22,62 @@ router = APIRouter(prefix="/api/workflows/paper-reading", tags=["paper-reading"]
 PDF_MEDIA_TYPE = "application/pdf"
 PDF_SIGNATURE = b"%PDF-"
 UPLOAD_CHUNK_SIZE = 1024 * 1024
+PAPER_FILE_CHUNK_MAX_BYTES = 2 * 1024 * 1024
 
 logger = logging.getLogger(__name__)
 
 
-def _validate_pdf_metadata(file: UploadFile) -> None:
-    filename = file.filename or ""
-    if Path(filename).suffix.lower() != ".pdf" or file.content_type != PDF_MEDIA_TYPE:
+class PaperFileUploadInitRequest(BaseModel):
+    filename: str
+    media_type: str = PDF_MEDIA_TYPE
+    size_bytes: int = Field(gt=0)
+    total_chunks: int = Field(gt=0, le=256)
+
+    @field_validator("filename")
+    @classmethod
+    def filename_required(cls, value: str) -> str:
+        value = value.strip()
+        if not value:
+            raise ValueError("filename is required")
+        return value
+
+
+def _validate_pdf_metadata_values(filename: str, media_type: str) -> None:
+    if Path(filename).suffix.lower() != ".pdf" or media_type != PDF_MEDIA_TYPE:
         raise HTTPException(status_code=400, detail="PDF upload required")
+
+
+def _validate_pdf_metadata(file: UploadFile) -> None:
+    _validate_pdf_metadata_values(file.filename or "", file.content_type or "")
+
+
+def _upload_root(request: Request) -> Path:
+    return request.app.state.settings.workflow_storage_dir.resolve() / "_uploads" / "paper-reading"
+
+
+def _safe_upload_id(upload_id: str) -> str:
+    if len(upload_id) != 32 or any(char not in "0123456789abcdef" for char in upload_id):
+        raise HTTPException(status_code=404, detail="PDF upload not found")
+    return upload_id
+
+
+def _upload_dir(request: Request, upload_id: str) -> Path:
+    upload_id = _safe_upload_id(upload_id)
+    root = _upload_root(request)
+    path = (root / upload_id).resolve()
+    if path.parent != root:
+        raise HTTPException(status_code=404, detail="PDF upload not found")
+    return path
+
+
+def _read_upload_metadata(upload_dir: Path) -> dict:
+    metadata_path = upload_dir / "metadata.json"
+    if not metadata_path.exists():
+        raise HTTPException(status_code=404, detail="PDF upload not found")
+    try:
+        return json.loads(metadata_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise HTTPException(status_code=400, detail="PDF upload metadata is invalid") from exc
 
 
 async def _write_limited_pdf_upload(file: UploadFile, storage_dir: Path, max_bytes: int) -> Path:
@@ -57,6 +109,50 @@ async def _write_limited_pdf_upload(file: UploadFile, storage_dir: Path, max_byt
         raise
 
 
+def _consume_chunked_pdf_upload(request: Request, upload_id: str, storage_dir: Path, max_bytes: int) -> Path:
+    source_dir = _upload_dir(request, upload_id)
+    metadata = _read_upload_metadata(source_dir)
+    _validate_pdf_metadata_values(
+        str(metadata.get("filename") or ""),
+        str(metadata.get("media_type") or ""),
+    )
+    if int(metadata.get("size_bytes") or 0) > max_bytes:
+        raise HTTPException(status_code=413, detail="PDF upload is too large")
+    total_chunks = int(metadata.get("total_chunks") or 0)
+    chunk_dir = source_dir / "chunks"
+    chunk_paths = [chunk_dir / f"{chunk_index}.part" for chunk_index in range(total_chunks)]
+    missing = [str(chunk_index) for chunk_index, chunk_path in enumerate(chunk_paths) if not chunk_path.exists()]
+    if missing:
+        raise HTTPException(status_code=400, detail=f"PDF upload is incomplete: {upload_id}")
+
+    upload_dir = storage_dir / "_uploads"
+    upload_dir.mkdir(parents=True, exist_ok=True)
+    fd, temp_name = tempfile.mkstemp(prefix="paper-reading-", suffix=".pdf", dir=upload_dir)
+    temp_path = Path(temp_name)
+    bytes_written = 0
+    header = b""
+    try:
+        with os.fdopen(fd, "wb") as output:
+            for chunk_path in chunk_paths:
+                chunk = chunk_path.read_bytes()
+                if len(header) < len(PDF_SIGNATURE):
+                    needed = len(PDF_SIGNATURE) - len(header)
+                    header += chunk[:needed]
+                    if len(header) == len(PDF_SIGNATURE) and header != PDF_SIGNATURE:
+                        raise HTTPException(status_code=400, detail="PDF upload required")
+                bytes_written += len(chunk)
+                if bytes_written > max_bytes:
+                    raise HTTPException(status_code=413, detail="PDF upload is too large")
+                output.write(chunk)
+        if header != PDF_SIGNATURE:
+            raise HTTPException(status_code=400, detail="PDF upload required")
+        shutil.rmtree(source_dir, ignore_errors=True)
+        return temp_path
+    except Exception:
+        temp_path.unlink(missing_ok=True)
+        raise
+
+
 def _log_background_workflow_result(task: asyncio.Task, job_id: str) -> None:
     try:
         task.result()
@@ -73,19 +169,83 @@ def _background_workflow_callback(job_id: str):
     return callback
 
 
+@router.post("/file-uploads")
+def create_file_upload(payload: PaperFileUploadInitRequest, request: Request) -> dict:
+    settings = request.app.state.settings
+    _validate_pdf_metadata_values(payload.filename, payload.media_type)
+    if payload.size_bytes > settings.paper_reading_max_upload_bytes:
+        raise HTTPException(status_code=413, detail="PDF upload is too large")
+
+    upload_id = uuid4().hex
+    upload_dir = _upload_root(request) / upload_id
+    (upload_dir / "chunks").mkdir(parents=True, exist_ok=True)
+    metadata = {
+        "upload_id": upload_id,
+        "filename": Path(payload.filename.replace("\\", "/")).name.strip() or "paper.pdf",
+        "media_type": payload.media_type,
+        "size_bytes": payload.size_bytes,
+        "total_chunks": payload.total_chunks,
+        "created_at": datetime.now(UTC).isoformat(),
+    }
+    (upload_dir / "metadata.json").write_text(json.dumps(metadata, ensure_ascii=False, indent=2), encoding="utf-8")
+    return {"upload_id": upload_id, "chunk_size_bytes": PAPER_FILE_CHUNK_MAX_BYTES}
+
+
+@router.put("/file-uploads/{upload_id}/chunks/{chunk_index}")
+async def upload_file_chunk(upload_id: str, chunk_index: int, request: Request) -> dict:
+    upload_dir = _upload_dir(request, upload_id)
+    metadata = _read_upload_metadata(upload_dir)
+    total_chunks = int(metadata.get("total_chunks") or 0)
+    if chunk_index < 0 or chunk_index >= total_chunks:
+        raise HTTPException(status_code=400, detail="Invalid chunk index")
+
+    data = await request.body()
+    if not data:
+        raise HTTPException(status_code=400, detail="Chunk is empty")
+    if len(data) > PAPER_FILE_CHUNK_MAX_BYTES:
+        raise HTTPException(status_code=413, detail="Chunk is too large")
+
+    chunk_dir = upload_dir / "chunks"
+    chunk_dir.mkdir(parents=True, exist_ok=True)
+    (chunk_dir / f"{chunk_index}.part").write_bytes(data)
+    received_chunks = len(list(chunk_dir.glob("*.part")))
+    return {
+        "upload_id": upload_id,
+        "chunk_index": chunk_index,
+        "received_chunks": received_chunks,
+        "total_chunks": total_chunks,
+        "complete": received_chunks == total_chunks,
+    }
+
+
 @router.post("/jobs")
 async def create_paper_reading_job(
     request: Request,
-    file: UploadFile = File(...),
+    file: UploadFile | None = File(None),
     template_id: str = Form("africa-reading"),
+    file_upload_id: str = Form(""),
 ) -> dict:
     settings = request.app.state.settings
     store = request.app.state.job_store
-    temp_pdf_path = await _write_limited_pdf_upload(
-        file,
-        settings.workflow_storage_dir,
-        settings.paper_reading_max_upload_bytes,
-    )
+    has_direct_file = bool(file and file.filename)
+    has_chunked_file = bool(file_upload_id.strip())
+    if has_direct_file and has_chunked_file:
+        raise HTTPException(status_code=400, detail="Provide either file or file_upload_id, not both")
+    if has_chunked_file:
+        temp_pdf_path = _consume_chunked_pdf_upload(
+            request,
+            file_upload_id.strip(),
+            settings.workflow_storage_dir,
+            settings.paper_reading_max_upload_bytes,
+        )
+    elif has_direct_file and file is not None:
+        temp_pdf_path = await _write_limited_pdf_upload(
+            file,
+            settings.workflow_storage_dir,
+            settings.paper_reading_max_upload_bytes,
+        )
+    else:
+        raise HTTPException(status_code=400, detail="PDF upload required")
     job = store.create_job(WorkflowType.PAPER_READING, template_id=template_id)
     pdf_path = store.job_dir(job.job_id) / "input" / "input.pdf"
     try:

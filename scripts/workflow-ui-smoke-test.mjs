@@ -83,6 +83,8 @@ const required = [
   "从已爬取文章生成",
   "workflowDisplayError",
   "工作流后端",
+  "uploadPaperReadingFile",
+  "file_upload_id",
   "WORKFLOW_POLL_MAX_ATTEMPTS = 420",
   "WORKFLOW_NODE_STEPS",
   "workflowStepDetails",
@@ -102,6 +104,7 @@ const required = [
   "预览",
   "编辑",
   "/api/workflows/paper-reading/jobs",
+  "/api/workflows/paper-reading/file-uploads",
   "/api/workflows/wechat-writing/jobs",
   "/api/workflows/issue-toc-export/jobs",
 ];

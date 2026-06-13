@@ -100,6 +100,47 @@ def test_create_paper_reading_job_uploads_pdf(client: TestClient) -> None:
     }
 
 
+def test_create_paper_reading_job_accepts_chunked_pdf_upload(client: TestClient) -> None:
+    pdf_bytes = b"%PDF-1.4 first chunk second chunk"
+    init_response = client.post(
+        "/api/workflows/paper-reading/file-uploads",
+        json={
+            "filename": "paper.pdf",
+            "media_type": "application/pdf",
+            "size_bytes": len(pdf_bytes),
+            "total_chunks": 2,
+        },
+    )
+    assert init_response.status_code == 200
+    upload_id = init_response.json()["upload_id"]
+
+    chunk_1 = client.put(
+        f"/api/workflows/paper-reading/file-uploads/{upload_id}/chunks/0",
+        content=pdf_bytes[:14],
+    )
+    chunk_2 = client.put(
+        f"/api/workflows/paper-reading/file-uploads/{upload_id}/chunks/1",
+        content=pdf_bytes[14:],
+    )
+
+    assert chunk_1.status_code == 200
+    assert chunk_2.status_code == 200
+    assert chunk_2.json()["complete"] is True
+
+    response = client.post(
+        "/api/workflows/paper-reading/jobs",
+        data={"template_id": "africa-reading", "file_upload_id": upload_id},
+    )
+
+    assert response.status_code == 200
+    body = response.json()
+    store = client.app.state.job_store
+    assert body["workflow_type"] == "paper_reading"
+    assert body["artifacts"]["input.pdf"]["relative_path"] == "input/input.pdf"
+    assert (store.job_dir(body["job_id"]) / "input" / "input.pdf").read_bytes() == pdf_bytes
+    assert not (store.root / "_uploads" / "paper-reading" / upload_id).exists()
+
+
 def test_create_wechat_writing_job_with_source_text_completes_in_mock_mode(client: TestClient) -> None:
     response = client.post(
         "/api/workflows/wechat-writing/jobs",
