@@ -3550,6 +3550,8 @@
 
       const workflowData = window.RECENT_WORKFLOW_DATA || { summary: null, push_queue: [] };
       const topicSearchData = window.TOPIC_SEARCH_INDEX || { summary: null, topics: [], disciplines: [], results: [] };
+      let latestCheckState = null;
+      let latestDailySummary = null;
 
       function isoDateOnly(value) {
         return String(value || "").slice(0, 10);
@@ -5257,11 +5259,14 @@
 
       function renderStatusDock() {
         const summary = workflowData.summary || {};
+        const checkSummary = latestDailySummary || summary;
         const unresolved = articles.filter((article) => article.linkStatus === "needs_official_pdf").length;
-        const ready = summary.sources_ready ?? adapterQueue.filter((item) => adapterStatusClass(item.status) === "ok").length;
-        const totalSources = summary.sources_total ?? journals.length;
-        const newPush = summary.new_push_queue_articles ?? 0;
-        const checkedAt = isoDateOnly(summary.checked_at || workflowToday());
+        const ready = checkSummary.sources_ready ?? adapterQueue.filter((item) => adapterStatusClass(item.status) === "ok").length;
+        const totalSources = checkSummary.sources_total ?? journals.length;
+        const newPush = latestDailySummary
+          ? latestDailySummary.push_queue_articles ?? 0
+          : summary.new_push_queue_articles ?? 0;
+        const checkedAt = isoDateOnly(latestCheckState?.checked_at || checkSummary.checked_at || workflowToday());
         $("#statusDock").innerHTML = [
           ["最近检查", checkedAt, "ok"],
           ["累计文章", summary.history_articles || articles.length, "ok"],
@@ -5721,6 +5726,26 @@
         return workflowData.summary?.until || new Date().toISOString().slice(0, 10);
       }
 
+      async function loadLatestCheckStatus() {
+        try {
+          const stateResponse = await fetch(`data/source-state.json?ts=${Date.now()}`, { cache: "no-store" });
+          if (!stateResponse.ok) return;
+          latestCheckState = await stateResponse.json();
+          const date = isoDateOnly(latestCheckState.until || latestCheckState.checked_at);
+          if (date) {
+            const dailyResponse = await fetch(`data/recent-articles-${date}_${date}.json?ts=${Date.now()}`, { cache: "no-store" });
+            if (dailyResponse.ok) {
+              const dailyWorkflow = await dailyResponse.json();
+              latestDailySummary = dailyWorkflow.summary || null;
+            }
+          }
+          renderStatusDock();
+        } catch {
+          latestCheckState = null;
+          latestDailySummary = null;
+        }
+      }
+
       function addDays(dateText, days) {
         const date = new Date(`${dateText}T00:00:00.000Z`);
         date.setUTCDate(date.getUTCDate() + days);
@@ -6141,6 +6166,7 @@
       attachWorkflowForms();
       motion.init();
       renderAll();
+      loadLatestCheckStatus();
       motion.page("tracking");
     </script>
   </body>
