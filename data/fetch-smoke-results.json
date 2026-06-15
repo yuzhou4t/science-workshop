@@ -7552,7 +7552,7 @@
       "probe_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
       "extraction_rule": "asq-sage-links",
       "status": 200,
-      "content_type": "text/html; charset=UTF-8",
+      "content_type": "text/html; charset=utf-8",
       "transport": "fetch",
       "fetch_ms": 1633,
       "ok": true,
