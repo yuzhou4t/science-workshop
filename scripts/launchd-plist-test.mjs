@@ -6,12 +6,12 @@ const plist = dailyWorkflowPlist({
   label: "com.science-workshop.daily",
   nodePath: "/usr/local/bin/node",
   projectDir: "/Users/example/Science Workshop",
-  hour: 10,
+  hour: 11,
   minute: 0,
 });
 
 assert.match(plist, /<key>Label<\/key>\s*<string>com\.science-workshop\.daily<\/string>/);
-assert.match(plist, /<key>StartCalendarInterval<\/key>[\s\S]*<key>Hour<\/key>\s*<integer>10<\/integer>[\s\S]*<key>Minute<\/key>\s*<integer>0<\/integer>/);
+assert.match(plist, /<key>StartCalendarInterval<\/key>[\s\S]*<key>Hour<\/key>\s*<integer>11<\/integer>[\s\S]*<key>Minute<\/key>\s*<integer>0<\/integer>/);
 assert.match(plist, /<string>\/usr\/local\/bin\/node<\/string>/);
 assert.match(plist, /<string>scripts\/run-daily-publish\.mjs<\/string>/);
 assert.match(plist, /<key>WorkingDirectory<\/key>\s*<string>\/Users\/example\/Science Workshop<\/string>/);

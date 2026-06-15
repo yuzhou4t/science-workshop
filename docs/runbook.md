@@ -269,7 +269,7 @@ ssh root@106.53.153.215 'git -C /opt/science-workshop/repo config user.name'
 ssh root@106.53.153.215 'git -C /opt/science-workshop/repo config user.email'
 ```
 
-The local macOS LaunchAgent file is retained only as a fallback and is currently disabled/unloaded:
+The local macOS LaunchAgent file is retained only as a fallback and is currently disabled/unloaded. Its fallback schedule is 11:00 Beijing time, leaving a buffer for source pages that publish after the 10:00 cloud window:
 
 ```text
 /Users/yuzhou4tc/Library/LaunchAgents/com.science-workshop.daily.plist

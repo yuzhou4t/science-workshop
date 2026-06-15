@@ -1,7 +1,7 @@
 import path from "node:path";
 
 export const DAILY_WORKFLOW_LABEL = "com.science-workshop.daily";
-export const DAILY_WORKFLOW_HOUR = 10;
+export const DAILY_WORKFLOW_HOUR = 11;
 export const DAILY_WORKFLOW_MINUTE = 0;
 export const DAILY_WORKFLOW_SCRIPT = "scripts/run-daily-publish.mjs";
 
