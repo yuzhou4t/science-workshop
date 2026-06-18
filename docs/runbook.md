@@ -242,7 +242,7 @@ Production scheduling runs on the Tencent Cloud server, not the local Mac:
 ```text
 Server repo: /opt/science-workshop/repo
 Wrapper: /opt/science-workshop/run-daily-publish.sh
-Cron: 0 10 * * *
+Cron: 0 11 * * *
 ```
 
 The wrapper fast-forwards `main`, runs `node scripts/run-daily-publish.mjs`, and writes logs to:
@@ -269,7 +269,7 @@ ssh root@106.53.153.215 'git -C /opt/science-workshop/repo config user.name'
 ssh root@106.53.153.215 'git -C /opt/science-workshop/repo config user.email'
 ```
 
-The local macOS LaunchAgent file is retained only as a fallback and is currently disabled/unloaded. Its fallback schedule is 11:00 Beijing time, leaving a buffer for source pages that publish after the 10:00 cloud window:
+The local macOS LaunchAgent file is retained only as a fallback and is currently disabled/unloaded. Its fallback schedule is also 11:00 Beijing time, matching the server schedule that leaves a buffer for source pages that publish after 10:00:
 
 ```text
 /Users/yuzhou4tc/Library/LaunchAgents/com.science-workshop.daily.plist
@@ -291,7 +291,7 @@ The daily script writes a one-day workflow file such as `data/recent-articles-20
 
 If new push articles are found, the daily script then runs abstract backfill for the same first-seen date. Backfill files update `data/push-history.json` and `data/recent-front-data.js` but do not rewrite `data/source-state.json`.
 
-After front-data and abstract-backfill work, the daily script refreshes `data/topic-search-index.js` from the cumulative push history. After the daily workflow finishes, `scripts/run-daily-publish.mjs` commits only the generated daily data files plus cumulative state files and the topic-search index, then pushes them to `origin/main`, which lets Vercel deploy the refreshed static page. If the git index already has staged files, the publish step skips to avoid mixing user work into the automated commit.
+After front-data and best-effort abstract-backfill work, the daily script refreshes `data/topic-search-index.js` from the cumulative push history. Abstract backfill steps have process-level timeouts; a slow PDF/OCR step can fail without blocking the daily article push. After the daily workflow finishes, `scripts/run-daily-publish.mjs` commits only the generated daily data files plus cumulative state files and the topic-search index, then pushes them to `origin/main`, which lets Vercel deploy the refreshed static page. If the git index already has staged files, the publish step skips to avoid mixing user work into the automated commit.
 
 ## Source Troubleshooting
 

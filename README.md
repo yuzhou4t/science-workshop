@@ -105,10 +105,10 @@ node scripts/build-front-data.mjs --reset-history --workflow=data/recent-article
 ```text
 服务器仓库：/opt/science-workshop/repo
 服务器入口：/opt/science-workshop/run-daily-publish.sh
-服务器定时：0 10 * * *
+服务器定时：0 11 * * *
 ```
 
-服务器入口会每天北京时间 10:00 运行：
+服务器入口会每天北京时间 11:00 运行：
 
 ```bash
 node scripts/run-daily-publish.mjs
@@ -125,4 +125,4 @@ node scripts/run-daily-publish.mjs
 /Users/yuzhou4tc/Library/LaunchAgents/com.science-workshop.daily.plist
 ```
 
-如果当天没有新文章，前端数据不会被空结果覆盖；如果发现新文章，脚本会先合并到 `data/push-history.json`，再更新 `data/recent-front-data.js`，随后只针对当天 `first_seen_at` 的新增文章运行摘要回填。每日流程结束前会刷新主题检索索引；发布入口只提交当天生成的数据文件、累计状态文件和发生实质变化的主题索引，推送到 `origin/main` 后由 Vercel 自动部署。页面默认展示累计推送历史，日期筛选只是缩小查看范围。
+如果当天没有新文章，前端数据不会被空结果覆盖；如果发现新文章，脚本会先合并到 `data/push-history.json`，再更新 `data/recent-front-data.js`，随后只针对当天 `first_seen_at` 的新增文章运行摘要回填。摘要回填是增量增强步骤，单个来源超时或失败会记录在输出里，但不会阻塞主推送数据发布。每日流程结束前会刷新主题检索索引；发布入口只提交当天生成的数据文件、累计状态文件和发生实质变化的主题索引，推送到 `origin/main` 后由 Vercel 自动部署。页面默认展示累计推送历史，日期筛选只是缩小查看范围。

@@ -24,11 +24,12 @@ async function readJsonIfExists(path) {
   }
 }
 
-async function runNodeScript(script, args = []) {
+async function runNodeScript(script, args = [], options = {}) {
   try {
     const { stdout, stderr } = await execFileAsync(process.execPath, [script, ...args], {
       cwd: new URL("..", import.meta.url),
       maxBuffer: 64 * 1024 * 1024,
+      timeout: options.timeoutMs,
     });
     if (stdout) process.stdout.write(stdout);
     if (stderr) process.stderr.write(stderr);
@@ -36,8 +37,12 @@ async function runNodeScript(script, args = []) {
   } catch (error) {
     if (error.stdout) process.stdout.write(error.stdout);
     if (error.stderr) process.stderr.write(error.stderr);
-    console.error(`abstract backfill step failed: ${script}: ${error.message}`);
-    return { ok: false, error: error.message };
+    const timedOut = error.signal === "SIGTERM" || error.killed;
+    const message = timedOut
+      ? `abstract backfill step timed out after ${options.timeoutMs}ms`
+      : `abstract backfill step failed`;
+    console.error(`${message}: ${script}: ${error.message}`);
+    return { ok: false, error: error.message, timedOut };
   }
 }
 
@@ -47,7 +52,7 @@ async function workflowPushCount(path) {
 }
 
 async function runBackfillStep(step) {
-  const result = await runNodeScript(step.script, step.args);
+  const result = await runNodeScript(step.script, step.args, { timeoutMs: step.timeoutMs });
   const pushCount = await workflowPushCount(step.output);
   if (pushCount > 0) {
     await runNodeScript("scripts/build-front-data.mjs", [`--workflow=${step.output}`]);
@@ -71,6 +76,7 @@ const steps = [
       "--delay-ms=8000",
       "--retries=3",
     ],
+    timeoutMs: 4 * 60 * 1000,
   },
   {
     name: "ncpssd-issue",
@@ -84,6 +90,7 @@ const steps = [
       "--delay-ms=5000",
       "--retries=3",
     ],
+    timeoutMs: 4 * 60 * 1000,
   },
   {
     name: "pdf",
@@ -98,6 +105,7 @@ const steps = [
       "--pages=3",
       ...(includeOcr ? ["--ocr", "--ocr-timeout-ms=120000", "--ocr-dpi=220"] : []),
     ],
+    timeoutMs: 6 * 60 * 1000,
   },
   {
     name: "english-metadata",
@@ -109,6 +117,7 @@ const steps = [
       "--timeout-ms=15000",
       "--delay-ms=1200",
     ],
+    timeoutMs: 3 * 60 * 1000,
   },
   {
     name: "macrodatas",
@@ -121,6 +130,7 @@ const steps = [
       "--timeout-ms=15000",
       "--delay-ms=1500",
     ],
+    timeoutMs: 3 * 60 * 1000,
   },
 ];
 
@@ -143,5 +153,10 @@ console.log(JSON.stringify({
   first_seen_at: firstSeenAt,
   missing_before: missingToday.length,
   added_abstracts: totalAdded,
-  steps: results.map((result) => ({ name: result.name, ok: result.ok, added: result.pushCount })),
+  steps: results.map((result) => ({
+    name: result.name,
+    ok: result.ok,
+    added: result.pushCount,
+    timed_out: Boolean(result.timedOut),
+  })),
 }, null, 2));

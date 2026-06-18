@@ -11,7 +11,7 @@ Status on 2026-06-13 after server scheduler migration:
 - Articles with abstracts: 362 of 455.
 - Direct article RSS/eTOC feeds: 5.
 - Adapter-based sources: 17.
-- Production daily scheduler: Tencent Cloud cron runs `/opt/science-workshop/run-daily-publish.sh` at 10:00 Beijing time.
+- Production daily scheduler: Tencent Cloud cron runs `/opt/science-workshop/run-daily-publish.sh` at 11:00 Beijing time.
 - Local macOS scheduler: `com.science-workshop.daily` is disabled and unloaded to avoid duplicate daily runs.
 - Codex app automation `science-workshop-2`: active daily health check for the server API, Vercel proxy, and production topic index.
 
@@ -36,7 +36,7 @@ The daily dedupe state is initialized in `data/source-state.json`. Rebuilding fr
 - A/A+ ratings are visually distinct in the frontend.
 - Author enrichment is active for the current English and Chinese source set.
 - Article abstract display is active in the realtime tracking timeline.
-- Daily abstract backfill is attached to `scripts/run-daily-workflow.mjs`. After new push articles are merged, it runs `scripts/backfill-daily-abstracts.mjs --first-seen-at=<date>` and merges successful abstract-only workflow files.
+- Daily abstract backfill is attached to `scripts/run-daily-workflow.mjs`. After new push articles are merged, it runs `scripts/backfill-daily-abstracts.mjs --first-seen-at=<date>` and merges successful abstract-only workflow files. Backfill steps are best-effort and have process-level timeouts, so slow PDF/OCR work should not block the daily article push.
 - Date display separates first-seen push timing from article publication date and issue date.
 - `JOURNAL OF FINANCE` duplicate inputs are canonicalized into one journal identity.
 - Chinese sources without RSS use automated adapters or fallback catalog sources instead of manual uploads.
@@ -48,7 +48,7 @@ The daily dedupe state is initialized in `data/source-state.json`. Rebuilding fr
 - English journal abstract backfill uses Crossref/OpenAlex, with Semantic Scholar available as an optional DOI lookup; protected publisher pages should not be bypassed.
 - `管理世界` uses Macrodatas only for discovery, then queries the NCPSD mobile issue page and matches official titles to `Literature/articleinfo` single-article pages. `Literature/readurl` is kept only as auxiliary reader/download metadata because direct external clicks can redirect to login. The previous CNKI CJFD sequence resolver was removed because issue-order filenames can point to the wrong article; the 2026年第5期 live probe now resolves 11/11 records to official NCPSD single-article links.
 - `南开管理评论` uses Macrodatas only for discovery, then tries an NCPSD official-detail resolver built from the discovered year/issue. As of 2026-06-04, 17 records correctly remain `needs_official_pdf`.
-- The Tencent Cloud cron job runs the daily publish workflow at 10:00 Beijing time. It runs the daily article workflow, commits generated data files, and pushes `origin/main` for Vercel deployment. The server repo Git author is configured as `yuzhou4t <aaawdeewfjfjfjfjfj@gmail.com>` so Vercel does not block automated data commits.
+- The Tencent Cloud cron job runs the daily publish workflow at 11:00 Beijing time. It runs the daily article workflow, commits generated data files, and pushes `origin/main` for Vercel deployment. The server repo Git author is configured as `yuzhou4t <aaawdeewfjfjfjfjfj@gmail.com>` so Vercel does not block automated data commits.
 
 ## Remaining Work
 
