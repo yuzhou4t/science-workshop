@@ -1,0 +1,83 @@
+{
+  "summary": {
+    "checked_at": "2026-06-20T03:02:52.614Z",
+    "since": "2000-01-01",
+    "until": "2026-06-20",
+    "sources_total": 22,
+    "sources_ready": 20,
+    "push_queue_articles": 1,
+    "abstract_backfill": true,
+    "english_metadata_backfill": true,
+    "semantic_scholar": false,
+    "backfill_sources": [
+      "crossref-doi",
+      "openalex-doi",
+      "openalex-title"
+    ]
+  },
+  "push_queue": [
+    {
+      "id": "f4d4e25098eb83d4",
+      "journal_id": "j19",
+      "source_journal_id": "j19",
+      "journal_name": "REVIEW OF ECONOMIC STUDIES",
+      "title": "School Choice and the Housing Market",
+      "url": "https://doi.org/10.1093/restud/rdag065",
+      "official_url": "https://doi.org/10.1093/restud/rdag065",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Aram Grigoryan",
+      "published_at": "2026-06-19",
+      "issue_date": "",
+      "first_seen_at": "2026-06-20",
+      "display_date": "2026-06-19",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "open-metadata-works",
+      "date_source": "",
+      "abstract": "I develop a unified theoretical framework with schools and residential choices to study the welfare consequences of public schools’ switching from the traditional neighborhood assignment to the deferred acceptance mechanism. I find that when families receive higher priorities at neighborhood schools, the deferred acceptance mechanism creates higher aggregate or utilitarian welfare than neighborhood assignment. Under a common school ranking assumption, I also show that the deferred acceptance creates higher aggregate welfare with neighborhood priorities than without them."
+    }
+  ],
+  "results": [
+    {
+      "article": {
+        "id": "f4d4e25098eb83d4",
+        "journal_id": "j19",
+        "source_journal_id": "j19",
+        "journal_name": "REVIEW OF ECONOMIC STUDIES",
+        "title": "School Choice and the Housing Market",
+        "url": "https://doi.org/10.1093/restud/rdag065",
+        "official_url": "https://doi.org/10.1093/restud/rdag065",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Aram Grigoryan",
+        "published_at": "2026-06-19",
+        "issue_date": "",
+        "first_seen_at": "2026-06-20",
+        "display_date": "2026-06-19",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "open-metadata-works",
+        "date_source": "",
+        "abstract": "I develop a unified theoretical framework with schools and residential choices to study the welfare consequences of public schools’ switching from the traditional neighborhood assignment to the deferred acceptance mechanism. I find that when families receive higher priorities at neighborhood schools, the deferred acceptance mechanism creates higher aggregate or utilitarian welfare than neighborhood assignment. Under a common school ranking assumption, I also show that the deferred acceptance creates higher aggregate welfare with neighborhood priorities than without them."
+      },
+      "addedAbstract": true,
+      "source": "crossref",
+      "matched_title": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": true,
+          "hints": {
+            "abstract": "I develop a unified theoretical framework with schools and residential choices to study the welfare consequences of public schools’ switching from the traditional neighborhood assignment to the deferred acceptance mechanism. I find that when families receive higher priorities at neighborhood schools, the deferred acceptance mechanism creates higher aggregate or utilitarian welfare than neighborhood assignment. Under a common school ranking assumption, I also show that the deferred acceptance creates higher aggregate welfare with neighborhood priorities than without them."
+          },
+          "status": 200
+        }
+      ]
+    }
+  ]
+}

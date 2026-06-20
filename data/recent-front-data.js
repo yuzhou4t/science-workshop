@@ -1,16 +1,40 @@
 window.RECENT_WORKFLOW_DATA = {
   "summary": {
-    "checked_at": "2026-06-19T03:02:34.202Z",
+    "checked_at": "2026-06-20T03:02:52.614Z",
     "since": "2026-05-25",
-    "until": "2026-06-19",
+    "until": "2026-06-20",
     "sources_total": 22,
     "sources_ready": 20,
-    "history_articles": 494,
-    "push_queue_articles": 494,
-    "new_push_queue_articles": 3,
-    "last_workflow_file": "data/recent-articles-daily-english-metadata-2026-06-19.json"
+    "history_articles": 495,
+    "push_queue_articles": 495,
+    "new_push_queue_articles": 1,
+    "last_workflow_file": "data/recent-articles-daily-english-metadata-2026-06-20.json"
   },
   "push_queue": [
+    {
+      "id": "f4d4e25098eb83d4",
+      "journal_id": "j19",
+      "source_journal_id": "j19",
+      "journal_name": "REVIEW OF ECONOMIC STUDIES",
+      "title": "School Choice and the Housing Market",
+      "url": "https://doi.org/10.1093/restud/rdag065",
+      "official_url": "https://doi.org/10.1093/restud/rdag065",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Aram Grigoryan",
+      "published_at": "2026-06-19",
+      "issue_date": "",
+      "first_seen_at": "2026-06-20",
+      "display_date": "2026-06-19",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "open-metadata-works",
+      "date_source": "",
+      "abstract": "I develop a unified theoretical framework with schools and residential choices to study the welfare consequences of public schools’ switching from the traditional neighborhood assignment to the deferred acceptance mechanism. I find that when families receive higher priorities at neighborhood schools, the deferred acceptance mechanism creates higher aggregate or utilitarian welfare than neighborhood assignment. Under a common school ranking assumption, I also show that the deferred acceptance creates higher aggregate welfare with neighborhood priorities than without them.",
+      "keywords": []
+    },
     {
       "id": "65f8ce7ffc351e06",
       "journal_id": "j18",
