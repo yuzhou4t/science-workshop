@@ -5092,7 +5092,7 @@
         form.addEventListener("submit", async (event) => {
           event.preventDefault();
           const requestedRole = $("#workshopLoginRole")?.value || "user";
-          const payload = {
+          const loginPayload = {
             username: $("#workshopLoginUsername").value.trim(),
             password: $("#workshopLoginPassword").value
           };
@@ -5102,13 +5102,13 @@
               method: "POST",
               headers: { "Content-Type": "application/json" },
               credentials: "same-origin",
-              body: JSON.stringify(payload)
+              body: JSON.stringify(loginPayload)
             });
             if (!response.ok) throw new Error(await workflowErrorMessage(response, "登录失败"));
-            const payload = await response.json();
+            const loginResult = await response.json();
             workshopAuthState.authenticated = true;
-            workshopAuthState.user = payload.user || null;
-            workshopAuthState.role = payload.user?.role || "user";
+            workshopAuthState.user = loginResult.user || null;
+            workshopAuthState.role = loginResult.user?.role || "user";
             applyWorkshopRoleVisibility();
             if (isWorkshopAdmin()) loadSourceRequestLog();
             const roleMismatch = requestedRole === "admin" && workshopAuthState.role !== "admin";
