@@ -2687,6 +2687,10 @@
             <svg class="side-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7c0-1.7 3.6-3 8-3s8 1.3 8 3-3.6 3-8 3-8-1.3-8-3Z"/><path d="M4 7v5c0 1.7 3.6 3 8 3s8-1.3 8-3V7"/><path d="M4 12v5c0 1.7 3.6 3 8 3s8-1.3 8-3v-5"/></svg>
             <span>数据源汇总</span>
           </button>
+          <button class="side-link" data-view="admin-inbox" data-admin-only>
+            <svg class="side-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
+            <span>管理员信箱</span>
+          </button>
           <button class="side-link" data-view="adapters" data-admin-only>
             <svg class="side-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17h7"/><path d="M4 7h16"/><path d="M4 12h12"/><path d="M15 17h5"/><path d="m17 15 2 2-2 2"/></svg>
             <span>适配器工作台</span>
@@ -3009,11 +3013,25 @@
               </table>
             </div>
           </section>
+          <footer class="metrics-footer source-metrics" id="sourceSummary"></footer>
+        </section>
+
+        <section class="page" data-page="admin-inbox" data-admin-only hidden>
+          <section class="card page-header">
+            <div class="header-row">
+              <div class="header-main">
+                <h1 class="title">管理员信箱</h1>
+                <div class="subtitle">集中查看用户提交的新增数据源申请，复核后再进入正式维护流程</div>
+              </div>
+              <div class="header-actions">
+                <button class="btn btn-ghost" id="refreshSourceRequests" type="button">刷新信箱</button>
+              </div>
+            </div>
+          </section>
           <section class="panel table-panel">
             <div class="source-toolbar">
-              <strong>管理员信箱</strong>
+              <strong>数据源申请</strong>
               <span class="summary-hint">用户提交的新增数据源申请，只对管理员可见</span>
-              <button class="btn btn-sm btn-ghost" id="refreshSourceRequests" type="button">刷新信箱</button>
             </div>
             <div class="source-table-wrap">
               <table>
@@ -3032,7 +3050,6 @@
               </table>
             </div>
           </section>
-          <footer class="metrics-footer source-metrics" id="sourceSummary"></footer>
         </section>
 
         <section class="page" data-page="adapters" data-admin-only hidden>
@@ -4079,7 +4096,7 @@
       }
 
       function canAccessView(view) {
-        return !["sources", "adapters"].includes(view) || isWorkshopAdmin();
+        return !["sources", "admin-inbox", "adapters"].includes(view) || isWorkshopAdmin();
       }
 
       function workshopRoleLabel(role) {
