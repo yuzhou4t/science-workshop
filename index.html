@@ -351,6 +351,41 @@
         opacity: 0.52;
       }
 
+      .auth-dock {
+        display: grid;
+        gap: 8px;
+        padding: 10px;
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        background: var(--surface-0);
+      }
+
+      .auth-state {
+        display: grid;
+        gap: 2px;
+      }
+
+      .auth-state span:first-child {
+        color: var(--text-0);
+        font-weight: 700;
+      }
+
+      .auth-state span:last-child {
+        color: var(--text-2);
+        font-size: 12px;
+      }
+
+      .auth-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+      }
+
+      .auth-actions .btn {
+        min-height: 30px;
+        padding: 6px 8px;
+      }
+
       .theme-toggle {
         height: 34px;
         display: grid;
@@ -2671,6 +2706,16 @@
           </button>
         </nav>
         <div class="side-footer">
+          <div class="auth-dock" id="workshopAuthDock">
+            <div class="auth-state">
+              <span id="workshopAuthRole">游客模式</span>
+              <span id="workshopAuthUser">数据源维护需管理员登录</span>
+            </div>
+            <div class="auth-actions">
+              <button class="btn btn-ghost" id="openWorkshopLogin" type="button">登录</button>
+              <button class="btn btn-ghost" id="workshopLogout" type="button" hidden>登出</button>
+            </div>
+          </div>
           <div class="theme-toggle" aria-label="主题切换">
             <button class="active" data-theme-button="dark">Dark</button>
             <button data-theme-button="light">Light</button>
@@ -2966,8 +3011,9 @@
           </section>
           <section class="panel table-panel">
             <div class="source-toolbar">
-              <strong>共建提交日志</strong>
-              <button class="btn btn-sm btn-ghost" id="refreshSourceRequests" type="button">刷新日志</button>
+              <strong>管理员信箱</strong>
+              <span class="summary-hint">用户提交的新增数据源申请，只对管理员可见</span>
+              <button class="btn btn-sm btn-ghost" id="refreshSourceRequests" type="button">刷新信箱</button>
             </div>
             <div class="source-table-wrap">
               <table>
@@ -3254,8 +3300,12 @@
       <button class="workshop-login-backdrop" type="button" data-workshop-login-cancel aria-label="关闭登录"></button>
       <section class="workshop-login-card" role="dialog" aria-modal="true" aria-labelledby="workshopLoginTitle">
         <h2 id="workshopLoginTitle">工作流登录</h2>
-        <p>登录后可调用论文精读、公众号写作和目录导出。</p>
+        <p>普通账号可调用内容工作流；管理员账号还可以维护数据源和查看信箱。</p>
         <form class="workshop-login-form" id="workshopLoginForm">
+          <select class="field" id="workshopLoginRole" aria-label="选择登录身份">
+            <option value="admin">管理员登录</option>
+            <option value="user">普通登录</option>
+          </select>
           <input class="field" id="workshopLoginUsername" name="username" autocomplete="username" placeholder="账号" required />
           <input class="field" id="workshopLoginPassword" name="password" type="password" autocomplete="current-password" placeholder="密码" required />
           <div class="workshop-login-actions">
@@ -4032,12 +4082,33 @@
         return !["sources", "adapters"].includes(view) || isWorkshopAdmin();
       }
 
+      function workshopRoleLabel(role) {
+        if (role === "admin") return "管理员";
+        if (role === "user") return "普通账号";
+        return "游客模式";
+      }
+
+      function renderWorkshopAuthDock() {
+        const roleNode = $("#workshopAuthRole");
+        const userNode = $("#workshopAuthUser");
+        const loginButton = $("#openWorkshopLogin");
+        const logoutButton = $("#workshopLogout");
+        if (!roleNode || !userNode || !loginButton || !logoutButton) return;
+        roleNode.textContent = workshopRoleLabel(workshopAuthState.role);
+        userNode.textContent = workshopAuthState.user?.username
+          ? `当前账号：${workshopAuthState.user.username}`
+          : "数据源维护需管理员登录";
+        loginButton.hidden = workshopAuthState.authenticated;
+        logoutButton.hidden = !workshopAuthState.authenticated;
+      }
+
       function applyWorkshopRoleVisibility() {
         $$("[data-admin-only]").forEach((node) => {
           node.hidden = !isWorkshopAdmin();
         });
         const active = document.querySelector(".side-link.active");
         if (active?.hidden) switchView("tracking");
+        renderWorkshopAuthDock();
       }
 
       function setWorkshopLoginStatus(text, state = "") {
@@ -4048,7 +4119,7 @@
         const dialog = $("#workshopLoginDialog");
         if (!dialog) return;
         dialog.hidden = false;
-        setWorkshopLoginStatus("");
+        setWorkshopLoginStatus(workflowAuthAvailable() ? "" : "当前静态预览无法登录，请通过本地服务或云端访问", workflowAuthAvailable() ? "" : "error");
         window.setTimeout(() => $("#workshopLoginUsername")?.focus(), 0);
       }
 
@@ -4085,12 +4156,11 @@
 
       async function refreshWorkshopAuth() {
         if (!workflowAuthAvailable()) {
-          workshopAuthState.authenticated = true;
-          workshopAuthState.user = { username: "local", role: "admin" };
-          workshopAuthState.role = "admin";
+          workshopAuthState.authenticated = false;
+          workshopAuthState.user = null;
+          workshopAuthState.role = "guest";
           applyWorkshopRoleVisibility();
-          loadSourceRequestLog();
-          return true;
+          return false;
         }
         try {
           const response = await fetch("/api/auth/me", {
@@ -4110,6 +4180,24 @@
           workshopAuthState.role = "guest";
           applyWorkshopRoleVisibility();
           return false;
+        }
+      }
+
+      async function logoutWorkshop() {
+        try {
+          if (workflowAuthAvailable()) {
+            await fetch("/api/auth/logout", {
+              method: "POST",
+              credentials: "same-origin"
+            });
+          }
+        } finally {
+          workshopAuthState.authenticated = false;
+          workshopAuthState.user = null;
+          workshopAuthState.role = "guest";
+          sourceRequestLog = [];
+          applyWorkshopRoleVisibility();
+          renderSourceRequestRows();
         }
       }
 
@@ -4999,8 +5087,11 @@
       function attachWorkshopLogin() {
         const form = $("#workshopLoginForm");
         if (!form) return;
+        $("#openWorkshopLogin")?.addEventListener("click", openWorkshopLoginDialog);
+        $("#workshopLogout")?.addEventListener("click", logoutWorkshop);
         form.addEventListener("submit", async (event) => {
           event.preventDefault();
+          const requestedRole = $("#workshopLoginRole")?.value || "user";
           const payload = {
             username: $("#workshopLoginUsername").value.trim(),
             password: $("#workshopLoginPassword").value
@@ -5020,7 +5111,8 @@
             workshopAuthState.role = payload.user?.role || "user";
             applyWorkshopRoleVisibility();
             if (isWorkshopAdmin()) loadSourceRequestLog();
-            setWorkshopLoginStatus("登录成功", "complete");
+            const roleMismatch = requestedRole === "admin" && workshopAuthState.role !== "admin";
+            setWorkshopLoginStatus(roleMismatch ? "已登录为普通账号，数据源维护仍不可见" : "登录成功", roleMismatch ? "running" : "complete");
             resolveWorkshopLogin();
           } catch (error) {
             workshopAuthState.authenticated = false;

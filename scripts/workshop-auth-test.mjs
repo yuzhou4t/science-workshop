@@ -71,6 +71,7 @@ process.env.WORKSHOP_USER_PASSWORD_HASH = passwordHash;
 delete require.cache[require.resolve("../api/science-workshop-proxy.js")];
 const proxy = require("../api/science-workshop-proxy.js");
 const login = require("../api/auth/login.js");
+const logout = require("../api/auth/logout.js");
 const me = require("../api/auth/me.js");
 
 const loginRequest = Readable.from([JSON.stringify({ username: "4tc", password: "test-password" })]);
@@ -108,6 +109,19 @@ assert.deepEqual(JSON.parse(meResponse.body), {
   authenticated: true,
   user: { username: "reader", role: "user" },
 });
+
+const logoutResponse = createMockResponse();
+logout(
+  {
+    method: "POST",
+    headers: { "x-forwarded-proto": "https" },
+  },
+  logoutResponse,
+);
+assert.equal(logoutResponse.statusCode, 200);
+assert.match(logoutResponse.headers["set-cookie"], /science_workshop_session=;/);
+assert.match(logoutResponse.headers["set-cookie"], /Max-Age=0/);
+assert.match(logoutResponse.headers["set-cookie"], /Secure/);
 
 const unauthorizedResponse = createMockResponse();
 await proxy(
