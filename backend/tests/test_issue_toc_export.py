@@ -77,6 +77,28 @@ def test_render_issue_toc_markdown_accepts_crawled_issue_articles_without_abstra
     assert "关键词：" not in markdown
 
 
+def test_render_issue_toc_markdown_accepts_monthly_article_groups() -> None:
+    markdown = render_issue_toc_markdown(
+        {
+            "journal_name": "REVIEW OF ECONOMIC STUDIES",
+            "issue_label": "2026年6月新文",
+            "online_note": "该分组按首发月份从本地爬取文章记录整理，原始记录未提供正式期号",
+            "articles": [
+                {
+                    "section": "月度新文",
+                    "title": "A Monthly Article Without Issue Metadata",
+                    "authors": "Demo Author",
+                }
+            ],
+        }
+    )
+
+    assert "《REVIEW OF ECONOMIC STUDIES》2026年6月新文最新刊出研究论文1篇" in markdown
+    assert "该分组按首发月份从本地爬取文章记录整理，原始记录未提供正式期号，目次及论文摘要附上以飨读者。" in markdown
+    assert "## 月度新文" in markdown
+    assert "A Monthly Article Without Issue Metadata" in markdown
+
+
 @pytest.mark.asyncio
 async def test_issue_toc_export_workflow_creates_markdown_and_docx(tmp_path) -> None:
     store = JobStore(tmp_path / "jobs", retention_days=7)

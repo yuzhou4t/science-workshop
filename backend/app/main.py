@@ -4,13 +4,13 @@ from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
-from app.api import issue_toc_export, jobs, paper_reading, wechat_writing
+from app.api import issue_toc_export, jobs, paper_reading, source_requests, wechat_drafts, wechat_writing
 from app.core.config import get_settings
 from app.storage.job_store import JobStore
 from app.workflows.events import EventBroker
 from app.workflows.scheduler import WorkflowScheduler
 
-PROTECTED_PREFIXES = ("/api/workflows", "/api/jobs")
+PROTECTED_PREFIXES = ("/api/workflows", "/api/jobs", "/api/source-requests", "/api/wechat-drafts")
 
 
 def create_app() -> FastAPI:
@@ -48,6 +48,8 @@ def create_app() -> FastAPI:
     app.include_router(paper_reading.router)
     app.include_router(wechat_writing.router)
     app.include_router(issue_toc_export.router)
+    app.include_router(source_requests.router)
+    app.include_router(wechat_drafts.router)
 
     return app
 

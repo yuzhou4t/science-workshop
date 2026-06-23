@@ -23,12 +23,30 @@ function sessionSecret() {
   return process.env.WORKSHOP_SESSION_SECRET || "";
 }
 
+function normalizeRole(role) {
+  return role === "admin" ? "admin" : "user";
+}
+
+function inferSessionRole(username) {
+  if (
+    username
+    && (
+      username === process.env.WORKSHOP_ADMIN_USERNAME
+      || username === process.env.WORKSHOP_AUTH_USERNAME
+    )
+  ) {
+    return "admin";
+  }
+  return "user";
+}
+
 function createSessionToken(username, options = {}) {
   const secret = options.secret || sessionSecret();
   if (!secret) throw new Error("WORKSHOP_SESSION_SECRET is not configured");
   const now = Number(options.now || Date.now());
   const payload = base64UrlJson({
     sub: username,
+    role: normalizeRole(options.role),
     iat: now,
     exp: now + SESSION_TTL_MS,
   });
@@ -80,7 +98,10 @@ function readSession(cookieHeader, options = {}) {
   try {
     const data = JSON.parse(Buffer.from(payload, "base64url").toString("utf8"));
     if (!data.sub || Number(data.exp) <= Number(options.now || Date.now())) return null;
-    return { username: data.sub };
+    return {
+      username: data.sub,
+      role: data.role ? normalizeRole(data.role) : inferSessionRole(data.sub),
+    };
   } catch (_error) {
     return null;
   }
@@ -98,7 +119,7 @@ function isSecureRequest(req) {
 }
 
 function isProtectedBackendPath(pathname) {
-  return /\/api\/(?:workflows|jobs)(?:\/|$)/.test(String(pathname || ""));
+  return /\/api\/(?:workflows|jobs|source-requests|wechat-drafts)(?:\/|$)/.test(String(pathname || ""));
 }
 
 function writeJson(res, statusCode, payload, headers = {}) {
@@ -131,6 +152,7 @@ module.exports = {
   createSessionCookie,
   isProtectedBackendPath,
   isSecureRequest,
+  normalizeRole,
   readJsonBody,
   readSession,
   verifyPasswordHash,

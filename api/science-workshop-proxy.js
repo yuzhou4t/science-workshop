@@ -9,6 +9,7 @@ const {
 const BACKEND_ORIGIN = process.env.SCIENCE_WORKSHOP_BACKEND_ORIGIN || "http://106.53.153.215";
 const BACKEND_PREFIX = process.env.SCIENCE_WORKSHOP_BACKEND_PREFIX || "/science-workshop-api";
 const WORKSHOP_USER_HEADER = "x-workshop-user";
+const WORKSHOP_ROLE_HEADER = "x-workshop-role";
 const HOP_BY_HOP_HEADERS = new Set([
   "connection",
   "content-encoding",
@@ -47,6 +48,7 @@ function requestHeaders(req) {
       || lower === "host"
       || lower === PROXY_SECRET_HEADER
       || lower === WORKSHOP_USER_HEADER
+      || lower === WORKSHOP_ROLE_HEADER
     ) continue;
     if (Array.isArray(value)) {
       for (const item of value) headers.append(name, item);
@@ -88,6 +90,7 @@ module.exports = async function scienceWorkshopProxy(req, res) {
   const headers = requestHeaders(req);
   if (protectedRoute && session?.username) {
     headers.set(WORKSHOP_USER_HEADER, session.username);
+    headers.set(WORKSHOP_ROLE_HEADER, session.role || "user");
   }
   if (process.env.SCIENCE_WORKSHOP_PROXY_SECRET) {
     headers.set(PROXY_SECRET_HEADER, process.env.SCIENCE_WORKSHOP_PROXY_SECRET);

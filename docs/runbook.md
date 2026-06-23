@@ -116,8 +116,10 @@ Workflow calls from the Vercel page are protected by a signed session cookie at 
 
 ```text
 Vercel environment variables:
-WORKSHOP_AUTH_USERNAME=<login username>
-WORKSHOP_AUTH_PASSWORD_HASH=<scrypt password hash>
+WORKSHOP_ADMIN_USERNAME=<admin login username>
+WORKSHOP_ADMIN_PASSWORD_HASH=<scrypt password hash>
+WORKSHOP_USER_USERNAME=<ordinary login username>
+WORKSHOP_USER_PASSWORD_HASH=<scrypt password hash>
 WORKSHOP_SESSION_SECRET=<random session signing secret>
 SCIENCE_WORKSHOP_PROXY_SECRET=<same value as backend>
 
@@ -136,11 +138,17 @@ WORKFLOW_QUOTA_TIMEZONE=Asia/Shanghai
 
 Workflow concurrency is enforced inside the FastAPI process. The current Docker command starts one uvicorn worker, so these limits apply process-wide: at most 3 running workflow jobs, with paper reading capped at 1 running job and WeChat writing capped at 2. A single logged-in user can have 1 running workflow and 2 queued workflows; daily quotas are 3 paper-reading jobs and 10 WeChat-writing jobs per user, counted by the configured quota timezone.
 
+User-submitted data-source contributions are appended to `WORKFLOW_STORAGE_DIR/source-requests.jsonl`. They are review logs only and do not mutate `data/adapter-profiles.json` or the crawler registry until an admin applies them manually.
+
+WeChat draft imports currently run in a reserved mock/record mode. The frontend "导入草稿箱" action posts Markdown to `/api/wechat-drafts`, and the backend appends the payload to `WORKFLOW_STORAGE_DIR/wechat-draft-imports.jsonl` with `mode=mock` and `status=prepared`. This does not call the WeChat Official Account API yet; real draft-box publishing should be wired here after the account credentials, media upload permissions, and draft API access are confirmed.
+
 Generate the password hash locally with:
 
 ```bash
 node -e "const c=require('node:crypto');const p=process.argv[1];const s=c.randomBytes(16).toString('base64url');console.log('scrypt:'+s+':'+c.scryptSync(p,s,32).toString('base64url'));" '<password>'
 ```
+
+The legacy `WORKSHOP_AUTH_USERNAME` / `WORKSHOP_AUTH_PASSWORD_HASH` pair is still accepted and is treated as an admin account, but new deployments should prefer the explicit admin/user variables above.
 
 Current production health checks:
 

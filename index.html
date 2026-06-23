@@ -2644,11 +2644,15 @@
             <svg class="side-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/><path d="M8.5 11h5"/><path d="M11 8.5v5"/></svg>
             <span>主题检索</span>
           </button>
-          <button class="side-link" data-view="sources">
+          <button class="side-link" data-view="source-contribution">
+            <svg class="side-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="M5 12h14"/><path d="M4 19h16"/></svg>
+            <span>共建来源</span>
+          </button>
+          <button class="side-link" data-view="sources" data-admin-only>
             <svg class="side-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7c0-1.7 3.6-3 8-3s8 1.3 8 3-3.6 3-8 3-8-1.3-8-3Z"/><path d="M4 7v5c0 1.7 3.6 3 8 3s8-1.3 8-3V7"/><path d="M4 12v5c0 1.7 3.6 3 8 3s8-1.3 8-3v-5"/></svg>
             <span>数据源汇总</span>
           </button>
-          <button class="side-link" data-view="adapters">
+          <button class="side-link" data-view="adapters" data-admin-only>
             <svg class="side-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17h7"/><path d="M4 7h16"/><path d="M4 12h12"/><path d="M15 17h5"/><path d="m17 15 2 2-2 2"/></svg>
             <span>适配器工作台</span>
           </button>
@@ -2718,6 +2722,11 @@
                   <div class="segmented" id="languageFilters" aria-label="语言筛选"></div>
                 </div>
                 <div class="filter-row">
+                  <div class="filter-row-head"><span>Subscriptions</span><span>按已订阅期刊过滤</span></div>
+                  <div class="filter-chip-list" id="subscriptionControls"></div>
+                  <div class="filter-chip-list" id="subscriptionJournals"></div>
+                </div>
+                <div class="filter-row">
                   <div class="filter-row-head"><span>Push Date</span><span>按入库日期筛选</span></div>
                   <div class="date-filter-grid">
                     <input class="field" id="dateFromInput" type="date" aria-label="开始日期" />
@@ -2777,7 +2786,53 @@
           </section>
         </section>
 
-        <section class="page" data-page="sources" hidden>
+        <section class="page" data-page="source-contribution" hidden>
+          <section class="card page-header">
+            <div class="header-row">
+              <div class="header-main">
+                <h1 class="title">数据源共建</h1>
+                <div class="subtitle">提交期刊官网、Feed 或目录线索，进入维护日志等待管理员复核</div>
+              </div>
+            </div>
+          </section>
+
+          <section class="workflow-board workflow-board-single" aria-label="数据源共建提交">
+            <section class="workflow-panel breath-surface" id="sourceContributionPanel">
+              <div class="workflow-header">
+                <h2>新增期刊来源</h2>
+                <p>提交后会写入共建日志，不会直接改动正式抓取注册表。</p>
+              </div>
+              <form id="sourceContributionForm" class="workflow-form">
+                <div class="workflow-form-row">
+                  <input class="field" id="sourceRequestJournalName" name="journal_name" type="text" placeholder="期刊名称" required />
+                  <input class="field" id="sourceRequestHomepageUrl" name="homepage_url" type="url" placeholder="官网 URL" />
+                </div>
+                <div class="workflow-form-row">
+                  <input class="field" id="sourceRequestFeedUrl" name="feed_url" type="url" placeholder="Feed URL（可为空）" />
+                  <select class="field" id="sourceRequestSourceType" name="source_type" aria-label="数据源类型">
+                    <option>RSS / Atom</option>
+                    <option>RSSHub 路由</option>
+                    <option>XPath 适配</option>
+                    <option>人工复核</option>
+                  </select>
+                  <select class="field" id="sourceRequestRefreshInterval" name="refresh_interval" aria-label="刷新频率">
+                    <option>每周检查</option>
+                    <option>每日检查</option>
+                    <option>每月检查</option>
+                  </select>
+                </div>
+                <textarea class="field workflow-source" id="sourceRequestNotes" name="notes" rows="5" placeholder="补充说明：过刊页、样例文章、特殊访问方式、推荐理由"></textarea>
+                <div class="workflow-export-row">
+                  <span class="workflow-export-hint">管理员会在数据源汇总页查看提交记录</span>
+                  <button class="btn btn-primary" type="submit">提交来源</button>
+                </div>
+              </form>
+              <div id="sourceContributionStatus" class="workflow-status" aria-live="polite">等待提交</div>
+            </section>
+          </section>
+        </section>
+
+        <section class="page" data-page="sources" data-admin-only hidden>
           <section class="card page-header">
             <div class="header-row">
               <div class="header-main">
@@ -2909,10 +2964,32 @@
               </table>
             </div>
           </section>
+          <section class="panel table-panel">
+            <div class="source-toolbar">
+              <strong>共建提交日志</strong>
+              <button class="btn btn-sm btn-ghost" id="refreshSourceRequests" type="button">刷新日志</button>
+            </div>
+            <div class="source-table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>提交时间</th>
+                    <th>期刊</th>
+                    <th>类型</th>
+                    <th>主页</th>
+                    <th>Feed</th>
+                    <th>提交人</th>
+                    <th>说明</th>
+                  </tr>
+                </thead>
+                <tbody id="sourceRequestRows"></tbody>
+              </table>
+            </div>
+          </section>
           <footer class="metrics-footer source-metrics" id="sourceSummary"></footer>
         </section>
 
-        <section class="page" data-page="adapters" hidden>
+        <section class="page" data-page="adapters" data-admin-only hidden>
           <section class="card page-header">
             <div class="header-row">
               <div class="header-main">
@@ -3085,6 +3162,7 @@
                   <span class="workflow-export-hint">标题与正文会合并导出，编辑内容即时同步</span>
                   <div class="workflow-export-actions">
                     <button class="btn btn-sm btn-ghost" id="wechatWritingCopy" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>复制 Markdown</button>
+                    <button class="btn btn-sm btn-ghost" id="wechatDraftImport" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m8 11 4 4 4-4"/><path d="M5 21h14"/></svg>导入草稿箱</button>
                     <button class="btn btn-primary" id="wechatWritingExport" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg>导出 Word</button>
                   </div>
                 </div>
@@ -3126,7 +3204,7 @@
                   <input id="issueTocTemplateId" name="template_id" type="hidden" value="issue-toc" />
                   <div class="workflow-form-row">
                     <select class="field" id="issueTocJournalSelect" aria-label="选择期刊"></select>
-                    <select class="field" id="issueTocIssueSelect" aria-label="选择期号"></select>
+                    <select class="field" id="issueTocIssueSelect" aria-label="选择期号或月份"></select>
                     <button class="btn btn-primary" type="submit">生成目录稿</button>
                   </div>
                 </form>
@@ -3637,7 +3715,7 @@
       let abstractModalScrollY = 0;
 
       function crawledIssueRows() {
-        return (workflowData.push_queue || []).filter((row) => row && row.title && row.journal_id && row.issue_date);
+        return (workflowData.push_queue || []).filter((row) => row && row.title && row.journal_id && (row.issue_date || row.published_at));
       }
 
       function crawledRowsForJournal(journalId) {
@@ -3646,6 +3724,8 @@
 
       function issueLabelFromDate(issueDate) {
         const value = String(issueDate || "").trim();
+        if (value.startsWith("issue:")) return issueLabelFromDate(value.slice("issue:".length));
+        if (value.startsWith("month:")) return `${issueLabelFromDate(value.slice("month:".length))}新文`;
         if (/^\d{4}-\d{2}$/.test(value)) {
           const [year, month] = value.split("-");
           return `${year}年${Number(month)}月`;
@@ -3657,27 +3737,43 @@
         return value || "未标明期号";
       }
 
+      function issueTocGroupKey(row) {
+        if (row.issue_date) return `issue:${row.issue_date}`;
+        if (row.published_at && /^\d{4}-\d{2}/.test(row.published_at)) return `month:${row.published_at.slice(0, 7)}`;
+        return "";
+      }
+
+      function issueTocGroupLabel(groupKey) {
+        return issueLabelFromDate(groupKey);
+      }
+
+      function issueTocGroupIsMonthly(groupKey) {
+        return String(groupKey || "").startsWith("month:");
+      }
+
       function issueTocJournalOptions() {
         const grouped = new Map();
         for (const journal of journals) {
           grouped.set(journal.id, {
             journalId: journal.id,
             journalName: journal.name || journal.id,
-            issueDates: new Set(),
+            issueKeys: new Set(),
             articleCount: 0,
             crawledCount: crawledRowsForJournal(journal.id).length,
           });
         }
         for (const row of crawledIssueRows()) {
           const journalId = canonicalJournalId(row.journal_id);
+          const groupKey = issueTocGroupKey(row);
+          if (!groupKey) continue;
           const current = grouped.get(journalId) || {
             journalId,
             journalName: journalById(journalId).name || row.journal_name || journalId,
-            issueDates: new Set(),
+            issueKeys: new Set(),
             articleCount: 0,
             crawledCount: crawledRowsForJournal(journalId).length,
           };
-          current.issueDates.add(row.issue_date);
+          current.issueKeys.add(groupKey);
           current.articleCount += 1;
           current.crawledCount = Math.max(current.crawledCount || 0, current.articleCount);
           grouped.set(journalId, current);
@@ -3689,16 +3785,18 @@
         const grouped = new Map();
         for (const row of crawledIssueRows()) {
           if (canonicalJournalId(row.journal_id) !== journalId) continue;
-          const current = grouped.get(row.issue_date) || { issueDate: row.issue_date, articleCount: 0 };
+          const groupKey = issueTocGroupKey(row);
+          if (!groupKey) continue;
+          const current = grouped.get(groupKey) || { issueKey: groupKey, articleCount: 0 };
           current.articleCount += 1;
-          grouped.set(row.issue_date, current);
+          grouped.set(groupKey, current);
         }
-        return Array.from(grouped.values()).sort((a, b) => b.issueDate.localeCompare(a.issueDate));
+        return Array.from(grouped.values()).sort((a, b) => b.issueKey.localeCompare(a.issueKey));
       }
 
-      function issueTocRowsForSelection(journalId, issueDate) {
+      function issueTocRowsForSelection(journalId, issueKey) {
         return crawledIssueRows()
-          .filter((row) => canonicalJournalId(row.journal_id) === journalId && row.issue_date === issueDate)
+          .filter((row) => canonicalJournalId(row.journal_id) === journalId && issueTocGroupKey(row) === issueKey)
           .sort((a, b) => {
             const aDate = a.published_at || a.display_date || "";
             const bDate = b.published_at || b.display_date || "";
@@ -3706,19 +3804,22 @@
           });
       }
 
-      function buildIssueTocPayloadFromSelection(journalId, issueDate) {
-        const rows = issueTocRowsForSelection(journalId, issueDate);
+      function buildIssueTocPayloadFromSelection(journalId, issueKey) {
+        const rows = issueTocRowsForSelection(journalId, issueKey);
         if (!rows.length) {
           throw new Error("当前选择没有可导出的已爬取文章");
         }
         const journal = journalById(journalId);
+        const monthlyGroup = issueTocGroupIsMonthly(issueKey);
         return {
           journal_name: journal.name || rows[0].journal_name || journalId,
-          issue_label: issueLabelFromDate(issueDate),
+          issue_label: issueTocGroupLabel(issueKey),
           article_count: rows.length,
-          online_note: "已从本地爬取文章记录整理",
+          online_note: monthlyGroup
+            ? "该分组按首发月份从本地爬取文章记录整理，原始记录未提供正式期号"
+            : "已从本地爬取文章记录整理",
           articles: rows.map((row) => ({
-            section: "本期目录",
+            section: monthlyGroup ? "月度新文" : "本期目录",
             title: row.title,
             authors: row.authors || "",
             abstract: row.abstract || "",
@@ -3734,7 +3835,7 @@
         if (!journalSelect || !issueSelect) return;
         const journalOptions = issueTocJournalOptions();
         journalSelect.innerHTML = journalOptions.map((item) => (
-          `<option value="${escapeHtml(item.journalId)}">${escapeHtml(item.journalName)}（${item.issueDates.size ? `${item.issueDates.size} 期 / ${item.articleCount} 篇` : "暂无可导出期号"}）</option>`
+          `<option value="${escapeHtml(item.journalId)}">${escapeHtml(item.journalName)}（${item.issueKeys.size ? `${item.issueKeys.size} 组 / ${item.articleCount} 篇` : "暂无可导出分组"}）</option>`
         )).join("");
         journalSelect.disabled = journalOptions.length === 0;
         updateIssueTocIssueOptions();
@@ -3745,28 +3846,34 @@
         const issueSelect = $("#issueTocIssueSelect");
         const summary = $("#issueTocSelectionSummary");
         if (!journalSelect || !issueSelect) return;
+        const previousIssueValue = issueSelect.value;
         const issueOptions = issueTocIssueOptions(journalSelect.value);
         const selectedJournal = issueTocJournalOptions().find((item) => item.journalId === journalSelect.value);
         if (!issueOptions.length) {
-          issueSelect.innerHTML = '<option value="">暂无可导出期号</option>';
+          issueSelect.innerHTML = '<option value="">暂无可导出期号或月份</option>';
           issueSelect.disabled = true;
           issueTocSelectedCount = 0;
           if (summary) {
             const crawledCount = selectedJournal?.crawledCount || 0;
             summary.textContent = crawledCount
-              ? `暂无可导出期号：该期刊已有 ${crawledCount} 篇爬取文章，但当前记录缺少 issue_date。`
+              ? `暂无可导出分组：该期刊已有 ${crawledCount} 篇爬取文章，但当前记录缺少 issue_date 或 published_at。`
               : "暂无可导出期号：该期刊当前还没有可用于目录导出的文章记录。";
           }
           return;
         }
         issueSelect.innerHTML = issueOptions.map((item) => (
-          `<option value="${escapeHtml(item.issueDate)}">${escapeHtml(issueLabelFromDate(item.issueDate))}（${item.articleCount} 篇）</option>`
+          `<option value="${escapeHtml(item.issueKey)}">${escapeHtml(issueTocGroupLabel(item.issueKey))}（${item.articleCount} 篇）</option>`
         )).join("");
         issueSelect.disabled = issueOptions.length === 0;
-        const selectedIssue = issueOptions.find((item) => item.issueDate === issueSelect.value) || issueOptions[0];
+        if (issueOptions.some((item) => item.issueKey === previousIssueValue)) {
+          issueSelect.value = previousIssueValue;
+        }
+        const selectedIssue = issueOptions.find((item) => item.issueKey === issueSelect.value) || issueOptions[0];
         issueTocSelectedCount = selectedIssue ? selectedIssue.articleCount : 0;
         if (summary) {
-          summary.textContent = selectedIssue ? `将从已爬取数据导出 ${selectedIssue.articleCount} 篇文章` : "当前没有带期号的爬取文章";
+          summary.textContent = selectedIssue
+            ? `将从已爬取数据导出 ${selectedIssue.articleCount} 篇文章；${issueTocGroupIsMonthly(selectedIssue.issueKey) ? "该组按首发月份生成" : "该组按正式期号生成"}`
+            : "当前没有带期号或首发月份的爬取文章";
         }
       }
 
@@ -3801,6 +3908,7 @@
       let activeTopicId = topicSearchData.topics?.[0]?.id || "africa";
       let activeTopicDisciplineId = "全部";
       let activeTopicQuery = "";
+      let subscriptionOnly = false;
       let selectedArticleId = articles[0].id;
       let selectedJournalId = articles[0].journalId;
       let issueTocSelectedCount = 0;
@@ -3809,6 +3917,7 @@
       const $$ = (selector) => Array.from(document.querySelectorAll(selector));
       const selectorText = (value) => String(value ?? "").replace(/\\/g, "\\\\").replace(/"/g, "\\\"");
       const escapeRegExp = (value) => String(value ?? "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      const SUBSCRIPTION_STORAGE_KEY = "science-workshop-subscriptions";
       const WORKFLOW_API_BASE = window.WORKFLOW_API_BASE || (
         window.location.protocol === "file:" ||
         window.location.hostname === "localhost" ||
@@ -3857,9 +3966,53 @@
       const workflowEditorBindings = new WeakMap();
       const workshopAuthState = {
         authenticated: false,
+        user: null,
+        role: "guest",
         pending: null
       };
+      let subscribedJournalIds = loadSubscribedJournalIds();
+      let sourceRequestLog = [];
       const sleep = (ms) => new Promise((resolve) => window.setTimeout(resolve, ms));
+
+      function loadSubscribedJournalIds() {
+        try {
+          const raw = window.localStorage?.getItem(SUBSCRIPTION_STORAGE_KEY);
+          const value = raw ? JSON.parse(raw) : [];
+          return new Set(Array.isArray(value) ? value.map(canonicalJournalId) : []);
+        } catch {
+          return new Set();
+        }
+      }
+
+      function saveSubscribedJournalIds() {
+        try {
+          window.localStorage?.setItem(SUBSCRIPTION_STORAGE_KEY, JSON.stringify([...subscribedJournalIds].sort()));
+        } catch {
+          // Local subscriptions still work for this session if storage is unavailable.
+        }
+      }
+
+      function isJournalSubscribed(journalId) {
+        return subscribedJournalIds.has(canonicalJournalId(journalId));
+      }
+
+      function toggleJournalSubscription(journalId) {
+        const id = canonicalJournalId(journalId);
+        if (isJournalSubscribed(id)) {
+          subscribedJournalIds.delete(id);
+        } else {
+          subscribedJournalIds.add(id);
+        }
+        saveSubscribedJournalIds();
+      }
+
+      function matchesSubscriptionJournal(journalId) {
+        return !subscriptionOnly || isJournalSubscribed(journalId);
+      }
+
+      function subscriptionLabel() {
+        return subscribedJournalIds.size ? `已订阅 ${subscribedJournalIds.size} 本` : "尚未订阅期刊";
+      }
 
       function workflowAuthAvailable() {
         if (window.location.protocol === "file:") return false;
@@ -3869,6 +4022,22 @@
         } catch {
           return false;
         }
+      }
+
+      function isWorkshopAdmin() {
+        return workshopAuthState.role === "admin";
+      }
+
+      function canAccessView(view) {
+        return !["sources", "adapters"].includes(view) || isWorkshopAdmin();
+      }
+
+      function applyWorkshopRoleVisibility() {
+        $$("[data-admin-only]").forEach((node) => {
+          node.hidden = !isWorkshopAdmin();
+        });
+        const active = document.querySelector(".side-link.active");
+        if (active?.hidden) switchView("tracking");
       }
 
       function setWorkshopLoginStatus(text, state = "") {
@@ -3915,7 +4084,14 @@
       }
 
       async function refreshWorkshopAuth() {
-        if (!workflowAuthAvailable()) return false;
+        if (!workflowAuthAvailable()) {
+          workshopAuthState.authenticated = true;
+          workshopAuthState.user = { username: "local", role: "admin" };
+          workshopAuthState.role = "admin";
+          applyWorkshopRoleVisibility();
+          loadSourceRequestLog();
+          return true;
+        }
         try {
           const response = await fetch("/api/auth/me", {
             cache: "no-store",
@@ -3923,9 +4099,16 @@
           });
           const payload = await response.json();
           workshopAuthState.authenticated = Boolean(payload.authenticated);
+          workshopAuthState.user = payload.user || null;
+          workshopAuthState.role = payload.user?.role || "guest";
+          applyWorkshopRoleVisibility();
+          if (isWorkshopAdmin()) loadSourceRequestLog();
           return workshopAuthState.authenticated;
         } catch {
           workshopAuthState.authenticated = false;
+          workshopAuthState.user = null;
+          workshopAuthState.role = "guest";
+          applyWorkshopRoleVisibility();
           return false;
         }
       }
@@ -3937,7 +4120,10 @@
       }
 
       async function workshopFetch(url, options = {}) {
-        const requestOptions = { ...options, credentials: "same-origin" };
+        const headers = new Headers(options.headers || {});
+        if (workshopAuthState.user?.username) headers.set("x-workshop-user", workshopAuthState.user.username);
+        if (workshopAuthState.role && workshopAuthState.role !== "guest") headers.set("x-workshop-role", workshopAuthState.role);
+        const requestOptions = { ...options, headers, credentials: "same-origin" };
         const response = await fetch(url, requestOptions);
         if (response.status !== 401 || !workflowAuthAvailable()) return response;
         workshopAuthState.authenticated = false;
@@ -4706,6 +4892,34 @@
         return response.json();
       }
 
+      async function createSourceRequest(payload) {
+        const response = await workshopFetch(`${WORKFLOW_API_BASE}/api/source-requests`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+        if (!response.ok) throw new Error(await workflowErrorMessage(response, "数据源提交失败"));
+        return response.json();
+      }
+
+      async function fetchSourceRequests() {
+        const response = await workshopFetch(`${WORKFLOW_API_BASE}/api/source-requests`, {
+          cache: "no-store"
+        });
+        if (!response.ok) throw new Error(await workflowErrorMessage(response, "读取共建日志失败"));
+        return response.json();
+      }
+
+      async function importWechatDraft(payload) {
+        const response = await workshopFetch(`${WORKFLOW_API_BASE}/api/wechat-drafts`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+        if (!response.ok) throw new Error(await workflowErrorMessage(response, "导入公众号草稿箱失败"));
+        return response.json();
+      }
+
       async function fetchWorkflowJob(jobId) {
         const response = await workshopFetch(`${WORKFLOW_API_BASE}/api/jobs/${encodeURIComponent(jobId)}`);
         if (!response.ok) throw new Error(await workflowErrorMessage(response, "读取任务状态失败"));
@@ -4800,11 +5014,19 @@
               body: JSON.stringify(payload)
             });
             if (!response.ok) throw new Error(await workflowErrorMessage(response, "登录失败"));
+            const payload = await response.json();
             workshopAuthState.authenticated = true;
+            workshopAuthState.user = payload.user || null;
+            workshopAuthState.role = payload.user?.role || "user";
+            applyWorkshopRoleVisibility();
+            if (isWorkshopAdmin()) loadSourceRequestLog();
             setWorkshopLoginStatus("登录成功", "complete");
             resolveWorkshopLogin();
           } catch (error) {
             workshopAuthState.authenticated = false;
+            workshopAuthState.user = null;
+            workshopAuthState.role = "guest";
+            applyWorkshopRoleVisibility();
             setWorkshopLoginStatus(workflowDisplayError(error, "登录失败"), "error");
           }
         });
@@ -4882,6 +5104,7 @@
         const wechatShell = document.querySelector('[data-workflow-editor-shell="wechat-writing"]');
         const wechatExport = $("#wechatWritingExport");
         const wechatCopy = $("#wechatWritingCopy");
+        const wechatDraftImport = $("#wechatDraftImport");
         bindWorkflowEditorPreview(wechatEditor, wechatPreview, wechatShell);
         if (wechatEditor) {
           wechatEditor.addEventListener("input", () => updateWorkflowMetrics("wechat-writing", wechatEditor.value));
@@ -4935,6 +5158,27 @@
               setWorkflowStatus(wechatStatus, "Word 已开始下载", "complete");
             } catch (error) {
               setWorkflowStatus(wechatStatus, workflowDisplayError(error, "公众号写作导出失败"), "error");
+            }
+          });
+        }
+
+        if (wechatDraftImport && wechatStatus && wechatEditor) {
+          wechatDraftImport.addEventListener("click", async () => {
+            const markdown = composeWechatMarkdownForExport(wechatTitle?.value, wechatEditor.value);
+            if (!wechatEditor.value.trim()) {
+              setWorkflowStatus(wechatStatus, "暂无可导入的公众号稿，请先生成或编辑正文", "error");
+              return;
+            }
+            setWorkflowStatus(wechatStatus, "正在准备公众号草稿箱导入...", "running");
+            try {
+              await importWechatDraft({
+                title: String(wechatTitle?.value || DEFAULT_WECHAT_TITLE).trim() || DEFAULT_WECHAT_TITLE,
+                content_markdown: markdown,
+                source_job_id: workflowJobs.wechatWriting || ""
+              });
+              setWorkflowStatus(wechatStatus, "草稿箱导入请求已记录，当前为预留记录模式", "complete");
+            } catch (error) {
+              setWorkflowStatus(wechatStatus, workflowDisplayError(error, "公众号草稿箱导入失败"), "error");
             }
           });
         }
@@ -5011,6 +5255,37 @@
             }
           });
         }
+      }
+
+      function attachSourceContribution() {
+        const form = $("#sourceContributionForm");
+        const status = $("#sourceContributionStatus");
+        if (!form || !status) return;
+        form.addEventListener("submit", async (event) => {
+          event.preventDefault();
+          const formData = new FormData(form);
+          const payload = {
+            journal_name: String(formData.get("journal_name") || "").trim(),
+            homepage_url: String(formData.get("homepage_url") || "").trim(),
+            feed_url: String(formData.get("feed_url") || "").trim(),
+            source_type: String(formData.get("source_type") || "人工复核"),
+            refresh_interval: String(formData.get("refresh_interval") || "每周检查"),
+            notes: String(formData.get("notes") || "").trim()
+          };
+          if (!payload.journal_name) {
+            setWorkflowStatus(status, "请先填写期刊名称", "error");
+            return;
+          }
+          setWorkflowStatus(status, "正在提交来源...", "running");
+          try {
+            await createSourceRequest(payload);
+            form.reset();
+            setWorkflowStatus(status, "已提交到共建日志，等待管理员复核", "complete");
+            if (isWorkshopAdmin()) loadSourceRequestLog();
+          } catch (error) {
+            setWorkflowStatus(status, workflowDisplayError(error, "数据源提交失败"), "error");
+          }
+        });
       }
 
       const motion = (() => {
@@ -5241,13 +5516,14 @@
         const text = query.trim().toLowerCase();
         return articles.filter((article) => {
           const journal = journalById(article.journalId);
+          const matchesSubscription = matchesSubscriptionJournal(article.journalId);
           const matchesSubject = activeSubject === "全部" || article.subject === activeSubject;
           const matchesLanguage = activeLanguage === "全部" || article.lang === activeLanguage;
           const matchesJournal = !activeJournalId || article.journalId === activeJournalId;
           const matchesDate = matchesDateRange(article);
           const haystack = [article.title, article.summary, article.subject, article.lang, journal.name, journal.issn, journal.homepage, journal.archive, journal.sample].join(" ").toLowerCase();
           const matchesText = !text || haystack.includes(text);
-          return matchesSubject && matchesLanguage && matchesJournal && matchesDate && matchesText;
+          return matchesSubscription && matchesSubject && matchesLanguage && matchesJournal && matchesDate && matchesText;
         });
       }
 
@@ -5287,6 +5563,7 @@
         const taggedResults = (topicSearchData.results || []).filter((result) => {
           const matchesTopic = !activeTopicId || result.topic_id === activeTopicId;
           const matchesDiscipline = activeTopicDisciplineId === "全部" || (result.disciplines || []).some((discipline) => discipline.id === activeTopicDisciplineId);
+          const matchesSubscription = topicResultMatchesSubscription(result);
           const haystack = [
             result.title,
             result.journal_name,
@@ -5297,16 +5574,23 @@
             ...(result.disciplines || []).flatMap((discipline) => [discipline.label, discipline.match_keyword, discipline.match_field]),
           ].join(" ").toLowerCase();
           const matchesText = !text || haystack.includes(text);
-          return matchesTopic && matchesDiscipline && matchesText;
+          return matchesTopic && matchesDiscipline && matchesText && matchesSubscription;
         });
         if (!text) return taggedResults;
 
         const taggedArticleIds = new Set(taggedResults.map((result) => result.article_id));
         const normalResults = articles
+          .filter((article) => matchesSubscriptionJournal(article.journalId))
           .map((article) => normalArticleSearchResult(article, text))
           .filter(Boolean)
           .filter((result) => !taggedArticleIds.has(result.article_id));
         return [...taggedResults, ...normalResults].sort((a, b) => String(b.display_date).localeCompare(String(a.display_date)) || a.title.localeCompare(b.title, "zh-Hans-CN"));
+      }
+
+      function topicResultMatchesSubscription(result) {
+        if (!subscriptionOnly) return true;
+        const linkedArticle = topicSearchArticle(result);
+        return matchesSubscriptionJournal(linkedArticle?.journalId || result.journal_id);
       }
 
       function normalArticleSearchResult(article, text) {
@@ -5372,7 +5656,7 @@
         const topics = topicSearchData.topics || [];
         const text = activeTopicQuery.trim();
         const isLibrarySearch = Boolean(text);
-        const topicResults = (topicSearchData.results || []).filter((result) => result.topic_id === activeTopicId);
+        const topicResults = (topicSearchData.results || []).filter((result) => result.topic_id === activeTopicId && topicResultMatchesSubscription(result));
         const visible = topicSearchResults();
         const disciplineCounts = topicSearchDisciplineCounts(topicResults);
         const activeTopic = topics.find((topic) => topic.id === activeTopicId) || topics[0] || { id: "africa", label: "非洲" };
@@ -5381,13 +5665,13 @@
 
         $("#topicSearchTitle").textContent = isLibrarySearch ? "全库检索结果" : "非洲专题索引";
         $("#topicSearchSubtitle").textContent = isLibrarySearch
-          ? "正在检索全部累计文章；专题标签只作为命中说明，不代表所有结果属于非洲。"
-          : "用关键词词典与离线语义缓存检索累计文章，结果会标注规则命中或语义命中。";
+          ? `正在检索${subscriptionOnly ? "已订阅期刊" : "全部累计文章"}；专题标签只作为命中说明，不代表所有结果属于非洲。`
+          : `用关键词词典与离线语义缓存检索${subscriptionOnly ? "已订阅期刊" : "累计文章"}，结果会标注规则命中或语义命中。`;
         $("#topicSearchTopicLabel").textContent = isLibrarySearch ? "Topic Clues" : "Topic";
         $("#topicSearchDisciplineLabel").textContent = isLibrarySearch ? "Discipline Clues" : "Discipline";
         $("#topicSearchNotice").hidden = !isLibrarySearch;
         $("#topicSearchNotice").textContent = isLibrarySearch
-          ? `“${text}”正在按全库普通搜索返回结果：${normalVisible} 条普通搜索命中，${taggedVisible} 条专题命中。`
+          ? `“${text}”正在按${subscriptionOnly ? "已订阅期刊" : "全库"}普通搜索返回结果：${normalVisible} 条普通搜索命中，${taggedVisible} 条专题命中。`
           : "";
 
         $("#topicSearchTopics").innerHTML = topics.length ? topics.map((topic) => `
@@ -5478,12 +5762,27 @@
             </div>
           </div>
         `;
+        renderSubscriptionControls();
         renderFilterSummary();
         motion.filters();
       }
 
+      function renderSubscriptionControls() {
+        $("#subscriptionControls").innerHTML = [
+          `<button class="filter-chip ${!subscriptionOnly ? "active" : ""}" type="button" data-subscription-mode="all">全部推送</button>`,
+          `<button class="filter-chip ${subscriptionOnly ? "active" : ""}" type="button" data-subscription-mode="subscribed">只看订阅 <span class="mono">${subscribedJournalIds.size}</span></button>`,
+          `<button class="filter-chip" type="button" data-subscription-action="clear">清空订阅</button>`
+        ].join("");
+        $("#subscriptionJournals").innerHTML = journals.map((journal) => `
+          <button class="filter-chip ${isJournalSubscribed(journal.id) ? "active" : ""}" type="button" data-subscription-journal="${escapeHtml(journal.id)}">
+            ${escapeHtml(journal.name)}<span class="mono">${isJournalSubscribed(journal.id) ? "ON" : "OFF"}</span>
+          </button>
+        `).join("");
+      }
+
       function renderFilterSummary() {
         const parts = [];
+        if (subscriptionOnly) parts.push(subscriptionLabel());
         if (activeLanguage !== "全部") parts.push(activeLanguage);
         if (activeSubject !== "全部") parts.push(activeSubject);
         if (activeJournalId) parts.push(journalById(activeJournalId).name);
@@ -5499,7 +5798,7 @@
       function renderTimeline(animation = "full") {
         const items = filteredArticles();
         if (!items.length) {
-          $("#timeline").innerHTML = `<div class="empty">没有匹配的推送条目</div>`;
+          $("#timeline").innerHTML = `<div class="empty">${subscriptionOnly && !subscribedJournalIds.size ? "还没有订阅期刊，请先在筛选面板选择期刊" : "没有匹配的推送条目"}</div>`;
           renderStats();
           return;
         }
@@ -5558,6 +5857,7 @@
               <div class="timeline-actions">
                 <span class="status-pill ${linkMeta.className}">${escapeHtml(linkMeta.label)}</span>
                 ${hasAbstract ? "" : `<span class="status-pill no-abstract">暂无摘要</span>`}
+                <button class="btn btn-sm btn-ghost" type="button" data-journal-subscribe="${escapeHtml(article.journalId)}">${isJournalSubscribed(article.journalId) ? "取消订阅期刊" : "订阅期刊"}</button>
                 <button class="btn btn-sm btn-ghost" type="button" data-article-compose="${article.id}">写成公众号稿</button>
               </div>
             </div>
@@ -5780,6 +6080,55 @@
         ].map(([label, value]) => `<span class="metric-inline">${label}<strong>${value}</strong></span>`).join("") + Object.entries(counts).map(([label, value]) => `<span class="metric-inline">${escapeHtml(label)}<strong>${value}</strong></span>`).join("");
       }
 
+      async function loadSourceRequestLog() {
+        if (!isWorkshopAdmin()) return;
+        const rows = $("#sourceRequestRows");
+        if (rows) rows.innerHTML = `<tr><td colspan="7"><div class="empty">正在读取共建日志...</div></td></tr>`;
+        try {
+          const payload = await fetchSourceRequests();
+          sourceRequestLog = Array.isArray(payload.requests) ? payload.requests : [];
+        } catch (error) {
+          sourceRequestLog = [];
+          if (rows) rows.innerHTML = `<tr><td colspan="7"><div class="empty">${escapeHtml(workflowDisplayError(error, "读取共建日志失败"))}</div></td></tr>`;
+          return;
+        }
+        renderSourceRequestRows();
+      }
+
+      function renderSourceRequestRows() {
+        const rows = $("#sourceRequestRows");
+        if (!rows) return;
+        rows.innerHTML = sourceRequestLog.length ? sourceRequestLog.map((item) => `
+          <tr>
+            <td>${escapeHtml(formatDateTimeLabel(item.created_at))}</td>
+            <td class="journal-cell"><div class="journal-name">${escapeHtml(item.journal_name)}</div><div class="journal-issn">${escapeHtml(item.refresh_interval || "")}</div></td>
+            <td>${escapeHtml(item.source_type || "人工复核")}</td>
+            <td>${requestUrlCell(item.homepage_url)}</td>
+            <td>${requestUrlCell(item.feed_url)}</td>
+            <td>${escapeHtml(item.submitter || "anonymous")}</td>
+            <td><div class="adapter-next">${escapeHtml(item.notes || "未填写")}</div></td>
+          </tr>
+        `).join("") : `<tr><td colspan="7"><div class="empty">暂无共建提交</div></td></tr>`;
+      }
+
+      function requestUrlCell(url) {
+        return validUrl(url)
+          ? `<a class="url-status ok" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">● ${escapeHtml(cleanUrlLabel(url))}</a>`
+          : `<span class="url-status warn">! 未填写</span>`;
+      }
+
+      function formatDateTimeLabel(value) {
+        const date = new Date(value);
+        if (Number.isNaN(date.getTime())) return String(value || "");
+        return date.toLocaleString("zh-CN", {
+          month: "2-digit",
+          day: "2-digit",
+          hour: "2-digit",
+          minute: "2-digit",
+          hour12: false
+        });
+      }
+
       function renderSourceRows() {
         const text = ($("#sourceSearch").value || "").trim().toLowerCase();
         const rows = journals.filter((journal) => {
@@ -5941,14 +6290,20 @@
         renderAdapterStats();
         renderAdapterProfiles();
         renderAdapterRows();
-        $("#clearJournalFilter").hidden = !activeJournalId && activeLanguage === "全部" && activeSubject === "全部";
+        $("#clearJournalFilter").hidden = !activeJournalId && activeLanguage === "全部" && activeSubject === "全部" && !subscriptionOnly;
       }
 
       function switchView(view) {
-        $$("[data-page]").forEach((page) => page.hidden = page.dataset.page !== view);
-        $$(".side-link").forEach((button) => button.classList.toggle("active", button.dataset.view === view));
+        const targetView = canAccessView(view) ? view : "tracking";
+        $$("[data-page]").forEach((page) => {
+          page.hidden = page.dataset.page !== targetView || (page.hasAttribute("data-admin-only") && !isWorkshopAdmin());
+        });
+        $$(".side-link").forEach((button) => {
+          button.hidden = button.hasAttribute("data-admin-only") && !isWorkshopAdmin();
+          button.classList.toggle("active", !button.hidden && button.dataset.view === targetView);
+        });
         $("#appShell").classList.remove("sidebar-open");
-        motion.page(view);
+        motion.page(targetView);
       }
 
       $("#classificationStage").addEventListener("click", (event) => {
@@ -5965,6 +6320,28 @@
           activeLanguage = journal.lang;
         }
         if (!button && !journalButton) return;
+        renderAll();
+      });
+
+      $("#subscriptionControls").addEventListener("click", (event) => {
+        const modeButton = event.target.closest("[data-subscription-mode]");
+        const actionButton = event.target.closest("[data-subscription-action]");
+        if (modeButton) {
+          subscriptionOnly = modeButton.dataset.subscriptionMode === "subscribed";
+        }
+        if (actionButton?.dataset.subscriptionAction === "clear") {
+          subscribedJournalIds.clear();
+          subscriptionOnly = false;
+          saveSubscribedJournalIds();
+        }
+        if (!modeButton && !actionButton) return;
+        renderAll();
+      });
+
+      $("#subscriptionJournals").addEventListener("click", (event) => {
+        const button = event.target.closest("[data-subscription-journal]");
+        if (!button) return;
+        toggleJournalSubscription(button.dataset.subscriptionJournal);
         renderAll();
       });
 
@@ -6012,6 +6389,7 @@
           query = "";
           activeDateFrom = "";
           activeDateTo = "";
+          subscriptionOnly = false;
           $("#searchInput").value = "";
           renderAll();
           switchView("tracking");
@@ -6062,6 +6440,12 @@
       });
 
       $("#timeline").addEventListener("click", async (event) => {
+        const subscribe = event.target.closest("[data-journal-subscribe]");
+        if (subscribe) {
+          toggleJournalSubscription(subscribe.dataset.journalSubscribe);
+          renderAll();
+          return;
+        }
         const compose = event.target.closest("[data-article-compose]");
         if (compose) {
           const article = articles.find((item) => item.id === compose.dataset.articleCompose);
@@ -6102,6 +6486,7 @@
         activeJournalId = "";
         activeSubject = "全部";
         activeLanguage = "全部";
+        subscriptionOnly = false;
         renderAll();
       });
 
@@ -6126,6 +6511,8 @@
         switchView("sources");
       });
 
+      $("#refreshSourceRequests").addEventListener("click", loadSourceRequestLog);
+
       $("#sourceRows").addEventListener("click", (event) => {
         const action = event.target.closest("[data-source-action]");
         const row = event.target.closest("[data-journal-row]");
@@ -6138,6 +6525,7 @@
           const journal = journalById(activeJournalId);
           activeLanguage = journal.lang;
           activeSubject = journal.subject;
+          subscriptionOnly = false;
           selectedArticleId = articlesForJournal(activeJournalId)[0]?.id || selectedArticleId;
           switchView("tracking");
           $("#filterPanel").open = true;
@@ -6164,8 +6552,11 @@
 
       attachWorkshopLogin();
       attachWorkflowForms();
+      attachSourceContribution();
       motion.init();
+      applyWorkshopRoleVisibility();
       renderAll();
+      loadSourceRequestLog();
       loadLatestCheckStatus();
       motion.page("tracking");
     </script>
