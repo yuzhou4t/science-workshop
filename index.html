@@ -2771,11 +2771,6 @@
                   <div class="segmented" id="languageFilters" aria-label="语言筛选"></div>
                 </div>
                 <div class="filter-row">
-                  <div class="filter-row-head"><span>Subscriptions</span><span>按已订阅期刊过滤</span></div>
-                  <div class="filter-chip-list" id="subscriptionControls"></div>
-                  <div class="filter-chip-list" id="subscriptionJournals"></div>
-                </div>
-                <div class="filter-row">
                   <div class="filter-row-head"><span>Push Date</span><span>按入库日期筛选</span></div>
                   <div class="date-filter-grid">
                     <input class="field" id="dateFromInput" type="date" aria-label="开始日期" />
@@ -2840,7 +2835,7 @@
             <div class="header-row">
               <div class="header-main">
                 <h1 class="title">数据源共建</h1>
-                <div class="subtitle">提交期刊官网、Feed 或目录线索，进入维护日志等待管理员复核</div>
+                <div class="subtitle">提交期刊官网、Feed 或目录线索，先自动尝试已知接入方式，失败后进入管理员信箱</div>
               </div>
             </div>
           </section>
@@ -2849,7 +2844,7 @@
             <section class="workflow-panel breath-surface" id="sourceContributionPanel">
               <div class="workflow-header">
                 <h2>新增期刊来源</h2>
-                <p>提交后会写入共建日志，不会直接改动正式抓取注册表。</p>
+                <p>提交后先进入接入尝试队列，不会直接改动正式抓取注册表。</p>
               </div>
               <form id="sourceContributionForm" class="workflow-form">
                 <div class="workflow-form-row">
@@ -2858,7 +2853,8 @@
                 </div>
                 <div class="workflow-form-row">
                   <input class="field" id="sourceRequestFeedUrl" name="feed_url" type="url" placeholder="Feed URL（可为空）" />
-                  <select class="field" id="sourceRequestSourceType" name="source_type" aria-label="数据源类型">
+                  <select class="field" id="sourceRequestSourceType" name="source_type" aria-label="优先尝试方式">
+                    <option>自动识别</option>
                     <option>RSS / Atom</option>
                     <option>RSSHub 路由</option>
                     <option>XPath 适配</option>
@@ -2872,7 +2868,7 @@
                 </div>
                 <textarea class="field workflow-source" id="sourceRequestNotes" name="notes" rows="5" placeholder="补充说明：过刊页、样例文章、特殊访问方式、推荐理由"></textarea>
                 <div class="workflow-export-row">
-                  <span class="workflow-export-hint">管理员会在数据源汇总页查看提交记录</span>
+                  <span class="workflow-export-hint">RSS、RSSHub、页面适配等方式都失败后进入管理员信箱</span>
                   <button class="btn btn-primary" type="submit">提交来源</button>
                 </div>
               </form>
@@ -2934,7 +2930,7 @@
                       <span>/feeds/all.xml</span>
                     </div>
                     <div class="endpoint-chip">
-                      <strong>单刊订阅</strong>
+                      <strong>单刊输出</strong>
                       <span>/feeds/journals/{id}.xml</span>
                     </div>
                     <div class="endpoint-chip">
@@ -3021,7 +3017,7 @@
             <div class="header-row">
               <div class="header-main">
                 <h1 class="title">管理员信箱</h1>
-                <div class="subtitle">集中查看用户提交的新增数据源申请，复核后再进入正式维护流程</div>
+                <div class="subtitle">自动接入尝试失败后的数据源申请，复核后再进入正式维护流程</div>
               </div>
               <div class="header-actions">
                 <button class="btn btn-ghost" id="refreshSourceRequests" type="button">刷新信箱</button>
@@ -3031,7 +3027,7 @@
           <section class="panel table-panel">
             <div class="source-toolbar">
               <strong>数据源申请</strong>
-              <span class="summary-hint">用户提交的新增数据源申请，只对管理员可见</span>
+              <span class="summary-hint">已知接入方式暂未跑通的新增数据源申请，只对管理员可见</span>
             </div>
             <div class="source-table-wrap">
               <table>
@@ -3039,7 +3035,8 @@
                   <tr>
                     <th>提交时间</th>
                     <th>期刊</th>
-                    <th>类型</th>
+                    <th>优先尝试</th>
+                    <th>接入状态</th>
                     <th>主页</th>
                     <th>Feed</th>
                     <th>提交人</th>
@@ -3975,7 +3972,6 @@
       let activeTopicId = topicSearchData.topics?.[0]?.id || "africa";
       let activeTopicDisciplineId = "全部";
       let activeTopicQuery = "";
-      let subscriptionOnly = false;
       let selectedArticleId = articles[0].id;
       let selectedJournalId = articles[0].journalId;
       let issueTocSelectedCount = 0;
@@ -3984,7 +3980,6 @@
       const $$ = (selector) => Array.from(document.querySelectorAll(selector));
       const selectorText = (value) => String(value ?? "").replace(/\\/g, "\\\\").replace(/"/g, "\\\"");
       const escapeRegExp = (value) => String(value ?? "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-      const SUBSCRIPTION_STORAGE_KEY = "science-workshop-subscriptions";
       const WORKFLOW_API_BASE = window.WORKFLOW_API_BASE || (
         window.location.protocol === "file:" ||
         window.location.hostname === "localhost" ||
@@ -4037,49 +4032,8 @@
         role: "guest",
         pending: null
       };
-      let subscribedJournalIds = loadSubscribedJournalIds();
       let sourceRequestLog = [];
       const sleep = (ms) => new Promise((resolve) => window.setTimeout(resolve, ms));
-
-      function loadSubscribedJournalIds() {
-        try {
-          const raw = window.localStorage?.getItem(SUBSCRIPTION_STORAGE_KEY);
-          const value = raw ? JSON.parse(raw) : [];
-          return new Set(Array.isArray(value) ? value.map(canonicalJournalId) : []);
-        } catch {
-          return new Set();
-        }
-      }
-
-      function saveSubscribedJournalIds() {
-        try {
-          window.localStorage?.setItem(SUBSCRIPTION_STORAGE_KEY, JSON.stringify([...subscribedJournalIds].sort()));
-        } catch {
-          // Local subscriptions still work for this session if storage is unavailable.
-        }
-      }
-
-      function isJournalSubscribed(journalId) {
-        return subscribedJournalIds.has(canonicalJournalId(journalId));
-      }
-
-      function toggleJournalSubscription(journalId) {
-        const id = canonicalJournalId(journalId);
-        if (isJournalSubscribed(id)) {
-          subscribedJournalIds.delete(id);
-        } else {
-          subscribedJournalIds.add(id);
-        }
-        saveSubscribedJournalIds();
-      }
-
-      function matchesSubscriptionJournal(journalId) {
-        return !subscriptionOnly || isJournalSubscribed(journalId);
-      }
-
-      function subscriptionLabel() {
-        return subscribedJournalIds.size ? `已订阅 ${subscribedJournalIds.size} 本` : "尚未订阅期刊";
-      }
 
       function workflowAuthAvailable() {
         if (window.location.protocol === "file:") return false;
@@ -5011,7 +4965,7 @@
         const response = await workshopFetch(`${WORKFLOW_API_BASE}/api/source-requests`, {
           cache: "no-store"
         });
-        if (!response.ok) throw new Error(await workflowErrorMessage(response, "读取共建日志失败"));
+        if (!response.ok) throw new Error(await workflowErrorMessage(response, "读取管理员信箱失败"));
         return response.json();
       }
 
@@ -5377,7 +5331,7 @@
             journal_name: String(formData.get("journal_name") || "").trim(),
             homepage_url: String(formData.get("homepage_url") || "").trim(),
             feed_url: String(formData.get("feed_url") || "").trim(),
-            source_type: String(formData.get("source_type") || "人工复核"),
+            source_type: String(formData.get("source_type") || "自动识别"),
             refresh_interval: String(formData.get("refresh_interval") || "每周检查"),
             notes: String(formData.get("notes") || "").trim()
           };
@@ -5389,7 +5343,7 @@
           try {
             await createSourceRequest(payload);
             form.reset();
-            setWorkflowStatus(status, "已提交到共建日志，等待管理员复核", "complete");
+            setWorkflowStatus(status, "已进入自动接入尝试队列；跑不通时会进入管理员信箱复核", "complete");
             if (isWorkshopAdmin()) loadSourceRequestLog();
           } catch (error) {
             setWorkflowStatus(status, workflowDisplayError(error, "数据源提交失败"), "error");
@@ -5625,14 +5579,13 @@
         const text = query.trim().toLowerCase();
         return articles.filter((article) => {
           const journal = journalById(article.journalId);
-          const matchesSubscription = matchesSubscriptionJournal(article.journalId);
           const matchesSubject = activeSubject === "全部" || article.subject === activeSubject;
           const matchesLanguage = activeLanguage === "全部" || article.lang === activeLanguage;
           const matchesJournal = !activeJournalId || article.journalId === activeJournalId;
           const matchesDate = matchesDateRange(article);
           const haystack = [article.title, article.summary, article.subject, article.lang, journal.name, journal.issn, journal.homepage, journal.archive, journal.sample].join(" ").toLowerCase();
           const matchesText = !text || haystack.includes(text);
-          return matchesSubscription && matchesSubject && matchesLanguage && matchesJournal && matchesDate && matchesText;
+          return matchesSubject && matchesLanguage && matchesJournal && matchesDate && matchesText;
         });
       }
 
@@ -5672,7 +5625,6 @@
         const taggedResults = (topicSearchData.results || []).filter((result) => {
           const matchesTopic = !activeTopicId || result.topic_id === activeTopicId;
           const matchesDiscipline = activeTopicDisciplineId === "全部" || (result.disciplines || []).some((discipline) => discipline.id === activeTopicDisciplineId);
-          const matchesSubscription = topicResultMatchesSubscription(result);
           const haystack = [
             result.title,
             result.journal_name,
@@ -5683,23 +5635,16 @@
             ...(result.disciplines || []).flatMap((discipline) => [discipline.label, discipline.match_keyword, discipline.match_field]),
           ].join(" ").toLowerCase();
           const matchesText = !text || haystack.includes(text);
-          return matchesTopic && matchesDiscipline && matchesText && matchesSubscription;
+          return matchesTopic && matchesDiscipline && matchesText;
         });
         if (!text) return taggedResults;
 
         const taggedArticleIds = new Set(taggedResults.map((result) => result.article_id));
         const normalResults = articles
-          .filter((article) => matchesSubscriptionJournal(article.journalId))
           .map((article) => normalArticleSearchResult(article, text))
           .filter(Boolean)
           .filter((result) => !taggedArticleIds.has(result.article_id));
         return [...taggedResults, ...normalResults].sort((a, b) => String(b.display_date).localeCompare(String(a.display_date)) || a.title.localeCompare(b.title, "zh-Hans-CN"));
-      }
-
-      function topicResultMatchesSubscription(result) {
-        if (!subscriptionOnly) return true;
-        const linkedArticle = topicSearchArticle(result);
-        return matchesSubscriptionJournal(linkedArticle?.journalId || result.journal_id);
       }
 
       function normalArticleSearchResult(article, text) {
@@ -5765,7 +5710,7 @@
         const topics = topicSearchData.topics || [];
         const text = activeTopicQuery.trim();
         const isLibrarySearch = Boolean(text);
-        const topicResults = (topicSearchData.results || []).filter((result) => result.topic_id === activeTopicId && topicResultMatchesSubscription(result));
+        const topicResults = (topicSearchData.results || []).filter((result) => result.topic_id === activeTopicId);
         const visible = topicSearchResults();
         const disciplineCounts = topicSearchDisciplineCounts(topicResults);
         const activeTopic = topics.find((topic) => topic.id === activeTopicId) || topics[0] || { id: "africa", label: "非洲" };
@@ -5774,13 +5719,13 @@
 
         $("#topicSearchTitle").textContent = isLibrarySearch ? "全库检索结果" : "非洲专题索引";
         $("#topicSearchSubtitle").textContent = isLibrarySearch
-          ? `正在检索${subscriptionOnly ? "已订阅期刊" : "全部累计文章"}；专题标签只作为命中说明，不代表所有结果属于非洲。`
-          : `用关键词词典与离线语义缓存检索${subscriptionOnly ? "已订阅期刊" : "累计文章"}，结果会标注规则命中或语义命中。`;
+          ? "正在检索全部累计文章；专题标签只作为命中说明，不代表所有结果属于非洲。"
+          : "用关键词词典与离线语义缓存检索累计文章，结果会标注规则命中或语义命中。";
         $("#topicSearchTopicLabel").textContent = isLibrarySearch ? "Topic Clues" : "Topic";
         $("#topicSearchDisciplineLabel").textContent = isLibrarySearch ? "Discipline Clues" : "Discipline";
         $("#topicSearchNotice").hidden = !isLibrarySearch;
         $("#topicSearchNotice").textContent = isLibrarySearch
-          ? `“${text}”正在按${subscriptionOnly ? "已订阅期刊" : "全库"}普通搜索返回结果：${normalVisible} 条普通搜索命中，${taggedVisible} 条专题命中。`
+          ? `“${text}”正在按全库普通搜索返回结果：${normalVisible} 条普通搜索命中，${taggedVisible} 条专题命中。`
           : "";
 
         $("#topicSearchTopics").innerHTML = topics.length ? topics.map((topic) => `
@@ -5871,27 +5816,12 @@
             </div>
           </div>
         `;
-        renderSubscriptionControls();
         renderFilterSummary();
         motion.filters();
       }
 
-      function renderSubscriptionControls() {
-        $("#subscriptionControls").innerHTML = [
-          `<button class="filter-chip ${!subscriptionOnly ? "active" : ""}" type="button" data-subscription-mode="all">全部推送</button>`,
-          `<button class="filter-chip ${subscriptionOnly ? "active" : ""}" type="button" data-subscription-mode="subscribed">只看订阅 <span class="mono">${subscribedJournalIds.size}</span></button>`,
-          `<button class="filter-chip" type="button" data-subscription-action="clear">清空订阅</button>`
-        ].join("");
-        $("#subscriptionJournals").innerHTML = journals.map((journal) => `
-          <button class="filter-chip ${isJournalSubscribed(journal.id) ? "active" : ""}" type="button" data-subscription-journal="${escapeHtml(journal.id)}">
-            ${escapeHtml(journal.name)}<span class="mono">${isJournalSubscribed(journal.id) ? "ON" : "OFF"}</span>
-          </button>
-        `).join("");
-      }
-
       function renderFilterSummary() {
         const parts = [];
-        if (subscriptionOnly) parts.push(subscriptionLabel());
         if (activeLanguage !== "全部") parts.push(activeLanguage);
         if (activeSubject !== "全部") parts.push(activeSubject);
         if (activeJournalId) parts.push(journalById(activeJournalId).name);
@@ -5907,7 +5837,7 @@
       function renderTimeline(animation = "full") {
         const items = filteredArticles();
         if (!items.length) {
-          $("#timeline").innerHTML = `<div class="empty">${subscriptionOnly && !subscribedJournalIds.size ? "还没有订阅期刊，请先在筛选面板选择期刊" : "没有匹配的推送条目"}</div>`;
+          $("#timeline").innerHTML = `<div class="empty">没有匹配的推送条目</div>`;
           renderStats();
           return;
         }
@@ -5966,7 +5896,6 @@
               <div class="timeline-actions">
                 <span class="status-pill ${linkMeta.className}">${escapeHtml(linkMeta.label)}</span>
                 ${hasAbstract ? "" : `<span class="status-pill no-abstract">暂无摘要</span>`}
-                <button class="btn btn-sm btn-ghost" type="button" data-journal-subscribe="${escapeHtml(article.journalId)}">${isJournalSubscribed(article.journalId) ? "取消订阅期刊" : "订阅期刊"}</button>
                 <button class="btn btn-sm btn-ghost" type="button" data-article-compose="${article.id}">写成公众号稿</button>
               </div>
             </div>
@@ -6192,13 +6121,13 @@
       async function loadSourceRequestLog() {
         if (!isWorkshopAdmin()) return;
         const rows = $("#sourceRequestRows");
-        if (rows) rows.innerHTML = `<tr><td colspan="7"><div class="empty">正在读取共建日志...</div></td></tr>`;
+        if (rows) rows.innerHTML = `<tr><td colspan="8"><div class="empty">正在读取管理员信箱...</div></td></tr>`;
         try {
           const payload = await fetchSourceRequests();
           sourceRequestLog = Array.isArray(payload.requests) ? payload.requests : [];
         } catch (error) {
           sourceRequestLog = [];
-          if (rows) rows.innerHTML = `<tr><td colspan="7"><div class="empty">${escapeHtml(workflowDisplayError(error, "读取共建日志失败"))}</div></td></tr>`;
+          if (rows) rows.innerHTML = `<tr><td colspan="8"><div class="empty">${escapeHtml(workflowDisplayError(error, "读取管理员信箱失败"))}</div></td></tr>`;
           return;
         }
         renderSourceRequestRows();
@@ -6211,13 +6140,22 @@
           <tr>
             <td>${escapeHtml(formatDateTimeLabel(item.created_at))}</td>
             <td class="journal-cell"><div class="journal-name">${escapeHtml(item.journal_name)}</div><div class="journal-issn">${escapeHtml(item.refresh_interval || "")}</div></td>
-            <td>${escapeHtml(item.source_type || "人工复核")}</td>
+            <td>${escapeHtml(item.source_type || "自动识别")}</td>
+            <td><div class="adapter-next">${escapeHtml(sourceRequestStatusLabel(item))}</div></td>
             <td>${requestUrlCell(item.homepage_url)}</td>
             <td>${requestUrlCell(item.feed_url)}</td>
             <td>${escapeHtml(item.submitter || "anonymous")}</td>
             <td><div class="adapter-next">${escapeHtml(item.notes || "未填写")}</div></td>
           </tr>
-        `).join("") : `<tr><td colspan="7"><div class="empty">暂无共建提交</div></td></tr>`;
+        `).join("") : `<tr><td colspan="8"><div class="empty">暂无需要人工复核的数据源申请</div></td></tr>`;
+      }
+
+      function sourceRequestStatusLabel(item) {
+        const methods = Array.isArray(item.probe_methods) ? item.probe_methods : [];
+        const methodText = methods.length ? methods.join(" / ") : "RSS / RSSHub / 页面适配";
+        if (item.intake_status === "pending_auto_probe") return `待自动尝试：${methodText}`;
+        if (item.intake_status === "probe_failed") return `尝试失败，待人工复核：${methodText}`;
+        return item.intake_status || "待处理";
       }
 
       function requestUrlCell(url) {
@@ -6399,7 +6337,7 @@
         renderAdapterStats();
         renderAdapterProfiles();
         renderAdapterRows();
-        $("#clearJournalFilter").hidden = !activeJournalId && activeLanguage === "全部" && activeSubject === "全部" && !subscriptionOnly;
+        $("#clearJournalFilter").hidden = !activeJournalId && activeLanguage === "全部" && activeSubject === "全部";
       }
 
       function switchView(view) {
@@ -6429,28 +6367,6 @@
           activeLanguage = journal.lang;
         }
         if (!button && !journalButton) return;
-        renderAll();
-      });
-
-      $("#subscriptionControls").addEventListener("click", (event) => {
-        const modeButton = event.target.closest("[data-subscription-mode]");
-        const actionButton = event.target.closest("[data-subscription-action]");
-        if (modeButton) {
-          subscriptionOnly = modeButton.dataset.subscriptionMode === "subscribed";
-        }
-        if (actionButton?.dataset.subscriptionAction === "clear") {
-          subscribedJournalIds.clear();
-          subscriptionOnly = false;
-          saveSubscribedJournalIds();
-        }
-        if (!modeButton && !actionButton) return;
-        renderAll();
-      });
-
-      $("#subscriptionJournals").addEventListener("click", (event) => {
-        const button = event.target.closest("[data-subscription-journal]");
-        if (!button) return;
-        toggleJournalSubscription(button.dataset.subscriptionJournal);
         renderAll();
       });
 
@@ -6498,7 +6414,6 @@
           query = "";
           activeDateFrom = "";
           activeDateTo = "";
-          subscriptionOnly = false;
           $("#searchInput").value = "";
           renderAll();
           switchView("tracking");
@@ -6549,12 +6464,6 @@
       });
 
       $("#timeline").addEventListener("click", async (event) => {
-        const subscribe = event.target.closest("[data-journal-subscribe]");
-        if (subscribe) {
-          toggleJournalSubscription(subscribe.dataset.journalSubscribe);
-          renderAll();
-          return;
-        }
         const compose = event.target.closest("[data-article-compose]");
         if (compose) {
           const article = articles.find((item) => item.id === compose.dataset.articleCompose);
@@ -6595,7 +6504,6 @@
         activeJournalId = "";
         activeSubject = "全部";
         activeLanguage = "全部";
-        subscriptionOnly = false;
         renderAll();
       });
 
@@ -6634,7 +6542,6 @@
           const journal = journalById(activeJournalId);
           activeLanguage = journal.lang;
           activeSubject = journal.subject;
-          subscriptionOnly = false;
           selectedArticleId = articlesForJournal(activeJournalId)[0]?.id || selectedArticleId;
           switchView("tracking");
           $("#filterPanel").open = true;

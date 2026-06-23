@@ -15,7 +15,7 @@ class SourceRequestInput(BaseModel):
     journal_name: str
     homepage_url: str = ""
     feed_url: str = ""
-    source_type: str = "人工复核"
+    source_type: str = "自动识别"
     refresh_interval: str = "每周检查"
     notes: str = ""
 
@@ -39,6 +39,8 @@ def _source_request_record(payload: SourceRequestInput, request: Request) -> dic
     return {
         "request_id": uuid4().hex,
         "created_at": now,
+        "intake_status": "pending_auto_probe",
+        "probe_methods": ["RSS / Atom", "RSSHub 路由", "页面适配 / XPath", "开放元数据 / DOI"],
         "submitter": request.headers.get("x-workshop-user", "anonymous"),
         "submitter_role": request.headers.get("x-workshop-role", "user"),
         **payload.model_dump(),

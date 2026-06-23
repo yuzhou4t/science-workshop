@@ -22,6 +22,8 @@ def test_source_request_submit_and_admin_list(client: TestClient) -> None:
     assert record["journal_name"] == "测试期刊"
     assert record["submitter"] == "reader"
     assert record["submitter_role"] == "user"
+    assert record["intake_status"] == "pending_auto_probe"
+    assert "RSSHub 路由" in record["probe_methods"]
     assert record["request_id"]
 
     denied = client.get("/api/source-requests", headers={"x-workshop-role": "user"})
