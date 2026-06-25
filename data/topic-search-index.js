@@ -1,9 +1,9 @@
 window.TOPIC_SEARCH_INDEX = {
   "version": 1,
-  "updated_at": "2026-06-24T03:13:32.280Z",
+  "updated_at": "2026-06-25T03:13:36.962Z",
   "summary": {
-    "total_articles": 514,
-    "matched_articles": 3,
+    "total_articles": 515,
+    "matched_articles": 4,
     "topics": 1,
     "disciplines": 7,
     "semantic_enabled": false
@@ -45,6 +45,48 @@ window.TOPIC_SEARCH_INDEX = {
     }
   ],
   "results": [
+    {
+      "article_id": "85b1b2802b73272e",
+      "topic_id": "africa",
+      "topic_label": "非洲",
+      "title": "Intergenerational Impacts of Secondary Education: Experimental Evidence from Ghana",
+      "journal_id": "j16",
+      "source_journal_id": "j16",
+      "journal_name": "AMERICAN ECONOMIC REVIEW",
+      "authors": "Esther Duflo, Pascaline Dupas, Elizabeth Spelke, Mark Walsh",
+      "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20241001",
+      "official_url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20241001",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "published_at": "",
+      "issue_date": "",
+      "first_seen_at": "2026-06-25",
+      "display_date": "2026-06-25",
+      "abstract": "We provide experimental evidence on the intergenerational impacts of secondary education subsidies in a low-income context, leveraging a randomized controlled trial and 15-year longitudinal follow-up.For young women, receiving a scholarship for secondary school delays childbearing and marriage, and reduces unwanted pregnancies.Female scholarship recipients are more likely to marry a partner with tertiary education and their children have better early childhood development outcomes.In particular, we document a 45% reduction in under-three mortality as well as cognitive development gains of 0.25 standard deviations of test scores once children are of school age.The primary mechanism seems to be that more-educated caregivers have the knowledge and skills to safeguard their children's health and stimulate their cognitive development.In contrast, we find no evidence of a positive impact for the children of male scholarship recipients, who tend to marry less educated partners.Together, these results suggest a key role for maternal education in child outcomes.We also estimate the cost-benefit ratio for secondary school scholarships and find that the impact on child survival alone is sufficient to make them a highly cost-effective investment.",
+      "keywords": [],
+      "match_mode": "rule",
+      "match_field": "title",
+      "match_keyword": "Ghana",
+      "match_reason": "title 命中 “Ghana”",
+      "confidence": 1,
+      "disciplines": [
+        {
+          "id": "economics",
+          "label": "经济学",
+          "match_field": "journal",
+          "match_keyword": "AMERICAN ECONOMIC REVIEW",
+          "score": 3
+        },
+        {
+          "id": "population_development",
+          "label": "人口与发展",
+          "match_field": "abstract",
+          "match_keyword": "health",
+          "score": 1
+        }
+      ]
+    },
     {
       "article_id": "aab49b8bd14cfb27",
       "topic_id": "africa",
