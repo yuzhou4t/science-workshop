@@ -1,0 +1,19 @@
+{
+  "summary": {
+    "checked_at": "2026-06-27T03:13:12.312Z",
+    "since": "2000-01-01",
+    "until": "2026-06-27",
+    "sources_total": 22,
+    "sources_ready": 19,
+    "push_queue_articles": 0,
+    "abstract_backfill": true,
+    "pdf_backfill": true,
+    "pdf_ocr_backfill": true,
+    "backfill_sources": [
+      "经济研究",
+      "中国农村经济"
+    ]
+  },
+  "push_queue": [],
+  "results": []
+}
