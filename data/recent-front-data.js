@@ -1,16 +1,46 @@
 window.RECENT_WORKFLOW_DATA = {
   "summary": {
-    "checked_at": "2026-07-04T03:13:30.552Z",
+    "checked_at": "2026-07-05T03:02:20.196Z",
     "since": "2026-05-25",
-    "until": "2026-07-04",
+    "until": "2026-07-05",
     "sources_total": 22,
-    "sources_ready": 21,
-    "history_articles": 549,
-    "push_queue_articles": 549,
-    "new_push_queue_articles": 12,
-    "last_workflow_file": "data/recent-articles-2026-07-04_2026-07-04.json"
+    "sources_ready": 18,
+    "history_articles": 550,
+    "push_queue_articles": 550,
+    "new_push_queue_articles": 1,
+    "last_workflow_file": "data/recent-articles-2026-07-05_2026-07-05.json"
   },
   "push_queue": [
+    {
+      "id": "1c9b4449558c281a",
+      "journal_id": "j8",
+      "source_journal_id": "j8",
+      "journal_name": "公共管理学报",
+      "title": "内动外联：资源匮乏型村庄新内生发展的过程与逻辑——以浙西G村为例",
+      "url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/69a26f7e20d0d18245aba359a55ca72c",
+      "official_url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/69a26f7e20d0d18245aba359a55ca72c",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "",
+      "published_at": "",
+      "issue_date": "2022-04",
+      "first_seen_at": "2026-07-05",
+      "display_date": "2022-04",
+      "display_date_basis": "issue_date",
+      "push_basis": "first_seen",
+      "extraction_rule": "cnki-portal-paper",
+      "date_source": "context_issue",
+      "abstract": "乡村振兴战略实施背景下，部分资源匮乏型村庄仍面临自主发展动力不足的困境。基于对新内生发展理论的反思，研究提出“内动外联”分析框架，并以浙西G村为典型案例，揭示了其“内部启动-向外借力-资源激活”的发展历程以及核心机制。在社会资本、政治资本与市场资本长期匮乏的条件下，村庄通过公共领导力培育实现内部动员的组织化，进而有效整合内部资源；通过政策信用积累实现外部联结的制度化，进而精准对接外部资源；通过社会创业实现产业经营的可持续，进而系统激活内外资源。研究认为，资源匮乏型村庄无法单纯依赖内源力量或外部输入实现发展，而需要在“内动激发外联、外联赋能内动、内动外联互促”的持续互动中动态建构发展动力。这一框架深化了对新内生发展的理论认知，也为推进乡村全面振兴提供了实践启示。",
+      "keywords": [
+        "内动外联",
+        "新内生发展",
+        "资源匮乏",
+        "乡村振兴",
+        "公共领导力"
+      ]
+    },
     {
       "id": "abf43b6c741bcb99",
       "journal_id": "j9",
