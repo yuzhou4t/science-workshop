@@ -1,0 +1,264 @@
+{
+  "summary": {
+    "checked_at": "2026-07-07T03:03:00.827Z",
+    "since": "2000-01-01",
+    "until": "2026-07-07",
+    "sources_total": 22,
+    "sources_ready": 20,
+    "push_queue_articles": 3,
+    "abstract_backfill": true,
+    "english_metadata_backfill": true,
+    "semantic_scholar": false,
+    "backfill_sources": [
+      "crossref-doi",
+      "openalex-doi",
+      "openalex-title"
+    ]
+  },
+  "push_queue": [
+    {
+      "id": "ef0462d302c43494",
+      "journal_id": "j16",
+      "source_journal_id": "j16",
+      "journal_name": "AMERICAN ECONOMIC REVIEW",
+      "title": "Combinatorial Discrete Choice: Theory and Application to Multinational Production",
+      "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20231486",
+      "official_url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20231486",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Costas Arkolakis, Fabian Eckert, Rowan Shi",
+      "published_at": "",
+      "issue_date": "",
+      "first_seen_at": "2026-07-07",
+      "display_date": "2026-07-07",
+      "display_date_basis": "first_seen_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "aea-forthcoming-html",
+      "date_source": "forthcoming_unassigned",
+      "abstract": "heterogeneous agent models: theory and an application to corporate tax harmonization in the European Union."
+    },
+    {
+      "id": "14474fb5b5b0185c",
+      "journal_id": "j19",
+      "source_journal_id": "j19",
+      "journal_name": "REVIEW OF ECONOMIC STUDIES",
+      "title": "How Do People React to Income-Based Fines? Evidence from Speeding Tickets Discontinuities",
+      "url": "https://doi.org/10.1093/restud/rdag071",
+      "official_url": "https://doi.org/10.1093/restud/rdag071",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Martti Kaila",
+      "published_at": "2026-07-06",
+      "issue_date": "",
+      "first_seen_at": "2026-07-07",
+      "display_date": "2026-07-06",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "open-metadata-works",
+      "date_source": "",
+      "abstract": "This paper studies the impact of income-based criminal punishments on crime. In Finland, speeding tickets become income-dependent if the driver’s speed exceeds the speeding limit by more than 20 km/h, leading to a substantial jump in the size of the speeding ticket. Contrary to predictions of a traditional Becker model, individuals do not bunch below the fine hike. Instead, the speeding distributions are smooth at the cutoff. However, I demonstrate that the size of the realized speeding ticket has sizable, but short-lived, impacts on reoffending. I use a regression discontinuity design to show that fines that are, on average, 200 euros larger decrease reoffending by 15 percent in the following six months. The drop in reoffending is driven by high-income individuals facing the highest fine at the cutoff. I estimate that a fixed fine hike that matches the current deterrence effect would raise the fine increase faced by the bottom income quartile by about 300% at the cutoff, relative to the increase they face under the current income-based schedule. My empirical results are consistent with an explanation that people operate under information frictions. To illustrate this, I construct a Becker model with misperception and learning that can explain all the empirical findings."
+    },
+    {
+      "id": "a3ac884aced312b9",
+      "journal_id": "j18",
+      "source_journal_id": "j18",
+      "journal_name": "QUARTERLY JOURNAL OF ECONOMICS",
+      "title": "In their Shoes: Empathy Through Information",
+      "url": "https://doi.org/10.1093/qje/qjag033",
+      "official_url": "https://doi.org/10.1093/qje/qjag033",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Marianne Andries, Leonardo Bursztyn, Thomas Chaney, Milena Djourelova, Alex Imas",
+      "published_at": "2026-07-06",
+      "issue_date": "",
+      "first_seen_at": "2026-07-07",
+      "display_date": "2026-07-06",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "open-metadata-works",
+      "date_source": "",
+      "abstract": "We explore the mechanics of empathy. We show that information about an outgroup can activate and magnify empathy when presented in conjunction with an experience simulating their struggles. This response increases the willingness to help the struggling group. We provide evidence for this effect in an immersive virtual reality experiment where participants (“witnesses”) experience a simulation of the struggle of unauthorized migrants (“protagonists”), then replicate these results in a series of controlled lab experiments. We show that information enhances the witnesses’ empathetic response and drives them to engage in more prosocial behavior when it increases their perceived interpersonal similarity, or relatability to the protagonist — an effect we trace to attention: eye-tracking data reveals that information provision concentrates witnesses’ gaze on the struggles of the protagonist instead of searching through peripheral elements of the scene. Conversely, only information packages that strengthen perceived relatability — an effect that can vary across subgroups with heterogeneous attributes — magnify empathy. Together, our evidence suggests that the ability to put oneself in the shoes of another person or group can be enhanced by activating empathy through simple, targeted, information provision."
+    }
+  ],
+  "results": [
+    {
+      "article": {
+        "id": "738105ca8f9f73d0",
+        "journal_id": "j16",
+        "source_journal_id": "j16",
+        "journal_name": "AMERICAN ECONOMIC REVIEW",
+        "title": "A Model of the Attention Economy: Data, Platforms, and Discovery",
+        "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20240651",
+        "official_url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20240651",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Daniel Chen",
+        "published_at": "",
+        "issue_date": "",
+        "first_seen_at": "2026-07-07",
+        "display_date": "2026-07-07",
+        "display_date_basis": "first_seen_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "aea-forthcoming-html",
+        "date_source": "forthcoming_unassigned"
+      },
+      "addedAbstract": false,
+      "source": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": false,
+          "error": "status_404",
+          "status": 404
+        },
+        {
+          "source": "openalex-doi",
+          "ok": false,
+          "error": "status_404",
+          "status": 404
+        },
+        {
+          "source": "openalex-title",
+          "ok": false,
+          "status": 200,
+          "error": "no_strict_title_abstract"
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "ef0462d302c43494",
+        "journal_id": "j16",
+        "source_journal_id": "j16",
+        "journal_name": "AMERICAN ECONOMIC REVIEW",
+        "title": "Combinatorial Discrete Choice: Theory and Application to Multinational Production",
+        "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20231486",
+        "official_url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20231486",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Costas Arkolakis, Fabian Eckert, Rowan Shi",
+        "published_at": "",
+        "issue_date": "",
+        "first_seen_at": "2026-07-07",
+        "display_date": "2026-07-07",
+        "display_date_basis": "first_seen_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "aea-forthcoming-html",
+        "date_source": "forthcoming_unassigned",
+        "abstract": "heterogeneous agent models: theory and an application to corporate tax harmonization in the European Union."
+      },
+      "addedAbstract": true,
+      "source": "openalex-title",
+      "matched_title": "Combinatorial Discrete Choice: Theory and Application to Multinational Production",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": false,
+          "error": "status_404",
+          "status": 404
+        },
+        {
+          "source": "openalex-doi",
+          "ok": false,
+          "error": "status_404",
+          "status": 404
+        },
+        {
+          "source": "openalex-title",
+          "ok": true,
+          "hints": {
+            "abstract": "heterogeneous agent models: theory and an application to corporate tax harmonization in the European Union."
+          },
+          "status": 200,
+          "matched_title": "Combinatorial Discrete Choice: Theory and Application to Multinational Production"
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "14474fb5b5b0185c",
+        "journal_id": "j19",
+        "source_journal_id": "j19",
+        "journal_name": "REVIEW OF ECONOMIC STUDIES",
+        "title": "How Do People React to Income-Based Fines? Evidence from Speeding Tickets Discontinuities",
+        "url": "https://doi.org/10.1093/restud/rdag071",
+        "official_url": "https://doi.org/10.1093/restud/rdag071",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Martti Kaila",
+        "published_at": "2026-07-06",
+        "issue_date": "",
+        "first_seen_at": "2026-07-07",
+        "display_date": "2026-07-06",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "open-metadata-works",
+        "date_source": "",
+        "abstract": "This paper studies the impact of income-based criminal punishments on crime. In Finland, speeding tickets become income-dependent if the driver’s speed exceeds the speeding limit by more than 20 km/h, leading to a substantial jump in the size of the speeding ticket. Contrary to predictions of a traditional Becker model, individuals do not bunch below the fine hike. Instead, the speeding distributions are smooth at the cutoff. However, I demonstrate that the size of the realized speeding ticket has sizable, but short-lived, impacts on reoffending. I use a regression discontinuity design to show that fines that are, on average, 200 euros larger decrease reoffending by 15 percent in the following six months. The drop in reoffending is driven by high-income individuals facing the highest fine at the cutoff. I estimate that a fixed fine hike that matches the current deterrence effect would raise the fine increase faced by the bottom income quartile by about 300% at the cutoff, relative to the increase they face under the current income-based schedule. My empirical results are consistent with an explanation that people operate under information frictions. To illustrate this, I construct a Becker model with misperception and learning that can explain all the empirical findings."
+      },
+      "addedAbstract": true,
+      "source": "crossref",
+      "matched_title": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": true,
+          "hints": {
+            "abstract": "This paper studies the impact of income-based criminal punishments on crime. In Finland, speeding tickets become income-dependent if the driver’s speed exceeds the speeding limit by more than 20 km/h, leading to a substantial jump in the size of the speeding ticket. Contrary to predictions of a traditional Becker model, individuals do not bunch below the fine hike. Instead, the speeding distributions are smooth at the cutoff. However, I demonstrate that the size of the realized speeding ticket has sizable, but short-lived, impacts on reoffending. I use a regression discontinuity design to show that fines that are, on average, 200 euros larger decrease reoffending by 15 percent in the following six months. The drop in reoffending is driven by high-income individuals facing the highest fine at the cutoff. I estimate that a fixed fine hike that matches the current deterrence effect would raise the fine increase faced by the bottom income quartile by about 300% at the cutoff, relative to the increase they face under the current income-based schedule. My empirical results are consistent with an explanation that people operate under information frictions. To illustrate this, I construct a Becker model with misperception and learning that can explain all the empirical findings."
+          },
+          "status": 200
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "a3ac884aced312b9",
+        "journal_id": "j18",
+        "source_journal_id": "j18",
+        "journal_name": "QUARTERLY JOURNAL OF ECONOMICS",
+        "title": "In their Shoes: Empathy Through Information",
+        "url": "https://doi.org/10.1093/qje/qjag033",
+        "official_url": "https://doi.org/10.1093/qje/qjag033",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Marianne Andries, Leonardo Bursztyn, Thomas Chaney, Milena Djourelova, Alex Imas",
+        "published_at": "2026-07-06",
+        "issue_date": "",
+        "first_seen_at": "2026-07-07",
+        "display_date": "2026-07-06",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "open-metadata-works",
+        "date_source": "",
+        "abstract": "We explore the mechanics of empathy. We show that information about an outgroup can activate and magnify empathy when presented in conjunction with an experience simulating their struggles. This response increases the willingness to help the struggling group. We provide evidence for this effect in an immersive virtual reality experiment where participants (“witnesses”) experience a simulation of the struggle of unauthorized migrants (“protagonists”), then replicate these results in a series of controlled lab experiments. We show that information enhances the witnesses’ empathetic response and drives them to engage in more prosocial behavior when it increases their perceived interpersonal similarity, or relatability to the protagonist — an effect we trace to attention: eye-tracking data reveals that information provision concentrates witnesses’ gaze on the struggles of the protagonist instead of searching through peripheral elements of the scene. Conversely, only information packages that strengthen perceived relatability — an effect that can vary across subgroups with heterogeneous attributes — magnify empathy. Together, our evidence suggests that the ability to put oneself in the shoes of another person or group can be enhanced by activating empathy through simple, targeted, information provision."
+      },
+      "addedAbstract": true,
+      "source": "crossref",
+      "matched_title": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": true,
+          "hints": {
+            "abstract": "We explore the mechanics of empathy. We show that information about an outgroup can activate and magnify empathy when presented in conjunction with an experience simulating their struggles. This response increases the willingness to help the struggling group. We provide evidence for this effect in an immersive virtual reality experiment where participants (“witnesses”) experience a simulation of the struggle of unauthorized migrants (“protagonists”), then replicate these results in a series of controlled lab experiments. We show that information enhances the witnesses’ empathetic response and drives them to engage in more prosocial behavior when it increases their perceived interpersonal similarity, or relatability to the protagonist — an effect we trace to attention: eye-tracking data reveals that information provision concentrates witnesses’ gaze on the struggles of the protagonist instead of searching through peripheral elements of the scene. Conversely, only information packages that strengthen perceived relatability — an effect that can vary across subgroups with heterogeneous attributes — magnify empathy. Together, our evidence suggests that the ability to put oneself in the shoes of another person or group can be enhanced by activating empathy through simple, targeted, information provision."
+          },
+          "status": 200
+        }
+      ]
+    }
+  ]
+}
