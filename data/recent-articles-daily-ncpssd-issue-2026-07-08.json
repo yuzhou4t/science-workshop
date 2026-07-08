@@ -1,0 +1,298 @@
+{
+  "summary": {
+    "checked_at": "2026-07-08T03:03:44.799Z",
+    "since": "2000-01-01",
+    "until": "2026-07-08",
+    "sources_total": 22,
+    "sources_ready": 18,
+    "push_queue_articles": 0,
+    "abstract_backfill": true,
+    "ncpssd_issue_backfill": true,
+    "backfill_sources": [
+      "ncpssd-mobile-issue",
+      "ncpssd-article-api"
+    ]
+  },
+  "push_queue": [],
+  "results": [
+    {
+      "article": {
+        "id": "f5d40d8a4d08d80b",
+        "journal_id": "j4",
+        "source_journal_id": "j4",
+        "journal_name": "中国工业经济",
+        "title": "产业政策如何影响供应链关系变动——基于供应商转换机制的分析",
+        "url": "https://ciejournal.ajcass.com/Magazine/Show?id=123162",
+        "official_url": "https://ciejournal.ajcass.com/Magazine/Show?id=123162",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "鲁晓东, 王梦令",
+        "published_at": "",
+        "issue_date": "2026-06",
+        "first_seen_at": "2026-07-08",
+        "display_date": "2026-06",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "cie-legacy-html",
+        "date_source": "context_issue"
+      },
+      "addedAbstract": false,
+      "response": {
+        "status": 200,
+        "error": "title_not_found",
+        "issue_url": "https://m.ncpssd.cn/journal/details?gch=93800A&langType=1&nav=1&years=2026&num=6",
+        "candidates": 0
+      }
+    },
+    {
+      "article": {
+        "id": "dc204f2e81cb3a73",
+        "journal_id": "j4",
+        "source_journal_id": "j4",
+        "journal_name": "中国工业经济",
+        "title": "产业转移如何促进企业异地合作创新——基于产业链供应链优化视角",
+        "url": "https://ciejournal.ajcass.com/Magazine/Show?id=123161",
+        "official_url": "https://ciejournal.ajcass.com/Magazine/Show?id=123161",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "戴宏伟, 乔莹莹, 贺茜",
+        "published_at": "",
+        "issue_date": "2026-06",
+        "first_seen_at": "2026-07-08",
+        "display_date": "2026-06",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "cie-legacy-html",
+        "date_source": "context_issue"
+      },
+      "addedAbstract": false,
+      "response": {
+        "status": 200,
+        "error": "title_not_found",
+        "issue_url": "https://m.ncpssd.cn/journal/details?gch=93800A&langType=1&nav=1&years=2026&num=6",
+        "candidates": 0
+      }
+    },
+    {
+      "article": {
+        "id": "5a675d7d9330d307",
+        "journal_id": "j4",
+        "source_journal_id": "j4",
+        "journal_name": "中国工业经济",
+        "title": "从制造大国迈向制造强国的中国路径",
+        "url": "https://ciejournal.ajcass.com/Magazine/Show?id=123156",
+        "official_url": "https://ciejournal.ajcass.com/Magazine/Show?id=123156",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "戚聿东, 徐凯歌",
+        "published_at": "",
+        "issue_date": "2026-06",
+        "first_seen_at": "2026-07-08",
+        "display_date": "2026-06",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "cie-legacy-html",
+        "date_source": "context_issue"
+      },
+      "addedAbstract": false,
+      "response": {
+        "status": 200,
+        "error": "title_not_found",
+        "issue_url": "https://m.ncpssd.cn/journal/details?gch=93800A&langType=1&nav=1&years=2026&num=6",
+        "candidates": 0
+      }
+    },
+    {
+      "article": {
+        "id": "9dd09dc95157f48d",
+        "journal_id": "j4",
+        "source_journal_id": "j4",
+        "journal_name": "中国工业经济",
+        "title": "共同富裕进程中的数字政府建设：政务服务均等化与县域经济发展的视角",
+        "url": "https://ciejournal.ajcass.com/Magazine/Show?id=123159",
+        "official_url": "https://ciejournal.ajcass.com/Magazine/Show?id=123159",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "孙伟增, 万广华, 李怡凡, 经菠",
+        "published_at": "",
+        "issue_date": "2026-06",
+        "first_seen_at": "2026-07-08",
+        "display_date": "2026-06",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "cie-legacy-html",
+        "date_source": "context_issue"
+      },
+      "addedAbstract": false,
+      "response": {
+        "status": 200,
+        "error": "title_not_found",
+        "issue_url": "https://m.ncpssd.cn/journal/details?gch=93800A&langType=1&nav=1&years=2026&num=6",
+        "candidates": 0
+      }
+    },
+    {
+      "article": {
+        "id": "fb6d56a1665daa19",
+        "journal_id": "j4",
+        "source_journal_id": "j4",
+        "journal_name": "中国工业经济",
+        "title": "构建中国哲学社会科学自主知识体系的工业经济样本",
+        "url": "https://ciejournal.ajcass.com/Magazine/Show?id=123155",
+        "official_url": "https://ciejournal.ajcass.com/Magazine/Show?id=123155",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "陈彦斌",
+        "published_at": "",
+        "issue_date": "2026-06",
+        "first_seen_at": "2026-07-08",
+        "display_date": "2026-06",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "cie-legacy-html",
+        "date_source": "context_issue"
+      },
+      "addedAbstract": false,
+      "response": {
+        "status": 200,
+        "error": "title_not_found",
+        "issue_url": "https://m.ncpssd.cn/journal/details?gch=93800A&langType=1&nav=1&years=2026&num=6",
+        "candidates": 0
+      }
+    },
+    {
+      "article": {
+        "id": "3a686d2b41985b49",
+        "journal_id": "j4",
+        "source_journal_id": "j4",
+        "journal_name": "中国工业经济",
+        "title": "生态系统内的平台嵌套与平台型互补者的成长机制",
+        "url": "https://ciejournal.ajcass.com/Magazine/Show?id=123163",
+        "official_url": "https://ciejournal.ajcass.com/Magazine/Show?id=123163",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "杨佳铭, 魏江, 杨升曦",
+        "published_at": "",
+        "issue_date": "2026-06",
+        "first_seen_at": "2026-07-08",
+        "display_date": "2026-06",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "cie-legacy-html",
+        "date_source": "context_issue"
+      },
+      "addedAbstract": false,
+      "response": {
+        "status": 200,
+        "error": "title_not_found",
+        "issue_url": "https://m.ncpssd.cn/journal/details?gch=93800A&langType=1&nav=1&years=2026&num=6",
+        "candidates": 0
+      }
+    },
+    {
+      "article": {
+        "id": "66d930f30c929cfe",
+        "journal_id": "j4",
+        "source_journal_id": "j4",
+        "journal_name": "中国工业经济",
+        "title": "银行网络的气候转型风险溢出效应和宏观审慎政策",
+        "url": "https://ciejournal.ajcass.com/Magazine/Show?id=123158",
+        "official_url": "https://ciejournal.ajcass.com/Magazine/Show?id=123158",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "陈国进, 徐晓芳, 赵向琴",
+        "published_at": "",
+        "issue_date": "2026-06",
+        "first_seen_at": "2026-07-08",
+        "display_date": "2026-06",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "cie-legacy-html",
+        "date_source": "context_issue"
+      },
+      "addedAbstract": false,
+      "response": {
+        "status": 200,
+        "error": "title_not_found",
+        "issue_url": "https://m.ncpssd.cn/journal/details?gch=93800A&langType=1&nav=1&years=2026&num=6",
+        "candidates": 0
+      }
+    },
+    {
+      "article": {
+        "id": "15c19d6c8e92eff9",
+        "journal_id": "j4",
+        "source_journal_id": "j4",
+        "journal_name": "中国工业经济",
+        "title": "银行政府采购暴露对非采购企业信贷的影响——基于财政工具的货币效应视角",
+        "url": "https://ciejournal.ajcass.com/Magazine/Show?id=123160",
+        "official_url": "https://ciejournal.ajcass.com/Magazine/Show?id=123160",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "崔孟奇, 姚东旻, 张世宇, 厉嵩",
+        "published_at": "",
+        "issue_date": "2026-06",
+        "first_seen_at": "2026-07-08",
+        "display_date": "2026-06",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "cie-legacy-html",
+        "date_source": "context_issue"
+      },
+      "addedAbstract": false,
+      "response": {
+        "status": 200,
+        "error": "title_not_found",
+        "issue_url": "https://m.ncpssd.cn/journal/details?gch=93800A&langType=1&nav=1&years=2026&num=6",
+        "candidates": 0
+      }
+    },
+    {
+      "article": {
+        "id": "eaaade718c2046d5",
+        "journal_id": "j4",
+        "source_journal_id": "j4",
+        "journal_name": "中国工业经济",
+        "title": "自动化的制造业劳动收入份额效应——基于行业内结构变化视角",
+        "url": "https://ciejournal.ajcass.com/Magazine/Show?id=123157",
+        "official_url": "https://ciejournal.ajcass.com/Magazine/Show?id=123157",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "于泽, 张紫洋, 吴孟非",
+        "published_at": "",
+        "issue_date": "2026-06",
+        "first_seen_at": "2026-07-08",
+        "display_date": "2026-06",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "cie-legacy-html",
+        "date_source": "context_issue"
+      },
+      "addedAbstract": false,
+      "response": {
+        "status": 200,
+        "error": "title_not_found",
+        "issue_url": "https://m.ncpssd.cn/journal/details?gch=93800A&langType=1&nav=1&years=2026&num=6",
+        "candidates": 0
+      }
+    }
+  ]
+}

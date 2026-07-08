@@ -1,9 +1,9 @@
 window.TOPIC_SEARCH_INDEX = {
   "version": 1,
-  "updated_at": "2026-07-07T03:03:05.014Z",
+  "updated_at": "2026-07-08T03:04:06.198Z",
   "summary": {
-    "total_articles": 554,
-    "matched_articles": 4,
+    "total_articles": 566,
+    "matched_articles": 5,
     "topics": 1,
     "disciplines": 7,
     "semantic_enabled": false
@@ -45,6 +45,48 @@ window.TOPIC_SEARCH_INDEX = {
     }
   ],
   "results": [
+    {
+      "article_id": "f248ea93c8bb1431",
+      "topic_id": "africa",
+      "topic_label": "非洲",
+      "title": "Social Intermediation amid Extreme Marginalization: The Morpho-Regeneration of Fractured Reflexivity",
+      "journal_id": "j21",
+      "source_journal_id": "j21",
+      "journal_name": "ACADEMY OF MANAGEMENT JOURNAL",
+      "authors": "Andrea Sottini, Alessandro Giudici, Benedetto Lorenzo Cannatelli",
+      "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.0422",
+      "official_url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.0422",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "published_at": "2026-07-07",
+      "issue_date": "",
+      "first_seen_at": "2026-07-08",
+      "display_date": "2026-07-07",
+      "abstract": "The literature on social intermediaries highlights their role in alleviating poverty and promoting market inclusion in emerging economies through interventions that counterbalance pressures from formal and informal institutions. However, this research centers on interplays between intermediaries and institutions, implicitly assuming that beneficiaries reject their condition of poverty and retain a minimally functioning capacity for reflexive agency, supporting engagement with such interventions. In contrast, our study of slums and rural communities in Kenya and Sierra Leone examines social intermediation amid conditions in which extreme marginalization has fractured beneficiaries’ reflexive capacity, leaving them unable to orient toward purposive action. Using a critical realist relational lens, we develop a process model in which social intermediation unfolds through interdependent morpho-regenerative processes – institutional shielding, relational accompaniment, and entrepreneurial empowerment – that create prolonged protective spaces against oppressive pressures and repair reflexivity gradually until beneficiaries can sustain it on their own. We theorize morpho-regeneration as a custodial practice of ‘with-in’ intervention that restores individual capacities for social and economic participation, enabling more conventional outside-in and inside-up intermediation approaches. Our study offers new insights into the relational dimensions of poverty alleviation and their connection to communitylevel dynamics, with relevance to other contexts where agency is severely destabilized.",
+      "keywords": [],
+      "match_mode": "rule",
+      "match_field": "abstract",
+      "match_keyword": "Kenya",
+      "match_reason": "abstract 命中 “Kenya”",
+      "confidence": 1,
+      "disciplines": [
+        {
+          "id": "management",
+          "label": "管理学",
+          "match_field": "journal",
+          "match_keyword": "MANAGEMENT",
+          "score": 3
+        },
+        {
+          "id": "economics",
+          "label": "经济学",
+          "match_field": "abstract",
+          "match_keyword": "economic",
+          "score": 1
+        }
+      ]
+    },
     {
       "article_id": "85b1b2802b73272e",
       "topic_id": "africa",
