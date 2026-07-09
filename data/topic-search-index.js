@@ -1,9 +1,9 @@
 window.TOPIC_SEARCH_INDEX = {
   "version": 1,
-  "updated_at": "2026-07-08T03:04:06.198Z",
+  "updated_at": "2026-07-09T03:02:51.180Z",
   "summary": {
-    "total_articles": 566,
-    "matched_articles": 5,
+    "total_articles": 570,
+    "matched_articles": 6,
     "topics": 1,
     "disciplines": 7,
     "semantic_enabled": false
@@ -45,6 +45,48 @@ window.TOPIC_SEARCH_INDEX = {
     }
   ],
   "results": [
+    {
+      "article_id": "e5f57f18d3855ede",
+      "topic_id": "africa",
+      "topic_label": "非洲",
+      "title": "A Stakeholder Governance Framework for Public–Private Partnerships",
+      "journal_id": "j13",
+      "source_journal_id": "j13",
+      "journal_name": "ACADEMY OF MANAGEMENT REVIEW",
+      "authors": "Africa Ariño, Pascual Berrone, Joan E. Ricart, Xavier Sobrepere, Alexis Yong",
+      "url": "https://journals.aom.org/doi/abs/10.5465/amr.2024.0051",
+      "official_url": "https://journals.aom.org/doi/abs/10.5465/amr.2024.0051",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "published_at": "2026-07-07",
+      "issue_date": "",
+      "first_seen_at": "2026-07-09",
+      "display_date": "2026-07-07",
+      "abstract": "",
+      "keywords": [],
+      "match_mode": "rule",
+      "match_field": "authors",
+      "match_keyword": "Africa",
+      "match_reason": "authors 命中 “Africa”",
+      "confidence": 1,
+      "disciplines": [
+        {
+          "id": "management",
+          "label": "管理学",
+          "match_field": "journal",
+          "match_keyword": "MANAGEMENT",
+          "score": 3
+        },
+        {
+          "id": "public_admin",
+          "label": "公共管理",
+          "match_field": "title",
+          "match_keyword": "governance",
+          "score": 2
+        }
+      ]
+    },
     {
       "article_id": "f248ea93c8bb1431",
       "topic_id": "africa",
