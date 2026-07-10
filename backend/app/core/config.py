@@ -47,6 +47,10 @@ class Settings(BaseSettings):
     )
     workflow_quota_timezone: str = Field(default="Asia/Shanghai", alias="WORKFLOW_QUOTA_TIMEZONE")
     science_workshop_proxy_secret: str = Field(default="", alias="SCIENCE_WORKSHOP_PROXY_SECRET")
+    workflow_allow_insecure_direct_access: bool = Field(
+        default=False,
+        alias="WORKFLOW_ALLOW_INSECURE_DIRECT_ACCESS",
+    )
     paper_reading_max_upload_bytes: int = Field(
         default=25 * 1024 * 1024,
         alias="PAPER_READING_MAX_UPLOAD_BYTES",

@@ -4,6 +4,9 @@ Project-specific instructions for agents working in Science Workshop.
 
 - Treat this as a static prototype plus local Node.js crawler workflow. There is no package manager setup required for current scripts.
 - Do not push to GitHub unless the user explicitly asks. Local git commits are fine for checkpoints.
+- Protected FastAPI routes must fail closed unless `SCIENCE_WORKSHOP_PROXY_SECRET` and a non-empty trusted user identity are verified; `WORKFLOW_ALLOW_INSECURE_DIRECT_ACCESS=true` is only for isolated local tests.
+- Workflow jobs, artifacts, edits, exports, reruns, events, and referenced evidence are owner-scoped; only the same owner or an admin may access them.
+- Use `vercel dev` plus the local FastAPI service for production-like auth/RBAC checks. Opening `index.html` directly is a static preview only.
 - Preserve `data/source-state.json` semantics: it is the dedupe and first-seen state for daily runs.
 - Use `scripts/run-daily-workflow.mjs` as the daily entrypoint. It should initialize a baseline once and only update frontend data when new push articles exist.
 - Keep daily abstract enrichment attached to the daily flow: newly pushed articles should be merged first, then `scripts/backfill-daily-abstracts.mjs --first-seen-at=<date>` should backfill only that first-seen date.

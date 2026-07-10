@@ -6,15 +6,17 @@
 
 - 展示近一段时间抓到的期刊文章推送流。
 - 管理期刊官网、过刊页、样例文章、RSS 或替代数据源。
-- 在本机每天自动检查一次新文章，为后续公众号文章转换功能做准备。
+- 用论文精读、公众号写作和期刊目录导出工作流处理已抓取内容。
 
 ## 快速开始
 
-直接打开前端原型：
+只查看静态页面和已生成数据：
 
 ```bash
 open index.html
 ```
+
+直接打开文件不能验证登录、角色、管理员信箱或工作流 API。完整本地验收需同时启动 FastAPI 与 `vercel dev`，具体命令见 [运行手册](docs/runbook.md#production-like-local-verification)。
 
 运行不依赖外网的基础检查：
 
@@ -49,7 +51,7 @@ node scripts/build-front-data.mjs --reset-history --workflow=data/recent-article
 
 ## 主要文件
 
-- `index.html`：前端原型页面，包含文章推送流、数据源汇总、筛选器和预留的转换功能入口。
+- `index.html`：前端工作台，包含文章推送流、主题检索、数据源共建、角色权限和内容工作流。
 - `data/adapter-profiles.json`：期刊数据源规则表，目前包含 5 个直接 RSS/eTOC 来源和 17 个页面适配来源。
 - `data/fetch-smoke-results.json`：全量真实探测所有数据源后的结果。
 - `data/adapter-front-data.js`：前端“适配器工作台”读取的真实注册表状态。
@@ -83,12 +85,14 @@ node scripts/build-front-data.mjs --reset-history --workflow=data/recent-article
 
 ## 当前状态
 
-截至 2026-06-13，前端参考数据保留累计推送历史，并已接入摘要回填链路。
+截至 2026-07-10，本地已合入云端最新数据，并保留本地尚未上线的登录、角色、数据源共建和管理员信箱功能。
 
 - 期刊数据源：22 个。
-- 前端累计展示文章：455 篇，`data/recent-front-data.js` 和 `data/push-history.json` 均为 455 个唯一文章 ID。
-- 已补摘要文章：362 篇；剩余 93 篇没有摘要，其中 `会计研究` 27 篇、`中国工业经济` 18 篇、英文期刊 47 篇、`中国农村经济` 1 篇。
-- 主题检索索引已按 455 篇累计历史重建；当前非洲主题命中 3 篇，语义分类未启用。
+- 前端累计展示文章：574 篇，`data/recent-front-data.js` 和 `data/push-history.json` 均为 574 个唯一文章 ID。
+- 已补摘要文章：452 篇；剩余 122 篇没有摘要，主要集中在 `中国工业经济`、`会计研究`、AMR 和 AER。
+- 主题检索索引已按 574 篇累计历史重建；当前非洲主题命中 6 篇，语义分类未启用。
+- 普通账号可使用内容工作流和提交数据源线索；管理员可查看数据源队列和草稿导入记录。任务及产物按 owner 隔离，管理员可跨 owner 处理。
+- 数据源申请当前落为 `pending_auto_probe`；真实自动探测 runner 尚未实现。公众号草稿当前只保存 `prepared/mock` 导入记录，未调用微信 API。
 - 每日自动任务的去重状态写入 `data/source-state.json`；摘要回填只补 `data/push-history.json` / `data/recent-front-data.js`，不改每日去重状态。
 - `scripts/run-daily-workflow.mjs` 在新推送合并后自动运行 `scripts/backfill-daily-abstracts.mjs --first-seen-at=<date>`，尽量给当天新增文章补摘要；随后刷新 `data/topic-search-index.js`，让主题检索覆盖最新累计历史。
 - `管理科学学报` 已可从新版期号页解析；旧版 reader 期号页可作为备用解析入口，2026-06-04 日常运行返回 11 篇当期文章。

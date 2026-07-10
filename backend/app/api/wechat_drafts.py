@@ -6,6 +6,8 @@ from uuid import uuid4
 from fastapi import APIRouter, HTTPException, Request
 from pydantic import BaseModel, ConfigDict, field_validator
 
+from app.core.access import owner_id_from_request, role_from_request
+
 router = APIRouter(prefix="/api/wechat-drafts", tags=["wechat-drafts"])
 
 
@@ -37,8 +39,8 @@ def _draft_record(payload: WeChatDraftImportInput, request: Request) -> dict:
         "created_at": datetime.now(UTC).isoformat(),
         "mode": "mock",
         "status": "prepared",
-        "submitter": request.headers.get("x-workshop-user", "anonymous"),
-        "submitter_role": request.headers.get("x-workshop-role", "user"),
+        "submitter": owner_id_from_request(request),
+        "submitter_role": role_from_request(request),
         **payload.model_dump(),
     }
 
@@ -53,7 +55,7 @@ def create_wechat_draft_import(payload: WeChatDraftImportInput, request: Request
 
 @router.get("")
 def list_wechat_draft_imports(request: Request) -> dict:
-    if request.headers.get("x-workshop-role") != "admin":
+    if role_from_request(request) != "admin":
         raise HTTPException(status_code=403, detail="Admin role required")
 
     path = _log_path(request)

@@ -16,6 +16,8 @@ python3 -m http.server 8000
 
 Then open `http://127.0.0.1:8000`.
 
+These two methods are static previews only. They do not provide Vercel auth functions or a production-like proxy path, so do not use them to validate login, roles, admin visibility, or workflow ownership.
+
 ## Local Checks
 
 Run the pure checks before committing script or frontend-data changes:
@@ -65,7 +67,7 @@ cp .env.example .env
 uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
 ```
 
-For mock-mode smoke tests, set `WORKFLOW_USE_MOCKS=true` in `backend/.env`. Real MinerU and DeepSeek runs require:
+For mock-mode smoke tests, set `WORKFLOW_USE_MOCKS=true` in `backend/.env`. Protected APIs also require `SCIENCE_WORKSHOP_PROXY_SECRET` and a non-empty trusted `x-workshop-user`; if the secret is absent, FastAPI returns `503` by default, while a valid secret without a user returns `401`. `WORKFLOW_ALLOW_INSECURE_DIRECT_ACCESS=true` is an explicit single-user localhost escape hatch for narrow backend tests only and must stay `false` in production. Real MinerU and DeepSeek runs require:
 
 ```text
 DEEPSEEK_API_KEY
@@ -83,6 +85,40 @@ cd backend
 . .venv/bin/activate
 python -m pytest -v
 ```
+
+## Production-Like Local Verification
+
+Use two terminals so local requests follow the same cookie -> Vercel proxy -> shared secret -> FastAPI path as production.
+
+Terminal A starts the mock FastAPI backend:
+
+```bash
+cd /Users/yuzhou4tc/Public/工作坊/journal-workshop-prototype/backend
+SCIENCE_WORKSHOP_PROXY_SECRET=local-proxy-secret \
+WORKFLOW_USE_MOCKS=true \
+.venv/bin/uvicorn app.main:app --host 127.0.0.1 --port 8000
+```
+
+Terminal B generates disposable local password hashes and starts the Vercel layer:
+
+```bash
+cd /Users/yuzhou4tc/Public/工作坊/journal-workshop-prototype
+ADMIN_HASH="$(node -e "const c=require('node:crypto');const p=process.argv[1];const s=c.randomBytes(16).toString('base64url');console.log('scrypt:'+s+':'+c.scryptSync(p,s,32).toString('base64url'));" 'admin-pass')"
+USER_HASH="$(node -e "const c=require('node:crypto');const p=process.argv[1];const s=c.randomBytes(16).toString('base64url');console.log('scrypt:'+s+':'+c.scryptSync(p,s,32).toString('base64url'));" 'user-pass')"
+SCIENCE_WORKSHOP_BACKEND_ORIGIN=http://127.0.0.1:8000 \
+SCIENCE_WORKSHOP_BACKEND_PREFIX='' \
+SCIENCE_WORKSHOP_PROXY_SECRET=local-proxy-secret \
+WORKSHOP_ADMIN_USERNAME=admin \
+WORKSHOP_ADMIN_PASSWORD_HASH="$ADMIN_HASH" \
+WORKSHOP_USER_USERNAME=user \
+WORKSHOP_USER_PASSWORD_HASH="$USER_HASH" \
+WORKSHOP_SESSION_SECRET=local-session-secret-change-me \
+vercel dev --listen 4173
+```
+
+Open `http://127.0.0.1:4173`. Test accounts are `admin / admin-pass` and `user / user-pass`. Verify login, page refresh/session restore, ordinary-user restrictions, admin inbox visibility, logout, and that exactly one main page is visible at a time. These credentials are process-local and should not be reused elsewhere.
+
+The following direct FastAPI curl examples assume `WORKFLOW_ALLOW_INSECURE_DIRECT_ACCESS=true` in an isolated local test process. Prefer the production-like two-process path above for auth/RBAC checks.
 
 Create a mock paper-reading job:
 
@@ -125,6 +161,7 @@ SCIENCE_WORKSHOP_PROXY_SECRET=<same value as backend>
 
 Backend /opt/science-workshop/api.env:
 SCIENCE_WORKSHOP_PROXY_SECRET=<same value as Vercel>
+WORKFLOW_ALLOW_INSECURE_DIRECT_ACCESS=false
 WORKFLOW_RETENTION_DAYS=3
 WORKFLOW_MAX_RUNNING_JOBS=3
 WORKFLOW_PAPER_READING_MAX_RUNNING_JOBS=1
@@ -138,9 +175,11 @@ WORKFLOW_QUOTA_TIMEZONE=Asia/Shanghai
 
 Workflow concurrency is enforced inside the FastAPI process. The current Docker command starts one uvicorn worker, so these limits apply process-wide: at most 3 running workflow jobs, with paper reading capped at 1 running job and WeChat writing capped at 2. A single logged-in user can have 1 running workflow and 2 queued workflows; daily quotas are 3 paper-reading jobs and 10 WeChat-writing jobs per user, counted by the configured quota timezone.
 
-User-submitted data-source contributions are appended to `WORKFLOW_STORAGE_DIR/source-requests.jsonl`. They are review logs only and do not mutate `data/adapter-profiles.json` or the crawler registry until an admin applies them manually.
+All job reads and mutations are owner-scoped. A normal account may access only its own status, artifacts, edits, exports, reruns, SSE events, referenced paper evidence, and chunked uploads; an admin may access any owner. A `403` on these routes indicates an ownership/role mismatch rather than a missing job. Multi-file WeChat material uploads are preflighted as one set; if any upload is missing, incomplete, oversized, or owned by someone else, no job is kept and none of the staged uploads are deleted.
 
-WeChat draft imports currently run in a reserved mock/record mode. The frontend "导入草稿箱" action posts Markdown to `/api/wechat-drafts`, and the backend appends the payload to `WORKFLOW_STORAGE_DIR/wechat-draft-imports.jsonl` with `mode=mock` and `status=prepared`. This does not call the WeChat Official Account API yet; real draft-box publishing should be wired here after the account credentials, media upload permissions, and draft API access are confirmed.
+User-submitted data-source contributions are appended to `WORKFLOW_STORAGE_DIR/source-requests.jsonl` with `intake_status=pending_auto_probe`. They do not mutate `data/adapter-profiles.json` or the crawler registry. The actual RSS/RSSHub/page/open-metadata probe runner and status transition to `probe_failed` are still pending; the admin inbox currently shows both queued and failed records.
+
+WeChat draft imports currently run in a reserved mock/record mode. The frontend "生成导入记录" action posts Markdown to `/api/wechat-drafts`, and the backend appends the payload to `WORKFLOW_STORAGE_DIR/wechat-draft-imports.jsonl` with `mode=mock` and `status=prepared`; admins can inspect these records in the inbox. This does not call the WeChat Official Account API yet; real draft-box publishing should be wired here after the account credentials, media upload permissions, and draft API access are confirmed.
 
 Generate the password hash locally with:
 

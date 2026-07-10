@@ -6,8 +6,6 @@ from dataclasses import dataclass
 from datetime import datetime
 from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
-from fastapi import Request
-
 from app.models.job import JobStatus, WorkflowJob, WorkflowType
 from app.storage.job_store import JobStore
 from app.workflows.events import EventBroker
@@ -34,10 +32,6 @@ class QueuedWorkflow:
 def normalize_owner_id(owner_id: str | None) -> str:
     value = str(owner_id or "").strip()
     return value[:120] if value else "anonymous"
-
-
-def owner_id_from_request(request: Request) -> str:
-    return normalize_owner_id(request.headers.get("x-workshop-user"))
 
 
 class WorkflowScheduler:

@@ -4,6 +4,7 @@ from typing import Any
 from fastapi import APIRouter, HTTPException, Request
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 
+from app.core.access import owner_id_from_request
 from app.models.job import WorkflowType
 from app.services.docx_exporter import DocxExporter
 from app.workflows.issue_toc_export import IssueTocExportWorkflow
@@ -58,7 +59,11 @@ async def create_issue_toc_export_job(payload: IssueTocExportRequest, request: R
         raise HTTPException(status_code=400, detail="articles are required")
 
     store = request.app.state.job_store
-    job = store.create_job(WorkflowType.ISSUE_TOC_EXPORT, template_id=payload.template_id)
+    job = store.create_job(
+        WorkflowType.ISSUE_TOC_EXPORT,
+        template_id=payload.template_id,
+        owner_id=owner_id_from_request(request),
+    )
     issue_data: dict[str, Any] = payload.model_dump(exclude={"template_id"})
     store.write_text_artifact(
         job,

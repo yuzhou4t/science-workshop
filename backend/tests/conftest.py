@@ -11,6 +11,7 @@ def client(tmp_path, monkeypatch) -> Generator[TestClient, None, None]:
     monkeypatch.setenv("WORKFLOW_STORAGE_DIR", str(tmp_path / "workflow_jobs"))
     monkeypatch.setenv("WORKFLOW_RETENTION_DAYS", "7")
     monkeypatch.setenv("WORKFLOW_USE_MOCKS", "true")
+    monkeypatch.setenv("WORKFLOW_ALLOW_INSECURE_DIRECT_ACCESS", "true")
     reset_settings_cache()
     from app.main import create_app
 

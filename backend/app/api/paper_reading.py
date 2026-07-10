@@ -12,12 +12,13 @@ import httpx
 from fastapi import APIRouter, File, Form, HTTPException, Request, UploadFile
 from pydantic import BaseModel, Field, field_validator
 
+from app.core.access import owner_id_from_request, require_owner_access
 from app.models.job import Artifact, WorkflowType
 from app.services.deepseek_client import DeepSeekClient
 from app.services.docx_exporter import DocxExporter
 from app.services.mineru_client import MineruClient
 from app.workflows.paper_reading import PaperReadingWorkflow
-from app.workflows.scheduler import WorkflowLimitError, owner_id_from_request
+from app.workflows.scheduler import WorkflowLimitError
 
 router = APIRouter(prefix="/api/workflows/paper-reading", tags=["paper-reading"])
 
@@ -263,6 +264,7 @@ async def _write_limited_pdf_upload(file: UploadFile, storage_dir: Path, max_byt
 def _consume_chunked_pdf_upload(request: Request, upload_id: str, storage_dir: Path, max_bytes: int) -> Path:
     source_dir = _upload_dir(request, upload_id)
     metadata = _read_upload_metadata(source_dir)
+    require_owner_access(str(metadata.get("owner_id") or "anonymous"), request)
     _validate_pdf_metadata_values(
         str(metadata.get("filename") or ""),
         str(metadata.get("media_type") or ""),
@@ -325,6 +327,7 @@ def create_file_upload(payload: PaperFileUploadInitRequest, request: Request) ->
         "size_bytes": payload.size_bytes,
         "total_chunks": payload.total_chunks,
         "created_at": datetime.now(UTC).isoformat(),
+        "owner_id": owner_id_from_request(request),
     }
     (upload_dir / "metadata.json").write_text(json.dumps(metadata, ensure_ascii=False, indent=2), encoding="utf-8")
     return {"upload_id": upload_id, "chunk_size_bytes": PAPER_FILE_CHUNK_MAX_BYTES}
@@ -346,6 +349,7 @@ async def create_cos_upload(payload: PaperCosUploadInitRequest, request: Request
 async def upload_file_chunk(upload_id: str, chunk_index: int, request: Request) -> dict:
     upload_dir = _upload_dir(request, upload_id)
     metadata = _read_upload_metadata(upload_dir)
+    require_owner_access(str(metadata.get("owner_id") or "anonymous"), request)
     total_chunks = int(metadata.get("total_chunks") or 0)
     if chunk_index < 0 or chunk_index >= total_chunks:
         raise HTTPException(status_code=400, detail="Invalid chunk index")

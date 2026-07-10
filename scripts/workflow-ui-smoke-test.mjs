@@ -40,10 +40,11 @@ const required = [
   'id="sourceRequestHomepageUrl"',
   'id="sourceContributionStatus"',
   'id="sourceRequestRows"',
+  'id="wechatDraftRows"',
   'id="refreshSourceRequests"',
-  "先自动尝试已知接入方式",
-  "RSS、RSSHub、页面适配",
-  "自动接入尝试失败",
+  "当前先进入待探测队列",
+  "自动探测尚未启用",
+  "包含待探测与失败后待人工复核",
   "/api/source-requests",
   "createSourceRequest",
   "fetchSourceRequests",
@@ -77,10 +78,12 @@ const required = [
   'name="materials"',
   'id="wechatWritingTitle"',
   'id="wechatDraftImport"',
-  "导入草稿箱",
+  "生成导入记录",
   "/api/wechat-drafts",
   "importWechatDraft",
-  "草稿箱导入请求已记录",
+  "fetchWechatDraftImports",
+  "loadAdminInbox",
+  "当前未调用微信草稿 API",
   "splitWorkflowTitle",
   "composeWechatMarkdownForExport",
   "createPaperReadingJob",
@@ -97,6 +100,8 @@ const required = [
   "logoutWorkshop",
   "ensureWorkshopAuthenticated",
   "applyWorkshopRoleVisibility",
+  "isCurrentAdminInboxRequest",
+  "revision: 0",
   "isWorkshopAdmin",
   "canAccessView",
   "管理员信箱",
@@ -172,6 +177,7 @@ const forbidden = [
   "选题重写",
   "推送设置",
   "任务监控",
+  '$$("[data-admin-only]").forEach',
 ].filter((item) => html.includes(item));
 
 if (missing.length > 0) {
@@ -190,6 +196,26 @@ const missingPages = sidebarViews.filter((view) => !pageViews.has(view));
 
 if (missingPages.length > 0) {
   console.error(`Sidebar views without matching pages: ${missingPages.join(", ")}`);
+  process.exit(1);
+}
+
+const parseHttpUrlMatch = html.match(
+  /const parseHttpUrl = \(value\) => \{([\s\S]*?)\n\s*\};\n\s*const validUrl/,
+);
+if (!parseHttpUrlMatch) {
+  console.error("Unable to extract parseHttpUrl for executable checks");
+  process.exit(1);
+}
+
+const parseHttpUrl = Function("value", parseHttpUrlMatch[1]);
+for (const value of ["http:example.com", "http:///path", "ftp://example.com", "http://[", "http://example.com\\@evil.test", ""]) {
+  if (parseHttpUrl(value) !== null) {
+    console.error(`parseHttpUrl accepted malformed value: ${value}`);
+    process.exit(1);
+  }
+}
+if (parseHttpUrl("https://example.com/path")?.hostname !== "example.com") {
+  console.error("parseHttpUrl rejected a valid HTTPS URL");
   process.exit(1);
 }
 

@@ -7,7 +7,7 @@ const {
 } = require("./workshop-auth.js");
 
 const BACKEND_ORIGIN = process.env.SCIENCE_WORKSHOP_BACKEND_ORIGIN || "http://106.53.153.215";
-const BACKEND_PREFIX = process.env.SCIENCE_WORKSHOP_BACKEND_PREFIX || "/science-workshop-api";
+const BACKEND_PREFIX = process.env.SCIENCE_WORKSHOP_BACKEND_PREFIX ?? "/science-workshop-api";
 const WORKSHOP_USER_HEADER = "x-workshop-user";
 const WORKSHOP_ROLE_HEADER = "x-workshop-role";
 const HOP_BY_HOP_HEADERS = new Set([
@@ -23,20 +23,57 @@ const HOP_BY_HOP_HEADERS = new Set([
   "upgrade",
 ]);
 
-function backendPathFromRequest(req) {
+function canonicalizeBackendPath(path) {
+  let decoded = String(path || "");
+  for (let index = 0; index < 8 && /%[0-9a-f]{2}/i.test(decoded); index += 1) {
+    try {
+      decoded = decodeURIComponent(decoded);
+    } catch (_error) {
+      throw new Error("Invalid backend path");
+    }
+  }
+  if (/%[0-9a-f]{2}/i.test(decoded) || /[\\\u0000-\u001f\u007f]/.test(decoded)) {
+    throw new Error("Invalid backend path");
+  }
+  return decoded.replace(/^\/+/, "");
+}
+
+function encodeBackendPath(path) {
+  return String(path || "")
+    .replace(/^\/+/, "")
+    .split("/")
+    .map((segment) => encodeURIComponent(segment))
+    .join("/");
+}
+
+function backendTargetFromRequest(req) {
   const parsed = new URL(req.url || "/", "http://localhost");
-  let path = parsed.searchParams.get("path") || "";
+  const pathParameter = parsed.searchParams.get("path");
+  let path = pathParameter || "";
   parsed.searchParams.delete("path");
 
   if (!path) {
     path = parsed.pathname
       .replace(/^\/api\/science-workshop-proxy\/?/, "")
       .replace(/^\/science-workshop-api\/?/, "");
+    try {
+      path = decodeURIComponent(path);
+    } catch (_error) {
+      throw new Error("Invalid backend path");
+    }
   }
 
-  path = path.replace(/^\/+/, "");
+  if (/[\\\u0000-\u001f\u007f]/.test(path)) throw new Error("Invalid backend path");
+  const canonicalPath = canonicalizeBackendPath(path);
   const query = parsed.searchParams.toString();
-  return `${BACKEND_PREFIX}/${path}${query ? `?${query}` : ""}`;
+  const prefix = String(BACKEND_PREFIX).replace(/\/+$/, "");
+  const target = new URL(`${prefix}/${encodeBackendPath(path)}`, BACKEND_ORIGIN);
+  const authorizationTarget = new URL(`${prefix}/${encodeBackendPath(canonicalPath)}`, BACKEND_ORIGIN);
+  target.search = query ? `?${query}` : "";
+  return {
+    authorizationPath: decodeURIComponent(authorizationTarget.pathname),
+    target,
+  };
 }
 
 function requestHeaders(req) {
@@ -77,9 +114,16 @@ function copyResponseHeaders(upstream, res) {
 }
 
 module.exports = async function scienceWorkshopProxy(req, res) {
-  const target = new URL(backendPathFromRequest(req), BACKEND_ORIGIN);
+  let target;
+  let authorizationPath;
+  try {
+    ({ authorizationPath, target } = backendTargetFromRequest(req));
+  } catch (_error) {
+    writeJson(res, 400, { detail: "Invalid backend path" });
+    return;
+  }
   const body = requestBody(req);
-  const protectedRoute = isProtectedBackendPath(target.pathname);
+  const protectedRoute = isProtectedBackendPath(authorizationPath);
   const session = readSession(req.headers.cookie || "");
 
   if (protectedRoute && !session) {
@@ -91,9 +135,9 @@ module.exports = async function scienceWorkshopProxy(req, res) {
   if (protectedRoute && session?.username) {
     headers.set(WORKSHOP_USER_HEADER, session.username);
     headers.set(WORKSHOP_ROLE_HEADER, session.role || "user");
-  }
-  if (process.env.SCIENCE_WORKSHOP_PROXY_SECRET) {
-    headers.set(PROXY_SECRET_HEADER, process.env.SCIENCE_WORKSHOP_PROXY_SECRET);
+    if (process.env.SCIENCE_WORKSHOP_PROXY_SECRET) {
+      headers.set(PROXY_SECRET_HEADER, process.env.SCIENCE_WORKSHOP_PROXY_SECRET);
+    }
   }
 
   try {

@@ -64,6 +64,7 @@ function createMockResponse() {
 
 process.env.SCIENCE_WORKSHOP_PROXY_SECRET = "proxy-secret";
 process.env.SCIENCE_WORKSHOP_BACKEND_ORIGIN = "http://backend.local";
+process.env.SCIENCE_WORKSHOP_BACKEND_PREFIX = "";
 process.env.WORKSHOP_AUTH_USERNAME = "4tc";
 process.env.WORKSHOP_AUTH_PASSWORD_HASH = passwordHash;
 process.env.WORKSHOP_USER_USERNAME = "reader";
@@ -124,6 +125,7 @@ assert.match(logoutResponse.headers["set-cookie"], /Max-Age=0/);
 assert.match(logoutResponse.headers["set-cookie"], /Secure/);
 
 const unauthorizedResponse = createMockResponse();
+const originalFetch = globalThis.fetch;
 await proxy(
   {
     method: "GET",
@@ -136,11 +138,30 @@ await proxy(
 assert.equal(unauthorizedResponse.statusCode, 401);
 assert.equal(JSON.parse(unauthorizedResponse.body).detail, "Unauthorized");
 
+let encodedBypassFetches = 0;
+globalThis.fetch = async () => {
+  encodedBypassFetches += 1;
+  return new Response(null, { status: 204 });
+};
+const encodedBypassResponse = createMockResponse();
+await proxy(
+  {
+    method: "GET",
+    url: "/api/science-workshop-proxy?path=api%25252Fjobs%25252Fjob-1",
+    headers: {},
+  },
+  encodedBypassResponse,
+);
+globalThis.fetch = originalFetch;
+assert.equal(encodedBypassResponse.statusCode, 401);
+assert.equal(encodedBypassFetches, 0);
+
 let forwardedSecret = "";
 let forwardedUser = "";
 let forwardedRole = "";
-const originalFetch = globalThis.fetch;
-globalThis.fetch = async (_target, options) => {
+let forwardedTarget = "";
+globalThis.fetch = async (target, options) => {
+  forwardedTarget = String(target);
   forwardedSecret = options.headers.get("x-science-workshop-proxy-secret");
   forwardedUser = options.headers.get("x-workshop-user");
   forwardedRole = options.headers.get("x-workshop-role");
@@ -167,5 +188,47 @@ assert.equal(authorizedResponse.statusCode, 204);
 assert.equal(forwardedSecret, "proxy-secret");
 assert.equal(forwardedUser, "4tc");
 assert.equal(forwardedRole, "admin");
+assert.equal(forwardedTarget, "http://backend.local/api/jobs/job-1");
+
+let percentArtifactFetches = 0;
+let percentArtifactTarget = "";
+globalThis.fetch = async (target) => {
+  percentArtifactFetches += 1;
+  percentArtifactTarget = String(target);
+  return new Response(null, { status: 204 });
+};
+const percentArtifactResponse = createMockResponse();
+await proxy(
+  {
+    method: "GET",
+    url: "/science-workshop-api/api/jobs/job-1/artifacts/100%25-result.md",
+    headers: { cookie: `science_workshop_session=${proxyCookieValue}` },
+  },
+  percentArtifactResponse,
+);
+assert.equal(percentArtifactResponse.statusCode, 204);
+assert.equal(percentArtifactFetches, 1);
+assert.equal(percentArtifactTarget, "http://backend.local/api/jobs/job-1/artifacts/100%25-result.md");
+
+let publicSecret = "not-checked";
+let publicTarget = "";
+globalThis.fetch = async (target, options) => {
+  publicTarget = String(target);
+  publicSecret = options.headers.get("x-science-workshop-proxy-secret");
+  return new Response(null, { status: 204 });
+};
+const publicResponse = createMockResponse();
+await proxy(
+  {
+    method: "GET",
+    url: "/science-workshop-api/api/health",
+    headers: {},
+  },
+  publicResponse,
+);
+globalThis.fetch = originalFetch;
+assert.equal(publicResponse.statusCode, 204);
+assert.equal(publicSecret, null);
+assert.equal(publicTarget, "http://backend.local/api/health");
 
 console.log("workshop auth helpers ok");

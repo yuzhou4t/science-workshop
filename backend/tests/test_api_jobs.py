@@ -57,6 +57,37 @@ def test_artifact_download_uses_safe_content_disposition_for_non_ascii_filename(
     assert "filename*=UTF-8''%E7%BB%88%E7%A8%BF.md" in content_disposition
 
 
+def test_job_resources_require_owner_or_admin(client: TestClient) -> None:
+    store = client.app.state.job_store
+    job = store.create_job(WorkflowType.PAPER_READING, template_id="africa-reading", owner_id="alice")
+    store.write_text_artifact(job, "nodes/final.md", "# Alice final")
+    bob_headers = {"x-workshop-user": "bob", "x-workshop-role": "user"}
+
+    responses = [
+        client.get(f"/api/jobs/{job.job_id}", headers=bob_headers),
+        client.get(f"/api/jobs/{job.job_id}/artifacts/final.md", headers=bob_headers),
+        client.post(f"/api/jobs/{job.job_id}/export/docx", headers=bob_headers),
+        client.patch(
+            f"/api/jobs/{job.job_id}/nodes/final",
+            json={"content": "stolen edit"},
+            headers=bob_headers,
+        ),
+        client.post(
+            f"/api/jobs/{job.job_id}/rerun",
+            json={"from_node": "final"},
+            headers=bob_headers,
+        ),
+        client.get(f"/api/jobs/{job.job_id}/events", headers=bob_headers),
+    ]
+
+    assert all(response.status_code == 403 for response in responses)
+    assert client.get(f"/api/jobs/{job.job_id}", headers={"x-workshop-user": "alice"}).status_code == 200
+    assert client.get(
+        f"/api/jobs/{job.job_id}",
+        headers={"x-workshop-user": "admin", "x-workshop-role": "admin"},
+    ).status_code == 200
+
+
 def test_docx_export_creates_downloadable_docx_artifact(client: TestClient) -> None:
     store = client.app.state.job_store
     job = store.create_job(WorkflowType.PAPER_READING, template_id="africa-reading")
@@ -141,6 +172,44 @@ def test_create_paper_reading_job_accepts_chunked_pdf_upload(client: TestClient)
     assert body["artifacts"]["input.pdf"]["relative_path"] == "input/input.pdf"
     assert (store.job_dir(body["job_id"]) / "input" / "input.pdf").read_bytes() == pdf_bytes
     assert not (store.root / "_uploads" / "paper-reading" / upload_id).exists()
+
+
+def test_chunked_pdf_upload_is_scoped_to_its_owner(client: TestClient) -> None:
+    pdf_bytes = b"%PDF-1.4 private upload"
+    init_response = client.post(
+        "/api/workflows/paper-reading/file-uploads",
+        json={
+            "filename": "paper.pdf",
+            "media_type": "application/pdf",
+            "size_bytes": len(pdf_bytes),
+            "total_chunks": 1,
+        },
+        headers={"x-workshop-user": "alice"},
+    )
+    upload_id = init_response.json()["upload_id"]
+
+    denied_chunk = client.put(
+        f"/api/workflows/paper-reading/file-uploads/{upload_id}/chunks/0",
+        content=pdf_bytes,
+        headers={"x-workshop-user": "bob"},
+    )
+    accepted_chunk = client.put(
+        f"/api/workflows/paper-reading/file-uploads/{upload_id}/chunks/0",
+        content=pdf_bytes,
+        headers={"x-workshop-user": "alice"},
+    )
+    denied_consume = client.post(
+        "/api/workflows/paper-reading/jobs",
+        data={"file_upload_id": upload_id},
+        headers={"x-workshop-user": "bob"},
+    )
+
+    assert denied_chunk.status_code == 403
+    assert accepted_chunk.status_code == 200
+    assert denied_consume.status_code == 403
+    store = client.app.state.job_store
+    assert store.list_jobs() == []
+    assert (store.root / "_uploads" / "paper-reading" / upload_id).exists()
 
 
 def test_create_paper_reading_job_accepts_cos_pdf_object_key(
@@ -297,12 +366,14 @@ def test_create_issue_toc_export_job_completes_with_structured_issue(client: Tes
                 }
             ],
         },
+        headers={"x-workshop-user": "alice"},
     )
 
     assert response.status_code == 200
     body = response.json()
     assert body["workflow_type"] == "issue_toc_export"
     assert body["status"] == "completed"
+    assert body["owner_id"] == "alice"
     assert body["artifacts"]["issue_toc.json"]["relative_path"] == "input/issue_toc.json"
     assert body["artifacts"]["final.md"]["relative_path"] == "nodes/final.md"
 
@@ -370,6 +441,84 @@ def test_create_wechat_writing_job_accepts_chunked_material_upload(client: TestC
     assert source_bundle["uploaded_materials"][0]["content"] == "第一段材料第二段材料"
     assert body["artifacts"]["长材料.md"]["relative_path"] == "input/materials/长材料.md"
     assert not (store.root / "_uploads" / "wechat-materials" / upload_id).exists()
+
+
+def test_chunked_wechat_material_upload_is_scoped_to_its_owner(client: TestClient) -> None:
+    material = "private material".encode()
+    init_response = client.post(
+        "/api/workflows/wechat-writing/material-uploads",
+        json={
+            "filename": "private.md",
+            "media_type": "text/markdown",
+            "size_bytes": len(material),
+            "total_chunks": 1,
+        },
+        headers={"x-workshop-user": "alice"},
+    )
+    upload_id = init_response.json()["upload_id"]
+
+    denied_chunk = client.put(
+        f"/api/workflows/wechat-writing/material-uploads/{upload_id}/chunks/0",
+        content=material,
+        headers={"x-workshop-user": "bob"},
+    )
+    accepted_chunk = client.put(
+        f"/api/workflows/wechat-writing/material-uploads/{upload_id}/chunks/0",
+        content=material,
+        headers={"x-workshop-user": "alice"},
+    )
+    denied_consume = client.post(
+        "/api/workflows/wechat-writing/jobs",
+        data={"material_upload_ids": json.dumps([upload_id])},
+        headers={"x-workshop-user": "bob"},
+    )
+
+    assert denied_chunk.status_code == 403
+    assert accepted_chunk.status_code == 200
+    assert denied_consume.status_code == 403
+    store = client.app.state.job_store
+    assert store.list_jobs() == []
+    assert (store.root / "_uploads" / "wechat-materials" / upload_id).exists()
+
+
+def test_chunked_wechat_material_preflight_preserves_all_uploads_on_late_owner_failure(
+    client: TestClient,
+) -> None:
+    def create_complete_upload(owner: str, filename: str, content: bytes) -> str:
+        init_response = client.post(
+            "/api/workflows/wechat-writing/material-uploads",
+            json={
+                "filename": filename,
+                "media_type": "text/markdown",
+                "size_bytes": len(content),
+                "total_chunks": 1,
+            },
+            headers={"x-workshop-user": owner},
+        )
+        upload_id = init_response.json()["upload_id"]
+        chunk_response = client.put(
+            f"/api/workflows/wechat-writing/material-uploads/{upload_id}/chunks/0",
+            content=content,
+            headers={"x-workshop-user": owner},
+        )
+        assert chunk_response.status_code == 200
+        return upload_id
+
+    bob_upload_id = create_complete_upload("bob", "bob.md", b"bob material")
+    alice_upload_id = create_complete_upload("alice", "alice.md", b"alice material")
+
+    response = client.post(
+        "/api/workflows/wechat-writing/jobs",
+        data={"material_upload_ids": json.dumps([bob_upload_id, alice_upload_id])},
+        headers={"x-workshop-user": "bob"},
+    )
+
+    store = client.app.state.job_store
+    upload_root = store.root / "_uploads" / "wechat-materials"
+    assert response.status_code == 403
+    assert store.list_jobs() == []
+    assert (upload_root / bob_upload_id).exists()
+    assert (upload_root / alice_upload_id).exists()
 
 
 def test_create_wechat_writing_job_accepts_cos_material_object_key(
@@ -518,6 +667,20 @@ def test_create_wechat_writing_job_rejects_missing_paper_reading_job(client: Tes
     assert response.json()["detail"] == "Referenced paper-reading job not found"
 
 
+def test_create_wechat_writing_job_rejects_other_users_paper_evidence(client: TestClient) -> None:
+    store = client.app.state.job_store
+    paper_job = store.create_job(WorkflowType.PAPER_READING, template_id="africa-reading", owner_id="alice")
+    store.write_text_artifact(paper_job, "nodes/final.md", "# Alice private evidence")
+
+    response = client.post(
+        "/api/workflows/wechat-writing/jobs",
+        data={"paper_reading_job_id": paper_job.job_id},
+        headers={"x-workshop-user": "bob"},
+    )
+
+    assert response.status_code == 403
+
+
 def test_create_wechat_writing_job_rejects_empty_source(client: TestClient) -> None:
     response = client.post("/api/workflows/wechat-writing/jobs", data={})
 
@@ -612,6 +775,7 @@ def test_create_paper_reading_job_rejects_oversized_upload(tmp_path, monkeypatch
     monkeypatch.setenv("WORKFLOW_STORAGE_DIR", str(tmp_path / "workflow_jobs"))
     monkeypatch.setenv("WORKFLOW_RETENTION_DAYS", "7")
     monkeypatch.setenv("WORKFLOW_USE_MOCKS", "true")
+    monkeypatch.setenv("WORKFLOW_ALLOW_INSECURE_DIRECT_ACCESS", "true")
     monkeypatch.setenv("PAPER_READING_MAX_UPLOAD_BYTES", "12")
     reset_settings_cache()
     from app.main import create_app

@@ -14,12 +14,13 @@ import httpx
 from fastapi import APIRouter, File, Form, HTTPException, Request, UploadFile
 from pydantic import BaseModel, Field, field_validator
 
+from app.core.access import load_accessible_job, owner_id_from_request, require_owner_access
 from app.models.job import Artifact, WorkflowType
 from app.services.deepseek_client import DeepSeekClient
 from app.services.docx_exporter import DocxExporter
 from app.storage.job_store import JobNotFoundError
 from app.workflows.wechat_writing import WeChatWritingWorkflow
-from app.workflows.scheduler import WorkflowLimitError, owner_id_from_request
+from app.workflows.scheduler import WorkflowLimitError
 
 router = APIRouter(prefix="/api/workflows/wechat-writing", tags=["wechat-writing"])
 
@@ -438,6 +439,7 @@ def _consume_chunked_material_uploads(
     for index, upload_id in enumerate(upload_ids, start=1):
         source_dir = _upload_dir(request, upload_id)
         metadata = _read_upload_metadata(source_dir)
+        require_owner_access(str(metadata.get("owner_id") or "anonymous"), request)
         total_chunks = int(metadata.get("total_chunks") or 0)
         media_type = str(metadata.get("media_type") or "application/octet-stream")
         filename = _unique_material_filename(
@@ -476,10 +478,28 @@ def _consume_chunked_material_uploads(
                 "content": text_content,
             }
         )
-        shutil.rmtree(source_dir, ignore_errors=True)
-
     store.save_job(job)
     return uploaded
+
+
+def _preflight_chunked_material_uploads(
+    request: Request,
+    upload_ids: list[str],
+    max_bytes: int,
+) -> None:
+    for upload_id in upload_ids:
+        source_dir = _upload_dir(request, upload_id)
+        metadata = _read_upload_metadata(source_dir)
+        require_owner_access(str(metadata.get("owner_id") or "anonymous"), request)
+        total_chunks = int(metadata.get("total_chunks") or 0)
+        if total_chunks <= 0:
+            raise HTTPException(status_code=400, detail=f"Material upload is incomplete: {upload_id}")
+        chunk_dir = source_dir / "chunks"
+        chunk_paths = [chunk_dir / f"{chunk_index}.part" for chunk_index in range(total_chunks)]
+        if any(not chunk_path.exists() for chunk_path in chunk_paths):
+            raise HTTPException(status_code=400, detail=f"Material upload is incomplete: {upload_id}")
+        if sum(chunk_path.stat().st_size for chunk_path in chunk_paths) > max_bytes:
+            raise HTTPException(status_code=413, detail="Uploaded material is too large")
 
 
 def _read_referenced_text_artifact(store, referenced_job, artifact_name: str, fallback_relative_path: str) -> dict | None:
@@ -507,11 +527,12 @@ def _read_referenced_text_artifact(store, referenced_job, artifact_name: str, fa
     return {"artifact": artifact_name, "relative_path": relative_path, "content": content}
 
 
-def _collect_paper_reading_evidence(store, paper_reading_job_id: str) -> list[dict[str, Any]]:
-    try:
-        referenced_job = store.load_job(paper_reading_job_id)
-    except JobNotFoundError as exc:
-        raise HTTPException(status_code=404, detail="Referenced paper-reading job not found") from exc
+def _collect_paper_reading_evidence(request: Request, store, paper_reading_job_id: str) -> list[dict[str, Any]]:
+    referenced_job = load_accessible_job(
+        request,
+        paper_reading_job_id,
+        not_found_detail="Referenced paper-reading job not found",
+    )
     if referenced_job.workflow_type != WorkflowType.PAPER_READING:
         raise HTTPException(status_code=404, detail="Referenced paper-reading job not found")
 
@@ -539,6 +560,7 @@ def create_material_upload(payload: MaterialUploadInitRequest, request: Request)
         "size_bytes": payload.size_bytes,
         "total_chunks": payload.total_chunks,
         "created_at": datetime.now(UTC).isoformat(),
+        "owner_id": owner_id_from_request(request),
     }
     (upload_dir / "metadata.json").write_text(json.dumps(metadata, ensure_ascii=False, indent=2), encoding="utf-8")
     return {
@@ -562,6 +584,7 @@ async def create_cos_material_upload(payload: MaterialCosUploadInitRequest, requ
 async def upload_material_chunk(upload_id: str, chunk_index: int, request: Request) -> dict[str, Any]:
     upload_dir = _upload_dir(request, upload_id)
     metadata = _read_upload_metadata(upload_dir)
+    require_owner_access(str(metadata.get("owner_id") or "anonymous"), request)
     total_chunks = int(metadata.get("total_chunks") or 0)
     if chunk_index < 0 or chunk_index >= total_chunks:
         raise HTTPException(status_code=400, detail="Invalid chunk index")
@@ -600,8 +623,13 @@ async def create_wechat_writing_job(
     store = request.app.state.job_store
     evidence_chain = []
     if paper_reading_job_id:
-        evidence_chain = _collect_paper_reading_evidence(store, paper_reading_job_id)
+        evidence_chain = _collect_paper_reading_evidence(request, store, paper_reading_job_id)
     chunked_upload_ids = _parse_material_upload_ids(material_upload_ids)
+    _preflight_chunked_material_uploads(
+        request,
+        chunked_upload_ids,
+        settings.paper_reading_max_upload_bytes,
+    )
     cos_object_keys = _parse_material_cos_object_keys(material_cos_object_keys, settings)
     incoming_materials = [material for material in materials or [] if material.filename]
     if not source_text.strip() and not evidence_chain and not incoming_materials and not chunked_upload_ids and not cos_object_keys:
@@ -614,46 +642,53 @@ async def create_wechat_writing_job(
         _raise_workflow_limit(exc)
 
     job = store.create_job(WorkflowType.WECHAT_WRITING, template_id=template_id, owner_id=owner_id)
-    uploaded_materials = await _write_uploaded_materials(
-        store,
-        job,
-        incoming_materials,
-        settings.paper_reading_max_upload_bytes,
-    )
-    uploaded_materials.extend(
-        _consume_chunked_material_uploads(
-            request,
+    try:
+        uploaded_materials = await _write_uploaded_materials(
             store,
             job,
-            chunked_upload_ids,
+            incoming_materials,
             settings.paper_reading_max_upload_bytes,
         )
-    )
-    for index, object_key in enumerate(cos_object_keys, start=1):
-        uploaded_materials.append(
-            await _copy_cos_material_to_job(
+        uploaded_materials.extend(
+            _consume_chunked_material_uploads(
                 request,
                 store,
                 job,
-                object_key,
-                index,
+                chunked_upload_ids,
                 settings.paper_reading_max_upload_bytes,
             )
         )
-    source_bundle = {
-        "source_text": source_text,
-        "article_id": article_id,
-        "paper_reading_job_id": paper_reading_job_id,
-        "template_id": template_id,
-        "evidence_chain": evidence_chain,
-        "uploaded_materials": uploaded_materials,
-    }
-    store.write_text_artifact(
-        job,
-        "input/source_bundle.json",
-        json.dumps(source_bundle, ensure_ascii=False, indent=2),
-        media_type="application/json",
-    )
+        for index, object_key in enumerate(cos_object_keys, start=1):
+            uploaded_materials.append(
+                await _copy_cos_material_to_job(
+                    request,
+                    store,
+                    job,
+                    object_key,
+                    index,
+                    settings.paper_reading_max_upload_bytes,
+                )
+            )
+        source_bundle = {
+            "source_text": source_text,
+            "article_id": article_id,
+            "paper_reading_job_id": paper_reading_job_id,
+            "template_id": template_id,
+            "evidence_chain": evidence_chain,
+            "uploaded_materials": uploaded_materials,
+        }
+        store.write_text_artifact(
+            job,
+            "input/source_bundle.json",
+            json.dumps(source_bundle, ensure_ascii=False, indent=2),
+            media_type="application/json",
+        )
+    except Exception:
+        shutil.rmtree(store.job_dir(job.job_id), ignore_errors=True)
+        raise
+
+    for upload_id in chunked_upload_ids:
+        shutil.rmtree(_upload_dir(request, upload_id), ignore_errors=True)
 
     workflow = WeChatWritingWorkflow(
         store=store,

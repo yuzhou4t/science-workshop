@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/science-workshop-api/:path*",
-      "destination": "/api/science-workshop-proxy?path=:path*"
+      "destination": "/api/science-workshop-proxy"
     }
   ]
 }

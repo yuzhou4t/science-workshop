@@ -37,11 +37,22 @@ def create_app() -> FastAPI:
 
     @app.middleware("http")
     async def require_proxy_secret(request: Request, call_next):
-        proxy_secret = request.app.state.settings.science_workshop_proxy_secret
-        if proxy_secret and request.url.path.startswith(PROTECTED_PREFIXES):
-            header_secret = request.headers.get("x-science-workshop-proxy-secret", "")
-            if not secrets.compare_digest(header_secret, proxy_secret):
-                return JSONResponse({"detail": "Unauthorized"}, status_code=401)
+        request.state.proxy_authenticated = False
+        if request.url.path.startswith(PROTECTED_PREFIXES):
+            settings = request.app.state.settings
+            proxy_secret = settings.science_workshop_proxy_secret
+            if proxy_secret:
+                header_secret = request.headers.get("x-science-workshop-proxy-secret", "")
+                if not secrets.compare_digest(header_secret, proxy_secret):
+                    return JSONResponse({"detail": "Unauthorized"}, status_code=401)
+                if not request.headers.get("x-workshop-user", "").strip():
+                    return JSONResponse({"detail": "Authenticated user is required"}, status_code=401)
+                request.state.proxy_authenticated = True
+            elif not settings.workflow_allow_insecure_direct_access:
+                return JSONResponse(
+                    {"detail": "Protected API proxy secret is not configured"},
+                    status_code=503,
+                )
         return await call_next(request)
 
     app.include_router(jobs.router)

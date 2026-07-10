@@ -2835,7 +2835,7 @@
             <div class="header-row">
               <div class="header-main">
                 <h1 class="title">数据源共建</h1>
-                <div class="subtitle">提交期刊官网、Feed 或目录线索，先自动尝试已知接入方式，失败后进入管理员信箱</div>
+                <div class="subtitle">提交期刊官网、Feed 或目录线索；当前先进入待探测队列，由管理员统一查看</div>
               </div>
             </div>
           </section>
@@ -2844,7 +2844,7 @@
             <section class="workflow-panel breath-surface" id="sourceContributionPanel">
               <div class="workflow-header">
                 <h2>新增期刊来源</h2>
-                <p>提交后先进入接入尝试队列，不会直接改动正式抓取注册表。</p>
+                <p>提交后进入待探测队列，不会直接改动正式抓取注册表。</p>
               </div>
               <form id="sourceContributionForm" class="workflow-form">
                 <div class="workflow-form-row">
@@ -2868,7 +2868,7 @@
                 </div>
                 <textarea class="field workflow-source" id="sourceRequestNotes" name="notes" rows="5" placeholder="补充说明：过刊页、样例文章、特殊访问方式、推荐理由"></textarea>
                 <div class="workflow-export-row">
-                  <span class="workflow-export-hint">RSS、RSSHub、页面适配等方式都失败后进入管理员信箱</span>
+                  <span class="workflow-export-hint">自动探测尚未启用；管理员可在信箱查看并人工复核</span>
                   <button class="btn btn-primary" type="submit">提交来源</button>
                 </div>
               </form>
@@ -3017,7 +3017,7 @@
             <div class="header-row">
               <div class="header-main">
                 <h1 class="title">管理员信箱</h1>
-                <div class="subtitle">自动接入尝试失败后的数据源申请，复核后再进入正式维护流程</div>
+                <div class="subtitle">查看数据源接入队列与公众号草稿导入记录</div>
               </div>
               <div class="header-actions">
                 <button class="btn btn-ghost" id="refreshSourceRequests" type="button">刷新信箱</button>
@@ -3027,7 +3027,7 @@
           <section class="panel table-panel">
             <div class="source-toolbar">
               <strong>数据源申请</strong>
-              <span class="summary-hint">已知接入方式暂未跑通的新增数据源申请，只对管理员可见</span>
+              <span class="summary-hint">包含待探测与失败后待人工复核的申请；自动探测尚未启用</span>
             </div>
             <div class="source-table-wrap">
               <table>
@@ -3044,6 +3044,27 @@
                   </tr>
                 </thead>
                 <tbody id="sourceRequestRows"></tbody>
+              </table>
+            </div>
+          </section>
+          <section class="panel table-panel">
+            <div class="source-toolbar">
+              <strong>公众号草稿导入记录</strong>
+              <span class="summary-hint">当前只保存 prepared 记录，未调用微信草稿 API</span>
+            </div>
+            <div class="source-table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>提交时间</th>
+                    <th>标题</th>
+                    <th>来源任务</th>
+                    <th>提交人</th>
+                    <th>模式</th>
+                    <th>状态</th>
+                  </tr>
+                </thead>
+                <tbody id="wechatDraftRows"></tbody>
               </table>
             </div>
           </section>
@@ -3222,7 +3243,7 @@
                   <span class="workflow-export-hint">标题与正文会合并导出，编辑内容即时同步</span>
                   <div class="workflow-export-actions">
                     <button class="btn btn-sm btn-ghost" id="wechatWritingCopy" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>复制 Markdown</button>
-                    <button class="btn btn-sm btn-ghost" id="wechatDraftImport" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m8 11 4 4 4-4"/><path d="M5 21h14"/></svg>导入草稿箱</button>
+                    <button class="btn btn-sm btn-ghost" id="wechatDraftImport" type="button" title="当前仅生成待导入记录"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m8 11 4 4 4-4"/><path d="M5 21h14"/></svg>生成导入记录</button>
                     <button class="btn btn-primary" id="wechatWritingExport" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg>导出 Word</button>
                   </div>
                 </div>
@@ -3362,10 +3383,20 @@
         ["22", "ADMINISTRATIVE SCIENCE QUARTERLY", "MANAGEMENT", "", "0001-8392", "https://www.johnson.cornell.edu/administrative-science-quarterly/", "https://www.johnson.cornell.edu/administrative-science-quarterly/", "https://journals.sagepub.com/doi/full/10.1177/00018392251405843", "A+"]
       ];
 
-      const validUrl = (value) => /^https?:\/\//i.test(value || "");
+      const parseHttpUrl = (value) => {
+        const raw = String(value ?? "").trim();
+        if (!/^https?:\/\/[^/?#\s\\]+(?:[/?#]|$)/i.test(raw)) return null;
+        try {
+          const url = new URL(raw);
+          return ["http:", "https:"].includes(url.protocol) && url.hostname ? url : null;
+        } catch {
+          return null;
+        }
+      };
+      const validUrl = (value) => Boolean(parseHttpUrl(value));
       const hasChinese = (value) => /[\u4e00-\u9fff]/.test(value || "");
       const escapeHtml = (value) => String(value ?? "").replace(/[&<>"']/g, (match) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#039;" })[match]);
-      const cleanUrlLabel = (value) => validUrl(value) ? new URL(value).hostname.replace(/^www\./, "") : (value ? value : "缺失");
+      const cleanUrlLabel = (value) => parseHttpUrl(value)?.hostname.replace(/^www\./, "") || (value ? value : "缺失");
 
       function inferSourceProfile({ lang, homepage, archive, sample, homepageOk, archiveOk, sampleOk }) {
         const urls = [homepage, archive, sample].join(" ").toLowerCase();
@@ -3981,9 +4012,7 @@
       const selectorText = (value) => String(value ?? "").replace(/\\/g, "\\\\").replace(/"/g, "\\\"");
       const escapeRegExp = (value) => String(value ?? "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
       const WORKFLOW_API_BASE = window.WORKFLOW_API_BASE || (
-        window.location.protocol === "file:" ||
-        window.location.hostname === "localhost" ||
-        window.location.hostname === "127.0.0.1"
+        window.location.protocol === "file:"
           ? "http://127.0.0.1:8000"
           : "/science-workshop-api"
       );
@@ -4030,9 +4059,11 @@
         authenticated: false,
         user: null,
         role: "guest",
-        pending: null
+        pending: null,
+        revision: 0
       };
       let sourceRequestLog = [];
+      let wechatDraftLog = [];
       const sleep = (ms) => new Promise((resolve) => window.setTimeout(resolve, ms));
 
       function workflowAuthAvailable() {
@@ -4047,6 +4078,21 @@
 
       function isWorkshopAdmin() {
         return workshopAuthState.role === "admin";
+      }
+
+      function updateWorkshopAuthState(authenticated, user, role) {
+        workshopAuthState.authenticated = Boolean(authenticated);
+        workshopAuthState.user = user || null;
+        workshopAuthState.role = role || "guest";
+        workshopAuthState.revision += 1;
+        if (!isWorkshopAdmin()) {
+          sourceRequestLog = [];
+          wechatDraftLog = [];
+        }
+      }
+
+      function isCurrentAdminInboxRequest(revision) {
+        return isWorkshopAdmin() && workshopAuthState.revision === revision;
       }
 
       function canAccessView(view) {
@@ -4074,11 +4120,18 @@
       }
 
       function applyWorkshopRoleVisibility() {
-        $$("[data-admin-only]").forEach((node) => {
+        $$(".side-link[data-admin-only]").forEach((node) => {
           node.hidden = !isWorkshopAdmin();
         });
         const active = document.querySelector(".side-link.active");
-        if (active?.hidden) switchView("tracking");
+        if (active?.hidden) {
+          switchView("tracking");
+        } else {
+          const activeView = active?.dataset.view || "tracking";
+          $$("[data-page]").forEach((page) => {
+            page.hidden = page.dataset.page !== activeView || (page.hasAttribute("data-admin-only") && !isWorkshopAdmin());
+          });
+        }
         renderWorkshopAuthDock();
       }
 
@@ -4127,9 +4180,7 @@
 
       async function refreshWorkshopAuth() {
         if (!workflowAuthAvailable()) {
-          workshopAuthState.authenticated = false;
-          workshopAuthState.user = null;
-          workshopAuthState.role = "guest";
+          updateWorkshopAuthState(false, null, "guest");
           applyWorkshopRoleVisibility();
           return false;
         }
@@ -4139,16 +4190,12 @@
             credentials: "same-origin"
           });
           const payload = await response.json();
-          workshopAuthState.authenticated = Boolean(payload.authenticated);
-          workshopAuthState.user = payload.user || null;
-          workshopAuthState.role = payload.user?.role || "guest";
+          updateWorkshopAuthState(Boolean(payload.authenticated), payload.user, payload.user?.role || "guest");
           applyWorkshopRoleVisibility();
-          if (isWorkshopAdmin()) loadSourceRequestLog();
+          if (isWorkshopAdmin()) loadAdminInbox();
           return workshopAuthState.authenticated;
         } catch {
-          workshopAuthState.authenticated = false;
-          workshopAuthState.user = null;
-          workshopAuthState.role = "guest";
+          updateWorkshopAuthState(false, null, "guest");
           applyWorkshopRoleVisibility();
           return false;
         }
@@ -4163,12 +4210,10 @@
             });
           }
         } finally {
-          workshopAuthState.authenticated = false;
-          workshopAuthState.user = null;
-          workshopAuthState.role = "guest";
-          sourceRequestLog = [];
+          updateWorkshopAuthState(false, null, "guest");
           applyWorkshopRoleVisibility();
           renderSourceRequestRows();
+          renderWechatDraftRows();
         }
       }
 
@@ -4185,7 +4230,8 @@
         const requestOptions = { ...options, headers, credentials: "same-origin" };
         const response = await fetch(url, requestOptions);
         if (response.status !== 401 || !workflowAuthAvailable()) return response;
-        workshopAuthState.authenticated = false;
+        updateWorkshopAuthState(false, null, "guest");
+        applyWorkshopRoleVisibility();
         await ensureWorkshopAuthenticated();
         return fetch(url, requestOptions);
       }
@@ -4969,6 +5015,14 @@
         return response.json();
       }
 
+      async function fetchWechatDraftImports() {
+        const response = await workshopFetch(`${WORKFLOW_API_BASE}/api/wechat-drafts`, {
+          cache: "no-store"
+        });
+        if (!response.ok) throw new Error(await workflowErrorMessage(response, "读取草稿导入记录失败"));
+        return response.json();
+      }
+
       async function importWechatDraft(payload) {
         const response = await workshopFetch(`${WORKFLOW_API_BASE}/api/wechat-drafts`, {
           method: "POST",
@@ -5077,18 +5131,14 @@
             });
             if (!response.ok) throw new Error(await workflowErrorMessage(response, "登录失败"));
             const loginResult = await response.json();
-            workshopAuthState.authenticated = true;
-            workshopAuthState.user = loginResult.user || null;
-            workshopAuthState.role = loginResult.user?.role || "user";
+            updateWorkshopAuthState(true, loginResult.user, loginResult.user?.role || "user");
             applyWorkshopRoleVisibility();
-            if (isWorkshopAdmin()) loadSourceRequestLog();
+            if (isWorkshopAdmin()) loadAdminInbox();
             const roleMismatch = requestedRole === "admin" && workshopAuthState.role !== "admin";
             setWorkshopLoginStatus(roleMismatch ? "已登录为普通账号，数据源维护仍不可见" : "登录成功", roleMismatch ? "running" : "complete");
             resolveWorkshopLogin();
           } catch (error) {
-            workshopAuthState.authenticated = false;
-            workshopAuthState.user = null;
-            workshopAuthState.role = "guest";
+            updateWorkshopAuthState(false, null, "guest");
             applyWorkshopRoleVisibility();
             setWorkshopLoginStatus(workflowDisplayError(error, "登录失败"), "error");
           }
@@ -5239,7 +5289,8 @@
                 content_markdown: markdown,
                 source_job_id: workflowJobs.wechatWriting || ""
               });
-              setWorkflowStatus(wechatStatus, "草稿箱导入请求已记录，当前为预留记录模式", "complete");
+              setWorkflowStatus(wechatStatus, "已生成待导入记录；当前未调用微信草稿 API", "complete");
+              if (isWorkshopAdmin()) loadWechatDraftLog();
             } catch (error) {
               setWorkflowStatus(wechatStatus, workflowDisplayError(error, "公众号草稿箱导入失败"), "error");
             }
@@ -5343,7 +5394,7 @@
           try {
             await createSourceRequest(payload);
             form.reset();
-            setWorkflowStatus(status, "已进入自动接入尝试队列；跑不通时会进入管理员信箱复核", "complete");
+            setWorkflowStatus(status, "已进入待探测队列；自动探测尚未启用，管理员可在信箱查看", "complete");
             if (isWorkshopAdmin()) loadSourceRequestLog();
           } catch (error) {
             setWorkflowStatus(status, workflowDisplayError(error, "数据源提交失败"), "error");
@@ -6120,17 +6171,43 @@
 
       async function loadSourceRequestLog() {
         if (!isWorkshopAdmin()) return;
+        const authRevision = workshopAuthState.revision;
         const rows = $("#sourceRequestRows");
         if (rows) rows.innerHTML = `<tr><td colspan="8"><div class="empty">正在读取管理员信箱...</div></td></tr>`;
         try {
           const payload = await fetchSourceRequests();
+          if (!isCurrentAdminInboxRequest(authRevision)) return;
           sourceRequestLog = Array.isArray(payload.requests) ? payload.requests : [];
         } catch (error) {
+          if (!isCurrentAdminInboxRequest(authRevision)) return;
           sourceRequestLog = [];
           if (rows) rows.innerHTML = `<tr><td colspan="8"><div class="empty">${escapeHtml(workflowDisplayError(error, "读取管理员信箱失败"))}</div></td></tr>`;
           return;
         }
         renderSourceRequestRows();
+      }
+
+      async function loadWechatDraftLog() {
+        if (!isWorkshopAdmin()) return;
+        const authRevision = workshopAuthState.revision;
+        const rows = $("#wechatDraftRows");
+        if (rows) rows.innerHTML = `<tr><td colspan="6"><div class="empty">正在读取草稿导入记录...</div></td></tr>`;
+        try {
+          const payload = await fetchWechatDraftImports();
+          if (!isCurrentAdminInboxRequest(authRevision)) return;
+          wechatDraftLog = Array.isArray(payload.drafts) ? payload.drafts : [];
+        } catch (error) {
+          if (!isCurrentAdminInboxRequest(authRevision)) return;
+          wechatDraftLog = [];
+          if (rows) rows.innerHTML = `<tr><td colspan="6"><div class="empty">${escapeHtml(workflowDisplayError(error, "读取草稿导入记录失败"))}</div></td></tr>`;
+          return;
+        }
+        renderWechatDraftRows();
+      }
+
+      function loadAdminInbox() {
+        loadSourceRequestLog();
+        loadWechatDraftLog();
       }
 
       function renderSourceRequestRows() {
@@ -6147,21 +6224,37 @@
             <td>${escapeHtml(item.submitter || "anonymous")}</td>
             <td><div class="adapter-next">${escapeHtml(item.notes || "未填写")}</div></td>
           </tr>
-        `).join("") : `<tr><td colspan="8"><div class="empty">暂无需要人工复核的数据源申请</div></td></tr>`;
+        `).join("") : `<tr><td colspan="8"><div class="empty">暂无数据源申请</div></td></tr>`;
+      }
+
+      function renderWechatDraftRows() {
+        const rows = $("#wechatDraftRows");
+        if (!rows) return;
+        rows.innerHTML = wechatDraftLog.length ? wechatDraftLog.map((item) => `
+          <tr>
+            <td>${escapeHtml(formatDateTimeLabel(item.created_at))}</td>
+            <td class="journal-cell"><div class="journal-name">${escapeHtml(item.title || "未命名草稿")}</div><div class="journal-issn">${escapeHtml(String(item.content_markdown || "").length)} 字符</div></td>
+            <td>${escapeHtml(item.source_job_id || "手动编辑")}</td>
+            <td>${escapeHtml(item.submitter || "anonymous")}</td>
+            <td>${escapeHtml(item.mode || "mock")}</td>
+            <td><span class="status-pill warn">${escapeHtml(item.status || "prepared")}</span></td>
+          </tr>
+        `).join("") : `<tr><td colspan="6"><div class="empty">暂无草稿导入记录</div></td></tr>`;
       }
 
       function sourceRequestStatusLabel(item) {
         const methods = Array.isArray(item.probe_methods) ? item.probe_methods : [];
         const methodText = methods.length ? methods.join(" / ") : "RSS / RSSHub / 页面适配";
-        if (item.intake_status === "pending_auto_probe") return `待自动尝试：${methodText}`;
+        if (item.intake_status === "pending_auto_probe") return `待探测（自动探测尚未启用）：${methodText}`;
         if (item.intake_status === "probe_failed") return `尝试失败，待人工复核：${methodText}`;
         return item.intake_status || "待处理";
       }
 
       function requestUrlCell(url) {
+        if (!url) return `<span class="url-status warn">! 未填写</span>`;
         return validUrl(url)
           ? `<a class="url-status ok" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer">● ${escapeHtml(cleanUrlLabel(url))}</a>`
-          : `<span class="url-status warn">! 未填写</span>`;
+          : `<span class="url-status warn" title="${escapeHtml(url)}">! 格式无效</span>`;
       }
 
       function formatDateTimeLabel(value) {
@@ -6528,7 +6621,7 @@
         switchView("sources");
       });
 
-      $("#refreshSourceRequests").addEventListener("click", loadSourceRequestLog);
+      $("#refreshSourceRequests").addEventListener("click", loadAdminInbox);
 
       $("#sourceRows").addEventListener("click", (event) => {
         const action = event.target.closest("[data-source-action]");
@@ -6572,7 +6665,7 @@
       motion.init();
       applyWorkshopRoleVisibility();
       renderAll();
-      loadSourceRequestLog();
+      loadAdminInbox();
       loadLatestCheckStatus();
       motion.page("tracking");
     </script>

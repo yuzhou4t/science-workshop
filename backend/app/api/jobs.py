@@ -4,6 +4,7 @@ from fastapi import APIRouter, HTTPException, Request
 from fastapi.responses import Response, StreamingResponse
 from pydantic import BaseModel
 
+from app.core.access import load_accessible_job
 from app.models.job import Artifact, NodeStatus
 from app.services.docx_exporter import DocxExporter
 from app.storage.job_store import JobNotFoundError
@@ -48,15 +49,13 @@ def _is_safe_ascii_suffix(suffix: str) -> bool:
 
 @router.get("/{job_id}")
 def get_job(job_id: str, request: Request) -> dict:
-    try:
-        job = request.app.state.job_store.load_job(job_id)
-    except JobNotFoundError as exc:
-        raise HTTPException(status_code=404, detail="Job not found") from exc
+    job = load_accessible_job(request, job_id)
     return job.model_dump(mode="json")
 
 
 @router.get("/{job_id}/artifacts/{artifact_name}")
 def get_artifact(job_id: str, artifact_name: str, request: Request) -> Response:
+    load_accessible_job(request, job_id, not_found_detail="Artifact not found")
     try:
         data, artifact = request.app.state.job_store.read_artifact_bytes(job_id, artifact_name)
     except JobNotFoundError as exc:
@@ -72,7 +71,7 @@ def get_artifact(job_id: str, artifact_name: str, request: Request) -> Response:
 def export_docx(job_id: str, request: Request) -> dict[str, str]:
     store = request.app.state.job_store
     try:
-        job = store.load_job(job_id)
+        job = load_accessible_job(request, job_id, not_found_detail="Final markdown not found")
         markdown_data, _artifact = store.read_artifact_bytes(job_id, "final.md")
     except (JobNotFoundError, OSError) as exc:
         raise HTTPException(status_code=404, detail="Final markdown not found") from exc
@@ -91,10 +90,7 @@ def export_docx(job_id: str, request: Request) -> dict[str, str]:
 @router.patch("/{job_id}/nodes/{node_id}")
 def update_job_node(job_id: str, node_id: str, payload: NodeEditRequest, request: Request) -> dict:
     store = request.app.state.job_store
-    try:
-        job = store.load_job(job_id)
-    except JobNotFoundError as exc:
-        raise HTTPException(status_code=404, detail="Job not found") from exc
+    job = load_accessible_job(request, job_id)
     try:
         relative_path = editable_node_artifact_path(node_id)
     except ValueError as exc:
@@ -107,10 +103,7 @@ def update_job_node(job_id: str, node_id: str, payload: NodeEditRequest, request
 
 @router.post("/{job_id}/rerun")
 def plan_job_rerun(job_id: str, payload: RerunRequest, request: Request) -> dict:
-    try:
-        request.app.state.job_store.load_job(job_id)
-    except JobNotFoundError as exc:
-        raise HTTPException(status_code=404, detail="Job not found") from exc
+    load_accessible_job(request, job_id)
     try:
         validate_rerun_node(payload.from_node)
     except ValueError as exc:
@@ -120,10 +113,7 @@ def plan_job_rerun(job_id: str, payload: RerunRequest, request: Request) -> dict
 
 @router.get("/{job_id}/events")
 async def job_events(job_id: str, request: Request) -> StreamingResponse:
-    try:
-        request.app.state.job_store.load_job(job_id)
-    except JobNotFoundError as exc:
-        raise HTTPException(status_code=404, detail="Job not found") from exc
+    load_accessible_job(request, job_id)
 
     async def stream():
         async for event in request.app.state.event_broker.subscribe(job_id):
