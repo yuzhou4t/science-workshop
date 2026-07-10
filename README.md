@@ -33,6 +33,7 @@ node scripts/html-adapter-parsers-test.mjs
 node scripts/date-enhancement-test.mjs
 node scripts/pdf-abstract-backfill-test.mjs
 node scripts/daily-abstract-backfill-test.mjs
+node scripts/abstract-quality-test.mjs
 node scripts/topic-search-index-test.mjs
 node scripts/daily-topic-search-workflow-test.mjs
 node --check scripts/build-topic-search-index.mjs
@@ -69,12 +70,14 @@ node scripts/build-front-data.mjs --reset-history --workflow=data/recent-article
 - `scripts/build-topic-search-index.mjs`：从 `data/push-history.json` 重建主题检索索引；如果只有生成时间变化，不会重写索引文件。
 - `scripts/run-daily-workflow.mjs`：每日自动检查入口，只检查当天窗口并按首次发现去重；发现新推送后会触发当天新增文章的摘要回填。
 - `scripts/run-daily-publish.mjs`：每日发布入口，先运行每日检查，再把当天生成的数据文件提交并推送到 GitHub，触发 Vercel 更新。
-- `scripts/backfill-daily-abstracts.mjs`：每日摘要回填编排入口，只处理指定 `first_seen_at` 的新增文章。
+- `scripts/backfill-daily-abstracts.mjs`：每日摘要回填编排入口；日常按 `first_seen_at` 运行，也支持一次性 `--all-missing` 全量补齐并生成缺口报告。
 - `scripts/backfill-ncpssd-abstracts.mjs`：直接用 NCPSD article API 补已有 NCPSD 详情页的摘要。
 - `scripts/backfill-ncpssd-issue-abstracts.mjs`：按 NCPSD 期号页定位 `中国工业经济`、`会计研究` 等文章，再补摘要。
 - `scripts/backfill-pdf-abstracts.mjs`：从 PDF 文本层或 OCR 提取摘要，主要用于 `经济研究` 和 `中国农村经济`。
-- `scripts/backfill-english-metadata-abstracts.mjs`：用 Crossref/OpenAlex 等开放元数据补英文期刊摘要。
+- `scripts/backfill-official-html-abstracts.mjs`：严格匹配官方文章页标题后，从 `citation_abstract`、正文摘要区等结构化字段补摘要。
+- `scripts/backfill-english-metadata-abstracts.mjs`：用 Crossref/OpenAlex 与 Semantic Scholar 批量接口补英文期刊摘要。
 - `scripts/backfill-macrodatas-abstracts.mjs`：用 Macrodatas 期号页作为中文期刊摘要兜底。
+- `scripts/backfill-nankai-official-links.mjs`：按期号/年份做南开管理评论官方链接标题匹配；目标期未命中时再扫描当年及上一年正式期号，只接受 NCPSD 或南开大学官网域名。
 - `scripts/install-daily-launchd.mjs`：安装或刷新 macOS 本机定时任务。
 
 ## 进一步文档
@@ -89,10 +92,10 @@ node scripts/build-front-data.mjs --reset-history --workflow=data/recent-article
 
 - 期刊数据源：22 个。
 - 前端累计展示文章：574 篇，`data/recent-front-data.js` 和 `data/push-history.json` 均为 574 个唯一文章 ID。
-- 已补摘要文章：452 篇；剩余 122 篇没有摘要，主要集中在 `中国工业经济`、`会计研究`、AMR 和 AER。
+- 已补摘要文章：474 篇；剩余 100 篇没有摘要，主要集中在 `中国工业经济`、`会计研究`、AMR 和 AER。
 - 主题检索索引已按 574 篇累计历史重建；当前非洲主题命中 6 篇，语义分类未启用。
 - 普通账号可使用内容工作流和提交数据源线索；管理员可查看数据源队列和草稿导入记录。任务及产物按 owner 隔离，管理员可跨 owner 处理。
-- 数据源申请当前落为 `pending_auto_probe`；真实自动探测 runner 尚未实现。公众号草稿当前只保存 `prepared/mock` 导入记录，未调用微信 API。
+- 数据源申请提交后先落为 `pending_auto_probe`，后台按 Feed/官网标准 Feed/开放元数据顺序探测，管理员批准后原子写入 `data/community-sources.json`；批量 CSV/XLSX 也复用同一状态机。公众号草稿当前只保存 `prepared/mock` 导入记录，未调用微信 API。
 - 每日自动任务的去重状态写入 `data/source-state.json`；摘要回填只补 `data/push-history.json` / `data/recent-front-data.js`，不改每日去重状态。
 - `scripts/run-daily-workflow.mjs` 在新推送合并后自动运行 `scripts/backfill-daily-abstracts.mjs --first-seen-at=<date>`，尽量给当天新增文章补摘要；随后刷新 `data/topic-search-index.js`，让主题检索覆盖最新累计历史。
 - `管理科学学报` 已可从新版期号页解析；旧版 reader 期号页可作为备用解析入口，2026-06-04 日常运行返回 11 篇当期文章。
@@ -101,6 +104,7 @@ node scripts/build-front-data.mjs --reset-history --workflow=data/recent-article
 - `中国农村经济` 官方 PDF 多为扫描件；摘要回填先尝试 PDF 文本层，失败后可用 `tesseract` + `poppler` OCR。
 - `管理世界` 先用 Macrodatas 发现当期文章，再用国家哲学社会科学文献中心移动端期号页按标题匹配到官方单篇详情页；2026年第5期 11 篇已解析到 `Literature/articleinfo` 链接，官方页内再按权限提供阅读/下载入口。
 - `南开管理评论` 先用 Macrodatas 发现当期文章，再按发现到的期号尝试国家哲学社会科学文献中心详情页升级；未解析到官方全文入口时保持 `needs_official_pdf`。
+- 可用 `scripts/backfill-nankai-official-links.mjs` 对南开历史记录做标题级官方链接回填；仅接受 `ncpssd.cn` 和 `nbr.nankai.edu.cn`。2026 年第 4 期已通过唯一标题匹配补回 4 条；剩余 17 条已额外扫描 2025、2026 正式期号，仍没有标题级官方入口，继续等待官方来源上架。
 
 ## 每日自动检查
 

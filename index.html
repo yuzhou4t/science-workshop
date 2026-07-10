@@ -1635,9 +1635,84 @@
 
       .ingest-form {
         display: grid;
-        grid-template-columns: repeat(5, minmax(0, 1fr)) auto;
+        grid-template-columns: minmax(180px, 1fr) auto auto;
         gap: 8px;
         margin-top: 10px;
+      }
+
+      .field-file {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        white-space: nowrap;
+      }
+
+      .field-file-label {
+        display: flex;
+        align-items: center;
+        min-height: 38px;
+        padding: 0 12px;
+        border: 1px dashed var(--border-emphasis);
+        border-radius: var(--radius-sm);
+        color: var(--text-1);
+        background: var(--surface-1);
+        cursor: pointer;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .field-file-label:hover,
+      .field-file:focus-visible + .field-file-label {
+        border-color: rgba(var(--accent-rgb), 0.6);
+        color: var(--text-0);
+      }
+
+      .source-import-preview {
+        max-height: 280px;
+        overflow: auto;
+        padding: 10px 12px;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-sm);
+        background: var(--surface-card);
+        color: var(--text-1);
+        font-size: 12px;
+      }
+
+      .source-import-preview table {
+        font-size: 11px;
+      }
+
+      .source-import-preview .import-error {
+        color: var(--rose);
+      }
+
+      .source-probe-detail {
+        display: grid;
+        gap: 3px;
+        min-width: 180px;
+        color: var(--text-1);
+        font-size: 11px;
+        line-height: 1.4;
+      }
+
+      .source-probe-detail a {
+        overflow-wrap: anywhere;
+      }
+
+      .source-request-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+      }
+
+      .source-request-actions .btn-sm {
+        min-height: 28px;
+        padding: 4px 8px;
+        font-size: 11px;
       }
 
       .source-mode {
@@ -2849,10 +2924,15 @@
               <form id="sourceContributionForm" class="workflow-form">
                 <div class="workflow-form-row">
                   <input class="field" id="sourceRequestJournalName" name="journal_name" type="text" placeholder="期刊名称" required />
+                  <input class="field" id="sourceRequestIssn" name="issn" type="text" placeholder="ISSN（可选）" inputmode="numeric" />
                   <input class="field" id="sourceRequestHomepageUrl" name="homepage_url" type="url" placeholder="官网 URL" />
                 </div>
                 <div class="workflow-form-row">
                   <input class="field" id="sourceRequestFeedUrl" name="feed_url" type="url" placeholder="Feed URL（可为空）" />
+                  <input class="field" id="sourceRequestArchiveUrl" name="archive_url" type="url" placeholder="过刊页 URL（可选）" />
+                  <input class="field" id="sourceRequestSampleArticleUrl" name="sample_article_url" type="url" placeholder="样例文章 URL（可选）" />
+                </div>
+                <div class="workflow-form-row">
                   <select class="field" id="sourceRequestSourceType" name="source_type" aria-label="优先尝试方式">
                     <option>自动识别</option>
                     <option>RSS / Atom</option>
@@ -2868,7 +2948,7 @@
                 </div>
                 <textarea class="field workflow-source" id="sourceRequestNotes" name="notes" rows="5" placeholder="补充说明：过刊页、样例文章、特殊访问方式、推荐理由"></textarea>
                 <div class="workflow-export-row">
-                  <span class="workflow-export-hint">自动探测尚未启用；管理员可在信箱查看并人工复核</span>
+                  <span class="workflow-export-hint">提交后立即保存为 pending_auto_probe，后台异步探测；管理员确认后才会进入抓取来源库</span>
                   <button class="btn btn-primary" type="submit">提交来源</button>
                 </div>
               </form>
@@ -2898,7 +2978,7 @@
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
                   数据源接口
                 </span>
-                <span class="summary-hint">后续可上传 Excel/CSV，或手动新增单个期刊来源</span>
+                <span class="summary-hint">管理员预览并提交 Excel/CSV；每一行仍需自动探测和审批</span>
               </summary>
               <div class="source-ingest-body">
                 <div class="rss-architecture">
@@ -2946,7 +3026,7 @@
                 <div class="ingest-grid">
                   <div class="ingest-block">
                     <h3 class="ingest-block-title">批量上传</h3>
-                    <p>支持沿用当前模版字段，也预留 OPML 导入，方便以后批量维护 Feed。</p>
+                    <p>支持 UTF-8/UTF-8-BOM CSV 和首个工作表 XLSX，单文件 2 MB、最多 500 行。</p>
                   </div>
                   <div class="ingest-block">
                     <h3 class="ingest-block-title">RSS 自动发现</h3>
@@ -2961,26 +3041,17 @@
                     <p>未来可接 API：POST /sources/import、POST /sources 与 POST /feeds/discover。</p>
                   </div>
                 </div>
-                <div class="ingest-form">
-                  <input class="field" type="text" placeholder="期刊名称" />
-                  <input class="field" type="url" placeholder="官网 URL" />
-                  <input class="field" type="url" placeholder="Feed URL（可为空）" />
-                  <select class="field" aria-label="数据源类型">
-                    <option>RSS / Atom</option>
-                    <option>RSSHub 路由</option>
-                    <option>XPath 适配</option>
-                    <option>人工复核</option>
-                  </select>
-                  <select class="field" aria-label="刷新频率">
-                    <option>每周检查</option>
-                    <option>每月检查</option>
-                    <option>每日检查</option>
-                  </select>
-                  <button class="btn btn-primary" type="button" aria-disabled="true" title="接口预留，当前来源仍以本地注册表为准">预留接口</button>
+                <div class="ingest-form" id="sourceBulkImportForm">
+                  <label class="field-file-label" for="sourceBulkFile">选择 CSV / XLSX</label>
+                  <input class="field-file" id="sourceBulkFile" type="file" accept=".csv,.xlsx,text/csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" />
+                  <button class="btn btn-ghost" id="sourceBulkPreview" type="button">预览导入</button>
+                  <button class="btn btn-primary" id="sourceBulkCommit" type="button" disabled>提交待探测</button>
                 </div>
+                <div id="sourceBulkImportStatus" class="workflow-status" aria-live="polite">尚未选择文件</div>
+                <div id="sourceBulkImportPreview" class="source-import-preview" hidden></div>
                 <div class="interface-note">
-                  <span>当前来源写入仍以本地注册表和抓取脚本为准，这里只展示未来接入入口。</span>
-                  <span class="status-pill warn">reserved</span>
+                  <span>预览不会落盘；提交后每一行独立生成 pending_auto_probe，不会绕过探测或管理员审批。</span>
+                  <span class="status-pill warn">admin only</span>
                 </div>
               </div>
             </details>
@@ -3027,20 +3098,20 @@
           <section class="panel table-panel">
             <div class="source-toolbar">
               <strong>数据源申请</strong>
-              <span class="summary-hint">包含待探测与失败后待人工复核的申请；自动探测尚未启用</span>
+                <span class="summary-hint">提交即进入信箱；点击刷新信箱获取最新探测结果，批准后才会接入来源清单</span>
             </div>
             <div class="source-table-wrap">
               <table>
                 <thead>
                   <tr>
                     <th>提交时间</th>
-                    <th>期刊</th>
-                    <th>优先尝试</th>
-                    <th>接入状态</th>
-                    <th>主页</th>
-                    <th>Feed</th>
-                    <th>提交人</th>
-                    <th>说明</th>
+                    <th>期刊 / ISSN</th>
+                    <th>探测状态</th>
+                    <th>HTTP / 最终地址</th>
+                    <th>候选类型</th>
+                    <th>样例文章</th>
+                    <th>失败原因 / 说明</th>
+                    <th>管理员处理</th>
                   </tr>
                 </thead>
                 <tbody id="sourceRequestRows"></tbody>
@@ -3050,7 +3121,7 @@
           <section class="panel table-panel">
             <div class="source-toolbar">
               <strong>公众号草稿导入记录</strong>
-              <span class="summary-hint">当前只保存 prepared 记录，未调用微信草稿 API</span>
+              <span class="summary-hint">mode=mock / status=prepared；仅保存导入记录，不会发送到微信</span>
             </div>
             <div class="source-table-wrap">
               <table>
@@ -3203,7 +3274,7 @@
               <section class="workflow-panel breath-surface" data-workflow-panel="wechat-writing" id="wechatWritingPanel">
                 <div class="workflow-header">
                   <h2>公众号文章写作</h2>
-                  <p>接入论文精读结果、期刊追踪条目或补充材料，生成可编辑公众号稿。</p>
+                  <p>接入论文精读结果、期刊追踪条目或补充材料，生成可编辑公众号稿。微信接口当前为 mock：只保存导入记录，不会发送到微信。</p>
                 </div>
                 <div class="workflow-quota-note" aria-label="公众号写作额度">
                   <span>每天 10 次</span>
@@ -3243,7 +3314,7 @@
                   <span class="workflow-export-hint">标题与正文会合并导出，编辑内容即时同步</span>
                   <div class="workflow-export-actions">
                     <button class="btn btn-sm btn-ghost" id="wechatWritingCopy" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>复制 Markdown</button>
-                    <button class="btn btn-sm btn-ghost" id="wechatDraftImport" type="button" title="当前仅生成待导入记录"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m8 11 4 4 4-4"/><path d="M5 21h14"/></svg>生成导入记录</button>
+                    <button class="btn btn-sm btn-ghost" id="wechatDraftImport" type="button" title="仅保存模拟导入记录，不会发送到微信"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m8 11 4 4 4-4"/><path d="M5 21h14"/></svg>生成模拟导入记录</button>
                     <button class="btn btn-primary" id="wechatWritingExport" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 11 5 5 5-5"/><path d="M5 21h14"/></svg>导出 Word</button>
                   </div>
                 </div>
@@ -4064,6 +4135,7 @@
       };
       let sourceRequestLog = [];
       let wechatDraftLog = [];
+      let sourceImportPreviewPayload = null;
       const sleep = (ms) => new Promise((resolve) => window.setTimeout(resolve, ms));
 
       function workflowAuthAvailable() {
@@ -5007,6 +5079,37 @@
         return response.json();
       }
 
+      async function decideSourceRequest(requestId, decision, reason = "") {
+        const response = await workshopFetch(`${WORKFLOW_API_BASE}/api/source-requests/${encodeURIComponent(requestId)}/decision`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ decision, reason })
+        });
+        if (!response.ok) throw new Error(await workflowErrorMessage(response, "管理员处理来源申请失败"));
+        return response.json();
+      }
+
+      async function retrySourceRequest(requestId) {
+        const response = await workshopFetch(`${WORKFLOW_API_BASE}/api/source-requests/${encodeURIComponent(requestId)}/retry`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({})
+        });
+        if (!response.ok) throw new Error(await workflowErrorMessage(response, "重新探测失败"));
+        return response.json();
+      }
+
+      async function importSourceFile(file, mode) {
+        const body = new FormData();
+        body.set("file", file);
+        const response = await workshopFetch(`${WORKFLOW_API_BASE}/api/sources/import?mode=${encodeURIComponent(mode)}`, {
+          method: "POST",
+          body
+        });
+        if (!response.ok) throw new Error(await workflowErrorMessage(response, mode === "preview" ? "批量导入预览失败" : "批量导入提交失败"));
+        return response.json();
+      }
+
       async function fetchSourceRequests() {
         const response = await workshopFetch(`${WORKFLOW_API_BASE}/api/source-requests`, {
           cache: "no-store"
@@ -5289,7 +5392,7 @@
                 content_markdown: markdown,
                 source_job_id: workflowJobs.wechatWriting || ""
               });
-              setWorkflowStatus(wechatStatus, "已生成待导入记录；当前未调用微信草稿 API", "complete");
+              setWorkflowStatus(wechatStatus, "已生成模拟导入记录（mode=mock / status=prepared）；不会发送到微信", "complete");
               if (isWorkshopAdmin()) loadWechatDraftLog();
             } catch (error) {
               setWorkflowStatus(wechatStatus, workflowDisplayError(error, "公众号草稿箱导入失败"), "error");
@@ -5380,7 +5483,10 @@
           const formData = new FormData(form);
           const payload = {
             journal_name: String(formData.get("journal_name") || "").trim(),
+            issn: String(formData.get("issn") || "").trim(),
             homepage_url: String(formData.get("homepage_url") || "").trim(),
+            archive_url: String(formData.get("archive_url") || "").trim(),
+            sample_article_url: String(formData.get("sample_article_url") || "").trim(),
             feed_url: String(formData.get("feed_url") || "").trim(),
             source_type: String(formData.get("source_type") || "自动识别"),
             refresh_interval: String(formData.get("refresh_interval") || "每周检查"),
@@ -5394,10 +5500,101 @@
           try {
             await createSourceRequest(payload);
             form.reset();
-            setWorkflowStatus(status, "已进入待探测队列；自动探测尚未启用，管理员可在信箱查看", "complete");
+            setWorkflowStatus(status, "已提交，正在探测（pending_auto_probe）；管理员确认后才会进入来源库", "complete");
             if (isWorkshopAdmin()) loadSourceRequestLog();
           } catch (error) {
             setWorkflowStatus(status, workflowDisplayError(error, "数据源提交失败"), "error");
+          }
+        });
+      }
+
+      function sourceImportErrorCount(payload) {
+        const errors = Array.isArray(payload?.errors) ? payload.errors : [];
+        return Number(payload?.error_count ?? errors.length ?? 0);
+      }
+
+      function renderSourceImportPreview(payload) {
+        const preview = $("#sourceBulkImportPreview");
+        const commit = $("#sourceBulkCommit");
+        if (!preview || !commit) return;
+        const rows = Array.isArray(payload?.rows)
+          ? payload.rows
+          : Array.isArray(payload?.preview)
+            ? payload.preview
+            : [];
+        const errors = Array.isArray(payload?.errors) ? payload.errors : [];
+        const duplicateCount = Number(payload?.duplicate_count || payload?.duplicates || 0);
+        const skipped = Array.isArray(payload?.skipped) ? payload.skipped : [];
+        const validCount = Number(payload?.valid_count ?? payload?.valid_rows ?? rows.filter((row) => !row.error && !row.errors?.length).length);
+        const summary = `<div class="source-probe-detail"><strong>批次预览</strong><span>有效 ${validCount} 行${duplicateCount || skipped.length ? ` · 重复跳过 ${duplicateCount || skipped.length} 行` : ""} · 错误 ${errors.length} 行</span></div>`;
+        const errorHtml = errors.length
+          ? `<div class="import-error"><strong>逐行错误</strong><ul>${errors.slice(0, 50).map((error) => `<li>${escapeHtml(typeof error === "string" ? error : `第 ${error.row || "?"} 行：${error.message || error.error || "格式无效"}`)}</li>`).join("")}</ul></div>`
+          : "";
+        const sampleRows = rows.slice(0, 20).map((row, index) => {
+          const value = (key) => row?.[key] ?? row?.normalized?.[key] ?? "";
+          const rowError = row?.error || (Array.isArray(row?.errors) ? row.errors.join("、") : "");
+          return `<tr><td>${escapeHtml(String(row?.row || index + 2))}</td><td>${escapeHtml(value("journal_name"))}</td><td>${escapeHtml(value("issn"))}</td><td>${escapeHtml(value("feed_url") || value("homepage_url"))}</td><td class="${rowError ? "import-error" : ""}">${escapeHtml(rowError || (row?.duplicate ? "重复，提交时跳过" : "可提交探测"))}</td></tr>`;
+        }).join("");
+        preview.innerHTML = `${summary}${errorHtml}${sampleRows ? `<table><thead><tr><th>行</th><th>期刊</th><th>ISSN</th><th>URL</th><th>结果</th></tr></thead><tbody>${sampleRows}</tbody></table>` : ""}`;
+        preview.hidden = false;
+        sourceImportPreviewPayload = payload;
+        commit.disabled = Boolean(sourceImportErrorCount(payload) || !validCount);
+      }
+
+      function attachSourceBulkImport() {
+        const fileInput = $("#sourceBulkFile");
+        const fileLabel = document.querySelector('label[for="sourceBulkFile"]');
+        const previewButton = $("#sourceBulkPreview");
+        const commitButton = $("#sourceBulkCommit");
+        const status = $("#sourceBulkImportStatus");
+        if (!fileInput || !previewButton || !commitButton || !status) return;
+        fileInput.addEventListener("change", () => {
+          const file = fileInput.files?.[0];
+          sourceImportPreviewPayload = null;
+          commitButton.disabled = true;
+          $("#sourceBulkImportPreview")?.setAttribute("hidden", "");
+          if (fileLabel) fileLabel.textContent = file ? `${file.name}（${Math.ceil(file.size / 1024)} KB）` : "选择 CSV / XLSX";
+          setWorkflowStatus(status, file ? "文件已选择，请先预览；预览不会落盘" : "尚未选择文件", "");
+        });
+        previewButton.addEventListener("click", async () => {
+          const file = fileInput.files?.[0];
+          if (!file) {
+            setWorkflowStatus(status, "请先选择 CSV 或 XLSX 文件", "error");
+            return;
+          }
+          if (file.size > 2 * 1024 * 1024) {
+            setWorkflowStatus(status, "文件超过 2 MB 上限", "error");
+            return;
+          }
+          setWorkflowStatus(status, "正在预览批量导入（不会落盘）...", "running");
+          try {
+            await ensureWorkshopAuthenticated();
+            const payload = await importSourceFile(file, "preview");
+            renderSourceImportPreview(payload);
+            const errors = sourceImportErrorCount(payload);
+            setWorkflowStatus(status, errors ? `预览完成：发现 ${errors} 行错误，修正后才能提交` : "预览通过：可提交，提交后每行进入待探测队列", errors ? "error" : "complete");
+          } catch (error) {
+            setWorkflowStatus(status, workflowDisplayError(error, "批量导入预览失败"), "error");
+          }
+        });
+        commitButton.addEventListener("click", async () => {
+          const file = fileInput.files?.[0];
+          if (!file || !sourceImportPreviewPayload || sourceImportErrorCount(sourceImportPreviewPayload)) return;
+          setWorkflowStatus(status, "正在提交批次，每行都会进入待探测队列...", "running");
+          commitButton.disabled = true;
+          try {
+            await ensureWorkshopAuthenticated();
+            const payload = await importSourceFile(file, "commit");
+            const count = payload?.created_count ?? payload?.requests_created ?? payload?.count ?? payload?.requests?.length ?? "已提交";
+            setWorkflowStatus(status, `批次 ${payload?.batch_id || ""} 已提交：${count} 行待探测，仍需管理员审批`, "complete");
+            sourceImportPreviewPayload = null;
+            $("#sourceBulkImportPreview")?.setAttribute("hidden", "");
+            fileInput.value = "";
+            if (fileLabel) fileLabel.textContent = "选择 CSV / XLSX";
+            if (isWorkshopAdmin()) loadSourceRequestLog();
+          } catch (error) {
+            commitButton.disabled = false;
+            setWorkflowStatus(status, workflowDisplayError(error, "批量导入提交失败"), "error");
           }
         });
       }
@@ -6216,13 +6413,13 @@
         rows.innerHTML = sourceRequestLog.length ? sourceRequestLog.map((item) => `
           <tr>
             <td>${escapeHtml(formatDateTimeLabel(item.created_at))}</td>
-            <td class="journal-cell"><div class="journal-name">${escapeHtml(item.journal_name)}</div><div class="journal-issn">${escapeHtml(item.refresh_interval || "")}</div></td>
-            <td>${escapeHtml(item.source_type || "自动识别")}</td>
-            <td><div class="adapter-next">${escapeHtml(sourceRequestStatusLabel(item))}</div></td>
-            <td>${requestUrlCell(item.homepage_url)}</td>
-            <td>${requestUrlCell(item.feed_url)}</td>
-            <td>${escapeHtml(item.submitter || "anonymous")}</td>
-            <td><div class="adapter-next">${escapeHtml(item.notes || "未填写")}</div></td>
+            <td class="journal-cell"><div class="journal-name">${escapeHtml(item.journal_name)}</div><div class="journal-issn">${escapeHtml(item.issn || "ISSN 未填写")} · ${escapeHtml(item.submitter || "anonymous")}</div></td>
+            <td><span class="status-pill ${sourceRequestStatusClass(item)}">${escapeHtml(sourceRequestStatusLabel(item))}</span><div class="adapter-next">${escapeHtml(item.source_type || "自动识别")} · ${escapeHtml(item.refresh_interval || "")}</div></td>
+            <td>${sourceProbeAddressCell(item)}</td>
+            <td>${sourceProbeCandidateCell(item)}</td>
+            <td>${sourceProbeSamplesCell(item)}</td>
+            <td><div class="source-probe-detail">${sourceProbeFailureCell(item)}${item.notes ? `<span>说明：${escapeHtml(item.notes)}</span>` : ""}</div></td>
+            <td>${sourceRequestActionCell(item)}</td>
           </tr>
         `).join("") : `<tr><td colspan="8"><div class="empty">暂无数据源申请</div></td></tr>`;
       }
@@ -6243,11 +6440,77 @@
       }
 
       function sourceRequestStatusLabel(item) {
-        const methods = Array.isArray(item.probe_methods) ? item.probe_methods : [];
-        const methodText = methods.length ? methods.join(" / ") : "RSS / RSSHub / 页面适配";
-        if (item.intake_status === "pending_auto_probe") return `待探测（自动探测尚未启用）：${methodText}`;
-        if (item.intake_status === "probe_failed") return `尝试失败，待人工复核：${methodText}`;
-        return item.intake_status || "待处理";
+        const labels = {
+          pending_auto_probe: "待自动探测",
+          probing: "探测中",
+          probe_succeeded: "探测成功，待审批",
+          needs_manual_review: "需人工适配",
+          probe_failed: "探测失败",
+          approved: "已批准 · 已接入",
+          rejected: "已拒绝"
+        };
+        return labels[item.intake_status] || item.intake_status || "待处理";
+      }
+
+      function sourceRequestStatusClass(item) {
+        if (["approved", "probe_succeeded"].includes(item.intake_status)) return "ok";
+        if (["probe_failed", "needs_manual_review", "rejected"].includes(item.intake_status)) return "warn";
+        return "info";
+      }
+
+      function sourceProbeReport(item) {
+        const report = item.probe_report || item.probe_result || item.probe || item.report;
+        return report && typeof report === "object" ? report : {};
+      }
+
+      function sourceProbeAddressCell(item) {
+        const report = sourceProbeReport(item);
+        const status = report.http_status ?? report.status_code ?? report.http_result ?? report.status;
+        const finalUrl = report.final_url || report.resolved_url || report.url || item.feed_url || item.homepage_url;
+        return `<div class="source-probe-detail"><span>${status != null ? `HTTP ${escapeHtml(status)}` : "HTTP 未探测"}</span>${finalUrl ? requestUrlCell(finalUrl) : `<span class="url-status warn">未解析地址</span>`}</div>`;
+      }
+
+      function sourceProbeCandidateCell(item) {
+        const report = sourceProbeReport(item);
+        const candidates = report.candidate_types || report.candidates || report.candidate_type || report.source_type || item.source_type;
+        const values = Array.isArray(candidates) ? candidates : [candidates];
+        return values.filter(Boolean).map((value) => `<span class="tag cyan">${escapeHtml(typeof value === "object" ? value.type || value.kind || "候选" : value)}</span>`).join(" ") || `<span class="url-status warn">暂无候选</span>`;
+      }
+
+      function sourceProbeSamplesCell(item) {
+        const report = sourceProbeReport(item);
+        const samples = report.sample_articles || report.samples || report.sample_article || [];
+        const values = Array.isArray(samples) ? samples : [samples];
+        const html = values.filter(Boolean).slice(0, 3).map((sample) => {
+          const title = typeof sample === "object" ? sample.title || sample.name || "样例文章" : String(sample);
+          const url = typeof sample === "object" ? sample.url || sample.article_url || "" : "";
+          return url ? requestUrlCell(url).replace(/>[^<]*</, `>${escapeHtml(title)}<`) : `<span>${escapeHtml(title)}</span>`;
+        }).join("<br />");
+        return html || `<span class="url-status warn">暂无样例</span>`;
+      }
+
+      function sourceProbeFailureCell(item) {
+        const report = sourceProbeReport(item);
+        const reason = report.failure_reason || report.error || report.detail || report.message || item.failure_reason;
+        return reason ? `<span class="import-error">失败：${escapeHtml(typeof reason === "object" ? JSON.stringify(reason) : reason)}</span>` : `<span>暂无失败原因</span>`;
+      }
+
+      function sourceRequestActionCell(item) {
+        const status = String(item.intake_status || "");
+        const requestId = escapeHtml(item.request_id || item.id || "");
+        if (!requestId) return `<span class="url-status warn">缺少 ID</span>`;
+        const buttons = [];
+        if (status === "probe_succeeded") {
+          buttons.push(`<button class="btn btn-sm btn-primary" type="button" data-source-request-action="approve" data-request-id="${requestId}">批准接入</button>`);
+          buttons.push(`<button class="btn btn-sm btn-ghost" type="button" data-source-request-action="reject" data-request-id="${requestId}">拒绝</button>`);
+        }
+        if (status === "needs_manual_review") {
+          buttons.push(`<button class="btn btn-sm btn-ghost" type="button" data-source-request-action="reject" data-request-id="${requestId}">拒绝</button>`);
+        }
+        if (["pending_auto_probe", "probe_failed", "needs_manual_review"].includes(status)) {
+          buttons.push(`<button class="btn btn-sm btn-ghost" type="button" data-source-request-action="retry" data-request-id="${requestId}">重新探测</button>`);
+        }
+        return buttons.length ? `<div class="source-request-actions">${buttons.join("")}</div>` : `<span class="url-status ${status === "approved" ? "ok" : "warn"}">${status === "approved" ? "已接入" : status === "rejected" ? "已拒绝" : "等待处理"}</span>`;
       }
 
       function requestUrlCell(url) {
@@ -6623,6 +6886,29 @@
 
       $("#refreshSourceRequests").addEventListener("click", loadAdminInbox);
 
+      $("#sourceRequestRows").addEventListener("click", async (event) => {
+        const actionButton = event.target.closest("[data-source-request-action]");
+        if (!actionButton) return;
+        const requestId = actionButton.dataset.requestId;
+        const action = actionButton.dataset.sourceRequestAction;
+        if (!requestId || !action) return;
+        let reason = "";
+        if (action === "reject") {
+          reason = window.prompt("请输入拒绝原因（可选）", "") ?? "";
+          if (!window.confirm("确认拒绝这个来源候选吗？")) return;
+        }
+        if (action === "approve" && !window.confirm("确认批准该候选并接入来源库吗？文章将从下一次抓取开始进入时间线。")) return;
+        actionButton.disabled = true;
+        try {
+          if (action === "retry") await retrySourceRequest(requestId);
+          else await decideSourceRequest(requestId, action === "approve" ? "approve" : "reject", reason);
+          await loadSourceRequestLog();
+        } catch (error) {
+          window.alert(workflowDisplayError(error, "管理员处理来源申请失败"));
+          actionButton.disabled = false;
+        }
+      });
+
       $("#sourceRows").addEventListener("click", (event) => {
         const action = event.target.closest("[data-source-action]");
         const row = event.target.closest("[data-journal-row]");
@@ -6662,6 +6948,7 @@
       attachWorkshopLogin();
       attachWorkflowForms();
       attachSourceContribution();
+      attachSourceBulkImport();
       motion.init();
       applyWorkshopRoleVisibility();
       renderAll();

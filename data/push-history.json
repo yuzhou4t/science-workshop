@@ -1,16 +1,16 @@
 {
   "version": 1,
-  "updated_at": "2026-07-10T03:02:39.664Z",
+  "updated_at": "2026-07-10T03:02:28.355Z",
   "summary": {
-    "checked_at": "2026-07-10T03:02:39.664Z",
+    "checked_at": "2026-07-10T03:02:28.355Z",
     "since": "2026-05-25",
     "until": "2026-07-10",
     "sources_total": 22,
     "sources_ready": 18,
     "history_articles": 574,
     "push_queue_articles": 574,
-    "new_push_queue_articles": 2,
-    "last_workflow_file": "data/recent-articles-daily-english-metadata-2026-07-10.json"
+    "new_push_queue_articles": 4,
+    "last_workflow_file": "data/recent-articles-2026-07-10_2026-07-10.json"
   },
   "articles": [
     {
@@ -81,7 +81,9 @@
       "display_date_basis": "published_at",
       "push_basis": "first_seen",
       "extraction_rule": "atypon-etoc",
-      "date_source": "metadata_published"
+      "date_source": "metadata_published",
+      "abstract": "",
+      "keywords": []
     },
     {
       "id": "0ccb641805bd3b35",
@@ -134,7 +136,9 @@
       "display_date_basis": "published_at",
       "push_basis": "first_seen",
       "extraction_rule": "atypon-etoc",
-      "date_source": "metadata_published"
+      "date_source": "metadata_published",
+      "abstract": "We advance stakeholder governance theory by theorizing how public–private partnerships (PPPs) can govern relationships with both contributing stakeholders (public and private partners) and legitimate but non-contributing stakeholders in order to create and more equitably distribute value. By integrating insights from stakeholder theory and PPP governance research, we develop a framework that distinguishes three categories of formal-relational mechanisms (i.e., participation and representation, joint integration, and monitoring and transparency). We theorize how these mechanisms mitigate three governance risks common in PPPs—cooperation failure, coordination failure, and opportunistic co-optation—that stem from goal misalignment, deficits in experience-based PPP capabilities, and power imbalances. We further argue that when risks co-occur, governance mechanisms can interact paradoxically. As a result, effective governance often requires portfolios of complementary mechanisms rather than single solutions. Our theory offers a meso-level account of how hybrid collaborations can sustain joint value creation while shaping more equitable value distribution, and contributes to both stakeholder theory and PPP governance research.",
+      "keywords": []
     },
     {
       "id": "52e23ecc2a00ff09",
@@ -156,7 +160,9 @@
       "display_date_basis": "published_at",
       "push_basis": "first_seen",
       "extraction_rule": "atypon-etoc",
-      "date_source": "metadata_published"
+      "date_source": "metadata_published",
+      "abstract": "Despite consensus on the urgency of addressing grand challenges, agreement on appropriate solutions remains elusive. Industry incumbents are increasingly influential in shaping solutions to these problems, yet their contentious involvement complicates their prognostic framing of such solutions. As moral legitimacy demands intensify, incumbents are pressured to advance transformative solutions while simultaneously meeting pragmatic legitimacy demands tied to the profitability of conventional businesses. How incumbents deploy prognostic framing under moral–pragmatic legitimacy tensions remains underexplored. We address this question through an inductive, longitudinal case study of a Norwegian oil major’s articulation of climate solutions. Our analysis reveals four prognostic framing mechanisms: bundling core business with cleaner alternatives, moralizing core business, assimilating incremental alternatives with core business, and contrasting radical alternatives with core business. Through these mechanisms, incumbents recast their contested core business as solution to a societal problem, thereby navigating moral–pragmatic legitimacy tensions while constraining the perceived problem–solution fit of radical alternatives. Deriving a grounded model of problem-source-to-solution reversal, our study advances research on framing and grand challenges by illustrating how prognostic framing can be deployed to shape problem–solution correspondence and constrain more transformative solutions to societal problems.",
+      "keywords": []
     },
     {
       "id": "ac7b3031a3c5c5fb",
@@ -201,7 +207,9 @@
       "display_date_basis": "published_at",
       "push_basis": "first_seen",
       "extraction_rule": "atypon-etoc",
-      "date_source": "metadata_published"
+      "date_source": "metadata_published",
+      "abstract": "Given women’s distinct values, perspectives, and decision-making approaches, the inclusion of female directors has been proposed as a potential mechanism for curbing excessive CEO pay raises. Yet, empirical evidence remains mixed, indicating that the mere presence of a female director does not reliably translate into meaningful influence. Drawing on minority influence theory as our core framework, supplemented by decades of gender research, we examine the incremental influence of appointing a female director on CEO pay raises to identify conditions under which her minority influence is strengthened or weakened. Using 5,395 firm-year observations from 791 Standard & Poor’s (S&P) 1500 firms between 2010 and 2017, we find that appointing a new female director is associated with smaller CEO pay raises when boards have higher levels of incumbent female representation (vs. token representation), a female CEO, fewer male-held interlocking directorships, and more frequent membership changes among male directors. We replicate our analyses using an alternative dataset, alternative measures, and more nuanced decompositions of CEO pay raises (e.g., warranted vs. unwarranted raises) and find consistent results. This research augments the dialogue on gender diversity in board governance and provides evidence on when incremental changes in board composition can help address persistent concerns about excessive CEO compensation.",
+      "keywords": []
     },
     {
       "id": "dcaa4c11c7e00f5b",
@@ -2169,7 +2177,14 @@
       "display_date_basis": "issue_date",
       "push_basis": "first_seen",
       "extraction_rule": "jryj-html",
-      "date_source": "url_issue"
+      "date_source": "url_issue",
+      "abstract": "在全球金融周期的驱动下,跨境资本流动呈现明显的顺周期性波动,资本的大进大出会影响经济金融稳定。本文通过构建开放经济动态随机一般均衡模型,并结合实证研究,分析宏观审慎政策平滑全球金融周期引致的资本流入顺周期性波动及其机制和效果。研究发现,宏观审慎政策可以平滑全球金融周期驱动下资本流入的顺周期性波动,并且,对债权型资本流入顺周期波动的平滑效果优于对股权型资本流入顺周期波动的平滑效果。异质性分析表明,外部风险敞口越大、抵御外部风险能力越弱、内部脆弱性越明显,以及汇率制度越缺乏弹性的经济体,实施宏观审慎政策的缓冲效果越好。基于在险资本流动(CFaR)框架的进一步研究发现,宏观审慎政策的缓冲作用因汇率制度类型和跨境资本流动分布而有所差异。本文可为相关部门选择合适的宏观审慎政策工具应对外部输入性金融风险提供有益参考。",
+      "keywords": [
+        "全球金融周期",
+        "宏观审慎政策",
+        "跨境资本流动",
+        "三元悖论"
+      ]
     },
     {
       "id": "e8a9b4f2fa091803",
@@ -2470,7 +2485,9 @@
       "display_date_basis": "published_at",
       "push_basis": "first_seen",
       "extraction_rule": "open-metadata-works",
-      "date_source": ""
+      "date_source": "",
+      "abstract": "This article studies competition under information heterogeneity in selection markets and examines the impact of public information regulations aimed at reducing information asymmetries between competing firms. We develop a novel model and introduce new empirical strategies to analyse imperfect competition in markets where firms have heterogeneous information about consumers, vary in cost structures, and offer differentiated products. Using data from the Italian auto insurance market, we find substantial differences in the precision of risk ratings across insurers, and those with less accurate risk-rating algorithms tend to have more efficient cost structures. We assess the equilibrium effects of giving firms equal access to aggregated risk information from a centralized bureau. This policy significantly reduces prices by increasing competition, leading to a 15.7% boost in consumer surplus, almost reaching the efficiency benchmark where firms have full knowledge of consumers’ true risk. Aggregating information through the bureau favours low-risk consumers and reduces average costs by 12 euros per contract through more efficient insurer–insuree matching.",
+      "keywords": []
     },
     {
       "id": "4898bbc99329f647",
@@ -2492,7 +2509,9 @@
       "display_date_basis": "published_at",
       "push_basis": "first_seen",
       "extraction_rule": "open-metadata-works",
-      "date_source": ""
+      "date_source": "",
+      "abstract": "We develop a general model of discrete choice that incorporates peer effects in preferences and consideration sets. We characterize the equilibrium behavior and establish conditions under which all parts of the model can be recovered from a sequence of choices. We allow peers to affect preferences, consideration, or both. We show that these peer-effect mechanisms have different behavioral implications in the data. This allows us to recover the set and the type of connections between the agents in the network. We then use this information to recover each agent’s preferences and consideration mechanisms. These nonparametric identification results allow for general forms of heterogeneity across agents and do not rely on the variation of either exogenous covariates or the set of available options (menus). We apply our results to model expansion decisions by tea chains and find evidence of limited consideration. We simulate counterfactual predictions and show how limited consideration slows market penetration and competition.",
+      "keywords": []
     },
     {
       "id": "d7ab5bdc88386427",
@@ -2514,7 +2533,14 @@
       "display_date_basis": "issue_date",
       "push_basis": "issue_date",
       "extraction_rule": "ajcass-current-api",
-      "date_source": ""
+      "date_source": "",
+      "abstract": "轮作补贴是引导农户参与轮作的经济激励工具，对加强东北地区耕地保护、推动农业可持续发展具有重要作用。基于全国农村固定观察点2019一2023 年东北三省农户数据，以玉米-大豆轮作补贴为例，本文系统分析了轮作补贴对玉米、大豆全要素生产率的影响及其作用路径。研究表明: 第一，轮作补贴显著提升了玉米和大豆全要素生产率，其中对玉米全要素生产率的促进效应具有一定滞后性; 第二，轮作补贴主要通过要素投入和技术采纳两条路径影响玉米和大豆全要素生产率,具体表现为减少大豆农药和玉米化肥投入，并影响农户对测土配方施肥、秸秆还困等保护性耕作技术的采纳; 第三，异质性分析显示，轮作补贴对黑龙江省大豆种植户和吉林省玉米种植户提高粮食全要素生产率的促进作用更为显著。此外，轮作补贴对东北三省经营规模较大、赫地细碎化程度较低农户的大豆全要素生产率提升作用更为显著。基于以上分析，本文提出应动态调整轮作补贴对象和标准、构建适于轮作的农业社会化服务体系、健全土地流转市场与产权保护机制等政策启示。",
+      "keywords": [
+        "轮作补贴",
+        "”全要素生产率",
+        "”化肥农药投入”保护性耕作技术",
+        "粮食安全"
+      ]
     },
     {
       "id": "576ac39fdf0fc289",
@@ -2536,7 +2562,11 @@
       "display_date_basis": "issue_date",
       "push_basis": "issue_date",
       "extraction_rule": "ajcass-current-api",
-      "date_source": ""
+      "date_source": "",
+      "abstract": "在县域经济转型升级和区域竞争加剧的背景下，特色产业已成为地方政府推动高质量发展的重要抓手，但在实践中仍面临培育路径不明确与发展成效不彰显的双重问题。鉴于此，本文基于马克思产业演进理论，结合适应性治理理论构建“机会开发—治理响应—产业演进”动态分析框架，通过对柳州螺蛳粉产业进行纵向案例分析，系统探讨地方政府如何通过适应性治理引导特色产业实现阶段性跃迁。研究发现：第一，地方政府的治理逻辑并非单一且静态，而是根据治理环境的不同呈现“顺应式”“嵌入式”“互构式”三类适应性治理响应；第二，地方特色产业沿着“特色产品培育—特色产品产业化—特色产业系统化”的路径演进，本质上是“产业的结构升级”“产业结构的升级”持续耦合互动的辩证过程；第三，地方政府的阶段性适应性治理构成产业升级的内生动力，上一阶段的产业演进成效又进一步构成下一阶段地方政府治理响应的基础。以上结论能为推进地区特色产业实现高质量发展提供理论借鉴和实践参考。",
+      "keywords": [
+        "特色产业”马克思产业演进理论”适应性治理理论”治理响应"
+      ]
     },
     {
       "id": "70dff0dc52095f2c",
@@ -2558,7 +2588,14 @@
       "display_date_basis": "issue_date",
       "push_basis": "issue_date",
       "extraction_rule": "ajcass-current-api",
-      "date_source": ""
+      "date_source": "",
+      "abstract": "在乡村全面振兴的战略背景下，只有解决年末“突击花钱”及其引发的惠农工程闲置问题，才能创造出经得起实践、人民、历史检验的实绩。这不仅是提高各类强农惠农富农政策效能的迫切要求，也是树立和践行正确政绩观的应有之义。本文基于中部农业大省2908宗惠农工程调查数据，使用judge IV识别策略，评估年末“突击花钱”与惠农工程闲置的因果关系，检验效应背后的作用机制，并探讨年末“突击花钱”的底层动因与治理路径。结果发现，年末“突击花钱”显著加剧了惠农工程闲置现象。机制检验结果表明，年末“突击花钱”通过两种方式加剧工程闲置：一是降低工程质量，导致工程“不能用、不耐用”；二是造成供需错配，导致工程“不好用、不常用”。底层动因分析表明，驱使项目负责人年末“突击花钱”的主要动因可能是“拖延”而非“预防性储蓄”。治理路径分析表明，“零基预算”改革能够减少拖延行为，在一定程度上遏制年末“突击花钱”现象。本文为深入理解年末“突击花钱”的动因与后果提供了新的微观证据，有助于探索更加精准的“突击花钱”治理路径。",
+      "keywords": [
+        "年末“突击花钱”",
+        "惠农工程闲置“预防性储著",
+        "”零基预算",
+        "”政绩观"
+      ]
     },
     {
       "id": "1306a27bd666ddb6",
@@ -3109,7 +3146,9 @@
       "display_date_basis": "published_at",
       "push_basis": "first_seen",
       "extraction_rule": "atypon-etoc",
-      "date_source": "metadata_published"
+      "date_source": "metadata_published",
+      "abstract": "The 2022 launch of ChatGPT triggered a wave of social media discussion about generative AI. Drawing on 215,279 posts from five months after this launch, we extend prior accounts of hype as a vehicle for strategic resource mobilization to develop a theory of hype as collective sensemaking and knowledge creation. Existing models rest on a fixed relational architecture: knowledgeable actors leverage information asymmetries to project visions, directing expectations top down. ChatGPT collapsed this architecture by making generative AI accessible, democratizing technology evaluation; meanwhile, social media emerged as the arena where relational publics could form, driving vision formation and contestation around generative AI from the bottom up, reshaping how a nascent technology acquired meaning. Combining grounded theory with computational text analysis, we develop a process model on the role of relational publics in hypes. We explain how collective knowledge accumulates through traceable conceptual prototyping, testing a technology’s capability and proposing meaning simultaneously, and how, when this knowledge crosses a technology literacy threshold, hype transitions from an expanding to a containing phase. The model advances our understanding of how novel technologies diffuse when crowds simultaneously co-construct visionary imaginaries and practical knowledge, and of the role social media plays in this process.",
+      "keywords": []
     },
     {
       "id": "0a786a5daede0e00",
@@ -3155,7 +3194,9 @@
       "display_date_basis": "published_at",
       "push_basis": "first_seen",
       "extraction_rule": "atypon-etoc",
-      "date_source": "metadata_published"
+      "date_source": "metadata_published",
+      "abstract": "Experiencing trauma in extreme contexts (e.g., areas affected by war, famine, or disease) can undermine professionals’ ability to cope, and remain engaged, with work. Prior research has highlighted coping strategies, such as detachment from trauma. However, less attention has been given to how professionals cope in demoralizing contexts, where trauma is persistent, detachment is difficult, and hope for impact erodes. Drawing on 73 diaries, 146 interviews, field observations, and archival data from Médecins Sans Frontières (Doctors Without Borders), we show how professionals cope by temporally reframing their experiences—anchoring in the past or future to reinterpret their experience, and reorienting their agency to sustain engagement in the present. Building on construal-level theory, we identify three reframing pathways that enable professionals to remain engaged over time. Such temporal reframing influences not only how professionals cope but also whether they return to fieldwork or redirect purpose to broader systemic change and policymaking. We contribute to the literatures on trauma and coping by theorizing temporal reframing as a cognitive-emotional coping approach that reorients disoriented agency and explains divergent pathways of sustained engagement or redirected purpose.",
+      "keywords": []
     },
     {
       "id": "0a7dc1af256fb586",
@@ -4339,7 +4380,17 @@
       "display_date_basis": "issue_date",
       "push_basis": "first_seen",
       "extraction_rule": "asc-current-issue-html",
-      "date_source": "issue_loop"
+      "date_source": "issue_loop",
+      "official_source": "ncpssd",
+      "reader_url": "https://m.ncpssd.cn/Literature/readurl?id=HJYJ2026005009",
+      "abstract": "积极稳妥防范化解地方政府债务风险，是实现在发展中化债、激发经济增长潜力的关键举措。本文以地方债管理体制改革作为准自然实验，基于2009—2023年中国A股上市公司数据，实证考察地方债管理体制改革对企业资本结构动态调整的影响。研究发现，地方债管理体制改革通过缓解企业融资约束与降低经营风险，显著提高了企业的资本结构动态调整速度。上述效应在非国有企业以及所处地区财政压力较大的企业中更为明显。进一步研究发现，在调整方向方面，地方债管理体制改革主要提升了过度负债企业的向下资本结构动态调整速度；在调整方式方面，该改革增加了过度负债企业通过减少债务的方式进行资本结构调整的概率，也提高了负债不足企业通过增加债务和降低权益的方式进行资本结构调整的概率。此外，地方债管理体制改革还通过加快资本结构动态调整速度改善了企业盈利能力和经济增加值，从而促进企业价值提升。本文丰富了地方债管理体制改革经济后果的研究，为进一步深化地方债管理体制改革和释放财政金融监管制度红利提供了政策启示。",
+      "keywords": [
+        "地方债管理体制改革",
+        "资本结构动态调整",
+        "融资约束",
+        "经营风险",
+        "企业价值"
+      ]
     },
     {
       "id": "00b10ba179e137ab",
@@ -4361,7 +4412,15 @@
       "display_date_basis": "issue_date",
       "push_basis": "first_seen",
       "extraction_rule": "asc-current-issue-html",
-      "date_source": "issue_loop"
+      "date_source": "issue_loop",
+      "official_source": "ncpssd",
+      "reader_url": "https://m.ncpssd.cn/Literature/readurl?id=HJYJ2026005005",
+      "abstract": "本文以2008—2024年沪深A股上市家族企业为研究对象，考察了父子共同决策对企业股价崩盘风险的影响。研究发现，父子共同决策能够显著地降低企业股价崩盘风险，说明该治理结构属于控股家族的“长期选择”而非“掏空手段”。机制分析表明，父子共同决策通过缓解第一类及第二类代理冲突来降低企业股价崩盘风险。进一步研究发现，当二代CEO不具有海外经历、二代CEO介入时长较长、多个二代子女进入企业、投资者保护程度较低、分析师关注度较低以及经营风险较高时，父子共同决策发挥的治理作用更强，表现为企业股价崩盘风险更低。本研究不仅丰富和补充了代际传承的相关文献，也有助于我们深入理解家族企业股价崩盘风险的影响因素。",
+      "keywords": [
+        "家族企业",
+        "父子共同决策",
+        "股价崩盘风险"
+      ]
     },
     {
       "id": "aeeba2953788eeef",
@@ -5809,7 +5868,16 @@
       "display_date_basis": "issue_date",
       "push_basis": "first_seen",
       "extraction_rule": "cie-legacy-html",
-      "date_source": "context_issue"
+      "date_source": "context_issue",
+      "official_source": "ncpssd",
+      "reader_url": "https://m.ncpssd.cn/Literature/readurl?id=ZGGYJJ2026005003",
+      "abstract": "破解科技强国建设中“高科学产出—低本土技术转化”矛盾，需要对国内科学研究本土服务功能有更为清晰的理论认知。本文反思传统“默顿式”科学研究范式，根据科学研究情境适配的根源及作用效应，构建“本土技术特性—科学研究情境适配—本土技术创新”的理论分析框架，探究国内科学研究本土服务功能的条件与机理。为验证这一理论框架，本文运用文本分析、机器学习以及大数据处理技术，打通了中国192万余条发明专利与其引证文献的数据关联与文本内容关联。研究发现，国内外科学研究对本土技术创新的指导效应随本土技术特性强弱而分化，强本土技术特性领域的技术创新更依赖国内科学研究的指导。其根源在于，由社会文化、地理环境与制度规制等情境塑造的本土技术特性决定了不同领域技术创新对科学研究情境适配的差异化需求，而国内科学研究以地理邻近性、文化嵌入性、制度熟悉性构成的情境适配优势，通过本土情境化知识供给和提供更适配本土技术发展需求的知识支撑，成为强本土技术特性领域技术创新不可或缺的推动力。本文研究对重塑国内科学研究价值导向、推动“论文大国”向“技术强国”转变具有重要启示意义。",
+      "keywords": [
+        "国内科学研究",
+        "本土技术特性",
+        "技术创新",
+        "基础研究"
+      ]
     },
     {
       "id": "38403e229853a3f4",
@@ -5831,7 +5899,17 @@
       "display_date_basis": "issue_date",
       "push_basis": "first_seen",
       "extraction_rule": "cie-legacy-html",
-      "date_source": "context_issue"
+      "date_source": "context_issue",
+      "official_source": "ncpssd",
+      "reader_url": "https://m.ncpssd.cn/Literature/readurl?id=ZGGYJJ2026005007",
+      "abstract": "城市地铁建设的资金平衡主要依赖土地出让收入，这使得其与房地产周期紧密关联，并对区域内企业产生深刻影响。本文利用2009—2023年中国上市公司数据，探究城市地铁开通对周边企业投资活动的影响。研究发现，地铁站点开通会提高周边企业的投资水平并加剧过度投资，具体表现为企业会加大本地的投资力度，新设更多的子公司。机制检验表明，抵押品效应、企业经营者预期和通勤改善带来的要素集聚是影响企业投资的主要机制。在房地产上行周期，地铁开通主要通过放大抵押品效应、提高经营者预期，特别是推动投资性房地产增值，引致企业加大投资甚至加剧过度投资；而在房地产下行周期，抵押品效应和经营者预期弱化，地铁开通通过通勤改善的要素集聚效应，加快高质量劳动力的集聚，降低企业用工成本，进而影响企业投资。异质性分析表明，上述影响在房价增速较快、人口密度较高的城市中更显著，并在盈利波动率较高、敏捷响应度较高的企业中更明显。进一步分析发现，地铁开通会抑制企业未来的投资回报，强化投资“地产化”倾向，促使中小企业向站点周边集聚。本文丰富了不同房地产周期下城市地铁建设热潮的微观企业效应的研究，有助于深化对城市基础设施建设投资影响微观经济活动的理解。",
+      "keywords": [
+        "地铁开通",
+        "房地产周期",
+        "要素集聚效应",
+        "抵押品效应",
+        "企业经营者预期"
+      ]
     },
     {
       "id": "e140a40fe17c65b3",
@@ -8742,21 +8820,23 @@
       "source_journal_id": "j7",
       "journal_name": "南开管理评论",
       "title": "财务智能化提升了企业投资效率吗？ ——基于智能化财务人员招聘的证据",
-      "url": "",
-      "official_url": "",
+      "url": "https://m.ncpssd.cn/Literature/articleinfo?id=NKGLPL2026004018&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+      "official_url": "https://m.ncpssd.cn/Literature/articleinfo?id=NKGLPL2026004018&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
       "pdf_url": "",
       "discovery_url": "https://www.macrodatas.cn/article/1776651960#:~:text=%E8%B4%A2%E5%8A%A1%E6%99%BA%E8%83%BD%E5%8C%96%E6%8F%90%E5%8D%87%E4%BA%86%E4%BC%81%E4%B8%9A%E6%8A%95%E8%B5%84%E6%95%88%E7%8E%87%E5%90%97%EF%BC%9F%20%E2%80%94%E2%80%94%E5%9F%BA%E4%BA%8E%E6%99%BA%E8%83%BD%E5%8C%96%E8%B4%A2%E5%8A%A1%E4%BA%BA%E5%91%98%E6%8B%9B%E8%81%98%E7%9A%84%E8%AF%81%E6%8D%AE",
-      "link_status": "needs_official_pdf",
-      "link_note": "fallback_directory_requires_official_pdf_resolution",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
       "authors": "陈俊，李永康，龚启辉",
       "published_at": "2026-04-20",
-      "issue_date": "",
+      "issue_date": "2026-04",
       "first_seen_at": "2026-05-29",
       "display_date": "2026-04-20",
       "display_date_basis": "published_at",
       "push_basis": "first_seen",
       "extraction_rule": "macrodatas-issue-list",
-      "date_source": "",
+      "date_source": "ncpssd_issue_title_match",
+      "official_source": "ncpssd",
+      "reader_url": "https://m.ncpssd.cn/Literature/readurl?id=NKGLPL2026004018",
       "abstract": "财务智能化将培育和发展财务领域新质生产力，其如何赋能企业提升投资效率是推动企业可持续高质量发展亟须回答的重要问题。本文以企业对智能化财务人员的招聘来反映财务智能化的发展进程，检验了财务智能化与企业投资效率的关系及其作用机制。研究发现，财务智能化显著提升了企业的投资效率，作用路径包括加强投资机会识别、提高财务总监权力和改善内部控制质量；财务智能化更有利于公共数据开放地区、产权性质为民营和治理水平较差的企业提升投资效率。最后，研究结果表明财务智能化将提高企业价值。本文揭示了财务智能化对企业投资效率的影响机制，拓展了对财务智能化与新质生产力关系的认知，研究结果为加速财务管理智能化转型和高水平复合型人才培育提供了重要启示。",
       "keywords": [
         "财务智能化",
@@ -8771,21 +8851,23 @@
       "source_journal_id": "j7",
       "journal_name": "南开管理评论",
       "title": "大股东支持行为的融资效应研究：从控股股东股权质押到独特监督型资本",
-      "url": "",
-      "official_url": "",
+      "url": "https://m.ncpssd.cn/Literature/articleinfo?id=NKGLPL2026004008&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+      "official_url": "https://m.ncpssd.cn/Literature/articleinfo?id=NKGLPL2026004008&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
       "pdf_url": "",
       "discovery_url": "https://www.macrodatas.cn/article/1776651960#:~:text=%E5%A4%A7%E8%82%A1%E4%B8%9C%E6%94%AF%E6%8C%81%E8%A1%8C%E4%B8%BA%E7%9A%84%E8%9E%8D%E8%B5%84%E6%95%88%E5%BA%94%E7%A0%94%E7%A9%B6%EF%BC%9A%E4%BB%8E%E6%8E%A7%E8%82%A1%E8%82%A1%E4%B8%9C%E8%82%A1%E6%9D%83%E8%B4%A8%E6%8A%BC%E5%88%B0%E7%8B%AC%E7%89%B9%E7%9B%91%E7%9D%A3%E5%9E%8B%E8%B5%84%E6%9C%AC",
-      "link_status": "needs_official_pdf",
-      "link_note": "fallback_directory_requires_official_pdf_resolution",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
       "authors": "李志伟，马连福，高媛",
       "published_at": "2026-04-20",
-      "issue_date": "",
+      "issue_date": "2026-04",
       "first_seen_at": "2026-05-29",
       "display_date": "2026-04-20",
       "display_date_basis": "published_at",
       "push_basis": "first_seen",
       "extraction_rule": "macrodatas-issue-list",
-      "date_source": "",
+      "date_source": "ncpssd_issue_title_match",
+      "official_source": "ncpssd",
+      "reader_url": "https://m.ncpssd.cn/Literature/readurl?id=NKGLPL2026004008",
       "abstract": "中国资本市场上，股权质押最初为改善融资问题而兴，最终却因公司治理问题而落。本文提出控股股东为上市公司进行股权质押实质上是一种股债混合融资模式，该模式在债权人、上市公司、控股股东之间形成了一种特殊的治理结构，进而呈现出一种不仅同时具备“财务投资”和“监督”职能，而且财务投资职能由原始债权人执行，监督职能却更多由控股股东所执行的独特监督型资本。进一步，本文通过构建理论模型分析了监督型资本的引入后对代理成本和公司融资情况的具体影响，基于中国A股上市公司股权质押数据的实证研究显示：与股权质押资金投向其他方向的类型相比，控股股东为上市公司进行股权质押所形成的独特监督型资本对上市公司有积极的融资效应，平均提升资产负债率6.5个百分点，并且独特监督型资本能够显著降低代理成本。进一步研究还发现，独特监督型资本与上市公司研发强度和公司价值显著正相关。本文的研究结论对完善中国资本市场上大股东治理机制和股权质押市场健康发展具有重要的理论和现实意义。",
       "keywords": [
         "股权质押",
@@ -8801,21 +8883,23 @@
       "source_journal_id": "j7",
       "journal_name": "南开管理评论",
       "title": "非计划决策：基于数智赋能的企业即兴能力构建",
-      "url": "",
-      "official_url": "",
+      "url": "https://m.ncpssd.cn/Literature/articleinfo?id=NKGLPL2026004004&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+      "official_url": "https://m.ncpssd.cn/Literature/articleinfo?id=NKGLPL2026004004&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
       "pdf_url": "",
       "discovery_url": "https://www.macrodatas.cn/article/1776651960#:~:text=%E9%9D%9E%E8%AE%A1%E5%88%92%E5%86%B3%E7%AD%96%EF%BC%9A%E5%9F%BA%E4%BA%8E%E6%95%B0%E6%99%BA%E8%B5%8B%E8%83%BD%E7%9A%84%E4%BC%81%E4%B8%9A%E5%8D%B3%E5%85%B4%E8%83%BD%E5%8A%9B%E6%9E%84%E5%BB%BA",
-      "link_status": "needs_official_pdf",
-      "link_note": "fallback_directory_requires_official_pdf_resolution",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
       "authors": "王琳，周昕怡，刘锡禄",
       "published_at": "2026-04-20",
-      "issue_date": "",
+      "issue_date": "2026-04",
       "first_seen_at": "2026-05-29",
       "display_date": "2026-04-20",
       "display_date_basis": "published_at",
       "push_basis": "first_seen",
       "extraction_rule": "macrodatas-issue-list",
-      "date_source": "",
+      "date_source": "ncpssd_issue_title_match",
+      "official_source": "ncpssd",
+      "reader_url": "https://m.ncpssd.cn/Literature/readurl?id=NKGLPL2026004004",
       "abstract": "在VUCA时代，数字技术迅猛发展，信息量呈爆炸性增长，商业生态被前所未有的不确定性与复杂性所充斥。面对诸多挑战，企业应当如何灵活应对并制定出高效的即时应变策略，以确保自身持续经营与稳健增长，已成为当下亟待破解的核心问题。基于此，本文采用探索性单案例研究方法，以浪潮集团为分析对象，揭示数字技术如何赋能企业即兴能力构建的过程机理。研究发现：（1）企业通过实施敏捷定位、高效调控和即时决断的决策行为构建即兴能力；（2）数字技术充分嵌入即兴能力构建过程，通过知识关系重组的数字技术赋能机制，推动企业即兴能力构建；（3）提炼了制度关系迭代逻辑这一数字技术赋能即兴能力构建的实现逻辑。本文针对数字技术赋能即兴能力构建过程展开探讨，能够拓展当前组织即兴研究的范畴边界，弥补即兴能力构建滞后于经营实践这一研究缺陷。此外，本文进一步讨论的制度关系迭代逻辑，既是对现有即兴能力构建逻辑的有益补充，也是对即兴能力相关理论的全新探索与深刻洞见。",
       "keywords": [
         "即兴能力",
@@ -9117,21 +9201,23 @@
       "source_journal_id": "j7",
       "journal_name": "南开管理评论",
       "title": "新三板公司在多层次资本市场层级变动因何不同？ ——基于机器学习重要因素挖掘与动态QCA因果关系分析",
-      "url": "",
-      "official_url": "",
+      "url": "https://m.ncpssd.cn/Literature/articleinfo?id=NKGLPL2026004010&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
+      "official_url": "https://m.ncpssd.cn/Literature/articleinfo?id=NKGLPL2026004010&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
       "pdf_url": "",
       "discovery_url": "https://www.macrodatas.cn/article/1776651960#:~:text=%E6%96%B0%E4%B8%89%E6%9D%BF%E5%85%AC%E5%8F%B8%E5%9C%A8%E5%A4%9A%E5%B1%82%E6%AC%A1%E8%B5%84%E6%9C%AC%E5%B8%82%E5%9C%BA%E5%B1%82%E7%BA%A7%E5%8F%98%E5%8A%A8%E5%9B%A0%E4%BD%95%E4%B8%8D%E5%90%8C%EF%BC%9F%20%E2%80%94%E2%80%94%E5%9F%BA%E4%BA%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E9%87%8D%E8%A6%81%E5%9B%A0%E7%B4%A0%E6%8C%96%E6%8E%98%E4%B8%8E%E5%8A%A8%E6%80%81QCA%E5%9B%A0%E6%9E%9C%E5%85%B3%E7%B3%BB%E5%88%86%E6%9E%90",
-      "link_status": "needs_official_pdf",
-      "link_note": "fallback_directory_requires_official_pdf_resolution",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
       "authors": "孙洁，梅静怡",
       "published_at": "2026-04-20",
-      "issue_date": "",
+      "issue_date": "2026-04",
       "first_seen_at": "2026-05-29",
       "display_date": "2026-04-20",
       "display_date_basis": "published_at",
       "push_basis": "first_seen",
       "extraction_rule": "macrodatas-issue-list",
-      "date_source": "",
+      "date_source": "ncpssd_issue_title_match",
+      "official_source": "ncpssd",
+      "reader_url": "https://m.ncpssd.cn/Literature/readurl?id=NKGLPL2026004010",
       "abstract": "新三板在多层次资本市场中有承上启下的重要作用，对发展新质生产力、实现高质量发展具有积极意义。新三板公司在多层次资本市场层级变动差异原因是有待回答的重要问题。本文利用机器学习挖掘影响新三板公司在多层次资本市场层级变动的重要因素，通过动态QCA方法揭示重要因素如何引发新三板公司在多层次资本市场层级变动差异化。基于2020-2023年新三板公司样本数据的实证研究发现：（1）不同机器学习模型对新三板公司在多层次资本市场层级变动的预测效果存在差异，CatBoost模型的整体预测效果最好。（2）不同因素对新三板公司在多层次资本市场层级变动重要性不同，影响新三板公司在多层次资本市场层级变动的重要因素包括资产规模、研发投入总额、独立董事比例、现金比率、息税前利润／总资产、高管团队规模、营业收入同比增长率、前十大股东持股比例合计，存在经济理论上的必然性。（3）单个重要因素不构成新三板公司在多层次资本市场层级变动的必要条件；转板至高层次资本市场的新三板公司的前十大股东持股比例合计、独立董事比例、研发投入总额、资产规模均为高，并在财务指标不全为高时高管团队规模为高；未转板至高层次资本市场的新三板公司无论是否与转板至高层次资本市场的新三板公司财务状况相似，治理结构不同，且研发投入总额和资产规模均不为高。本文研究对新三板公司高质量发展、多层次资本市场建设具有重要的理论意义与实践启示。",
       "keywords": [
         "新三板",
@@ -11036,7 +11122,9 @@
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": "forthcoming_unassigned"
+      "date_source": "forthcoming_unassigned",
+      "abstract": "The implementation of evidence-based policies hinges on the dissemination of evidence to policymakers, a process influenced by the attributes of the sender. We conducted a nationwide RCT with ideologically opposite think tanks, major newspapers, and a research institution with nonsalient ideology to communicate a nonideological, cost-effective policy to local policymakers. Results show a 65 percent increase in policy adoption when informing institutions align ideologically with policymakers. We compare the impact of think tanks versus media outlets on implementation, finding both equally effective when ideologically aligned. We explore three actions where ideology may influence adoption: information exposure, belief updating and implementation. (JEL C93, D72, D78, D83, I23)",
+      "keywords": []
     },
     {
       "id": "5932a29df1df5a20",
@@ -11419,7 +11507,9 @@
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": "forthcoming_unassigned"
+      "date_source": "forthcoming_unassigned",
+      "abstract": "We use firm-level data to document that private businesses experience large fluctuations in their profit shares. These are due to large, fat-tailed, and transitory changes in output that are not fully accompanied by changes in their inputs. We interpret this evidence using a model of entrepreneurial dynamics. Because firms can limit their exposure to risk by operating at a smaller scale, our model predicts large macroeconomic losses from uninsurable business risk, much larger than those stemming from credit constraints. While self-financing allows entrepreneurs to quickly overcome credit constraints, even wealthy entrepreneurs remain considerably exposed to risk. (JEL D33, E02, E44, G32, L25, L26)",
+      "keywords": []
     },
     {
       "id": "fb2cf3e9e8ff5cc5",
@@ -11441,7 +11531,9 @@
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": "forthcoming_unassigned"
+      "date_source": "forthcoming_unassigned",
+      "abstract": "Moretti (2021) reports a positive elasticity between technology cluster size and patenting, and uses an event study and instrumental variables regressions to justify a causal interpretation. The event study does not use the variation generated by inventors moving across cities, and the instrument is constructed incorrectly due to a coding error. I run a corrected event study and fix the coding error, and find null effects. The reported elasticity may not be causal. (JEL J24, L60, O31, O34, R32)",
+      "keywords": []
     },
     {
       "id": "3efa11be12cd9ae9",
@@ -11559,7 +11651,9 @@
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": "forthcoming_unassigned"
+      "date_source": "forthcoming_unassigned",
+      "abstract": "I study how firm market power and worker bargaining power shape wages and welfare. Using French micro-data, I document patterns linking wages and firm market power that existing models cannot explain. A model in which firms produce vertically differentiated goods and share profits with workers explains those patterns. The model (i) reveals new challenges in estimating monopsony and bargaining power, proposing an alternative approach; (ii) shows that the passthrough of firm-specific shocks to wages depends on the type of shock; (iii) explains how markups shape firm wage premia; and (iv) formalizes how strengthening worker bargaining power affects wages and welfare. (JEL D22, J31, J42, J52, L12, L22)",
+      "keywords": []
     },
     {
       "id": "3b7760dfdd62e355",
@@ -13232,7 +13326,9 @@
       "display_date_basis": "published_at",
       "push_basis": "published_date",
       "extraction_rule": "atypon-etoc",
-      "date_source": "metadata_published"
+      "date_source": "metadata_published",
+      "abstract": "How efficiently do markets reallocate capital in booms and busts? Using a novel dataset of offshore drilling contracts, I examine the role of matching in shaping industry reallocation. Oil companies search and match with capital (rigs) in a decentralized market. I find that oil and gas booms increase the option value of searching, which leads agents to avoid bad matches, reducing mismatch through a sorting effect. I provide an identification strategy to disentangle unobserved demand changes from the sorting effect. Estimating a model, I find substantial benefits to the sorting effect and an intermediary, but I find that demand-smoothing policies are ineffective.",
+      "keywords": []
     },
     {
       "id": "d6f85a861c78081c",
@@ -13278,7 +13374,9 @@
       "display_date_basis": "published_at",
       "push_basis": "published_date",
       "extraction_rule": "atypon-etoc",
-      "date_source": "metadata_published"
+      "date_source": "metadata_published",
+      "abstract": "Private signals model noisy information about an unknown state. Although these signals are called private, they may still carry information about each other. Our paper introduces the concept of private private signals, which contain information about the state but not about other signals. To achieve privacy, signal quality may need to be sacrificed. We study the informativeness of private private signals and characterize those that are optimal in the sense that they cannot be made more informative without violating privacy. We discuss implications for privacy in recommendation systems, information design, causal inference, and mechanism design.",
+      "keywords": []
     },
     {
       "id": "ddee8cbbcd09ae1a",
@@ -13324,7 +13422,9 @@
       "display_date_basis": "published_at",
       "push_basis": "published_date",
       "extraction_rule": "atypon-etoc",
-      "date_source": "metadata_published"
+      "date_source": "metadata_published",
+      "abstract": "The US government is the dominant supplier of global safe assets and faces a downward-sloping demand for its debt. We develop a model of the global economy in which US public debt generates special value for holders, endowing the US government with market power. We use variations in demand elasticities during high- and low-volatility regimes to distinguish this model from a price-taking benchmark and find that the data reject price-taking behavior in favor of the US government exploiting market power. We quantify the distortions, finding significant underprovision of safe assets, convenience yield markups, and welfare benefits for the United States.",
+      "keywords": []
     },
     {
       "id": "ea503371cbba8e72",

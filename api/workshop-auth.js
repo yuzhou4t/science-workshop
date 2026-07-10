@@ -119,7 +119,7 @@ function isSecureRequest(req) {
 }
 
 function isProtectedBackendPath(pathname) {
-  return /\/api\/(?:workflows|jobs|source-requests|wechat-drafts)(?:\/|$)/.test(String(pathname || ""));
+  return /\/api\/(?:workflows|jobs|source-requests|sources|wechat-drafts)(?:\/|$)/.test(String(pathname || ""));
 }
 
 function writeJson(res, statusCode, payload, headers = {}) {

@@ -51,6 +51,10 @@ class Settings(BaseSettings):
         default=False,
         alias="WORKFLOW_ALLOW_INSECURE_DIRECT_ACCESS",
     )
+    science_workshop_runtime_sources_path: Path | None = Field(
+        default=None,
+        alias="SCIENCE_WORKSHOP_RUNTIME_SOURCES_PATH",
+    )
     paper_reading_max_upload_bytes: int = Field(
         default=25 * 1024 * 1024,
         alias="PAPER_READING_MAX_UPLOAD_BYTES",

@@ -119,6 +119,83 @@ export function resolveNcpssdArticle(article = {}, ncpssdArticles = []) {
   return ncpssdArticles.find((candidate) => compactArticleTitle(candidate.title) === target) || null;
 }
 
+/**
+ * Historical official-link resolution is deliberately stricter than the
+ * discovery adapters: a candidate must be title matched and hosted by one of
+ * the two sources we can treat as an official article entry.  In particular,
+ * this prevents Macrodatas/CNKI directory URLs from becoming frontend links.
+ */
+export function isAllowedHistoricalOfficialUrl(value = "") {
+  try {
+    const hostname = new URL(value).hostname.toLowerCase();
+    return hostname === "ncpssd.cn"
+      || hostname.endsWith(".ncpssd.cn")
+      || hostname === "nbr.nankai.edu.cn";
+  } catch {
+    return false;
+  }
+}
+
+export function titleLevelOfficialMatch(article = {}, candidates = []) {
+  const target = compactArticleTitle(article.title || "");
+  if (!target) return null;
+  const allowed = candidates.filter((candidate) => {
+    const url = candidate.official_url || candidate.url || candidate.href || "";
+    return isAllowedHistoricalOfficialUrl(url);
+  });
+  const exact = allowed.find((candidate) => compactArticleTitle(candidate.title || candidate.text || "") === target);
+  if (exact) return { ...exact, title_match_kind: "exact" };
+
+  const comparisonText = (value) => compactArticleTitle(value).replace(/[^\p{L}\p{N}]+/gu, "");
+  const diceScore = (left, right) => {
+    const a = [...comparisonText(left)];
+    const b = [...comparisonText(right)];
+    if (a.length < 2 || b.length < 2) return 0;
+    const counts = new Map();
+    for (let index = 0; index < a.length - 1; index += 1) {
+      const pair = `${a[index]}${a[index + 1]}`;
+      counts.set(pair, (counts.get(pair) || 0) + 1);
+    }
+    let overlap = 0;
+    for (let index = 0; index < b.length - 1; index += 1) {
+      const pair = `${b[index]}${b[index + 1]}`;
+      if (!counts.get(pair)) continue;
+      overlap += 1;
+      counts.set(pair, counts.get(pair) - 1);
+    }
+    return (2 * overlap) / (a.length + b.length - 2);
+  };
+  const ranked = allowed
+    .map((candidate) => ({ candidate, score: diceScore(article.title || "", candidate.title || candidate.text || "") }))
+    .sort((left, right) => right.score - left.score);
+  const best = ranked[0];
+  const runnerUp = ranked[1];
+  if (!best || best.score < 0.8 || (runnerUp && best.score - runnerUp.score < 0.1)) return null;
+  return { ...best.candidate, title_match_kind: "unique_fuzzy", title_match_score: best.score };
+}
+
+export function resolveNankaiHistoricalOfficialArticle(article = {}, candidates = []) {
+  const candidate = titleLevelOfficialMatch(article, candidates);
+  if (!candidate) return null;
+  const officialUrl = candidate.official_url || candidate.url || candidate.href || "";
+  const source = new URL(officialUrl).hostname.toLowerCase().endsWith(".ncpssd.cn")
+    || new URL(officialUrl).hostname.toLowerCase() === "ncpssd.cn"
+    ? "ncpssd"
+    : "nbr.nankai.edu.cn";
+  return {
+    ...article,
+    official_url: officialUrl,
+    url: officialUrl,
+    pdf_url: candidate.pdf_url || article.pdf_url || "",
+    reader_url: candidate.reader_url || article.reader_url || "",
+    link_status: candidate.pdf_url ? "official_pdf" : "official_detail",
+    link_note: candidate.title_match_kind === "unique_fuzzy"
+      ? "unique_fuzzy_historical_title_match"
+      : "title_level_historical_match",
+    official_source: source,
+  };
+}
+
 export function resolveNcpssdOfficialArticle(article = {}, ncpssdArticles = []) {
   const official = resolveNcpssdArticle(article, ncpssdArticles);
   if (!official) return null;

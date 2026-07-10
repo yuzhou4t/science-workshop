@@ -28,6 +28,7 @@ node scripts/fetch-retry-policy-test.mjs
 node scripts/article-link-policy-test.mjs
 node scripts/ajcass-link-policy-test.mjs
 node scripts/official-link-resolvers-test.mjs
+node scripts/backfill-nankai-official-links-test.mjs
 node scripts/macrodatas-url-test.mjs
 node scripts/recent-workflow-test.mjs
 node scripts/front-data-history-test.mjs
@@ -35,6 +36,7 @@ node scripts/html-adapter-parsers-test.mjs
 node scripts/date-enhancement-test.mjs
 node scripts/pdf-abstract-backfill-test.mjs
 node scripts/daily-abstract-backfill-test.mjs
+node scripts/abstract-quality-test.mjs
 node scripts/topic-search-index-test.mjs
 node scripts/daily-topic-search-workflow-test.mjs
 node scripts/launchd-plist-test.mjs
@@ -46,9 +48,11 @@ node --check scripts/build-adapter-front-data.mjs
 node --check scripts/build-topic-search-index.mjs
 node --check scripts/run-daily-workflow.mjs
 node --check scripts/backfill-daily-abstracts.mjs
+node --check scripts/backfill-nankai-official-links.mjs
 node --check scripts/backfill-ncpssd-abstracts.mjs
 node --check scripts/backfill-ncpssd-issue-abstracts.mjs
 node --check scripts/backfill-pdf-abstracts.mjs
+node --check scripts/backfill-official-html-abstracts.mjs
 node --check scripts/backfill-english-metadata-abstracts.mjs
 node --check scripts/backfill-macrodatas-abstracts.mjs
 node --check scripts/install-daily-launchd.mjs
@@ -144,9 +148,58 @@ Keep deploys split by sensitivity:
 - Keep `.env`, `api.env`, DeepSeek keys, MinerU keys, and Tencent COS secrets only on the server.
 - Upload backend code with SSH/SCP/rsync or by pulling Git on the server. Do not upload local virtualenvs, storage, caches, logs, or secrets.
 - Build the Docker image on the server from `backend/Dockerfile`; run it with `--env-file /opt/science-workshop/api.env`.
-- Bind the API container to localhost, for example `127.0.0.1:18080:8000`, then expose it through Nginx at `/science-workshop-api/`.
+- Bind the API container to localhost as `127.0.0.1:18080:8000`, then expose it through Nginx at `/science-workshop-api/`. The checked-in Nginx template uses this exact host port.
+- Persist workflow records with `/opt/science-workshop/storage/workflow_jobs:/data/workflow_jobs` and mount `/opt/science-workshop/repo/data:/opt/science-workshop/repo/data` so FastAPI approvals and the host Node crawler share `community-sources.json`.
 - Leave only required firewall ports open. For this deployment: 22 for SSH, 80 for HTTP, and 443 only after TLS is configured.
 - Back up Nginx config and `api.env` before edits, then run `nginx -t` before reload.
+
+### Public-IP HTTPS (default, no domain required)
+
+The default production path keeps the frontend and auth proxy on Vercel and exposes the Tencent Cloud FastAPI backend through the server's public IP:
+
+```text
+Vercel -> https://<PUBLIC_IP>/science-workshop-api/ -> Nginx -> 127.0.0.1:18080 -> FastAPI
+```
+
+保留现有 OpenClaw 站点的 Nginx server、location 和 upstream；仅合并 ACME challenge、IP TLS 证书和 `/science-workshop-api/` location。
+
+Do not overwrite `/etc/nginx/nginx.conf`, replace the OpenClaw site file wholesale, or leave two `default_server` declarations on port 443. Inspect and back up `sudo nginx -T` before changing the live host. The checked-in template is a merge reference, not a complete replacement for the live OpenClaw configuration.
+
+IP address certificates require Certbot 5.4+ for `webroot` support and Let's Encrypt's `shortlived` profile. They are valid for about 160 hours, so a working automatic renewal timer and Nginx deploy hook are release blockers. First make `/var/www/acme/.well-known/acme-challenge/` publicly readable through the existing port-80 server, then test against staging:
+
+```bash
+certbot --version
+sudo certbot certonly --staging \
+  --preferred-profile shortlived \
+  --webroot \
+  --webroot-path /var/www/acme \
+  --ip-address <PUBLIC_IP>
+```
+
+After staging succeeds, run the same command once without `--staging`. Certbot currently obtains but does not install IP certificates into Nginx, so point Nginx at `/etc/letsencrypt/live/<PUBLIC_IP>/fullchain.pem` and `/etc/letsencrypt/live/<PUBLIC_IP>/privkey.pem`. Persist and test the successful-renewal reload hook:
+
+```bash
+sudo certbot reconfigure \
+  --cert-name <PUBLIC_IP> \
+  --preferred-profile shortlived \
+  --webroot \
+  --webroot-path /var/www/acme \
+  --ip-address <PUBLIC_IP> \
+  --deploy-hook "systemctl reload nginx" \
+  --run-deploy-hooks
+sudo certbot renew --dry-run
+systemctl list-timers
+sudo nginx -t
+```
+
+Only after the public HTTPS health URL passes, set these Vercel Preview variables and run the browser acceptance flow before copying them to Production:
+
+```text
+SCIENCE_WORKSHOP_BACKEND_ORIGIN=https://<PUBLIC_IP>
+SCIENCE_WORKSHOP_BACKEND_PREFIX=/science-workshop-api
+```
+
+If a backend domain is added later, the same proxy path remains valid: replace the public host and certificate paths, use `SCIENCE_WORKSHOP_BACKEND_ORIGIN=https://<BACKEND_DOMAIN>`, and revalidate in Preview. A domain is optional for the current deployment and must not block the public-IP route. The full, ordered procedure is in [the HTTPS launch checklist](https-launch-checklist.md).
 
 Workflow calls from the Vercel page are protected by a signed session cookie at the Vercel proxy layer and by a shared proxy secret at the FastAPI layer. Set these values outside the repository:
 
@@ -161,6 +214,8 @@ SCIENCE_WORKSHOP_PROXY_SECRET=<same value as backend>
 
 Backend /opt/science-workshop/api.env:
 SCIENCE_WORKSHOP_PROXY_SECRET=<same value as Vercel>
+WORKFLOW_STORAGE_DIR=/data/workflow_jobs
+SCIENCE_WORKSHOP_RUNTIME_SOURCES_PATH=/opt/science-workshop/repo/data/community-sources.json
 WORKFLOW_ALLOW_INSECURE_DIRECT_ACCESS=false
 WORKFLOW_RETENTION_DAYS=3
 WORKFLOW_MAX_RUNNING_JOBS=3
@@ -173,11 +228,25 @@ WORKFLOW_WECHAT_WRITING_DAILY_QUOTA_PER_USER=10
 WORKFLOW_QUOTA_TIMEZONE=Asia/Shanghai
 ```
 
+Prepare the two host directories before starting the container, then use the same bind mounts on every replacement or restart:
+
+```bash
+sudo mkdir -p /opt/science-workshop/storage/workflow_jobs /opt/science-workshop/repo/data
+docker run -d --name science-workshop-api \
+  --env-file /opt/science-workshop/api.env \
+  -p 127.0.0.1:18080:8000 \
+  -v /opt/science-workshop/storage/workflow_jobs:/data/workflow_jobs \
+  -v /opt/science-workshop/repo/data:/opt/science-workshop/repo/data \
+  science-workshop-api:local
+```
+
+`WORKFLOW_STORAGE_DIR` holds workflow jobs, source requests, and inbox records. `SCIENCE_WORKSHOP_RUNTIME_SOURCES_PATH` must point at the mounted repository data directory because the host Node daily task reads `/opt/science-workshop/repo/data/community-sources.json`. Do not use an unmounted container-only path for either setting.
+
 Workflow concurrency is enforced inside the FastAPI process. The current Docker command starts one uvicorn worker, so these limits apply process-wide: at most 3 running workflow jobs, with paper reading capped at 1 running job and WeChat writing capped at 2. A single logged-in user can have 1 running workflow and 2 queued workflows; daily quotas are 3 paper-reading jobs and 10 WeChat-writing jobs per user, counted by the configured quota timezone.
 
 All job reads and mutations are owner-scoped. A normal account may access only its own status, artifacts, edits, exports, reruns, SSE events, referenced paper evidence, and chunked uploads; an admin may access any owner. A `403` on these routes indicates an ownership/role mismatch rather than a missing job. Multi-file WeChat material uploads are preflighted as one set; if any upload is missing, incomplete, oversized, or owned by someone else, no job is kept and none of the staged uploads are deleted.
 
-User-submitted data-source contributions are appended to `WORKFLOW_STORAGE_DIR/source-requests.jsonl` with `intake_status=pending_auto_probe`. They do not mutate `data/adapter-profiles.json` or the crawler registry. The actual RSS/RSSHub/page/open-metadata probe runner and status transition to `probe_failed` are still pending; the admin inbox currently shows both queued and failed records.
+User-submitted data-source contributions are appended to `WORKFLOW_STORAGE_DIR/source-requests.jsonl` with `intake_status=pending_auto_probe`, then probed asynchronously through `probing → probe_succeeded / needs_manual_review / probe_failed`. Admin-only `POST /api/sources/import?mode=preview|commit` handles UTF-8/BOM CSV and first-sheet XLSX (2 MB, 500 rows) without bypassing this queue. Approval writes `data/community-sources.json` atomically; the Node crawler merges only approved runtime candidates on its next start. The fixed `data/adapter-profiles.json` is not modified.
 
 WeChat draft imports currently run in a reserved mock/record mode. The frontend "生成导入记录" action posts Markdown to `/api/wechat-drafts`, and the backend appends the payload to `WORKFLOW_STORAGE_DIR/wechat-draft-imports.jsonl` with `mode=mock` and `status=prepared`; admins can inspect these records in the inbox. This does not call the WeChat Official Account API yet; real draft-box publishing should be wired here after the account credentials, media upload permissions, and draft API access are confirmed.
 
@@ -189,12 +258,12 @@ node -e "const c=require('node:crypto');const p=process.argv[1];const s=c.random
 
 The legacy `WORKSHOP_AUTH_USERNAME` / `WORKSHOP_AUTH_PASSWORD_HASH` pair is still accepted and is treated as an admin account, but new deployments should prefer the explicit admin/user variables above.
 
-Current production health checks:
+Current production health checks (run only after the HTTPS launch checklist is completed; this local round does not execute them):
 
 ```bash
 curl -s http://127.0.0.1:18080/api/health
-curl -s http://106.53.153.215/science-workshop-api/api/health
-curl -s https://journal-workshop-prototype.vercel.app/science-workshop-api/api/health
+curl -fsS https://<PUBLIC_IP>/science-workshop-api/api/health
+curl -fsS https://<VERCEL_ORIGIN>/science-workshop-api/api/health
 ```
 
 Run the live probe when network behavior matters:
@@ -232,7 +301,30 @@ Daily runs automatically attempt abstract backfill after new push articles are m
 node scripts/backfill-daily-abstracts.mjs --first-seen-at=2026-06-06
 ```
 
-This command only targets articles in `data/push-history.json` whose `first_seen_at` equals the requested date and whose `abstract` is still missing. It writes per-source files such as:
+For a one-time local recovery of every article whose abstract is still empty,
+run the same ordered source pipeline with `--all-missing`. Each successful
+step is merged before the next step and a coverage report is written to
+`data/abstract-backfill-report-<date>.json`:
+
+```bash
+node scripts/backfill-daily-abstracts.mjs --all-missing --ocr
+```
+
+Historical `南开管理评论` official-link recovery is a separate, title-level
+workflow. It first accepts normalized exact matches, then allows a unique
+same-issue candidate only when its title similarity is at least 0.8 and leads
+the runner-up by at least 0.1. When a known issue yields no match, it scans the
+other numbered issues in that year and all six issues in the previous year before trying the
+Nankai archive. It only accepts `ncpssd.cn` or
+`nbr.nankai.edu.cn` links, keeps evidence for protected or unmatched pages,
+and never fabricates CNKI filenames. Successful matches are merged into the
+cumulative frontend data automatically:
+
+```bash
+node scripts/backfill-nankai-official-links.mjs
+```
+
+The date-scoped command only targets articles in `data/push-history.json` whose `first_seen_at` equals the requested date and whose `abstract` is still missing. It writes per-source files such as:
 
 - `data/recent-articles-daily-ncpssd-direct-<date>.json`
 - `data/recent-articles-daily-ncpssd-issue-<date>.json`
@@ -246,7 +338,8 @@ Successful backfill files are merged automatically by the daily backfill script 
 node scripts/backfill-ncpssd-abstracts.mjs --first-seen-at=2026-06-06 --timeout-ms=30000 --delay-ms=8000 --retries=3
 node scripts/backfill-ncpssd-issue-abstracts.mjs --first-seen-at=2026-06-06 --journals=中国工业经济,会计研究 --timeout-ms=25000 --delay-ms=5000 --retries=3
 node scripts/backfill-pdf-abstracts.mjs --first-seen-at=2026-06-06 --journals=经济研究,中国农村经济 --ocr --fetch-timeout-ms=180000 --pages=3
-node scripts/backfill-english-metadata-abstracts.mjs --first-seen-at=2026-06-06 --timeout-ms=15000 --delay-ms=1200
+node scripts/backfill-official-html-abstracts.mjs --first-seen-at=2026-06-06 --timeout-ms=15000 --delay-ms=300
+node scripts/backfill-english-metadata-abstracts.mjs --first-seen-at=2026-06-06 --semantic-scholar --timeout-ms=15000 --delay-ms=1200
 node scripts/backfill-macrodatas-abstracts.mjs --first-seen-at=2026-06-06 --journals=中国工业经济,会计研究
 ```
 

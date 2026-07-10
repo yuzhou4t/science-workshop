@@ -40,6 +40,12 @@ function titleMatches(expected = "", actual = "") {
   return false;
 }
 
+function isCleanMetadataAbstract(value = "") {
+  const abstract = String(value).trim();
+  if (!abstract) return false;
+  return !/(?:\bemail\s*:|\backnowledg(?:e|ement)|\bi thank\b|\bwe thank\b|\bseminar participants\b|\bresearch assistance\b|\bfull paper is available\b)/i.test(abstract);
+}
+
 function isEnglishJournal(article = {}) {
   return !/[\u3400-\u9fff]/.test(article.journal_name || "");
 }
@@ -88,6 +94,67 @@ async function fetchJson(url, timeoutMs, headers = {}) {
   } finally {
     clearTimeout(timer);
   }
+}
+
+async function postJson(url, payload, timeoutMs, headers = {}) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "User-Agent": "ScienceWorkshop/0.2 (metadata abstract backfill)",
+        Accept: "application/json,*/*;q=0.8",
+        "Content-Type": "application/json",
+        ...headers,
+      },
+      body: JSON.stringify(payload),
+      signal: controller.signal,
+    });
+    const text = await response.text();
+    if (!response.ok) return { ok: false, status: response.status, error: `status_${response.status}` };
+    try {
+      return { ok: true, status: response.status, data: JSON.parse(text) };
+    } catch {
+      return { ok: false, status: response.status, error: "json_parse_failed" };
+    }
+  } catch (error) {
+    return { ok: false, status: 0, error: error.name === "AbortError" ? "timeout" : error.message };
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+export async function semanticScholarBatch(articles, timeoutMs, request = postJson) {
+  const eligible = articles
+    .map((article) => ({ article, doi: doiFromUrl(article.url || article.official_url || "") }))
+    .filter((item) => item.doi)
+    .slice(0, 500);
+  if (!eligible.length) return new Map();
+  const fields = "title,abstract,openAccessPdf";
+  const headers = process.env.SEMANTIC_SCHOLAR_API_KEY
+    ? { "x-api-key": process.env.SEMANTIC_SCHOLAR_API_KEY }
+    : {};
+  const response = await request(
+    `https://api.semanticscholar.org/graph/v1/paper/batch?fields=${encodeURIComponent(fields)}`,
+    { ids: eligible.map((item) => `DOI:${item.doi}`) },
+    timeoutMs,
+    headers,
+  );
+  if (!response.ok || !Array.isArray(response.data)) return new Map();
+  const results = new Map();
+  for (const [index, item] of eligible.entries()) {
+    const candidate = response.data[index];
+    if (!candidate || !titleMatches(item.article.title, candidate.title || "")) continue;
+    const abstract = String(candidate.abstract || "").trim();
+    if (!isCleanMetadataAbstract(abstract)) continue;
+    results.set(item.article.id, {
+      abstract,
+      open_access_pdf_url: String(candidate.openAccessPdf?.url || "").trim(),
+      status: response.status,
+    });
+  }
+  return results;
 }
 
 async function crossrefByDoi(article, timeoutMs) {
@@ -186,10 +253,22 @@ async function main() {
     semanticScholar: cliFlag("--semantic-scholar"),
   };
   const articles = targetArticles(history);
+  const semanticBatch = options.semanticScholar
+    ? await semanticScholarBatch(articles, options.timeoutMs)
+    : new Map();
   const results = [];
 
   for (const article of articles) {
-    const result = await enrichArticle(article, options);
+    const semantic = semanticBatch.get(article.id);
+    const result = semantic
+      ? {
+        article: { ...article, abstract: semantic.abstract },
+        addedAbstract: true,
+        source: "semantic-scholar-batch",
+        open_access_pdf_url: semantic.open_access_pdf_url,
+        attempts: [{ source: "semantic-scholar-batch", ok: true, status: semantic.status }],
+      }
+      : await enrichArticle(article, { ...options, semanticScholar: false });
     results.push(result);
     console.log(JSON.stringify({
       journal: article.journal_name,

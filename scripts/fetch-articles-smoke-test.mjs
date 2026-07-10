@@ -15,10 +15,13 @@ import {
 import { macrodatasArticleSectionUrl } from "./macrodatas-url.mjs";
 import { parseNcpssdIssueArticles, resolveCnkiSequentialArticles, resolveNcpssdOfficialArticle } from "./official-link-resolvers.mjs";
 import { addDays, buildRecentWorkflow, dateOnly } from "./recent-workflow-lib.mjs";
+import { loadRuntimeSources } from "./runtime-sources.mjs";
 
 const execFileAsync = promisify(execFile);
 const registryPath = new URL("../data/adapter-profiles.json", import.meta.url);
-const registry = JSON.parse(await readFile(registryPath, "utf8"));
+const baseRegistry = JSON.parse(await readFile(registryPath, "utf8"));
+const runtimeSourcesPath = new URL("../data/community-sources.json", import.meta.url);
+const registry = await loadRuntimeSources(runtimeSourcesPath, { registry: baseRegistry, ignoreInvalid: true });
 const profileById = new Map(registry.platform_profiles.map((profile) => [profile.id, profile]));
 
 function parseCliOptions(argv) {
@@ -1266,6 +1269,8 @@ async function extractAdapterArticles(item) {
     case "asc-issue-list":
       return extractAscIssueList(item);
     case "open-metadata-works":
+      return extractOpenMetadataWorks(item);
+    case "open-metadata-runtime":
       return extractOpenMetadataWorks(item);
     case "aaahq-issue-html":
       return extractHtmlByPatterns(item, {

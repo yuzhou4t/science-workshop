@@ -7,10 +7,11 @@ from fastapi.responses import JSONResponse
 from app.api import issue_toc_export, jobs, paper_reading, source_requests, wechat_drafts, wechat_writing
 from app.core.config import get_settings
 from app.storage.job_store import JobStore
+from app.services.source_intake import resume_pending_probes
 from app.workflows.events import EventBroker
 from app.workflows.scheduler import WorkflowScheduler
 
-PROTECTED_PREFIXES = ("/api/workflows", "/api/jobs", "/api/source-requests", "/api/wechat-drafts")
+PROTECTED_PREFIXES = ("/api/workflows", "/api/jobs", "/api/source-requests", "/api/sources", "/api/wechat-drafts")
 
 
 def create_app() -> FastAPI:
@@ -21,6 +22,7 @@ def create_app() -> FastAPI:
     app.state.event_broker = EventBroker()
     app.state.workflow_scheduler = WorkflowScheduler(app.state.job_store, settings, app.state.event_broker)
     app.state.job_store.cleanup_expired_jobs()
+    resume_pending_probes(settings.workflow_storage_dir.resolve() / "source-requests.jsonl")
 
     app.add_middleware(
         CORSMiddleware,
@@ -60,6 +62,7 @@ def create_app() -> FastAPI:
     app.include_router(wechat_writing.router)
     app.include_router(issue_toc_export.router)
     app.include_router(source_requests.router)
+    app.include_router(source_requests.sources_router)
     app.include_router(wechat_drafts.router)
 
     return app

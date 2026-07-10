@@ -95,7 +95,7 @@ Authenticated browser requests follow this path:
 
 Workflow jobs store an `owner_id`. Job status, artifacts, edits, DOCX export, rerun planning, SSE events, referenced paper-reading evidence, and chunked upload staging are accessible only to the same owner or an administrator. Issue-table export jobs follow the same ownership rule. Multi-file material uploads are fully preflighted before a job is created, so an ownership or completeness failure does not consume earlier uploads or leave an orphan job.
 
-The protected backend route families are `/api/workflows`, `/api/jobs`, `/api/source-requests`, and `/api/wechat-drafts`. Source submissions are append-only records with `pending_auto_probe`; they do not mutate `data/adapter-profiles.json`, and the automatic probe runner is not implemented yet. WeChat draft imports are also append-only `prepared/mock` records until real account credentials, media upload, and draft API access are available.
+The protected backend route families are `/api/workflows`, `/api/jobs`, `/api/source-requests`, `/api/sources`, and `/api/wechat-drafts`. Source submissions are append-only records that move through `pending_auto_probe → probing → probe_succeeded / needs_manual_review / probe_failed → approved / rejected`. Approval writes an atomic `data/community-sources.json` runtime registry; `data/adapter-profiles.json` remains fixed, and the Node crawler merges only approved runtime candidates at startup. CSV/XLSX bulk import uses the same queue and approval path. WeChat draft imports are also append-only `prepared/mock` records until real account credentials, media upload, and draft API access are available.
 
 ## Frontend
 

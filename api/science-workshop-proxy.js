@@ -6,7 +6,10 @@ const {
   writeJson,
 } = require("./workshop-auth.js");
 
-const BACKEND_ORIGIN = process.env.SCIENCE_WORKSHOP_BACKEND_ORIGIN || "http://106.53.153.215";
+// Keep the local developer experience convenient while making production
+// configuration explicit.  A public HTTP origin is intentionally rejected:
+// paper/workflow requests contain credentials and must travel over HTTPS.
+const DEFAULT_LOCAL_BACKEND_ORIGIN = "http://127.0.0.1:8000";
 const BACKEND_PREFIX = process.env.SCIENCE_WORKSHOP_BACKEND_PREFIX ?? "/science-workshop-api";
 const WORKSHOP_USER_HEADER = "x-workshop-user";
 const WORKSHOP_ROLE_HEADER = "x-workshop-role";
@@ -46,6 +49,43 @@ function encodeBackendPath(path) {
     .join("/");
 }
 
+function configuredBackendOrigin() {
+  const configured = String(process.env.SCIENCE_WORKSHOP_BACKEND_ORIGIN || "").trim();
+  if (!configured && isProductionRuntime()) {
+    throw new Error("SCIENCE_WORKSHOP_BACKEND_ORIGIN must be explicitly configured in production");
+  }
+  return configured || DEFAULT_LOCAL_BACKEND_ORIGIN;
+}
+
+function isProductionRuntime() {
+  return String(process.env.NODE_ENV || "").toLowerCase() === "production" || process.env.VERCEL === "1";
+}
+
+function isLoopbackHostname(hostname) {
+  const normalized = String(hostname || "").toLowerCase().replace(/^\[|\]$/g, "");
+  return normalized === "localhost" || normalized === "127.0.0.1" || normalized === "::1";
+}
+
+function validateBackendOrigin() {
+  const raw = configuredBackendOrigin();
+  let origin;
+  try {
+    origin = new URL(raw);
+  } catch (_error) {
+    throw new Error("SCIENCE_WORKSHOP_BACKEND_ORIGIN must be a valid URL");
+  }
+  if (!origin.hostname || !["http:", "https:"].includes(origin.protocol)) {
+    throw new Error("SCIENCE_WORKSHOP_BACKEND_ORIGIN must use http or https");
+  }
+  if (origin.username || origin.password || origin.search || origin.hash) {
+    throw new Error("SCIENCE_WORKSHOP_BACKEND_ORIGIN must not contain credentials or query parameters");
+  }
+  if (origin.protocol === "http:" && (isProductionRuntime() || !isLoopbackHostname(origin.hostname))) {
+    throw new Error("HTTP backend is allowed only for local loopback development; configure an HTTPS origin");
+  }
+  return origin;
+}
+
 function backendTargetFromRequest(req) {
   const parsed = new URL(req.url || "/", "http://localhost");
   const pathParameter = parsed.searchParams.get("path");
@@ -67,8 +107,9 @@ function backendTargetFromRequest(req) {
   const canonicalPath = canonicalizeBackendPath(path);
   const query = parsed.searchParams.toString();
   const prefix = String(BACKEND_PREFIX).replace(/\/+$/, "");
-  const target = new URL(`${prefix}/${encodeBackendPath(path)}`, BACKEND_ORIGIN);
-  const authorizationTarget = new URL(`${prefix}/${encodeBackendPath(canonicalPath)}`, BACKEND_ORIGIN);
+  const backendOrigin = validateBackendOrigin();
+  const target = new URL(`${prefix}/${encodeBackendPath(path)}`, backendOrigin);
+  const authorizationTarget = new URL(`${prefix}/${encodeBackendPath(canonicalPath)}`, backendOrigin);
   target.search = query ? `?${query}` : "";
   return {
     authorizationPath: decodeURIComponent(authorizationTarget.pathname),
@@ -118,7 +159,11 @@ module.exports = async function scienceWorkshopProxy(req, res) {
   let authorizationPath;
   try {
     ({ authorizationPath, target } = backendTargetFromRequest(req));
-  } catch (_error) {
+  } catch (error) {
+    if (/SCIENCE_WORKSHOP_BACKEND_ORIGIN|HTTP backend|HTTPS origin/.test(String(error?.message || ""))) {
+      writeJson(res, 503, { detail: "Science Workshop backend must use HTTPS (HTTP is only allowed for local development)" });
+      return;
+    }
     writeJson(res, 400, { detail: "Invalid backend path" });
     return;
   }

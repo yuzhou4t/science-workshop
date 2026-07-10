@@ -1,6 +1,10 @@
 logs/*.log
 data/fetch-smoke-results-*.json
 data/.pdf-cache/
+data/abstract-backfill-report-local*.json
+data/recent-articles-*-alt*.json
+data/recent-articles-*-historical-scan.json
+data/recent-articles-*-local.json
 .DS_Store
 .claude/
 .venv/

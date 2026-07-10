@@ -178,6 +178,10 @@ assert.equal(dedupedHistory.articles[0].first_seen_at, "2026-05-26");
 const abstractBackfillHistory = mergePushHistory(
   {
     version: 1,
+    summary: {
+      new_push_queue_articles: 7,
+      last_workflow_file: "data/recent-articles-2026-05-31_2026-05-31.json",
+    },
     articles: [
       {
         id: "abstract-date-1",
@@ -227,5 +231,93 @@ assert.equal(abstractBackfillArticle.display_date, "2026-05-29");
 assert.equal(abstractBackfillArticle.display_date_basis, "published_at");
 assert.equal(abstractBackfillArticle.abstract, "这是稍后从详情页补到的摘要。");
 assert.deepEqual(abstractBackfillArticle.keywords, ["摘要回填"]);
+assert.equal(abstractBackfillHistory.summary.new_push_queue_articles, 7);
+assert.equal(abstractBackfillHistory.summary.last_workflow_file, "data/recent-articles-2026-05-31_2026-05-31.json");
+
+const preservedAbstractHistory = mergePushHistory(
+  {
+    version: 1,
+    articles: [
+      {
+        id: "verified-abstract-1",
+        journal_id: "j17",
+        journal_name: "JOURNAL OF POLITICAL ECONOMY",
+        title: "已经有正式出版社摘要的文章",
+        url: "https://example.test/verified",
+        first_seen_at: "2026-05-31",
+        abstract: "这是已经核验过的正式出版社摘要。",
+      },
+    ],
+  },
+  {
+    summary: {
+      checked_at: "2026-06-06T02:00:00.000Z",
+      sources_total: 1,
+      sources_ready: 1,
+      push_queue_articles: 1,
+      abstract_backfill: true,
+    },
+    push_queue: [
+      {
+        id: "verified-abstract-1",
+        journal_id: "j17",
+        journal_name: "JOURNAL OF POLITICAL ECONOMY",
+        title: "已经有正式出版社摘要的文章",
+        url: "https://example.test/verified",
+        first_seen_at: "2026-06-06",
+        abstract: "这是后来元数据源返回的工作论文长版，不应覆盖已有摘要。",
+      },
+    ],
+  },
+);
+
+assert.equal(preservedAbstractHistory.articles[0].abstract, "这是已经核验过的正式出版社摘要。");
+
+const officialLinkBackfillHistory = mergePushHistory(
+  {
+    version: 1,
+    summary: {
+      new_push_queue_articles: 3,
+      last_workflow_file: "data/recent-articles-2026-06-01_2026-06-01.json",
+    },
+    articles: [
+      {
+        id: "nankai-link-1",
+        journal_id: "j12",
+        journal_name: "南开管理评论",
+        title: "等待正式链接的文章",
+        discovery_url: "https://example.test/discovery",
+        link_status: "needs_official_pdf",
+        first_seen_at: "2026-06-01",
+      },
+    ],
+  },
+  {
+    summary: {
+      checked_at: "2026-06-06T03:00:00.000Z",
+      sources_total: 22,
+      sources_ready: 18,
+      push_queue_articles: 1,
+      nankai_official_link_backfill: true,
+    },
+    push_queue: [
+      {
+        id: "nankai-link-1",
+        journal_id: "j12",
+        journal_name: "南开管理评论",
+        title: "等待正式链接的文章",
+        url: "https://www.ncpssd.cn/Literature/articleinfo?id=demo",
+        official_url: "https://www.ncpssd.cn/Literature/articleinfo?id=demo",
+        link_status: "official_detail",
+        first_seen_at: "2026-06-01",
+      },
+    ],
+  },
+  { workflowFile: "data/recent-articles-nankai-official-links-alt.json" },
+);
+
+assert.equal(officialLinkBackfillHistory.articles[0].link_status, "official_detail");
+assert.equal(officialLinkBackfillHistory.summary.new_push_queue_articles, 3);
+assert.equal(officialLinkBackfillHistory.summary.last_workflow_file, "data/recent-articles-2026-06-01_2026-06-01.json");
 
 console.log("front data history rules ok");

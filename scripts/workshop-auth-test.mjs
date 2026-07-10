@@ -44,6 +44,7 @@ assert.equal(readSession(`science_workshop_session=${cookieValue}`, { now: now +
 assert.equal(isProtectedBackendPath("/science-workshop-api/api/workflows/paper-reading/jobs"), true);
 assert.equal(isProtectedBackendPath("/science-workshop-api/api/jobs/job-1/artifacts/final.md"), true);
 assert.equal(isProtectedBackendPath("/science-workshop-api/api/source-requests"), true);
+assert.equal(isProtectedBackendPath("/science-workshop-api/api/sources/import"), true);
 assert.equal(isProtectedBackendPath("/science-workshop-api/api/wechat-drafts"), true);
 assert.equal(isProtectedBackendPath("/science-workshop-api/api/health"), false);
 assert.deepEqual(await readJsonBody({ body: '{"username":"4tc"}' }), { username: "4tc" });
@@ -63,7 +64,7 @@ function createMockResponse() {
 }
 
 process.env.SCIENCE_WORKSHOP_PROXY_SECRET = "proxy-secret";
-process.env.SCIENCE_WORKSHOP_BACKEND_ORIGIN = "http://backend.local";
+process.env.SCIENCE_WORKSHOP_BACKEND_ORIGIN = "https://backend.local";
 process.env.SCIENCE_WORKSHOP_BACKEND_PREFIX = "";
 process.env.WORKSHOP_AUTH_USERNAME = "4tc";
 process.env.WORKSHOP_AUTH_PASSWORD_HASH = passwordHash;
@@ -188,7 +189,7 @@ assert.equal(authorizedResponse.statusCode, 204);
 assert.equal(forwardedSecret, "proxy-secret");
 assert.equal(forwardedUser, "4tc");
 assert.equal(forwardedRole, "admin");
-assert.equal(forwardedTarget, "http://backend.local/api/jobs/job-1");
+assert.equal(forwardedTarget, "https://backend.local/api/jobs/job-1");
 
 let percentArtifactFetches = 0;
 let percentArtifactTarget = "";
@@ -208,7 +209,7 @@ await proxy(
 );
 assert.equal(percentArtifactResponse.statusCode, 204);
 assert.equal(percentArtifactFetches, 1);
-assert.equal(percentArtifactTarget, "http://backend.local/api/jobs/job-1/artifacts/100%25-result.md");
+assert.equal(percentArtifactTarget, "https://backend.local/api/jobs/job-1/artifacts/100%25-result.md");
 
 let publicSecret = "not-checked";
 let publicTarget = "";
@@ -229,6 +230,59 @@ await proxy(
 globalThis.fetch = originalFetch;
 assert.equal(publicResponse.statusCode, 204);
 assert.equal(publicSecret, null);
-assert.equal(publicTarget, "http://backend.local/api/health");
+assert.equal(publicTarget, "https://backend.local/api/health");
+
+// Public HTTP backends are rejected; only loopback HTTP is valid for local development.
+process.env.SCIENCE_WORKSHOP_BACKEND_ORIGIN = "http://198.51.100.10";
+delete require.cache[require.resolve("../api/science-workshop-proxy.js")];
+const insecureProxy = require("../api/science-workshop-proxy.js");
+const insecureResponse = createMockResponse();
+await insecureProxy(
+  {
+    method: "GET",
+    url: "/science-workshop-api/api/health",
+    headers: {},
+  },
+  insecureResponse,
+);
+assert.equal(insecureResponse.statusCode, 503);
+assert.match(JSON.parse(insecureResponse.body).detail, /HTTPS/);
+
+delete process.env.SCIENCE_WORKSHOP_BACKEND_ORIGIN;
+process.env.NODE_ENV = "production";
+delete require.cache[require.resolve("../api/science-workshop-proxy.js")];
+const missingProductionProxy = require("../api/science-workshop-proxy.js");
+const missingProductionResponse = createMockResponse();
+await missingProductionProxy(
+  {
+    method: "GET",
+    url: "/science-workshop-api/api/health",
+    headers: {},
+  },
+  missingProductionResponse,
+);
+assert.equal(missingProductionResponse.statusCode, 503);
+process.env.NODE_ENV = "test";
+
+process.env.SCIENCE_WORKSHOP_BACKEND_ORIGIN = "http://127.0.0.1:8000";
+delete require.cache[require.resolve("../api/science-workshop-proxy.js")];
+const localProxy = require("../api/science-workshop-proxy.js");
+let localTarget = "";
+globalThis.fetch = async (target) => {
+  localTarget = String(target);
+  return new Response(null, { status: 204 });
+};
+const localResponse = createMockResponse();
+await localProxy(
+  {
+    method: "GET",
+    url: "/science-workshop-api/api/health",
+    headers: {},
+  },
+  localResponse,
+);
+globalThis.fetch = originalFetch;
+assert.equal(localResponse.statusCode, 204);
+assert.equal(localTarget, "http://127.0.0.1:8000/api/health");
 
 console.log("workshop auth helpers ok");

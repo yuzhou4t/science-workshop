@@ -8,6 +8,7 @@ const historyPath = new URL("../data/push-history.json", import.meta.url);
 const DEFAULT_GCH = new Map([
   ["中国工业经济", "93800A"],
   ["会计研究", "96456X"],
+  ["南开管理评论", "81584X"],
 ]);
 
 function cliValue(name) {

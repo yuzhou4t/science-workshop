@@ -141,7 +141,7 @@ function mergeArticle(existing, incoming, options = {}) {
       ? existing.display_date_basis || ""
       : incoming.display_date_basis || existing.display_date_basis || "",
     push_basis: existing.push_basis || incoming.push_basis || "",
-    abstract: incoming.abstract || existing.abstract || "",
+    abstract: existing.abstract || incoming.abstract || "",
     keywords: incoming.keywords?.length ? incoming.keywords : existing.keywords || [],
   };
   const resolvedStatuses = ["official_pdf", "official_detail", "official_paid_detail"];
@@ -178,6 +178,9 @@ function sortPushArticles(articles) {
 export function mergePushHistory(existingHistory = {}, workflow, options = {}) {
   const byKey = new Map();
   const aliasToKey = new Map();
+  const preserveReleaseSummary = Boolean(
+    workflow.summary?.abstract_backfill || workflow.summary?.nankai_official_link_backfill,
+  );
   const mergeOptions = {
     preserveExistingDates: Boolean(options.preserveExistingDates || workflow.summary?.abstract_backfill),
   };
@@ -215,8 +218,12 @@ export function mergePushHistory(existingHistory = {}, workflow, options = {}) {
       sources_ready: workflow.summary?.sources_ready || 0,
       history_articles: articles.length,
       push_queue_articles: articles.length,
-      new_push_queue_articles: workflow.summary?.push_queue_articles || 0,
-      last_workflow_file: options.workflowFile || "",
+      new_push_queue_articles: preserveReleaseSummary
+        ? existingHistory.summary?.new_push_queue_articles ?? 0
+        : workflow.summary?.push_queue_articles || 0,
+      last_workflow_file: preserveReleaseSummary
+        ? existingHistory.summary?.last_workflow_file || ""
+        : options.workflowFile || "",
     },
     articles,
   };

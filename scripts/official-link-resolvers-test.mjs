@@ -3,7 +3,9 @@ import assert from "node:assert/strict";
 import {
   compactArticleTitle,
   issueDateFromNcpssdArticleId,
+  isAllowedHistoricalOfficialUrl,
   parseNcpssdIssueArticles,
+  resolveNankaiHistoricalOfficialArticle,
   resolveCnkiSequentialArticles,
   resolveNcpssdOfficialArticle,
   resolveNcpssdArticle,
@@ -132,6 +134,55 @@ assert.equal(secureArticles[0].reader_url, "https://www.ncpssd.cn/Literature/rea
 
 assert.equal(issueDateFromNcpssdArticleId("GLSJ2026005009"), "2026-05");
 assert.equal(issueDateFromNcpssdArticleId("NKGLPL2026013001"), "");
+
+assert.equal(isAllowedHistoricalOfficialUrl("https://m.ncpssd.cn/Literature/articleinfo?id=NKGLPL2026002003"), true);
+assert.equal(isAllowedHistoricalOfficialUrl("https://nbr.nankai.edu.cn/article/123"), true);
+assert.equal(isAllowedHistoricalOfficialUrl("https://www.ncpssd.org/Literature/articleinfo?id=bad"), false);
+assert.equal(isAllowedHistoricalOfficialUrl("https://kns.cnki.net/kcms/detail/detail.aspx?filename=NKGLPL202602003"), false);
+assert.equal(
+  resolveNankaiHistoricalOfficialArticle(
+    { title: "技术集群先导平台企业如何助力关键核心技术突破——一项光电产业的探索性案例研究" },
+    [
+      { title: "另一个标题", official_url: "https://m.ncpssd.cn/Literature/articleinfo?id=wrong" },
+      { title: "技术集群先导平台企业如何助力关键核心技术突破——一项光电产业的探索性案例研究", official_url: mobileArticles[0].official_url, reader_url: mobileArticles[0].reader_url },
+    ],
+  ).official_source,
+  "ncpssd",
+);
+assert.equal(
+  resolveNankaiHistoricalOfficialArticle(
+    { title: "候选标题" },
+    [{ title: "候选标题", official_url: "https://example.com/候选标题" }],
+  ),
+  null,
+);
+
+const editorialVariant = resolveNankaiHistoricalOfficialArticle(
+  { title: "非计划决策：基于数智赋能的企业即兴能力构建" },
+  [
+    {
+      title: "非计划决策：基于数字技术赋能的企业即兴能力构建",
+      official_url: "https://m.ncpssd.cn/Literature/articleinfo?id=NKGLPL2026004004",
+    },
+    {
+      title: "数字产品架构创新与组织学习的适配机制——双案例探索研究",
+      official_url: "https://m.ncpssd.cn/Literature/articleinfo?id=NKGLPL2026004003",
+    },
+  ],
+);
+assert.equal(editorialVariant.official_url.includes("NKGLPL2026004004"), true);
+assert.equal(editorialVariant.link_note, "unique_fuzzy_historical_title_match");
+
+assert.equal(
+  resolveNankaiHistoricalOfficialArticle(
+    { title: "企业数字化转型与在职培训投资" },
+    [
+      { title: "企业数字化转型与在职培训投入", official_url: "https://m.ncpssd.cn/Literature/articleinfo?id=one" },
+      { title: "企业数字化转型与在岗培训投资", official_url: "https://m.ncpssd.cn/Literature/articleinfo?id=two" },
+    ],
+  ),
+  null,
+);
 
 const cnkiSequentialArticles = resolveCnkiSequentialArticles(
   [

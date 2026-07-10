@@ -1,6 +1,6 @@
 window.TOPIC_SEARCH_INDEX = {
   "version": 1,
-  "updated_at": "2026-07-10T03:02:43.944Z",
+  "updated_at": "2026-07-10T07:42:33.929Z",
   "summary": {
     "total_articles": 574,
     "matched_articles": 6,
@@ -63,7 +63,7 @@ window.TOPIC_SEARCH_INDEX = {
       "issue_date": "",
       "first_seen_at": "2026-07-09",
       "display_date": "2026-07-07",
-      "abstract": "",
+      "abstract": "We advance stakeholder governance theory by theorizing how public–private partnerships (PPPs) can govern relationships with both contributing stakeholders (public and private partners) and legitimate but non-contributing stakeholders in order to create and more equitably distribute value. By integrating insights from stakeholder theory and PPP governance research, we develop a framework that distinguishes three categories of formal-relational mechanisms (i.e., participation and representation, joint integration, and monitoring and transparency). We theorize how these mechanisms mitigate three governance risks common in PPPs—cooperation failure, coordination failure, and opportunistic co-optation—that stem from goal misalignment, deficits in experience-based PPP capabilities, and power imbalances. We further argue that when risks co-occur, governance mechanisms can interact paradoxically. As a result, effective governance often requires portfolios of complementary mechanisms rather than single solutions. Our theory offers a meso-level account of how hybrid collaborations can sustain joint value creation while shaping more equitable value distribution, and contributes to both stakeholder theory and PPP governance research.",
       "keywords": [],
       "match_mode": "rule",
       "match_field": "authors",
@@ -84,6 +84,13 @@ window.TOPIC_SEARCH_INDEX = {
           "match_field": "title",
           "match_keyword": "governance",
           "score": 2
+        },
+        {
+          "id": "economics",
+          "label": "经济学",
+          "match_field": "abstract",
+          "match_keyword": "labor",
+          "score": 1
         }
       ]
     },

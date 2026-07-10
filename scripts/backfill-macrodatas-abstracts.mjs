@@ -77,6 +77,29 @@ function targetArticles(history) {
     .filter((article) => !firstSeenAt || article.first_seen_at === firstSeenAt);
 }
 
+export function issueLinksFromArticles(articles = []) {
+  const seen = new Set();
+  const links = [];
+  for (const article of articles) {
+    try {
+      const url = new URL(article.discovery_url || "");
+      if (url.hostname.toLowerCase() !== "www.macrodatas.cn" || !/^\/article\/\d+\/?$/i.test(url.pathname)) continue;
+      url.hash = "";
+      const normalized = url.toString().replace(/\/$/, "");
+      if (seen.has(normalized)) continue;
+      seen.add(normalized);
+      links.push({
+        url: normalized,
+        issue_date: article.issue_date || "",
+        title: "已知期次页",
+      });
+    } catch {
+      // Ignore malformed or non-Macrodatas discovery URLs.
+    }
+  }
+  return links;
+}
+
 async function fetchText(url, timeoutMs) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), timeoutMs);
@@ -120,18 +143,23 @@ async function backfillJournal(journal, articles, options = {}) {
   const articleByTitle = new Map(articles.map((article) => [compactText(article.title), article]));
   const results = [];
   const seenIssueUrls = new Set();
+  const knownLinks = issueLinksFromArticles(articles);
 
   for (const year of years) {
-    const discovery = await discoverIssueLinks(journal, year, options);
+    const knownForYear = knownLinks.filter((link) => !link.issue_date || link.issue_date.startsWith(year));
+    const discovery = knownForYear.length
+      ? { response: { url: knownForYear[0].url, status: 200 }, links: [] }
+      : await discoverIssueLinks(journal, year, options);
+    const discoveredLinks = discovery.links.filter((link) => !neededIssues.size || neededIssues.has(link.issue_date));
+    const links = [...knownForYear, ...discoveredLinks];
     results.push({
       journal,
       discovery_url: discovery.response.url,
       discovery_status: discovery.response.status,
-      discovered_issues: discovery.links.length,
-      discovered_issue_titles: discovery.links.slice(0, 8).map((link) => link.title),
+      discovered_issues: links.length,
+      discovered_issue_titles: links.slice(0, 8).map((link) => link.title),
       addedAbstract: false,
     });
-    const links = discovery.links.filter((link) => !neededIssues.size || neededIssues.has(link.issue_date));
     for (const link of links) {
       if (seenIssueUrls.has(link.url)) continue;
       seenIssueUrls.add(link.url);

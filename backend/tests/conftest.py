@@ -12,6 +12,7 @@ def client(tmp_path, monkeypatch) -> Generator[TestClient, None, None]:
     monkeypatch.setenv("WORKFLOW_RETENTION_DAYS", "7")
     monkeypatch.setenv("WORKFLOW_USE_MOCKS", "true")
     monkeypatch.setenv("WORKFLOW_ALLOW_INSECURE_DIRECT_ACCESS", "true")
+    monkeypatch.setenv("SCIENCE_WORKSHOP_RUNTIME_SOURCES_PATH", str(tmp_path / "community-sources.json"))
     reset_settings_cache()
     from app.main import create_app
 

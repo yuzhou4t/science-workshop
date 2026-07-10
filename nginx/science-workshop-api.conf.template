@@ -1,0 +1,69 @@
+# Science Workshop API (Tencent Cloud HTTPS merge reference)
+# MERGE these directives/server blocks into the existing OpenClaw Nginx setup.
+# Do not overwrite nginx.conf, remove OpenClaw locations, or enable a duplicate
+# default_server. Back up the live config and inspect `nginx -T` first.
+# If OpenClaw already owns the same public host, copy the ACME/API/TLS pieces
+# into that live server and preserve its existing root location.
+#
+# IP-first route (no domain):
+#   {{SCIENCE_WORKSHOP_PUBLIC_HOST}} = the public IPv4 address
+#   {{SCIENCE_WORKSHOP_TLS_CERT}}    = /etc/letsencrypt/live/<PUBLIC_IP>/fullchain.pem
+#   {{SCIENCE_WORKSHOP_TLS_KEY}}     = /etc/letsencrypt/live/<PUBLIC_IP>/privkey.pem
+# A domain remains optional: use its hostname and certificate paths instead.
+# Never commit real certificate paths, private keys, or credentials.
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name {{SCIENCE_WORKSHOP_PUBLIC_HOST}};
+
+    # ACME HTTP-01 can be served from this location if certificates use it.
+    location ^~ /.well-known/acme-challenge/ {
+        root /var/www/acme;
+    }
+
+    location / {
+        return 301 https://$host$request_uri;
+    }
+}
+
+server {
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+    server_name {{SCIENCE_WORKSHOP_PUBLIC_HOST}};
+
+    ssl_certificate     {{SCIENCE_WORKSHOP_TLS_CERT}};
+    ssl_certificate_key {{SCIENCE_WORKSHOP_TLS_KEY}};
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_prefer_server_ciphers off;
+
+    # Keep uploads bounded before they reach FastAPI.
+    client_max_body_size 25m;
+    proxy_connect_timeout 10s;
+    proxy_send_timeout 120s;
+    proxy_read_timeout 120s;
+
+    add_header Strict-Transport-Security "max-age=31536000" always;
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header X-Frame-Options "DENY" always;
+    add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+
+    location /science-workshop-api/ {
+        # The public prefix is stripped so FastAPI receives /api/... routes.
+        proxy_pass http://127.0.0.1:18080/;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto https;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "";
+        proxy_buffering off;
+    }
+
+    location = /health {
+        proxy_pass http://127.0.0.1:18080/api/health;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-Proto https;
+    }
+}
