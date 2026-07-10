@@ -1,9 +1,9 @@
 window.TOPIC_SEARCH_INDEX = {
   "version": 1,
-  "updated_at": "2026-06-17T07:46:23.743Z",
+  "updated_at": "2026-07-10T03:02:43.944Z",
   "summary": {
-    "total_articles": 479,
-    "matched_articles": 3,
+    "total_articles": 574,
+    "matched_articles": 6,
     "topics": 1,
     "disciplines": 7,
     "semantic_enabled": false
@@ -45,6 +45,132 @@ window.TOPIC_SEARCH_INDEX = {
     }
   ],
   "results": [
+    {
+      "article_id": "e5f57f18d3855ede",
+      "topic_id": "africa",
+      "topic_label": "非洲",
+      "title": "A Stakeholder Governance Framework for Public–Private Partnerships",
+      "journal_id": "j13",
+      "source_journal_id": "j13",
+      "journal_name": "ACADEMY OF MANAGEMENT REVIEW",
+      "authors": "Africa Ariño, Pascual Berrone, Joan E. Ricart, Xavier Sobrepere, Alexis Yong",
+      "url": "https://journals.aom.org/doi/abs/10.5465/amr.2024.0051",
+      "official_url": "https://journals.aom.org/doi/abs/10.5465/amr.2024.0051",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "published_at": "2026-07-07",
+      "issue_date": "",
+      "first_seen_at": "2026-07-09",
+      "display_date": "2026-07-07",
+      "abstract": "",
+      "keywords": [],
+      "match_mode": "rule",
+      "match_field": "authors",
+      "match_keyword": "Africa",
+      "match_reason": "authors 命中 “Africa”",
+      "confidence": 1,
+      "disciplines": [
+        {
+          "id": "management",
+          "label": "管理学",
+          "match_field": "journal",
+          "match_keyword": "MANAGEMENT",
+          "score": 3
+        },
+        {
+          "id": "public_admin",
+          "label": "公共管理",
+          "match_field": "title",
+          "match_keyword": "governance",
+          "score": 2
+        }
+      ]
+    },
+    {
+      "article_id": "f248ea93c8bb1431",
+      "topic_id": "africa",
+      "topic_label": "非洲",
+      "title": "Social Intermediation amid Extreme Marginalization: The Morpho-Regeneration of Fractured Reflexivity",
+      "journal_id": "j21",
+      "source_journal_id": "j21",
+      "journal_name": "ACADEMY OF MANAGEMENT JOURNAL",
+      "authors": "Andrea Sottini, Alessandro Giudici, Benedetto Lorenzo Cannatelli",
+      "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.0422",
+      "official_url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.0422",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "published_at": "2026-07-07",
+      "issue_date": "",
+      "first_seen_at": "2026-07-08",
+      "display_date": "2026-07-07",
+      "abstract": "The literature on social intermediaries highlights their role in alleviating poverty and promoting market inclusion in emerging economies through interventions that counterbalance pressures from formal and informal institutions. However, this research centers on interplays between intermediaries and institutions, implicitly assuming that beneficiaries reject their condition of poverty and retain a minimally functioning capacity for reflexive agency, supporting engagement with such interventions. In contrast, our study of slums and rural communities in Kenya and Sierra Leone examines social intermediation amid conditions in which extreme marginalization has fractured beneficiaries’ reflexive capacity, leaving them unable to orient toward purposive action. Using a critical realist relational lens, we develop a process model in which social intermediation unfolds through interdependent morpho-regenerative processes – institutional shielding, relational accompaniment, and entrepreneurial empowerment – that create prolonged protective spaces against oppressive pressures and repair reflexivity gradually until beneficiaries can sustain it on their own. We theorize morpho-regeneration as a custodial practice of ‘with-in’ intervention that restores individual capacities for social and economic participation, enabling more conventional outside-in and inside-up intermediation approaches. Our study offers new insights into the relational dimensions of poverty alleviation and their connection to communitylevel dynamics, with relevance to other contexts where agency is severely destabilized.",
+      "keywords": [],
+      "match_mode": "rule",
+      "match_field": "abstract",
+      "match_keyword": "Kenya",
+      "match_reason": "abstract 命中 “Kenya”",
+      "confidence": 1,
+      "disciplines": [
+        {
+          "id": "management",
+          "label": "管理学",
+          "match_field": "journal",
+          "match_keyword": "MANAGEMENT",
+          "score": 3
+        },
+        {
+          "id": "economics",
+          "label": "经济学",
+          "match_field": "abstract",
+          "match_keyword": "economic",
+          "score": 1
+        }
+      ]
+    },
+    {
+      "article_id": "85b1b2802b73272e",
+      "topic_id": "africa",
+      "topic_label": "非洲",
+      "title": "Intergenerational Impacts of Secondary Education: Experimental Evidence from Ghana",
+      "journal_id": "j16",
+      "source_journal_id": "j16",
+      "journal_name": "AMERICAN ECONOMIC REVIEW",
+      "authors": "Esther Duflo, Pascaline Dupas, Elizabeth Spelke, Mark Walsh",
+      "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20241001",
+      "official_url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20241001",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "published_at": "",
+      "issue_date": "",
+      "first_seen_at": "2026-06-25",
+      "display_date": "2026-06-25",
+      "abstract": "We provide experimental evidence on the intergenerational impacts of secondary education subsidies in a low-income context, leveraging a randomized controlled trial and 15-year longitudinal follow-up.For young women, receiving a scholarship for secondary school delays childbearing and marriage, and reduces unwanted pregnancies.Female scholarship recipients are more likely to marry a partner with tertiary education and their children have better early childhood development outcomes.In particular, we document a 45% reduction in under-three mortality as well as cognitive development gains of 0.25 standard deviations of test scores once children are of school age.The primary mechanism seems to be that more-educated caregivers have the knowledge and skills to safeguard their children's health and stimulate their cognitive development.In contrast, we find no evidence of a positive impact for the children of male scholarship recipients, who tend to marry less educated partners.Together, these results suggest a key role for maternal education in child outcomes.We also estimate the cost-benefit ratio for secondary school scholarships and find that the impact on child survival alone is sufficient to make them a highly cost-effective investment.",
+      "keywords": [],
+      "match_mode": "rule",
+      "match_field": "title",
+      "match_keyword": "Ghana",
+      "match_reason": "title 命中 “Ghana”",
+      "confidence": 1,
+      "disciplines": [
+        {
+          "id": "economics",
+          "label": "经济学",
+          "match_field": "journal",
+          "match_keyword": "AMERICAN ECONOMIC REVIEW",
+          "score": 3
+        },
+        {
+          "id": "population_development",
+          "label": "人口与发展",
+          "match_field": "abstract",
+          "match_keyword": "health",
+          "score": 1
+        }
+      ]
+    },
     {
       "article_id": "aab49b8bd14cfb27",
       "topic_id": "africa",

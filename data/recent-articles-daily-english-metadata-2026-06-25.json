@@ -1,0 +1,96 @@
+{
+  "summary": {
+    "checked_at": "2026-06-25T03:13:33.102Z",
+    "since": "2000-01-01",
+    "until": "2026-06-25",
+    "sources_total": 22,
+    "sources_ready": 21,
+    "push_queue_articles": 1,
+    "abstract_backfill": true,
+    "english_metadata_backfill": true,
+    "semantic_scholar": false,
+    "backfill_sources": [
+      "crossref-doi",
+      "openalex-doi",
+      "openalex-title"
+    ]
+  },
+  "push_queue": [
+    {
+      "id": "85b1b2802b73272e",
+      "journal_id": "j16",
+      "source_journal_id": "j16",
+      "journal_name": "AMERICAN ECONOMIC REVIEW",
+      "title": "Intergenerational Impacts of Secondary Education: Experimental Evidence from Ghana",
+      "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20241001",
+      "official_url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20241001",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Esther Duflo, Pascaline Dupas, Elizabeth Spelke, Mark Walsh",
+      "published_at": "",
+      "issue_date": "",
+      "first_seen_at": "2026-06-25",
+      "display_date": "2026-06-25",
+      "display_date_basis": "first_seen_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "aea-forthcoming-html",
+      "date_source": "forthcoming_unassigned",
+      "abstract": "We provide experimental evidence on the intergenerational impacts of secondary education subsidies in a low-income context, leveraging a randomized controlled trial and 15-year longitudinal follow-up.For young women, receiving a scholarship for secondary school delays childbearing and marriage, and reduces unwanted pregnancies.Female scholarship recipients are more likely to marry a partner with tertiary education and their children have better early childhood development outcomes.In particular, we document a 45% reduction in under-three mortality as well as cognitive development gains of 0.25 standard deviations of test scores once children are of school age.The primary mechanism seems to be that more-educated caregivers have the knowledge and skills to safeguard their children's health and stimulate their cognitive development.In contrast, we find no evidence of a positive impact for the children of male scholarship recipients, who tend to marry less educated partners.Together, these results suggest a key role for maternal education in child outcomes.We also estimate the cost-benefit ratio for secondary school scholarships and find that the impact on child survival alone is sufficient to make them a highly cost-effective investment."
+    }
+  ],
+  "results": [
+    {
+      "article": {
+        "id": "85b1b2802b73272e",
+        "journal_id": "j16",
+        "source_journal_id": "j16",
+        "journal_name": "AMERICAN ECONOMIC REVIEW",
+        "title": "Intergenerational Impacts of Secondary Education: Experimental Evidence from Ghana",
+        "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20241001",
+        "official_url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20241001",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Esther Duflo, Pascaline Dupas, Elizabeth Spelke, Mark Walsh",
+        "published_at": "",
+        "issue_date": "",
+        "first_seen_at": "2026-06-25",
+        "display_date": "2026-06-25",
+        "display_date_basis": "first_seen_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "aea-forthcoming-html",
+        "date_source": "forthcoming_unassigned",
+        "abstract": "We provide experimental evidence on the intergenerational impacts of secondary education subsidies in a low-income context, leveraging a randomized controlled trial and 15-year longitudinal follow-up.For young women, receiving a scholarship for secondary school delays childbearing and marriage, and reduces unwanted pregnancies.Female scholarship recipients are more likely to marry a partner with tertiary education and their children have better early childhood development outcomes.In particular, we document a 45% reduction in under-three mortality as well as cognitive development gains of 0.25 standard deviations of test scores once children are of school age.The primary mechanism seems to be that more-educated caregivers have the knowledge and skills to safeguard their children's health and stimulate their cognitive development.In contrast, we find no evidence of a positive impact for the children of male scholarship recipients, who tend to marry less educated partners.Together, these results suggest a key role for maternal education in child outcomes.We also estimate the cost-benefit ratio for secondary school scholarships and find that the impact on child survival alone is sufficient to make them a highly cost-effective investment."
+      },
+      "addedAbstract": true,
+      "source": "openalex-title",
+      "matched_title": "Intergenerational Impacts of Secondary Education: Experimental Evidence from Ghana",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": false,
+          "error": "status_404",
+          "status": 404
+        },
+        {
+          "source": "openalex-doi",
+          "ok": false,
+          "error": "status_404",
+          "status": 404
+        },
+        {
+          "source": "openalex-title",
+          "ok": true,
+          "hints": {
+            "abstract": "We provide experimental evidence on the intergenerational impacts of secondary education subsidies in a low-income context, leveraging a randomized controlled trial and 15-year longitudinal follow-up.For young women, receiving a scholarship for secondary school delays childbearing and marriage, and reduces unwanted pregnancies.Female scholarship recipients are more likely to marry a partner with tertiary education and their children have better early childhood development outcomes.In particular, we document a 45% reduction in under-three mortality as well as cognitive development gains of 0.25 standard deviations of test scores once children are of school age.The primary mechanism seems to be that more-educated caregivers have the knowledge and skills to safeguard their children's health and stimulate their cognitive development.In contrast, we find no evidence of a positive impact for the children of male scholarship recipients, who tend to marry less educated partners.Together, these results suggest a key role for maternal education in child outcomes.We also estimate the cost-benefit ratio for secondary school scholarships and find that the impact on child survival alone is sufficient to make them a highly cost-effective investment."
+          },
+          "status": 200,
+          "matched_title": "Intergenerational Impacts of Secondary Education: Experimental Evidence from Ghana"
+        }
+      ]
+    }
+  ]
+}

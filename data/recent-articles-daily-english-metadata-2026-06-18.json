@@ -1,0 +1,449 @@
+{
+  "summary": {
+    "checked_at": "2026-06-18T03:03:11.003Z",
+    "since": "2000-01-01",
+    "until": "2026-06-18",
+    "sources_total": 22,
+    "sources_ready": 20,
+    "push_queue_articles": 7,
+    "abstract_backfill": true,
+    "english_metadata_backfill": true,
+    "semantic_scholar": false,
+    "backfill_sources": [
+      "crossref-doi",
+      "openalex-doi",
+      "openalex-title"
+    ]
+  },
+  "push_queue": [
+    {
+      "id": "e8a9b4f2fa091803",
+      "journal_id": "j19",
+      "source_journal_id": "j19",
+      "journal_name": "REVIEW OF ECONOMIC STUDIES",
+      "title": "Competition in a Spatially-Differentiated Product Market with Negotiated Prices",
+      "url": "https://doi.org/10.1093/restud/rdag064",
+      "official_url": "https://doi.org/10.1093/restud/rdag064",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Walter Beckert, Howard Smith, Yuya Takahashi",
+      "published_at": "2026-06-17",
+      "issue_date": "",
+      "first_seen_at": "2026-06-18",
+      "display_date": "2026-06-17",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "open-metadata-works",
+      "date_source": "",
+      "abstract": "In many markets, buyers make discrete choices between differentiated products and negotiate prices that are specific to the choice. We develop for estimation a model for this class of markets which is consistent with non-cooperative models of bargaining between a buyer and competing sellers. We show that when the buyer's utility has GEV disturbances, the model has a tractable likelihood function which can be used with transaction-level data giving the selected product and its price. We estimate the model using data from the UK brick industry and use it to measure market power and analyze mergers. We analyze how spatial differentiation and ownership concentration affect the distribution of market power across transactions. In counterfactuals we find that switching from individually-negotiated to uniform pricing causes markups, and merger price effects, to increase on average but to decrease for a minority of transactions."
+    },
+    {
+      "id": "2ef9e49e6bd6f64b",
+      "journal_id": "j19",
+      "source_journal_id": "j19",
+      "journal_name": "REVIEW OF ECONOMIC STUDIES",
+      "title": "Customer Acquisition, Business Dynamism and Aggregate Growth",
+      "url": "https://doi.org/10.1093/restud/rdag060",
+      "official_url": "https://doi.org/10.1093/restud/rdag060",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Marek Ignaszak, Petr Sedláček",
+      "published_at": "2026-06-17",
+      "issue_date": "",
+      "first_seen_at": "2026-06-18",
+      "display_date": "2026-06-17",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "open-metadata-works",
+      "date_source": "",
+      "abstract": "Business dynamism -- the process of firm entry, growth and exit -- lies at the heart of modern endogenous growth models. While productivity differences have traditionally been seen as the main driving forces of business dynamism, a growing body of evidence suggests that customer acquisition is at least as important. In light of this evidence, we propose a novel endogenous growth model in which innovating firms must first acquire customers to sell their products. Estimating our model with aggregate and firm-level data, we find that expansions of firms' customer bases (market sizes) boost their incentives to innovate and shift resources towards high-growth businesses (“gazelles”). Combined, these effects explain over 40% of aggregate growth and substantially change predictions about the efficacy of growth policies. Finally, we document support for key model predictions using firm-level micro-data."
+    },
+    {
+      "id": "32469ca823ec2c19",
+      "journal_id": "j15",
+      "source_journal_id": "j15",
+      "journal_name": "ACCOUNTING REVIEW",
+      "title": "Financial Reporting Consequences of Exempting Low-Revenue Issuers from the Internal Control Audit Requirement",
+      "url": "https://doi.org/10.2308/tar-2024-0762",
+      "official_url": "https://doi.org/10.2308/tar-2024-0762",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Jennifer McCallen, Roy Schmardebeck, Jonathan Shipman, Robert L. Whited",
+      "published_at": "2026-06-17",
+      "issue_date": "",
+      "first_seen_at": "2026-06-18",
+      "display_date": "2026-06-17",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "open-metadata-works",
+      "date_source": "",
+      "abstract": "We examine the consequences of the 2020 amendment to Exchange Act Rule 12b-2, which exempted low-revenue issuers from the ICFR audit requirement and reignited the debate among regulators, issuers, auditors, and academics about the costs and benefits of ICFR audits. We find that exempt issuers rarely obtain ICFR audits voluntarily, indicating they generally do not view such audits as cost beneficial. We also find that exempt issuers report fewer MWs than nonexempt issuers, although this effect is driven by a recent increase in MWs for nonexempt issuers rather than a decline in MW for exempt issuers. We find no evidence that exempt issuers misstate more frequently or that they have less informative control effectiveness disclosures. Overall, our findings suggest that the exemption was welcomed by affected issuers and did not materially impair reporting quality, informing the literature and ongoing policy discussions regarding the appropriate scope of ICFR audit requirements. Data Availability: Data are publicly available from the sources identified in the text. JEL Classifications: M42; M48."
+    },
+    {
+      "id": "8f88380f01fa0675",
+      "journal_id": "j19",
+      "source_journal_id": "j19",
+      "journal_name": "REVIEW OF ECONOMIC STUDIES",
+      "title": "Market Segmentation through Information",
+      "url": "https://doi.org/10.1093/restud/rdag067",
+      "official_url": "https://doi.org/10.1093/restud/rdag067",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Matthew Elliott, Andrea Galeotti, Andrew Koh, Wenhao Li",
+      "published_at": "2026-06-17",
+      "issue_date": "",
+      "first_seen_at": "2026-06-18",
+      "display_date": "2026-06-17",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "open-metadata-works",
+      "date_source": "",
+      "abstract": "We explore the power that precise information about consumers’ preferences grants an intermediary in shaping competition. We think of an intermediary as an information designer who chooses what information to reveal to firms, which then compete à la Bertrand in a differentiated product market. We analyze the information designs that maximize consumer and producer surplus and uncover systematic differences in how information can be used to intensify or soften competition. Our analysis demonstrates the power that users’ data can endow intermediaries with and speaks directly to current regulatory debates regarding digital marketplaces."
+    },
+    {
+      "id": "c4cb8bc060f7f341",
+      "journal_id": "j15",
+      "source_journal_id": "j15",
+      "journal_name": "ACCOUNTING REVIEW",
+      "title": "Selling Its Soul? Private Equity and the Commercialization of the Attest Profession",
+      "url": "https://doi.org/10.2308/tar-2025-0459",
+      "official_url": "https://doi.org/10.2308/tar-2025-0459",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Nicole Donahoo, Christy S. Nielson, Jeffrey Pickerd",
+      "published_at": "2026-06-17",
+      "issue_date": "",
+      "first_seen_at": "2026-06-18",
+      "display_date": "2026-06-17",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "open-metadata-works",
+      "date_source": "",
+      "abstract": "The recent influx of deals between accounting and private equity (PE) firms has raised concerns regarding potential implications for the attest profession. We interview 20 attest partners from PE-backed accounting firms, along with four experienced professionals, to examine how these partnerships affect the attest practice. Using Freidson’s (2001) theory of professional autonomy as a theoretical lens, we find that despite independence requirements mandating PE-backed firms separate from their attest function, firms largely retain a one-firm mentality. Moreover, although attest firms retain responsibility for audit execution, PE firms influence attests’ strategic priorities through ROI targets, increased strategic acquisitions, evolved compensation structures, and reevaluated client portfolios. These dynamics underscore a PE-driven shift toward commercialism, potentially eroding—although not eliminating—the attest profession’s professional ideals of public service. This stifling of professionalism raises ethical concerns about PE-driven commercialism amid the growing uncertainty raised by respondents around the future of PE-backed firms. Data Availability: Available upon request. JEL Classifications: M4; M40."
+    },
+    {
+      "id": "c774e5d817dac030",
+      "journal_id": "j19",
+      "source_journal_id": "j19",
+      "journal_name": "REVIEW OF ECONOMIC STUDIES",
+      "title": "State Capacity as an Organizational Problem",
+      "url": "https://doi.org/10.1093/restud/rdag061",
+      "official_url": "https://doi.org/10.1093/restud/rdag061",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Nicola Mastrorocco, Edoardo Teso",
+      "published_at": "2026-06-17",
+      "issue_date": "",
+      "first_seen_at": "2026-06-18",
+      "display_date": "2026-06-17",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "open-metadata-works",
+      "date_source": "",
+      "abstract": "We investigate how technologies that reduce the costs of monitoring by central authorities have shaped the historical transition from small patrimonial states to large bureaucratic organizations. Our analysis is based on a novel dataset that traces changes in the organizational structure and geographic presence of the U.S. federal government over the nineteenth century. To identify causal effects, we develop a new identification strategy that exploits the expansion of the railroad network as a source of variation in the travel time–and thus monitoring costs–between Washington D.C. and other locations. We present three main findings. First, reductions in travel time to Washington D.C. significantly increased the likelihood of federal government presence in a location. Second, this effect is stronger for occupations and tasks characterized by more severe agency problems. Third, decreases in travel time to Washington D.C. are associated with a decline in patrimonial features of the federal government in the location, in line with enhanced monitoring capacity reducing dependence on personal trust and connections."
+    },
+    {
+      "id": "924633c60c9e5af1",
+      "journal_id": "j19",
+      "source_journal_id": "j19",
+      "journal_name": "REVIEW OF ECONOMIC STUDIES",
+      "title": "The Micro and Macro Dynamics of Capital Flows",
+      "url": "https://doi.org/10.1093/restud/rdag066",
+      "official_url": "https://doi.org/10.1093/restud/rdag066",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Felipe Saffie, Liliana Varela, Kei-Mu Yi",
+      "published_at": "2026-06-17",
+      "issue_date": "",
+      "first_seen_at": "2026-06-18",
+      "display_date": "2026-06-17",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "open-metadata-works",
+      "date_source": "",
+      "abstract": "We study empirically and theoretically the effects of international financial flows on resource allocation. Using the universe of firms in Hungary, we show that removing capital controls lowers firms’ cost of capital and increases household consumption, with the latter playing a dominant role. The consumption channel leads to reallocation of resources toward high expenditure elasticity activities – such as services – promoting both the expansion of incumbents and firm entry. A multi-sector heterogeneous firm model replicates these dynamics. Our model shows that non-homotheticity in consumption can quantitatively account for the reallocation of resources towards services and successfully replicates the dynamics of aggregate productivity following episodes of financial openness."
+    }
+  ],
+  "results": [
+    {
+      "article": {
+        "id": "e8a9b4f2fa091803",
+        "journal_id": "j19",
+        "source_journal_id": "j19",
+        "journal_name": "REVIEW OF ECONOMIC STUDIES",
+        "title": "Competition in a Spatially-Differentiated Product Market with Negotiated Prices",
+        "url": "https://doi.org/10.1093/restud/rdag064",
+        "official_url": "https://doi.org/10.1093/restud/rdag064",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Walter Beckert, Howard Smith, Yuya Takahashi",
+        "published_at": "2026-06-17",
+        "issue_date": "",
+        "first_seen_at": "2026-06-18",
+        "display_date": "2026-06-17",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "open-metadata-works",
+        "date_source": "",
+        "abstract": "In many markets, buyers make discrete choices between differentiated products and negotiate prices that are specific to the choice. We develop for estimation a model for this class of markets which is consistent with non-cooperative models of bargaining between a buyer and competing sellers. We show that when the buyer's utility has GEV disturbances, the model has a tractable likelihood function which can be used with transaction-level data giving the selected product and its price. We estimate the model using data from the UK brick industry and use it to measure market power and analyze mergers. We analyze how spatial differentiation and ownership concentration affect the distribution of market power across transactions. In counterfactuals we find that switching from individually-negotiated to uniform pricing causes markups, and merger price effects, to increase on average but to decrease for a minority of transactions."
+      },
+      "addedAbstract": true,
+      "source": "crossref",
+      "matched_title": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": true,
+          "hints": {
+            "abstract": "In many markets, buyers make discrete choices between differentiated products and negotiate prices that are specific to the choice. We develop for estimation a model for this class of markets which is consistent with non-cooperative models of bargaining between a buyer and competing sellers. We show that when the buyer's utility has GEV disturbances, the model has a tractable likelihood function which can be used with transaction-level data giving the selected product and its price. We estimate the model using data from the UK brick industry and use it to measure market power and analyze mergers. We analyze how spatial differentiation and ownership concentration affect the distribution of market power across transactions. In counterfactuals we find that switching from individually-negotiated to uniform pricing causes markups, and merger price effects, to increase on average but to decrease for a minority of transactions."
+          },
+          "status": 200
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "2ef9e49e6bd6f64b",
+        "journal_id": "j19",
+        "source_journal_id": "j19",
+        "journal_name": "REVIEW OF ECONOMIC STUDIES",
+        "title": "Customer Acquisition, Business Dynamism and Aggregate Growth",
+        "url": "https://doi.org/10.1093/restud/rdag060",
+        "official_url": "https://doi.org/10.1093/restud/rdag060",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Marek Ignaszak, Petr Sedláček",
+        "published_at": "2026-06-17",
+        "issue_date": "",
+        "first_seen_at": "2026-06-18",
+        "display_date": "2026-06-17",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "open-metadata-works",
+        "date_source": "",
+        "abstract": "Business dynamism -- the process of firm entry, growth and exit -- lies at the heart of modern endogenous growth models. While productivity differences have traditionally been seen as the main driving forces of business dynamism, a growing body of evidence suggests that customer acquisition is at least as important. In light of this evidence, we propose a novel endogenous growth model in which innovating firms must first acquire customers to sell their products. Estimating our model with aggregate and firm-level data, we find that expansions of firms' customer bases (market sizes) boost their incentives to innovate and shift resources towards high-growth businesses (“gazelles”). Combined, these effects explain over 40% of aggregate growth and substantially change predictions about the efficacy of growth policies. Finally, we document support for key model predictions using firm-level micro-data."
+      },
+      "addedAbstract": true,
+      "source": "crossref",
+      "matched_title": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": true,
+          "hints": {
+            "abstract": "Business dynamism -- the process of firm entry, growth and exit -- lies at the heart of modern endogenous growth models. While productivity differences have traditionally been seen as the main driving forces of business dynamism, a growing body of evidence suggests that customer acquisition is at least as important. In light of this evidence, we propose a novel endogenous growth model in which innovating firms must first acquire customers to sell their products. Estimating our model with aggregate and firm-level data, we find that expansions of firms' customer bases (market sizes) boost their incentives to innovate and shift resources towards high-growth businesses (“gazelles”). Combined, these effects explain over 40% of aggregate growth and substantially change predictions about the efficacy of growth policies. Finally, we document support for key model predictions using firm-level micro-data."
+          },
+          "status": 200
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "32469ca823ec2c19",
+        "journal_id": "j15",
+        "source_journal_id": "j15",
+        "journal_name": "ACCOUNTING REVIEW",
+        "title": "Financial Reporting Consequences of Exempting Low-Revenue Issuers from the Internal Control Audit Requirement",
+        "url": "https://doi.org/10.2308/tar-2024-0762",
+        "official_url": "https://doi.org/10.2308/tar-2024-0762",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Jennifer McCallen, Roy Schmardebeck, Jonathan Shipman, Robert L. Whited",
+        "published_at": "2026-06-17",
+        "issue_date": "",
+        "first_seen_at": "2026-06-18",
+        "display_date": "2026-06-17",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "open-metadata-works",
+        "date_source": "",
+        "abstract": "We examine the consequences of the 2020 amendment to Exchange Act Rule 12b-2, which exempted low-revenue issuers from the ICFR audit requirement and reignited the debate among regulators, issuers, auditors, and academics about the costs and benefits of ICFR audits. We find that exempt issuers rarely obtain ICFR audits voluntarily, indicating they generally do not view such audits as cost beneficial. We also find that exempt issuers report fewer MWs than nonexempt issuers, although this effect is driven by a recent increase in MWs for nonexempt issuers rather than a decline in MW for exempt issuers. We find no evidence that exempt issuers misstate more frequently or that they have less informative control effectiveness disclosures. Overall, our findings suggest that the exemption was welcomed by affected issuers and did not materially impair reporting quality, informing the literature and ongoing policy discussions regarding the appropriate scope of ICFR audit requirements. Data Availability: Data are publicly available from the sources identified in the text. JEL Classifications: M42; M48."
+      },
+      "addedAbstract": true,
+      "source": "crossref",
+      "matched_title": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": true,
+          "hints": {
+            "abstract": "We examine the consequences of the 2020 amendment to Exchange Act Rule 12b-2, which exempted low-revenue issuers from the ICFR audit requirement and reignited the debate among regulators, issuers, auditors, and academics about the costs and benefits of ICFR audits. We find that exempt issuers rarely obtain ICFR audits voluntarily, indicating they generally do not view such audits as cost beneficial. We also find that exempt issuers report fewer MWs than nonexempt issuers, although this effect is driven by a recent increase in MWs for nonexempt issuers rather than a decline in MW for exempt issuers. We find no evidence that exempt issuers misstate more frequently or that they have less informative control effectiveness disclosures. Overall, our findings suggest that the exemption was welcomed by affected issuers and did not materially impair reporting quality, informing the literature and ongoing policy discussions regarding the appropriate scope of ICFR audit requirements. Data Availability: Data are publicly available from the sources identified in the text. JEL Classifications: M42; M48."
+          },
+          "status": 200
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "8f88380f01fa0675",
+        "journal_id": "j19",
+        "source_journal_id": "j19",
+        "journal_name": "REVIEW OF ECONOMIC STUDIES",
+        "title": "Market Segmentation through Information",
+        "url": "https://doi.org/10.1093/restud/rdag067",
+        "official_url": "https://doi.org/10.1093/restud/rdag067",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Matthew Elliott, Andrea Galeotti, Andrew Koh, Wenhao Li",
+        "published_at": "2026-06-17",
+        "issue_date": "",
+        "first_seen_at": "2026-06-18",
+        "display_date": "2026-06-17",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "open-metadata-works",
+        "date_source": "",
+        "abstract": "We explore the power that precise information about consumers’ preferences grants an intermediary in shaping competition. We think of an intermediary as an information designer who chooses what information to reveal to firms, which then compete à la Bertrand in a differentiated product market. We analyze the information designs that maximize consumer and producer surplus and uncover systematic differences in how information can be used to intensify or soften competition. Our analysis demonstrates the power that users’ data can endow intermediaries with and speaks directly to current regulatory debates regarding digital marketplaces."
+      },
+      "addedAbstract": true,
+      "source": "crossref",
+      "matched_title": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": true,
+          "hints": {
+            "abstract": "We explore the power that precise information about consumers’ preferences grants an intermediary in shaping competition. We think of an intermediary as an information designer who chooses what information to reveal to firms, which then compete à la Bertrand in a differentiated product market. We analyze the information designs that maximize consumer and producer surplus and uncover systematic differences in how information can be used to intensify or soften competition. Our analysis demonstrates the power that users’ data can endow intermediaries with and speaks directly to current regulatory debates regarding digital marketplaces."
+          },
+          "status": 200
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "c4cb8bc060f7f341",
+        "journal_id": "j15",
+        "source_journal_id": "j15",
+        "journal_name": "ACCOUNTING REVIEW",
+        "title": "Selling Its Soul? Private Equity and the Commercialization of the Attest Profession",
+        "url": "https://doi.org/10.2308/tar-2025-0459",
+        "official_url": "https://doi.org/10.2308/tar-2025-0459",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Nicole Donahoo, Christy S. Nielson, Jeffrey Pickerd",
+        "published_at": "2026-06-17",
+        "issue_date": "",
+        "first_seen_at": "2026-06-18",
+        "display_date": "2026-06-17",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "open-metadata-works",
+        "date_source": "",
+        "abstract": "The recent influx of deals between accounting and private equity (PE) firms has raised concerns regarding potential implications for the attest profession. We interview 20 attest partners from PE-backed accounting firms, along with four experienced professionals, to examine how these partnerships affect the attest practice. Using Freidson’s (2001) theory of professional autonomy as a theoretical lens, we find that despite independence requirements mandating PE-backed firms separate from their attest function, firms largely retain a one-firm mentality. Moreover, although attest firms retain responsibility for audit execution, PE firms influence attests’ strategic priorities through ROI targets, increased strategic acquisitions, evolved compensation structures, and reevaluated client portfolios. These dynamics underscore a PE-driven shift toward commercialism, potentially eroding—although not eliminating—the attest profession’s professional ideals of public service. This stifling of professionalism raises ethical concerns about PE-driven commercialism amid the growing uncertainty raised by respondents around the future of PE-backed firms. Data Availability: Available upon request. JEL Classifications: M4; M40."
+      },
+      "addedAbstract": true,
+      "source": "crossref",
+      "matched_title": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": true,
+          "hints": {
+            "abstract": "The recent influx of deals between accounting and private equity (PE) firms has raised concerns regarding potential implications for the attest profession. We interview 20 attest partners from PE-backed accounting firms, along with four experienced professionals, to examine how these partnerships affect the attest practice. Using Freidson’s (2001) theory of professional autonomy as a theoretical lens, we find that despite independence requirements mandating PE-backed firms separate from their attest function, firms largely retain a one-firm mentality. Moreover, although attest firms retain responsibility for audit execution, PE firms influence attests’ strategic priorities through ROI targets, increased strategic acquisitions, evolved compensation structures, and reevaluated client portfolios. These dynamics underscore a PE-driven shift toward commercialism, potentially eroding—although not eliminating—the attest profession’s professional ideals of public service. This stifling of professionalism raises ethical concerns about PE-driven commercialism amid the growing uncertainty raised by respondents around the future of PE-backed firms. Data Availability: Available upon request. JEL Classifications: M4; M40."
+          },
+          "status": 200
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "c774e5d817dac030",
+        "journal_id": "j19",
+        "source_journal_id": "j19",
+        "journal_name": "REVIEW OF ECONOMIC STUDIES",
+        "title": "State Capacity as an Organizational Problem",
+        "url": "https://doi.org/10.1093/restud/rdag061",
+        "official_url": "https://doi.org/10.1093/restud/rdag061",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Nicola Mastrorocco, Edoardo Teso",
+        "published_at": "2026-06-17",
+        "issue_date": "",
+        "first_seen_at": "2026-06-18",
+        "display_date": "2026-06-17",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "open-metadata-works",
+        "date_source": "",
+        "abstract": "We investigate how technologies that reduce the costs of monitoring by central authorities have shaped the historical transition from small patrimonial states to large bureaucratic organizations. Our analysis is based on a novel dataset that traces changes in the organizational structure and geographic presence of the U.S. federal government over the nineteenth century. To identify causal effects, we develop a new identification strategy that exploits the expansion of the railroad network as a source of variation in the travel time–and thus monitoring costs–between Washington D.C. and other locations. We present three main findings. First, reductions in travel time to Washington D.C. significantly increased the likelihood of federal government presence in a location. Second, this effect is stronger for occupations and tasks characterized by more severe agency problems. Third, decreases in travel time to Washington D.C. are associated with a decline in patrimonial features of the federal government in the location, in line with enhanced monitoring capacity reducing dependence on personal trust and connections."
+      },
+      "addedAbstract": true,
+      "source": "crossref",
+      "matched_title": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": true,
+          "hints": {
+            "abstract": "We investigate how technologies that reduce the costs of monitoring by central authorities have shaped the historical transition from small patrimonial states to large bureaucratic organizations. Our analysis is based on a novel dataset that traces changes in the organizational structure and geographic presence of the U.S. federal government over the nineteenth century. To identify causal effects, we develop a new identification strategy that exploits the expansion of the railroad network as a source of variation in the travel time–and thus monitoring costs–between Washington D.C. and other locations. We present three main findings. First, reductions in travel time to Washington D.C. significantly increased the likelihood of federal government presence in a location. Second, this effect is stronger for occupations and tasks characterized by more severe agency problems. Third, decreases in travel time to Washington D.C. are associated with a decline in patrimonial features of the federal government in the location, in line with enhanced monitoring capacity reducing dependence on personal trust and connections."
+          },
+          "status": 200
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "924633c60c9e5af1",
+        "journal_id": "j19",
+        "source_journal_id": "j19",
+        "journal_name": "REVIEW OF ECONOMIC STUDIES",
+        "title": "The Micro and Macro Dynamics of Capital Flows",
+        "url": "https://doi.org/10.1093/restud/rdag066",
+        "official_url": "https://doi.org/10.1093/restud/rdag066",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Felipe Saffie, Liliana Varela, Kei-Mu Yi",
+        "published_at": "2026-06-17",
+        "issue_date": "",
+        "first_seen_at": "2026-06-18",
+        "display_date": "2026-06-17",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "open-metadata-works",
+        "date_source": "",
+        "abstract": "We study empirically and theoretically the effects of international financial flows on resource allocation. Using the universe of firms in Hungary, we show that removing capital controls lowers firms’ cost of capital and increases household consumption, with the latter playing a dominant role. The consumption channel leads to reallocation of resources toward high expenditure elasticity activities – such as services – promoting both the expansion of incumbents and firm entry. A multi-sector heterogeneous firm model replicates these dynamics. Our model shows that non-homotheticity in consumption can quantitatively account for the reallocation of resources towards services and successfully replicates the dynamics of aggregate productivity following episodes of financial openness."
+      },
+      "addedAbstract": true,
+      "source": "crossref",
+      "matched_title": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": true,
+          "hints": {
+            "abstract": "We study empirically and theoretically the effects of international financial flows on resource allocation. Using the universe of firms in Hungary, we show that removing capital controls lowers firms’ cost of capital and increases household consumption, with the latter playing a dominant role. The consumption channel leads to reallocation of resources toward high expenditure elasticity activities – such as services – promoting both the expansion of incumbents and firm entry. A multi-sector heterogeneous firm model replicates these dynamics. Our model shows that non-homotheticity in consumption can quantitatively account for the reallocation of resources towards services and successfully replicates the dynamics of aggregate productivity following episodes of financial openness."
+          },
+          "status": 200
+        }
+      ]
+    }
+  ]
+}

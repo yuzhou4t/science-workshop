@@ -1,0 +1,83 @@
+{
+  "summary": {
+    "checked_at": "2026-06-24T03:13:28.091Z",
+    "since": "2000-01-01",
+    "until": "2026-06-24",
+    "sources_total": 22,
+    "sources_ready": 21,
+    "push_queue_articles": 1,
+    "abstract_backfill": true,
+    "english_metadata_backfill": true,
+    "semantic_scholar": false,
+    "backfill_sources": [
+      "crossref-doi",
+      "openalex-doi",
+      "openalex-title"
+    ]
+  },
+  "push_queue": [
+    {
+      "id": "920960bd412f1f8d",
+      "journal_id": "j19",
+      "source_journal_id": "j19",
+      "journal_name": "REVIEW OF ECONOMIC STUDIES",
+      "title": "Insurer Risk and Public Risk-Sharing: Quantifying the Value of Reinsurance",
+      "url": "https://doi.org/10.1093/restud/rdag063",
+      "official_url": "https://doi.org/10.1093/restud/rdag063",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Paul H S Kim, Anran Li",
+      "published_at": "2026-06-23",
+      "issue_date": "",
+      "first_seen_at": "2026-06-24",
+      "display_date": "2026-06-23",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "open-metadata-works",
+      "date_source": "",
+      "abstract": "We study the role of public risk-sharing in markets where firms face substantial cost uncertainty, focusing on public reinsurance in health insurance. We develop a model where insurers internalize cost uncertainty through risk charges that raise effective marginal costs, and create a role for reinsurance. Public reinsurance lowers both expected costs and cost volatility, particularly for smaller insurers, reducing prices and enhancing competition. Using an event study of staggered state-level reinsurance programs, we show that public reinsurance leads insurers to lower prices and private reinsurance purchases, benefiting financially constrained insurers the most. Structural estimates indicate that risk charges account for a substantial share of the premium-cost wedge, and highlight public reinsurance's comparative advantage over premium subsidies by providing risk protection and enhancing competition. Our results underscore the importance of accounting for firms’ risk exposure in policy design and provide a general framework for understanding public risk-sharing policies."
+    }
+  ],
+  "results": [
+    {
+      "article": {
+        "id": "920960bd412f1f8d",
+        "journal_id": "j19",
+        "source_journal_id": "j19",
+        "journal_name": "REVIEW OF ECONOMIC STUDIES",
+        "title": "Insurer Risk and Public Risk-Sharing: Quantifying the Value of Reinsurance",
+        "url": "https://doi.org/10.1093/restud/rdag063",
+        "official_url": "https://doi.org/10.1093/restud/rdag063",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Paul H S Kim, Anran Li",
+        "published_at": "2026-06-23",
+        "issue_date": "",
+        "first_seen_at": "2026-06-24",
+        "display_date": "2026-06-23",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "open-metadata-works",
+        "date_source": "",
+        "abstract": "We study the role of public risk-sharing in markets where firms face substantial cost uncertainty, focusing on public reinsurance in health insurance. We develop a model where insurers internalize cost uncertainty through risk charges that raise effective marginal costs, and create a role for reinsurance. Public reinsurance lowers both expected costs and cost volatility, particularly for smaller insurers, reducing prices and enhancing competition. Using an event study of staggered state-level reinsurance programs, we show that public reinsurance leads insurers to lower prices and private reinsurance purchases, benefiting financially constrained insurers the most. Structural estimates indicate that risk charges account for a substantial share of the premium-cost wedge, and highlight public reinsurance's comparative advantage over premium subsidies by providing risk protection and enhancing competition. Our results underscore the importance of accounting for firms’ risk exposure in policy design and provide a general framework for understanding public risk-sharing policies."
+      },
+      "addedAbstract": true,
+      "source": "crossref",
+      "matched_title": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": true,
+          "hints": {
+            "abstract": "We study the role of public risk-sharing in markets where firms face substantial cost uncertainty, focusing on public reinsurance in health insurance. We develop a model where insurers internalize cost uncertainty through risk charges that raise effective marginal costs, and create a role for reinsurance. Public reinsurance lowers both expected costs and cost volatility, particularly for smaller insurers, reducing prices and enhancing competition. Using an event study of staggered state-level reinsurance programs, we show that public reinsurance leads insurers to lower prices and private reinsurance purchases, benefiting financially constrained insurers the most. Structural estimates indicate that risk charges account for a substantial share of the premium-cost wedge, and highlight public reinsurance's comparative advantage over premium subsidies by providing risk protection and enhancing competition. Our results underscore the importance of accounting for firms’ risk exposure in policy design and provide a general framework for understanding public risk-sharing policies."
+          },
+          "status": 200
+        }
+      ]
+    }
+  ]
+}

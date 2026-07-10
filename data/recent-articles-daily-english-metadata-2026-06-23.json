@@ -1,0 +1,83 @@
+{
+  "summary": {
+    "checked_at": "2026-06-23T03:02:54.294Z",
+    "since": "2000-01-01",
+    "until": "2026-06-23",
+    "sources_total": 22,
+    "sources_ready": 21,
+    "push_queue_articles": 1,
+    "abstract_backfill": true,
+    "english_metadata_backfill": true,
+    "semantic_scholar": false,
+    "backfill_sources": [
+      "crossref-doi",
+      "openalex-doi",
+      "openalex-title"
+    ]
+  },
+  "push_queue": [
+    {
+      "id": "b3483eeb64f1f0d4",
+      "journal_id": "j18",
+      "source_journal_id": "j18",
+      "journal_name": "QUARTERLY JOURNAL OF ECONOMICS",
+      "title": "What Jobs Come to Mind? Stereotypes About Fields of Study",
+      "url": "https://doi.org/10.1093/qje/qjag031",
+      "official_url": "https://doi.org/10.1093/qje/qjag031",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "John J Conlon, Dev Patel",
+      "published_at": "2026-06-22",
+      "issue_date": "",
+      "first_seen_at": "2026-06-23",
+      "display_date": "2026-06-22",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "open-metadata-works",
+      "date_source": "",
+      "abstract": "We test for stereotyping—the exaggeration of representative traits—in a high-stakes economic environment. Using both surveys administered among undergraduates at the Ohio State University and large-scale nationally representative data, we measure how US freshmen perceive the relationship between college majors and occupations. We show that students greatly overestimate the likelihood that majors lead to their representative jobs (e.g., counselor for psychology, journalist for journalism). Using an implicit association test, we show that students associate majors with their representative careers and that these associations strongly predict belief biases, in line with a stereotyping mechanism. A simple equilibrium model of the labor market predicts that stereotyping reduces welfare by increasing misallocation, which correlational evidence on job/major mismatch corroborates. In a field experiment, we test a light-touch policy to reduce stereotyping and find significant effects on students’ intentions about what to study as well as the classes and majors they enroll in."
+    }
+  ],
+  "results": [
+    {
+      "article": {
+        "id": "b3483eeb64f1f0d4",
+        "journal_id": "j18",
+        "source_journal_id": "j18",
+        "journal_name": "QUARTERLY JOURNAL OF ECONOMICS",
+        "title": "What Jobs Come to Mind? Stereotypes About Fields of Study",
+        "url": "https://doi.org/10.1093/qje/qjag031",
+        "official_url": "https://doi.org/10.1093/qje/qjag031",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "John J Conlon, Dev Patel",
+        "published_at": "2026-06-22",
+        "issue_date": "",
+        "first_seen_at": "2026-06-23",
+        "display_date": "2026-06-22",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "open-metadata-works",
+        "date_source": "",
+        "abstract": "We test for stereotyping—the exaggeration of representative traits—in a high-stakes economic environment. Using both surveys administered among undergraduates at the Ohio State University and large-scale nationally representative data, we measure how US freshmen perceive the relationship between college majors and occupations. We show that students greatly overestimate the likelihood that majors lead to their representative jobs (e.g., counselor for psychology, journalist for journalism). Using an implicit association test, we show that students associate majors with their representative careers and that these associations strongly predict belief biases, in line with a stereotyping mechanism. A simple equilibrium model of the labor market predicts that stereotyping reduces welfare by increasing misallocation, which correlational evidence on job/major mismatch corroborates. In a field experiment, we test a light-touch policy to reduce stereotyping and find significant effects on students’ intentions about what to study as well as the classes and majors they enroll in."
+      },
+      "addedAbstract": true,
+      "source": "crossref",
+      "matched_title": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": true,
+          "hints": {
+            "abstract": "We test for stereotyping—the exaggeration of representative traits—in a high-stakes economic environment. Using both surveys administered among undergraduates at the Ohio State University and large-scale nationally representative data, we measure how US freshmen perceive the relationship between college majors and occupations. We show that students greatly overestimate the likelihood that majors lead to their representative jobs (e.g., counselor for psychology, journalist for journalism). Using an implicit association test, we show that students associate majors with their representative careers and that these associations strongly predict belief biases, in line with a stereotyping mechanism. A simple equilibrium model of the labor market predicts that stereotyping reduces welfare by increasing misallocation, which correlational evidence on job/major mismatch corroborates. In a field experiment, we test a light-touch policy to reduce stereotyping and find significant effects on students’ intentions about what to study as well as the classes and majors they enroll in."
+          },
+          "status": 200
+        }
+      ]
+    }
+  ]
+}

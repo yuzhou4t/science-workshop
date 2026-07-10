@@ -1,0 +1,159 @@
+{
+  "summary": {
+    "checked_at": "2026-07-09T03:02:47.022Z",
+    "since": "2000-01-01",
+    "until": "2026-07-09",
+    "sources_total": 22,
+    "sources_ready": 18,
+    "push_queue_articles": 0,
+    "abstract_backfill": true,
+    "english_metadata_backfill": true,
+    "semantic_scholar": false,
+    "backfill_sources": [
+      "crossref-doi",
+      "openalex-doi",
+      "openalex-title"
+    ]
+  },
+  "push_queue": [],
+  "results": [
+    {
+      "article": {
+        "id": "e5f57f18d3855ede",
+        "journal_id": "j13",
+        "source_journal_id": "j13",
+        "journal_name": "ACADEMY OF MANAGEMENT REVIEW",
+        "title": "A Stakeholder Governance Framework for Public–Private Partnerships",
+        "url": "https://journals.aom.org/doi/abs/10.5465/amr.2024.0051",
+        "official_url": "https://journals.aom.org/doi/abs/10.5465/amr.2024.0051",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Africa Ariño, Pascual Berrone, Joan E. Ricart, Xavier Sobrepere, Alexis Yong",
+        "published_at": "2026-07-07",
+        "issue_date": "",
+        "first_seen_at": "2026-07-09",
+        "display_date": "2026-07-07",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "atypon-etoc",
+        "date_source": "metadata_published"
+      },
+      "addedAbstract": false,
+      "source": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-doi",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-title",
+          "ok": false,
+          "status": 200,
+          "error": "no_strict_title_abstract"
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "52e23ecc2a00ff09",
+        "journal_id": "j21",
+        "source_journal_id": "j21",
+        "journal_name": "ACADEMY OF MANAGEMENT JOURNAL",
+        "title": "From Culprit to Cure: How Incumbents Use Prognostic Framing to Turn Societal Problem Sources into Solutions",
+        "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.1030",
+        "official_url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.1030",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Hannah Schupfer, Birthe Soppe",
+        "published_at": "2026-07-07",
+        "issue_date": "",
+        "first_seen_at": "2026-07-09",
+        "display_date": "2026-07-07",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "atypon-etoc",
+        "date_source": "metadata_published"
+      },
+      "addedAbstract": false,
+      "source": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-doi",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-title",
+          "ok": false,
+          "status": 200,
+          "error": "no_strict_title_abstract"
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "dde7ead9933a0c25",
+        "journal_id": "j21",
+        "source_journal_id": "j21",
+        "journal_name": "ACADEMY OF MANAGEMENT JOURNAL",
+        "title": "When Does Appointing a Female Director Influence CEO Pay Raises? Investigating the Conditions that Unleash Her Minority Influence in the Boardroom",
+        "url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.0843",
+        "official_url": "https://journals.aom.org/doi/abs/10.5465/amj.2023.0843",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Su Chen, Jie (Jasmine) Feng, María Del Carmen Triana",
+        "published_at": "2026-07-07",
+        "issue_date": "",
+        "first_seen_at": "2026-07-09",
+        "display_date": "2026-07-07",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "atypon-etoc",
+        "date_source": "metadata_published"
+      },
+      "addedAbstract": false,
+      "source": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-doi",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-title",
+          "ok": false,
+          "error": "status_400",
+          "status": 400
+        }
+      ]
+    }
+  ]
+}
