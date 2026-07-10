@@ -1,18 +1,119 @@
 {
   "version": 1,
-  "updated_at": "2026-07-09T03:02:25.428Z",
+  "updated_at": "2026-07-10T03:02:39.664Z",
   "summary": {
-    "checked_at": "2026-07-09T03:02:25.428Z",
+    "checked_at": "2026-07-10T03:02:39.664Z",
     "since": "2026-05-25",
-    "until": "2026-07-09",
+    "until": "2026-07-10",
     "sources_total": 22,
     "sources_ready": 18,
-    "history_articles": 570,
-    "push_queue_articles": 570,
-    "new_push_queue_articles": 16,
-    "last_workflow_file": "data/recent-articles-2026-07-09_2026-07-09.json"
+    "history_articles": 574,
+    "push_queue_articles": 574,
+    "new_push_queue_articles": 2,
+    "last_workflow_file": "data/recent-articles-daily-english-metadata-2026-07-10.json"
   },
   "articles": [
+    {
+      "id": "b4c131813a7ba43f",
+      "journal_id": "j19",
+      "source_journal_id": "j19",
+      "journal_name": "REVIEW OF ECONOMIC STUDIES",
+      "title": "A Model of the Data Economy",
+      "url": "https://doi.org/10.1093/restud/rdag074",
+      "official_url": "https://doi.org/10.1093/restud/rdag074",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Maryam Farboodi, Laura Veldkamp",
+      "published_at": "2026-07-09",
+      "issue_date": "",
+      "first_seen_at": "2026-07-10",
+      "display_date": "2026-07-09",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "open-metadata-works",
+      "date_source": "",
+      "abstract": "In a data economy, transactions of goods and services generate data, which is stored, traded and depreciates. How are the economics of this economy different from traditional production economies? How do these differences matter for measurement of GDP, firm values, depreciation rates, welfare and externalities? We incorporate active experimentation and data as an intangible asset to devise a tractable recursive representation of the data economy. The model rationalizes why apps are often “free” and why even non-digital economic activity might be greater than GDP suggests. Calibrating the model using a combination of macroeconomic and financial moments suggests that the mis-measurement in U.S. GDP due to missing value of data has been as high as 6% in 2018.",
+      "keywords": []
+    },
+    {
+      "id": "005f954580e2e7e3",
+      "journal_id": "j19",
+      "source_journal_id": "j19",
+      "journal_name": "REVIEW OF ECONOMIC STUDIES",
+      "title": "Structural Change in Production Networks and Economic Growth",
+      "url": "https://doi.org/10.1093/restud/rdag075",
+      "official_url": "https://doi.org/10.1093/restud/rdag075",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Paul Gaggl, Aspen Gorry, Christian vom Lehn",
+      "published_at": "2026-07-09",
+      "issue_date": "",
+      "first_seen_at": "2026-07-10",
+      "display_date": "2026-07-09",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "open-metadata-works",
+      "date_source": "",
+      "abstract": "We study structural change in production networks for intermediate inputs (inputoutput network) and new capital (investment network). For each network, we document that the share of output produced by services (relative to goods) is rising over time. While the relative prices of services that produce intermediates and consumption are rising, we find that the relative price of services that produce investment is falling over time. We then develop a multi-sector growth model to study these trends and their implications for economic growth. To match the relative price trends, inputs to intermediates production are complements and inputs to investment production are substitutes. Hence, structural change endogenously reallocates resources to the slowest growing intermediates producers and the fastest growing investment producers. Growth accounting exercises reveal that investment-specific technical change accounts for an increasing share of U.S. aggregate growth, with 20% of aggregate growth since 2000 due to investment structural change. Growth projections from our model show that structural change within investment networks alone can offset stagnating or declining growth in other sectors due to Baumol’s cost disease.",
+      "keywords": []
+    },
+    {
+      "id": "59682ec2bfb31539",
+      "journal_id": "j13",
+      "source_journal_id": "j13",
+      "journal_name": "ACADEMY OF MANAGEMENT REVIEW",
+      "title": "A Theory of the Temporal Embeddedness of Firms in Entrepreneurs’ Lives",
+      "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0095",
+      "official_url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0095",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Mateja Andric",
+      "published_at": "2026-07-08",
+      "issue_date": "",
+      "first_seen_at": "2026-07-10",
+      "display_date": "2026-07-08",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "atypon-etoc",
+      "date_source": "metadata_published"
+    },
+    {
+      "id": "0ccb641805bd3b35",
+      "journal_id": "j8",
+      "source_journal_id": "j8",
+      "journal_name": "公共管理学报",
+      "title": "面向智能社会的公共管理研究议程：新对象·新方法·新理论",
+      "url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/4f4d356b7c44033e62ac061753361799",
+      "official_url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/4f4d356b7c44033e62ac061753361799",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "",
+      "published_at": "",
+      "issue_date": "2024-01",
+      "first_seen_at": "2026-07-10",
+      "display_date": "2024-01",
+      "display_date_basis": "issue_date",
+      "push_basis": "first_seen",
+      "extraction_rule": "cnki-portal-paper",
+      "date_source": "context_issue",
+      "abstract": "智能社会的到来正在重塑公共管理知识生产的经验条件、方法结构与理论来源。人工智能、大语言模型、多智能体系统、数字孪生与政策仿真等智能技术的深度嵌入，使公共管理研究面对的对象不再只是政策文本、行政组织、经验案例和统计数据，而是由数据、算法、模型、智能体、制度规则与公共价值共同构成的复合治理场景；研究方法也不再局限于经验归纳、变量检验和案例追踪，而是转向语义建模、计算表征、机制抽取、智能模拟、模型验证与人工校准相结合的复合方法谱系；理论生产则从解释“世界为何如此”，进一步走向解释“世界将如何变化”以及“治理秩序如何被设计”的前馈性知识生产。本文围绕“新对象、新方法、新理论”三条主轴，阐释智能社会对公共管理研究单元、方法结构、解释机制与理论来源的重构作用，并提出四项研究议程：（1）建立智能治理场景研究体系，把分散案例转化为可积累理论；（2）建构智能政策过程研究，使政策科学走向前馈治理；（3）制定人机协同研究规范，重建智能社会公共管理研究方法可信度；（4）推进公共价值与自主知识体系研究，使中国智能治理经验能够生成可与世界对话的理论贡献。本文旨在为智能时代公共管理学科的理论主体性、方法创新和自主知识体系建构提供概念框架与议程坐标。",
+      "keywords": [
+        "智能社会",
+        "公共管理学",
+        "人工智能",
+        "人机协同",
+        "智能体",
+        "自主知识体系"
+      ]
+    },
     {
       "id": "e5f57f18d3855ede",
       "journal_id": "j13",
@@ -2634,6 +2735,8 @@
       "push_basis": "published_date",
       "extraction_rule": "macrodatas-issue-list",
       "date_source": "macrodatas_issue_title",
+      "official_source": "ncpssd",
+      "reader_url": "https://m.ncpssd.cn/Literature/readurl?id=GLSJ2026006010",
       "abstract": "国际贸易的稳定性及其对全球治理的影响引起了广泛关注，探索行之有效的国际开放合作模式以减少贸易摩擦，从而实现环境维度的“降碳”和经济维度的“增长”双重效益，具有重要战略意义。为此，本文基于全球贸易合作背景下环境治理和经济增长之双重目标要求，深入分析中国电车车企与欧盟传统车企的竞合关系，进而构建非合作—合作两型博弈模型，求解中国电车车企和欧盟传统车企的“碳排放池（Carbon Pool）”合作机制，并证明该合作机制对各方均能带来积极效益。研究发现，建立中国电车车企与欧盟传统车企的“碳排放池”合作机制，一方面，有助于欧盟车企在日益严格的碳排放标准要求下达成碳排放合规目标，避免巨额罚款，并助力欧洲电动汽车市场规模的拓展及全球碳减排进程；另一方面，在国际电车领域贸易摩擦日趋加剧的境况下，有助于中国电车车企稳定和拓宽欧盟市场，获得更高的经济效益。本文证明，充分发挥各自优势的深入合作，能够进一步扩大双方经济效益与环境效益的“共赢”区域。本研究揭示了中国和欧盟的电车车企对外开放合作共赢的机制及其“降碳”“增长”的协同效益，不仅为我国电车行业的可持续发展提供了理论依据，还为我国扩大高水平对外开放、协同推进“降碳”与“增长”目标以及经济高质量发展提供了决策参考。",
       "keywords": [
         "碳排放池",
@@ -2641,9 +2744,7 @@
         "贸易摩擦",
         "降碳",
         "经济增长"
-      ],
-      "official_source": "ncpssd",
-      "reader_url": "https://m.ncpssd.cn/Literature/readurl?id=GLSJ2026006010"
+      ]
     },
     {
       "id": "4da7abf5d407876d",
@@ -2666,6 +2767,8 @@
       "push_basis": "published_date",
       "extraction_rule": "macrodatas-issue-list",
       "date_source": "macrodatas_issue_title",
+      "official_source": "ncpssd",
+      "reader_url": "https://m.ncpssd.cn/Literature/readurl?id=GLSJ2026006005",
       "abstract": "近年来，以特姆和希音为代表的中国跨境电商平台在全球范围内高速发展。有观点认为，中国跨境电商的迅速崛起为东道国既有电商平台带来“不公平”竞争。本文则发现：中国跨境电商平台与东道国既有平台之间并非零和博弈关系。由于所依托的供应商不同，中外平台各自提供具有不同比较优势的商品，双方有望基于比较优势差异，实现“互利共赢”。本文构建理论模型证明，中国跨境电商平台不仅为东道国送去其不具有比较优势的商品，亦通过“收入溢出”与“信息溢出”双重效应促进东道国既有电商平台发展，实现市场总规模扩张。实证方面，基于覆盖68个国家和地区、434个城市的千万级电商平台监测数据，本文发现中国平台进入后，东道国既有电商平台的访问量、支付人数与用户评分等均显著提升，验证了理论模型的推断。本研究揭示了平台经济跨境贸易的独特属性，强调了发挥比较优势在出海过程中的重要作用，并为“经贸关系的本质是互利共赢”这一重要论断提供了新的理论注解与经验证据。",
       "keywords": [
         "跨境电商",
@@ -2673,9 +2776,7 @@
         "出海",
         "比较优势",
         "关税"
-      ],
-      "official_source": "ncpssd",
-      "reader_url": "https://m.ncpssd.cn/Literature/readurl?id=GLSJ2026006005"
+      ]
     },
     {
       "id": "f311fc7d110a024a",
@@ -2698,15 +2799,15 @@
       "push_basis": "published_date",
       "extraction_rule": "macrodatas-issue-list",
       "date_source": "macrodatas_issue_title",
+      "official_source": "ncpssd",
+      "reader_url": "https://m.ncpssd.cn/Literature/readurl?id=GLSJ2026006002",
       "abstract": "基于中国对外贸易计价货币以美元计价占主导、本币计价相对有限的事实，本文采用2012~2019年境内省份—境外国别层面的进口贸易及本币计价数据，研究了美元作为中国对外贸易的载体货币与进口价格汇率传递的关系，并进一步探讨了人民币承担跨境贸易计价货币职能以克服货币错配导致的汇率风险暴露问题。研究表明，我国进口价格变动对人民币兑美元汇率的敏感程度超过了人民币兑出口国货币。考虑美元和欧元等计价货币后，人民币双边汇率对进口价格的传递程度显著提高。有限的跨境贸易本币计价缓解了美元汇率的传递效应，从而降低了中国企业的汇率风险暴露。拓展研究发现，美元汇率通过贸易计价渠道对国内物价水平具有传导效应。通过提高本币的计价份额，“一带一路”倡议有助于提升中国企业在进口市场的国际定价权。区分计价货币粘性和计价货币弹性的不同情境，以及构建本币计价与汇率变动的Bartik工具变量估计等一系列检验均表明基准结果稳健。本文从计价货币的视角阐释了“人民币汇率调整之谜”，揭示了基于计价货币视角观察人民币汇率传递问题的重要性。本文的研究有助于更好地理解跨境贸易计价对人民币国际化进程的重要性。",
       "keywords": [
         "汇率传递",
         "本币计价",
         "人民币国际化",
         "“一带一路”倡议"
-      ],
-      "official_source": "ncpssd",
-      "reader_url": "https://m.ncpssd.cn/Literature/readurl?id=GLSJ2026006002"
+      ]
     },
     {
       "id": "847731ef4e4096f9",
@@ -2729,6 +2830,8 @@
       "push_basis": "published_date",
       "extraction_rule": "macrodatas-issue-list",
       "date_source": "macrodatas_issue_title",
+      "official_source": "ncpssd",
+      "reader_url": "https://m.ncpssd.cn/Literature/readurl?id=GLSJ2026006011",
       "abstract": "人工智能对商业环境产生了颠覆性影响，企业如何推动AI落地以重构竞争优势，已成为亟待破解的理论与实践命题。目前，学界已围绕企业AI落地的战略议题开展了积极探索，但相关研究成果较为零散，对AI属性的认知尚不清晰，对前因后果缺乏系统性解答，理论体系仍待构建。本文基于扎根理论的文献综述方法，结合人工编码与生成式AI编码，对国内外企业AI落地战略的文献进行系统梳理。本文提炼了AI技术维度与社会维度的6个关键属性，从产业AI化与AI产业化两个角度归纳总结了企业AI落地战略的前因、结果及边界条件，并构建了系统的理论框架与相关命题。在此基础上，本文进一步提出了一个以AI属性为切入点、因果探索为主题，内嵌研究内容、理论发展、研究方法与研究范式的未来研究框架。本文对于深入理解企业AI落地战略的规律、拓展基于AI的战略管理理论具有重要意义，对企业推行AI落地战略具有较好的实践价值。",
       "keywords": [
         "AI属性",
@@ -2736,9 +2839,7 @@
         "AI战略理论框架",
         "文献综述",
         "研究展望"
-      ],
-      "official_source": "ncpssd",
-      "reader_url": "https://m.ncpssd.cn/Literature/readurl?id=GLSJ2026006011"
+      ]
     },
     {
       "id": "33ba08926071582e",
@@ -2761,6 +2862,8 @@
       "push_basis": "published_date",
       "extraction_rule": "macrodatas-issue-list",
       "date_source": "macrodatas_issue_title",
+      "official_source": "ncpssd",
+      "reader_url": "https://m.ncpssd.cn/Literature/readurl?id=GLSJ2026006012",
       "abstract": "数字商业生态系统通过数字化连接与开放式协作，突破资源约束与组织边界，成为促进价值共创、跨领域技术融合及战略性新兴产业发展的新型组织形式，深入理解其演化机制是释放系统潜能的关键基础。现有研究虽已取得丰硕成果，但多局限于单一领域的定性分析。本文采用基于扎根理论的文献综述法，梳理与解析123篇数字商业生态系统代表性文献，依托行动者网络理论在多元协同网络结构化分析的优势，构建逻辑严谨的数字商业生态系统演化机制理论框架。首先，利用“转译”机制深入剖析系统生命周期中开创、扩张、编排和更新4个阶段的多元主体互动，揭示其动态跃迁路径。其次，基于“人与非人”对称性原则，在数字技术和企业两个异质性行动者层面，挖掘和解构推动数字商业生态系统演化的多维因素，同时完善演化机制的触发条件与作用效果。最后，提出5个兼具学术价值和实践意义的未来研究方向，为数字商业生态系统的理论深化与实践创新提供参考。本文研究有助于厘清数字商业生态系统演化与发展的关键路径与情境，对于推动企业数字生态协同实践和中国数字经济发展具有重要启示。",
       "keywords": [
         "数字商业生态系统",
@@ -2768,9 +2871,7 @@
         "演化机制",
         "扎根理论",
         "生命周期"
-      ],
-      "official_source": "ncpssd",
-      "reader_url": "https://m.ncpssd.cn/Literature/readurl?id=GLSJ2026006012"
+      ]
     },
     {
       "id": "625941293d25243a",
@@ -2793,15 +2894,15 @@
       "push_basis": "published_date",
       "extraction_rule": "macrodatas-issue-list",
       "date_source": "macrodatas_issue_title",
+      "official_source": "ncpssd",
+      "reader_url": "https://m.ncpssd.cn/Literature/readurl?id=GLSJ2026006001",
       "abstract": "面对各级政府的财政紧平衡约束，扩大内需的积极财政政策需要调整思路，利用投资和消费的关联机制优化政策设计，实现从“一策一目标”向“一策多目标”转变。本文以中国企业所得税改革中有关内资企业工资薪金税前扣除政策调整为一次政策实验，探究扩大内需的积极财政政策从“一策一目标”向“一策多目标”转变的可能性。通过对中国2008年针对内资企业实施的工资薪金据实扣除政策的研究证实，中国2008年实施的内资企业工资薪金据实扣除政策能够同时产生激励投资提振消费的政策效果，在扩大内需上是一个具有“一箭双雕”作用的减税政策。基于受益归宿机制的识别发现，工资薪金据实扣除政策利用了企业最大化利润的行为动机，激励企业在扩大投资约6.15%的同时，增加雇佣、提高工资和降低产品价格，使职工和消费者也分享了政策受益，带动了居民消费增长约2.57%。本文的研究发现为当下解决财政紧平衡约束与积极财政政策要更加有力之间的矛盾提供了新思路。",
       "keywords": [
         "扩大内需",
         "消费提振",
         "受益分配",
         "税基型减税"
-      ],
-      "official_source": "ncpssd",
-      "reader_url": "https://m.ncpssd.cn/Literature/readurl?id=GLSJ2026006001"
+      ]
     },
     {
       "id": "15d37a9e8c431595",
@@ -2824,14 +2925,14 @@
       "push_basis": "published_date",
       "extraction_rule": "macrodatas-issue-list",
       "date_source": "macrodatas_issue_title",
+      "official_source": "ncpssd",
+      "reader_url": "https://m.ncpssd.cn/Literature/readurl?id=GLSJ2026006006",
       "abstract": "基于生产地原则的增值税横向分配方式可能诱发地方保护行为，或将不利于深入推进全国统一大市场建设。本文基于嵌入增值税的多区域一般均衡模型，评估增值税横向分配方式转变对地方保护激励的影响。研究发现，在现行的生产地原则下，多数省份具有保护本地产业的行动激励，设置制度性壁垒阻碍外地产品进入有利于本地福利提升，但会产生明显的负外部性，导致全国福利受损。增值税横向分配方式转向消费地原则，能明显弱化地方保护激励，可使全国福利水平提升约0.36%。机制分析显示，采用消费地原则能减少财政激励和产业规模经济性引发的地方保护动机，但不易消除贸易条件机制诱发的地方保护激励。进一步分析发现，制造业跨区域销售产生的增值税归属买方所在地，对地方保护激励的削减作用与消费地原则基本相当。本文可为完善有利于全国统一大市场建设的财税制度、优化生产地和消费地利益分享提供有益启示。",
       "keywords": [
         "全国统一大市场",
         "增值税横向分配方式",
         "地方保护激励"
-      ],
-      "official_source": "ncpssd",
-      "reader_url": "https://m.ncpssd.cn/Literature/readurl?id=GLSJ2026006006"
+      ]
     },
     {
       "id": "7d745ac6eacf431e",
@@ -2854,14 +2955,14 @@
       "push_basis": "published_date",
       "extraction_rule": "macrodatas-issue-list",
       "date_source": "macrodatas_issue_title",
+      "official_source": "ncpssd",
+      "reader_url": "https://m.ncpssd.cn/Literature/readurl?id=GLSJ2026006003",
       "abstract": "改革开放以来的实践表明，对外开放是推动我国经济增长与产业结构转型的重要力量。本文基于一个结合了非位似偏好的多国、多部门李嘉图贸易模型，定量分析了贸易开放对中国结构转型的影响。本文基于1995~2018年的贸易与生产数据，分别评估了我国从封闭到开放的贸易开放总效应，以及由积极准备入世所引致的贸易壁垒削减带来的贸易开放阶段效应。结果发现：我国的贸易开放政策效应在不同时期呈现非对称特征，入世期间的贸易开放阶段效应是推动我国产业结构转型的主要力量。若忽略了贸易开放的阶段性特征，则贸易开放的政策效应会被系统性低估。进一步地，对贸易模式的异质性分析表明一般贸易对结构转型的影响程度要高于加工贸易。由于目前我国的关税等贸易壁垒已处于较低水平，本文的长期预测发现仅以降低关税等贸易壁垒的传统方式来推动贸易开放对我国未来产业结构的影响相对有限。因此，要寻找推进我国未来产业转型的新动力，加快构建以国内大循环为主导的“双循环”新发展格局，稳步扩大制度型高水平对外开放，大力发展和培育新质生产力。最后，本文还讨论了全球贸易保护抬升对我国产业结构的影响，发现在工业出口受阻的同时，服务业也因国内需求收缩而受到更大程度的冲击。",
       "keywords": [
         "结构转型",
         "国际贸易",
         "量化分析"
-      ],
-      "official_source": "ncpssd",
-      "reader_url": "https://m.ncpssd.cn/Literature/readurl?id=GLSJ2026006003"
+      ]
     },
     {
       "id": "5a71f2f25b403aba",
@@ -2884,15 +2985,15 @@
       "push_basis": "published_date",
       "extraction_rule": "macrodatas-issue-list",
       "date_source": "macrodatas_issue_title",
+      "official_source": "ncpssd",
+      "reader_url": "https://m.ncpssd.cn/Literature/readurl?id=GLSJ2026006007",
       "abstract": "战略性矿产资源作为我国新一代信息技术、生物医药、新能源、航空航天等高技术产业的关键原材料，关系到国家经济安全、国防安全和新兴产业发展，是全球大国博弈的焦点。然而，由于资源禀赋不足且资源消耗量居高不下，我国战略性矿产资源市场呈现出供给端和需求端的双重约束，并存在较高的对外依存度和较为单一的进口来源。在此背景下，中国资源型跨国企业在海外市场如何通过国际合作获取竞争优势，仍未得到充分的理论解释。本文采用嵌入式案例分析方法，以中国海油集团在4个典型海外市场的国际化历程和管理实践为例，探讨资源型企业国际化进程中的国际合作模式和“母国—东道国”双重能力跃迁策略。研究发现：第一，中国资源型跨国企业在海外市场存在并购后整合、上下游延伸、价值链撬动和产业链培育4种国际合作模式，并在国际化动机和国际化节奏上呈现出明显的差异化特征；第二，不同类型的国际合作模式下，中国资源型跨国企业在母国市场和东道国市场的能力构建表现为不同能力层级的技术能力和制度能力集合，并存在从低阶到高阶的能力跃迁；第三，在国际合作过程中，中国资源型跨国企业通过交互式跃迁、自发式跃迁和适应式跃迁3种能力跃迁策略，实现“母国—东道国”双重能力跃迁以获取竞争优势。进一步地，本文提炼了“大国博弈情境—国际合作模式—能力跃迁策略”的合作式国际化过程，对理解新型大国博弈态势下战略性矿产资源企业的国际化战略提供理论参考，并响应近期学者对研究非线性国际化、跨国企业能力进化和跨国企业如何应对全球重大挑战的呼吁。",
       "keywords": [
         "战略性矿产资源",
         "资源型企业国际化",
         "国际合作模式",
         "双重能力跃迁"
-      ],
-      "official_source": "ncpssd",
-      "reader_url": "https://m.ncpssd.cn/Literature/readurl?id=GLSJ2026006007"
+      ]
     },
     {
       "id": "e525b41ef0d49e73",
@@ -2915,6 +3016,8 @@
       "push_basis": "published_date",
       "extraction_rule": "macrodatas-issue-list",
       "date_source": "macrodatas_issue_title",
+      "official_source": "ncpssd",
+      "reader_url": "https://m.ncpssd.cn/Literature/readurl?id=GLSJ2026006009",
       "abstract": "在全球技术脱钩和供应链安全风险日益上升的背景下，我国重大工程复杂装备产业虽具备系统集成优势，但仍受制于外部核心零部件供应和底层技术短板。本文基于复杂系统管理理论，以“工程机械之王”盾构机为例，揭示重大工程复杂装备技术创新网络的演化规律，探索推动我国装备制造业自主化及高端化的机制与路径。研究发现，重大工程复杂装备技术创新网络的演化由功能映射、协同熵变与外部传输三大机制共同驱动，功能映射将工程需求转换为装备创新任务，协同熵变优化主体协作关系与知识结构，外部传输整合外部资源并调整网络边界。研究进一步揭示，实现创新网络能力跃升有“异质—突破”与“同质—消化”两类演化路径。前者可拓展技术解空间与探索自由度，后者可提高系统稳定性与协作效率。本文以盾构机产业整体横向叙事诠释了从跟跑到领跑的“中国盾构模式”，为我国重大工程复杂装备技术创新提供理论依据。",
       "keywords": [
         "重大工程",
@@ -2922,9 +3025,7 @@
         "创新网络",
         "网络演化",
         "复杂系统管理"
-      ],
-      "official_source": "ncpssd",
-      "reader_url": "https://m.ncpssd.cn/Literature/readurl?id=GLSJ2026006009"
+      ]
     },
     {
       "id": "4e90d1a6a60db933",
@@ -2947,15 +3048,15 @@
       "push_basis": "published_date",
       "extraction_rule": "macrodatas-issue-list",
       "date_source": "macrodatas_issue_title",
+      "official_source": "ncpssd",
+      "reader_url": "https://m.ncpssd.cn/Literature/readurl?id=GLSJ2026006004",
       "abstract": "在全球化遭遇逆流、大国战略竞争加剧的背景下，大量缔结和持续深化的自由贸易协定（FTA）逐渐成为各国参与国际经贸规则制定与治理的关键战略手段。全球价值链网络中各国相互依赖的不对称性决定了其价值链结构性权力的非均衡性，FTA深化在推动全球价值链重构的同时，是否加剧了国家间结构性权力的不对称性？而全球南方又该如何突破“低端锁定”和“高端封锁”困境，实现价值链结构性权力的跃升与赶超？本文基于深度贸易协定数据库和经济合作与发展组织（OECD）的投入产出数据库，探究了FTA深化对价值链结构性权力的不对称影响及其形成机理。研究发现，FTA深化显著加剧了不同经济实力与治理效能的国家间的价值链结构性权力不对称性。机制检验表明，FTA深化通过影响国家间资源与产业基础的控制能力，扩大技术与创新水平的差距，推动中间品市场势力的重构，从而加剧了国家间结构性权力的不对称性。进一步研究发现，经济实力与治理效能相对较弱的国家可以利用后发优势提高自身经济适应度和扩大面向全球的高标准FTA网络来实现权力跃升甚至赶超。鉴于此，本文揭示了FTA深化对价值链结构性权力的不对称影响，并为促进全球南方国家实现权力跃升、推动构建更加开放包容、公平互惠、合作共赢的新型全球经贸治理体系，提供了理论支撑和定量依据。",
       "keywords": [
         "FTA深化",
         "价值链结构性权力",
         "不对称影响",
         "全球南方"
-      ],
-      "official_source": "ncpssd",
-      "reader_url": "https://m.ncpssd.cn/Literature/readurl?id=GLSJ2026006004"
+      ]
     },
     {
       "id": "955df1352ba26a4c",
@@ -2978,15 +3079,15 @@
       "push_basis": "published_date",
       "extraction_rule": "macrodatas-issue-list",
       "date_source": "macrodatas_issue_title",
+      "official_source": "ncpssd",
+      "reader_url": "https://m.ncpssd.cn/Literature/readurl?id=GLSJ2026006008",
       "abstract": "全面注册制改革强化了信息披露在发行定价中的基础性作用。然而，当前冗余的信息披露实践却成为投资者评估新股价值的重要障碍。基于此，本文运用生成式人工智能技术识别招股说明书中的冗余信息，并在此基础上探究IPO信息披露冗余对新股定价的影响。研究发现，生成式人工智能能够有效识别IPO信息披露冗余，基于该方法构建的IPO信息披露冗余指标能够显著负向预测企业上市后的业绩表现。进一步研究发现，低研发创新水平的IPO企业更倾向于披露冗余信息，且资本市场参与者会对此类IPO企业做出有偏定价决策，这表明IPO信息披露冗余的目的在于掩盖企业实际创新能力的不足，而当前资本市场未能有效识别和反映这部分冗余信息。机制检验结果表明，投资者注意力有限是导致其受冗余信息误导的重要机制。本文结论为深化“人工智能+”应用、完善注册制改革提供有益参考，建议进一步优化生成式人工智能在资本市场信息处理与投资决策中的应用，通过信息技术革命性跃迁赋能资本市场高质量发展。",
       "keywords": [
         "生成式人工智能",
         "信息披露冗余",
         "注册制改革",
         "新股定价"
-      ],
-      "official_source": "ncpssd",
-      "reader_url": "https://m.ncpssd.cn/Literature/readurl?id=GLSJ2026006008"
+      ]
     },
     {
       "id": "c784f7398237b992",
