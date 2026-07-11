@@ -1,0 +1,84 @@
+{
+  "summary": {
+    "checked_at": "2026-07-11T03:05:02.363Z",
+    "since": "2000-01-01",
+    "until": "2026-07-11",
+    "sources_total": 22,
+    "sources_ready": 18,
+    "push_queue_articles": 1,
+    "abstract_backfill": true,
+    "english_metadata_backfill": true,
+    "semantic_scholar": true,
+    "backfill_sources": [
+      "crossref-doi",
+      "openalex-doi",
+      "openalex-title",
+      "semantic-scholar-doi"
+    ]
+  },
+  "push_queue": [
+    {
+      "id": "35278730413233bf",
+      "journal_id": "j19",
+      "source_journal_id": "j19",
+      "journal_name": "REVIEW OF ECONOMIC STUDIES",
+      "title": "The Selective Disclosure of Evidence: An Experiment",
+      "url": "https://doi.org/10.1093/restud/rdag076",
+      "official_url": "https://doi.org/10.1093/restud/rdag076",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Agata Farina, Guillaume R Fréchette, Alessandro Ispano, Alessandro Lizzeri, Jacopo Perego",
+      "published_at": "2026-07-10",
+      "issue_date": "",
+      "first_seen_at": "2026-07-11",
+      "display_date": "2026-07-10",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "open-metadata-works",
+      "date_source": "",
+      "abstract": "We conduct an experimental analysis of selective disclosure in communication. In the model, an informed sender aims to influence a receiver by disclosing verifiable evidence that is selected from a larger pool of available evidence. Our experimental design leverages this model’s rich comparative statics, allowing us to systematically quantify the effects of selection relative to concealment. Our findings confirm the key qualitative predictions of the theory, suggesting that selection, rather than concealment, is often the dominant distortion in communication. We also identify deviations from the theory: Some senders are “deception averse” and overcommunicate relative to predictions; receivers respond too optimistically to both concealed and selected evidence, with errors of similar magnitude. Yet selection generates greater overall distortion in receiver behavior because it is far more prevalent than concealment."
+    }
+  ],
+  "results": [
+    {
+      "article": {
+        "id": "35278730413233bf",
+        "journal_id": "j19",
+        "source_journal_id": "j19",
+        "journal_name": "REVIEW OF ECONOMIC STUDIES",
+        "title": "The Selective Disclosure of Evidence: An Experiment",
+        "url": "https://doi.org/10.1093/restud/rdag076",
+        "official_url": "https://doi.org/10.1093/restud/rdag076",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Agata Farina, Guillaume R Fréchette, Alessandro Ispano, Alessandro Lizzeri, Jacopo Perego",
+        "published_at": "2026-07-10",
+        "issue_date": "",
+        "first_seen_at": "2026-07-11",
+        "display_date": "2026-07-10",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "open-metadata-works",
+        "date_source": "",
+        "abstract": "We conduct an experimental analysis of selective disclosure in communication. In the model, an informed sender aims to influence a receiver by disclosing verifiable evidence that is selected from a larger pool of available evidence. Our experimental design leverages this model’s rich comparative statics, allowing us to systematically quantify the effects of selection relative to concealment. Our findings confirm the key qualitative predictions of the theory, suggesting that selection, rather than concealment, is often the dominant distortion in communication. We also identify deviations from the theory: Some senders are “deception averse” and overcommunicate relative to predictions; receivers respond too optimistically to both concealed and selected evidence, with errors of similar magnitude. Yet selection generates greater overall distortion in receiver behavior because it is far more prevalent than concealment."
+      },
+      "addedAbstract": true,
+      "source": "crossref",
+      "matched_title": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": true,
+          "hints": {
+            "abstract": "We conduct an experimental analysis of selective disclosure in communication. In the model, an informed sender aims to influence a receiver by disclosing verifiable evidence that is selected from a larger pool of available evidence. Our experimental design leverages this model’s rich comparative statics, allowing us to systematically quantify the effects of selection relative to concealment. Our findings confirm the key qualitative predictions of the theory, suggesting that selection, rather than concealment, is often the dominant distortion in communication. We also identify deviations from the theory: Some senders are “deception averse” and overcommunicate relative to predictions; receivers respond too optimistically to both concealed and selected evidence, with errors of similar magnitude. Yet selection generates greater overall distortion in receiver behavior because it is far more prevalent than concealment."
+          },
+          "status": 200
+        }
+      ]
+    }
+  ]
+}
