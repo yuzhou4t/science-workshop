@@ -1,18 +1,48 @@
 {
   "version": 1,
-  "updated_at": "2026-07-11T03:05:02.363Z",
+  "updated_at": "2026-07-12T03:02:25.743Z",
   "summary": {
-    "checked_at": "2026-07-11T03:05:02.363Z",
+    "checked_at": "2026-07-12T03:02:25.743Z",
     "since": "2026-05-25",
-    "until": "2026-07-11",
+    "until": "2026-07-12",
     "sources_total": 22,
     "sources_ready": 18,
-    "history_articles": 596,
-    "push_queue_articles": 596,
-    "new_push_queue_articles": 22,
-    "last_workflow_file": "data/recent-articles-2026-07-11_2026-07-11.json"
+    "history_articles": 597,
+    "push_queue_articles": 597,
+    "new_push_queue_articles": 1,
+    "last_workflow_file": "data/recent-articles-2026-07-12_2026-07-12.json"
   },
   "articles": [
+    {
+      "id": "70ba32c63e18b726",
+      "journal_id": "j5",
+      "source_journal_id": "j5",
+      "journal_name": "金融研究",
+      "title": "市场型环境规制与金融资源配置——来自碳排放权交易市场的证据",
+      "url": "http://www.jryj.org.cn/CN/Y2025/V542/I8/132",
+      "official_url": "http://www.jryj.org.cn/CN/Y2025/V542/I8/132",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "陕晨煜, 李露茜, 吕小艺",
+      "published_at": "2025-09-01",
+      "issue_date": "2025-08",
+      "first_seen_at": "2026-07-12",
+      "display_date": "2025-09-01",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "jryj-html",
+      "date_source": "meta_published",
+      "abstract": "环境政策的有效实施需要金融资源的支持。本文聚焦碳排放权交易市场,通过手动搜集碳交易企业名单并匹配企业财务和碳排放数据,研究纳入碳排放权交易市场对企业融资成本的影响。研究发现,企业纳入碳市场后债务融资成本显著降低,该影响可以由碳信息披露效应解释。同时,加入碳市场提升了企业的环境表现并降低了其环境风险。然而,ESG等易于观察的指标对企业融资成本影响较大,碳排放强度等不易观察的指标对企业融资成本的影响较小,反映出金融机构对企业碳排放的动态跟踪与定价存在一定局限性。本研究对于完善碳市场信息披露机制、推动环境政策与金融政策的协同以及助力“双碳”目标实现具有一定政策启示。",
+      "keywords": [
+        "碳排放权交易",
+        "债务融资成本",
+        "信息披露",
+        "环境表现",
+        "金融资源配置"
+      ]
+    },
     {
       "id": "35278730413233bf",
       "journal_id": "j19",
