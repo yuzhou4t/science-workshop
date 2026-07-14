@@ -1,0 +1,130 @@
+{
+  "summary": {
+    "checked_at": "2026-07-14T03:02:48.560Z",
+    "since": "2000-01-01",
+    "until": "2026-07-14",
+    "sources_total": 22,
+    "sources_ready": 18,
+    "push_queue_articles": 1,
+    "abstract_backfill": true,
+    "english_metadata_backfill": true,
+    "semantic_scholar": true,
+    "backfill_sources": [
+      "crossref-doi",
+      "openalex-doi",
+      "openalex-title",
+      "semantic-scholar-doi"
+    ]
+  },
+  "push_queue": [
+    {
+      "id": "b1e87444937ef33b",
+      "journal_id": "j15",
+      "source_journal_id": "j15",
+      "journal_name": "ACCOUNTING REVIEW",
+      "title": "Inequality Grows in Silence: The Impact of Newspaper Closures on CEO-Worker Pay Disparity",
+      "url": "https://doi.org/10.2308/tar-2025-0068",
+      "official_url": "https://doi.org/10.2308/tar-2025-0068",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Jie Chen, Yang Gao, Cheng Zeng",
+      "published_at": "2026-07-11",
+      "issue_date": "",
+      "first_seen_at": "2026-07-14",
+      "display_date": "2026-07-11",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "open-metadata-works",
+      "date_source": "",
+      "abstract": "Addressing income inequality is crucial for ensuring equitable and prosperous societies. This study examines the impact of the local press on intrafirm pay disparity. By using recently mandated disclosures of CEO-worker pay ratios and analyzing the staggered shutdown of local newspapers, we find that within-firm pay disparity increases by 8.2 percent following local newspaper closures. Further analysis suggests that this post-closure increase in pay disparity ratio is unlikely to be driven by either CEO compensation or worker pay alone or underlying economic conditions but instead reflects reduced concerns over reputational damage. Overall, our findings are consistent with local newspapers’ playing an important role in disseminating CEO-worker pay ratios and amplifying their reputational effects, thereby shaping and monitoring within-firm pay disparity. Data Availability: Data used in this study are available from public sources identified in the paper. JEL Classifications: G38; J31; M12; L82."
+    }
+  ],
+  "results": [
+    {
+      "article": {
+        "id": "5c67f81f02757124",
+        "journal_id": "j13",
+        "source_journal_id": "j13",
+        "journal_name": "ACADEMY OF MANAGEMENT REVIEW",
+        "title": "Issues of Deception and Complicity: Replies to the Commentaries on “Management Theory: Jungle, Myth, or Hoax?”",
+        "url": "https://journals.aom.org/doi/abs/10.5465/amr.2026.0298",
+        "official_url": "https://journals.aom.org/doi/abs/10.5465/amr.2026.0298",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Hugh Willmott",
+        "published_at": "2026-07-13",
+        "issue_date": "",
+        "first_seen_at": "2026-07-14",
+        "display_date": "2026-07-13",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "atypon-etoc",
+        "date_source": "metadata_published"
+      },
+      "addedAbstract": false,
+      "source": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-doi",
+          "ok": false,
+          "error": "status_404",
+          "status": 404
+        },
+        {
+          "source": "openalex-title",
+          "ok": false,
+          "error": "status_400",
+          "status": 400
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "b1e87444937ef33b",
+        "journal_id": "j15",
+        "source_journal_id": "j15",
+        "journal_name": "ACCOUNTING REVIEW",
+        "title": "Inequality Grows in Silence: The Impact of Newspaper Closures on CEO-Worker Pay Disparity",
+        "url": "https://doi.org/10.2308/tar-2025-0068",
+        "official_url": "https://doi.org/10.2308/tar-2025-0068",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Jie Chen, Yang Gao, Cheng Zeng",
+        "published_at": "2026-07-11",
+        "issue_date": "",
+        "first_seen_at": "2026-07-14",
+        "display_date": "2026-07-11",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "open-metadata-works",
+        "date_source": "",
+        "abstract": "Addressing income inequality is crucial for ensuring equitable and prosperous societies. This study examines the impact of the local press on intrafirm pay disparity. By using recently mandated disclosures of CEO-worker pay ratios and analyzing the staggered shutdown of local newspapers, we find that within-firm pay disparity increases by 8.2 percent following local newspaper closures. Further analysis suggests that this post-closure increase in pay disparity ratio is unlikely to be driven by either CEO compensation or worker pay alone or underlying economic conditions but instead reflects reduced concerns over reputational damage. Overall, our findings are consistent with local newspapers’ playing an important role in disseminating CEO-worker pay ratios and amplifying their reputational effects, thereby shaping and monitoring within-firm pay disparity. Data Availability: Data used in this study are available from public sources identified in the paper. JEL Classifications: G38; J31; M12; L82."
+      },
+      "addedAbstract": true,
+      "source": "crossref",
+      "matched_title": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": true,
+          "hints": {
+            "abstract": "Addressing income inequality is crucial for ensuring equitable and prosperous societies. This study examines the impact of the local press on intrafirm pay disparity. By using recently mandated disclosures of CEO-worker pay ratios and analyzing the staggered shutdown of local newspapers, we find that within-firm pay disparity increases by 8.2 percent following local newspaper closures. Further analysis suggests that this post-closure increase in pay disparity ratio is unlikely to be driven by either CEO compensation or worker pay alone or underlying economic conditions but instead reflects reduced concerns over reputational damage. Overall, our findings are consistent with local newspapers’ playing an important role in disseminating CEO-worker pay ratios and amplifying their reputational effects, thereby shaping and monitoring within-firm pay disparity. Data Availability: Data used in this study are available from public sources identified in the paper. JEL Classifications: G38; J31; M12; L82."
+          },
+          "status": 200
+        }
+      ]
+    }
+  ]
+}
