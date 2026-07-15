@@ -1,0 +1,84 @@
+{
+  "summary": {
+    "checked_at": "2026-07-15T03:02:39.097Z",
+    "since": "2000-01-01",
+    "until": "2026-07-15",
+    "sources_total": 22,
+    "sources_ready": 18,
+    "push_queue_articles": 1,
+    "abstract_backfill": true,
+    "english_metadata_backfill": true,
+    "semantic_scholar": true,
+    "backfill_sources": [
+      "crossref-doi",
+      "openalex-doi",
+      "openalex-title",
+      "semantic-scholar-doi"
+    ]
+  },
+  "push_queue": [
+    {
+      "id": "ce8ee5b9b9fed6e2",
+      "journal_id": "j19",
+      "source_journal_id": "j19",
+      "journal_name": "REVIEW OF ECONOMIC STUDIES",
+      "title": "Smooth Diagnostic Expectations",
+      "url": "https://doi.org/10.1093/restud/rdag077",
+      "official_url": "https://doi.org/10.1093/restud/rdag077",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Francesco Bianchi, Cosmin Ilut, Hikaru Saijo",
+      "published_at": "2026-07-14",
+      "issue_date": "",
+      "first_seen_at": "2026-07-15",
+      "display_date": "2026-07-14",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "open-metadata-works",
+      "date_source": "",
+      "abstract": "We show that the formalization of representativeness (Kahneman and Tversky (1972)) developed by Gennaioli and Shleifer (2010) features an intrinsic connection between uncertainty and overreaction. In the time series domain, we develop this connection in a smooth version of Diagnostic Expectations (DE), where overreaction varies smoothly with uncertainty. Intuitively, under smoothness, lower uncertainty leaves less room for representativeness to distort beliefs. Smooth DE provides a joint, parsimonious micro-foundation for key features of survey data: overreaction to news, stronger overreaction at longer horizons, overconfidence in subjective uncertainty, and a new stylized fact documented here—overreaction intensifies with higher uncertainty. An analytical Real Business Cycle model with Smooth DE accounts for survey overreaction and overconfidence, as well as three salient business cycle properties: asymmetry, countercyclical macro volatility, and countercyclical micro volatility."
+    }
+  ],
+  "results": [
+    {
+      "article": {
+        "id": "ce8ee5b9b9fed6e2",
+        "journal_id": "j19",
+        "source_journal_id": "j19",
+        "journal_name": "REVIEW OF ECONOMIC STUDIES",
+        "title": "Smooth Diagnostic Expectations",
+        "url": "https://doi.org/10.1093/restud/rdag077",
+        "official_url": "https://doi.org/10.1093/restud/rdag077",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Francesco Bianchi, Cosmin Ilut, Hikaru Saijo",
+        "published_at": "2026-07-14",
+        "issue_date": "",
+        "first_seen_at": "2026-07-15",
+        "display_date": "2026-07-14",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "open-metadata-works",
+        "date_source": "",
+        "abstract": "We show that the formalization of representativeness (Kahneman and Tversky (1972)) developed by Gennaioli and Shleifer (2010) features an intrinsic connection between uncertainty and overreaction. In the time series domain, we develop this connection in a smooth version of Diagnostic Expectations (DE), where overreaction varies smoothly with uncertainty. Intuitively, under smoothness, lower uncertainty leaves less room for representativeness to distort beliefs. Smooth DE provides a joint, parsimonious micro-foundation for key features of survey data: overreaction to news, stronger overreaction at longer horizons, overconfidence in subjective uncertainty, and a new stylized fact documented here—overreaction intensifies with higher uncertainty. An analytical Real Business Cycle model with Smooth DE accounts for survey overreaction and overconfidence, as well as three salient business cycle properties: asymmetry, countercyclical macro volatility, and countercyclical micro volatility."
+      },
+      "addedAbstract": true,
+      "source": "crossref",
+      "matched_title": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": true,
+          "hints": {
+            "abstract": "We show that the formalization of representativeness (Kahneman and Tversky (1972)) developed by Gennaioli and Shleifer (2010) features an intrinsic connection between uncertainty and overreaction. In the time series domain, we develop this connection in a smooth version of Diagnostic Expectations (DE), where overreaction varies smoothly with uncertainty. Intuitively, under smoothness, lower uncertainty leaves less room for representativeness to distort beliefs. Smooth DE provides a joint, parsimonious micro-foundation for key features of survey data: overreaction to news, stronger overreaction at longer horizons, overconfidence in subjective uncertainty, and a new stylized fact documented here—overreaction intensifies with higher uncertainty. An analytical Real Business Cycle model with Smooth DE accounts for survey overreaction and overconfidence, as well as three salient business cycle properties: asymmetry, countercyclical macro volatility, and countercyclical micro volatility."
+          },
+          "status": 200
+        }
+      ]
+    }
+  ]
+}
