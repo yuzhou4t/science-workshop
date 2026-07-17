@@ -1,0 +1,84 @@
+{
+  "summary": {
+    "checked_at": "2026-07-17T03:05:29.293Z",
+    "since": "2000-01-01",
+    "until": "2026-07-17",
+    "sources_total": 22,
+    "sources_ready": 17,
+    "push_queue_articles": 1,
+    "abstract_backfill": true,
+    "english_metadata_backfill": true,
+    "semantic_scholar": true,
+    "backfill_sources": [
+      "crossref-doi",
+      "openalex-doi",
+      "openalex-title",
+      "semantic-scholar-doi"
+    ]
+  },
+  "push_queue": [
+    {
+      "id": "fb9e014c5e676dea",
+      "journal_id": "j15",
+      "source_journal_id": "j15",
+      "journal_name": "ACCOUNTING REVIEW",
+      "title": "Auditing in the Digital Age: Determinants and Consequences of Technology Investment",
+      "url": "https://doi.org/10.2308/tar-2024-0427",
+      "official_url": "https://doi.org/10.2308/tar-2024-0427",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Hyun Hwang, Eunhee Kim, Minlei Ye",
+      "published_at": "2026-07-16",
+      "issue_date": "",
+      "first_seen_at": "2026-07-17",
+      "display_date": "2026-07-16",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "open-metadata-works",
+      "date_source": "",
+      "abstract": "Technological advances are reshaping the business landscape, yet their use in financial reporting has been slow. We develop a model in which auditors and companies make technology investment decisions and examine their impact on audit fees and outcomes. Our analysis shows that auditors and companies may fail to invest in mutually beneficial technology that would enhance audit quality, resulting in coordination failure. We also demonstrate how legal liability, client business risk, and auditor pricing power affect the conditions under which such coordination failure occurs. Furthermore, technology investments can either increase or decrease audit fees. When companies can choose among projects with varying risk levels, technology investments can increase audit failure risk while improving welfare by enabling them to pursue riskier but more profitable projects. Our results provide a rationale for regulatory intervention to facilitate technology investments in the financial reporting environment and offer empirical predictions. JEL Classifications: M41; M42; M48."
+    }
+  ],
+  "results": [
+    {
+      "article": {
+        "id": "fb9e014c5e676dea",
+        "journal_id": "j15",
+        "source_journal_id": "j15",
+        "journal_name": "ACCOUNTING REVIEW",
+        "title": "Auditing in the Digital Age: Determinants and Consequences of Technology Investment",
+        "url": "https://doi.org/10.2308/tar-2024-0427",
+        "official_url": "https://doi.org/10.2308/tar-2024-0427",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Hyun Hwang, Eunhee Kim, Minlei Ye",
+        "published_at": "2026-07-16",
+        "issue_date": "",
+        "first_seen_at": "2026-07-17",
+        "display_date": "2026-07-16",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "open-metadata-works",
+        "date_source": "",
+        "abstract": "Technological advances are reshaping the business landscape, yet their use in financial reporting has been slow. We develop a model in which auditors and companies make technology investment decisions and examine their impact on audit fees and outcomes. Our analysis shows that auditors and companies may fail to invest in mutually beneficial technology that would enhance audit quality, resulting in coordination failure. We also demonstrate how legal liability, client business risk, and auditor pricing power affect the conditions under which such coordination failure occurs. Furthermore, technology investments can either increase or decrease audit fees. When companies can choose among projects with varying risk levels, technology investments can increase audit failure risk while improving welfare by enabling them to pursue riskier but more profitable projects. Our results provide a rationale for regulatory intervention to facilitate technology investments in the financial reporting environment and offer empirical predictions. JEL Classifications: M41; M42; M48."
+      },
+      "addedAbstract": true,
+      "source": "crossref",
+      "matched_title": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": true,
+          "hints": {
+            "abstract": "Technological advances are reshaping the business landscape, yet their use in financial reporting has been slow. We develop a model in which auditors and companies make technology investment decisions and examine their impact on audit fees and outcomes. Our analysis shows that auditors and companies may fail to invest in mutually beneficial technology that would enhance audit quality, resulting in coordination failure. We also demonstrate how legal liability, client business risk, and auditor pricing power affect the conditions under which such coordination failure occurs. Furthermore, technology investments can either increase or decrease audit fees. When companies can choose among projects with varying risk levels, technology investments can increase audit failure risk while improving welfare by enabling them to pursue riskier but more profitable projects. Our results provide a rationale for regulatory intervention to facilitate technology investments in the financial reporting environment and offer empirical predictions. JEL Classifications: M41; M42; M48."
+          },
+          "status": 200
+        }
+      ]
+    }
+  ]
+}
