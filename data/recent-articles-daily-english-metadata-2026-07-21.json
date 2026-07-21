@@ -1,0 +1,158 @@
+{
+  "summary": {
+    "checked_at": "2026-07-21T03:02:50.812Z",
+    "since": "2000-01-01",
+    "until": "2026-07-21",
+    "sources_total": 22,
+    "sources_ready": 18,
+    "push_queue_articles": 2,
+    "abstract_backfill": true,
+    "english_metadata_backfill": true,
+    "semantic_scholar": true,
+    "backfill_sources": [
+      "crossref-doi",
+      "openalex-doi",
+      "openalex-title",
+      "semantic-scholar-doi"
+    ]
+  },
+  "push_queue": [
+    {
+      "id": "1e4009ad76726be9",
+      "journal_id": "j16",
+      "source_journal_id": "j16",
+      "journal_name": "AMERICAN ECONOMIC REVIEW",
+      "title": "Predictably Unpredictable Inspections",
+      "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20251956",
+      "official_url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20251956",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Ashvin Gandhi, Andrew Olenski, Maggie Shi",
+      "published_at": "",
+      "issue_date": "",
+      "first_seen_at": "2026-07-21",
+      "display_date": "2026-07-21",
+      "display_date_basis": "first_seen_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "aea-forthcoming-html",
+      "date_source": "forthcoming_unassigned",
+      "abstract": "Inspections are a common tool for acquiring information and incentivizing compliance.Although inspections are typically unannounced, their timing often follows a predictable schedule.We study how this predictability shapes firm effort and patient outcomes in U.S. nursing homes, leveraging detailed administrative data on staffing, care, and health outcomes.Nursing homes \"slack\" in the low-risk period following an inspection and ramp up effort as their next inspection approaches.Patient survival mirrors this pattern, suggesting that these fluctuations in effort have meaningful consequences for the quality of patient care.We embed these estimates in a dynamic model capturing how inspection regimes incentivize effort and provide information about quality.Our estimates indicate that moving to unpredictable inspections could induce as much additional effort as increasing the frequency of inspections by 12%, while only minimally reducing their informational value."
+    },
+    {
+      "id": "1f6254aa31134c32",
+      "journal_id": "j19",
+      "source_journal_id": "j19",
+      "journal_name": "REVIEW OF ECONOMIC STUDIES",
+      "title": "Large Industrial Clusters in the Long Run: Evidence from Million-Rouble Plants in China",
+      "url": "https://doi.org/10.1093/restud/rdag078",
+      "official_url": "https://doi.org/10.1093/restud/rdag078",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Stephan Heblich, Marlon Seror, Hao Xu, Yanos Zylberberg",
+      "published_at": "2026-07-20",
+      "issue_date": "",
+      "first_seen_at": "2026-07-21",
+      "display_date": "2026-07-20",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "open-metadata-works",
+      "date_source": "",
+      "abstract": "We study the impact of large, successful manufacturing plants on other local producers in China, focusing on “Million-Rouble Plants” built in the 1950s during a brief alliance with the U.S.S.R. The ephemeral geopolitical situation and the locations of allied and enemy airbases provide exogenous variation in plant siting. We find a boom-and-bust pattern: Counties hosting these plants were 80% more productive than control counties in 1982 but 20% less productive by 2010. This decline reflects the performance of local establishments, which exhibit low productivity, limited innovation, and high markup. Specialization hindered spillovers, preventing the emergence of new clusters and local entrepreneurship."
+    }
+  ],
+  "results": [
+    {
+      "article": {
+        "id": "1e4009ad76726be9",
+        "journal_id": "j16",
+        "source_journal_id": "j16",
+        "journal_name": "AMERICAN ECONOMIC REVIEW",
+        "title": "Predictably Unpredictable Inspections",
+        "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20251956",
+        "official_url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20251956",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Ashvin Gandhi, Andrew Olenski, Maggie Shi",
+        "published_at": "",
+        "issue_date": "",
+        "first_seen_at": "2026-07-21",
+        "display_date": "2026-07-21",
+        "display_date_basis": "first_seen_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "aea-forthcoming-html",
+        "date_source": "forthcoming_unassigned",
+        "abstract": "Inspections are a common tool for acquiring information and incentivizing compliance.Although inspections are typically unannounced, their timing often follows a predictable schedule.We study how this predictability shapes firm effort and patient outcomes in U.S. nursing homes, leveraging detailed administrative data on staffing, care, and health outcomes.Nursing homes \"slack\" in the low-risk period following an inspection and ramp up effort as their next inspection approaches.Patient survival mirrors this pattern, suggesting that these fluctuations in effort have meaningful consequences for the quality of patient care.We embed these estimates in a dynamic model capturing how inspection regimes incentivize effort and provide information about quality.Our estimates indicate that moving to unpredictable inspections could induce as much additional effort as increasing the frequency of inspections by 12%, while only minimally reducing their informational value."
+      },
+      "addedAbstract": true,
+      "source": "openalex-title",
+      "matched_title": "Predictably Unpredictable Inspections",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": false,
+          "error": "status_404",
+          "status": 404
+        },
+        {
+          "source": "openalex-doi",
+          "ok": false,
+          "error": "status_404",
+          "status": 404
+        },
+        {
+          "source": "openalex-title",
+          "ok": true,
+          "hints": {
+            "abstract": "Inspections are a common tool for acquiring information and incentivizing compliance.Although inspections are typically unannounced, their timing often follows a predictable schedule.We study how this predictability shapes firm effort and patient outcomes in U.S. nursing homes, leveraging detailed administrative data on staffing, care, and health outcomes.Nursing homes \"slack\" in the low-risk period following an inspection and ramp up effort as their next inspection approaches.Patient survival mirrors this pattern, suggesting that these fluctuations in effort have meaningful consequences for the quality of patient care.We embed these estimates in a dynamic model capturing how inspection regimes incentivize effort and provide information about quality.Our estimates indicate that moving to unpredictable inspections could induce as much additional effort as increasing the frequency of inspections by 12%, while only minimally reducing their informational value."
+          },
+          "status": 200,
+          "matched_title": "Predictably Unpredictable Inspections"
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "1f6254aa31134c32",
+        "journal_id": "j19",
+        "source_journal_id": "j19",
+        "journal_name": "REVIEW OF ECONOMIC STUDIES",
+        "title": "Large Industrial Clusters in the Long Run: Evidence from Million-Rouble Plants in China",
+        "url": "https://doi.org/10.1093/restud/rdag078",
+        "official_url": "https://doi.org/10.1093/restud/rdag078",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Stephan Heblich, Marlon Seror, Hao Xu, Yanos Zylberberg",
+        "published_at": "2026-07-20",
+        "issue_date": "",
+        "first_seen_at": "2026-07-21",
+        "display_date": "2026-07-20",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "open-metadata-works",
+        "date_source": "",
+        "abstract": "We study the impact of large, successful manufacturing plants on other local producers in China, focusing on “Million-Rouble Plants” built in the 1950s during a brief alliance with the U.S.S.R. The ephemeral geopolitical situation and the locations of allied and enemy airbases provide exogenous variation in plant siting. We find a boom-and-bust pattern: Counties hosting these plants were 80% more productive than control counties in 1982 but 20% less productive by 2010. This decline reflects the performance of local establishments, which exhibit low productivity, limited innovation, and high markup. Specialization hindered spillovers, preventing the emergence of new clusters and local entrepreneurship."
+      },
+      "addedAbstract": true,
+      "source": "crossref",
+      "matched_title": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": true,
+          "hints": {
+            "abstract": "We study the impact of large, successful manufacturing plants on other local producers in China, focusing on “Million-Rouble Plants” built in the 1950s during a brief alliance with the U.S.S.R. The ephemeral geopolitical situation and the locations of allied and enemy airbases provide exogenous variation in plant siting. We find a boom-and-bust pattern: Counties hosting these plants were 80% more productive than control counties in 1982 but 20% less productive by 2010. This decline reflects the performance of local establishments, which exhibit low productivity, limited innovation, and high markup. Specialization hindered spillovers, preventing the emergence of new clusters and local entrepreneurship."
+          },
+          "status": 200
+        }
+      ]
+    }
+  ]
+}
