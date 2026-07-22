@@ -1,0 +1,440 @@
+{
+  "summary": {
+    "checked_at": "2026-07-22T03:03:27.830Z",
+    "since": "2000-01-01",
+    "until": "2026-07-22",
+    "sources_total": 22,
+    "sources_ready": 19,
+    "push_queue_articles": 5,
+    "abstract_backfill": true,
+    "english_metadata_backfill": true,
+    "semantic_scholar": true,
+    "backfill_sources": [
+      "crossref-doi",
+      "openalex-doi",
+      "openalex-title",
+      "semantic-scholar-doi"
+    ]
+  },
+  "push_queue": [
+    {
+      "id": "6cebca508b91f211",
+      "journal_id": "j15",
+      "source_journal_id": "j15",
+      "journal_name": "ACCOUNTING REVIEW",
+      "title": "Government-Brokerage Analysts and Market Stabilization: Evidence from China",
+      "url": "https://doi.org/10.2308/tar-2019-0605",
+      "official_url": "https://doi.org/10.2308/tar-2019-0605",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Sheng Cao, Xianjie He, Charles C. Y. Wang, Huifang Yin",
+      "published_at": "2026-07-21",
+      "issue_date": "",
+      "first_seen_at": "2026-07-22",
+      "display_date": "2026-07-21",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "open-metadata-works",
+      "date_source": "",
+      "abstract": "Government-controlled brokerage analysts serve as a market stabilization tool in China. Examining the 2005–2019 period, we show these analysts issue relatively more optimistic—yet less accurate and timely—forecasts during market rescue periods, supporting stock prices. During market booms, they issue comparatively pessimistic but more accurate and timely forecasts, tempering excessive optimism. These patterns are stronger for large firms and state-owned enterprises, and at the most government-influenced brokerages. Markets appear to respond to these forecasts: stocks with greater government-brokerage coverage experience higher liquidity during downturns but lower liquidity during hot markets, with corresponding post-earnings price adjustments. Our findings match Brunnermeier, Sockin, and Xiong’s (2022) theoretical predictions: state interventions can erode information efficiency under intensive intervention while maintaining it under moderate intervention. Collectively, these results underscore that analysts can serve a dual role—as information providers and policy instruments shaping market expectations and stability—in a coordinated economy. Data Availability: The data used in this study were obtained from the China Stock Market & Accounting Research (CSMAR) database under a commercial license and cannot be redistributed by the authors. Researchers can obtain equivalent data through institutional access to CSMAR. JEL Classifications: G14; G24; G28; O16."
+    },
+    {
+      "id": "a39040f8c07c9b6c",
+      "journal_id": "j17",
+      "source_journal_id": "j17",
+      "journal_name": "JOURNAL OF POLITICAL ECONOMY",
+      "title": "Scalable Demand and Markups",
+      "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/741641",
+      "official_url": "https://www.journals.uchicago.edu/doi/abs/10.1086/741641",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Enghin AtalayErika FrostAlan SorensenChristopher SullivanWanjia ZhuFederal Reserve Bank of PhiladelphiaUniversity of Wisconsin–MadisonUniversity of Wisconsin–Madison and National Bureau of Economic ResearchUniversity of Calgary",
+      "published_at": "2026-04-03",
+      "issue_date": "",
+      "first_seen_at": "2026-07-22",
+      "display_date": "2026-04-03",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "atypon-etoc",
+      "date_source": "metadata_published",
+      "abstract": "We study changes in markups across 72 product markets from 2006 to 2018.A growing literature has documented a rise in markups over time using a production function approach; we instead employ the standard microeconomic method, which is to estimate demand and then invert firms' first-order pricing conditions to infer their markups.To make the method scalable, we propose estimating nested logit demand models, using household panel data to automate the assignment of products to nests.Our results indicate an overall upward trend in markups between 2006 and 2018, with considerable heterogeneity across and within product markets.We find that changes in firms' marginal costs and households' price sensitivity are the primary drivers of markup increases with changes in firm ownership playing a much smaller role."
+    },
+    {
+      "id": "66c9a2e1858ff7a7",
+      "journal_id": "j17",
+      "source_journal_id": "j17",
+      "journal_name": "JOURNAL OF POLITICAL ECONOMY",
+      "title": "Robust Estimation and Inference in Panels with Interactive Fixed Effects",
+      "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/741623",
+      "official_url": "https://www.journals.uchicago.edu/doi/abs/10.1086/741623",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Timothy B. ArmstrongMartin WeidnerAndrei ZeleneevUniversity of Southern CaliforniaUniversity of OxfordUniversity College London",
+      "published_at": "2026-04-02",
+      "issue_date": "",
+      "first_seen_at": "2026-07-22",
+      "display_date": "2026-04-02",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "atypon-etoc",
+      "date_source": "metadata_published",
+      "abstract": "We consider estimation and inference for a regression coefficient in panels with interactive fixed effects (i.e., with a factor structure). We demonstrate that existing estimators and confidence intervals (CIs) can be heavily biased and size-distorted when some of the factors are weak. We propose estimators with improved rates of convergence and bias-aware CIs that remain valid uniformly, regardless of factor strength. Our approach applies the theory of minimax linear estimation to form a debiased estimate, using a nuclear norm bound on the error of an initial estimate of the interactive fixed effects. Our resulting bias-aware CIs take into account the remaining bias caused by weak factors. Monte Carlo experiments show substantial improvements over conventional methods when factors are weak, with minimal costs to estimation accuracy when factors are strong."
+    },
+    {
+      "id": "4a6376785b92a048",
+      "journal_id": "j17",
+      "source_journal_id": "j17",
+      "journal_name": "JOURNAL OF POLITICAL ECONOMY",
+      "title": "Blackwell-Monotone Updating Rules",
+      "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/741272",
+      "official_url": "https://www.journals.uchicago.edu/doi/abs/10.1086/741272",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Mark WhitmeyerArizona State University",
+      "published_at": "2026-03-06",
+      "issue_date": "",
+      "first_seen_at": "2026-07-22",
+      "display_date": "2026-03-06",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "atypon-etoc",
+      "date_source": "metadata_published",
+      "abstract": "An updating rule specifies how an agent reacts to information. An updating rule is Blackwell monotone if more information is always better for an agent in a decision problem and strictly Blackwell monotone if, in addition, there is always a decision problem in which more information is strictly better for an agent. Bayes'law is strictly Blackwell monotone, and I show that within a broad class of updating rules--those that distort the Bayesian posteriors in a signal-independent manner--it is the only strictly Blackwell-monotone updating rule. If an agent's decisions are evaluated non-paternalistically (according to her beliefs), the Blackwell-monotone updating rules are affine distortions of the Bayesian posteriors."
+    },
+    {
+      "id": "b695b1f849f0b592",
+      "journal_id": "j17",
+      "source_journal_id": "j17",
+      "journal_name": "JOURNAL OF POLITICAL ECONOMY",
+      "title": "Sleep: Educational Impact and Habit Formation",
+      "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/740221",
+      "official_url": "https://www.journals.uchicago.edu/doi/abs/10.1086/740221",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Osea GiuntellaSilvia SaccardoSally SadoffUniversity of Pittsburgh, Institute of Labor Economics (IZA), and National Bureau of Economic ResearchCarnegie Mellon UniversityUniversity of California, San Diego",
+      "published_at": "2026-01-07",
+      "issue_date": "",
+      "first_seen_at": "2026-07-22",
+      "display_date": "2026-01-07",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "atypon-etoc",
+      "date_source": "metadata_published",
+      "abstract": "There is growing evidence on the importance of sleep for productivity, but little is known about the impact of interventions targeting sleep. In a field experiment among U.S. university students, we show that incentives for sleep increase both sleep and academic performance. Motivated by theories of cue-based habit formation, our primary intervention couples personalized bedtime reminders with morning feedback and immediate rewards for sleeping at least seven hours on weeknights. The intervention increases the share of nights with at least seven hours of sleep by 26 percent and average weeknight sleep by an estimated 19 minutes during a four-week treatment period, with persistent effects of about eight minutes per night during a one to five-week post-treatment period. Comparisons to secondary treatments show that immediate incentives have larger impacts on sleep than delayed incentives or reminders and feedback alone during the treatment period, but do not have statistically distinguishable impacts on longer-term sleep habits in the post-treatment period. We estimate that immediate incentives improve average semester course performance by 0.075--0.088 grade points, a 0.10--0.11 standard deviation increase. Our results demonstrate that incentives to sleep can be a cost-effective tool for improving educational outcomes."
+    }
+  ],
+  "results": [
+    {
+      "article": {
+        "id": "6cebca508b91f211",
+        "journal_id": "j15",
+        "source_journal_id": "j15",
+        "journal_name": "ACCOUNTING REVIEW",
+        "title": "Government-Brokerage Analysts and Market Stabilization: Evidence from China",
+        "url": "https://doi.org/10.2308/tar-2019-0605",
+        "official_url": "https://doi.org/10.2308/tar-2019-0605",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Sheng Cao, Xianjie He, Charles C. Y. Wang, Huifang Yin",
+        "published_at": "2026-07-21",
+        "issue_date": "",
+        "first_seen_at": "2026-07-22",
+        "display_date": "2026-07-21",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "open-metadata-works",
+        "date_source": "",
+        "abstract": "Government-controlled brokerage analysts serve as a market stabilization tool in China. Examining the 2005–2019 period, we show these analysts issue relatively more optimistic—yet less accurate and timely—forecasts during market rescue periods, supporting stock prices. During market booms, they issue comparatively pessimistic but more accurate and timely forecasts, tempering excessive optimism. These patterns are stronger for large firms and state-owned enterprises, and at the most government-influenced brokerages. Markets appear to respond to these forecasts: stocks with greater government-brokerage coverage experience higher liquidity during downturns but lower liquidity during hot markets, with corresponding post-earnings price adjustments. Our findings match Brunnermeier, Sockin, and Xiong’s (2022) theoretical predictions: state interventions can erode information efficiency under intensive intervention while maintaining it under moderate intervention. Collectively, these results underscore that analysts can serve a dual role—as information providers and policy instruments shaping market expectations and stability—in a coordinated economy. Data Availability: The data used in this study were obtained from the China Stock Market & Accounting Research (CSMAR) database under a commercial license and cannot be redistributed by the authors. Researchers can obtain equivalent data through institutional access to CSMAR. JEL Classifications: G14; G24; G28; O16."
+      },
+      "addedAbstract": true,
+      "source": "crossref",
+      "matched_title": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": true,
+          "hints": {
+            "abstract": "Government-controlled brokerage analysts serve as a market stabilization tool in China. Examining the 2005–2019 period, we show these analysts issue relatively more optimistic—yet less accurate and timely—forecasts during market rescue periods, supporting stock prices. During market booms, they issue comparatively pessimistic but more accurate and timely forecasts, tempering excessive optimism. These patterns are stronger for large firms and state-owned enterprises, and at the most government-influenced brokerages. Markets appear to respond to these forecasts: stocks with greater government-brokerage coverage experience higher liquidity during downturns but lower liquidity during hot markets, with corresponding post-earnings price adjustments. Our findings match Brunnermeier, Sockin, and Xiong’s (2022) theoretical predictions: state interventions can erode information efficiency under intensive intervention while maintaining it under moderate intervention. Collectively, these results underscore that analysts can serve a dual role—as information providers and policy instruments shaping market expectations and stability—in a coordinated economy. Data Availability: The data used in this study were obtained from the China Stock Market & Accounting Research (CSMAR) database under a commercial license and cannot be redistributed by the authors. Researchers can obtain equivalent data through institutional access to CSMAR. JEL Classifications: G14; G24; G28; O16."
+          },
+          "status": 200
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "6e49714cb69fa3c8",
+        "journal_id": "j13",
+        "source_journal_id": "j13",
+        "journal_name": "ACADEMY OF MANAGEMENT REVIEW",
+        "title": "Toward an Architecture of Visioning: Insights From Gaudí’s Sagrada Familia",
+        "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0897",
+        "official_url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0897",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Yih-Teen Lee",
+        "published_at": "2026-07-20",
+        "issue_date": "",
+        "first_seen_at": "2026-07-22",
+        "display_date": "2026-07-20",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "atypon-etoc",
+        "date_source": "metadata_published"
+      },
+      "addedAbstract": false,
+      "source": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-doi",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-title",
+          "ok": false,
+          "status": 200,
+          "error": "no_strict_title_abstract"
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "a39040f8c07c9b6c",
+        "journal_id": "j17",
+        "source_journal_id": "j17",
+        "journal_name": "JOURNAL OF POLITICAL ECONOMY",
+        "title": "Scalable Demand and Markups",
+        "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/741641",
+        "official_url": "https://www.journals.uchicago.edu/doi/abs/10.1086/741641",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Enghin AtalayErika FrostAlan SorensenChristopher SullivanWanjia ZhuFederal Reserve Bank of PhiladelphiaUniversity of Wisconsin–MadisonUniversity of Wisconsin–Madison and National Bureau of Economic ResearchUniversity of Calgary",
+        "published_at": "2026-04-03",
+        "issue_date": "",
+        "first_seen_at": "2026-07-22",
+        "display_date": "2026-04-03",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "atypon-etoc",
+        "date_source": "metadata_published",
+        "abstract": "We study changes in markups across 72 product markets from 2006 to 2018.A growing literature has documented a rise in markups over time using a production function approach; we instead employ the standard microeconomic method, which is to estimate demand and then invert firms' first-order pricing conditions to infer their markups.To make the method scalable, we propose estimating nested logit demand models, using household panel data to automate the assignment of products to nests.Our results indicate an overall upward trend in markups between 2006 and 2018, with considerable heterogeneity across and within product markets.We find that changes in firms' marginal costs and households' price sensitivity are the primary drivers of markup increases with changes in firm ownership playing a much smaller role."
+      },
+      "addedAbstract": true,
+      "source": "openalex-title",
+      "matched_title": "Scalable Demand and Markups",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-doi",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-title",
+          "ok": true,
+          "hints": {
+            "abstract": "We study changes in markups across 72 product markets from 2006 to 2018.A growing literature has documented a rise in markups over time using a production function approach; we instead employ the standard microeconomic method, which is to estimate demand and then invert firms' first-order pricing conditions to infer their markups.To make the method scalable, we propose estimating nested logit demand models, using household panel data to automate the assignment of products to nests.Our results indicate an overall upward trend in markups between 2006 and 2018, with considerable heterogeneity across and within product markets.We find that changes in firms' marginal costs and households' price sensitivity are the primary drivers of markup increases with changes in firm ownership playing a much smaller role."
+          },
+          "status": 200,
+          "matched_title": "Scalable Demand and Markups"
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "1d97ddc2e210860f",
+        "journal_id": "j17",
+        "source_journal_id": "j17",
+        "journal_name": "JOURNAL OF POLITICAL ECONOMY",
+        "title": "Exchange Rates and Asset Prices in a Global Demand System",
+        "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/741624",
+        "official_url": "https://www.journals.uchicago.edu/doi/abs/10.1086/741624",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Ralph S. J. KoijenMotohiro YogoUniversity of Chicago Booth School of Business, National Bureau of Economic Research (NBER), and Centre for Economic Policy ResearchPrinceton University and NBER",
+        "published_at": "2026-04-02",
+        "issue_date": "",
+        "first_seen_at": "2026-07-22",
+        "display_date": "2026-04-02",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "atypon-etoc",
+        "date_source": "metadata_published"
+      },
+      "addedAbstract": false,
+      "source": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-doi",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-title",
+          "ok": false,
+          "status": 200,
+          "error": "no_strict_title_abstract"
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "66c9a2e1858ff7a7",
+        "journal_id": "j17",
+        "source_journal_id": "j17",
+        "journal_name": "JOURNAL OF POLITICAL ECONOMY",
+        "title": "Robust Estimation and Inference in Panels with Interactive Fixed Effects",
+        "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/741623",
+        "official_url": "https://www.journals.uchicago.edu/doi/abs/10.1086/741623",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Timothy B. ArmstrongMartin WeidnerAndrei ZeleneevUniversity of Southern CaliforniaUniversity of OxfordUniversity College London",
+        "published_at": "2026-04-02",
+        "issue_date": "",
+        "first_seen_at": "2026-07-22",
+        "display_date": "2026-04-02",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "atypon-etoc",
+        "date_source": "metadata_published",
+        "abstract": "We consider estimation and inference for a regression coefficient in panels with interactive fixed effects (i.e., with a factor structure). We demonstrate that existing estimators and confidence intervals (CIs) can be heavily biased and size-distorted when some of the factors are weak. We propose estimators with improved rates of convergence and bias-aware CIs that remain valid uniformly, regardless of factor strength. Our approach applies the theory of minimax linear estimation to form a debiased estimate, using a nuclear norm bound on the error of an initial estimate of the interactive fixed effects. Our resulting bias-aware CIs take into account the remaining bias caused by weak factors. Monte Carlo experiments show substantial improvements over conventional methods when factors are weak, with minimal costs to estimation accuracy when factors are strong."
+      },
+      "addedAbstract": true,
+      "source": "semantic-scholar-batch",
+      "open_access_pdf_url": "",
+      "attempts": [
+        {
+          "source": "semantic-scholar-batch",
+          "ok": true,
+          "status": 200
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "4a6376785b92a048",
+        "journal_id": "j17",
+        "source_journal_id": "j17",
+        "journal_name": "JOURNAL OF POLITICAL ECONOMY",
+        "title": "Blackwell-Monotone Updating Rules",
+        "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/741272",
+        "official_url": "https://www.journals.uchicago.edu/doi/abs/10.1086/741272",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Mark WhitmeyerArizona State University",
+        "published_at": "2026-03-06",
+        "issue_date": "",
+        "first_seen_at": "2026-07-22",
+        "display_date": "2026-03-06",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "atypon-etoc",
+        "date_source": "metadata_published",
+        "abstract": "An updating rule specifies how an agent reacts to information. An updating rule is Blackwell monotone if more information is always better for an agent in a decision problem and strictly Blackwell monotone if, in addition, there is always a decision problem in which more information is strictly better for an agent. Bayes'law is strictly Blackwell monotone, and I show that within a broad class of updating rules--those that distort the Bayesian posteriors in a signal-independent manner--it is the only strictly Blackwell-monotone updating rule. If an agent's decisions are evaluated non-paternalistically (according to her beliefs), the Blackwell-monotone updating rules are affine distortions of the Bayesian posteriors."
+      },
+      "addedAbstract": true,
+      "source": "semantic-scholar-batch",
+      "open_access_pdf_url": "",
+      "attempts": [
+        {
+          "source": "semantic-scholar-batch",
+          "ok": true,
+          "status": 200
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "b695b1f849f0b592",
+        "journal_id": "j17",
+        "source_journal_id": "j17",
+        "journal_name": "JOURNAL OF POLITICAL ECONOMY",
+        "title": "Sleep: Educational Impact and Habit Formation",
+        "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/740221",
+        "official_url": "https://www.journals.uchicago.edu/doi/abs/10.1086/740221",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Osea GiuntellaSilvia SaccardoSally SadoffUniversity of Pittsburgh, Institute of Labor Economics (IZA), and National Bureau of Economic ResearchCarnegie Mellon UniversityUniversity of California, San Diego",
+        "published_at": "2026-01-07",
+        "issue_date": "",
+        "first_seen_at": "2026-07-22",
+        "display_date": "2026-01-07",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "atypon-etoc",
+        "date_source": "metadata_published",
+        "abstract": "There is growing evidence on the importance of sleep for productivity, but little is known about the impact of interventions targeting sleep. In a field experiment among U.S. university students, we show that incentives for sleep increase both sleep and academic performance. Motivated by theories of cue-based habit formation, our primary intervention couples personalized bedtime reminders with morning feedback and immediate rewards for sleeping at least seven hours on weeknights. The intervention increases the share of nights with at least seven hours of sleep by 26 percent and average weeknight sleep by an estimated 19 minutes during a four-week treatment period, with persistent effects of about eight minutes per night during a one to five-week post-treatment period. Comparisons to secondary treatments show that immediate incentives have larger impacts on sleep than delayed incentives or reminders and feedback alone during the treatment period, but do not have statistically distinguishable impacts on longer-term sleep habits in the post-treatment period. We estimate that immediate incentives improve average semester course performance by 0.075--0.088 grade points, a 0.10--0.11 standard deviation increase. Our results demonstrate that incentives to sleep can be a cost-effective tool for improving educational outcomes."
+      },
+      "addedAbstract": true,
+      "source": "openalex-title",
+      "matched_title": "Sleep: Educational Impact and Habit Formation",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-doi",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-title",
+          "ok": true,
+          "hints": {
+            "abstract": "There is growing evidence on the importance of sleep for productivity, but little is known about the impact of interventions targeting sleep. In a field experiment among U.S. university students, we show that incentives for sleep increase both sleep and academic performance. Motivated by theories of cue-based habit formation, our primary intervention couples personalized bedtime reminders with morning feedback and immediate rewards for sleeping at least seven hours on weeknights. The intervention increases the share of nights with at least seven hours of sleep by 26 percent and average weeknight sleep by an estimated 19 minutes during a four-week treatment period, with persistent effects of about eight minutes per night during a one to five-week post-treatment period. Comparisons to secondary treatments show that immediate incentives have larger impacts on sleep than delayed incentives or reminders and feedback alone during the treatment period, but do not have statistically distinguishable impacts on longer-term sleep habits in the post-treatment period. We estimate that immediate incentives improve average semester course performance by 0.075--0.088 grade points, a 0.10--0.11 standard deviation increase. Our results demonstrate that incentives to sleep can be a cost-effective tool for improving educational outcomes."
+          },
+          "status": 200,
+          "matched_title": "Sleep: Educational Impact and Habit Formation"
+        }
+      ]
+    }
+  ]
+}
