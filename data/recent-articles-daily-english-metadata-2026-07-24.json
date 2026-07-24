@@ -1,0 +1,130 @@
+{
+  "summary": {
+    "checked_at": "2026-07-24T03:03:07.099Z",
+    "since": "2000-01-01",
+    "until": "2026-07-24",
+    "sources_total": 22,
+    "sources_ready": 20,
+    "push_queue_articles": 1,
+    "abstract_backfill": true,
+    "english_metadata_backfill": true,
+    "semantic_scholar": true,
+    "backfill_sources": [
+      "crossref-doi",
+      "openalex-doi",
+      "openalex-title",
+      "semantic-scholar-doi"
+    ]
+  },
+  "push_queue": [
+    {
+      "id": "9e31e764bb221724",
+      "journal_id": "j15",
+      "source_journal_id": "j15",
+      "journal_name": "ACCOUNTING REVIEW",
+      "title": "The Evolving Make-or-Buy Decision: Strategic Concurrent Sourcing and Capacity Choice",
+      "url": "https://doi.org/10.2308/tar-2025-0280",
+      "official_url": "https://doi.org/10.2308/tar-2025-0280",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Anil Arya, Ram N. V. Ramanan",
+      "published_at": "2026-07-23",
+      "issue_date": "",
+      "first_seen_at": "2026-07-24",
+      "display_date": "2026-07-23",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "open-metadata-works",
+      "date_source": "",
+      "abstract": "The once binary make-or-buy choice in firms’ sourcing has evolved in recent years into what is often a make-and-buy decision where the same input is both produced internally and procured externally. This paper presents a novel explanation for concurrent sourcing, one rooted in firms’ strategic positioning and intrinsically tied to their capacity choices. In our setting, a firm that chooses solely to make internally maximizes cost savings but prices away efficiency gains via intense retail competition. A firm that chooses solely to buy externally tempers competitive tendencies but finds input prices excessive. By choosing concurrent sourcing, a firm keeps average costs low (relying on external supply sparingly) while also credibly committing to reining in aggressive retail pricing due to the modestly higher marginal costs associated with outsourcing. This optimal middle ground is achieved by the firm strategically limiting its installed capacity. JEL Classifications: D43; L13; L23; M41."
+    }
+  ],
+  "results": [
+    {
+      "article": {
+        "id": "40d597ba1f674108",
+        "journal_id": "j16",
+        "source_journal_id": "j16",
+        "journal_name": "AMERICAN ECONOMIC REVIEW",
+        "title": "Social Push and the Direction of Innovation",
+        "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20231417",
+        "official_url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20231417",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Elias Einiö, Josh Feng, Xavier Jaravel",
+        "published_at": "",
+        "issue_date": "",
+        "first_seen_at": "2026-07-24",
+        "display_date": "2026-07-24",
+        "display_date_basis": "first_seen_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "aea-forthcoming-html",
+        "date_source": "forthcoming_unassigned"
+      },
+      "addedAbstract": false,
+      "source": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": false,
+          "error": "status_404",
+          "status": 404
+        },
+        {
+          "source": "openalex-doi",
+          "ok": false,
+          "error": "status_404",
+          "status": 404
+        },
+        {
+          "source": "openalex-title",
+          "ok": false,
+          "error": "status_503",
+          "status": 503
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "9e31e764bb221724",
+        "journal_id": "j15",
+        "source_journal_id": "j15",
+        "journal_name": "ACCOUNTING REVIEW",
+        "title": "The Evolving Make-or-Buy Decision: Strategic Concurrent Sourcing and Capacity Choice",
+        "url": "https://doi.org/10.2308/tar-2025-0280",
+        "official_url": "https://doi.org/10.2308/tar-2025-0280",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Anil Arya, Ram N. V. Ramanan",
+        "published_at": "2026-07-23",
+        "issue_date": "",
+        "first_seen_at": "2026-07-24",
+        "display_date": "2026-07-23",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "open-metadata-works",
+        "date_source": "",
+        "abstract": "The once binary make-or-buy choice in firms’ sourcing has evolved in recent years into what is often a make-and-buy decision where the same input is both produced internally and procured externally. This paper presents a novel explanation for concurrent sourcing, one rooted in firms’ strategic positioning and intrinsically tied to their capacity choices. In our setting, a firm that chooses solely to make internally maximizes cost savings but prices away efficiency gains via intense retail competition. A firm that chooses solely to buy externally tempers competitive tendencies but finds input prices excessive. By choosing concurrent sourcing, a firm keeps average costs low (relying on external supply sparingly) while also credibly committing to reining in aggressive retail pricing due to the modestly higher marginal costs associated with outsourcing. This optimal middle ground is achieved by the firm strategically limiting its installed capacity. JEL Classifications: D43; L13; L23; M41."
+      },
+      "addedAbstract": true,
+      "source": "crossref",
+      "matched_title": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": true,
+          "hints": {
+            "abstract": "The once binary make-or-buy choice in firms’ sourcing has evolved in recent years into what is often a make-and-buy decision where the same input is both produced internally and procured externally. This paper presents a novel explanation for concurrent sourcing, one rooted in firms’ strategic positioning and intrinsically tied to their capacity choices. In our setting, a firm that chooses solely to make internally maximizes cost savings but prices away efficiency gains via intense retail competition. A firm that chooses solely to buy externally tempers competitive tendencies but finds input prices excessive. By choosing concurrent sourcing, a firm keeps average costs low (relying on external supply sparingly) while also credibly committing to reining in aggressive retail pricing due to the modestly higher marginal costs associated with outsourcing. This optimal middle ground is achieved by the firm strategically limiting its installed capacity. JEL Classifications: D43; L13; L23; M41."
+          },
+          "status": 200
+        }
+      ]
+    }
+  ]
+}
