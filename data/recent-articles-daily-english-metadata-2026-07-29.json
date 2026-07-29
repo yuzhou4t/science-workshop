@@ -1,0 +1,452 @@
+{
+  "summary": {
+    "checked_at": "2026-07-29T03:05:08.316Z",
+    "since": "2000-01-01",
+    "until": "2026-07-29",
+    "sources_total": 22,
+    "sources_ready": 20,
+    "push_queue_articles": 1,
+    "abstract_backfill": true,
+    "english_metadata_backfill": true,
+    "semantic_scholar": true,
+    "backfill_sources": [
+      "crossref-doi",
+      "openalex-doi",
+      "openalex-title",
+      "semantic-scholar-doi"
+    ]
+  },
+  "push_queue": [
+    {
+      "id": "2b851ea68d362c5d",
+      "journal_id": "j18",
+      "source_journal_id": "j18",
+      "journal_name": "QUARTERLY JOURNAL OF ECONOMICS",
+      "title": "Capital Services in Global Value Chains",
+      "url": "https://doi.org/10.1093/qje/qjag041",
+      "official_url": "https://doi.org/10.1093/qje/qjag041",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Xiang Ding",
+      "published_at": "2026-07-28",
+      "issue_date": "",
+      "first_seen_at": "2026-07-29",
+      "display_date": "2026-07-28",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "open-metadata-works",
+      "date_source": "",
+      "abstract": "This paper constructs the first global dataset on inter-sectoral capital service expenditures. I use this data to disaggregate capital services and intermediate inputs in a dynamic multi-sector trade model. Steady state allocations and responses to shocks are determined by a capital-augmented global input-output matrix. Two properties of the measured network deliver larger long-run consumption gains from globalization than existing estimates, as well as larger gains in more capital-intensive countries. First, more trade-exposed sectors supply capital to more consumption-influential producers. Second, heterogeneity in the network reallocates sectoral expenditures towards producers with larger declines in capital rental prices. These reallocations raise capital incomes and lower consumption price indices."
+    }
+  ],
+  "results": [
+    {
+      "article": {
+        "id": "2b851ea68d362c5d",
+        "journal_id": "j18",
+        "source_journal_id": "j18",
+        "journal_name": "QUARTERLY JOURNAL OF ECONOMICS",
+        "title": "Capital Services in Global Value Chains",
+        "url": "https://doi.org/10.1093/qje/qjag041",
+        "official_url": "https://doi.org/10.1093/qje/qjag041",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Xiang Ding",
+        "published_at": "2026-07-28",
+        "issue_date": "",
+        "first_seen_at": "2026-07-29",
+        "display_date": "2026-07-28",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "open-metadata-works",
+        "date_source": "",
+        "abstract": "This paper constructs the first global dataset on inter-sectoral capital service expenditures. I use this data to disaggregate capital services and intermediate inputs in a dynamic multi-sector trade model. Steady state allocations and responses to shocks are determined by a capital-augmented global input-output matrix. Two properties of the measured network deliver larger long-run consumption gains from globalization than existing estimates, as well as larger gains in more capital-intensive countries. First, more trade-exposed sectors supply capital to more consumption-influential producers. Second, heterogeneity in the network reallocates sectoral expenditures towards producers with larger declines in capital rental prices. These reallocations raise capital incomes and lower consumption price indices."
+      },
+      "addedAbstract": true,
+      "source": "crossref",
+      "matched_title": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": true,
+          "hints": {
+            "abstract": "This paper constructs the first global dataset on inter-sectoral capital service expenditures. I use this data to disaggregate capital services and intermediate inputs in a dynamic multi-sector trade model. Steady state allocations and responses to shocks are determined by a capital-augmented global input-output matrix. Two properties of the measured network deliver larger long-run consumption gains from globalization than existing estimates, as well as larger gains in more capital-intensive countries. First, more trade-exposed sectors supply capital to more consumption-influential producers. Second, heterogeneity in the network reallocates sectoral expenditures towards producers with larger declines in capital rental prices. These reallocations raise capital incomes and lower consumption price indices."
+          },
+          "status": 200
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "75664bcd9d77a51a",
+        "journal_id": "j13",
+        "source_journal_id": "j13",
+        "journal_name": "ACADEMY OF MANAGEMENT REVIEW",
+        "title": "Rethinking Necessity Entrepreneurship Beyond Binaries and Toward Communalism: A Commentary on Coffman et al.’s “Leaving Necessity Entrepreneurship Behind”",
+        "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0446",
+        "official_url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0446",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Katrin M. Smolka, Sophie Bacq, Pursey P. M. A. R. Heugens",
+        "published_at": "2025-11-11",
+        "issue_date": "2026-07",
+        "first_seen_at": "2026-07-29",
+        "display_date": "2025-11-11",
+        "display_date_basis": "published_at",
+        "push_basis": "issue_date",
+        "extraction_rule": "atypon-etoc",
+        "date_source": "metadata_issue"
+      },
+      "addedAbstract": false,
+      "source": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-doi",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-title",
+          "ok": false,
+          "status": 200,
+          "error": "no_strict_title_abstract"
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "62e0de0343c0b5b0",
+        "journal_id": "j13",
+        "source_journal_id": "j13",
+        "journal_name": "ACADEMY OF MANAGEMENT REVIEW",
+        "title": "Actualizing Desirable Futures Beyond the Individual: A Comment on Coffman et al.’s (2025) “Leaving Necessity Entrepreneurship Behind”",
+        "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0393",
+        "official_url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0393",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Ryan Nolan",
+        "published_at": "2025-11-01",
+        "issue_date": "2026-07",
+        "first_seen_at": "2026-07-29",
+        "display_date": "2025-11-01",
+        "display_date_basis": "published_at",
+        "push_basis": "issue_date",
+        "extraction_rule": "atypon-etoc",
+        "date_source": "metadata_issue"
+      },
+      "addedAbstract": false,
+      "source": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-doi",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-title",
+          "ok": false,
+          "status": 200,
+          "error": "no_strict_title_abstract"
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "aa2d5ec66a9efb5a",
+        "journal_id": "j13",
+        "source_journal_id": "j13",
+        "journal_name": "ACADEMY OF MANAGEMENT REVIEW",
+        "title": "External Enablement Is Non-Deterministic but the Occurrence of Extreme Growth Outliers Is Still Systematic: A Reply to “Outliers by Accident” and “Outliers in Waiting”",
+        "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0497",
+        "official_url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0497",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Frederik von Briel, Per Davidsson, Jan Recker",
+        "published_at": "2025-11-01",
+        "issue_date": "2026-07",
+        "first_seen_at": "2026-07-29",
+        "display_date": "2025-11-01",
+        "display_date_basis": "published_at",
+        "push_basis": "issue_date",
+        "extraction_rule": "atypon-etoc",
+        "date_source": "metadata_issue"
+      },
+      "addedAbstract": false,
+      "source": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-doi",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-title",
+          "ok": false,
+          "status": 200,
+          "error": "no_strict_title_abstract"
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "9e4aff82408e256e",
+        "journal_id": "j13",
+        "source_journal_id": "j13",
+        "journal_name": "ACADEMY OF MANAGEMENT REVIEW",
+        "title": "Outliers by Accident: Extending Von Briel et al.’s Theory of External Enablement through Stochastic Processes",
+        "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0277",
+        "official_url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0277",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Jun Xia, Yuehua Xu",
+        "published_at": "2025-10-10",
+        "issue_date": "2026-07",
+        "first_seen_at": "2026-07-29",
+        "display_date": "2025-10-10",
+        "display_date_basis": "published_at",
+        "push_basis": "issue_date",
+        "extraction_rule": "atypon-etoc",
+        "date_source": "metadata_issue"
+      },
+      "addedAbstract": false,
+      "source": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-doi",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-title",
+          "ok": false,
+          "status": 200,
+          "error": "no_strict_title_abstract"
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "446f06c149c01bc2",
+        "journal_id": "j13",
+        "source_journal_id": "j13",
+        "journal_name": "ACADEMY OF MANAGEMENT REVIEW",
+        "title": "Outliers in Waiting: An Extension of Von Briel, Davidsson, and Recker’s “Theory of External Enablement”",
+        "url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0232",
+        "official_url": "https://journals.aom.org/doi/abs/10.5465/amr.2025.0232",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Daniel S. Andrews",
+        "published_at": "2025-09-10",
+        "issue_date": "2026-07",
+        "first_seen_at": "2026-07-29",
+        "display_date": "2025-09-10",
+        "display_date_basis": "published_at",
+        "push_basis": "issue_date",
+        "extraction_rule": "atypon-etoc",
+        "date_source": "metadata_issue"
+      },
+      "addedAbstract": false,
+      "source": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-doi",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-title",
+          "ok": false,
+          "status": 200,
+          "error": "no_strict_title_abstract"
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "7b4cf3488f690b27",
+        "journal_id": "j13",
+        "source_journal_id": "j13",
+        "journal_name": "ACADEMY OF MANAGEMENT REVIEW",
+        "title": "Time to Face the Music: A Commentary on Lee, Busenbark, Withers, and Zajac’s “How Music Theory Can Inform Competitive Dynamics”",
+        "url": "https://journals.aom.org/doi/abs/10.5465/amr.2024.0606",
+        "official_url": "https://journals.aom.org/doi/abs/10.5465/amr.2024.0606",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Theodore L. Waldron, Gideon D. Markman, Jeffery S. McMullen, Peter Gianiodis",
+        "published_at": "2025-04-16",
+        "issue_date": "2026-07",
+        "first_seen_at": "2026-07-29",
+        "display_date": "2025-04-16",
+        "display_date_basis": "published_at",
+        "push_basis": "issue_date",
+        "extraction_rule": "atypon-etoc",
+        "date_source": "metadata_issue"
+      },
+      "addedAbstract": false,
+      "source": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-doi",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-title",
+          "ok": false,
+          "status": 200,
+          "error": "no_strict_title_abstract"
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "92a3d2e7076a0f1c",
+        "journal_id": "j13",
+        "source_journal_id": "j13",
+        "journal_name": "ACADEMY OF MANAGEMENT REVIEW",
+        "title": "Trust and Generative Artificial Intelligence: A Reply to Killoran, Park, and Kietzmann",
+        "url": "https://journals.aom.org/doi/abs/10.5465/amr.2024.0397",
+        "official_url": "https://journals.aom.org/doi/abs/10.5465/amr.2024.0397",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Bart S. Vanneste, Phanish Puranam",
+        "published_at": "2024-11-13",
+        "issue_date": "2026-07",
+        "first_seen_at": "2026-07-29",
+        "display_date": "2024-11-13",
+        "display_date_basis": "published_at",
+        "push_basis": "issue_date",
+        "extraction_rule": "atypon-etoc",
+        "date_source": "metadata_issue"
+      },
+      "addedAbstract": false,
+      "source": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-doi",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-title",
+          "ok": false,
+          "status": 200,
+          "error": "no_strict_title_abstract"
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "1c45915d274ce202",
+        "journal_id": "j13",
+        "source_journal_id": "j13",
+        "journal_name": "ACADEMY OF MANAGEMENT REVIEW",
+        "title": "Delineation of Reasoning, Intentional Disclosure, and the Potential for Harm: An Extension of Vanneste and Puranam’s “Artificial Intelligence, Trust, and Perceptions of Agency”",
+        "url": "https://journals.aom.org/doi/abs/10.5465/amr.2024.0193",
+        "official_url": "https://journals.aom.org/doi/abs/10.5465/amr.2024.0193",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Jayson Killoran, Andrew Park, Jan Kietzmann",
+        "published_at": "2024-09-24",
+        "issue_date": "2026-07",
+        "first_seen_at": "2026-07-29",
+        "display_date": "2024-09-24",
+        "display_date_basis": "published_at",
+        "push_basis": "issue_date",
+        "extraction_rule": "atypon-etoc",
+        "date_source": "metadata_issue"
+      },
+      "addedAbstract": false,
+      "source": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-doi",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-title",
+          "ok": false,
+          "status": 200,
+          "error": "no_strict_title_abstract"
+        }
+      ]
+    }
+  ]
+}

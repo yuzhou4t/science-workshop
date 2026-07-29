@@ -1,0 +1,422 @@
+{
+  "summary": {
+    "checked_at": "2026-07-29T03:03:52.660Z",
+    "since": "2000-01-01",
+    "until": "2026-07-29",
+    "sources_total": 22,
+    "sources_ready": 20,
+    "push_queue_articles": 0,
+    "abstract_backfill": true,
+    "ncpssd_issue_backfill": true,
+    "backfill_sources": [
+      "ncpssd-mobile-issue",
+      "ncpssd-article-api"
+    ]
+  },
+  "push_queue": [],
+  "results": [
+    {
+      "article": {
+        "id": "56186f1aa6d65fdf",
+        "journal_id": "j11",
+        "source_journal_id": "j11",
+        "journal_name": "会计研究",
+        "title": "“链长制”政策、上下游协作与企业债券融资成本",
+        "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=EE8901DD-A834-40FF-AA70-D6A0E2D1F37C&ID=C4F2CA76-697D-4D3B-9F1D-ACC5D8A7BA55",
+        "official_url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=EE8901DD-A834-40FF-AA70-D6A0E2D1F37C&ID=C4F2CA76-697D-4D3B-9F1D-ACC5D8A7BA55",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "穆青 等",
+        "published_at": "",
+        "issue_date": "2026-06",
+        "first_seen_at": "2026-07-29",
+        "display_date": "2026-06",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "asc-current-issue-html",
+        "date_source": "issue_loop"
+      },
+      "addedAbstract": false,
+      "response": {
+        "status": 200,
+        "error": "title_not_found",
+        "issue_url": "https://m.ncpssd.cn/journal/details?gch=96456X&langType=1&nav=1&years=2026&num=6",
+        "candidates": 0
+      }
+    },
+    {
+      "article": {
+        "id": "ad5edb50a7c7755b",
+        "journal_id": "j11",
+        "source_journal_id": "j11",
+        "journal_name": "会计研究",
+        "title": "多元共治型隐私监管与资本市场稳定——来自专项治理的证据",
+        "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=B20BE255-7BB2-4831-8D71-E21B46105945&ID=C4F2CA76-697D-4D3B-9F1D-ACC5D8A7BA55",
+        "official_url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=B20BE255-7BB2-4831-8D71-E21B46105945&ID=C4F2CA76-697D-4D3B-9F1D-ACC5D8A7BA55",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "郑惠琼 等",
+        "published_at": "",
+        "issue_date": "2026-06",
+        "first_seen_at": "2026-07-29",
+        "display_date": "2026-06",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "asc-current-issue-html",
+        "date_source": "issue_loop"
+      },
+      "addedAbstract": false,
+      "response": {
+        "status": 200,
+        "error": "title_not_found",
+        "issue_url": "https://m.ncpssd.cn/journal/details?gch=96456X&langType=1&nav=1&years=2026&num=6",
+        "candidates": 0
+      }
+    },
+    {
+      "article": {
+        "id": "ee14d38ae8a7e817",
+        "journal_id": "j11",
+        "source_journal_id": "j11",
+        "journal_name": "会计研究",
+        "title": "会计师事务所合伙人比例与审计质量",
+        "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=1AA77A63-DB1E-471F-A883-31B077DBB672&ID=C4F2CA76-697D-4D3B-9F1D-ACC5D8A7BA55",
+        "official_url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=1AA77A63-DB1E-471F-A883-31B077DBB672&ID=C4F2CA76-697D-4D3B-9F1D-ACC5D8A7BA55",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "吴春天 等",
+        "published_at": "",
+        "issue_date": "2026-06",
+        "first_seen_at": "2026-07-29",
+        "display_date": "2026-06",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "asc-current-issue-html",
+        "date_source": "issue_loop"
+      },
+      "addedAbstract": false,
+      "response": {
+        "status": 200,
+        "error": "title_not_found",
+        "issue_url": "https://m.ncpssd.cn/journal/details?gch=96456X&langType=1&nav=1&years=2026&num=6",
+        "candidates": 0
+      }
+    },
+    {
+      "article": {
+        "id": "27bafd04c51dbb4f",
+        "journal_id": "j11",
+        "source_journal_id": "j11",
+        "journal_name": "会计研究",
+        "title": "机会主义观还是效率观：影子银行监管与企业杠杆操纵——来自资管...",
+        "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=0277A9CD-C328-46BA-AAAD-C9C616D82575&ID=C4F2CA76-697D-4D3B-9F1D-ACC5D8A7BA55",
+        "official_url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=0277A9CD-C328-46BA-AAAD-C9C616D82575&ID=C4F2CA76-697D-4D3B-9F1D-ACC5D8A7BA55",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "刘志远 等",
+        "published_at": "",
+        "issue_date": "2026-06",
+        "first_seen_at": "2026-07-29",
+        "display_date": "2026-06",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "asc-current-issue-html",
+        "date_source": "issue_loop"
+      },
+      "addedAbstract": false,
+      "response": {
+        "status": 200,
+        "error": "title_not_found",
+        "issue_url": "https://m.ncpssd.cn/journal/details?gch=96456X&langType=1&nav=1&years=2026&num=6",
+        "candidates": 0
+      }
+    },
+    {
+      "article": {
+        "id": "7e3feb205254066b",
+        "journal_id": "j11",
+        "source_journal_id": "j11",
+        "journal_name": "会计研究",
+        "title": "企业投资区位布局与供应链韧性——基于子公司选址的经验证据",
+        "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=3B92B088-A31E-4B3D-89A1-307854FA2A83&ID=C4F2CA76-697D-4D3B-9F1D-ACC5D8A7BA55",
+        "official_url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=3B92B088-A31E-4B3D-89A1-307854FA2A83&ID=C4F2CA76-697D-4D3B-9F1D-ACC5D8A7BA55",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "雷玲 等",
+        "published_at": "",
+        "issue_date": "2026-06",
+        "first_seen_at": "2026-07-29",
+        "display_date": "2026-06",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "asc-current-issue-html",
+        "date_source": "issue_loop"
+      },
+      "addedAbstract": false,
+      "response": {
+        "status": 200,
+        "error": "title_not_found",
+        "issue_url": "https://m.ncpssd.cn/journal/details?gch=96456X&langType=1&nav=1&years=2026&num=6",
+        "candidates": 0
+      }
+    },
+    {
+      "article": {
+        "id": "52a98025a2060bab",
+        "journal_id": "j11",
+        "source_journal_id": "j11",
+        "journal_name": "会计研究",
+        "title": "审计机关行政处罚自由裁量权基准与地方国企关键核心技术突破",
+        "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=3903B176-E7F7-4A99-AEBA-E1760E1968E9&ID=C4F2CA76-697D-4D3B-9F1D-ACC5D8A7BA55",
+        "official_url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=3903B176-E7F7-4A99-AEBA-E1760E1968E9&ID=C4F2CA76-697D-4D3B-9F1D-ACC5D8A7BA55",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "李世刚 等",
+        "published_at": "",
+        "issue_date": "2026-06",
+        "first_seen_at": "2026-07-29",
+        "display_date": "2026-06",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "asc-current-issue-html",
+        "date_source": "issue_loop"
+      },
+      "addedAbstract": false,
+      "response": {
+        "status": 200,
+        "error": "title_not_found",
+        "issue_url": "https://m.ncpssd.cn/journal/details?gch=96456X&langType=1&nav=1&years=2026&num=6",
+        "candidates": 0
+      }
+    },
+    {
+      "article": {
+        "id": "180e171c2118640b",
+        "journal_id": "j11",
+        "source_journal_id": "j11",
+        "journal_name": "会计研究",
+        "title": "数实融合与企业数字技术创新——来自企业专利信息的经验证据",
+        "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=B98F63D8-3705-4175-8B2F-2714E74D114E&ID=C4F2CA76-697D-4D3B-9F1D-ACC5D8A7BA55",
+        "official_url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=B98F63D8-3705-4175-8B2F-2714E74D114E&ID=C4F2CA76-697D-4D3B-9F1D-ACC5D8A7BA55",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "余思明 等",
+        "published_at": "",
+        "issue_date": "2026-06",
+        "first_seen_at": "2026-07-29",
+        "display_date": "2026-06",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "asc-current-issue-html",
+        "date_source": "issue_loop"
+      },
+      "addedAbstract": false,
+      "response": {
+        "status": 200,
+        "error": "title_not_found",
+        "issue_url": "https://m.ncpssd.cn/journal/details?gch=96456X&langType=1&nav=1&years=2026&num=6",
+        "candidates": 0
+      }
+    },
+    {
+      "article": {
+        "id": "cbec3b7d1b4088ab",
+        "journal_id": "j11",
+        "source_journal_id": "j11",
+        "journal_name": "会计研究",
+        "title": "算力如何影响企业劳动收入份额？",
+        "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=E94536E3-69B4-4425-BD92-2BE00E1FB5EC&ID=C4F2CA76-697D-4D3B-9F1D-ACC5D8A7BA55",
+        "official_url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=E94536E3-69B4-4425-BD92-2BE00E1FB5EC&ID=C4F2CA76-697D-4D3B-9F1D-ACC5D8A7BA55",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "翟慧君 等",
+        "published_at": "",
+        "issue_date": "2026-06",
+        "first_seen_at": "2026-07-29",
+        "display_date": "2026-06",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "asc-current-issue-html",
+        "date_source": "issue_loop"
+      },
+      "addedAbstract": false,
+      "response": {
+        "status": 200,
+        "error": "title_not_found",
+        "issue_url": "https://m.ncpssd.cn/journal/details?gch=96456X&langType=1&nav=1&years=2026&num=6",
+        "candidates": 0
+      }
+    },
+    {
+      "article": {
+        "id": "43ccf4660a8bd725",
+        "journal_id": "j11",
+        "source_journal_id": "j11",
+        "journal_name": "会计研究",
+        "title": "文化传承的治理效应：红色印记与企业研发操纵",
+        "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=4B4A3C97-4302-4160-9446-564ABA5345AC&ID=C4F2CA76-697D-4D3B-9F1D-ACC5D8A7BA55",
+        "official_url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=4B4A3C97-4302-4160-9446-564ABA5345AC&ID=C4F2CA76-697D-4D3B-9F1D-ACC5D8A7BA55",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "万源星 等",
+        "published_at": "",
+        "issue_date": "2026-06",
+        "first_seen_at": "2026-07-29",
+        "display_date": "2026-06",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "asc-current-issue-html",
+        "date_source": "issue_loop"
+      },
+      "addedAbstract": false,
+      "response": {
+        "status": 200,
+        "error": "title_not_found",
+        "issue_url": "https://m.ncpssd.cn/journal/details?gch=96456X&langType=1&nav=1&years=2026&num=6",
+        "candidates": 0
+      }
+    },
+    {
+      "article": {
+        "id": "8e6cc6f19f2301cc",
+        "journal_id": "j11",
+        "source_journal_id": "j11",
+        "journal_name": "会计研究",
+        "title": "制衡还是合谋：来自股权质押新视角下年报文本特征的证据",
+        "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=9E636E4E-0684-4E30-B872-778A9989099A&ID=C4F2CA76-697D-4D3B-9F1D-ACC5D8A7BA55",
+        "official_url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=9E636E4E-0684-4E30-B872-778A9989099A&ID=C4F2CA76-697D-4D3B-9F1D-ACC5D8A7BA55",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "郑登津 等",
+        "published_at": "",
+        "issue_date": "2026-06",
+        "first_seen_at": "2026-07-29",
+        "display_date": "2026-06",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "asc-current-issue-html",
+        "date_source": "issue_loop"
+      },
+      "addedAbstract": false,
+      "response": {
+        "status": 200,
+        "error": "title_not_found",
+        "issue_url": "https://m.ncpssd.cn/journal/details?gch=96456X&langType=1&nav=1&years=2026&num=6",
+        "candidates": 0
+      }
+    },
+    {
+      "article": {
+        "id": "601ed1cc7827486b",
+        "journal_id": "j11",
+        "source_journal_id": "j11",
+        "journal_name": "会计研究",
+        "title": "中国大型机构投资者与股价信息含量",
+        "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=78490752-8953-4C72-865A-6080E6A161D8&ID=C4F2CA76-697D-4D3B-9F1D-ACC5D8A7BA55",
+        "official_url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=78490752-8953-4C72-865A-6080E6A161D8&ID=C4F2CA76-697D-4D3B-9F1D-ACC5D8A7BA55",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "郭晓冬 等",
+        "published_at": "",
+        "issue_date": "2026-06",
+        "first_seen_at": "2026-07-29",
+        "display_date": "2026-06",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "asc-current-issue-html",
+        "date_source": "issue_loop"
+      },
+      "addedAbstract": false,
+      "response": {
+        "status": 200,
+        "error": "title_not_found",
+        "issue_url": "https://m.ncpssd.cn/journal/details?gch=96456X&langType=1&nav=1&years=2026&num=6",
+        "candidates": 0
+      }
+    },
+    {
+      "article": {
+        "id": "15aa350123311fbe",
+        "journal_id": "j11",
+        "source_journal_id": "j11",
+        "journal_name": "会计研究",
+        "title": "中国环境保护税与企业人力资本结构升级",
+        "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=1FB49EB0-F4F5-473C-A96C-C6633425B156&ID=C4F2CA76-697D-4D3B-9F1D-ACC5D8A7BA55",
+        "official_url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=1FB49EB0-F4F5-473C-A96C-C6633425B156&ID=C4F2CA76-697D-4D3B-9F1D-ACC5D8A7BA55",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "赵家悦 等",
+        "published_at": "",
+        "issue_date": "2026-06",
+        "first_seen_at": "2026-07-29",
+        "display_date": "2026-06",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "asc-current-issue-html",
+        "date_source": "issue_loop"
+      },
+      "addedAbstract": false,
+      "response": {
+        "status": 200,
+        "error": "title_not_found",
+        "issue_url": "https://m.ncpssd.cn/journal/details?gch=96456X&langType=1&nav=1&years=2026&num=6",
+        "candidates": 0
+      }
+    },
+    {
+      "article": {
+        "id": "bf8921f916419a26",
+        "journal_id": "j11",
+        "source_journal_id": "j11",
+        "journal_name": "会计研究",
+        "title": "ESG责任履行与市值管理：“责驱增效”抑或“掣肘减效”？",
+        "url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=3BAD711C-C270-4762-877D-DE37D0DF8D6F&ID=C4F2CA76-697D-4D3B-9F1D-ACC5D8A7BA55",
+        "official_url": "https://www.asc.net.cn/AccountingResearch/BrowseDetail.aspx?k=3BAD711C-C270-4762-877D-DE37D0DF8D6F&ID=C4F2CA76-697D-4D3B-9F1D-ACC5D8A7BA55",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "张劲松 等",
+        "published_at": "",
+        "issue_date": "2026-06",
+        "first_seen_at": "2026-07-29",
+        "display_date": "2026-06",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "asc-current-issue-html",
+        "date_source": "issue_loop"
+      },
+      "addedAbstract": false,
+      "response": {
+        "status": 200,
+        "error": "title_not_found",
+        "issue_url": "https://m.ncpssd.cn/journal/details?gch=96456X&langType=1&nav=1&years=2026&num=6",
+        "candidates": 0
+      }
+    }
+  ]
+}
