@@ -1,0 +1,191 @@
+{
+  "summary": {
+    "checked_at": "2026-07-30T03:03:23.057Z",
+    "since": "2000-01-01",
+    "until": "2026-07-30",
+    "sources_total": 22,
+    "sources_ready": 20,
+    "push_queue_articles": 2,
+    "abstract_backfill": true,
+    "english_metadata_backfill": true,
+    "semantic_scholar": true,
+    "backfill_sources": [
+      "crossref-doi",
+      "openalex-doi",
+      "openalex-title",
+      "semantic-scholar-doi"
+    ]
+  },
+  "push_queue": [
+    {
+      "id": "a32894d0ff0b6c82",
+      "journal_id": "j19",
+      "source_journal_id": "j19",
+      "journal_name": "REVIEW OF ECONOMIC STUDIES",
+      "title": "An Evaluation of Protected Area Policies in the European Union",
+      "url": "https://doi.org/10.1093/restud/rdag080",
+      "official_url": "https://doi.org/10.1093/restud/rdag080",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Tristan Earle Grupp, Prakash Mishra, Mathias Reynaert, Arthur A van Benthem",
+      "published_at": "2026-07-29",
+      "issue_date": "",
+      "first_seen_at": "2026-07-30",
+      "display_date": "2026-07-29",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "open-metadata-works",
+      "date_source": "",
+      "abstract": "The European Union designates 26% of its landmass as protected areas, limiting economic development for biodiversity. We use the staggered introduction of protected areas between 1985 and 2019 to study the selection of protected land and the causal effect of protection on vegetation cover and nightlights. We find no meaningful impacts on either outcome across four decades, countries, protection cohorts, or land characteristics. These null effects are consistent with the political economy of EU land protection: weak incentives to internalize biodiversity gains, green-glow motives, and area-based targets shape local siting and stringency choices. In practice, strict protection is applied where development pressure is low–so that protection has little bite—while in high-pressure regions, protection is typically weak, imposing only limited constraints on economic activity."
+    },
+    {
+      "id": "3a35ba1a06abd21f",
+      "journal_id": "j19",
+      "source_journal_id": "j19",
+      "journal_name": "REVIEW OF ECONOMIC STUDIES",
+      "title": "Macro Shocks and Firm Dynamics with Oligopolistic Financial Intermediaries",
+      "url": "https://doi.org/10.1093/restud/rdag081",
+      "official_url": "https://doi.org/10.1093/restud/rdag081",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Alessandro T Villa",
+      "published_at": "2026-07-29",
+      "issue_date": "",
+      "first_seen_at": "2026-07-30",
+      "display_date": "2026-07-29",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "open-metadata-works",
+      "date_source": "",
+      "abstract": "Motivated by a secular increase in the concentration of the U.S. banking industry, I develop a new macroeconomic model with oligopolistic financial intermediaries and heterogeneous firms. Market power allows banks to price discriminate and charge firm-specific markups, exerting greater market power over productive and more financially constrained firms. This dampens capital accumulation and amplifies the effects of macroeconomic shocks. During a crisis, banks exploit the higher share of financially constrained firms to extract higher markups, inducing a larger decline in real activity. When a large bank fails, the remaining banks use their increased market power to restrict credit supply, worsening and prolonging the downturn."
+    }
+  ],
+  "results": [
+    {
+      "article": {
+        "id": "a32894d0ff0b6c82",
+        "journal_id": "j19",
+        "source_journal_id": "j19",
+        "journal_name": "REVIEW OF ECONOMIC STUDIES",
+        "title": "An Evaluation of Protected Area Policies in the European Union",
+        "url": "https://doi.org/10.1093/restud/rdag080",
+        "official_url": "https://doi.org/10.1093/restud/rdag080",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Tristan Earle Grupp, Prakash Mishra, Mathias Reynaert, Arthur A van Benthem",
+        "published_at": "2026-07-29",
+        "issue_date": "",
+        "first_seen_at": "2026-07-30",
+        "display_date": "2026-07-29",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "open-metadata-works",
+        "date_source": "",
+        "abstract": "The European Union designates 26% of its landmass as protected areas, limiting economic development for biodiversity. We use the staggered introduction of protected areas between 1985 and 2019 to study the selection of protected land and the causal effect of protection on vegetation cover and nightlights. We find no meaningful impacts on either outcome across four decades, countries, protection cohorts, or land characteristics. These null effects are consistent with the political economy of EU land protection: weak incentives to internalize biodiversity gains, green-glow motives, and area-based targets shape local siting and stringency choices. In practice, strict protection is applied where development pressure is low–so that protection has little bite—while in high-pressure regions, protection is typically weak, imposing only limited constraints on economic activity."
+      },
+      "addedAbstract": true,
+      "source": "crossref",
+      "matched_title": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": true,
+          "hints": {
+            "abstract": "The European Union designates 26% of its landmass as protected areas, limiting economic development for biodiversity. We use the staggered introduction of protected areas between 1985 and 2019 to study the selection of protected land and the causal effect of protection on vegetation cover and nightlights. We find no meaningful impacts on either outcome across four decades, countries, protection cohorts, or land characteristics. These null effects are consistent with the political economy of EU land protection: weak incentives to internalize biodiversity gains, green-glow motives, and area-based targets shape local siting and stringency choices. In practice, strict protection is applied where development pressure is low–so that protection has little bite—while in high-pressure regions, protection is typically weak, imposing only limited constraints on economic activity."
+          },
+          "status": 200
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "eef695144d04ecdd",
+        "journal_id": "j21",
+        "source_journal_id": "j21",
+        "journal_name": "ACADEMY OF MANAGEMENT JOURNAL",
+        "title": "Ideology or Identity? CEO Political Party Affiliation and Conformity in Competitive Strategy",
+        "url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0596",
+        "official_url": "https://journals.aom.org/doi/abs/10.5465/amj.2024.0596",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Krishnan Nair, Eric Lee",
+        "published_at": "2026-07-29",
+        "issue_date": "",
+        "first_seen_at": "2026-07-30",
+        "display_date": "2026-07-29",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "atypon-etoc",
+        "date_source": "metadata_published"
+      },
+      "addedAbstract": false,
+      "source": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-doi",
+          "ok": false,
+          "error": "status_404",
+          "status": 404
+        },
+        {
+          "source": "openalex-title",
+          "ok": false,
+          "error": "status_400",
+          "status": 400
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "3a35ba1a06abd21f",
+        "journal_id": "j19",
+        "source_journal_id": "j19",
+        "journal_name": "REVIEW OF ECONOMIC STUDIES",
+        "title": "Macro Shocks and Firm Dynamics with Oligopolistic Financial Intermediaries",
+        "url": "https://doi.org/10.1093/restud/rdag081",
+        "official_url": "https://doi.org/10.1093/restud/rdag081",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Alessandro T Villa",
+        "published_at": "2026-07-29",
+        "issue_date": "",
+        "first_seen_at": "2026-07-30",
+        "display_date": "2026-07-29",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "open-metadata-works",
+        "date_source": "",
+        "abstract": "Motivated by a secular increase in the concentration of the U.S. banking industry, I develop a new macroeconomic model with oligopolistic financial intermediaries and heterogeneous firms. Market power allows banks to price discriminate and charge firm-specific markups, exerting greater market power over productive and more financially constrained firms. This dampens capital accumulation and amplifies the effects of macroeconomic shocks. During a crisis, banks exploit the higher share of financially constrained firms to extract higher markups, inducing a larger decline in real activity. When a large bank fails, the remaining banks use their increased market power to restrict credit supply, worsening and prolonging the downturn."
+      },
+      "addedAbstract": true,
+      "source": "crossref",
+      "matched_title": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": true,
+          "hints": {
+            "abstract": "Motivated by a secular increase in the concentration of the U.S. banking industry, I develop a new macroeconomic model with oligopolistic financial intermediaries and heterogeneous firms. Market power allows banks to price discriminate and charge firm-specific markups, exerting greater market power over productive and more financially constrained firms. This dampens capital accumulation and amplifies the effects of macroeconomic shocks. During a crisis, banks exploit the higher share of financially constrained firms to extract higher markups, inducing a larger decline in real activity. When a large bank fails, the remaining banks use their increased market power to restrict credit supply, worsening and prolonging the downturn."
+          },
+          "status": 200
+        }
+      ]
+    }
+  ]
+}
