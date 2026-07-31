@@ -1,0 +1,252 @@
+{
+  "summary": {
+    "checked_at": "2026-07-31T03:03:25.809Z",
+    "since": "2000-01-01",
+    "until": "2026-07-31",
+    "sources_total": 22,
+    "sources_ready": 20,
+    "push_queue_articles": 3,
+    "abstract_backfill": true,
+    "english_metadata_backfill": true,
+    "semantic_scholar": true,
+    "backfill_sources": [
+      "crossref-doi",
+      "openalex-doi",
+      "openalex-title",
+      "semantic-scholar-doi"
+    ]
+  },
+  "push_queue": [
+    {
+      "id": "cf740ab9e79baabd",
+      "journal_id": "j15",
+      "source_journal_id": "j15",
+      "journal_name": "ACCOUNTING REVIEW",
+      "title": "Employee-Level Real Activities Management, Employee Performance, and Managerial Target Setting",
+      "url": "https://doi.org/10.2308/tar-2024-0166",
+      "official_url": "https://doi.org/10.2308/tar-2024-0166",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Markus C. Arnold, Kai A. Bauch, Eric W. Chan",
+      "published_at": "2026-07-30",
+      "issue_date": "",
+      "first_seen_at": "2026-07-31",
+      "display_date": "2026-07-30",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "open-metadata-works",
+      "date_source": "",
+      "abstract": "This study investigates how real activities management (RAM) by employees to meet internal targets set by managers affects their performance, and how managers’ awareness of employees’ opportunity to engage in RAM moderates this effect. Using two experiments, we predict and find that when managers are unaware of employees’ RAM opportunity, employees who face miscalibrated targets use RAM to restore their own incentives to work hard, resulting in increased employee performance. Counter to conventional wisdom, we also predict and find that making managers aware of employees’ RAM opportunity hurts employee performance. Such managers overestimate employees’ RAM and adjust targets aggressively such that they become more difficult to achieve, leading to lower employee motivation and less trusting employee-manager relations. Overall, our findings show that the opportunity to engage in RAM can have the indirect benefits of motivating higher employee performance, but increasing managers’ awareness of this has negative performance and relational effects. Data Availability: The data and research instrument are available from the authors upon request. JEL Classifications: D91; M10; M40."
+    },
+    {
+      "id": "e7010f672c52e2c0",
+      "journal_id": "j15",
+      "source_journal_id": "j15",
+      "journal_name": "ACCOUNTING REVIEW",
+      "title": "Tax-Induced Shifts in Risk-Taking Incentives and Executive Compensation Design",
+      "url": "https://doi.org/10.2308/tar-2023-0226",
+      "official_url": "https://doi.org/10.2308/tar-2023-0226",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Jennifer L. Blouin, Thomas R. Kubick, John R. Robinson",
+      "published_at": "2026-07-28",
+      "issue_date": "",
+      "first_seen_at": "2026-07-31",
+      "display_date": "2026-07-28",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "open-metadata-works",
+      "date_source": "",
+      "abstract": "Theory suggests that changes in corporate tax rates can alter the dispersion of after-tax project payoffs, thereby altering the exposure of firm-level risk transmitted to executives through compensation. Using state tax changes, we observe firms shifting away from option-based compensation following state corporate tax rate increases. This result is concentrated in compensation contracts that lack relative performance evaluation (RPE) features, which filter common shocks to performance and influence the type of risk executives are incentivized to take. We also find that firms are more likely to initiate RPE shortly after a state tax rate increase and that firms that adjusted compensation through reductions in equity risk incentives or used RPE were less likely to experience a subsequent increase in systematic risk following a state tax rate increase. Overall, our findings provide novel insight into how taxes can influence CEO compensation design and the transmission of firm-level risk to executives. Data Availability: Data are obtained from public sources identified in the paper. JEL Classifications: G32; H32; J33; J41; L25."
+    },
+    {
+      "id": "e76e2b550dc9049b",
+      "journal_id": "j15",
+      "source_journal_id": "j15",
+      "journal_name": "ACCOUNTING REVIEW",
+      "title": "The Consequences of Regulating Ownership for Profitable Tax-Exempt Organizations",
+      "url": "https://doi.org/10.2308/tar-2023-0208",
+      "official_url": "https://doi.org/10.2308/tar-2023-0208",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Brian D. Cadman, Elena S. Patel",
+      "published_at": "2026-07-28",
+      "issue_date": "",
+      "first_seen_at": "2026-07-31",
+      "display_date": "2026-07-28",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "open-metadata-works",
+      "date_source": "",
+      "abstract": "Many tax-exempt hospitals generate substantial profits. At the same time, regulations governing tax-exempt status prohibit these organizations from issuing equity or operating for the benefit of private owners, leaving managers with unusual discretion over retained resources. This combination makes them especially prone to agency problems. Because hospitals play a central role in the U.S. economy, the costs of weak governance extend beyond the sector itself. We find that tax-exempt hospitals spend more on administrative wages and capital investments than comparable taxable hospitals. At the same time, weaker financial performance accompanies greater mission-related activity. A novel, hand-collected measure of additional state-level oversight reveals that stronger oversight disciplines finances without crowding out mission-related activity. Data Availability: The data used in this study are derived from publicly available sources. Hospital financial and operational data are from the Centers for Medicare and Medicaid Services’ Hospital Cost Report Information System (HCRIS). County-level demographic data are from the Area Resource File maintained by the U.S. Department of Health and Human Services. Hospital market definitions are from the Dartmouth Atlas of Health Care. The hand-collected measure of state-level oversight (the O-Score) is described in the manuscript and appendices. JEL Classifications: M12; G30; G34; I18; J30."
+    }
+  ],
+  "results": [
+    {
+      "article": {
+        "id": "cf740ab9e79baabd",
+        "journal_id": "j15",
+        "source_journal_id": "j15",
+        "journal_name": "ACCOUNTING REVIEW",
+        "title": "Employee-Level Real Activities Management, Employee Performance, and Managerial Target Setting",
+        "url": "https://doi.org/10.2308/tar-2024-0166",
+        "official_url": "https://doi.org/10.2308/tar-2024-0166",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Markus C. Arnold, Kai A. Bauch, Eric W. Chan",
+        "published_at": "2026-07-30",
+        "issue_date": "",
+        "first_seen_at": "2026-07-31",
+        "display_date": "2026-07-30",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "open-metadata-works",
+        "date_source": "",
+        "abstract": "This study investigates how real activities management (RAM) by employees to meet internal targets set by managers affects their performance, and how managers’ awareness of employees’ opportunity to engage in RAM moderates this effect. Using two experiments, we predict and find that when managers are unaware of employees’ RAM opportunity, employees who face miscalibrated targets use RAM to restore their own incentives to work hard, resulting in increased employee performance. Counter to conventional wisdom, we also predict and find that making managers aware of employees’ RAM opportunity hurts employee performance. Such managers overestimate employees’ RAM and adjust targets aggressively such that they become more difficult to achieve, leading to lower employee motivation and less trusting employee-manager relations. Overall, our findings show that the opportunity to engage in RAM can have the indirect benefits of motivating higher employee performance, but increasing managers’ awareness of this has negative performance and relational effects. Data Availability: The data and research instrument are available from the authors upon request. JEL Classifications: D91; M10; M40."
+      },
+      "addedAbstract": true,
+      "source": "crossref",
+      "matched_title": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": true,
+          "hints": {
+            "abstract": "This study investigates how real activities management (RAM) by employees to meet internal targets set by managers affects their performance, and how managers’ awareness of employees’ opportunity to engage in RAM moderates this effect. Using two experiments, we predict and find that when managers are unaware of employees’ RAM opportunity, employees who face miscalibrated targets use RAM to restore their own incentives to work hard, resulting in increased employee performance. Counter to conventional wisdom, we also predict and find that making managers aware of employees’ RAM opportunity hurts employee performance. Such managers overestimate employees’ RAM and adjust targets aggressively such that they become more difficult to achieve, leading to lower employee motivation and less trusting employee-manager relations. Overall, our findings show that the opportunity to engage in RAM can have the indirect benefits of motivating higher employee performance, but increasing managers’ awareness of this has negative performance and relational effects. Data Availability: The data and research instrument are available from the authors upon request. JEL Classifications: D91; M10; M40."
+          },
+          "status": 200
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "28b0c4685b26ce99",
+        "journal_id": "j20",
+        "source_journal_id": "j20",
+        "journal_name": "ECONOMETRICA",
+        "title": "Submission of Manuscripts to the Econometric Society Monograph Series",
+        "url": "https://onlinelibrary.wiley.com/doi/10.3982/ECTA944SUM",
+        "official_url": "https://onlinelibrary.wiley.com/doi/10.3982/ECTA944SUM",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "",
+        "published_at": "2026-07-29",
+        "issue_date": "",
+        "first_seen_at": "2026-07-31",
+        "display_date": "2026-07-29",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "wiley-etoc",
+        "date_source": ""
+      },
+      "addedAbstract": false,
+      "source": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-doi",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-title",
+          "ok": false,
+          "status": 200,
+          "error": "no_strict_title_abstract"
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "e7010f672c52e2c0",
+        "journal_id": "j15",
+        "source_journal_id": "j15",
+        "journal_name": "ACCOUNTING REVIEW",
+        "title": "Tax-Induced Shifts in Risk-Taking Incentives and Executive Compensation Design",
+        "url": "https://doi.org/10.2308/tar-2023-0226",
+        "official_url": "https://doi.org/10.2308/tar-2023-0226",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Jennifer L. Blouin, Thomas R. Kubick, John R. Robinson",
+        "published_at": "2026-07-28",
+        "issue_date": "",
+        "first_seen_at": "2026-07-31",
+        "display_date": "2026-07-28",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "open-metadata-works",
+        "date_source": "",
+        "abstract": "Theory suggests that changes in corporate tax rates can alter the dispersion of after-tax project payoffs, thereby altering the exposure of firm-level risk transmitted to executives through compensation. Using state tax changes, we observe firms shifting away from option-based compensation following state corporate tax rate increases. This result is concentrated in compensation contracts that lack relative performance evaluation (RPE) features, which filter common shocks to performance and influence the type of risk executives are incentivized to take. We also find that firms are more likely to initiate RPE shortly after a state tax rate increase and that firms that adjusted compensation through reductions in equity risk incentives or used RPE were less likely to experience a subsequent increase in systematic risk following a state tax rate increase. Overall, our findings provide novel insight into how taxes can influence CEO compensation design and the transmission of firm-level risk to executives. Data Availability: Data are obtained from public sources identified in the paper. JEL Classifications: G32; H32; J33; J41; L25."
+      },
+      "addedAbstract": true,
+      "source": "crossref",
+      "matched_title": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": true,
+          "hints": {
+            "abstract": "Theory suggests that changes in corporate tax rates can alter the dispersion of after-tax project payoffs, thereby altering the exposure of firm-level risk transmitted to executives through compensation. Using state tax changes, we observe firms shifting away from option-based compensation following state corporate tax rate increases. This result is concentrated in compensation contracts that lack relative performance evaluation (RPE) features, which filter common shocks to performance and influence the type of risk executives are incentivized to take. We also find that firms are more likely to initiate RPE shortly after a state tax rate increase and that firms that adjusted compensation through reductions in equity risk incentives or used RPE were less likely to experience a subsequent increase in systematic risk following a state tax rate increase. Overall, our findings provide novel insight into how taxes can influence CEO compensation design and the transmission of firm-level risk to executives. Data Availability: Data are obtained from public sources identified in the paper. JEL Classifications: G32; H32; J33; J41; L25."
+          },
+          "status": 200
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "e76e2b550dc9049b",
+        "journal_id": "j15",
+        "source_journal_id": "j15",
+        "journal_name": "ACCOUNTING REVIEW",
+        "title": "The Consequences of Regulating Ownership for Profitable Tax-Exempt Organizations",
+        "url": "https://doi.org/10.2308/tar-2023-0208",
+        "official_url": "https://doi.org/10.2308/tar-2023-0208",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Brian D. Cadman, Elena S. Patel",
+        "published_at": "2026-07-28",
+        "issue_date": "",
+        "first_seen_at": "2026-07-31",
+        "display_date": "2026-07-28",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "open-metadata-works",
+        "date_source": "",
+        "abstract": "Many tax-exempt hospitals generate substantial profits. At the same time, regulations governing tax-exempt status prohibit these organizations from issuing equity or operating for the benefit of private owners, leaving managers with unusual discretion over retained resources. This combination makes them especially prone to agency problems. Because hospitals play a central role in the U.S. economy, the costs of weak governance extend beyond the sector itself. We find that tax-exempt hospitals spend more on administrative wages and capital investments than comparable taxable hospitals. At the same time, weaker financial performance accompanies greater mission-related activity. A novel, hand-collected measure of additional state-level oversight reveals that stronger oversight disciplines finances without crowding out mission-related activity. Data Availability: The data used in this study are derived from publicly available sources. Hospital financial and operational data are from the Centers for Medicare and Medicaid Services’ Hospital Cost Report Information System (HCRIS). County-level demographic data are from the Area Resource File maintained by the U.S. Department of Health and Human Services. Hospital market definitions are from the Dartmouth Atlas of Health Care. The hand-collected measure of state-level oversight (the O-Score) is described in the manuscript and appendices. JEL Classifications: M12; G30; G34; I18; J30."
+      },
+      "addedAbstract": true,
+      "source": "crossref",
+      "matched_title": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": true,
+          "hints": {
+            "abstract": "Many tax-exempt hospitals generate substantial profits. At the same time, regulations governing tax-exempt status prohibit these organizations from issuing equity or operating for the benefit of private owners, leaving managers with unusual discretion over retained resources. This combination makes them especially prone to agency problems. Because hospitals play a central role in the U.S. economy, the costs of weak governance extend beyond the sector itself. We find that tax-exempt hospitals spend more on administrative wages and capital investments than comparable taxable hospitals. At the same time, weaker financial performance accompanies greater mission-related activity. A novel, hand-collected measure of additional state-level oversight reveals that stronger oversight disciplines finances without crowding out mission-related activity. Data Availability: The data used in this study are derived from publicly available sources. Hospital financial and operational data are from the Centers for Medicare and Medicaid Services’ Hospital Cost Report Information System (HCRIS). County-level demographic data are from the Area Resource File maintained by the U.S. Department of Health and Human Services. Hospital market definitions are from the Dartmouth Atlas of Health Care. The hand-collected measure of state-level oversight (the O-Score) is described in the manuscript and appendices. JEL Classifications: M12; G30; G34; I18; J30."
+          },
+          "status": 200
+        }
+      ]
+    }
+  ]
+}
