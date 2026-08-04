@@ -2,10 +2,10 @@ window.ADAPTER_PROFILE_DATA = {
   "version": "0.1.0",
   "updated_at": "2026-05-29",
   "summary": {
-    "direct_article_feeds": 5,
-    "adapter_sources": 17,
+    "direct_article_feeds": 6,
+    "adapter_sources": 16,
     "platform_profiles": 7,
-    "ready_rules": 16,
+    "ready_rules": 15,
     "fallback_rules": 4
   },
   "direct_article_feeds": [
@@ -38,6 +38,12 @@ window.ADAPTER_PROFILE_DATA = {
       "journal_name": "ACADEMY OF MANAGEMENT JOURNAL",
       "feed_url": "https://journals.aom.org/action/showFeed?jc=amj&type=etoc&feed=rss",
       "parser_profile": "atypon-etoc"
+    },
+    {
+      "journal_id": "j22",
+      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
+      "feed_url": "https://journals.sagepub.com/action/showFeed?jc=asq&type=etoc&feed=rss",
+      "parser_profile": "sage-etoc"
     }
   ],
   "platform_profiles": [
@@ -177,8 +183,7 @@ window.ADAPTER_PROFILE_DATA = {
       ],
       "next_action": "AFA forthcoming 可由 DOI 反推 Wiley 文章页；ASQ 可从 Cornell 页抽 Sage DOI。",
       "journals": [
-        "j1",
-        "j22"
+        "j1"
       ]
     }
   ],
@@ -511,26 +516,6 @@ window.ADAPTER_PROFILE_DATA = {
       "status": "DOI 反推规则",
       "source_url": "https://afajof.org/forthcoming-articles/",
       "adapter_kind": "afa-forthcoming-doi",
-      "next_action": "AFA forthcoming 可由 DOI 反推 Wiley 文章页；ASQ 可从 Cornell 页抽 Sage DOI。",
-      "render_required": false
-    },
-    {
-      "journal_id": "j22",
-      "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
-      "platform_id": "non-article-feed",
-      "platform_name": "非论文 RSS 来源",
-      "platform_description": "源头有 RSS 或列表，但不是标准论文条目，需要排除公告并从 DOI 或文章页反推。",
-      "strategy": "排除公告/评论 RSS，改抓文章页",
-      "fields": [
-        "title",
-        "url",
-        "issue",
-        "date",
-        "authors"
-      ],
-      "status": "静态规则",
-      "source_url": "https://www.johnson.cornell.edu/administrative-science-quarterly/",
-      "adapter_kind": "asq-sage-links",
       "next_action": "AFA forthcoming 可由 DOI 反推 Wiley 文章页；ASQ 可从 Cornell 页抽 Sage DOI。",
       "render_required": false
     }
