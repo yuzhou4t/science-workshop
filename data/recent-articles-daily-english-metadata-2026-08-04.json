@@ -1,0 +1,114 @@
+{
+  "summary": {
+    "checked_at": "2026-08-04T03:03:30.623Z",
+    "since": "2000-01-01",
+    "until": "2026-08-04",
+    "sources_total": 22,
+    "sources_ready": 20,
+    "push_queue_articles": 0,
+    "abstract_backfill": true,
+    "english_metadata_backfill": true,
+    "semantic_scholar": true,
+    "backfill_sources": [
+      "crossref-doi",
+      "openalex-doi",
+      "openalex-title",
+      "semantic-scholar-doi"
+    ]
+  },
+  "push_queue": [],
+  "results": [
+    {
+      "article": {
+        "id": "a5b49878ebd2590a",
+        "journal_id": "j16",
+        "source_journal_id": "j16",
+        "journal_name": "AMERICAN ECONOMIC REVIEW",
+        "title": "Reproducible Aggregation of Sample-Split Statistics",
+        "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20231651",
+        "official_url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20231651",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "David M. Ritzwoller, Joseph P. Romano",
+        "published_at": "",
+        "issue_date": "",
+        "first_seen_at": "2026-08-04",
+        "display_date": "2026-08-04",
+        "display_date_basis": "first_seen_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "aea-forthcoming-html",
+        "date_source": "forthcoming_unassigned"
+      },
+      "addedAbstract": false,
+      "source": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": false,
+          "error": "status_404",
+          "status": 404
+        },
+        {
+          "source": "openalex-doi",
+          "ok": false,
+          "error": "status_404",
+          "status": 404
+        },
+        {
+          "source": "openalex-title",
+          "ok": false,
+          "status": 200,
+          "error": "no_strict_title_abstract"
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "78cc623e0cd3a15c",
+        "journal_id": "j16",
+        "source_journal_id": "j16",
+        "journal_name": "AMERICAN ECONOMIC REVIEW",
+        "title": "Truth Elicitation in a Nonstrategic Environment",
+        "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20251879",
+        "official_url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20251879",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Jacob Glazer, Ariel Rubinstein",
+        "published_at": "",
+        "issue_date": "",
+        "first_seen_at": "2026-08-04",
+        "display_date": "2026-08-04",
+        "display_date_basis": "first_seen_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "aea-forthcoming-html",
+        "date_source": "forthcoming_unassigned"
+      },
+      "addedAbstract": false,
+      "source": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": false,
+          "error": "status_404",
+          "status": 404
+        },
+        {
+          "source": "openalex-doi",
+          "ok": false,
+          "error": "status_404",
+          "status": 404
+        },
+        {
+          "source": "openalex-title",
+          "ok": false,
+          "status": 200,
+          "error": "no_strict_title_abstract"
+        }
+      ]
+    }
+  ]
+}
