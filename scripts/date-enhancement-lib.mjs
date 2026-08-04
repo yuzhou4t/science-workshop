@@ -337,6 +337,7 @@ export function extractDateHints({ url = "", context = "" } = {}) {
   const explicitFirstPublished = isoDay(
     haystack.match(/"shouCiFaBuRiQi"\s*:\s*"([^"]+)"/)?.[1]
     || haystack.match(/首次(?:发表|发布)(?:日期|时间|日)?[^0-9]*(20\d{2}[-/]\d{1,2}[-/]\d{1,2})/)?.[1]
+    || haystack.match(/(?:网络)?(?:发布|出版)时间[^0-9]*(20\d{2}[-/]\d{1,2}[-/]\d{1,2})/)?.[1]
     || "",
   );
   if (explicitFirstPublished) {

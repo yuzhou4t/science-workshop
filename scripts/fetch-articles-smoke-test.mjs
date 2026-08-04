@@ -9,6 +9,7 @@ import { shouldRetryWithCurlStatus } from "./fetch-retry-policy.mjs";
 import {
   parseAscIssueListArticles,
   parseCieCurrentArticles,
+  parseCnkiPortalCurrentArticles,
   parseJmscReaderIssueArticles,
   parseMacrodatasIssuePageArticles,
 } from "./html-adapter-parsers.mjs";
@@ -723,6 +724,37 @@ async function extractCnkiCaptchaCheck(item) {
   return { response, probe_url: item.source_url, articles, candidate_count: articles.length, notes };
 }
 
+async function extractCnkiPortalPaper(item) {
+  const response = await fetchText(item.source_url, 13000);
+  const parsedArticles = response.ok ? parseCnkiPortalCurrentArticles(response.text, response.finalUrl) : [];
+  const authoritativeDates = new Map(parsedArticles.map((article) => [article.url, {
+    date: article.date || "",
+    published_at: article.published_at || "",
+    issue_date: article.issue_date || "",
+    date_source: article.date_source || "",
+  }]));
+  const enrichedArticles = response.ok
+    ? await enrichArticlesWithDetailDates(parsedArticles, { limit: 20, timeoutMs: 11000, ifMissingAbstract: true })
+    : [];
+  const articles = enrichedArticles.map((article) => {
+    const dates = authoritativeDates.get(article.url) || {};
+    return {
+      ...article,
+      date: dates.date || dates.published_at || dates.issue_date || "",
+      published_at: dates.published_at || "",
+      issue_date: dates.issue_date || "",
+      date_source: dates.date_source || "",
+    };
+  });
+  return {
+    response,
+    probe_url: item.source_url,
+    articles,
+    candidate_count: articles.length,
+    notes: articles.length ? ["portal_sections:current_issue+online_first"] : [],
+  };
+}
+
 async function extractOpenMetadataWorks(item) {
   const rule = item.adapter_rule || {};
   const issns = rule.issns || [];
@@ -1254,10 +1286,7 @@ async function extractAdapterArticles(item) {
     case "macrodatas-issue-list":
       return extractMacrodatasIssueList(item);
     case "cnki-portal-paper":
-      return extractHtmlByPatterns(item, {
-        include: [/\/portal\/journal\/portal\/client\/paper\/[a-z0-9-]+/i],
-        exclude: [/\/editor\b/i, /admin/i, /login/i],
-      }, 13000, { detailDateHints: { limit: 20, timeoutMs: 11000, ifMissingAbstract: true } });
+      return extractCnkiPortalPaper(item);
     case "nankai-protected-html":
       return extractNankaiProtectedHtml(item);
     case "jmsc-issue-html":

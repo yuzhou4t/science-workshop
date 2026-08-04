@@ -3,9 +3,57 @@ import assert from "node:assert/strict";
 import {
   parseAscIssueListArticles,
   parseCieCurrentArticles,
+  parseCnkiPortalCurrentArticles,
   parseJmscReaderIssueArticles,
   parseMacrodatasIssuePageArticles,
 } from "./html-adapter-parsers.mjs";
+
+const cnkiPortalArticles = parseCnkiPortalCurrentArticles(`
+  <div name="benqimuci" class="paperZone1 cnki-compont">
+    <div class="paperMain"><div class="paperBox">
+      <h3><a href="/portal/journal/portal/client/paper/current-1">当期公共管理论文</a></h3>
+      <span>甲；乙；</span>
+      <div class="paperInfo"><span class="publish-info">2026 年 03 期 v.23</span></div>
+    </div></div>
+  </div>
+  <div name="guokanliulan" class="paperZone2 cnki-compont"></div>
+  <div name="wangluoshoufa" class="paperZone3 cnki-compont">
+    <div class="paperMain"><div class="paperBox">
+      <h3><a href="/portal/journal/portal/client/paper/online-1">网络首发公共管理论文</a></h3>
+      <span>丙;丁;</span>
+      <p>这是网络首发论文摘要。</p>
+      <div class="paperInfo"><span class="publish-info">（录用定稿）网络首发时间：2026-08-03 17:48:07</span></div>
+    </div></div>
+  </div>
+  <div name="beiyinpaihang" class="paperZone4 cnki-compont">
+    <div class="paperMain"><div class="paperBox">
+      <h3><a href="/portal/journal/portal/client/paper/old-1">不应混入的高被引历史论文</a></h3>
+      <span>戊;</span>
+      <div class="paperInfo"><span class="publish-info">2015 年 02 期</span></div>
+    </div></div>
+  </div>
+`, "https://gggl.cbpt.cnki.net/portal");
+
+assert.deepEqual(cnkiPortalArticles, [
+  {
+    title: "当期公共管理论文",
+    url: "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/current-1",
+    authors: "甲, 乙",
+    author_source: "portal_list",
+    issue_date: "2026-03",
+    date_source: "context_issue",
+  },
+  {
+    title: "网络首发公共管理论文",
+    url: "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/online-1",
+    authors: "丙, 丁",
+    author_source: "portal_list",
+    date: "2026-08-03",
+    published_at: "2026-08-03",
+    date_source: "context_published",
+    abstract: "这是网络首发论文摘要。",
+  },
+]);
 
 const cieArticles = parseCieCurrentArticles(`
   <table>

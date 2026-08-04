@@ -112,6 +112,57 @@ function dedupeByTitle(items) {
   return deduped;
 }
 
+function namedComponent(html = "", name = "", nextName = "") {
+  const source = String(html);
+  const startPattern = new RegExp(`<div\\b[^>]*\\bname=["']${name}["'][^>]*>`, "i");
+  const start = source.search(startPattern);
+  if (start < 0) return "";
+  if (!nextName) return source.slice(start);
+  const tail = source.slice(start + 1);
+  const endPattern = new RegExp(`<div\\b[^>]*\\bname=["']${nextName}["'][^>]*>`, "i");
+  const end = tail.search(endPattern);
+  return end < 0 ? source.slice(start) : source.slice(start, start + 1 + end);
+}
+
+function parseCnkiPortalSection(section = "", baseUrl = "") {
+  const articles = [];
+  const blocks = String(section).split(/(?=<div\b[^>]*class=["'][^"']*\bpaperMain\b[^"']*["'][^>]*>)/i);
+  for (const block of blocks) {
+    const link = block.match(/<h3\b[^>]*>[\s\S]*?<a\b[^>]*href=["']([^"']*\/portal\/journal\/portal\/client\/paper\/[a-z0-9-]+[^"']*)["'][^>]*>([\s\S]*?)<\/a>[\s\S]*?<\/h3>/i);
+    if (!link) continue;
+    const blockText = stripTags(block);
+    const onlineDate = blockText.match(/网络首发时间[:：]\s*(20\d{2}-\d{1,2}-\d{1,2})/i)?.[1] || "";
+    const issueMatch = blockText.match(/\b(20\d{2})\s*年\s*(\d{1,2})\s*期/i);
+    const authors = normalizeAuthors(block.match(/<\/h3>\s*<span\b[^>]*>([\s\S]*?)<\/span>/i)?.[1] || "");
+    const abstract = stripTags(block.match(/<\/span>\s*<p\b[^>]*>([\s\S]*?)<\/p>/i)?.[1] || "");
+    articles.push({
+      title: stripTags(link[2]),
+      url: normalizeUrl(link[1], baseUrl),
+      authors,
+      author_source: authors ? "portal_list" : "",
+      ...(onlineDate ? {
+        date: onlineDate,
+        published_at: onlineDate,
+        date_source: "context_published",
+      } : issueMatch ? {
+        issue_date: issueDate(issueMatch[1], issueMatch[2]),
+        date_source: "context_issue",
+      } : {}),
+      ...(abstract ? { abstract } : {}),
+    });
+  }
+  return articles.filter((article) => article.title && article.url);
+}
+
+export function parseCnkiPortalCurrentArticles(html = "", baseUrl = "") {
+  const currentIssue = namedComponent(html, "benqimuci", "guokanliulan");
+  const onlineFirst = namedComponent(html, "wangluoshoufa", "beiyinpaihang");
+  return dedupeByTitle([
+    ...parseCnkiPortalSection(currentIssue, baseUrl),
+    ...parseCnkiPortalSection(onlineFirst, baseUrl),
+  ]);
+}
+
 export function parseCieCurrentArticles(html = "", baseUrl = "") {
   const articles = [];
   const blocks = [...String(html).matchAll(/<table\b[^>]*>[\s\S]*?<\/table>/gi)].map((match) => match[0]);

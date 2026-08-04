@@ -175,6 +175,45 @@ assert.equal(dedupedHistory.articles.length, 1);
 assert.equal(dedupedHistory.articles[0].id, "cqvip-old-a");
 assert.equal(dedupedHistory.articles[0].first_seen_at, "2026-05-26");
 
+const cnkiPortalHistory = mergePushHistory(
+  {
+    version: 1,
+    articles: [
+      {
+        id: "current-paper-id",
+        journal_id: "j8",
+        journal_name: "公共管理学报",
+        title: "跨域整体治理——以《示范规划纲要》为例",
+        url: "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/current-paper-id",
+        issue_date: "2026-03",
+        first_seen_at: "2026-07-24",
+      },
+      {
+        id: "online-first-id",
+        journal_id: "j8",
+        journal_name: "公共管理学报",
+        title: "跨域整体治理——以示范规划纲要为例",
+        url: "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/online-first-id",
+        published_at: "2026-05-29",
+        first_seen_at: "2026-05-31",
+      },
+    ],
+  },
+  {
+    summary: { checked_at: "2026-08-04T02:00:00.000Z", sources_total: 1, sources_ready: 1, push_queue_articles: 0 },
+    push_queue: [],
+  },
+);
+
+assert.equal(cnkiPortalHistory.articles.length, 1);
+assert.equal(cnkiPortalHistory.articles[0].id, "current-paper-id");
+assert.equal(cnkiPortalHistory.articles[0].url, "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/current-paper-id");
+assert.equal(cnkiPortalHistory.articles[0].first_seen_at, "2026-05-31");
+assert.equal(cnkiPortalHistory.articles[0].published_at, "2026-05-29");
+assert.equal(cnkiPortalHistory.articles[0].issue_date, "2026-03");
+assert.equal(cnkiPortalHistory.articles[0].display_date, "2026-05-29");
+assert.equal(cnkiPortalHistory.articles[0].display_date_basis, "published_at");
+
 const abstractBackfillHistory = mergePushHistory(
   {
     version: 1,

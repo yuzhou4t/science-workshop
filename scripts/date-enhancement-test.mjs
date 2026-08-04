@@ -276,6 +276,14 @@ assert.deepEqual(extractDateHints({
 });
 
 assert.deepEqual(extractDateHints({
+  url: "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/demo",
+  context: '<div><b>网络发布时间：</b><p>2026-08-03</p></div><p>参考文献，2023，52(8)</p>',
+}), {
+  published_at: "2026-08-03",
+  date_source: "context_published",
+});
+
+assert.deepEqual(extractDateHints({
   url: "https://www.aeaweb.org/articles?id=10.1257%2Faer.20250064",
   context: "<div>American Economic Review (Forthcoming)</div>",
 }), {

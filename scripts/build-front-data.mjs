@@ -114,18 +114,52 @@ function articleUrlHistoryKey(article) {
 }
 
 function articleTitleHistoryKey(article) {
+  const journalId = article.journal_id || article.source_journal_id || "";
   const title = compactArticleTitle(article.title || "");
   if (!title) return "";
+  if (journalId === "j8") {
+    return [journalId, "title", title.replace(/[《》〈〉]/g, "")].join("::");
+  }
   return [
-    article.journal_id || article.source_journal_id || "",
+    journalId,
     "title",
     title,
     article.published_at || article.issue_date || article.display_date || "",
   ].join("::");
 }
 
+function mergeCnkiPortalArticle(existing, incoming) {
+  const newer = String(existing.first_seen_at || "") >= String(incoming.first_seen_at || "") ? existing : incoming;
+  const older = newer === existing ? incoming : existing;
+  const firstSeenAt = minDate(existing.first_seen_at, incoming.first_seen_at);
+  const publishedAt = [existing.published_at, incoming.published_at].filter(Boolean).sort()[0] || "";
+  const issueDate = newer.issue_date || older.issue_date || "";
+  const displayDate = publishedAt || issueDate || firstSeenAt;
+  return {
+    ...older,
+    ...newer,
+    id: newer.id || older.id,
+    authors: newer.authors || older.authors || "",
+    published_at: publishedAt,
+    issue_date: issueDate,
+    first_seen_at: firstSeenAt,
+    display_date: displayDate,
+    display_date_basis: publishedAt ? "published_at" : issueDate ? "issue_date" : "first_seen_at",
+    abstract: newer.abstract || older.abstract || "",
+    keywords: newer.keywords?.length ? newer.keywords : older.keywords || [],
+  };
+}
+
 function mergeArticle(existing, incoming, options = {}) {
   if (!existing) return incoming;
+  if (
+    existing.journal_id === "j8"
+    && incoming.journal_id === "j8"
+    && existing.id !== incoming.id
+    && articleTitleHistoryKey(existing) === articleTitleHistoryKey(incoming)
+  ) {
+    return mergeCnkiPortalArticle(existing, incoming);
+  }
   const firstSeenAt = minDate(existing.first_seen_at, incoming.first_seen_at);
   const preserveExistingDates = Boolean(options.preserveExistingDates);
   const merged = {
