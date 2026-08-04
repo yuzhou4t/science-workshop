@@ -25,7 +25,7 @@ function stripTags(value = "") {
 export function ncpssdParamsFromUrl(rawUrl = "") {
   try {
     const url = new URL(rawUrl);
-    if (!/\.ncpssd\.org$/i.test(url.hostname)) return {};
+    if (!/(\.ncpssd\.cn|\.ncpssd\.org)$/i.test(url.hostname)) return {};
     const id = url.searchParams.get("id") || "";
     if (!id) return {};
     return {
@@ -67,7 +67,7 @@ async function postNcpssd(article, timeoutMs) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), timeoutMs);
   try {
-    const response = await fetch("https://www.ncpssd.org/articleinfoHandler/getjournalarticletable", {
+    const response = await fetch("https://www.ncpssd.cn/articleinfoHandler/getjournalarticletable", {
       method: "POST",
       headers: {
         "User-Agent": "Mozilla/5.0 ScienceWorkshop/0.2",

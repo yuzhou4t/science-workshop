@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "updated_at": "2026-08-04T03:03:06.218Z",
+  "updated_at": "2026-08-04T12:14:39.637Z",
   "summary": {
-    "checked_at": "2026-08-04T03:03:06.218Z",
+    "checked_at": "2026-08-04T12:14:39.637Z",
     "since": "2026-05-25",
     "until": "2026-08-04",
     "sources_total": 22,
@@ -33,7 +33,10 @@
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": "forthcoming_unassigned"
+      "date_source": "forthcoming_unassigned",
+      "official_source": "aeaweb-detail",
+      "abstract": "Statistical inference is often simplified by sample-splitting. This simplification comes at the cost of the introduction of randomness not native to the data. We propose a simple procedure for sequentially aggregating statistics constructed with multiple splits of the same sample. The user specifies a bound and a nominal error rate. If the procedure is implemented twice on the same data, the nominal error rate approximates the chance that the results differ by more than the bound. We illustrate the application of the procedure to several widely applied econometric methods.",
+      "keywords": []
     },
     {
       "id": "78cc623e0cd3a15c",
@@ -55,7 +58,10 @@
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": "forthcoming_unassigned"
+      "date_source": "forthcoming_unassigned",
+      "official_source": "aeaweb-detail",
+      "abstract": "A principal decides which party deserves a prize. Only the parties observe the state that determines who is deserving. The principal gives each party a text describing the conditions under which that party deserves the prize, and asks each to report the state. The parties are nonstrategic. Each activates a known cheating procedure whose outcome depends on the state and on the text. Implementation is achieved if, whenever the parties disagree, the liar is identified by the “one-way cheating principle”: The truthful party is the unique party who could not have produced his story had the rival’s story been true.",
+      "keywords": []
     },
     {
       "id": "74c42c5e7122fbe7",
@@ -524,7 +530,9 @@
       "display_date_basis": "published_at",
       "push_basis": "first_seen",
       "extraction_rule": "atypon-etoc",
-      "date_source": "metadata_published"
+      "date_source": "metadata_published",
+      "abstract": "Building on the premise that political party affiliation reflects one’s ideology and core values, various studies in the upper echelons literature have examined the link between CEO political party affiliation and decision-making. In contrast, recent work in political psychology suggests that party affiliation shapes behavior largely because it serves as a salient social identity. Taking a reconciliatory approach, the present work highlights the value of both perspectives in explaining the CEO’s orientation toward conformity. According to the ideology literature, Republicans display greater conformity than Democrats due to dispositional differences in how much they value conformity. On the other hand, the identity perspective suggests that both Democrats and Republicans strive to conform to co-partisans and distinguish themselves from counter-partisans. Integrating insights from both perspectives, we theorize that Republican CEOs generally display greater conformity than Democratic CEOs due to dispositional differences, but that the extent to which these dispositional tendencies translate to competitive strategy depends on the political composition of CEOs in a given industry. Finally, we draw on self-concordance theory to theorize about the performance implications of fit and misfit between CEO party affiliation and conformity. We find support for our predictions in a sample of S&P 500 firms from 2010 to 2019.",
+      "keywords": []
     },
     {
       "id": "3a35ba1a06abd21f",
@@ -1263,7 +1271,10 @@
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": "forthcoming_unassigned"
+      "date_source": "forthcoming_unassigned",
+      "official_source": "aeaweb-detail",
+      "abstract": "Many lower-income countries know little about their citizens and their tax bases, which hinders effective taxation. This paper studies the impact of making the tax base more “legible” to the state and signaling this legibility to taxpayers. Leveraging a new digitized property database, a randomized experiment in Liberia finds that including identifying information (owners’ names and property photographs) in tax notices quadruples the likelihood of payment from 2 percent to over 8 percent, but only when the notice also details noncompliance penalties. The effects of the intervention persist to the 4th year. These results underscore that both legibility and enforcement are essential for taxation.",
+      "keywords": []
     },
     {
       "id": "6f1ec4f87f7da19a",
@@ -1285,7 +1296,10 @@
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": "forthcoming_unassigned"
+      "date_source": "forthcoming_unassigned",
+      "official_source": "aeaweb-detail",
+      "abstract": "This paper considers how far private adaptation may reduce future vulnerability to climate risks. Using data on monthly firm-to-firm transactions from Pakistan, we find that flood-affected firms are more likely to relocate to safer ground, and shift purchases towards suppliers in less flood-prone regions and reached via less flood-prone roads. The results indicate that firms are imperfectly in- formed about flood risk, and update their beliefs following floods. We quantify aggregate impacts using a spatial model of endogenous production network formation. The findings suggest that firms' learning will shape the economic impact of increasingly frequent climate-related disasters.",
+      "keywords": []
     },
     {
       "id": "65c900f6911b21af",
@@ -1307,7 +1321,10 @@
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": "forthcoming_unassigned"
+      "date_source": "forthcoming_unassigned",
+      "official_source": "aeaweb-detail",
+      "abstract": "Exposure to better peers in the workplace can influence career trajectories through two opposing channels: positively, via knowledge spillovers, and negatively, through competition for advancement. We disentangle these effects by studying untrained labor market entrants and distinguishing between coworkers in the same occupation with whom they are likely to compete versus those with whom they are unlikely to compete. We find robust evidence of persistent knowledge spillovers but also identify countervailing competition effects of comparable magnitude. Both effects are more pronounced for men than for women.",
+      "keywords": []
     },
     {
       "id": "0adbc0ef98d48ea9",
@@ -1329,7 +1346,10 @@
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": "forthcoming_unassigned"
+      "date_source": "forthcoming_unassigned",
+      "official_source": "aeaweb-detail",
+      "abstract": "Based on a narrative classification of all significant postwar changes in R&D appropriations for five major federal agencies, we find that an increase in nondefense R&D appropriations leads to increases in various measures of innovative activity and higher business-sector productivity in the long run. We structurally estimate the production function elasticity of nondefense government R&D capital using the SP-IV methodology of Lewis and Mertens (2024) and obtain implied returns of 140 to 210 percent over the postwar period. The estimates indicate that government-funded R&D accounts for one-fifth of business-sector TFP growth since WWII, and imply substantial underfunding of nondefense R&D.",
+      "keywords": []
     },
     {
       "id": "a5568ea3cf2023bf",
@@ -1521,7 +1541,9 @@
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": "forthcoming_unassigned"
+      "date_source": "forthcoming_unassigned",
+      "abstract": "Innovators' personal experience and social networks may affect their familiarity with customer needs, and in turn the types of products they bring to market. Consistent with this channel, we document that innovators create products that are more likely to be purchased by customers similar to them along observable dimensions including gender, age, and socio-economic status. With scanner data and a new phone applications database, we find that these homophily patterns hold even within detailed industries. Using quasi-random assignment of individuals to dorms during military service, we provide causal evidence that being exposed to peers from a lower income group increases an entrepreneur's propensity to create necessity products. We find similar results using an alternative research design leveraging idiosyncratic within-school variation in peer composition across classes and cohorts. Because innovators are predominantly men from privileged backgrounds, the social push channel implies that the gains from innovation are unequally distributed across customer groups, which we quantify in a growth model.",
+      "keywords": []
     },
     {
       "id": "f9f7254e0c8b4bf8",
@@ -1740,7 +1762,10 @@
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": "forthcoming_unassigned"
+      "date_source": "forthcoming_unassigned",
+      "official_source": "aeaweb-detail",
+      "abstract": "We study the causal effects of global supply chain disruptions by constructing a new index of real-time port congestion using Automatic Identification System data from container ships and a spatial clustering algorithm. We develop a model with search frictions between producers and retailers that links upstream production slack to downstream supply shortages and captures output and price responses to supply chain shocks. The co-movements of output, prices, spare capacity, and market tightness provide novel identification restrictions. We find demand and supply shocks drove US disinflation in 2020, while the inflation surge in 2021 was driven mainly by supply chain shocks.",
+      "keywords": []
     },
     {
       "id": "dbeaf38712579872",
@@ -2449,7 +2474,9 @@
       "display_date_basis": "published_at",
       "push_basis": "first_seen",
       "extraction_rule": "atypon-etoc",
-      "date_source": "metadata_published"
+      "date_source": "metadata_published",
+      "abstract": "In knowledge-intensive teams, collaborative interactions among teammates have historically served as the primary means through which members access task-relevant information, advice, and feedback. Generative artificial intelligence (AI), however, now offers members an alternative source of these resources. We develop a multilevel theory that proposes team members who are proficient with generative AI are more likely to perceive the resources it can offer as functionally equivalent to those they can access through their teammates. In turn, we propose that some members will shift their knowledge-seeking interactions to generative AI. As this substitution behavior accumulates within a team, the team’s collaboration network is less likely to foster the critical emergent states that support team effectiveness. The key insight of our theory is a dilemma for knowledge-intensive teams: generative AI can boost team performance by helping members to work more efficiently, but a lack of collaboration among teammates can offset these gains and undermine team satisfaction.",
+      "keywords": []
     },
     {
       "id": "18a8c26eaf124e1d",
@@ -3233,7 +3260,10 @@
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": "forthcoming_unassigned"
+      "date_source": "forthcoming_unassigned",
+      "official_source": "aeaweb-detail",
+      "abstract": "Durables represent a large share of households’ marginal propensity to spend (MPX). We develop a quantitative model of spending that takes durables into account and matches a rich set of empirical regularities simultaneously. Scaling the response of non-durables provides a poor approximation of the MPX on durables when it comes to its distribution in the population, its persistence over time, and its cyclicality. As an application, we study how the MPX varies with the size of stimulus checks and find that it declines more slowly compared to a model of purely non-durable spending.",
+      "keywords": []
     },
     {
       "id": "698e5b4301492184",
@@ -3255,7 +3285,10 @@
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": "forthcoming_unassigned"
+      "date_source": "forthcoming_unassigned",
+      "official_source": "aeaweb-detail",
+      "abstract": "We establish a link between labor scarcity and the adoption of labor-saving technology in industrializing England. During the Napoleonic Wars, more than 10 percent of the male population served in the armed forces. Where recruitment was heavy, more machines economizing on labor were adopted. Naval recruitment, instrumented by warships’ coastal access, provides exogenous variation in labor scarcity and suggests that the link between labor shortages and adoption is causal. Where mechanical skills were abundant, the impact of labor scarcity on adoption appears to be larger.",
+      "keywords": []
     },
     {
       "id": "b3c574677efa8d27",
@@ -3301,7 +3334,10 @@
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": "forthcoming_unassigned"
+      "date_source": "forthcoming_unassigned",
+      "official_source": "aeaweb-detail",
+      "abstract": "We study residential segregation and access to public services across 1.5 million urban and rural neighborhoods in India. Muslim and Scheduled Caste segregation in India is high by global standards, and only slightly lower than Black-White segregation in the United States. Within cities, public facilities and infrastructure are systematically less available in Muslim and Scheduled Caste neighborhoods. Nearly all regressive allocation is across neighborhoods within cities—at the most informal and least studied form of government. These inequalities are not visible in the aggregate data typically used for research and policy.",
+      "keywords": []
     },
     {
       "id": "d7880d19cd9f2437",
@@ -3371,7 +3407,10 @@
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": "forthcoming_unassigned"
+      "date_source": "forthcoming_unassigned",
+      "official_source": "aeaweb-detail",
+      "abstract": "Americans rarely marry outside their race or class group, a pattern with well-documented implications for inequality and intergenerational mobility. Limited exposure may partly explain these low intergroup marriage rates. We instrument for exposure using variation in childhood neighborhoods based on whether other race and class groups had more opposite-sex children of similar age. Exposure increases interclass (high- and low-parent-income) marriage but has no detectable effect on interracial (White and Black) marriage. A spatial marriage model predicts that residential segregation—one of many forms of exposure—accounts for more than one third of marital sorting by class but less than 5 percent by race.",
+      "keywords": []
     },
     {
       "id": "624492e350389762",
@@ -3867,7 +3906,13 @@
       "display_date_basis": "issue_date",
       "push_basis": "issue_date",
       "extraction_rule": "ajcass-current-api",
-      "date_source": ""
+      "date_source": "",
+      "abstract": "随着农村中青年人口大量迁移到城镇, HEE SAREE RIUM A Bia, 传统家庭养老功能不断弱化，农村谁来养老问题更为严峻，居民养老风险感知水平普遍较高。本文使用2022 年中国乡村振兴综合调查 (CRRS) 数据，研究村级居家养老服务中心建设对农村居民养老风险感知的影响及作用机制。研究发现，村级居家养老服务中心建设显著降低农村居民的养老风险感知。机制检验结果表明，村级居家养老服务中心提供的基本养老服务提升了居民的生活质量和健康水平，进而降低其养老风险感知。异质性检验结果显示，农村居家养老服务中心面临可持续发展问题，部分服务中心建立后未运营，只有正常运营的服务中心有效发挥了养老保障功能; 在正常运营的服务中心中，政府或社会养老机构作为运营主体降低农村居民养老风险感知的效应更强; 在中西部地区，村级居家养老服务中心建设降低农村居民养老风险感知的效果更好。研究表明，建立健全居家养老服务体系，是有效化解农村养老风险、积极应对农村人口老龄化的关键举措。",
+      "keywords": [
+        "养老风险感知",
+        "”居家养老服务",
+        "人口老龄化"
+      ]
     },
     {
       "id": "e54b44a5ad3cb7a2",
@@ -3889,7 +3934,12 @@
       "display_date_basis": "issue_date",
       "push_basis": "issue_date",
       "extraction_rule": "ajcass-current-api",
-      "date_source": ""
+      "date_source": "",
+      "abstract": "经济理论和政策实践强调明晰和稳定产权对于促进农地流转进而推动农业规模化经营的决定性意义，然而，金融在其中的基础性作用没有得到足够重视。考虑到现有研究对于农地确权是否促进规模化经营的实证结果并不一致，本文使用中国劳动力动态调查数据,通过多时点双重差分模型考察 2013一2019 年新一轮农地确权对农地规模化经营的影响及其经济后果。结果表明，农地确权总体上能够提升农地规模化经营的可能，人金融支持是形成这一效应的重要条件。在金融支持较强的地区，农地确权后借贷增加，推动农业生产专业户转入土地、扩大转入规模、增加农业经营投入，促进农业规模化经营; 而在金融支持较弱的地区，农地确权则没有类似效应。进一步研究发现，在强金融支持地区，农地确权后家庭财产性收入占比和农业生产率显著提升; 而在弱金融支持地区，农地确权的影响主要体现在农业劳动力转移。本文结论有助于深入理解金融对产权和交易关系的影响，也为推进农地规模化经营和农业现代化提供了政策启示。",
+      "keywords": [
+        "农地确权“农业规模化经营",
+        "”金融支持"
+      ]
     },
     {
       "id": "d30ddb0e16da081d",
@@ -3911,7 +3961,12 @@
       "display_date_basis": "issue_date",
       "push_basis": "issue_date",
       "extraction_rule": "ajcass-current-api",
-      "date_source": ""
+      "date_source": "",
+      "abstract": "面向“十五五”时期高质量推进高标准农田建设和管护的要求，系统识别高标准农田建设全生命周期中的突出问题及其产生机制具有重要现实意义。本文以2020一2025 年全国 28 个省份 1$9 个地级市的 193 份审计工作报告为研究资料，从项目全生命周期管理视角，按照“关键环节一核心问题一区域差异一机制解析一推进路径”的分析思路，系统分析高标准农田建设中存在的问题。研究发现: 第一，高标准农田建设全生命周期可划分为六大关键环节，核心问题呈现阶段性集聚与“前端失配一中端失范一后端失灵”的链式传导特征。第二，基于“自然一经济”双重视角，高标准农田建设中存在的问题在六大高标准农田建设区域和四大经济区域呈现结构性差异。第三，高标准农田建设中存在的问题是信息不对称、多重委托代理、软预算约束、产权模糊、激励不相容、协同治理不足等共同作用的结果，部分地区重“显绩”轻“洪绩”的政绩观偏差进一步放大系统性风险。 “十五五?>时期, 应秉承项目全生命周期治理理念, 将树立和践行正确政绩观误入制度设计，通过规划设计精准化、建设管理规范化、资金使用管理严格化、管护机制长效化、用途管控刚性化与多元协同制度化等，全面提升高标准农困建设质量效益，筑牢国家粮食安全根基。",
+      "keywords": [
+        "高标准农田建设”审计工作报告",
+        "”内容分析法“区域差异"
+      ]
     },
     {
       "id": "d8d891acf0e9937f",
@@ -3933,7 +3988,15 @@
       "display_date_basis": "issue_date",
       "push_basis": "issue_date",
       "extraction_rule": "ajcass-current-api",
-      "date_source": ""
+      "date_source": "",
+      "abstract": "确保农产品国际供应链安全稳定是新发展格局下中国粮食安全战略的重要内涵。而美国特朗普 2.0 政府实施的“对等关税”对中国农产品进口格局产生了深刻影响。本文在系统分析中国农产品进口格局演进特征的基础上，建立包含收入效应、贸易转移效应和贸易再平衡效应的三维理论分析框架，运用全球贸易分析模型，通过设计双边博弃、多边扩散与极端脱钩的递进式多情景组合，模拟验证美国“对等关税”所引发的关税冲突对中国农产品进口格局的影响。研究发现: 第一，关税冲突通过收入效应、贸易转移效应与贸易再平衡效应三条路径重构中国农产品进口格局，显著抑制了农产品进口总量。关税冲突对农产品进口的抑制效应随关税税率提高呈非线性增强趋势，且在不同农产品类别间具有显著异质性。第二，在双边博弈升级、多边关税扩散和极端脱钩情景下，中国从美国进口的农产品份额持续缩减，巴西对美国的替代效应不断增强，东盟作为区域性次级供给中心加速崛起，但贸易转移存在明显的容量边界。同时，中国农产品进口可能面临来自己西、东盟等国家和地区的再集中化风险。第三，国内农业产出在关税冲突初期因价格刺激出现阶段性增长，但随着多边博弃推进、国际供给渠道趋稳和进口农产品价格涨幅回落，增长动力显著减弱，国内外市场再平衡效应趋于显现。面对外部冲突等不确定性风险日益加剧的新形势，中国应通过健全进口动态监测调控机制、建立多元可控的农产品来源体系、推动国内农业产业内生性升级和深化区域协同与多边治理等措施，加快构建稳健有序、自主可控、韦性高效的全球农产品供给保障体系,切实增强粮食安全保障能力和国际市场主动权。",
+      "keywords": [
+        "“对等关税”",
+        "农产品进口",
+        "GTAP",
+        "贸易转移",
+        "粮食安全"
+      ]
     },
     {
       "id": "5921b5880b9a6ef8",
@@ -3955,7 +4018,14 @@
       "display_date_basis": "issue_date",
       "push_basis": "issue_date",
       "extraction_rule": "ajcass-current-api",
-      "date_source": ""
+      "date_source": "",
+      "abstract": "作为一项党中央部署的关键任务，农业转移人口市民化经过十余年的探索已取得了一定成就，但也面临诸多现实挑战，许多制度项疾依然未得到有效解决。这需要进一步梳理农业转移人口市民化政策，分析制约推进这一任务的关键极档，并设计更为完善的长效机制。对此，首先，本文构建基于政策“目标一实践”的农业转移人口市民化分析杠架，概括推进农业转移人口市民化过程中存在的“政策困局”。其次，本文围绕客观环境限制、制度设计与执行不足、评估反馈机制缺失三个维度，对要素市场化配置改革不深入、激励约束机制不健全、统筹联动机制不完善、缺乏全面公开的政策效果评价体系等造成“政策困局”的关键极档展开分析。最后，针对关键极格，本文以立法保障为基础，按照“协同改革一统筹推进一评估反馈”的思路，从构建推进农业转移人口市民化的法律保障机制、要素市场化配置改革协同推进机制、中央统筹机制、政绩考核评估反馈机制等方面，提出完善农业转移人口市民化长效机制的对策。",
+      "keywords": [
+        "农业转移人口市民化",
+        "BMRA",
+        "“政策困局”",
+        "长效机制"
+      ]
     },
     {
       "id": "3ba55f09362e014d",
@@ -3977,7 +4047,13 @@
       "display_date_basis": "issue_date",
       "push_basis": "issue_date",
       "extraction_rule": "ajcass-current-api",
-      "date_source": ""
+      "date_source": "",
+      "abstract": "实现乡村善治，既是巩固党的执政基础和执政地位的内在要求，也是夯实中国式现代化新道路根基和人类文明新形态基层基础的关键。党的十一届三中全会召开后，探索和发展中国式乡村善治成为党领导和开展乡村治理工作的核心线索。在对中国式乡村善治进行界定的基础上，本文运用“以中国为方法”的历史社会科学研究范式，通过对改革开放以来党探索和发展中国式乡村善治历程的梳理与分析，在呈现中国式乡村善治演进逻辑的基础上提炼新型简约治理这个概念。在加快构建中国哲学社会科学自主知识体系的形势下，为了在彰显新型简约治理的对话与传播价值及其所具有的类型学和典型样本意义的同时突出其世界意义，可将新型简约治理称为“政党领导和驱动的简约治理”。新型简约治理兼具解释功能和实践功能,迈向新型简约治理不仅能体现中国式乡村善治的演进逻辑，而且能为新征程中国式乡村善治的深化提供具体的思路和科学的方法。经过进一步讨论，本文认为，新型简约治理有望成为基层治理特别是乡村治理研究领域中国自主的标识性概念，既能丰富基层治理现代化的理论内涵，也能为世界其他发展中国家基层治理现代化贡献中国智慧、提供中国方案。",
+      "keywords": [
+        "乡村善治”新型简约治理",
+        "基层治理",
+        "”中国式现代化"
+      ]
     },
     {
       "id": "8becaf16240f578f",
@@ -3999,7 +4075,13 @@
       "display_date_basis": "issue_date",
       "push_basis": "issue_date",
       "extraction_rule": "ajcass-current-api",
-      "date_source": ""
+      "date_source": "",
+      "abstract": "在农业生产收益持续偏低的背景下，社会资本持续投资农业的现象引发广泛关注。准确测算农业资本投资回报率，是解释社会资本投资农业“低回报一高投入”现象的重要基础。本文测算了 2004一2024 年省域农业资本存量和农业资本投资回报率，揭示了社会资本投资农业的时空演变、空间集聚及其动因。研究发现，农业资本存量仍在增长，但投资回报率趋于下降，资本进入农业并未改变传统农业投资回报率偏低的局面。2024 年，东部、中部地区农业资本投资回报率分别约为 6%和 5$%，而西部、东北地区的这一回报率已降至 3%以下。农业资本投资回报率的空间分布呈现由“离散”向“集聚”转变的特征，且与工业资本投资回报率的空间关联性趋于增强。制度激励、产业链延伸、风险分散和价值导向等因素，通过提升市场收益与预期收益，驱动社会资本持续进入农业。因此，应完善差异化引导与监管机制、优化社会资本投资农业的激励约束机制、健全资本服务和风险防控体系，引导社会资本更好赋能农业全产业链。",
+      "keywords": [
+        "社会资本”农业资本存量",
+        "投资回报率",
+        "空间相关性"
+      ]
     },
     {
       "id": "029fdb590441a2b1",
@@ -4021,7 +4103,13 @@
       "display_date_basis": "issue_date",
       "push_basis": "issue_date",
       "extraction_rule": "ajcass-current-api",
-      "date_source": ""
+      "date_source": "",
+      "abstract": "深化医药卫生体制改革了更须破解优质医疗资源下沉不畅与区域布局不均衡的难题。本文从县域视角出发，梳理中国县域健康服务共同体发展的内在逻辑，构建涵盖预防与卫生服务、诊疗与急症救治、康复与健康管理、体系协同与效率四个维度的评价指标体 A, #AF 2011一2023 年的数据，对中国县域健康服务共同体发展现状展开评估，并探究其差异化发展路径。研究结果表明: 第一，中国县域健康服务共同体发展历经“理念萌芽期一战略黄基期一全面深化期”三个阶段，其内在逻辑可解构为核心能力商定发展基础、空间格局反映公平程度、动力机制揭示能量来源。第二，中国县域健康服务共同体发展的上升趋势显著，但呈现“体系协同领先、诊疗服务驱动、预防保健灌后”的结构性失衡特征。县域健康服务共同体发展的总体差异明显缩小，区域间差异是总体差异的主要来源。第三，内源性因素中康复与健康管理占据主导地位，外源性因素中健康素养、经济发展和居民收入是核心力量。据此，可构建核心枢纽牵引型、经济素养驱动型以及外部资源赋能型三条差异化发展路径。本文为深化基层医疗改革、优化医疗资源均衡布局提供了理论支撑与实践启示，对破解资源分配失衡难题、推动健康公平具有重要政策意义。",
+      "keywords": [
+        "县域健康服务共同体",
+        "”医疗卫生共同体",
+        "健康中国“”区域均衡”健康公平"
+      ]
     },
     {
       "id": "017e8b4c84ce2eac",
@@ -4043,7 +4131,12 @@
       "display_date_basis": "issue_date",
       "push_basis": "issue_date",
       "extraction_rule": "ajcass-current-api",
-      "date_source": ""
+      "date_source": "",
+      "abstract": "本文将农业转移人口市民化理解为生产关系的变革，从理论逻辑、历史逻辑和实践巡辑出发对其进行政治经济学分析。研究发现: 第一，农业转移人口市民化并非单纯的人口流动或制度准入问题，而是涉及生产资料所有制形式、人们在生产中的地位及其相互关系以及产品分配方式的系统性调整，本质上是一种生产关系变革。第二，在“生产力一生产关系”互动框架下，农业转移人口市民化在不同发展阶段呈现由“非市民化”向“半市民化”再向“市民化”演进的历史脉络。第三，当前农业转移人口市民化的困境，源于既有生产关系在再生产层面延续，与新质生产力发展对劳动力稳定参与、能力积累和社会瞪入的要求不相适应所形成的结构性张力。第四，应通过调整以权利拓展为核心的生产资料所有制形式、以权利平等为取向的人们在生产中的地位及其相互关系、以权利实现为归和宿的产品分配方式，推动作为生产关系变革的农业转移人口市民化向更适应新质生产力发展要求的方向演进。本文突破以往以单一政策调整解释农业转移人口市民化的思路，从生产关系角度深化对农业转移人口市民化内在逻辑与现实约束的理解，以期为科学有序推进农业转移人口市民化提供理论支撑。",
+      "keywords": [
+        "生产关系变革”农业转移人口”市民化",
+        "政治经济学"
+      ]
     },
     {
       "id": "06cf7fbc359646e8",
@@ -4065,7 +4158,14 @@
       "display_date_basis": "issue_date",
       "push_basis": "first_seen",
       "extraction_rule": "ajcass-current-api",
-      "date_source": ""
+      "date_source": "",
+      "abstract": "作为新型财政金融协同模式的典型工具，国库现金管理不仅能盘活财政存款资金、平滑市场流动性波动，还能引导商业银行调整信贷资源配置策略。以地方国库现金管理试点为背景，基于大样本宏微观数据，本文从理论层面和实证层面揭示了地方国库现金管理的 “ 商业银行信用创造效应 ” 和 “ 地方政府信贷引导效应 ”。在信用创造层面，地方国库现金管理操作为商业银行注入了流动性，增加了商业银行信贷投放；在信贷引导层面，地方政府借助地方国库现金管理操作的激励与约束机制对商业银行进行适度干预，引导其将更多信贷资源配置至市场化转型较好的地方政府融资平台，进而对其他企业形成了信贷资源挤出效应。进一步研究揭示，地方政府基于财政资金安全性的考虑，促使信贷资源挤出效应主要集中于高风险企业与政策管制行业企业，这提高了商业银行信贷资源配置效率。在微观层面，上述导向改善了商业银行信贷质量，优化了企业的资本结构和资本配置效率，并且推动了宏观层面的地区基础设施建设和经济增长。本文研究结论为进一步推进财政与金融协同治理、国库现金管理改革等提供了重要政策启示。",
+      "keywords": [
+        "财政金融协同",
+        "信贷资源配置",
+        "地方国库现金管理试点",
+        "财政金融协同的信贷资源配置效应"
+      ]
     },
     {
       "id": "c114dfa958612ecc",
@@ -4087,7 +4187,14 @@
       "display_date_basis": "issue_date",
       "push_basis": "first_seen",
       "extraction_rule": "ajcass-current-api",
-      "date_source": ""
+      "date_source": "",
+      "abstract": "企业创新是产业高质量发展的核心动力，产业政策优化是激发企业创新活力的重要制度支撑。然而，关于产品准入制度及其创新效应的研究仍较为有限。 2015 年修订、 2016 年实施的 《 中华人民共和国种子法 》 通过拓宽品种审定渠道、多元化审定标准等措施，为识别产品准入制度市场化改革的创新效应提供了重要契机。本文结合 2013 — 2021 年中国种业企业普查数据与品种审定数据，实证检验产品准入制度市场化改革对种业企业创新的影响及其作用机制。研究表明： 产品准入制度市场化改革显著提升了种业企业的创新数量，其主要通过降低制度性交易成本、扩张拓展细分市场机会、强化市场竞争激励三个路径实现。进一步研究发现，改革从品种权保护、原创研发、国家级审定、市场推广及品种性状等维度提升了企业创新质量，并推动企业采取自主研发、合作研发与技术引进相结合的多元化创新模式。本文还讨论了改革的作用边界，发现其创新促进效应依赖于市场环境和企业资源禀赋等条件。本研究为识别产品准入制度市场化改革的创新驱动效应提供了来自种业领域的微观经验证据，同时为进一步完善市场准入制度体系、促进战略性产业高质量发展提供了政策启示。",
+      "keywords": [
+        "产品准入制度市场化改革",
+        "种业市场",
+        "企业创新",
+        "产品准入制度市场化改革对企业创新的影响"
+      ]
     },
     {
       "id": "930a17a280f739c1",
@@ -4109,7 +4216,14 @@
       "display_date_basis": "issue_date",
       "push_basis": "first_seen",
       "extraction_rule": "ajcass-current-api",
-      "date_source": ""
+      "date_source": "",
+      "abstract": "前沿技术是大国竞争的核心，也是加快形成新质生产力的关键。如何推动产能结构优化升级，激励企业进行前沿技术创新是党和国家关切的重大问题。本文根据 2009 — 2022 年中国光伏产业的 45 万余条专利数据，利用基于 Transformer 深度学习框架进行预训练的大语言模型测算了企业的前沿技术创新程度，并在此基础上评估了 “ 光伏领跑者计划 ” 这个对光伏产业技术突破具有重大影响的创新激励政策的实际效果。研究发现， “ 光伏领跑者计划 ” 能够显著促进企业前沿技术创新，这一效果主要通过需求扩张效应、研发优化效应和知识溢出效应三条渠道实现。此外， “ 光伏领跑者计划 ” 还对整个行业具有显著的势力提升效应和优质示范效应。政府通过深化供给侧结构性改革，以关键技术参数作为企业遴选和产品准入的有效区分标准，使得优质企业获得了更大的市场势力，进而显著促进了光伏行业整体的技术进步。本文建议，在培育未来产业的过程中应借鉴 “ 光伏领跑者计划 ” 的成功经验，逐步提高技术标准，扩大优质产品的市场需求，从而充分发挥优质企业的示范作用，推动经济高质量发展。",
+      "keywords": [
+        "光伏领跑者计划",
+        "前沿技术创新",
+        "创新激励",
+        "新质生产力"
+      ]
     },
     {
       "id": "281d2a25457aac32",
@@ -4131,7 +4245,14 @@
       "display_date_basis": "issue_date",
       "push_basis": "first_seen",
       "extraction_rule": "ajcass-current-api",
-      "date_source": ""
+      "date_source": "",
+      "abstract": "教育机会对家庭生育、教育行为和收入不平等具有重要影响。本文在世代交叠模型中引入公共教育资源分配不均等，内生化异质性家庭的生育与教育决策，考察公共教育投入对家庭人力资本投资、生育行为以及收入分配的影响。研究发现： 公共教育投入增加对家庭私人教育投资及子女陪伴时间具有替代效应，通过降低养育成本提高总和生育率；公共教育均等化则有效提高了低人力资本家庭的公共教育资源可及性，显著降低收入不平等。此外，降低养育时间成本和树立积极生育观对提高总和生育率也具有重要影响。",
+      "keywords": [
+        "公共教育投入",
+        "家庭人力资本投资",
+        "生育率",
+        "收入不平等"
+      ]
     },
     {
       "id": "03f49c0f4fbe4afb",
@@ -4153,7 +4274,14 @@
       "display_date_basis": "issue_date",
       "push_basis": "first_seen",
       "extraction_rule": "ajcass-current-api",
-      "date_source": ""
+      "date_source": "",
+      "abstract": "数字服务税 （DST） 的出现加剧了国际税收协调的难度，探讨其税负转嫁问题对中国参与国际税改至关重要。本文基于 2019 — 2021 年国家—产品—年月层面的中国跨境电商出口数据，通过研究目的国实施 DST 政策对中国跨境电商出口的影响，探讨 DST 导致的税负转嫁行为。研究结果表明： DST 导致的税负可以转嫁，最终会导致中国跨境电商出口规模的缩减。对税负转嫁路径的分析发现，大型互联网企业通过提高履单费和广告费等方式，将税负转嫁给跨境电商企业；而跨境电商企业则通过提高商品价格，将税负进一步转嫁给目的国消费者。对税负转嫁程度的测算结果表明，大型互联网企业凭借市场支配地位实现了超额转嫁，其税负主要由跨境电商企业承担，部分由消费者承担。进一步分析发现，竞争性数字市场结构和更严格的数据限制能够削弱 DST 的不利影响。本文拓展了数字经济时代国际税负转嫁的研究场景，并揭示了税负转嫁路径。本文建议中国政府在国际税改中采取积极合作的立场，通过实施一定政策倾斜、建立多维自主体系和加强跨境数字经济合作等措施，降低 DST 带来的不利影响，实现与目的国的互利共赢。",
+      "keywords": [
+        "数字服务税",
+        "跨境电商出口",
+        "税负转嫁",
+        "国际税改"
+      ]
     },
     {
       "id": "a310a0da81f00cdf",
@@ -4175,7 +4303,14 @@
       "display_date_basis": "issue_date",
       "push_basis": "first_seen",
       "extraction_rule": "ajcass-current-api",
-      "date_source": ""
+      "date_source": "",
+      "abstract": "数据流动是数字经济的核心特征之一，厘清数据流动过程中数据价值的实现机制及其对数据产业发展的影响，对中国布局未来数字产业和培育新质生产力具有重要意义。本文通过构建一个多部门数据跨区域流动的一般均衡模型，探究数据跨区域流动在数据价值实现过程中的核心机制作用，揭示其引致要素相对价格变动与福利水平提升的传导路径。研究发现： （1） 数据跨区域流动主要通过生产率赋能效应、数据规模效应和结构转型效应影响数据产业发展，其作用方向取决于数据部门间的产品替代弹性和要素产出弹性。 （2） 随着数据共享规模扩大，数据流入地区生产率水平显著提升，数据要素在价值实现过程中的相对价格下降，数据经济价值得到进一步释放，有助于提升数据产业福利水平。 （3） 随着数据交易规模扩大，数据传输成本对部门间配置结构的影响趋于一致，生产率赋能效应相对弱化；尽管结构转型可能推高数据提炼溢价，但需求驱动型数据规模效应的作用更为显著，最终降低数据提炼溢价，提升数据产业福利水平。研究表明，随着数据要素流通属性的不断增强，促进数据自由流动有助于释放数据价值，并为数据要素市场的高质量发展注入新动能。",
+      "keywords": [
+        "数据流动",
+        "数据价值",
+        "数据产业",
+        "福利效应"
+      ]
     },
     {
       "id": "c92783969fc06fb8",
@@ -4197,7 +4332,15 @@
       "display_date_basis": "issue_date",
       "push_basis": "first_seen",
       "extraction_rule": "ajcass-current-api",
-      "date_source": ""
+      "date_source": "",
+      "abstract": "在全球减碳与逆全球化的背景下，外部贸易规则与气候政策不确定性显著上升，高耗能企业同时面临外部市场波动与潜在碳减排压力。本文以 2018 年欧洲议会通过碳边境调节机制 （CBAM） 决议这一外部政策信号冲击作为准自然实验，匹配中国上市公司的海关进出口数据、子公司数据和管理层讨论与分析文本，采用双重差分法和事件研究法，考察外部碳政策信号如何通过提高预期碳成本影响企业投资与空间布局。研究发现： 第一， CBAM 政策信号具有显著的可感知性，能够系统性提升企业对国际碳政策的关注度。第二，受政策信号影响，对欧盟出口暴露较高的高耗能企业显著增加了对绿电富集区的投资，绿电资源越丰富、绿电可达性越强的地区，对相关投资的吸引力越大，表现为高耗能产业向绿电条件更优地区的空间再配置。第三，高耗能企业同步增加了能源替代领域创新。本文从微观层面提供了外部碳边境政策信号影响中国企业行为的经验证据，揭示了绿电资源在开放条件下影响企业生产活动布局调整的关键作用，并为统筹高水平开放与绿色转型提供了政策启示。",
+      "keywords": [
+        "碳边境调节机制",
+        "政策信号",
+        "绿电禀赋",
+        "空间再配置",
+        "能源替代"
+      ]
     },
     {
       "id": "9681ab8a19b57dac",
@@ -4219,7 +4362,17 @@
       "display_date_basis": "issue_date",
       "push_basis": "first_seen",
       "extraction_rule": "ajcass-current-api",
-      "date_source": ""
+      "date_source": "",
+      "abstract": "本文构建了 “ 千万工程 ” 影响乡村全面振兴的理论框架，使用国家统计局 2000 — 2022 年数据和全国农村固定观察点 1995 — 2022 年数据，基于合成控制法与双重差分法分析 “ 千万工程 ” 推进乡村全面振兴的效应，并考察了其影响机制。研究结果显示： （1） “ 千万工程 ” 显著促进了乡村全面振兴。 （2） 作用机制上， “ 千万工程 ” 通过村干部能力提升、集体经济发展、农户土地收益增值和村庄社会治理改善等途径促进了乡村全面振兴，村干部能力提升效应是 “ 千万工程 ” 促进乡村全面振兴的关键。 （3） 平原地区、城市郊区、高转移支付和人口净流入的村庄在 “ 千万工程 ” 实施中受益更明显， “ 千万工程 ” 的实施效果存在一定异质性。 “ 千万工程 ” 的精髓在于因地制宜、分类施策的科学规划。立足村庄资源禀赋；强化顶层设计与持续投入。聚焦村干部能力建设，并通过差异化与组团模式协同推进。本研究对于探索中国乡村全面振兴的路径具有重要政策启示和现实意义。",
+      "keywords": [
+        "“",
+        "千万工程",
+        "”",
+        "乡村全面振兴",
+        "集体经济",
+        "村干部能力",
+        "推进中国乡村全面振兴的路径与经验"
+      ]
     },
     {
       "id": "a4d7e38e22d8594c",
@@ -4241,7 +4394,9 @@
       "display_date_basis": "issue_date",
       "push_basis": "first_seen",
       "extraction_rule": "ajcass-current-api",
-      "date_source": ""
+      "date_source": "",
+      "abstract": "马克思对现代化的研究建立在辩证唯物主义和历史唯物主义方法论基础之上，其现代化思想不仅揭示了人类现代化发展的一般规律，也包含着对资本主义现代化的辩证分析，更包含着对人类社会现代化未来发展趋向的科学设想。他将现代化看作一个自然历史过程，从现代化的外在表现出发，论述了现代化的内在发展机制，并基于世界历史视野揭示了现代化运行过程中空间扩展、历史演进及未来趋向的一般规律。马克思认为生产方式的变化带来的物质财富的迅速积累是其最典型的表现；以科学技术为基础的现代生产力是其核心动力，生产关系与现代生产力的矛盾运动及其不断调整是其演化机理，二者共同形成现代化的内在发展机制；从世界历史视野审视其运行过程，现代化呈现由城市到乡村及至形成世界市场的空间扩展，表现为长期性、阶段性及多元性的历史演进过程以及必然走向人的自由全面发展的共产主义社会的未来趋向。中国式现代化理论作为习近平新时代中国特色社会主义思想的重要组成部分，坚守马克思现代化思想一般原理，以经济建设为中心促进社会财富不断增长，将解放和发展生产力作为根本任务，不断完善社会主义生产关系，通过城乡融合以及国际合作共赢和平发展，准确把握现代化发展的历史阶段，坚守人的全面发展根本目标，实现了马克思现代化思想的守正创新，开辟了中国式现代化新道路，开创了人类文明新形态。",
+      "keywords": []
     },
     {
       "id": "7ba89346cbf7db04",
@@ -4263,7 +4418,14 @@
       "display_date_basis": "issue_date",
       "push_basis": "first_seen",
       "extraction_rule": "ajcass-current-api",
-      "date_source": ""
+      "date_source": "",
+      "abstract": "经典经济增长理论认为扩大消费会挤出投资，不利于长期经济增长，然而相关理论未能充分刻画消费需求对生产活动的牵引作用，对现实的解释力有限。本文发现，最终消费率越高的行业，小企业占比越高、企业进入越活跃、全要素生产率增长越快。基于此，本文构建了一个包含消费品、投资品以及异质性企业进入的内生经济增长模型，揭示了消费和投资在长期增长中的互动机制。理论分析发现，消费率与长期经济增长率之间存在 “ 倒 U 形 ” 关系： 当消费率较低时，扩大消费能够带动企业进入，从广延边际上推动技术进步，并通过提高资本回报带动投资，促进长期增长；当消费率较高时，进一步扩大消费则会挤出投资，抑制资本积累，拖累长期增长。对中国数据的定量分析发现，当前中国存在通过适度扩大消费提升长期增长潜力的空间。本文的分析表明，扩大消费的意义不仅在于提升消费水平，更在于以消费扩张带动企业生产，拉动有效投资，促进消费和投资良性互动，从而增强国内大循环的内生动力。",
+      "keywords": [
+        "消费—投资结构",
+        "扩大内需",
+        "经济增长",
+        "企业进入"
+      ]
     },
     {
       "id": "102044c28f52f3a3",
@@ -4285,7 +4447,15 @@
       "display_date_basis": "issue_date",
       "push_basis": "first_seen",
       "extraction_rule": "ajcass-current-api",
-      "date_source": ""
+      "date_source": "",
+      "abstract": "准确测度企业有效税率及其差异来源，是评估税收政策效果、研究税收征管问题以及推动税制改革的重要基础。本文构建了一个企业有效税率的综合分析框架，基于税基与税额构成，区分了综合法定税率、应纳税率、实缴税率和真实税率四种税率口径，阐明了不同税率的经济含义，并提出基于全国税收调查数据的标准化测算方法及税率差异来源分解框架。基于 2011 — 2018 年全国税收调查数据的测算结果表明，增值税、企业所得税和总税收的不同口径税率在水平值、趋势及企业间分布上存在明显差异，需根据经济含义谨慎选择；增值税和企业所得税税率差异的最主要来源不同，前者为税会差异及测算误差，后者为税收优惠；税会差异、税收优惠以及年度调整与查补税款在覆盖范围和影响强度上呈现明显不对称特征。研究表明，不论是企业间应纳税率差异还是实缴税率差异，均难以准确反映税收征管强度和企业逃避税程度。本研究有助于提升中国企业税率这一基础指标测度的规范性与可比性，并深化对税率差异来源的理解。",
+      "keywords": [
+        "企业有效税率",
+        "税收中性",
+        "税率差异",
+        "税会差异",
+        "税收优惠"
+      ]
     },
     {
       "id": "5e25aabdf6795a74",
@@ -4604,7 +4774,16 @@
       "display_date_basis": "issue_date",
       "push_basis": "first_seen",
       "extraction_rule": "cie-legacy-html",
-      "date_source": "context_issue"
+      "date_source": "context_issue",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=ZGGYJJ2026006008",
+      "abstract": "在全球供应链日益复杂、经济不确定性上升的背景下，产业政策如何影响企业间供应链关系变动并塑造供应链韧性，成为亟待回答的重要问题。本文构建企业供应商转换决策的理论框架，分析产业政策影响供应链关系变动的机制。在实证层面，本文基于全球贸易预警数据库，结合BERT文本分析与机器学习方法构建中国产业政策指标，并利用FactSet Revere数据考察上市公司供应链关系。研究发现，产业政策能够降低企业供应商变动率，且该效应通过减少既有关系断裂（稳链效应）和延迟新关系建立（灵活性抑制）来实现。机制分析表明，产业政策通过提升企业议价能力和降低感知风险，削弱其更换供应商动机。进一步分析显示，不同政策工具之间既可能形成互补，也可能产生互斥，其制度效果取决于政策工具之间的协调程度；多维政策工具的协同配置在一定程度上兼顾了供应链稳定性与调整灵活性。本文为全球供应链安全背景下的政策设计提供了经验证据。",
+      "keywords": [
+        "产业政策",
+        "供应链关系变动",
+        "补贴",
+        "机器学习"
+      ]
     },
     {
       "id": "dc204f2e81cb3a73",
@@ -4626,7 +4805,16 @@
       "display_date_basis": "issue_date",
       "push_basis": "first_seen",
       "extraction_rule": "cie-legacy-html",
-      "date_source": "context_issue"
+      "date_source": "context_issue",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=ZGGYJJ2026006007",
+      "abstract": "产业转移会促进双方的产业升级，但产业转移对产业链供应链优化、企业合作创新的影响尚需进一步探讨。本文运用多期双重差分法，识别了产业转移示范区政策对企业异地合作创新的影响效应及作用机制。研究发现，产业转移示范区的设立，有效提升了当地企业异地合作专利数量。机制分析发现，产业转移示范区政策能够促进产业链优化、提高供应链稳定性，进而推动企业异地合作创新。异质性分析发现，该政策对创新信息披露程度较高的企业、所在地区知识产权保护水平较高的企业、生产性服务业企业以及自身研发强度较高的企业，影响效应更为显著；西部地区相较于中部地区表现出更明显的政策效应。进一步分析发现，产业转移示范区政策提高了新兴产业、数字经济产业、清洁生产产业的联合申请专利数量，并有助于联合申请专利的跨部门合作，但对合作专利质量的提升未产生明显影响。未来应充分发挥产业转移示范区政策对推动企业合作创新的重要作用，并因地制宜促进产业链供应链优化。",
+      "keywords": [
+        "产业转移",
+        "产业链供应链",
+        "企业合作创新",
+        "多期双重差分法"
+      ]
     },
     {
       "id": "5a675d7d9330d307",
@@ -4648,7 +4836,15 @@
       "display_date_basis": "issue_date",
       "push_basis": "first_seen",
       "extraction_rule": "cie-legacy-html",
-      "date_source": "context_issue"
+      "date_source": "context_issue",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=ZGGYJJ2026006002",
+      "abstract": "中国制造业在经历长期的跨越式发展后，已连续多年保持全球第一制造大国地位，成功迈入制造强国行列，当前正步入加快建设制造强国的新征程。西方经典工业化理论难以适配中国复合型发展现实，亟须从理论层面系统阐释中国从制造大国迈向制造强国的内在逻辑与发展路径。本文基于中国制造业发展的典型事实，构建了涵盖逻辑主导层、动力供给层、实体承载层与生态适配层的结合型治理一般分析框架。针对“十五五”时期及更长远的高质量发展阶段，分析了制造强国建设在技术转化、生产组织、产业布局、全球生态中的关键堵点。本文旨在通过提炼中国制造强国建设实践的理论内涵，打破西方经典工业化理论的二元对立固有框架，进而丰富和发展中国工业经济学自主知识体系，为全面推进制造强国建设、实现中国式现代化提供坚实的学理支撑，并为广大“全球南方”国家跨越依附式工业化陷阱、实现产业升级贡献中国智慧与方案。",
+      "keywords": [
+        "制造业",
+        "制造强国",
+        "结合型治理"
+      ]
     },
     {
       "id": "9dd09dc95157f48d",
@@ -4670,7 +4866,17 @@
       "display_date_basis": "issue_date",
       "push_basis": "first_seen",
       "extraction_rule": "cie-legacy-html",
-      "date_source": "context_issue"
+      "date_source": "context_issue",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=ZGGYJJ2026006005",
+      "abstract": "有效的政府治理是发挥社会主义市场经济体制优势的内在要求。本文从政府治理现代化视角，系统阐释了政务服务均等化在促进县域经济增速赶超和缓解区域发展不平衡方面的积极作用。基于《政府网站工作年度报表》与夜间灯光栅格数据的实证研究表明：数字政府建设降低了城市内部经济发展不平等水平，且这一效应主要源于区县间经济发展差距的缩小，特别是县（县级市）的经济增速，在数字政府建设影响下相对更快。机制分析显示，城市数字政府建设对县域政务服务效率的提升作用更大，这一方面提升了下辖县域的生产效率，另一方面促进了新企业和劳动力向县域的流入。进一步的异质性分析发现，在政府部门空间集中度低、交通基础设施水平低、网络基础设施水平高以及人力资本水平高的地区，数字政府的作用更为显著。同时，数字政府建设还提高了城市内部的资本配置效率。本文的研究结论拓展了数字技术驱动的政府治理模式转型与共同富裕实现路径的研究视野，对高效推动县域发展和扎实推进共同富裕具有重要的政策启示。",
+      "keywords": [
+        "数字化治理",
+        "数字政府",
+        "区域平衡发展",
+        "共同富裕",
+        "夜间灯光"
+      ]
     },
     {
       "id": "fb6d56a1665daa19",
@@ -4692,7 +4898,17 @@
       "display_date_basis": "issue_date",
       "push_basis": "first_seen",
       "extraction_rule": "cie-legacy-html",
-      "date_source": "context_issue"
+      "date_source": "context_issue",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=ZGGYJJ2026006001",
+      "abstract": "加快构建中国哲学社会科学自主知识体系，是为中国式现代化提供学理支撑、打破西方话语权垄断的迫切需要，也是更好回答中国之问、世界之问、人民之问、时代之问的迫切需要。在党的创新理论引领下，中国工业经济发展取得了伟大成就，形成了构建中国工业经济自主知识体系的实践底气，同时，丰富的学术研究成果奠定了坚实的研究基础，使工业经济较好地满足了自主知识体系建构所需要的基本条件。中国社会科学院工业经济研究所开展的“中国工业经济自主知识体系建设工程”，已经在中国特色产业政策、完整产业体系、自主创新和产业转移等领域取得了初步研究成果，并为哲学社会科学其他学科领域构建自主知识体系提供了可资借鉴的方法论。通过立足中国实践提炼和创造知识，遵循“中国实践→规律性认识→典型事实→一般性分析框架→标识性概念和原创性理论”的研究范式，可以加快构建中国哲学社会科学自主知识体系。",
+      "keywords": [
+        "工业经济自主知识体系",
+        "典型事实",
+        "标识性概念",
+        "原创性理论",
+        "一般性分析框架"
+      ]
     },
     {
       "id": "3a686d2b41985b49",
@@ -4714,7 +4930,17 @@
       "display_date_basis": "issue_date",
       "push_basis": "first_seen",
       "extraction_rule": "cie-legacy-html",
-      "date_source": "context_issue"
+      "date_source": "context_issue",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=ZGGYJJ2026006009",
+      "abstract": "大小平台嵌套的生态系统已成为数字时代全新的产业组织形态。然而，现有研究既缺乏对生态系统内平台嵌套异质性的解析，也未充分考虑平台型互补者生态嵌入后所面临的“一致性—拓展性”张力及其响应机制。本文采用双案例研究方法，识别出平台嵌套本质上是生态系统内主导平台与平台型互补者在共享技术架构、对接终端用户需求过程中形成的层次化价值耦合结构，并解构出功能嵌套与市场嵌套两种结构类型。研究发现，不同嵌套结构下，平台型互补者会采取基于主张集成的身份区分或基于主体集成的场景深化的张力响应机制，以兼顾其作为生态互补者的“一致性”与作为平台运营者的“拓展性”需求，进而实现以“多元—包络化”或以“聚焦—独特化”为核心的嵌套式成长。由此，本文构建了平台型互补者的战略行动框架，推动平台主视角与互补者视角的战略融合，深化了对生态系统多中心结构的探索，为新创平台企业在超大型平台准自然垄断格局下的持续成长提供了思路。",
+      "keywords": [
+        "平台嵌套",
+        "平台型互补者",
+        "多中心生态系统",
+        "“一致性—拓展性”张力",
+        "成长机制"
+      ]
     },
     {
       "id": "66d930f30c929cfe",
@@ -4736,7 +4962,16 @@
       "display_date_basis": "issue_date",
       "push_basis": "first_seen",
       "extraction_rule": "cie-legacy-html",
-      "date_source": "context_issue"
+      "date_source": "context_issue",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=ZGGYJJ2026006004",
+      "abstract": "在全球低碳转型持续推进的背景下，气候转型风险正逐渐成为引发系统性金融风险的重要来源。基于此，本文系统考察气候转型风险在中国银行体系中的现实影响、传导机制及宏观审慎政策的缓释作用。研究发现，近年来气候转型风险已逐步转化为中国银行体系中可观测的新增资本压力；在企业碳排放强度差异显著的情形下，高碳企业的风险更容易沿银行网络扩散并引发连锁反应；在核心—边缘型银行网络结构中，碳风险敞口较高的核心银行通过同业关联产生显著的风险外溢效应，对边缘银行形成明显的负外部性；基于碳排放的差异化资本要求政策以及同业敞口限制政策，均能够在一定程度上降低转型风险在银行网络中的扩散强度，提升金融体系整体韧性。此外，碳减排政策的实施强度与推进节奏会影响转型风险在银行网络中的扩散幅度，过快或过于激进的政策调整可能在短期内加剧金融体系不稳定。本文为低碳转型背景下优化宏观审慎管理体系提供了有益启示。",
+      "keywords": [
+        "碳减排政策",
+        "核心—边缘网络结构",
+        "差异化资本要求",
+        "同业敞口限制"
+      ]
     },
     {
       "id": "15c19d6c8e92eff9",
@@ -4758,7 +4993,16 @@
       "display_date_basis": "issue_date",
       "push_basis": "first_seen",
       "extraction_rule": "cie-legacy-html",
-      "date_source": "context_issue"
+      "date_source": "context_issue",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=ZGGYJJ2026006006",
+      "abstract": "加强财政与货币政策协同是提升宏观经济治理效能的关键。政府采购作为重要的财政工具，与金融市场信贷配置密切相关。既有研究已证实政府采购对中标企业融资具有积极影响，但市场中还存在大量非采购企业，其信贷融资状况可能同样受到政府采购的溢出效应影响。本文利用银行—企业配对数据，构建银行的政府采购暴露度指标，系统检验政府采购对银行信贷的传导机制。研究发现，银行的政府采购暴露度会提升非采购企业的贷款规模。机制分析发现，银行的政府采购暴露度会降低其正常贷款迁徙率，抑制不良贷款扩张，改善自身资产质量，进而增强信贷供给能力；获得政府采购订单的企业通过供应链生产关联，带动上游非采购企业扩大生产，提升了这类企业的信贷需求。异质性分析发现，大规模、研发投入高、非国有、非绿色以及非重污染企业受益更显著。本文揭示了政府采购的溢出效应及传导逻辑，拓展了财政与金融协同支持实体经济的研究视角。",
+      "keywords": [
+        "政府采购",
+        "企业信贷",
+        "供应链",
+        "财政货币协同"
+      ]
     },
     {
       "id": "eaaade718c2046d5",
@@ -4780,7 +5024,16 @@
       "display_date_basis": "issue_date",
       "push_basis": "first_seen",
       "extraction_rule": "cie-legacy-html",
-      "date_source": "context_issue"
+      "date_source": "context_issue",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=ZGGYJJ2026006003",
+      "abstract": "本文利用中国工业企业数据发现，1998—2015年中国制造业劳动收入份额演变呈现阶段结构性特征：2007年之前行业平均效应和行业结构效应驱动劳动收入份额迅速下降；而2007年以后行业结构效应由负转正，与行业平均效应相互抵消，导致劳动收入份额基本不变。对此，本文构建了一个包含异质性企业的动态一般均衡模型，刻画了自动化一般性技术进步与前沿技术进步，并通过理论分析和数值模拟，详细探究了自动化对劳动收入份额的结构性影响。研究发现，1998—2007年，自动化表现为前沿技术进步与一般性技术进步，从而导致负向的行业平均效应与行业结构效应。2007—2015年，自动化主要表现为一般性技术进步，前沿技术指标反而下降，进而促使行业结构效应由负转正，并与行业平均效应相互抵消。本文进一步考察了企业进入与退出的影响，发现自动化主要通过在位企业和进入企业影响劳动收入份额。本文为理解技术变革下的收入分配演变提供了更微观的理论视角，对推进在高质量发展中实现共同富裕具有重要启示。",
+      "keywords": [
+        "自动化",
+        "工业机器人",
+        "行业结构变化",
+        "劳动收入份额"
+      ]
     },
     {
       "id": "738105ca8f9f73d0",
@@ -4802,7 +5055,10 @@
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": "forthcoming_unassigned"
+      "date_source": "forthcoming_unassigned",
+      "official_source": "aeaweb-detail",
+      "abstract": "This paper develops a dynamic model of the attention economy featuring two interlinked markets: a product market, where consumers have limited awareness of firms, and an attention market, where platforms attract attention by investing in free services (e.g., social media, streaming, podcasts) and sell targeted ads using data on consumer preferences. The model provides a tractable framework in which platform investment, ad-driven discovery, product demand, and ad revenue are jointly determined. The effects of data and interoperability policies can reverse over time, platform quality may be inefficiently high or low, and the rise of data-rich digital advertising can coincide with a declining ad revenue-to-GDP ratio.",
+      "keywords": []
     },
     {
       "id": "ef0462d302c43494",
@@ -5764,7 +6020,10 @@
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": "forthcoming_unassigned"
+      "date_source": "forthcoming_unassigned",
+      "official_source": "aeaweb-detail",
+      "abstract": "We study racial disparities in promotions in a setting in which promotions are formulaic: the US patent office. Using detailed administrative data that allow us to observe who is eligible for promotion when, we document that Black patent examiners experience delays in promotions they are entitled to, slowing their climb to the top of the career ladder by a year and reducing career earnings by 2.9%. Institutional features rule out statistical discrimination with accurate priors. Slow promotions even under Black supervisors argue against taste-based animus. Instead, the patterns fit models of belief-based discrimination.",
+      "keywords": []
     },
     {
       "id": "e16002e6248619e6",
@@ -6920,7 +7179,12 @@
       "display_date_basis": "issue_date",
       "push_basis": "issue_date",
       "extraction_rule": "ajcass-current-api",
-      "date_source": ""
+      "date_source": "",
+      "abstract": "培育智慧农业集群是“十五五”时期加快农业现代化、建设农业强国的重要战略方向。作为一种新型的现代化大农业模式，智慧农业集群具有集聚形态复合化、数据资源共享化、数智技术内上误化、要素互动密集化、外部效应累积化的鲜明特征。进入新时代以来，特别是“十四五”时期，中国农业产业集群的纵深发展为培育智慧农业集群黄定了坚实的产业基础，智慧农业的快速发展为培育智慧农业集群提供了有力的技术支撑。立足现实基础和实践经验，培育智慧农业集群可以沿着农业集群的智慧化转型和智慧农业的集群化发展两条基本路径推进。“十五五”时期，顺应智能经济发展新趋势、开创智慧农业集群发展新局面，要强化新型基础设施建设，夯实智慧农业集群发展基础; 推动农业数物化转型升级，增强智慧农业集群核心能力; 深化农业体制机制改革，激活智慧农业集群培育动力; 统筹推进教育科技人才一体发展，强化智慧农业集群要素支撑。",
+      "keywords": [
+        "智慧农业集群”农业现代化”农业强国",
+        "“人工智能+”行动"
+      ]
     },
     {
       "id": "cda2ef8ec8fa239f",
@@ -6942,7 +7206,12 @@
       "display_date_basis": "issue_date",
       "push_basis": "issue_date",
       "extraction_rule": "ajcass-current-api",
-      "date_source": ""
+      "date_source": "",
+      "abstract": "本文结合湖北省长阳土家族自治县的魔革产业案例，揭示分层式组织在特色农业产业多元主体共治中的治理逻辑。研究发现: 首先，特色农业产业治理具有明显的复合性，产业链各环节因核心属性存在差异，会衍生出性质各异的治理问题。种植端受制于良种研发不足与生产动力不足的“瓶颈”，市场端则面临市场空间受限与价值链低端锁定的挑战。其次，政府、市场与社会主体通过分层式组织实现了特色农业产业整体的有效协同治理。在种植端，表现为“政府整体动员一龙头企业破局一合作社深耕”的渐进式分层组织，从而逐步突破种子繁育与规模化生产难题; 在市场端，政府基于市场规律进行赋能，龙头企业和在地典型企业形成分工式分层组织，分别推动市场空间拓展与价值链升级。最后，分层式组织发挥治理效能的关键在于制度构建、关系联结与知识流动三类机制在不同治理情境中的有效协同。从各主体的比较优势看: 政府组织者以制度构建为核心，辅以知识流动; 市场组织者以制度构建与知识流动为双重核心; 社会组织者以关系联结为核心，以知识流动为辅助。这种差异化的机制组合，为破解产业链各环节不同属性的问题提供了精准路径，从而有力推动了分层式组织对促进产业整体协同的关键作用。本文揭示了多元主体由共同在场转向有效协同的内在机理，为破解特色农业产业“协而难治”困境提供了理论解释与实践参照。",
+      "keywords": [
+        "特色农业产业”分层式组织",
+        "”渐进式分层组织”分工式分层组织"
+      ]
     },
     {
       "id": "7948712333d77605",
@@ -6986,7 +7255,13 @@
       "display_date_basis": "issue_date",
       "push_basis": "issue_date",
       "extraction_rule": "ajcass-current-api",
-      "date_source": ""
+      "date_source": "",
+      "abstract": "树立并践行大食物观，吏须从营养来源多样化角度全方位、多途径开发食物资源。本文将多种食物产量统一折算为卡路里、蛋白质等营养当量，构建食物营养当量分解模型，把 2000一2022 年食物营养当量分解为规模、结构和强度效应，并采用全国农村固定观察点调查数据，实证分析粮食主产区政策实施对食物营养当量及其分解效应的影响。研究发现: 中国食物营养当量增长主要由规模效应驱动，但结构效应为负，反映出食物生产结构向单位产值营养密度相对低的品类集中，使食物营养当量的实际增幅小于仅由规模扩张所带来的增幅; 粮食主产区政策实施总体上增加了食物营养当量，但分品类看，其正向作用主要体现在粮食作物，同时分别使经济作物卡路里当量、蛋和白质当量降低 32.8%和 96.8%，使养殖业食物净卡路里当量、净蛋白质当量降低 53.1%和 471%; 粮食主产区政策实施对分解效应的影响与上述发现相呼应，其中，对结构效应的负向影响随时间变化有所增强。机制分析发现，粮食主产区政策实施通过调整作物种植结构、降低养殖业比较利益等方式改变农户种植、养殖要素投入，进而影响食物产出。本文研究结论为大食物观下加快推进食物资源开发与粮食安全政策协同提供了有益参考。",
+      "keywords": [
+        "粮食主产区政策",
+        "食物营养当量”大食物观",
+        "”粮食安全"
+      ]
     },
     {
       "id": "9198cb6c796809c7",
@@ -7008,7 +7283,13 @@
       "display_date_basis": "issue_date",
       "push_basis": "issue_date",
       "extraction_rule": "ajcass-current-api",
-      "date_source": ""
+      "date_source": "",
+      "abstract": "农产品加工业是推动乡村一二三产业深度融合、实现农业现代化的战略支点。本文基于经济合作与发展组织的国家间投入产出表，构建了 1995一2022 年 72 个全球主要国家的面板数据集，从农业全产业链视角，实证分析了人均国民收入变动驱动农产品加工业结构演进的阶段特征与传导机制。研究发现: 人均国民收入与农产品加工业综合发展指数呈倒 U 型关系; 受需求结构升级与要素成本变动的共同驱动，农产品加工业的演进路径表现为由粗加工向精深加工升级，进而向服务化转型。中国正处于向产业服务化转型的关键期。跨国比较结果表明，人口规模较大和农业用地面积较广的国家，会更早进入后工业化阶段。本文还揭示了农业全球价值链分工地位演变在农产品加工业演进中的关键传导机制，并证实了不同的农业全球价值链参与模式具有非对称的调节效应。本文研究能为理解全球农产品加工业的演变还辑提供实证支撑,为推动中国农业全产业链升级提供决策参考。",
+      "keywords": [
+        "农业全产业链",
+        "”农产品加工业”工业化”投入产出表",
+        "“国民收入"
+      ]
     },
     {
       "id": "8486b1b69fe547db",
@@ -7030,7 +7311,14 @@
       "display_date_basis": "issue_date",
       "push_basis": "issue_date",
       "extraction_rule": "ajcass-current-api",
-      "date_source": ""
+      "date_source": "",
+      "abstract": "发展乡村特色产业是拓宽农民增收渠道、实现乡村振兴的重要途径。然而，如何实现带动农民增收的乡村特色产业发展仍然是当前的实践难题。现有研究往往忽视了村社自主性与资源享赋的协同作用，因而难以解释乡村特色产业发展内生动力生成的内在逻辑。本文构建了“村社自主性一资源堡赋”互构分析框架，利用中国乡村振兴综合调查 (CRRS) 2022 年村级调查数据，运用模糊集定性比较分析方法和必要性分析方法，系统分析了乡村特色产业的多元内生发展路径。研究发现: 第一，单一的前因条件均不是产生高特色产业发展水平的必要条件，但较高的乡村居民主体性在各组态中均作为核心条件出现。第二，两类驱动乡村特色产业内生发展的路径分别为资源约束下的精英引领与居民协同路径和京赋支撑下的制度赋能与居民自发路径，且乡村精英自主性和制度资本存在一定的替代效应。第三，在经济发展水平较高与较低的省份，乡村特色产业的发展路径呈现差异化的特征。具体而言，经济发展水平较低省份的村庄对资源京赋的依赖程度更高，主体与资源的协同更为关键; 经济发展水平较高省份的村庄对资源京赋的依赖程度较低，主体间的协同更为关键。因此，推动乡村特色产业发展，需要村庄内部主体进一步开展组织化赋权实践，激活村庄内部的集体行动能力，推动乡土资源价值的内生转化，以更高水平的村社自主性，因地制宜地启动、推进和加快乡村特色产业的内生发展，从而使之成为推进乡村全面振兴的新引擎。",
+      "keywords": [
+        "乡村特色产业”村社自主性",
+        "因地制宜",
+        "AZRR",
+        "MAREK"
+      ]
     },
     {
       "id": "fd51b445b75e5f54",
@@ -7052,7 +7340,9 @@
       "display_date_basis": "published_at",
       "push_basis": "first_seen",
       "extraction_rule": "atypon-etoc",
-      "date_source": "metadata_published"
+      "date_source": "metadata_published",
+      "abstract": "I propose a general theory of strategic network formation based on increasing marginal linking costs and vertical heterogeneity among the players. In the spirit of revealed preference, I describe the entire set of graphs that can be stable, without making any parametric assumptions about players’ preferences. Stable graphs feature assortativity and clustering, and I highlight conditions that lead to hierarchies and cliquish behavior. Extensions shed light on which findings are robust and which are more fragile. Collectively, these results map interpretable properties of preferences to particular network structures and furnish new tools to study strategic network formation.",
+      "keywords": []
     },
     {
       "id": "cdeab78dfd21813b",
@@ -8181,7 +8471,10 @@
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": "forthcoming_unassigned"
+      "date_source": "forthcoming_unassigned",
+      "official_source": "aeaweb-detail",
+      "abstract": "Digital platforms reduce geographic frictions, enabling better matching between service providers and users. I quantify reallocation gains in Swedish online healthcare, using nationwide time-conditional random assignment between patients and physicians. Matching high-risk patients with doctors effective at reducing Emergency Room visits lowers such visits by 4.4% (s.e. 1.3); reallocations also reduce counter-guideline antibiotics by 3.1% (1.4). I find limited trade-offs in matching: horizontal differentiation among doctors and varied patient needs allow improvement in multiple outcomes simultaneously. Efficiency-enhancing reallocations also affect equity. The findings highlight the potential for care reorganization aligning provider heterogeneity with patient needs when geographic constraints are lifted.",
+      "keywords": []
     },
     {
       "id": "e3224d5d495e1c90",
@@ -8203,7 +8496,10 @@
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": "forthcoming_unassigned"
+      "date_source": "forthcoming_unassigned",
+      "official_source": "aeaweb-detail",
+      "abstract": "We study the relationship between corporate income taxation and carbon dioxide (CO2) emissions in the U.S. We show that CO2-intensive firms benefit more from the tax advantage of debt, and pay lower income taxes on their capital income. Building on these new facts, we provide evidence that a cut in the corporate income tax rate leads to a larger expansion of clean firms. We develop a multi-sector general equilibrium model that accounts for our evidence and quantify the impact of corporate tax reforms on aggregate emissions. A policy that eliminates the tax advantage of debt could reduce aggregate emissions without affecting GDP.",
+      "keywords": []
     },
     {
       "id": "6e7eaeb18f3d03dc",
@@ -8745,7 +9041,16 @@
       "display_date_basis": "issue_date",
       "push_basis": "first_seen",
       "extraction_rule": "asc-current-issue-html",
-      "date_source": "issue_loop"
+      "date_source": "issue_loop",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=HJYJ2026005008",
+      "abstract": "公司管理者顺应大数据技术发展潮流并及时转变传统思维方式对推动企业创新发展至关重要。基于大数据技术扩张逻辑和高层梯队理论，本文研究高管大数据思维对企业创新水平的影响。通过机器学习方法构建公司高管大数据思维指标，研究发现高管大数据思维对企业创新水平具有显著的提升作用。机制分析表明，大数据思维通过提升企业应对复杂信息环境的能力促进企业创新，具体表现为：在信息环境较复杂及高管团队缺乏理工科教育背景的情境下，高管大数据思维对企业创新的正向影响更为显著。进一步分析表明，高管大数据思维可以有效提升企业创新质量。本文从“思维”视角拓展了大数据技术发展的经济后果研究，为激发企业创新活力提供了经验证据，对推动经济高质量发展具有借鉴意义。",
+      "keywords": [
+        "大数据思维",
+        "企业创新",
+        "管理层风格",
+        "机器学习"
+      ]
     },
     {
       "id": "ae009f39e25015d1",
@@ -8767,7 +9072,15 @@
       "display_date_basis": "issue_date",
       "push_basis": "first_seen",
       "extraction_rule": "asc-current-issue-html",
-      "date_source": "issue_loop"
+      "date_source": "issue_loop",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=HJYJ2026005002",
+      "abstract": "上市公司对被投资主体持股比例超过50%，为何未将其作为子公司纳入合并报表？本文基于2007—2022年A股上市公司数据，研究发现被投资主体所在地的极端气候风险越高，上市公司越会对持股比例超过50%的被投资主体实施特殊合营安排，而非将其作为子公司纳入合并报表。这说明极端气候风险是导致企业合并范围异化的重要因素，上市公司会因为被投资主体极端气候风险过高而将其置于合并报表范围之外。异质性分析发现，上述效应在高管具有财务背景、管理层气候治理意识较弱、集团公司资产负债分散程度较高、接受非四大审计、分析师关注度较低以及处于气候敏感型行业的企业中更加显著。进一步研究表明，当企业采用会计手法“隐藏”高气候风险投资主体之后，其年报中的气候风险文本信息披露水平也会随之降低；尽管特殊合营安排通过“会计防火墙”机制确实降低了企业财报层面的经营风险，但是此举并未削弱极端气候风险对企业价值的负面影响。本文从会计操纵视角揭示了企业应对气候风险的策略选择，并为理解合并范围异化现象提供了新视角。",
+      "keywords": [
+        "极端气候风险",
+        "企业合并范围",
+        "特殊合营安排"
+      ]
     },
     {
       "id": "1c18a90af083e3ed",
@@ -8789,7 +9102,17 @@
       "display_date_basis": "issue_date",
       "push_basis": "first_seen",
       "extraction_rule": "asc-current-issue-html",
-      "date_source": "issue_loop"
+      "date_source": "issue_loop",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=HJYJ2026005004",
+      "abstract": "上市公司内部人可以通过实时互动机制识别和引导投资者预期，这一机制亦可能被其策略性利用。本文基于业绩说明会这一典型互动场景研究发现，内部人确实会利用投资者在互动中展现的乐观预期实施减持，尤其是机会主义减持。这一现象主要源自内部人强机会主义动机、投资者非理性乐观预期以及管理层的策略性引导。机制分析表明，投资者乐观预期会通过资产误定价、超额收益获取以及流动性提升，进而驱使内部人实施更多减持。异质性分析表明，当投资者信息能力较弱、管理层较为短视和市场关注度较低时，上述效应更为显著。本文从备受监管关注的内部人减持视角出发，揭示了中国资本市场互动机制中对中小投资者不利的一面，为监管部门优化互动机制、完善内部人减持治理提供一定参考。",
+      "keywords": [
+        "内部人减持",
+        "投资者乐观预期",
+        "预期引导",
+        "机会主义",
+        "业绩说明会"
+      ]
     },
     {
       "id": "1be0c0629ba7d66d",
@@ -8811,7 +9134,17 @@
       "display_date_basis": "issue_date",
       "push_basis": "first_seen",
       "extraction_rule": "asc-current-issue-html",
-      "date_source": "issue_loop"
+      "date_source": "issue_loop",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=HJYJ2026005006",
+      "abstract": "构建中国自主管理会计体系需立足本土企业的文化情景，关注企业成员对管理会计逻辑的内化程度。然而，现有研究多侧重工具应用，忽略了组织文化适配这一基础条件。本文认为，组织成员对管理会计逻辑形成一致认知，是管理会计系统有效的前提，并以A集团平衡计分卡实践为研究对象展开分析。研究发现：A集团通过“战略—组织—预算—运营—绩效—评价”闭环，将BSC逻辑转化为组织成员在目标、路径、意愿层面的行为逻辑，从而实现BSC绩效的卓越改善。基于生成式大语言模型的分析进一步表明，随着变革推进，核心成员在上述三维文化特征上与BSC原则趋于一致；因果关系图谱显示，高管普遍将绩效改善归因于文化演化。本文从组织文化视角拓展了管理会计的理论边界，推动其发展由工具导向迈向认知融合。",
+      "keywords": [
+        "组织文化",
+        "管理会计成效",
+        "平衡计分卡",
+        "生成式大语言模型",
+        "因果关系图谱"
+      ]
     },
     {
       "id": "2236a6708617acec",
@@ -8833,7 +9166,17 @@
       "display_date_basis": "issue_date",
       "push_basis": "first_seen",
       "extraction_rule": "asc-current-issue-html",
-      "date_source": "issue_loop"
+      "date_source": "issue_loop",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=HJYJ2026005003",
+      "abstract": "本文以中国司法改革作为准自然实验，采用双重差分模型，考察司法改善对公司价值的影响及其作用机制。研究发现：（1）相对于未受司法改革影响的公司，受司法改革影响的公司其市场价值显著提升了6.62%；（2）司法改革能够通过增加公司投资、促进公司创新、降低融资成本以及提高股票流动性的途径来影响公司价值；（3）司法改革对公司价值的提升作用在内部控制较差、董事会治理较弱、机构投资者持股比例较低、分析师跟踪人数较少的公司更加明显。与以往文献相比，本文厘清了司法改革和公司价值间的因果效应，为我国全面推进依法治国、促进资本市场高质量发展的长期目标提供了重要的理论依据与政策启示，也为新兴资本市场国家实现法治现代化的必要性和重要性提供了实证证据。",
+      "keywords": [
+        "司法改革",
+        "公司价值",
+        "契约执行",
+        "交易成本",
+        "公司治理"
+      ]
     },
     {
       "id": "12d4c0d064e3fefe",
@@ -8855,7 +9198,17 @@
       "display_date_basis": "issue_date",
       "push_basis": "first_seen",
       "extraction_rule": "asc-current-issue-html",
-      "date_source": "issue_loop"
+      "date_source": "issue_loop",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=HJYJ2026005011",
+      "abstract": "本文基于2020年会计师事务所证券审计业务资质认定由审批制改为备案制的政策变化，构建了一项准自然实验，考察了审计市场准入放松对审计意见购买的影响。采用2016—2023年中国A股上市公司的样本，研究发现，相较于大所审计的公司，小所审计的公司在新规实施后其审计意见购买行为显著增加，表明加剧市场竞争损害了审计的独立性。进一步分析表明，管制放松对审计意见购买的助推效应在事务所行业专长地位较弱、客户重要性较高、非国有企业、两类代理成本较高、所在地区法治化水平较低的情境中更显著。此外，放松管制与异常审计收费显著正相关，与审计时长显著负相关，但与正常审计收费无显著关联。本文为审计市场管制政策调整提供了重要的参考。",
+      "keywords": [
+        "证券审计业务资质",
+        "管制放松",
+        "审计意见购买",
+        "双重差分",
+        "异常审计收费"
+      ]
     },
     {
       "id": "77e30fbeaeec33f0",
@@ -8877,7 +9230,17 @@
       "display_date_basis": "issue_date",
       "push_basis": "first_seen",
       "extraction_rule": "asc-current-issue-html",
-      "date_source": "issue_loop"
+      "date_source": "issue_loop",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=HJYJ2026005001",
+      "abstract": "市场主体的合理债务期限结构是防范债务违约风险、维护金融体系稳定的关键命题。本文以财政部财会监督检查为准自然实验，手工收集2007—2023年财政部财会监督检查公告数据，检验政府财会监督对企业债务期限结构的影响。研究发现：（1）政府财会监督通过“信号传递效应”与“信贷收紧效应”推动企业债务期限结构向短期化调整。（2）该影响在牛市行情下以及融资能力较弱、国有企业和股权集中度较低的企业中更加显著。（3）进一步分析发现，政府财会监督引致企业债务期限结构短期化降低了企业的经营风险和非效率投资。研究结论为政府财会监督效能提升和债务期限结构优化相关研究提供理论依据，也为推动新时代财会监督体系建设和金融高质量发展提供实践启示。",
+      "keywords": [
+        "政府财会监督",
+        "企业融资决策",
+        "债务期限结构",
+        "信号传递效应",
+        "信贷收紧效应"
+      ]
     },
     {
       "id": "e31ab5285e2edd9c",
@@ -8899,7 +9262,15 @@
       "display_date_basis": "issue_date",
       "push_basis": "first_seen",
       "extraction_rule": "asc-current-issue-html",
-      "date_source": "issue_loop"
+      "date_source": "issue_loop",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=HJYJ2026005013",
+      "abstract": "政府采购订单具有公共政策属性与市场交易属性，显著影响审计师决策。基于2015—2023年上市企业数据与政府采购合同数据的实证研究发现，政府采购订单降低了审计收费，但该降费效应仅在订单规模适中的样本中显著。进一步研究发现，受政府采购订单双重属性的影响，在公开招标、中央采购和本地采购情境下，以及频繁、稳定和非首次获得的订单中，降费效应更显著；且政府采购订单对审计收费的影响在企业集团内部存在差异，母公司订单显著降低审计收费，子公司订单则提高审计收费。机制检验表明，政府采购订单通过降低企业经营风险与控制风险影响审计师风险感知，进而影响审计收费。研究结论为审计收费决策和政府采购制度改革提供经验证据与政策参考。",
+      "keywords": [
+        "政府采购订单",
+        "审计师收费决策",
+        "审计师风险感知"
+      ]
     },
     {
       "id": "e988339371fd3f61",
@@ -8921,7 +9292,16 @@
       "display_date_basis": "issue_date",
       "push_basis": "first_seen",
       "extraction_rule": "asc-current-issue-html",
-      "date_source": "issue_loop"
+      "date_source": "issue_loop",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=HJYJ2026005007",
+      "abstract": "以城市“大数据局”设立这一准自然实验为研究场景，本文基于2012—2021年我国A股上市公司数据，采用双重差分法探究了政府数字化转型的企业微观效应。研究发现：政府数字化转型能实现企业“经济-环境”绩效双赢；提高政务服务效能、优化营商环境、抑制寻租和强化环境治理是其潜在渠道，但抑制寻租仅对提升经济绩效有效。进一步研究表明，当政府环境发展注意力更高、企业未聘任环保背景高管时，政府数字化能同步提升企业经济与环境绩效。此外，城市数字鸿沟的收窄、非资源型城市、企业数字化变革以及非国有产权性质更有助于释放政府数字化转型的经济和环境双重红利。本文揭示了政府数字化转型的微观治理效果和具体路径，既能够为完善我国政府数智治理体系提供现实借鉴，也是对企业寻求高质量发展路径的有益探索。",
+      "keywords": [
+        "政府数字化",
+        "大数据局",
+        "企业经济绩效",
+        "企业环境绩效"
+      ]
     },
     {
       "id": "4280746850083bbf",
@@ -8943,7 +9323,17 @@
       "display_date_basis": "issue_date",
       "push_basis": "first_seen",
       "extraction_rule": "asc-current-issue-html",
-      "date_source": "issue_loop"
+      "date_source": "issue_loop",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=HJYJ2026005010",
+      "abstract": "本文研究2019年《证券法》修订引发的法律责任风险变化对会计师事务所变更的影响。研究发现，证券法治改革后，经营风险较低的上市公司从小所变更至大所的概率显著上升。从审计需求的维度看，证券执法趋严的态势下优质上市公司具有通过变更至高声誉事务所改善信息质量、降低法律风险的动机。从审计供给的维度看，大所对企业风险的敏感性显著上升，在接收来自小所的业务时更倾向于承接低风险上市公司的业务，且其与高风险企业解约的意愿更为强烈。进一步地，在法律环境较为薄弱的地区，证券法治改革的冲击更大，低经营风险企业升级变更的概率显著更高。此外，本文发现法治改革引起的会计师事务所升级变更能够降低审计师和客户的不匹配程度，改善审计质量。本文的研究为探讨法律制度环境改善对审计契约关系的治理作用提供了经验证据。",
+      "keywords": [
+        "证券法治改革",
+        "会计师事务所变更",
+        "经营风险",
+        "公共执行机制",
+        "私人执行机制"
+      ]
     },
     {
       "id": "c2c3fd2bcc5a6157",
@@ -8965,7 +9355,16 @@
       "display_date_basis": "issue_date",
       "push_basis": "first_seen",
       "extraction_rule": "asc-current-issue-html",
-      "date_source": "issue_loop"
+      "date_source": "issue_loop",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=HJYJ2026005012",
+      "abstract": "“协同”是推动审计高质量发展的重要力量，也是实现国家治理现代化的必然选择。本文厘清资源环境审计协同的理论缘起；结合长江经济带生态环境审计实践和协同理论，从组织机制、动力机制、保障机制、过程机制四个层面构建了具备中国特色的资源环境审计协同框架；进一步地，深入剖析当前审计协同面临的体制性障碍、执行性短板与问责性困境，从顶层设计、过程控制、主体认知、流程优化和效能闭环维度提出破解路径。论文重点讨论审计委员会促进资源环境审计协同的实践有效性和机制先进性，为制度驱动审计协同实践提供理论支持，有助于中国特色社会主义审计自主知识体系的构建。",
+      "keywords": [
+        "资源环境审计",
+        "协同治理",
+        "实现机制",
+        "审计委员会"
+      ]
     },
     {
       "id": "c4dd9958e4703117",
@@ -10234,7 +10633,16 @@
       "display_date_basis": "issue_date",
       "push_basis": "first_seen",
       "extraction_rule": "cie-legacy-html",
-      "date_source": "context_issue"
+      "date_source": "context_issue",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=ZGGYJJ2026005004",
+      "abstract": "随着生成式人工智能快速发展，大语言模型应用对高等教育的冲击日益显著。本文从高等教育视角出发，借助大语言模型对《中华人民共和国职业分类大典》和816个本科专业进行任务标注及职业选择模拟，构建了“任务—职业—专业”三级风险传导模型，使用多模型标注数据、教育部官方数据、专家评分数据、真实使用场景数据四类大数据进行交叉验证，量化测算不同本科专业面临的大语言模型暴露风险，并分析其对就业市场及专业满意度的影响。研究发现：高校专业均面临着一定的远期暴露风险，不同专业间差异显著；高暴露率专业普遍具有结构化的课程体系与标准化就业路径，低暴露率专业则更强调实践技能、深度思维和情境交互能力。从外部劳动力市场需求和内部学生反馈两个维度看，专业暴露率越高，其对口岗位招聘份额下降越明显，学生对专业学习体验与就业前景的评价也越低。研究还发现，中国高校近年来已通过新增与撤销专业的动态调整机制，有效降低专业体系的远期暴露率，并提升专业满意度，体现出高等教育供给侧对人工智能技术冲击的主动回应和自我调适能力。",
+      "keywords": [
+        "高等教育",
+        "大语言模型",
+        "专业选择",
+        "教育供给侧改革"
+      ]
     },
     {
       "id": "6d834c2243cc0373",
@@ -10256,7 +10664,17 @@
       "display_date_basis": "issue_date",
       "push_basis": "first_seen",
       "extraction_rule": "cie-legacy-html",
-      "date_source": "context_issue"
+      "date_source": "context_issue",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=ZGGYJJ2026005010",
+      "abstract": "发挥数字经济领军企业的引领带动作用，对于营造开放、健康、安全的数字生态具有重要意义。本文以制造业高新技术上市公司为研究对象，验证了同行业企业间存在数字技术涓滴效应，并探究了涓滴效应的作用机制及影响因素。研究发现，数字技术优势企业能力提升能够促进劣势企业数字技术能力的增强，该促进作用在高中低不同层级企业间逐级显现，且相邻层级间的影响更为明显。数字技术涓滴效应能够通过示范引领、资源渗透与空间拓展机制实现。技术基础相似、整合能力匹配与成长环境适应等各类组间相容性，能够影响涓滴效应的作用效果，即当优劣势企业间技术基础更相似或整合能力、成长环境差异更小时，数字技术涓滴效应更强。此外，当优势企业更多位于经济增长条件优越、数据要素化与数字产业集聚水平较高，以及技术市场较活跃的地区时，数字技术涓滴效应更加明显。本文从层级式间接溢出视角拓展了企业间数字技术溢出领域的研究，并为企业提升数字技术能力、共享数字红利提供了经验参考。",
+      "keywords": [
+        "数字技术涓滴效应",
+        "示范引领",
+        "资源渗透",
+        "空间拓展",
+        "组间相容性"
+      ]
     },
     {
       "id": "27f3b56c465fc7d4",
@@ -10278,7 +10696,16 @@
       "display_date_basis": "issue_date",
       "push_basis": "first_seen",
       "extraction_rule": "cie-legacy-html",
-      "date_source": "context_issue"
+      "date_source": "context_issue",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=ZGGYJJ2026005002",
+      "abstract": "既有基于行政边界的人口统计，系统性地将城市内部的向心集聚误判为城市收缩。本文以高精度空间网格数据界定城市实体，突破行政边界束缚，发现2010—2020年间中国城市体系呈现截然不同的图景：中心城区普遍扩张，外围城市实体扩张与收缩并存，且这一分化格局与“通江达海”的国际市场通道条件高度相关。地级市层面，超过90%的中心城区人口正增长，同时近1/3的地级市存在至少1个人口净流失的外围城市实体，且该类地级市高度集中于内陆地区；城市实体层面，沿海沿江地区中心与外围实体的人口增长均快于内陆地区，内陆外围实体出现收缩的比例亦显著更高。进一步分析表明，邻近大港口或大城市与实体人口增长的正向关联仅存在于沿海沿江地区，在内陆地区并不成立。上述特征事实与理论预期一致：国际市场通道的高可达性强化了实体人口增长与大城市邻近性之间的正向关联。本文的核心贡献在于澄清了行政辖区人口减少与城市实体收缩的本质区别，系统揭示了中国城市体系空间重构的分化格局。",
+      "keywords": [
+        "城市体系",
+        "城市实体",
+        "国际市场通道",
+        "中心—外围结构"
+      ]
     },
     {
       "id": "6e5877c8b3126b9b",
@@ -10300,7 +10727,15 @@
       "display_date_basis": "issue_date",
       "push_basis": "first_seen",
       "extraction_rule": "cie-legacy-html",
-      "date_source": "context_issue"
+      "date_source": "context_issue",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=ZGGYJJ2026005006",
+      "abstract": "在全球货币政策不确定性持续攀升的背景下，构建战略韧性已成为企业生存发展的核心命题，而战略韧性的培育高度依赖跨周期的稳定资本供给。本文基于不完全信息分析框架与实物期权理论构建模型，阐明了货币政策不确定性通过扭曲市场型耐心资本进而抑制企业战略韧性的传导机制，并验证了以政府引导基金为代表的政府型耐心资本的正向调节作用。基于中国A股上市企业样本的实证检验表明，货币政策不确定性会削弱企业战略韧性，但该负面冲击在外部融资更稳定、内部财务灵活性更高及政商关系更健康的情境下显著减弱。机制检验结果表明，市场型耐心资本缩减是其主要传导渠道；政府型耐心资本凭借风险收敛效应与资本撬动效应能够有效对冲上述负面影响。进一步发现，货币政策不确定性不仅抑制企业传统生产要素驱动的战略韧性，还会阻碍其创新要素驱动的战略韧性。本文为增强宏观政策取向一致性、强化政府引导基金枢纽功能及壮大耐心资本体系，从而推动企业跨周期战略调适与高质量发展提供了政策启示。",
+      "keywords": [
+        "货币政策不确定性",
+        "耐心资本",
+        "企业战略韧性"
+      ]
     },
     {
       "id": "ccc6f9cea8053b2b",
@@ -10322,7 +10757,16 @@
       "display_date_basis": "issue_date",
       "push_basis": "first_seen",
       "extraction_rule": "cie-legacy-html",
-      "date_source": "context_issue"
+      "date_source": "context_issue",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=ZGGYJJ2026005005",
+      "abstract": "既有研究多沿袭双边平台与网络经济思维，得出数字平台竞争趋于“赢家通吃”的判断。然而，本文对12个重点领域的份额测算显示，中国平台经济的多个领域并未形成垄断局面。运行实践与主流理论的偏离，根源在于既有研究常常忽略了低转换成本、网络复杂性与技术架构通用性等技术—经济特征。这些特征不仅重塑了数字平台竞争的微观基础，也使其较传统经济形态更具复杂性与阶段性。据此，本文构建“模式推广—高速成长—平稳成熟—跨界竞争”四阶段分析框架，揭示不同发展阶段下规模竞争、差异化竞争与跨界竞争等模式的演进逻辑及关键影响变量。研究表明，数字平台竞争是在多归属、网络异质性与跨界竞争等多重因素作用下持续演化的开放过程。在大国科技竞争日趋激烈的背景下，应基于阶段性特征准确把握垄断竞争格局，形成兼顾平台经济高质量发展与公平竞争治理的“中国方案”，避免“赢家通吃”预设导致的“重规制、轻发展”倾向。",
+      "keywords": [
+        "数字平台",
+        "平台竞争",
+        "反垄断",
+        "技术—经济特征"
+      ]
     },
     {
       "id": "e2a0fb2a1628588f",
@@ -10344,7 +10788,16 @@
       "display_date_basis": "issue_date",
       "push_basis": "first_seen",
       "extraction_rule": "cie-legacy-html",
-      "date_source": "context_issue"
+      "date_source": "context_issue",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=ZGGYJJ2026005009",
+      "abstract": "算法交易的广泛应用正在改变资本市场的竞争基础和价格形成过程，评估其市场公平效应具有重要现实意义。本文利用2018—2024年A股市场4685家上市公司的高频交易数据，探索算法交易对尾盘价格操纵的影响及其作用机制。研究发现，算法交易通过降低操纵预期收益与提高操纵实施成本抑制了尾盘价格操纵。算法交易，一方面削弱了操纵者基于私有信息与订单失衡的获利能力；另一方面增强了流动性与价格弹性，平抑短期价格波动，提高了操纵的实施门槛和策略失败风险。异质性分析表明，算法交易对内部治理机制不完善、信息环境较差等市场操纵风险较高的上市公司表现出更显著的抑制效应。进一步研究发现，算法交易减少了基本面知情交易者在价格形成中的相对作用，弱化了基本面信息驱动的价格发现，进而降低价格对公司基本面信息的反映能力，在改善市场交易公平的同时导致定价效率的损失和极端尾部风险的增加。本文研究对于完善公平导向的算法交易监管、有效保护中小投资者具有重要启示。",
+      "keywords": [
+        "算法交易",
+        "市场公平",
+        "尾盘价格操纵",
+        "投资者保护"
+      ]
     },
     {
       "id": "eeaf9a672b181913",
@@ -10366,7 +10819,17 @@
       "display_date_basis": "issue_date",
       "push_basis": "first_seen",
       "extraction_rule": "cie-legacy-html",
-      "date_source": "context_issue"
+      "date_source": "context_issue",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=ZGGYJJ2026005008",
+      "abstract": "伴随数智时代的演进，生成式AI正在从辅助工具演变为企业的“AI代理人”，促使传统“人—人”治理向“人—机”治理转向。然而，受制于算法“黑箱”引发的AI代理成本，企业难以对AI代理人实现从浅层应用到深度授权的转变，导致潜在的技术势能难以转化为企业劳动生产率，进而抑制了企业价值创造。本文结合“人—机”委托代理关系框架，实证分析了AI治理政策对企业价值创造的因果效应与微观机理。研究发现，AI治理政策显著提升了企业的劳动生产率，作为合规信号有效降低了企业对AI代理人的监督与验证成本，驱动企业从浅层的技术采纳迈向深层的决策授权。并且，政策红利在微观层面呈现鲜明的异质性，具备高AI动态认知能力与制度合法性的“专家型委托人”与拥有充分外部资源优势的企业是政策红利的最大赢家，存在较高合规压力的“防御型委托人”由于风险厌恶反而抑制了企业价值创造。本文突破了监管抑制创新的传统刻板印象，从委托代理视角揭示了AI治理作为制度增信信号的经济学价值，为政府实施从“漫灌”到“滴灌”的AI治理政策提供了微观证据。",
+      "keywords": [
+        "AI治理",
+        "人机协同",
+        "委托代理",
+        "AI代理人",
+        "制度增信"
+      ]
     },
     {
       "id": "999a26991033635a",
@@ -11495,7 +11958,10 @@
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": "forthcoming_unassigned"
+      "date_source": "forthcoming_unassigned",
+      "official_source": "aeaweb-detail",
+      "abstract": "We study the effects of the largest corporate income tax cut in U.S. history on firms and workers. To identify causal effects, we use employer-employee matched tax records and event studies comparing similarly sized firms in the same industry that faced divergent tax changes due to their pre-existing legal status. Tax cuts cause increases in firms’ investment, sales, profits, employment, and payrolls, with earnings gains concentrated among highly paid workers. In the short-run, 87% of private income gains flow to the top 10% of the income distribution.",
+      "keywords": []
     },
     {
       "id": "aab49b8bd14cfb27",
@@ -14621,7 +15087,17 @@
       "display_date_basis": "issue_date",
       "push_basis": "issue_date",
       "extraction_rule": "cie-legacy-html",
-      "date_source": "context_issue"
+      "date_source": "context_issue",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=ZGGYJJ2026004004",
+      "abstract": "促进产业链人才链深度融合，实现劳动报酬提高和劳动生产率提高同步，是当前中国的重要战略部署。本文将投入产出表映射至企业地理空间产业链图谱与城市分部门劳动分布，测算产业链集聚度与产业链人才链融合度指标，实证检验了产业链及其与人才链融合对企业劳动生产率的影响。研究发现，产业链过度集聚的拥挤效应会抑制企业劳动生产率提升，但存在显著的异质性，技术密集型企业、小规模企业在产业链分工中表现出劳动生产率优势。产业链人才链融合能够充分释放集聚正外部性，缓解产业链过度集聚产生的负面影响。机制分析发现，产业链集聚通过资金外部性降低交易成本，但同时也会通过抑制知识溢出的技术外部性对劳动生产率提升形成约束；产业链人才链融合能够通过强化集聚所带来的资金外部性促进劳动生产率提升，但其对集聚技术外部性的改善作用尚不显著。本文为评估产业链、人才链与劳动生产率之间的关系提供了经验证据，也为国家现阶段加快产业链人才链融合、提升劳动生产率提供有益的决策参考。",
+      "keywords": [
+        "产业链",
+        "人才链",
+        "产业链人才链融合",
+        "劳动生产率",
+        "人才强国"
+      ]
     },
     {
       "id": "52b1dc30e5ab2ea7",
@@ -14643,7 +15119,16 @@
       "display_date_basis": "issue_date",
       "push_basis": "issue_date",
       "extraction_rule": "cie-legacy-html",
-      "date_source": "context_issue"
+      "date_source": "context_issue",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=ZGGYJJ2026004002",
+      "abstract": "工业智能化在拓展经济增长空间、提升生产效率的同时，正深刻重塑收入分配格局。本文立足中国工业智能化现实基础，构建包含异质性家庭、工业机器人和内生技术创新的动态随机一般均衡模型，系统考察工业智能化对就业结构、要素收入份额和收入分配格局的影响机制，并评估财政再分配政策的调节效果。研究发现，工业智能化通过就业结构分化渠道和要素收入份额偏向渠道影响收入分配：机器人应用通过技术创新创造更多高技能岗位，对高技能劳动形成互补，同时替代部分低技能劳动，加剧就业结构分化；机器人要素收入份额持续提升，低技能劳动收入份额相应下降，推动初次分配进一步向资本型家庭倾斜。再分配政策虽然能缓解分配失衡，但不同工具调节效果差异明显：一次性转移支付更有利于改善分配公平，但伴有一定效率损失；劳动补贴和消费补贴更有利于保障经济效率，但分配改善效果相对有限。本文为政策制定部门灵活组合运用再分配工具、实现公平与效率动态平衡提供了启示。",
+      "keywords": [
+        "工业智能化",
+        "收入分配",
+        "就业结构分化",
+        "要素收入份额偏向"
+      ]
     },
     {
       "id": "5fd45d4d2f88258a",
@@ -14665,7 +15150,17 @@
       "display_date_basis": "issue_date",
       "push_basis": "issue_date",
       "extraction_rule": "cie-legacy-html",
-      "date_source": "context_issue"
+      "date_source": "context_issue",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=ZGGYJJ2026004003",
+      "abstract": "促进共同富裕和共享繁荣是中国式现代化和世界包容性增长的本质要求，偏向性技术进步适宜性对要素收入分配格局具有重要影响。本文采用跨国数据，实证检验了偏向性技术进步适宜性对收入不平等的影响及其机制。研究发现：资本偏向性技术进步适宜性提升能够缓解收入不平等，全球价值链重构、劳动力就业转换和社会福利改善是重要的影响渠道。对于资本—劳动要素呈现互补关系、新兴产业具有优势地位、发展共性技术和专用技术水平较低的经济体，资本偏向性技术进步适宜性对收入不平等的缓解效应更强，且中国相对其他经济体的效果更显著。此外，发展中经济体通过促进资本偏向性技术进步、增加资本存量以优化要素禀赋结构，有利于缓解经济体之间的收入不平等。本文从国际比较视角出发，对中国发挥偏向性技术进步适宜性比较优势、促进技术变革和人的全面发展之间的互动融合，进而优化要素收入分配格局有一定的启发意义。",
+      "keywords": [
+        "偏向性技术进步适宜性",
+        "收入不平等",
+        "劳动力就业转换",
+        "全球价值链重构",
+        "人机协同"
+      ]
     },
     {
       "id": "e3e5aa3f53622fbd",
@@ -14687,7 +15182,15 @@
       "display_date_basis": "issue_date",
       "push_basis": "issue_date",
       "extraction_rule": "cie-legacy-html",
-      "date_source": "context_issue"
+      "date_source": "context_issue",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=ZGGYJJ2026004001",
+      "abstract": "近年来，世界“百年变局”加速演进，主要经济体贸易政策大幅转向，对各国（地区）经济金融安全造成巨大挑战，致使全球违约风险持续上扬。本文选取37个国家（地区）的违约概率数据，基于前沿的异质性空间自回归模型，考察了贸易政策不确定性对全球违约风险的直接效应，并剖析其经由供应链暴露网络对各国（地区）违约风险的冲击影响。研究发现，贸易政策不确定性上升，会加剧各国（地区）违约风险，其中经由供应链暴露网络传递的影响效应约为40%。同时，在国际供应链暴露网络中，美国是传播扩散贸易政策不确定性冲击的关键节点。此外，中美贸易不确定性冲击主要经由工业行业传播扩散，进而加剧中国相关行业的违约风险。进一步研究表明，人民币适度贬值、增加货币供给和降低存款准备金率，均可缓释中美贸易不确定性对中国行业违约风险的驱动作用。本文为有效应对贸易政策冲击、健全违约风险防控机制提出了相关政策启示，从而为新时代打造“‘双循环’稳定器”提供参考依据。",
+      "keywords": [
+        "违约风险",
+        "供应链暴露网络",
+        "贸易政策不确定性"
+      ]
     },
     {
       "id": "a883300d44c9aaf8",
@@ -14709,7 +15212,16 @@
       "display_date_basis": "issue_date",
       "push_basis": "issue_date",
       "extraction_rule": "cie-legacy-html",
-      "date_source": "context_issue"
+      "date_source": "context_issue",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=ZGGYJJ2026004008",
+      "abstract": "关于电商平台就业效应的微观探索是推动实数融合的重要方面，但其内在的影响方向与学理机制尚存争议，尤其是可能存在的“就业破坏”冲击，是数字经济时代下亟须关注的民生问题。为此，本文构建了可用于研究电商平台如何影响企业就业的理论模型，在此基础上，通过整合2008—2020年1688电商平台、在线招聘平台以及全国税收调查数据库的企业层面数据，实证分析了加入电商平台对企业就业的影响及其内在机制。研究发现，加入电商平台会提高企业的就业水平，这一结果在经过平行趋势检验、内生性处理等一系列稳健性检验后依然成立。机制分析发现，电商平台通过声誉效应、长尾效应和网络效应三个方面促进参与企业的“就业创造”，但参与企业也会对非参与企业产生替代效应与挤出效应，从而引发“就业破坏”。进一步基于就业岗位异质性视角的拓展性分析发现，参与电商平台会对高技能、非常规认知型、常规认知型和常规体力型的电商平台相关岗位带来创造效应，但会对低技能和常规认知型的非电商平台相关岗位产生破坏效应。本文研究为厘清电商的就业效应问题提供了来自平台视角的新证据。",
+      "keywords": [
+        "电商平台",
+        "就业创造",
+        "就业破坏",
+        "岗位异质性"
+      ]
     },
     {
       "id": "4558f6f42cef4f00",
@@ -14731,7 +15243,17 @@
       "display_date_basis": "issue_date",
       "push_basis": "issue_date",
       "extraction_rule": "cie-legacy-html",
-      "date_source": "context_issue"
+      "date_source": "context_issue",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=ZGGYJJ2026004007",
+      "abstract": "数商企业是数字经济时代涌现的新兴市场主体，成为数据要素通过市场化机制高效渗透至实体企业、实现实数融合的关键力量。本文结合5000家大数据交易平台入驻数商企业信息和全国工商企业注册数据，使用BERT模型构建完整覆盖平台内（场内）与平台外（场外）约83万家数商企业的全样本数据库，刻画数商发展特征事实；利用企业间交易数据，精确测度数商企业与实体企业之间的场内外交易网络，构建企业层面的实数融合测度指标；在系统梳理数据要素市场化主要政策工具的基础上，结合全国税收调查数据库的数据等，深入考察数据要素市场化建设如何通过促进数商发展深化实数融合。研究发现，数据要素市场化建设通过提升数商企业客户匹配效率、优化数据资源整合能力、减少数据合规风险、降低其数据交付成本等渠道，推动数据要素高效嵌入实体经济，实现深层次的实数融合。本文为理解数据要素市场化运行机制、数商角色功能及其在推动实数融合中的经济价值提供了重要参考。",
+      "keywords": [
+        "数商企业",
+        "数商发展",
+        "实数融合",
+        "数据要素市场化",
+        "大数据交易平台"
+      ]
     },
     {
       "id": "34bcadbdbc8d89b6",
@@ -14753,7 +15275,17 @@
       "display_date_basis": "issue_date",
       "push_basis": "issue_date",
       "extraction_rule": "cie-legacy-html",
-      "date_source": "context_issue"
+      "date_source": "context_issue",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=ZGGYJJ2026004005",
+      "abstract": "针对当前中国制造业头部企业数字化转型投入持续增长、制造业生产率增速下降这一现象，本文构建动态竞争模型，引入企业间数字化转型成本差异，从创造性破坏视角揭示了头部企业加大数字化转型引发效率竞争效应推动行业生产率增速提升的同时，抬高进入壁垒、加剧市场挤出并强化研发“马太效应”，进而抑制行业生产率增速提升的复杂机理。基于2014—2022年中国制造业细分行业数据的实证检验表明，头部企业数字化转型抑制了行业生产率增速提升；机制分析进一步验证了进入壁垒效应、市场挤出效应与研发“马太效应”的存在。异质性分析发现，该抑制作用仅存在于传统行业与国有资本比重较低行业，而在高新技术行业与国有资本比重较高行业中不显著。拓展性研究发现，头部企业数字化转型提高了自身生产率并促进行业规模效率改进，但抑制行业要素配置效率改进。在深化制造业数字化转型过程中，政府需对头部企业和中小企业分类施策，充分释放创造性破坏对行业生产率增长的驱动作用。",
+      "keywords": [
+        "数字化转型",
+        "市场结构",
+        "全要素生产率",
+        "创造性破坏",
+        "成本差异"
+      ]
     },
     {
       "id": "1ffc3a3bc7b4b387",
@@ -14775,7 +15307,17 @@
       "display_date_basis": "issue_date",
       "push_basis": "issue_date",
       "extraction_rule": "cie-legacy-html",
-      "date_source": "context_issue"
+      "date_source": "context_issue",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=ZGGYJJ2026004006",
+      "abstract": "制度型开放创新重塑了企业绿色转型的内在激励与约束。基于2011—2020年全国企业税收调查数据与北大法宝政策文本，本文运用大语言模型构建制度型开放创新指标，从企业微观角度评估了制度型开放创新对企业碳负担的影响。通过实证分析发现，制度型开放创新能够降低企业碳负担，且该结论在多重检验下保持稳健。机制分析发现，制度型开放创新主要通过两条路径降低企业碳负担：通过推动企业嵌入高标准绿色规则、降低制度性交易成本以及优化绿色供应链网络，降低碳成本；通过激励企业开展长周期绿色创新、吸引清洁行业外资进入，推动碳责任管理内化为企业长期战略，进而降低企业碳负担。进一步分析发现，制度型开放创新与外资增资能够协同降低企业碳负担，而外资减资会削弱这一制度红利。基于上述发现可知，协同推进高水平对外开放与“双碳”目标实现，需要注重构建以制度型开放创新为引领的绿色低碳治理体系，以进一步畅通绿色要素流动。",
+      "keywords": [
+        "企业碳负担",
+        "制度型开放创新",
+        "碳成本",
+        "碳责任",
+        "大语言模型"
+      ]
     },
     {
       "id": "290212594ff03811",
@@ -14797,7 +15339,17 @@
       "display_date_basis": "issue_date",
       "push_basis": "issue_date",
       "extraction_rule": "cie-legacy-html",
-      "date_source": "context_issue"
+      "date_source": "context_issue",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=ZGGYJJ2026004009",
+      "abstract": "ESG合成谬误是一种复杂的ESG异化现象，在现实和学术研究中往往被忽视。本文从ESG合成谬误概念界定和解构出发，识别出两类六种ESG合成谬误，即跨维度、跨对象、跨影响的内生型合成谬误和跨组织、跨层次、跨时期的标准型合成谬误。ESG合成谬误产生的根源在于以强还原论为指导，秉持ESG构造的元素组合观和ESG行为的个体主义观。防止和纠正ESG合成谬误需要由强还原论转向弱整体论，形成ESG构造的互动系统观和ESG行为的共生共益观。破解内生型合成谬误要求企业将ESG构造的互动系统观落实到ESG实践中，强化ESG跨维度、跨对象、跨影响的系统性、整体性和协调性；破解标准型合成谬误要求企业将ESG行为的共生共益观落实到ESG行动中，强调ESG跨组织、跨层次、跨时期的专长性、协同性和全局性。政府需以弱整体论为指导，按照可负担、可持续的节奏理性推进中国ESG发展进程，加快编制出台强调ESG整体性与协调性的ESG国家标准，以部际联席会议制度加强对ESG重大问题和政策的统筹协调，依托链长制推动产业链企业ESG的集中治理和协同行动，加强对ESG重点与热点议题合成谬误的预警和治理。",
+      "keywords": [
+        "ESG",
+        "可持续性",
+        "合成谬误",
+        "还原论",
+        "整体论"
+      ]
     },
     {
       "id": "717e3a7b087e98bb",
@@ -15181,7 +15733,9 @@
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": "forthcoming_unassigned"
+      "date_source": "forthcoming_unassigned",
+      "abstract": "Mechanisms that aim to reduce environmental degradation at low cost can be undermined when participants' conservation actions are not marginal to the incentive—or “additional”—as the lowest-cost participants may not be the highest social value. We investigate this challenge in the Conservation Reserve Program's auction mechanism for ecosystem services, linking bids to satellite-derived land use. Three-quarters of marginal auction winners are not additional. The heterogeneity in counterfactual land use introduces adverse selection. We develop a model of bidding and additionality to quantify welfare implications. Alternative auctions increase efficiency by using scoring rules that incorporate expected land use impacts. (JEL D44, D82, Q24, Q57, R14)",
+      "keywords": []
     },
     {
       "id": "5f32ec2859bec651",
@@ -15235,7 +15789,9 @@
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": "forthcoming_unassigned"
+      "date_source": "forthcoming_unassigned",
+      "abstract": "We study the role of victim reporting in the production of public safety. We examine the Secure Communities program, a crime-reduction policy that involved police in detecting unauthorized immigrants and increased deportation fears in immigrant communities. We find that the policy reduced the likelihood that Hispanic victims report crimes to police and increased offending against Hispanics. The number of reported crimes is unchanged, masking these opposing effects. We show that reduced reporting drives the offending increase and provide the first elasticity of offending to victim reporting in the literature, calculating that a 10 percent decline in reporting increases offending by 7.9 percent. (JEL J15, K37, K42)",
+      "keywords": []
     },
     {
       "id": "2373a9cf020f1e5a",
@@ -15449,7 +16005,10 @@
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": "forthcoming_unassigned"
+      "date_source": "forthcoming_unassigned",
+      "official_source": "aeaweb-detail",
+      "abstract": "An increasing number of decisions are guided by machine learning algorithms. But when consequential decisions are encoded in algorithms, individuals may strategically alter their behavior to achieve desired outcomes. This paper develops an empirical approach that adjusts decision algorithms to anticipate manipulation. By explicitly modeling incentives to manipulate, our approach produces decision rules that are stable under manipulation, even when the rules are fully transparent. We stress test this approach through a large field experiment in Kenya. When implemented, linear strategy-robust decision rules outperform standard linear models such as LASSO.",
+      "keywords": []
     },
     {
       "id": "d39df91d7299bb32",
@@ -15716,7 +16275,10 @@
       "display_date_basis": "first_seen_at",
       "push_basis": "first_seen",
       "extraction_rule": "aea-forthcoming-html",
-      "date_source": "forthcoming_unassigned"
+      "date_source": "forthcoming_unassigned",
+      "official_source": "aeaweb-detail",
+      "abstract": "Efficient risk-sharing implies a simple factor structure for marginal utilities of expenditure (MUEs): Pareto weights divided by a common price. The standard approach infers MUEs from total expenditures, implicitly assuming homothetic preferences, unitary income elasticities, and identical price elasticities. Risk-sharing tests using total expenditures work for idiosyncratic shocks (budgets change, but not prices), but not “covariate” shocks (prices change). We describe all preferences which permit one to infer MUEs from expenditures, and estimate nonhomothetic MUEs to test whether covariate shocks are shared efficiently in Uganda. This delivers sensible results; the standard approach suggests that droughts, floods, and pests are beneficial.",
+      "keywords": []
     },
     {
       "id": "b26e61cc4596ac62",
@@ -18227,7 +18789,16 @@
       "display_date_basis": "issue_date",
       "push_basis": "first_seen",
       "extraction_rule": "asc-current-issue-html",
-      "date_source": "issue_loop"
+      "date_source": "issue_loop",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=HJYJ2026004011",
+      "abstract": "中小企业是发展新质生产力的“生力军”。本文利用《中小企业促进法》修订形成的准自然实验，基于新三板中小企业数据，考察其对企业投资的影响及作用机制。研究结果表明，《中小企业促进法》实施能够使企业投资水平提高约13.24%，其中的作用机制在于投资能力提升与投资项目的预期收益提高。横截面检验结果发现《中小企业促进法》对企业投资水平的提高作用主要存在于外部融资环境较差、议价能力较弱及所在地区法律环境较好的企业。进一步分析表明，《中小企业促进法》带来的投资水平提高能够进一步提升企业的全要素生产率。通过转换分析视角到地区层面，本文还发现《中小企业促进法》能够促进地区层面的投资增长。本文揭示了《中小企业促进法》促进投资增长的机理，对于充分发挥投资对扩内需、稳增长、促转型的重要作用具有启示意义。",
+      "keywords": [
+        "中小企业促进法",
+        "商业信用",
+        "企业投资",
+        "准自然实验"
+      ]
     },
     {
       "id": "e5ef384c8e8453eb",
@@ -18249,7 +18820,15 @@
       "display_date_basis": "issue_date",
       "push_basis": "issue_date",
       "extraction_rule": "asc-current-issue-html",
-      "date_source": "issue_loop"
+      "date_source": "issue_loop",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=HJYJ2026004001",
+      "abstract": "本文将资源基础观和动态能力观融入财务数智化转型的理论框架，对财务数智化转型目标、内容、实现路径的逻辑体系展开研究，研究发现：第一，基于资源基础观，形成以财务“人员”为基础，财务职能的“财务”层、数据要素的“数”层和数字技术的“智”层为核心的财务数智化转型内容；第二，基于动态能力观，财务数智化转型通过动态能力以匹配战略与管理目标、梳理业务逻辑、明确财务应用场景、设计应用场景落地方案、确定数字技术使用路线、部署信息系统与应用程序、验证及优化应用运行结果为实现路径；第三，企业整合和重构数智化时代的核心资源，以资源基础与动态能力构建财务数智化转型的理论框架。研究结论有助于科学评价财务数智化转型的核心资源及其动态能力，为构建财务数智化转型的理论框架提供研究基础。",
+      "keywords": [
+        "数智化",
+        "逻辑体系",
+        "数字技术"
+      ]
     },
     {
       "id": "20ae82ff812649b9",
@@ -18271,7 +18850,17 @@
       "display_date_basis": "issue_date",
       "push_basis": "first_seen",
       "extraction_rule": "asc-current-issue-html",
-      "date_source": "issue_loop"
+      "date_source": "issue_loop",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=HJYJ2026004010",
+      "abstract": "依托制度安排激发核心企业的链主引领作用，驱动供应链全链条绿色转型，是落实双碳战略的关键路径。本文以2021年国务院国资委印发的《关于推进中央企业高质量发展做好碳达峰碳中和工作的指导意见》为准自然实验，考察央企将双碳目标纳入业绩考核对上下游企业绿色转型的影响。研究发现，央企双碳考核显著促进了上游供应商的绿色创新与绿色并购，但对下游客户的传导效应尚未显现，政策影响呈现非对称性特征。机制检验表明，遵循“政治—市场”双重逻辑，央企通过强化责任传导、优化供需匹配与实施资源赋能，构筑了“动力—行为—能力”层级递进的协同转型路径。异质性分析显示，当上游企业具备充裕的耐心资本、与央企存在跨行业关联、双方绿色认知一致性较高以及供应链数字基础较好时，政策传导效应更为显著。经济后果检验表明，这种由央企引领的供应链治理模式在改善企业环境绩效的同时，并未挤出短期财务绩效。本文揭示了核心企业驱动供应链协同转型的微观机理，为进一步强化国有企业在双碳战略中的引领作用、协同推进降碳、减污、扩绿、增长提供了政策启示。",
+      "keywords": [
+        "供应链绿色转型",
+        "双碳考核",
+        "绿色并购",
+        "绿色创新",
+        "中央企业"
+      ]
     },
     {
       "id": "7e0e2f1b1e5713d3",
@@ -18293,7 +18882,17 @@
       "display_date_basis": "issue_date",
       "push_basis": "issue_date",
       "extraction_rule": "asc-current-issue-html",
-      "date_source": "issue_loop"
+      "date_source": "issue_loop",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=HJYJ2026004012",
+      "abstract": "税种联动效应是指税收体系内部因制度设计、经济关联或征管机制形成的连锁反应，即一个税种变化会引起其他税种的变化。本文在前景理论框架下将税种联动纳入到“价值-权重”函数模型中，以税务部门征收环保税为研究契机，考察环保税征管对企业所得税遵从的影响，并利用2012—2023年中国工业上市公司的数据进行实证检验。研究发现：环保税征管显著提高了企业所得税遵从。机制分析结果表明，环保税征管可以发挥税种联动效应，降低企业信息不对称、提高税务机关稽征能力，进而提升企业所得税遵从。异质性分析结果表明，该效应对于公司治理水平较低的企业、规模较大的企业以及位于税收共治水平更高地区的企业而言更为明显。拓展性分析结果表明，环保税征管对企业所得税遵从提升的长期效应大于短期效应；环境规制与税收监管可以形成政策合力，加速淘汰僵尸企业。本文研究不仅为推动环保政策和新一轮财税体制改革形成合力、同向发力提供了经验证据，也为创造更加公平、更具活力的市场环境提供了政策参考。",
+      "keywords": [
+        "环保税",
+        "税种联动",
+        "精准监管",
+        "非财务信息稽查",
+        "企业避税"
+      ]
     },
     {
       "id": "a7a76afe9db12154",
@@ -18315,7 +18914,16 @@
       "display_date_basis": "issue_date",
       "push_basis": "first_seen",
       "extraction_rule": "asc-current-issue-html",
-      "date_source": "issue_loop"
+      "date_source": "issue_loop",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=HJYJ2026004007",
+      "abstract": "本文利用我国A股上市公司强制披露的劳务外包数据，从实物期权视角分析劳务外包对公司经营风险的影响。研究发现，公司劳务外包能够降低经营风险。机制检验表明，劳务外包通过削弱普通员工的劳动力成本粘性和提高适应市场需求波动的能力两种渠道影响公司经营风险。在经济政策不确定性较高的时期、最低工资标准较高的地区、产品市场竞争较激烈的行业、开展人力资源服务机构诚信等级评价工作的城市以及劳动密集度较高的公司中，公司劳务外包与经营风险的负向关系更加显著。进一步分析发现，公司劳务外包的降风险效应能够沿着供应链向下游传导，显著降低客户的经营风险。此外，劳务外包对经营风险的缓释作用也有助于降低公司的融资成本。本文的结论拓展了外包和灵活用工的微观经济效应研究，也为公司从用工结构优化角度有效管理风险及监管部门完善劳务外包管理制度提供了有益启示。",
+      "keywords": [
+        "经营风险",
+        "劳务外包",
+        "实物期权",
+        "灵活用工"
+      ]
     },
     {
       "id": "b346fdbf92d9c2a3",
@@ -18361,7 +18969,15 @@
       "display_date_basis": "issue_date",
       "push_basis": "issue_date",
       "extraction_rule": "asc-current-issue-html",
-      "date_source": "issue_loop"
+      "date_source": "issue_loop",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=HJYJ2026004002",
+      "abstract": "国有企业作为供应链上游的关键治理主体，其问责治理效果能否有效传导至下游客户企业，是事关保障供应链韧性和安全的核心议题。本文以国有企业经营投资问责制度的实施为契机，以客户企业的真实盈余管理为研究对象，分析国有企业经营投资问责对客户企业真实盈余管理的影响以及作用机制。研究发现，国有企业经营投资问责能抑制客户企业的真实盈余管理。机制分析表明，国有企业经营投资问责通过强化外部监督有效性和改善经营环境抑制客户企业的真实盈余管理。异质性研究发现，在客户企业第一类代理冲突、第二类代理冲突较严重和客户企业竞争优势较高的样本中，国有企业经营投资问责对客户企业真实盈余管理的抑制作用更强。本文不仅丰富和深化了经营投资问责经济后果的研究，而且为完善国有企业经营投资问责制度、推动国有企业高质量发展以及提升供应链治理水平提供了新思路。",
+      "keywords": [
+        "经营投资问责",
+        "治理溢出效应",
+        "真实盈余管理"
+      ]
     },
     {
       "id": "621699a8d9a07934",
@@ -18383,7 +18999,16 @@
       "display_date_basis": "issue_date",
       "push_basis": "first_seen",
       "extraction_rule": "asc-current-issue-html",
-      "date_source": "issue_loop"
+      "date_source": "issue_loop",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=HJYJ2026004009",
+      "abstract": "在中美贸易摩擦加剧及全球供应链风险日益凸显的背景下，提升产业链供应链稳定性与韧性已成为保障国家经济安全与核心竞争力的重要战略任务。为此，本文基于2007—2023年上市公司数据，考察了机构纵向持股对供需长鞭效应的治理效应。研究发现，机构纵向持股有效缓解了供需长鞭效应，且该影响效果在上下游持股中具有非对称性。机制检验表明，机构纵向持股主要通过发挥信息溢出和利益协同效应缓解供需长鞭效应。此外，机构投资者通常通过委派董监高的方式实现治理介入来保障上述机制的有效发挥。异质性分析发现，机构纵向持股对供需长鞭效应的缓解作用在客户会计稳健性水平较低、企业数字化能力较低以及客户议价能力较高的样本中更明显。从经济后果来看，机构纵向持股对供需长鞭效应的协同治理能够降低供应商企业的经营风险，提升经营稳定性。本文为解决供需结构性失衡问题提供了新的切入点，同时对政府借助机构纵向持股提高产业链供应链稳定性与韧性具有重要启示。",
+      "keywords": [
+        "机构纵向持股",
+        "信息溢出效应",
+        "利益协同效应",
+        "供需长鞭效应"
+      ]
     },
     {
       "id": "dbc3ab1b8046c6c3",
@@ -18405,7 +19030,16 @@
       "display_date_basis": "issue_date",
       "push_basis": "issue_date",
       "extraction_rule": "asc-current-issue-html",
-      "date_source": "issue_loop"
+      "date_source": "issue_loop",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=HJYJ2026004003",
+      "abstract": "证券分析师作为上市公司与投资者信息沟通的纽带，在缓解市场信息不对称中发挥着关键作用。以往研究证明劳动力市场势力对“效率”与“公平”均会造成负面影响，那么劳动力市场势力是否也会负面影响分析师盈余预测准确性？基于2015—2024年我国证券公司招聘数据，本文发现劳动力市场势力较大的证券公司因拥有更强的劳动力支配力，往往要求分析师付出更多努力，表现为盈余预测质量提高。进一步研究发现，当证券公司所在地区数字经济发展水平、人才引进强度、政府干预程度、儒家文化强度较低时，劳动力市场势力对分析师盈余预测质量的提升作用更加凸显。此外，这一作用仅在短期内显著，不具有持久性。本研究为规范分析师行业劳动力市场环境提供了经验证据。",
+      "keywords": [
+        "劳动力市场势力",
+        "分析师",
+        "盈余预测准确性",
+        "分析师努力程度"
+      ]
     },
     {
       "id": "56d3bb33a5eb2701",
@@ -18427,7 +19061,16 @@
       "display_date_basis": "issue_date",
       "push_basis": "issue_date",
       "extraction_rule": "asc-current-issue-html",
-      "date_source": "issue_loop"
+      "date_source": "issue_loop",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=HJYJ2026004004",
+      "abstract": "耐心资本是我国突破核心技术的关键金融策略，但受限于耐心资本的度量，其如何影响微观企业行为的一系列问题，已有研究仍未能回答。本文使用风险投资机构的失败容忍度度量耐心资本，利用2010—2023年的新三板数据构建了连续型多期DID模型，发现耐心资本会显著降低企业盈余管理行为，这一结论在一系列内生性和稳健性检验后依然成立。机制分析发现，耐心资本通过降低盈余管理动机和压缩盈余管理操作空间实现。进一步，该作用在商业信用环境更差、欠发达的地区，市场集中度较低的行业和技术密集型行业，投资机会较差、非专精特新和新三板基础层的企业中更有效。本文突破了当前耐心资本度量困境，通过揭示耐心资本抑制盈余管理的机理，将耐心资本的研究拓展至信息质量治理领域。本文的研究为政策制定者优化耐心资本支持体系、引导实体企业专注长期战略发展，助力实体经济高质量发展提供了支撑。",
+      "keywords": [
+        "耐心资本",
+        "风险投资机构",
+        "失败容忍度",
+        "盈余管理"
+      ]
     },
     {
       "id": "bfe2b5ee6e201a0d",
@@ -18449,7 +19092,17 @@
       "display_date_basis": "issue_date",
       "push_basis": "issue_date",
       "extraction_rule": "asc-current-issue-html",
-      "date_source": "issue_loop"
+      "date_source": "issue_loop",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=HJYJ2026004005",
+      "abstract": "数据资产是推动数字中国建设和加快数字经济发展的重要战略资源。基于2014—2023年沪深A股上市公司数据，本文重点探究企业数据资产信息披露同群效应的产生机制及经济后果。研究发现：（1）企业数据资产信息披露存在同群效应；（2）当企业拥有更多连锁股东、面临更高环境不确定性时，基于获利动机的数据资产信息披露同群效应越明显；（3）当企业面临的模仿压力、规范压力、强制压力越大，基于避险动机的数据资产信息披露同群效应越明显；（4）数据资产信息披露同群效应能够帮助企业降低成本、缓解风险。本研究拓展了同群效应及数据资产信息披露影响因素的研究边界，为政府完善数据资产入表政策、企业制定合理披露决策提供了理论支撑与经验证据。",
+      "keywords": [
+        "数据资产",
+        "信息披露",
+        "同群效应",
+        "获利动机",
+        "避险动机"
+      ]
     },
     {
       "id": "a39dd96c93afad24",
@@ -18471,7 +19124,17 @@
       "display_date_basis": "issue_date",
       "push_basis": "first_seen",
       "extraction_rule": "asc-current-issue-html",
-      "date_source": "issue_loop"
+      "date_source": "issue_loop",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=HJYJ2026004013",
+      "abstract": "本文以中国A股跨国企业为样本，实证检验了国家间双边政治关系对跨国企业审计收费的影响。结果表明，良好的双边政治关系可显著降低跨国企业审计收费。机制检验表明，良好双边政治关系通过降低跨国企业的可持续经营风险而非财务报告信息风险来降低审计收费。进一步分析显示，审计收费下降主要源于审计风险溢价的降低，但审计资源投入无显著变化。异质性分析发现，当东道国制度环境较差、企业海外经营经验欠缺、所聘会计师事务所跨国审计能力不足或企业非国有时，良好双边政治关系更能降低审计收费。本文在理论上拓展了双边政治关系的微观经济后果及审计收费影响因素的研究边界，在实践层面为跨国企业风险管理和事务所跨国审计能力提升提供了经验借鉴。",
+      "keywords": [
+        "双边政治关系",
+        "跨国企业",
+        "审计收费",
+        "可持续经营风险",
+        "财务报告信息风险"
+      ]
     },
     {
       "id": "3f0c0b8ab052717e",
@@ -18493,7 +19156,16 @@
       "display_date_basis": "issue_date",
       "push_basis": "issue_date",
       "extraction_rule": "asc-current-issue-html",
-      "date_source": "issue_loop"
+      "date_source": "issue_loop",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=HJYJ2026004008",
+      "abstract": "现有文献多从静态视角考察银行关联对企业风险的即期影响。本文则基于动态视角，探究信贷周期不同阶段的银行关联对企业债务违约风险的影响。具体地，本文将银行关联与信贷周期的匹配关系按其匹配性优劣程度划分为四种类型，发现银行关联与信贷周期的匹配性越差，企业在信贷紧缩后的债务违约风险越高。机制分析表明，匹配性较差的企业在信贷扩张期的过度投资和信贷紧缩期的贷款下滑更为严重，进而导致其在信贷紧缩期的债务违约风险加剧。本文揭示了银行关联与信贷周期的不同匹配关系对债务违约风险的差异化作用，丰富和拓展了银行关联经济后果方面的研究，为企业合理利用银行关联提供了实践参考，亦为监管部门有效管控债务违约风险提供了有益启示。",
+      "keywords": [
+        "银行关联",
+        "信贷周期",
+        "匹配关系",
+        "债务违约风险"
+      ]
     },
     {
       "id": "4ecbd35b4a9c7f70",
@@ -18515,7 +19187,17 @@
       "display_date_basis": "issue_date",
       "push_basis": "issue_date",
       "extraction_rule": "asc-current-issue-html",
-      "date_source": "issue_loop"
+      "date_source": "issue_loop",
+      "official_source": "ncpssd",
+      "reader_url": "https://www.ncpssd.cn/Literature/readurl?id=HJYJ2026004006",
+      "abstract": "基于新《公司法》加强职工参与治理的要求，拓宽职工参与公司治理的应用场景，本文手工整理中国A股上市公司职工董事信息，系统考察了职工董事对股价崩盘风险的影响。研究发现，职工董事任职显著降低了股价崩盘风险，有效维护了资本市场稳定。其机制在于提高信息披露质量、约束管理层激进行为、提升员工薪酬激励。进一步发现，职工董事的治理效能优于职工监事，且在女性、高学历、富经验的职工董事样本中效果更佳。职工董事对股价崩盘风险的抑制作用在劳资争议较大、工会实力较弱、劳动密集度高、员工规模大，以及外部审计监督与分析师关注较弱、未购买董责险和国有企业中更为突出。此外，持续履职能为职工董事带来股权激励回报。最终，职工董事通过降低股价崩盘风险促进企业价值增值。本研究为新《公司法》背景下优化治理结构、维护资本市场稳定提供了重要的经验证据与政策启示。",
+      "keywords": [
+        "职工董事",
+        "股价崩盘风险",
+        "信息披露质量",
+        "激进行为",
+        "薪酬激励"
+      ]
     },
     {
       "id": "44823dc7936b2f72",

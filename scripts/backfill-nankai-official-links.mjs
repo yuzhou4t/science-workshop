@@ -49,7 +49,7 @@ function historicalIssueDatesForArticle(article) {
 function issueUrl(issueDate) {
   const { year, issue } = issueParts(issueDate);
   if (!year || !issue) return "";
-  return `https://m.ncpssd.cn/journal/details?gch=${NANKAI_GCH}&langType=1&nav=1&years=${year}&num=${issue}`;
+  return `https://www.ncpssd.cn/journal/details?gch=${NANKAI_GCH}&langType=1&nav=1&years=${year}&num=${issue}`;
 }
 
 function compactText(value = "") {

@@ -56,12 +56,18 @@ function compactText(value = "") {
 }
 
 function titleMatches(left = "", right = "") {
-  const a = compactText(left);
-  const b = compactText(right);
+  const squeezeDashes = (value) => compactText(value).replace(/-{2,}/g, "-");
+  const a = squeezeDashes(left);
+  const b = squeezeDashes(right);
   if (!a || !b) return false;
   if (a === b) return true;
   const truncated = a.match(/^(.+?)(?:\.{2,}|…+)$/)?.[1] || "";
-  return truncated.length >= 12 && b.startsWith(truncated);
+  if (truncated.length >= 12 && b.startsWith(truncated)) return true;
+  // Data-side titles can split or mangle dashes (e.g. "——" vs "———");
+  // a prefix match on the squeezed title covers those without loosening
+  // whole-title equality.
+  const [shorter, longer] = a.length <= b.length ? [a, b] : [b, a];
+  return shorter.length >= 12 && longer.startsWith(shorter);
 }
 
 function splitKeywords(value = "") {
@@ -115,14 +121,14 @@ async function postNcpssdArticle(candidate, timeoutMs) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), timeoutMs);
   try {
-    const response = await fetch("https://www.ncpssd.org/articleinfoHandler/getjournalarticletable", {
+    const response = await fetch("https://www.ncpssd.cn/articleinfoHandler/getjournalarticletable", {
       method: "POST",
       headers: {
         "User-Agent": "Mozilla/5.0 ScienceWorkshop/0.2",
         Accept: "application/json, text/javascript, */*; q=0.01",
         "Content-Type": "application/json; charset=utf-8",
         "X-Requested-With": "XMLHttpRequest",
-        Referer: candidate.official_url || "https://m.ncpssd.cn/",
+        Referer: candidate.official_url || "https://www.ncpssd.cn/",
       },
       body: JSON.stringify({ lngid: candidate.id, type: "中文期刊文章", pageType: 1 }),
       signal: controller.signal,
@@ -156,7 +162,7 @@ async function fetchIssueCandidates(journal, issueDate, timeoutMs) {
   const gch = gchForJournal(journal);
   const parts = issueParts(issueDate);
   if (!gch || !parts.year || !parts.issue) return { candidates: [], issue_url: "", status: 0, error: "missing_gch_or_issue" };
-  const issueUrl = `https://m.ncpssd.cn/journal/details?gch=${encodeURIComponent(gch)}&langType=1&nav=1&years=${parts.year}&num=${parts.issue}`;
+  const issueUrl = `https://www.ncpssd.cn/journal/details?gch=${encodeURIComponent(gch)}&langType=1&nav=1&years=${parts.year}&num=${parts.issue}`;
   const response = await fetchText(issueUrl, timeoutMs);
   if (!response.ok) return { candidates: [], issue_url: issueUrl, status: response.status, error: response.error || "" };
   return {

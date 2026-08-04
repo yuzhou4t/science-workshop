@@ -1,9 +1,9 @@
 window.TOPIC_SEARCH_INDEX = {
   "version": 1,
-  "updated_at": "2026-08-04T03:03:35.866Z",
+  "updated_at": "2026-08-04T12:16:03.900Z",
   "summary": {
     "total_articles": 745,
-    "matched_articles": 6,
+    "matched_articles": 7,
     "topics": 1,
     "disciplines": 7,
     "semantic_enabled": false
@@ -221,6 +221,48 @@ window.TOPIC_SEARCH_INDEX = {
       ]
     },
     {
+      "article_id": "5932a29df1df5a20",
+      "topic_id": "africa",
+      "topic_label": "非洲",
+      "title": "Manipulation-Robust Prediction",
+      "journal_id": "j16",
+      "source_journal_id": "j16",
+      "journal_name": "AMERICAN ECONOMIC REVIEW",
+      "authors": "Daniel Björkegren, Joshua E. Blumenstock, Samsun Knight",
+      "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20241087",
+      "official_url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20241087",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "published_at": "",
+      "issue_date": "",
+      "first_seen_at": "2026-05-25",
+      "display_date": "2026-05-25",
+      "abstract": "An increasing number of decisions are guided by machine learning algorithms. But when consequential decisions are encoded in algorithms, individuals may strategically alter their behavior to achieve desired outcomes. This paper develops an empirical approach that adjusts decision algorithms to anticipate manipulation. By explicitly modeling incentives to manipulate, our approach produces decision rules that are stable under manipulation, even when the rules are fully transparent. We stress test this approach through a large field experiment in Kenya. When implemented, linear strategy-robust decision rules outperform standard linear models such as LASSO.",
+      "keywords": [],
+      "match_mode": "rule",
+      "match_field": "abstract",
+      "match_keyword": "Kenya",
+      "match_reason": "abstract 命中 “Kenya”",
+      "confidence": 1,
+      "disciplines": [
+        {
+          "id": "economics",
+          "label": "经济学",
+          "match_field": "journal",
+          "match_keyword": "AMERICAN ECONOMIC REVIEW",
+          "score": 3
+        },
+        {
+          "id": "management",
+          "label": "管理学",
+          "match_field": "abstract",
+          "match_keyword": "strategy",
+          "score": 1
+        }
+      ]
+    },
+    {
       "article_id": "2bbd5ce5f6f6cd14",
       "topic_id": "africa",
       "topic_label": "非洲",
@@ -238,7 +280,7 @@ window.TOPIC_SEARCH_INDEX = {
       "issue_date": "",
       "first_seen_at": "2026-05-25",
       "display_date": "2026-05-25",
-      "abstract": "",
+      "abstract": "Efficient risk-sharing implies a simple factor structure for marginal utilities of expenditure (MUEs): Pareto weights divided by a common price. The standard approach infers MUEs from total expenditures, implicitly assuming homothetic preferences, unitary income elasticities, and identical price elasticities. Risk-sharing tests using total expenditures work for idiosyncratic shocks (budgets change, but not prices), but not “covariate” shocks (prices change). We describe all preferences which permit one to infer MUEs from expenditures, and estimate nonhomothetic MUEs to test whether covariate shocks are shared efficiently in Uganda. This delivers sensible results; the standard approach suggests that droughts, floods, and pests are beneficial.",
       "keywords": [],
       "match_mode": "rule",
       "match_field": "title",

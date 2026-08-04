@@ -231,6 +231,20 @@ const steps = [
     timeoutMs: 3 * 60 * 1000,
   },
   {
+    name: "aer-web",
+    script: "scripts/backfill-aer-web-abstracts.mjs",
+    output: `data/recent-articles-daily-aer-web-${outputDate}.json`,
+    args: [
+      ...scopeArgs,
+      ...delayArgs,
+      `--output=data/recent-articles-daily-aer-web-${outputDate}.json`,
+      "--timeout-ms=20000",
+      "--delay-ms=800",
+      ...delayArgs,
+    ],
+    timeoutMs: 3 * 60 * 1000,
+  },
+  {
     name: "macrodatas",
     script: "scripts/backfill-macrodatas-abstracts.mjs",
     output: `data/recent-articles-daily-macrodatas-${outputDate}.json`,
