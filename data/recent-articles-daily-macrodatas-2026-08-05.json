@@ -1,0 +1,17 @@
+{
+  "summary": {
+    "checked_at": "2026-08-05T03:03:56.439Z",
+    "since": "2000-01-01",
+    "until": "2026-08-05",
+    "sources_total": 22,
+    "sources_ready": 21,
+    "push_queue_articles": 0,
+    "abstract_backfill": true,
+    "macrodatas_abstract_backfill": true,
+    "backfill_sources": [
+      "macrodatas-issue-page"
+    ]
+  },
+  "push_queue": [],
+  "results": []
+}

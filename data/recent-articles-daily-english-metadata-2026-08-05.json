@@ -1,0 +1,143 @@
+{
+  "summary": {
+    "checked_at": "2026-08-05T03:03:56.100Z",
+    "since": "2000-01-01",
+    "until": "2026-08-05",
+    "sources_total": 22,
+    "sources_ready": 21,
+    "push_queue_articles": 1,
+    "abstract_backfill": true,
+    "english_metadata_backfill": true,
+    "semantic_scholar": true,
+    "backfill_sources": [
+      "crossref-doi",
+      "openalex-doi",
+      "openalex-title",
+      "semantic-scholar-doi"
+    ]
+  },
+  "push_queue": [
+    {
+      "id": "bc704f4f51961345",
+      "journal_id": "j17",
+      "source_journal_id": "j17",
+      "journal_name": "JOURNAL OF POLITICAL ECONOMY",
+      "title": "Optimal Queue Design",
+      "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/741622",
+      "official_url": "https://www.journals.uchicago.edu/doi/abs/10.1086/741622",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Yeon-Koo CheOlivier TercieuxColumbia UniversityParis School of Economics and CNRS (Centre National de la Recherche Scientifique)",
+      "published_at": "2026-04-02",
+      "issue_date": "",
+      "first_seen_at": "2026-08-05",
+      "display_date": "2026-04-02",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "atypon-etoc",
+      "date_source": "metadata_published",
+      "abstract": "We study the optimal design of a queueing system when agents' arrival and servicing are governed by a general Markov process. The designer of the system chooses entry and exit rules for agents, their service priority---or queueing discipline---as well as their information, while ensuring that agents have incentives to follow the designer's recommendations not only to join the queue but more importantly to stay in the queue. Under a mild condition, the optimal mechanism has a cutoff structure---agents are induced to enter up to a certain queue length and no agents are to exit the queue once they enter the queue; the agents on the queue are served according to a first-come-first-served (FCFS) rule; and they are given no information throughout the process beyond the recommendations they receive from the designer. FCFS is also necessary for optimality in a rich domain. We identify a novel role for queueing disciplines in regulating agents' beliefs, and their dynamic incentives, thus uncovering a hitherto unrecognized virtue of FCFS in this regard."
+    }
+  ],
+  "results": [
+    {
+      "article": {
+        "id": "bc704f4f51961345",
+        "journal_id": "j17",
+        "source_journal_id": "j17",
+        "journal_name": "JOURNAL OF POLITICAL ECONOMY",
+        "title": "Optimal Queue Design",
+        "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/741622",
+        "official_url": "https://www.journals.uchicago.edu/doi/abs/10.1086/741622",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Yeon-Koo CheOlivier TercieuxColumbia UniversityParis School of Economics and CNRS (Centre National de la Recherche Scientifique)",
+        "published_at": "2026-04-02",
+        "issue_date": "",
+        "first_seen_at": "2026-08-05",
+        "display_date": "2026-04-02",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "atypon-etoc",
+        "date_source": "metadata_published",
+        "abstract": "We study the optimal design of a queueing system when agents' arrival and servicing are governed by a general Markov process. The designer of the system chooses entry and exit rules for agents, their service priority---or queueing discipline---as well as their information, while ensuring that agents have incentives to follow the designer's recommendations not only to join the queue but more importantly to stay in the queue. Under a mild condition, the optimal mechanism has a cutoff structure---agents are induced to enter up to a certain queue length and no agents are to exit the queue once they enter the queue; the agents on the queue are served according to a first-come-first-served (FCFS) rule; and they are given no information throughout the process beyond the recommendations they receive from the designer. FCFS is also necessary for optimality in a rich domain. We identify a novel role for queueing disciplines in regulating agents' beliefs, and their dynamic incentives, thus uncovering a hitherto unrecognized virtue of FCFS in this regard."
+      },
+      "addedAbstract": true,
+      "source": "openalex-title",
+      "matched_title": "Optimal Queue Design",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-doi",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-title",
+          "ok": true,
+          "hints": {
+            "abstract": "We study the optimal design of a queueing system when agents' arrival and servicing are governed by a general Markov process. The designer of the system chooses entry and exit rules for agents, their service priority---or queueing discipline---as well as their information, while ensuring that agents have incentives to follow the designer's recommendations not only to join the queue but more importantly to stay in the queue. Under a mild condition, the optimal mechanism has a cutoff structure---agents are induced to enter up to a certain queue length and no agents are to exit the queue once they enter the queue; the agents on the queue are served according to a first-come-first-served (FCFS) rule; and they are given no information throughout the process beyond the recommendations they receive from the designer. FCFS is also necessary for optimality in a rich domain. We identify a novel role for queueing disciplines in regulating agents' beliefs, and their dynamic incentives, thus uncovering a hitherto unrecognized virtue of FCFS in this regard."
+          },
+          "status": 200,
+          "matched_title": "Optimal Queue Design"
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "c1abe465b0eb4852",
+        "journal_id": "j17",
+        "source_journal_id": "j17",
+        "journal_name": "JOURNAL OF POLITICAL ECONOMY",
+        "title": "Do Mergers and Acquisitions Improve Efficiency? Evidence from Power Plants",
+        "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/740222",
+        "official_url": "https://www.journals.uchicago.edu/doi/abs/10.1086/740222",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Mert DemirerÖmer KaradumanMIT Sloan School of ManagementStanford Graduate School of Business",
+        "published_at": "2026-01-07",
+        "issue_date": "",
+        "first_seen_at": "2026-08-05",
+        "display_date": "2026-01-07",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "atypon-etoc",
+        "date_source": "metadata_published"
+      },
+      "addedAbstract": false,
+      "source": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-doi",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-title",
+          "ok": false,
+          "error": "status_400",
+          "status": 400
+        }
+      ]
+    }
+  ]
+}
