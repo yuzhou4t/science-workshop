@@ -1,8 +1,8 @@
 {
   "version": 1,
-  "checked_at": "2026-08-05T03:03:41.249Z",
-  "since": "2026-08-05",
-  "until": "2026-08-05",
+  "checked_at": "2026-08-06T03:03:43.909Z",
+  "since": "2026-08-06",
+  "until": "2026-08-06",
   "daily_initialized": true,
   "article_ids": [
     "4abaf132baef2e0d",
@@ -1030,7 +1030,10 @@
     "5ba4d59938f120c5",
     "94ca9932f2cff7d5",
     "a6ceb5c585101514",
-    "594c1774f7aca62d"
+    "594c1774f7aca62d",
+    "c890304504aa9a29",
+    "0b2ae5f2d22f06be",
+    "1187a5f062513ec7"
   ],
   "first_seen_by_id": {
     "4abaf132baef2e0d": "2026-06-03",
@@ -2058,7 +2061,10 @@
     "5ba4d59938f120c5": "2026-08-05",
     "94ca9932f2cff7d5": "2026-08-05",
     "a6ceb5c585101514": "2026-08-05",
-    "594c1774f7aca62d": "2026-08-05"
+    "594c1774f7aca62d": "2026-08-05",
+    "c890304504aa9a29": "2026-08-06",
+    "0b2ae5f2d22f06be": "2026-08-06",
+    "1187a5f062513ec7": "2026-08-06"
   },
   "sources": {
     "j13": {
@@ -2126,7 +2132,7 @@
       "undated_count": 0,
       "issue_dated_count": 0,
       "push_count": 0,
-      "last_success_at": "2026-08-05T03:03:41.249Z"
+      "last_success_at": "2026-08-06T03:03:43.909Z"
     },
     "j14": {
       "journal_name": "JOURNAL OF FINANCE",
@@ -2183,7 +2189,7 @@
       "undated_count": 0,
       "issue_dated_count": 0,
       "push_count": 0,
-      "last_success_at": "2026-08-05T03:03:41.249Z"
+      "last_success_at": "2026-08-06T03:03:43.909Z"
     },
     "j17": {
       "journal_name": "JOURNAL OF POLITICAL ECONOMY",
@@ -2212,19 +2218,13 @@
       ],
       "recent_article_ids": [],
       "undated_article_ids": [],
-      "push_article_ids": [
-        "d775e03f4ce57a1f",
-        "eb2b7b67876a7ed8",
-        "bc704f4f51961345",
-        "1f4b3763ab988976",
-        "c1abe465b0eb4852"
-      ],
+      "push_article_ids": [],
       "article_count": 18,
       "recent_count": 0,
       "undated_count": 0,
       "issue_dated_count": 0,
-      "push_count": 5,
-      "last_success_at": "2026-08-05T03:03:41.249Z"
+      "push_count": 0,
+      "last_success_at": "2026-08-06T03:03:43.909Z"
     },
     "j20": {
       "journal_name": "ECONOMETRICA",
@@ -2254,7 +2254,7 @@
       "undated_count": 0,
       "issue_dated_count": 0,
       "push_count": 0,
-      "last_success_at": "2026-08-05T03:03:41.249Z"
+      "last_success_at": "2026-08-06T03:03:43.909Z"
     },
     "j21": {
       "journal_name": "ACADEMY OF MANAGEMENT JOURNAL",
@@ -2321,7 +2321,7 @@
       "undated_count": 0,
       "issue_dated_count": 0,
       "push_count": 0,
-      "last_success_at": "2026-08-05T03:03:41.249Z"
+      "last_success_at": "2026-08-06T03:03:43.909Z"
     },
     "j2": {
       "journal_name": "经济研究",
@@ -2349,7 +2349,7 @@
       "undated_count": 0,
       "issue_dated_count": 11,
       "push_count": 0,
-      "last_success_at": "2026-08-05T03:03:41.249Z"
+      "last_success_at": "2026-08-06T03:03:43.909Z"
     },
     "j4": {
       "journal_name": "中国工业经济",
@@ -2380,8 +2380,8 @@
         "f193f5359448ab44",
         "03c42494e8ffe2b3",
         "b0f2ef1bf8f84188",
-        "cb1b078d6e0cadca",
         "b970a09a17fac703",
+        "cb1b078d6e0cadca",
         "f3f567f1f203c6cd",
         "14d4d93fe5ddecdc",
         "9f50dd2bc36ed285",
@@ -2416,7 +2416,7 @@
       "undated_count": 0,
       "issue_dated_count": 50,
       "push_count": 0,
-      "last_success_at": "2026-08-05T03:03:41.249Z"
+      "last_success_at": "2026-08-06T03:03:43.909Z"
     },
     "j12": {
       "journal_name": "中国农村经济",
@@ -2442,7 +2442,7 @@
       "undated_count": 0,
       "issue_dated_count": 9,
       "push_count": 0,
-      "last_success_at": "2026-08-05T03:03:41.249Z"
+      "last_success_at": "2026-08-06T03:03:43.909Z"
     },
     "j3": {
       "journal_name": "世界经济",
@@ -2466,7 +2466,7 @@
       "undated_count": 0,
       "issue_dated_count": 0,
       "push_count": 0,
-      "last_success_at": "2026-08-05T03:03:41.249Z"
+      "last_success_at": "2026-08-06T03:03:43.909Z"
     },
     "j5": {
       "journal_name": "金融研究",
@@ -2491,8 +2491,8 @@
         "0ea38930552fd996",
         "23c662c8956a0988",
         "ff3753008ff27aa2",
-        "9065aabf2135a0e4",
         "7c13b77efa2d03f5",
+        "9065aabf2135a0e4",
         "ba0a91b6a5cf1c33",
         "ae86cd97519386d3",
         "70ba32c63e18b726",
@@ -2505,17 +2505,19 @@
         "8242ed91f440fed3",
         "eb4be0d91cb3ffd3",
         "3af1eba4131adc55",
-        "0711c0ae689d004c"
+        "c890304504aa9a29"
       ],
       "recent_article_ids": [],
       "undated_article_ids": [],
-      "push_article_ids": [],
+      "push_article_ids": [
+        "c890304504aa9a29"
+      ],
       "article_count": 32,
       "recent_count": 0,
       "undated_count": 0,
       "issue_dated_count": 3,
-      "push_count": 0,
-      "last_success_at": "2026-08-05T03:03:41.249Z"
+      "push_count": 1,
+      "last_success_at": "2026-08-06T03:03:43.909Z"
     },
     "j6": {
       "journal_name": "管理世界",
@@ -2544,36 +2546,7 @@
       "undated_count": 0,
       "issue_dated_count": 0,
       "push_count": 0,
-      "last_success_at": "2026-08-05T03:03:41.249Z"
-    },
-    "j8": {
-      "journal_name": "公共管理学报",
-      "source_url": "https://gggl.cbpt.cnki.net/portal",
-      "probe_url": "https://gggl.cbpt.cnki.net/portal",
-      "extraction_rule": "cnki-portal-paper",
-      "article_ids": [
-        "e013c09e524603ab",
-        "d94463e65403d109",
-        "d3a6db259c2c1de3",
-        "766882f86783ce69",
-        "3c5b9f096f2ba26e",
-        "d7a92d514cebb2db",
-        "f7ba64b12cb98a4a",
-        "0f44b41d378b6af2",
-        "17517748760ad851",
-        "5e25aabdf6795a74"
-      ],
-      "recent_article_ids": [],
-      "undated_article_ids": [],
-      "push_article_ids": [
-        "d7a92d514cebb2db"
-      ],
-      "article_count": 10,
-      "recent_count": 0,
-      "undated_count": 0,
-      "issue_dated_count": 5,
-      "push_count": 1,
-      "last_success_at": "2026-08-05T03:03:41.249Z"
+      "last_success_at": "2026-08-06T03:03:43.909Z"
     },
     "j7": {
       "journal_name": "南开管理评论",
@@ -2607,7 +2580,7 @@
       "undated_count": 0,
       "issue_dated_count": 0,
       "push_count": 0,
-      "last_success_at": "2026-08-05T03:03:41.249Z"
+      "last_success_at": "2026-08-06T03:03:43.909Z"
     },
     "j9": {
       "journal_name": "管理科学学报",
@@ -2636,7 +2609,7 @@
       "undated_count": 0,
       "issue_dated_count": 0,
       "push_count": 0,
-      "last_success_at": "2026-08-05T03:03:41.249Z"
+      "last_success_at": "2026-08-06T03:03:43.909Z"
     },
     "j10": {
       "journal_name": "中国行政管理",
@@ -2665,31 +2638,13 @@
       ],
       "recent_article_ids": [],
       "undated_article_ids": [],
-      "push_article_ids": [
-        "478447ccb0f2f91e",
-        "93b8f560991e945a",
-        "3cf2963ab881f3d7",
-        "47af026d415629c9",
-        "3c55a81b30cef41b",
-        "122563ef8631399c",
-        "70b4f786b0aa332f",
-        "5d93cfd3da95724b",
-        "04d5f42ec5533805",
-        "43659ca4fdd9c5d4",
-        "e151a2c7f777e610",
-        "cced7dbf4a2300e0",
-        "ff3092c34d3b9374",
-        "5ba4d59938f120c5",
-        "94ca9932f2cff7d5",
-        "a6ceb5c585101514",
-        "594c1774f7aca62d"
-      ],
+      "push_article_ids": [],
       "article_count": 18,
       "recent_count": 0,
       "undated_count": 0,
       "issue_dated_count": 18,
-      "push_count": 17,
-      "last_success_at": "2026-08-05T03:03:41.249Z"
+      "push_count": 0,
+      "last_success_at": "2026-08-06T03:03:43.909Z"
     },
     "j11": {
       "journal_name": "会计研究",
@@ -2719,7 +2674,7 @@
       "undated_count": 0,
       "issue_dated_count": 13,
       "push_count": 0,
-      "last_success_at": "2026-08-05T03:03:41.249Z"
+      "last_success_at": "2026-08-06T03:03:43.909Z"
     },
     "j15": {
       "journal_name": "ACCOUNTING REVIEW",
@@ -2748,7 +2703,7 @@
       "undated_count": 0,
       "issue_dated_count": 0,
       "push_count": 0,
-      "last_success_at": "2026-08-05T03:03:41.249Z"
+      "last_success_at": "2026-08-06T03:03:43.909Z"
     },
     "j16": {
       "journal_name": "AMERICAN ECONOMIC REVIEW",
@@ -2756,6 +2711,7 @@
       "probe_url": "https://www.aeaweb.org/journals/aer/forthcoming",
       "extraction_rule": "aea-forthcoming-html",
       "article_ids": [
+        "0b2ae5f2d22f06be",
         "78cc623e0cd3a15c",
         "a5b49878ebd2590a",
         "0adbc0ef98d48ea9",
@@ -2790,6 +2746,7 @@
       ],
       "recent_article_ids": [],
       "undated_article_ids": [
+        "0b2ae5f2d22f06be",
         "78cc623e0cd3a15c",
         "a5b49878ebd2590a",
         "0adbc0ef98d48ea9",
@@ -2822,13 +2779,15 @@
         "5932a29df1df5a20",
         "2373a9cf020f1e5a"
       ],
-      "push_article_ids": [],
-      "article_count": 31,
+      "push_article_ids": [
+        "0b2ae5f2d22f06be"
+      ],
+      "article_count": 32,
       "recent_count": 0,
-      "undated_count": 31,
+      "undated_count": 32,
       "issue_dated_count": 0,
-      "push_count": 0,
-      "last_success_at": "2026-08-05T03:03:41.249Z"
+      "push_count": 1,
+      "last_success_at": "2026-08-06T03:03:43.909Z"
     },
     "j18": {
       "journal_name": "QUARTERLY JOURNAL OF ECONOMICS",
@@ -2857,7 +2816,7 @@
       "undated_count": 0,
       "issue_dated_count": 0,
       "push_count": 0,
-      "last_success_at": "2026-08-05T03:03:41.249Z"
+      "last_success_at": "2026-08-06T03:03:43.909Z"
     },
     "j19": {
       "journal_name": "REVIEW OF ECONOMIC STUDIES",
@@ -2865,6 +2824,7 @@
       "probe_url": "https://api.crossref.org/journals/0034-6527/works?filter=type:journal-article&sort=published&order=desc&rows=12",
       "extraction_rule": "open-metadata-works",
       "article_ids": [
+        "1187a5f062513ec7",
         "a32894d0ff0b6c82",
         "3a35ba1a06abd21f",
         "584a8c3ea7fc786c",
@@ -2875,18 +2835,19 @@
         "b4c131813a7ba43f",
         "005f954580e2e7e3",
         "14474fb5b5b0185c",
-        "deec9c2fa9205162",
-        "b0eb3f36ff75fc86"
+        "deec9c2fa9205162"
       ],
       "recent_article_ids": [],
       "undated_article_ids": [],
-      "push_article_ids": [],
+      "push_article_ids": [
+        "1187a5f062513ec7"
+      ],
       "article_count": 12,
       "recent_count": 0,
       "undated_count": 0,
       "issue_dated_count": 0,
-      "push_count": 0,
-      "last_success_at": "2026-08-05T03:03:41.249Z"
+      "push_count": 1,
+      "last_success_at": "2026-08-06T03:03:43.909Z"
     },
     "j1": {
       "journal_name": "JOURNAL OF FINANCE",
@@ -2914,7 +2875,7 @@
       "undated_count": 0,
       "issue_dated_count": 0,
       "push_count": 0,
-      "last_success_at": "2026-08-05T03:03:41.249Z"
+      "last_success_at": "2026-08-06T03:03:43.909Z"
     },
     "j22": {
       "journal_name": "ADMINISTRATIVE SCIENCE QUARTERLY",
@@ -2945,7 +2906,37 @@
       "issue_dated_count": 0,
       "push_count": 0,
       "last_success_at": "2026-07-06T03:13:20.668Z",
-      "last_failed_at": "2026-08-05T03:03:41.249Z"
+      "last_failed_at": "2026-08-06T03:03:43.909Z"
+    },
+    "j8": {
+      "journal_name": "公共管理学报",
+      "source_url": "https://gggl.cbpt.cnki.net/portal",
+      "probe_url": "https://gggl.cbpt.cnki.net/portal",
+      "extraction_rule": "cnki-portal-paper",
+      "article_ids": [
+        "e013c09e524603ab",
+        "d94463e65403d109",
+        "d3a6db259c2c1de3",
+        "766882f86783ce69",
+        "3c5b9f096f2ba26e",
+        "d7a92d514cebb2db",
+        "f7ba64b12cb98a4a",
+        "0f44b41d378b6af2",
+        "17517748760ad851",
+        "5e25aabdf6795a74"
+      ],
+      "recent_article_ids": [],
+      "undated_article_ids": [],
+      "push_article_ids": [
+        "d7a92d514cebb2db"
+      ],
+      "article_count": 10,
+      "recent_count": 0,
+      "undated_count": 0,
+      "issue_dated_count": 5,
+      "push_count": 1,
+      "last_success_at": "2026-08-05T03:03:41.249Z",
+      "last_failed_at": "2026-08-06T03:03:43.909Z"
     }
   }
 }

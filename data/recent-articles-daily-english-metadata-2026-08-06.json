@@ -1,0 +1,158 @@
+{
+  "summary": {
+    "checked_at": "2026-08-06T03:04:00.013Z",
+    "since": "2000-01-01",
+    "until": "2026-08-06",
+    "sources_total": 22,
+    "sources_ready": 20,
+    "push_queue_articles": 2,
+    "abstract_backfill": true,
+    "english_metadata_backfill": true,
+    "semantic_scholar": true,
+    "backfill_sources": [
+      "crossref-doi",
+      "openalex-doi",
+      "openalex-title",
+      "semantic-scholar-doi"
+    ]
+  },
+  "push_queue": [
+    {
+      "id": "0b2ae5f2d22f06be",
+      "journal_id": "j16",
+      "source_journal_id": "j16",
+      "journal_name": "AMERICAN ECONOMIC REVIEW",
+      "title": "Difference-in-Differences with a Continuous Treatment",
+      "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20240137",
+      "official_url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20240137",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Brantly Callaway, Andrew Goodman-Bacon, Pedro H. C. Sant'Anna",
+      "published_at": "",
+      "issue_date": "",
+      "first_seen_at": "2026-08-06",
+      "display_date": "2026-08-06",
+      "display_date_basis": "first_seen_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "aea-forthcoming-html",
+      "date_source": "forthcoming_unassigned",
+      "abstract": "This paper analyzes difference-in-differences designs with a continuous treatment. We show that treatment-on-the-treated-type parameters are identified under a parallel trends assumption analogous to the binary treatment case. However, comparing these parameters across treatments is challenging because parallel trends does not rule out selection bias. We discuss alternative, typically stronger, assumptions that eliminate selection bias. We further show that popular two-way fixed effects estimands admit multiple interpretations, depending on the underlying causal building block, all having important limitations as meaningful summaries of treatment effects. Finally, we introduce alternative estimation procedures that avoid these drawbacks and demonstrate them in an empirical application."
+    },
+    {
+      "id": "1187a5f062513ec7",
+      "journal_id": "j19",
+      "source_journal_id": "j19",
+      "journal_name": "REVIEW OF ECONOMIC STUDIES",
+      "title": "Optimal Age-based Policies for Pandemics: An Economic Analysis of Covid-19 and Beyond",
+      "url": "https://doi.org/10.1093/restud/rdag084",
+      "official_url": "https://doi.org/10.1093/restud/rdag084",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Luiz Brotherhood, Philipp Kircher, Cezar Santos, Michèle Tertilt",
+      "published_at": "2026-08-05",
+      "issue_date": "",
+      "first_seen_at": "2026-08-06",
+      "display_date": "2026-08-05",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "open-metadata-works",
+      "date_source": "",
+      "abstract": "This paper investigates the importance of the age composition for pandemic policy design. To do so, it introduces an economic framework with age heterogeneity, individual choice, and incomplete information, emphasizing the value of testing. Calibrating the model to the US Covid-19 pandemic reveals an 80% reduction in the death toll due to voluntary actions and the lockdown implemented in the US. The optimal lockdown, however, is more stringent than what was implemented. Moreover, the social planner follows an asymmetric approach by locking down the young relatively more than the old. We highlight the role of testing in reducing deaths, lowering economic costs, and allowing for a less restrictive lockdown. A social planner would choose a faster ramp-up in testing capacity relative to what occurred in the US. We use the framework to provide insights into pandemics caused by different viruses (including the Spanish flu), and underline the influence of economic conditions on optimal policies."
+    }
+  ],
+  "results": [
+    {
+      "article": {
+        "id": "0b2ae5f2d22f06be",
+        "journal_id": "j16",
+        "source_journal_id": "j16",
+        "journal_name": "AMERICAN ECONOMIC REVIEW",
+        "title": "Difference-in-Differences with a Continuous Treatment",
+        "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20240137",
+        "official_url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20240137",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Brantly Callaway, Andrew Goodman-Bacon, Pedro H. C. Sant'Anna",
+        "published_at": "",
+        "issue_date": "",
+        "first_seen_at": "2026-08-06",
+        "display_date": "2026-08-06",
+        "display_date_basis": "first_seen_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "aea-forthcoming-html",
+        "date_source": "forthcoming_unassigned",
+        "abstract": "This paper analyzes difference-in-differences designs with a continuous treatment. We show that treatment-on-the-treated-type parameters are identified under a parallel trends assumption analogous to the binary treatment case. However, comparing these parameters across treatments is challenging because parallel trends does not rule out selection bias. We discuss alternative, typically stronger, assumptions that eliminate selection bias. We further show that popular two-way fixed effects estimands admit multiple interpretations, depending on the underlying causal building block, all having important limitations as meaningful summaries of treatment effects. Finally, we introduce alternative estimation procedures that avoid these drawbacks and demonstrate them in an empirical application."
+      },
+      "addedAbstract": true,
+      "source": "openalex-title",
+      "matched_title": "Difference-in-Differences with a Continuous Treatment",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": false,
+          "error": "status_404",
+          "status": 404
+        },
+        {
+          "source": "openalex-doi",
+          "ok": false,
+          "error": "status_404",
+          "status": 404
+        },
+        {
+          "source": "openalex-title",
+          "ok": true,
+          "hints": {
+            "abstract": "This paper analyzes difference-in-differences designs with a continuous treatment. We show that treatment-on-the-treated-type parameters are identified under a parallel trends assumption analogous to the binary treatment case. However, comparing these parameters across treatments is challenging because parallel trends does not rule out selection bias. We discuss alternative, typically stronger, assumptions that eliminate selection bias. We further show that popular two-way fixed effects estimands admit multiple interpretations, depending on the underlying causal building block, all having important limitations as meaningful summaries of treatment effects. Finally, we introduce alternative estimation procedures that avoid these drawbacks and demonstrate them in an empirical application."
+          },
+          "status": 200,
+          "matched_title": "Difference-in-Differences with a Continuous Treatment"
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "1187a5f062513ec7",
+        "journal_id": "j19",
+        "source_journal_id": "j19",
+        "journal_name": "REVIEW OF ECONOMIC STUDIES",
+        "title": "Optimal Age-based Policies for Pandemics: An Economic Analysis of Covid-19 and Beyond",
+        "url": "https://doi.org/10.1093/restud/rdag084",
+        "official_url": "https://doi.org/10.1093/restud/rdag084",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Luiz Brotherhood, Philipp Kircher, Cezar Santos, Michèle Tertilt",
+        "published_at": "2026-08-05",
+        "issue_date": "",
+        "first_seen_at": "2026-08-06",
+        "display_date": "2026-08-05",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "open-metadata-works",
+        "date_source": "",
+        "abstract": "This paper investigates the importance of the age composition for pandemic policy design. To do so, it introduces an economic framework with age heterogeneity, individual choice, and incomplete information, emphasizing the value of testing. Calibrating the model to the US Covid-19 pandemic reveals an 80% reduction in the death toll due to voluntary actions and the lockdown implemented in the US. The optimal lockdown, however, is more stringent than what was implemented. Moreover, the social planner follows an asymmetric approach by locking down the young relatively more than the old. We highlight the role of testing in reducing deaths, lowering economic costs, and allowing for a less restrictive lockdown. A social planner would choose a faster ramp-up in testing capacity relative to what occurred in the US. We use the framework to provide insights into pandemics caused by different viruses (including the Spanish flu), and underline the influence of economic conditions on optimal policies."
+      },
+      "addedAbstract": true,
+      "source": "crossref",
+      "matched_title": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": true,
+          "hints": {
+            "abstract": "This paper investigates the importance of the age composition for pandemic policy design. To do so, it introduces an economic framework with age heterogeneity, individual choice, and incomplete information, emphasizing the value of testing. Calibrating the model to the US Covid-19 pandemic reveals an 80% reduction in the death toll due to voluntary actions and the lockdown implemented in the US. The optimal lockdown, however, is more stringent than what was implemented. Moreover, the social planner follows an asymmetric approach by locking down the young relatively more than the old. We highlight the role of testing in reducing deaths, lowering economic costs, and allowing for a less restrictive lockdown. A social planner would choose a faster ramp-up in testing capacity relative to what occurred in the US. We use the framework to provide insights into pandemics caused by different viruses (including the Spanish flu), and underline the influence of economic conditions on optimal policies."
+          },
+          "status": 200
+        }
+      ]
+    }
+  ]
+}
