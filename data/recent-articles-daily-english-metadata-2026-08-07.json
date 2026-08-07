@@ -1,0 +1,206 @@
+{
+  "summary": {
+    "checked_at": "2026-08-07T03:03:57.242Z",
+    "since": "2000-01-01",
+    "until": "2026-08-07",
+    "sources_total": 22,
+    "sources_ready": 21,
+    "push_queue_articles": 3,
+    "abstract_backfill": true,
+    "english_metadata_backfill": true,
+    "semantic_scholar": true,
+    "backfill_sources": [
+      "crossref-doi",
+      "openalex-doi",
+      "openalex-title",
+      "semantic-scholar-doi"
+    ]
+  },
+  "push_queue": [
+    {
+      "id": "2b511fc6aeeb0bce",
+      "journal_id": "j19",
+      "source_journal_id": "j19",
+      "journal_name": "REVIEW OF ECONOMIC STUDIES",
+      "title": "Foreign Exchange Intervention with UIP and CIP Deviations",
+      "url": "https://doi.org/10.1093/restud/rdag085",
+      "official_url": "https://doi.org/10.1093/restud/rdag085",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Philippe Bacchetta, Kenza Benhima, Brendan Berthold",
+      "published_at": "2026-08-06",
+      "issue_date": "",
+      "first_seen_at": "2026-08-07",
+      "display_date": "2026-08-06",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "open-metadata-works",
+      "date_source": "",
+      "abstract": "We examine the welfare-based opportunity cost of foreign exchange (FX) intervention when both CIP and UIP deviations are present. We consider a small open economy that receives international capital flows through constrained international financial intermediaries. Deviations from CIP come from limited arbitrage or through a convenience yield, while UIP deviations are also affected by global risk. We show that the sign of CIP and UIP deviations may differ for safe haven countries. We find that FX reserves may provide a net benefit, rather than a cost, when international intermediaries value the safe-haven properties of a currency more than domestic households. We show that this has been the case for the Swiss franc and the Japanese Yen. We examine the optimal policy of a constrained central bank planner in this context."
+    },
+    {
+      "id": "6b8d668cd3da19b4",
+      "journal_id": "j15",
+      "source_journal_id": "j15",
+      "journal_name": "ACCOUNTING REVIEW",
+      "title": "Managerial Accountants and Investment Efficiency",
+      "url": "https://doi.org/10.2308/tar-2023-0699",
+      "official_url": "https://doi.org/10.2308/tar-2023-0699",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Michael Iselin, Jacob Ott, Youli Zou",
+      "published_at": "2026-08-06",
+      "issue_date": "",
+      "first_seen_at": "2026-08-07",
+      "display_date": "2026-08-06",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "open-metadata-works",
+      "date_source": "",
+      "abstract": "This study explores the relation between a firm’s employment of managerial accountants and the efficiency of its investment decisions. To investigate this, we track the yearly employment levels of managerial accountants within firms and find a positive association with investment efficiency. This positive association persists after controlling for financial accountants and multiple measures of financial reporting quality, suggesting the effect operates through improved internal information. Cross-sectional tests show that the relation is concentrated in firms with greater internal information asymmetry and more complex overhead cost allocation. A staggered difference-in-differences (DiD) design exploiting state implementation of the 150 credit hour CPA rule further alleviates endogeneity concerns. Our study contributes to the investment efficiency literature and highlights an important benefit of employing managerial accountants. The findings are particularly relevant, given the recent shortage of accounting professionals. Data Availability: Data are available from public sources and third-party data providers. JEL Classifications: M41; M51; J21; G31."
+    },
+    {
+      "id": "ef2948c818b882f5",
+      "journal_id": "j19",
+      "source_journal_id": "j19",
+      "journal_name": "REVIEW OF ECONOMIC STUDIES",
+      "title": "Marriage, Assortative Mating and Wealth Inequality",
+      "url": "https://doi.org/10.1093/restud/rdag087",
+      "official_url": "https://doi.org/10.1093/restud/rdag087",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Andreas Fagereng, Luigi Guiso, Luigi Pistaferri",
+      "published_at": "2026-08-06",
+      "issue_date": "",
+      "first_seen_at": "2026-08-07",
+      "display_date": "2026-08-06",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "open-metadata-works",
+      "date_source": "",
+      "abstract": "We use population data on capital income and wealth holdings for Norway to measure asset positions and wealth returns before individuals marry and after the household is formed. These data allow us to establish a number of novel facts. First, individuals sort on personal wealth rather than parental wealth. Second, people match also on their personal returns to wealth and assortative mating on returns is as strong as that on wealth. Third, post-marriage returns on family wealth reflect in equal part the pre-marriage returns of the two spouses. However, for households at the top of the wealth distribution at marriage, family wealth is largely managed by the spouse with the highest potential to grow it, providing a microfoundation for the scale dependence in wealth returns documented in several empirical papers. Fourth, marriage lowers the degree of wealth inequality as well as the heterogeneity in returns relative to the counterfactual case of no marriages. We use a simple framework to illustrate how the inequality-attenuating role of marriage is affected by assortative mating on wealth and returns and by wealth management task allocation between spouses."
+    }
+  ],
+  "results": [
+    {
+      "article": {
+        "id": "2b511fc6aeeb0bce",
+        "journal_id": "j19",
+        "source_journal_id": "j19",
+        "journal_name": "REVIEW OF ECONOMIC STUDIES",
+        "title": "Foreign Exchange Intervention with UIP and CIP Deviations",
+        "url": "https://doi.org/10.1093/restud/rdag085",
+        "official_url": "https://doi.org/10.1093/restud/rdag085",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Philippe Bacchetta, Kenza Benhima, Brendan Berthold",
+        "published_at": "2026-08-06",
+        "issue_date": "",
+        "first_seen_at": "2026-08-07",
+        "display_date": "2026-08-06",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "open-metadata-works",
+        "date_source": "",
+        "abstract": "We examine the welfare-based opportunity cost of foreign exchange (FX) intervention when both CIP and UIP deviations are present. We consider a small open economy that receives international capital flows through constrained international financial intermediaries. Deviations from CIP come from limited arbitrage or through a convenience yield, while UIP deviations are also affected by global risk. We show that the sign of CIP and UIP deviations may differ for safe haven countries. We find that FX reserves may provide a net benefit, rather than a cost, when international intermediaries value the safe-haven properties of a currency more than domestic households. We show that this has been the case for the Swiss franc and the Japanese Yen. We examine the optimal policy of a constrained central bank planner in this context."
+      },
+      "addedAbstract": true,
+      "source": "crossref",
+      "matched_title": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": true,
+          "hints": {
+            "abstract": "We examine the welfare-based opportunity cost of foreign exchange (FX) intervention when both CIP and UIP deviations are present. We consider a small open economy that receives international capital flows through constrained international financial intermediaries. Deviations from CIP come from limited arbitrage or through a convenience yield, while UIP deviations are also affected by global risk. We show that the sign of CIP and UIP deviations may differ for safe haven countries. We find that FX reserves may provide a net benefit, rather than a cost, when international intermediaries value the safe-haven properties of a currency more than domestic households. We show that this has been the case for the Swiss franc and the Japanese Yen. We examine the optimal policy of a constrained central bank planner in this context."
+          },
+          "status": 200
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "6b8d668cd3da19b4",
+        "journal_id": "j15",
+        "source_journal_id": "j15",
+        "journal_name": "ACCOUNTING REVIEW",
+        "title": "Managerial Accountants and Investment Efficiency",
+        "url": "https://doi.org/10.2308/tar-2023-0699",
+        "official_url": "https://doi.org/10.2308/tar-2023-0699",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Michael Iselin, Jacob Ott, Youli Zou",
+        "published_at": "2026-08-06",
+        "issue_date": "",
+        "first_seen_at": "2026-08-07",
+        "display_date": "2026-08-06",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "open-metadata-works",
+        "date_source": "",
+        "abstract": "This study explores the relation between a firm’s employment of managerial accountants and the efficiency of its investment decisions. To investigate this, we track the yearly employment levels of managerial accountants within firms and find a positive association with investment efficiency. This positive association persists after controlling for financial accountants and multiple measures of financial reporting quality, suggesting the effect operates through improved internal information. Cross-sectional tests show that the relation is concentrated in firms with greater internal information asymmetry and more complex overhead cost allocation. A staggered difference-in-differences (DiD) design exploiting state implementation of the 150 credit hour CPA rule further alleviates endogeneity concerns. Our study contributes to the investment efficiency literature and highlights an important benefit of employing managerial accountants. The findings are particularly relevant, given the recent shortage of accounting professionals. Data Availability: Data are available from public sources and third-party data providers. JEL Classifications: M41; M51; J21; G31."
+      },
+      "addedAbstract": true,
+      "source": "crossref",
+      "matched_title": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": true,
+          "hints": {
+            "abstract": "This study explores the relation between a firm’s employment of managerial accountants and the efficiency of its investment decisions. To investigate this, we track the yearly employment levels of managerial accountants within firms and find a positive association with investment efficiency. This positive association persists after controlling for financial accountants and multiple measures of financial reporting quality, suggesting the effect operates through improved internal information. Cross-sectional tests show that the relation is concentrated in firms with greater internal information asymmetry and more complex overhead cost allocation. A staggered difference-in-differences (DiD) design exploiting state implementation of the 150 credit hour CPA rule further alleviates endogeneity concerns. Our study contributes to the investment efficiency literature and highlights an important benefit of employing managerial accountants. The findings are particularly relevant, given the recent shortage of accounting professionals. Data Availability: Data are available from public sources and third-party data providers. JEL Classifications: M41; M51; J21; G31."
+          },
+          "status": 200
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "ef2948c818b882f5",
+        "journal_id": "j19",
+        "source_journal_id": "j19",
+        "journal_name": "REVIEW OF ECONOMIC STUDIES",
+        "title": "Marriage, Assortative Mating and Wealth Inequality",
+        "url": "https://doi.org/10.1093/restud/rdag087",
+        "official_url": "https://doi.org/10.1093/restud/rdag087",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Andreas Fagereng, Luigi Guiso, Luigi Pistaferri",
+        "published_at": "2026-08-06",
+        "issue_date": "",
+        "first_seen_at": "2026-08-07",
+        "display_date": "2026-08-06",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "open-metadata-works",
+        "date_source": "",
+        "abstract": "We use population data on capital income and wealth holdings for Norway to measure asset positions and wealth returns before individuals marry and after the household is formed. These data allow us to establish a number of novel facts. First, individuals sort on personal wealth rather than parental wealth. Second, people match also on their personal returns to wealth and assortative mating on returns is as strong as that on wealth. Third, post-marriage returns on family wealth reflect in equal part the pre-marriage returns of the two spouses. However, for households at the top of the wealth distribution at marriage, family wealth is largely managed by the spouse with the highest potential to grow it, providing a microfoundation for the scale dependence in wealth returns documented in several empirical papers. Fourth, marriage lowers the degree of wealth inequality as well as the heterogeneity in returns relative to the counterfactual case of no marriages. We use a simple framework to illustrate how the inequality-attenuating role of marriage is affected by assortative mating on wealth and returns and by wealth management task allocation between spouses."
+      },
+      "addedAbstract": true,
+      "source": "crossref",
+      "matched_title": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": true,
+          "hints": {
+            "abstract": "We use population data on capital income and wealth holdings for Norway to measure asset positions and wealth returns before individuals marry and after the household is formed. These data allow us to establish a number of novel facts. First, individuals sort on personal wealth rather than parental wealth. Second, people match also on their personal returns to wealth and assortative mating on returns is as strong as that on wealth. Third, post-marriage returns on family wealth reflect in equal part the pre-marriage returns of the two spouses. However, for households at the top of the wealth distribution at marriage, family wealth is largely managed by the spouse with the highest potential to grow it, providing a microfoundation for the scale dependence in wealth returns documented in several empirical papers. Fourth, marriage lowers the degree of wealth inequality as well as the heterogeneity in returns relative to the counterfactual case of no marriages. We use a simple framework to illustrate how the inequality-attenuating role of marriage is affected by assortative mating on wealth and returns and by wealth management task allocation between spouses."
+          },
+          "status": 200
+        }
+      ]
+    }
+  ]
+}
