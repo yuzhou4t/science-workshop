@@ -1,0 +1,298 @@
+{
+  "summary": {
+    "checked_at": "2026-08-08T03:03:47.848Z",
+    "since": "2000-01-01",
+    "until": "2026-08-08",
+    "sources_total": 22,
+    "sources_ready": 21,
+    "push_queue_articles": 0,
+    "abstract_backfill": true,
+    "ncpssd_issue_backfill": true,
+    "backfill_sources": [
+      "ncpssd-mobile-issue",
+      "ncpssd-article-api"
+    ]
+  },
+  "push_queue": [],
+  "results": [
+    {
+      "article": {
+        "id": "afd48c9fe7f425a8",
+        "journal_id": "j4",
+        "source_journal_id": "j4",
+        "journal_name": "中国工业经济",
+        "title": "城市商业银行合并与地方政府债务结构调整——基于财政金融协同的视角",
+        "url": "https://ciejournal.ajcass.com/Magazine/Show?id=123360",
+        "official_url": "https://ciejournal.ajcass.com/Magazine/Show?id=123360",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "刘岩, 丁堃, 张雪菲",
+        "published_at": "",
+        "issue_date": "2026-07",
+        "first_seen_at": "2026-08-08",
+        "display_date": "2026-07",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "cie-legacy-html",
+        "date_source": "context_issue"
+      },
+      "addedAbstract": false,
+      "response": {
+        "status": 200,
+        "error": "title_not_found",
+        "issue_url": "https://www.ncpssd.cn/journal/details?gch=93800A&langType=1&nav=1&years=2026&num=7",
+        "candidates": 0
+      }
+    },
+    {
+      "article": {
+        "id": "84d9e408ea4a716c",
+        "journal_id": "j4",
+        "source_journal_id": "j4",
+        "journal_name": "中国工业经济",
+        "title": "地区产业创新赛道选择的“收益—风险”权衡——来自能力支撑与能力边界拓展的证据",
+        "url": "https://ciejournal.ajcass.com/Magazine/Show?id=123364",
+        "official_url": "https://ciejournal.ajcass.com/Magazine/Show?id=123364",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "孔令丞, 王悦",
+        "published_at": "",
+        "issue_date": "2026-07",
+        "first_seen_at": "2026-08-08",
+        "display_date": "2026-07",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "cie-legacy-html",
+        "date_source": "context_issue"
+      },
+      "addedAbstract": false,
+      "response": {
+        "status": 200,
+        "error": "title_not_found",
+        "issue_url": "https://www.ncpssd.cn/journal/details?gch=93800A&langType=1&nav=1&years=2026&num=7",
+        "candidates": 0
+      }
+    },
+    {
+      "article": {
+        "id": "2b4226bf13ffa774",
+        "journal_id": "j4",
+        "source_journal_id": "j4",
+        "journal_name": "中国工业经济",
+        "title": "技术封锁下的供应链重构与中国创新路径分化",
+        "url": "https://ciejournal.ajcass.com/Magazine/Show?id=123362",
+        "official_url": "https://ciejournal.ajcass.com/Magazine/Show?id=123362",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "韩超, 岳巧钰, 肖峥",
+        "published_at": "",
+        "issue_date": "2026-07",
+        "first_seen_at": "2026-08-08",
+        "display_date": "2026-07",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "cie-legacy-html",
+        "date_source": "context_issue"
+      },
+      "addedAbstract": false,
+      "response": {
+        "status": 200,
+        "error": "title_not_found",
+        "issue_url": "https://www.ncpssd.cn/journal/details?gch=93800A&langType=1&nav=1&years=2026&num=7",
+        "candidates": 0
+      }
+    },
+    {
+      "article": {
+        "id": "868fc5e76216dbdd",
+        "journal_id": "j4",
+        "source_journal_id": "j4",
+        "journal_name": "中国工业经济",
+        "title": "科技规划驱动企业自主创新能力提升的路径与效应",
+        "url": "https://ciejournal.ajcass.com/Magazine/Show?id=123363",
+        "official_url": "https://ciejournal.ajcass.com/Magazine/Show?id=123363",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "郑世林, 卢欣一, 郭锡栋",
+        "published_at": "",
+        "issue_date": "2026-07",
+        "first_seen_at": "2026-08-08",
+        "display_date": "2026-07",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "cie-legacy-html",
+        "date_source": "context_issue"
+      },
+      "addedAbstract": false,
+      "response": {
+        "status": 200,
+        "error": "title_not_found",
+        "issue_url": "https://www.ncpssd.cn/journal/details?gch=93800A&langType=1&nav=1&years=2026&num=7",
+        "candidates": 0
+      }
+    },
+    {
+      "article": {
+        "id": "d9b78ad26024d99e",
+        "journal_id": "j4",
+        "source_journal_id": "j4",
+        "journal_name": "中国工业经济",
+        "title": "全国统一大市场建设的低碳效应——基于省际边界效应的视角",
+        "url": "https://ciejournal.ajcass.com/Magazine/Show?id=123361",
+        "official_url": "https://ciejournal.ajcass.com/Magazine/Show?id=123361",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "李江龙, 孙士强, 杨竞男",
+        "published_at": "",
+        "issue_date": "2026-07",
+        "first_seen_at": "2026-08-08",
+        "display_date": "2026-07",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "cie-legacy-html",
+        "date_source": "context_issue"
+      },
+      "addedAbstract": false,
+      "response": {
+        "status": 200,
+        "error": "title_not_found",
+        "issue_url": "https://www.ncpssd.cn/journal/details?gch=93800A&langType=1&nav=1&years=2026&num=7",
+        "candidates": 0
+      }
+    },
+    {
+      "article": {
+        "id": "d5479c7ff9c96b5c",
+        "journal_id": "j4",
+        "source_journal_id": "j4",
+        "journal_name": "中国工业经济",
+        "title": "税收优惠靶向供给与资本要素流动——来自税务服务专员制度的证据",
+        "url": "https://ciejournal.ajcass.com/Magazine/Show?id=123367",
+        "official_url": "https://ciejournal.ajcass.com/Magazine/Show?id=123367",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "霍文希, 谢贞发",
+        "published_at": "",
+        "issue_date": "2026-07",
+        "first_seen_at": "2026-08-08",
+        "display_date": "2026-07",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "cie-legacy-html",
+        "date_source": "context_issue"
+      },
+      "addedAbstract": false,
+      "response": {
+        "status": 200,
+        "error": "title_not_found",
+        "issue_url": "https://www.ncpssd.cn/journal/details?gch=93800A&langType=1&nav=1&years=2026&num=7",
+        "candidates": 0
+      }
+    },
+    {
+      "article": {
+        "id": "fca0080d4df029ae",
+        "journal_id": "j4",
+        "source_journal_id": "j4",
+        "journal_name": "中国工业经济",
+        "title": "税收优惠何以有效促进小微企业低碳发展——基于群聚—双重差分模型的经验证据",
+        "url": "https://ciejournal.ajcass.com/Magazine/Show?id=123366",
+        "official_url": "https://ciejournal.ajcass.com/Magazine/Show?id=123366",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "沈春蕾, 杨林",
+        "published_at": "",
+        "issue_date": "2026-07",
+        "first_seen_at": "2026-08-08",
+        "display_date": "2026-07",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "cie-legacy-html",
+        "date_source": "context_issue"
+      },
+      "addedAbstract": false,
+      "response": {
+        "status": 200,
+        "error": "title_not_found",
+        "issue_url": "https://www.ncpssd.cn/journal/details?gch=93800A&langType=1&nav=1&years=2026&num=7",
+        "candidates": 0
+      }
+    },
+    {
+      "article": {
+        "id": "09061f288827c79d",
+        "journal_id": "j4",
+        "source_journal_id": "j4",
+        "journal_name": "中国工业经济",
+        "title": "智能经济时代AI能动性的再审视——基于问题化综述方法",
+        "url": "https://ciejournal.ajcass.com/Magazine/Show?id=123365",
+        "official_url": "https://ciejournal.ajcass.com/Magazine/Show?id=123365",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "焦豪, 匡明慧",
+        "published_at": "",
+        "issue_date": "2026-07",
+        "first_seen_at": "2026-08-08",
+        "display_date": "2026-07",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "cie-legacy-html",
+        "date_source": "context_issue"
+      },
+      "addedAbstract": false,
+      "response": {
+        "status": 200,
+        "error": "title_not_found",
+        "issue_url": "https://www.ncpssd.cn/journal/details?gch=93800A&langType=1&nav=1&years=2026&num=7",
+        "candidates": 0
+      }
+    },
+    {
+      "article": {
+        "id": "78556962d30028ab",
+        "journal_id": "j4",
+        "source_journal_id": "j4",
+        "journal_name": "中国工业经济",
+        "title": "中国特色工业化道路",
+        "url": "https://ciejournal.ajcass.com/Magazine/Show?id=123359",
+        "official_url": "https://ciejournal.ajcass.com/Magazine/Show?id=123359",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "邓洲, 黄娅娜",
+        "published_at": "",
+        "issue_date": "2026-07",
+        "first_seen_at": "2026-08-08",
+        "display_date": "2026-07",
+        "display_date_basis": "issue_date",
+        "push_basis": "first_seen",
+        "extraction_rule": "cie-legacy-html",
+        "date_source": "context_issue"
+      },
+      "addedAbstract": false,
+      "response": {
+        "status": 200,
+        "error": "title_not_found",
+        "issue_url": "https://www.ncpssd.cn/journal/details?gch=93800A&langType=1&nav=1&years=2026&num=7",
+        "candidates": 0
+      }
+    }
+  ]
+}

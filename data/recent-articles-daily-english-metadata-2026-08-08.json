@@ -1,0 +1,237 @@
+{
+  "summary": {
+    "checked_at": "2026-08-08T03:04:15.432Z",
+    "since": "2000-01-01",
+    "until": "2026-08-08",
+    "sources_total": 22,
+    "sources_ready": 21,
+    "push_queue_articles": 2,
+    "abstract_backfill": true,
+    "english_metadata_backfill": true,
+    "semantic_scholar": true,
+    "backfill_sources": [
+      "crossref-doi",
+      "openalex-doi",
+      "openalex-title",
+      "semantic-scholar-doi"
+    ]
+  },
+  "push_queue": [
+    {
+      "id": "77ec6af0ca3ae084",
+      "journal_id": "j18",
+      "source_journal_id": "j18",
+      "journal_name": "QUARTERLY JOURNAL OF ECONOMICS",
+      "title": "Clause and Effect: Theory and Field Experimental Evidence on Noncompete Clauses",
+      "url": "https://doi.org/10.1093/qje/qjag040",
+      "official_url": "https://doi.org/10.1093/qje/qjag040",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Bo Cowgill, Brandon Freiberg, Evan Starr",
+      "published_at": "2026-08-07",
+      "issue_date": "",
+      "first_seen_at": "2026-08-08",
+      "display_date": "2026-08-07",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "open-metadata-works",
+      "date_source": "",
+      "abstract": "We study worker noncompete clauses in a large field experiment with two finance firms. Across ~14,000 job offers to freelance recruiters on short-term contracts, we randomize wages and the presence, salience, and duration of noncompetes (all contracts also included a nondisclosure agreement). Removing a noncompete increases mobility between competing employers by 36–52% and raises workers’ total earnings from the two firms by 12–17%. We find no evidence—rejecting even small effects—that removing noncompetes generates secret leakage. We also find no evidence that workers choose noncompete jobs for higher pay. Many workers appear unaware of noncompetes before firms’ post-employment communication. The results align with a model of inattention and uncertainty about enforcement."
+    },
+    {
+      "id": "5cd8f47bdc22b304",
+      "journal_id": "j19",
+      "source_journal_id": "j19",
+      "journal_name": "REVIEW OF ECONOMIC STUDIES",
+      "title": "College, Cognitive Ability, and Socioeconomic Disadvantage: Policy Lessons from the U.K. in 1960–2004",
+      "url": "https://doi.org/10.1093/restud/rdag072",
+      "official_url": "https://doi.org/10.1093/restud/rdag072",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Andrea Ichino, Aldo Rustichini, Giulio Zanella",
+      "published_at": "2026-08-07",
+      "issue_date": "",
+      "first_seen_at": "2026-08-08",
+      "display_date": "2026-08-07",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "open-metadata-works",
+      "date_source": "",
+      "abstract": "University access has significantly expanded in OECD countries, and further growth figures prominently in political agendas. We study possible consequences of historical and future expansions in a stochastic, general equilibrium Roy model where tertiary educational attainment is determined by cognitive ability and socioeconomic disadvantage. In our analysis, individual productivity depends not only on education but also directly on cognitive ability. The expansion of university access in the U.K. that started in the 1960s provides an ideal case study to draw lessons for the future. We find that this expansion led to the selection into college of progressively less talented students from advantaged backgrounds. Appropriate counterfactual policies existed that would have achieved the dual goal of increasing college graduates’ cognitive ability while improving tertiary education opportunities for the disadvantaged."
+    }
+  ],
+  "results": [
+    {
+      "article": {
+        "id": "3550ae8a1dab8913",
+        "journal_id": "j16",
+        "source_journal_id": "j16",
+        "journal_name": "AMERICAN ECONOMIC REVIEW",
+        "title": "Generalized Double Auctions: Maximizing Welfare Guarantees in Bilateral Trade",
+        "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20240699",
+        "official_url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20240699",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Wanchang Zhang",
+        "published_at": "",
+        "issue_date": "",
+        "first_seen_at": "2026-08-08",
+        "display_date": "2026-08-08",
+        "display_date_basis": "first_seen_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "aea-forthcoming-html",
+        "date_source": "forthcoming_unassigned"
+      },
+      "addedAbstract": false,
+      "source": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": false,
+          "error": "status_404",
+          "status": 404
+        },
+        {
+          "source": "openalex-doi",
+          "ok": false,
+          "error": "status_404",
+          "status": 404
+        },
+        {
+          "source": "openalex-title",
+          "ok": false,
+          "status": 200,
+          "error": "no_strict_title_abstract"
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "77ec6af0ca3ae084",
+        "journal_id": "j18",
+        "source_journal_id": "j18",
+        "journal_name": "QUARTERLY JOURNAL OF ECONOMICS",
+        "title": "Clause and Effect: Theory and Field Experimental Evidence on Noncompete Clauses",
+        "url": "https://doi.org/10.1093/qje/qjag040",
+        "official_url": "https://doi.org/10.1093/qje/qjag040",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Bo Cowgill, Brandon Freiberg, Evan Starr",
+        "published_at": "2026-08-07",
+        "issue_date": "",
+        "first_seen_at": "2026-08-08",
+        "display_date": "2026-08-07",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "open-metadata-works",
+        "date_source": "",
+        "abstract": "We study worker noncompete clauses in a large field experiment with two finance firms. Across ~14,000 job offers to freelance recruiters on short-term contracts, we randomize wages and the presence, salience, and duration of noncompetes (all contracts also included a nondisclosure agreement). Removing a noncompete increases mobility between competing employers by 36–52% and raises workers’ total earnings from the two firms by 12–17%. We find no evidence—rejecting even small effects—that removing noncompetes generates secret leakage. We also find no evidence that workers choose noncompete jobs for higher pay. Many workers appear unaware of noncompetes before firms’ post-employment communication. The results align with a model of inattention and uncertainty about enforcement."
+      },
+      "addedAbstract": true,
+      "source": "crossref",
+      "matched_title": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": true,
+          "hints": {
+            "abstract": "We study worker noncompete clauses in a large field experiment with two finance firms. Across ~14,000 job offers to freelance recruiters on short-term contracts, we randomize wages and the presence, salience, and duration of noncompetes (all contracts also included a nondisclosure agreement). Removing a noncompete increases mobility between competing employers by 36–52% and raises workers’ total earnings from the two firms by 12–17%. We find no evidence—rejecting even small effects—that removing noncompetes generates secret leakage. We also find no evidence that workers choose noncompete jobs for higher pay. Many workers appear unaware of noncompetes before firms’ post-employment communication. The results align with a model of inattention and uncertainty about enforcement."
+          },
+          "status": 200
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "5cd8f47bdc22b304",
+        "journal_id": "j19",
+        "source_journal_id": "j19",
+        "journal_name": "REVIEW OF ECONOMIC STUDIES",
+        "title": "College, Cognitive Ability, and Socioeconomic Disadvantage: Policy Lessons from the U.K. in 1960–2004",
+        "url": "https://doi.org/10.1093/restud/rdag072",
+        "official_url": "https://doi.org/10.1093/restud/rdag072",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Andrea Ichino, Aldo Rustichini, Giulio Zanella",
+        "published_at": "2026-08-07",
+        "issue_date": "",
+        "first_seen_at": "2026-08-08",
+        "display_date": "2026-08-07",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "open-metadata-works",
+        "date_source": "",
+        "abstract": "University access has significantly expanded in OECD countries, and further growth figures prominently in political agendas. We study possible consequences of historical and future expansions in a stochastic, general equilibrium Roy model where tertiary educational attainment is determined by cognitive ability and socioeconomic disadvantage. In our analysis, individual productivity depends not only on education but also directly on cognitive ability. The expansion of university access in the U.K. that started in the 1960s provides an ideal case study to draw lessons for the future. We find that this expansion led to the selection into college of progressively less talented students from advantaged backgrounds. Appropriate counterfactual policies existed that would have achieved the dual goal of increasing college graduates’ cognitive ability while improving tertiary education opportunities for the disadvantaged."
+      },
+      "addedAbstract": true,
+      "source": "crossref",
+      "matched_title": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": true,
+          "hints": {
+            "abstract": "University access has significantly expanded in OECD countries, and further growth figures prominently in political agendas. We study possible consequences of historical and future expansions in a stochastic, general equilibrium Roy model where tertiary educational attainment is determined by cognitive ability and socioeconomic disadvantage. In our analysis, individual productivity depends not only on education but also directly on cognitive ability. The expansion of university access in the U.K. that started in the 1960s provides an ideal case study to draw lessons for the future. We find that this expansion led to the selection into college of progressively less talented students from advantaged backgrounds. Appropriate counterfactual policies existed that would have achieved the dual goal of increasing college graduates’ cognitive ability while improving tertiary education opportunities for the disadvantaged."
+          },
+          "status": 200
+        }
+      ]
+    },
+    {
+      "article": {
+        "id": "46c8a79aef29a81b",
+        "journal_id": "j21",
+        "source_journal_id": "j21",
+        "journal_name": "ACADEMY OF MANAGEMENT JOURNAL",
+        "title": "Jailcraft: Atmospheric Security Work in Violent Contexts",
+        "url": "https://journals.aom.org/doi/abs/10.5465/amj.2025.0026",
+        "official_url": "https://journals.aom.org/doi/abs/10.5465/amj.2025.0026",
+        "pdf_url": "",
+        "discovery_url": "",
+        "link_status": "official_detail",
+        "link_note": "official_detail_page",
+        "authors": "Adrian Marrison, Jaco Lok, Mark de Rond",
+        "published_at": "2026-08-07",
+        "issue_date": "",
+        "first_seen_at": "2026-08-08",
+        "display_date": "2026-08-07",
+        "display_date_basis": "published_at",
+        "push_basis": "first_seen",
+        "extraction_rule": "atypon-etoc",
+        "date_source": "metadata_published"
+      },
+      "addedAbstract": false,
+      "source": "",
+      "attempts": [
+        {
+          "source": "crossref",
+          "ok": false,
+          "hints": {},
+          "status": 200
+        },
+        {
+          "source": "openalex-doi",
+          "ok": false,
+          "error": "status_404",
+          "status": 404
+        },
+        {
+          "source": "openalex-title",
+          "ok": false,
+          "status": 200,
+          "error": "no_strict_title_abstract"
+        }
+      ]
+    }
+  ]
+}
