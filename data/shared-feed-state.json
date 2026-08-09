@@ -1,0 +1,21 @@
+{
+  "contract_version": "metadata-feed/1.0.0",
+  "dataset_version": "6980263f45602236f3522b2cdee3791d6113ff8ad86426f53ebf12cad23f01d6",
+  "upstream_data_updated_at": "2026-08-09T10:24:58.019Z",
+  "upstream_snapshot_at": "2026-08-09T10:30:45.350Z",
+  "successful_sync_at": "2026-08-09T10:30:45.591Z",
+  "fetch_attempt": 1,
+  "counts": {
+    "received": 1882,
+    "relevant": 861,
+    "inserted": 31,
+    "updated": 783,
+    "preserved": 0,
+    "total": 814
+  },
+  "source_coverage": {
+    "total": 22,
+    "ready": 21,
+    "checked_at": "2026-08-09T10:24:40.463Z"
+  }
+}

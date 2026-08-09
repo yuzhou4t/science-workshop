@@ -1,8 +1,8 @@
 window.TOPIC_SEARCH_INDEX = {
   "version": 1,
-  "updated_at": "2026-08-09T03:03:21.043Z",
+  "updated_at": "2026-08-09T10:30:51.210Z",
   "summary": {
-    "total_articles": 783,
+    "total_articles": 814,
     "matched_articles": 7,
     "topics": 1,
     "disciplines": 7,
@@ -316,7 +316,7 @@ window.TOPIC_SEARCH_INDEX = {
       "url": "https://m.ncpssd.cn/Literature/articleinfo?id=NKGLPL2026004005&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
       "official_url": "https://m.ncpssd.cn/Literature/articleinfo?id=NKGLPL2026004005&type=journalArticle&typename=%E4%B8%AD%E6%96%87%E6%9C%9F%E5%88%8A%E6%96%87%E7%AB%A0&nav=1&langType=1",
       "pdf_url": "",
-      "discovery_url": "https://www.macrodatas.cn/article/1776651960#:~:text=%E4%B8%AD%E5%9B%BD%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD%E4%BC%81%E4%B8%9A%E6%B5%B7%E5%A4%96%E5%95%86%E4%B8%9A%E7%94%9F%E6%80%81%E7%B3%BB%E7%BB%9F%E6%9E%84%E5%BB%BA%E6%9C%BA%E5%88%B6%E7%A0%94%E7%A9%B6%20%E2%80%94%E2%80%94%E5%88%B6%E5%BA%A6%E5%88%9B%E4%B8%9A%E8%A7%86%E8%A7%92%E4%B8%8B%E7%9A%84%E5%8D%95%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90",
+      "discovery_url": "",
       "link_status": "official_detail",
       "published_at": "2026-04-20",
       "issue_date": "2026-04",
