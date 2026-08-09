@@ -1,16 +1,16 @@
 {
   "summary": {
-    "checked_at": "2026-08-09T10:30:45.591Z",
+    "checked_at": "2026-08-09T10:52:35.303Z",
     "since": "2026-05-25",
     "until": "2026-08-09",
     "sources_total": 22,
     "sources_ready": 21,
     "ingest_mode": "shared_feed",
     "upstream_contract_version": "metadata-feed/1.0.0",
-    "upstream_dataset_version": "6980263f45602236f3522b2cdee3791d6113ff8ad86426f53ebf12cad23f01d6",
-    "upstream_data_updated_at": "2026-08-09T10:24:58.019Z",
-    "upstream_snapshot_at": "2026-08-09T10:30:45.350Z",
-    "sync_completed_at": "2026-08-09T10:30:45.591Z"
+    "upstream_dataset_version": "647ced9d721846cceda6963f08448bdd3aacbfda7e7a9a1d3a8d83d1245f147a",
+    "upstream_data_updated_at": "2026-08-09T10:48:22.466Z",
+    "upstream_snapshot_at": "2026-08-09T10:52:35.054Z",
+    "sync_completed_at": "2026-08-09T10:52:35.303Z"
   },
   "push_queue": [
     {
@@ -439,7 +439,7 @@
       "abstract": "",
       "keywords": [],
       "identifiers": [],
-      "discovery_url": "https://www.cqvip.com/doc/journal/7203883973?sign=442014d96bcea7b4bfc2710133fec3e80079e9001f0693079f90a39ee4adc721&expireTime=1801450911056&resourceId=7203883973&type=1"
+      "discovery_url": ""
     },
     {
       "id": "04dfbcaa3cb93d78",
@@ -1266,7 +1266,7 @@
         "BERT模型"
       ],
       "identifiers": [],
-      "discovery_url": "https://www.macrodatas.cn/article/1784514480#:~:text=%E7%9B%91%E7%AE%A1%E6%B2%99%E7%9B%92%E4%BD%95%E4%BB%A5%E7%BC%93%E9%87%8A%E9%93%B6%E8%A1%8C%E7%B3%BB%E7%BB%9F%E6%80%A7%E9%A3%8E%E9%99%A9%EF%BC%9F%E2%80%94%E2%80%94%E5%9F%BA%E4%BA%8E%E9%93%B6%E8%A1%8C%E9%87%91%E8%9E%8D%E7%A7%91%E6%8A%80%E5%88%9B%E6%96%B0%E4%B8%8E%E7%9B%91%E7%AE%A1%E7%9A%84%E6%BC%94%E5%8C%96%E5%8D%9A%E5%BC%88%E5%88%86%E6%9E%90"
+      "discovery_url": ""
     },
     {
       "id": "0d684e46e552aa43",
@@ -1701,7 +1701,7 @@
       "abstract": "",
       "keywords": [],
       "identifiers": [],
-      "discovery_url": "https://www.cqvip.com/doc/journal/7203883970?sign=267d20028f2f52e5bc652d9915d96a6a642f1168575a7283998885e70e2de0d9&expireTime=1801450911056&resourceId=7203883970&type=1"
+      "discovery_url": ""
     },
     {
       "id": "124db7d0f8de1a8c",
@@ -2162,7 +2162,7 @@
         "医疗公平"
       ],
       "identifiers": [],
-      "discovery_url": "https://www.macrodatas.cn/article/1784514480#:~:text=%E8%8D%AF%E5%93%81%E9%9B%86%E9%87%87%E6%94%B9%E9%9D%A9%E3%80%81%E5%8C%BB%E7%96%97%E8%B4%9F%E6%8B%85%E4%B8%8E%E5%8C%BB%E7%96%97%E5%85%AC%E5%B9%B3%E2%80%94%E2%80%94%E6%9D%A5%E8%87%AA%E5%8C%BB%E9%99%A2%E5%A4%84%E6%96%B9%E7%9A%84%E5%BE%AE%E8%A7%82%E8%AF%81%E6%8D%AE"
+      "discovery_url": ""
     },
     {
       "id": "17517748760ad851",
@@ -3916,7 +3916,7 @@
         "稳外资"
       ],
       "identifiers": [],
-      "discovery_url": "https://www.macrodatas.cn/article/1784514480#:~:text=%E5%87%8F%E7%A8%8E%E6%BF%80%E5%8A%B1%E4%B8%8E%E5%A4%96%E8%B5%84%E7%A8%B3%E5%AE%9A%EF%BC%9A%E9%A2%84%E6%8F%90%E7%A8%8E%E6%94%B9%E9%9D%A9%E7%9A%84%E8%AF%81%E6%8D%AE"
+      "discovery_url": ""
     },
     {
       "id": "27bafd04c51dbb4f",
@@ -4341,7 +4341,7 @@
         "招聘结构"
       ],
       "identifiers": [],
-      "discovery_url": "https://www.macrodatas.cn/article/1784514480#:~:text=%E6%95%B0%E6%8D%AE%E8%B4%A2%E6%94%BF%E7%9A%84%E5%89%8D%E6%99%AF%E7%A0%94%E7%A9%B6%EF%BC%9A%E4%BC%81%E4%B8%9A%E9%9C%80%E6%B1%82%E8%A7%86%E8%A7%92"
+      "discovery_url": ""
     },
     {
       "id": "2b511fc6aeeb0bce",
@@ -6030,7 +6030,7 @@
       "abstract": "",
       "keywords": [],
       "identifiers": [],
-      "discovery_url": "https://www.cqvip.com/doc/journal/7203883969?sign=f7b402372dad2f4ee23e0bea5ad1f10b353bbaf522b8fc373178f9049829239d&expireTime=1801450911056&resourceId=7203883969&type=1"
+      "discovery_url": ""
     },
     {
       "id": "3c5b9f096f2ba26e",
@@ -6083,7 +6083,7 @@
       "abstract": "",
       "keywords": [],
       "identifiers": [],
-      "discovery_url": "https://www.cqvip.com/doc/journal/7203883967?sign=ea4ea00e93e9af1013c7c132bee65dcb7426d3ccd230cb055f09d80ccaf7e834&expireTime=1801450911056&resourceId=7203883967&type=1"
+      "discovery_url": ""
     },
     {
       "id": "687ff08fd909f747",
@@ -6599,7 +6599,7 @@
       "abstract": "",
       "keywords": [],
       "identifiers": [],
-      "discovery_url": "https://www.cqvip.com/doc/journal/7203883974?sign=ebb286b6f68f87157533d0dc702ef1e0b5fa605af4a1592b0797425120eb9635&expireTime=1801450911056&resourceId=7203883974&type=1"
+      "discovery_url": ""
     },
     {
       "id": "436d7147ea028ac4",
@@ -7001,7 +7001,7 @@
       "abstract": "",
       "keywords": [],
       "identifiers": [],
-      "discovery_url": "https://www.cqvip.com/doc/journal/7203883965?sign=cf63b22154ade004702055283ba44e2077ab4b552339c1ea8cf36acb33638ce5&expireTime=1801450911056&resourceId=7203883965&type=1"
+      "discovery_url": ""
     },
     {
       "id": "47a3d8d7a0e15945",
@@ -8737,7 +8737,7 @@
       "abstract": "",
       "keywords": [],
       "identifiers": [],
-      "discovery_url": "https://www.cqvip.com/doc/journal/7203883980?sign=b6c8f2b57872a36235f6e9a316080418d78d04be804b0b0fb009db90295cf546&expireTime=1801450911056&resourceId=7203883980&type=1"
+      "discovery_url": ""
     },
     {
       "id": "595d32ffe215d096",
@@ -13868,7 +13868,7 @@
       "abstract": "",
       "keywords": [],
       "identifiers": [],
-      "discovery_url": "https://www.cqvip.com/doc/journal/7203883966?sign=4b94fde53b57b66539f9683ab2cb7635455f02ec797fa32f7e54e3dccb2d6482&expireTime=1801450911056&resourceId=7203883966&type=1"
+      "discovery_url": ""
     },
     {
       "id": "fafe7425c9ea360a",
@@ -13920,7 +13920,7 @@
       "abstract": "",
       "keywords": [],
       "identifiers": [],
-      "discovery_url": "https://www.cqvip.com/doc/journal/7203883979?sign=23e58f704c5d29f9651dbae25b89aa3bc36ea2683b64d8c3d66383b42e5056c9&expireTime=1801450911056&resourceId=7203883979&type=1"
+      "discovery_url": ""
     },
     {
       "id": "951ec200753c8c24",
@@ -14276,7 +14276,7 @@
         "房地产限购政策"
       ],
       "identifiers": [],
-      "discovery_url": "https://www.macrodatas.cn/article/1784514480#:~:text=%E5%9C%B0%E6%96%B9%E8%B4%A2%E6%94%BF%E5%8E%8B%E5%8A%9B%E3%80%81%E4%BF%A1%E8%B4%B7%E5%B9%B2%E9%A2%84%E4%B8%8E%E9%93%B6%E8%A1%8C%E9%A3%8E%E9%99%A9%E6%89%BF%E6%8B%85"
+      "discovery_url": ""
     },
     {
       "id": "9b2d5734ee49ae3d",
@@ -15586,7 +15586,7 @@
       "abstract": "",
       "keywords": [],
       "identifiers": [],
-      "discovery_url": "https://www.cqvip.com/doc/journal/7203883964?sign=000fc6cb313b5a576b2093207a37f69b21ade041f5e41bb4e844e470192d3b71&expireTime=1801450911056&resourceId=7203883964&type=1"
+      "discovery_url": ""
     },
     {
       "id": "a74908da94efe516",

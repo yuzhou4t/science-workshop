@@ -1,6 +1,6 @@
 window.RECENT_WORKFLOW_DATA = {
   "summary": {
-    "checked_at": "2026-08-09T10:30:45.591Z",
+    "checked_at": "2026-08-09T10:52:35.303Z",
     "since": "2026-05-25",
     "until": "2026-08-09",
     "sources_total": 22,
@@ -11,10 +11,10 @@ window.RECENT_WORKFLOW_DATA = {
     "last_workflow_file": "data/recent-articles-2026-08-09_2026-08-09.json",
     "ingest_mode": "shared_feed",
     "upstream_contract_version": "metadata-feed/1.0.0",
-    "upstream_dataset_version": "6980263f45602236f3522b2cdee3791d6113ff8ad86426f53ebf12cad23f01d6",
-    "upstream_data_updated_at": "2026-08-09T10:24:58.019Z",
-    "upstream_snapshot_at": "2026-08-09T10:30:45.350Z",
-    "sync_completed_at": "2026-08-09T10:30:45.591Z"
+    "upstream_dataset_version": "647ced9d721846cceda6963f08448bdd3aacbfda7e7a9a1d3a8d83d1245f147a",
+    "upstream_data_updated_at": "2026-08-09T10:48:22.466Z",
+    "upstream_snapshot_at": "2026-08-09T10:52:35.054Z",
+    "sync_completed_at": "2026-08-09T10:52:35.303Z"
   },
   "push_queue": [
     {
