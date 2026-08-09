@@ -5849,14 +5849,13 @@
         const unresolved = articles.filter((article) => article.linkStatus === "needs_official_pdf").length;
         const ready = checkSummary.sources_ready ?? adapterQueue.filter((item) => adapterStatusClass(item.status) === "ok").length;
         const totalSources = checkSummary.sources_total ?? journals.length;
-        const newPush = latestDailySummary
-          ? latestDailySummary.push_queue_articles ?? 0
-          : summary.new_push_queue_articles ?? 0;
         const checkedAt = isoDateOnly(latestCheckState?.checked_at || checkSummary.checked_at || workflowToday());
+        const newPush = workflowData.push_queue.filter((article) => isoDateOnly(article.first_seen_at) === checkedAt).length;
         $("#statusDock").innerHTML = [
           ["最近检查", checkedAt, "ok"],
           ["累计文章", summary.history_articles || articles.length, "ok"],
           ["今日新增", newPush, newPush ? "ok" : ""],
+          ["采集模式", summary.ingest_mode === "shared_feed" ? `共享 ${String(summary.upstream_dataset_version || "").slice(0, 8)}` : "独立直连", summary.ingest_mode === "shared_feed" ? "ok" : "warn"],
           ["Ready 来源", `${ready}/${totalSources}`, ready === totalSources ? "ok" : "warn"],
           ["待官方入口", unresolved, unresolved ? "warn" : "ok"]
         ].map(([label, value, state]) => `

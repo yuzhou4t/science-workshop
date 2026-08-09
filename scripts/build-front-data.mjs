@@ -241,6 +241,8 @@ export function mergePushHistory(existingHistory = {}, workflow, options = {}) {
 
   const articles = sortPushArticles([...byKey.values()]);
   const firstSeenDates = articles.map((article) => article.first_seen_at).filter(Boolean).sort();
+  const workflowDate = String(workflow.summary?.until || workflow.summary?.checked_at || "").slice(0, 10);
+  const newHistoryArticles = articles.filter((article) => article.first_seen_at === workflowDate).length;
   return {
     version: 1,
     updated_at: options.updatedAt || workflow.summary?.checked_at || new Date().toISOString(),
@@ -254,10 +256,16 @@ export function mergePushHistory(existingHistory = {}, workflow, options = {}) {
       push_queue_articles: articles.length,
       new_push_queue_articles: preserveReleaseSummary
         ? existingHistory.summary?.new_push_queue_articles ?? 0
-        : workflow.summary?.push_queue_articles || 0,
+        : newHistoryArticles,
       last_workflow_file: preserveReleaseSummary
         ? existingHistory.summary?.last_workflow_file || ""
         : options.workflowFile || "",
+      ingest_mode: workflow.summary?.ingest_mode || existingHistory.summary?.ingest_mode || "direct_crawler",
+      upstream_contract_version: workflow.summary?.upstream_contract_version || existingHistory.summary?.upstream_contract_version || "",
+      upstream_dataset_version: workflow.summary?.upstream_dataset_version || existingHistory.summary?.upstream_dataset_version || "",
+      upstream_data_updated_at: workflow.summary?.upstream_data_updated_at || existingHistory.summary?.upstream_data_updated_at || "",
+      upstream_snapshot_at: workflow.summary?.upstream_snapshot_at || existingHistory.summary?.upstream_snapshot_at || "",
+      sync_completed_at: workflow.summary?.sync_completed_at || existingHistory.summary?.sync_completed_at || "",
     },
     articles,
   };

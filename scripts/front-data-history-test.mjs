@@ -132,6 +132,7 @@ assert.equal(history.articles.find((article) => article.id === "paid-1").link_st
 assert.equal(history.articles.find((article) => article.id === "paid-1").access_model, "paid");
 assert.equal(history.articles.find((article) => article.id === "paid-1").official_source, "cnki");
 assert.equal(history.summary.history_articles, 5);
+assert.equal(history.summary.new_push_queue_articles, 2);
 assert.equal(history.summary.last_workflow_file, "data/recent-articles-2026-05-28_2026-05-28.json");
 
 const frontData = frontDataFromHistory(history);
@@ -166,14 +167,32 @@ const dedupedHistory = mergePushHistory(
     ],
   },
   {
-    summary: { checked_at: "2026-05-28T02:00:00.000Z", sources_total: 1, sources_ready: 1, push_queue_articles: 0 },
-    push_queue: [],
+    summary: { checked_at: "2026-08-05T03:00:00.000Z", until: "2026-08-05", sources_total: 1, sources_ready: 1, push_queue_articles: 2 },
+    push_queue: [
+      {
+        id: "cqvip-new-id",
+        journal_id: "j10",
+        journal_name: "中国行政管理",
+        title: "同一篇维普发现文章",
+        discovery_url: "https://www.cqvip.com/doc/journal/7203343027?sign=new&expireTime=3&resourceId=7203343027&type=1",
+        first_seen_at: "2026-08-05",
+      },
+      {
+        id: "actually-new-id",
+        journal_id: "j10",
+        journal_name: "中国行政管理",
+        title: "今天真正新入库的文章",
+        discovery_url: "https://www.cqvip.com/doc/journal/7203883999?sign=new&expireTime=3&resourceId=7203883999&type=1",
+        first_seen_at: "2026-08-05",
+      },
+    ],
   },
 );
 
-assert.equal(dedupedHistory.articles.length, 1);
-assert.equal(dedupedHistory.articles[0].id, "cqvip-old-a");
-assert.equal(dedupedHistory.articles[0].first_seen_at, "2026-05-26");
+assert.equal(dedupedHistory.articles.length, 2);
+assert.equal(dedupedHistory.articles.find((article) => article.title === "同一篇维普发现文章").id, "cqvip-old-a");
+assert.equal(dedupedHistory.articles.find((article) => article.title === "同一篇维普发现文章").first_seen_at, "2026-05-26");
+assert.equal(dedupedHistory.summary.new_push_queue_articles, 1);
 
 const cnkiPortalHistory = mergePushHistory(
   {

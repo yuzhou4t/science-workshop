@@ -341,6 +341,51 @@ assert.equal(volatileUrlFirstRun.push_queue[0].url, "");
 assert.equal(volatileUrlFirstRun.push_queue[0].discovery_url.includes("cqvip.com/doc/journal/7203343027"), true);
 assert.equal(volatileUrlSecondRun.source_state.article_ids[0], volatileUrlFirstRun.source_state.article_ids[0]);
 
+const resolvedCqvipSource = {
+  journal_id: "j10",
+  journal_name: "中国行政管理",
+  type: "adapter_source",
+  source_url: "https://www.cqvip.com/journal/81961X",
+  probe_url: "https://www.cqvip.com/journal/81961X",
+  extraction_rule: "cqvip-journal-html",
+  usable_as_data_source: true,
+  articles: [{
+    title: "官方解析状态改变的同一篇文章",
+    url: "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026005001",
+    official_url: "https://www.ncpssd.org/Literature/articleinfo?id=ZGXZGL2026005001",
+    discovery_url: "https://www.cqvip.com/doc/journal/7203883964?sign=aaa&expireTime=1",
+    issue_date: "2026-05",
+  }],
+};
+const resolvedCqvipRun = buildRecentWorkflow([resolvedCqvipSource], {
+  since: "2026-08-04",
+  until: "2026-08-04",
+  checkedAt: "2026-08-04T03:00:00.000Z",
+  previousState: {},
+  daily: true,
+  pushNewDiscoveries: true,
+});
+
+const unresolvedCqvipRun = buildRecentWorkflow([{
+  ...resolvedCqvipSource,
+  articles: [{
+    title: "官方解析状态改变的同一篇文章",
+    discovery_url: "https://www.cqvip.com/doc/journal/7203883964?sign=bbb&expireTime=2",
+    issue_date: "2026-05",
+  }],
+}], {
+  since: "2026-08-05",
+  until: "2026-08-05",
+  checkedAt: "2026-08-05T03:00:00.000Z",
+  previousState: resolvedCqvipRun.source_state,
+  daily: true,
+  pushNewDiscoveries: true,
+});
+
+assert.equal(resolvedCqvipRun.summary.push_queue_articles, 1);
+assert.equal(unresolvedCqvipRun.summary.push_queue_articles, 0);
+assert.equal(unresolvedCqvipRun.source_state.article_ids[0], resolvedCqvipRun.source_state.article_ids[0]);
+
 const blockedSourceRun = buildRecentWorkflow([
   {
     journal_id: "j-test",

@@ -120,7 +120,10 @@ function articleIdentity(source, article) {
   const doi = normalizedDoi(article.doi || article.url);
   if (doi) return `doi:${doi}`;
   const articleLink = normalizeArticleLink(source, article);
-  const url = normalizedUrlForIdentity(articleLink.url || articleLink.official_url || articleLink.discovery_url);
+  const identityUrl = source.extraction_rule === "cqvip-journal-html"
+    ? articleLink.discovery_url || articleLink.url || articleLink.official_url
+    : articleLink.url || articleLink.official_url || articleLink.discovery_url;
+  const url = normalizedUrlForIdentity(identityUrl);
   if (url) return `url:${url}`;
   return `title:${String(article.title || "").replace(/\s+/g, " ").trim().toLowerCase()}::${article.date || article.issue_date || article.published_at || ""}`;
 }

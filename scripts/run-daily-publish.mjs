@@ -11,6 +11,7 @@ const branch = process.env.SCIENCE_WORKSHOP_PUBLISH_BRANCH || "main";
 const dailyGeneratedFiles = [
   "data/fetch-smoke-results.json",
   "data/source-state.json",
+  "data/shared-feed-state.json",
   "data/push-history.json",
   "data/recent-front-data.js",
   "data/topic-search-index.js",
@@ -96,5 +97,6 @@ if (branchName !== branch) {
   throw new Error(`Refusing to run daily publish on branch ${branchName || "(detached)"}; expected ${branch}.`);
 }
 
-await run(process.execPath, ["scripts/run-daily-workflow.mjs"]);
+await run(process.execPath, ["scripts/sync-shared-feed.mjs"]);
+await run(process.execPath, ["scripts/build-topic-search-index.mjs"]);
 await publishGeneratedData();
