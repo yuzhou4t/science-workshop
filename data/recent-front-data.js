@@ -1,16 +1,39 @@
 window.RECENT_WORKFLOW_DATA = {
   "summary": {
-    "checked_at": "2026-08-08T03:04:18.774Z",
+    "checked_at": "2026-08-09T03:03:15.381Z",
     "since": "2026-05-25",
-    "until": "2026-08-08",
+    "until": "2026-08-09",
     "sources_total": 22,
     "sources_ready": 21,
-    "history_articles": 782,
-    "push_queue_articles": 782,
-    "new_push_queue_articles": 13,
-    "last_workflow_file": "data/recent-articles-2026-08-08_2026-08-08.json"
+    "history_articles": 783,
+    "push_queue_articles": 783,
+    "new_push_queue_articles": 1,
+    "last_workflow_file": "data/recent-articles-2026-08-09_2026-08-09.json"
   },
   "push_queue": [
+    {
+      "id": "19fe27e7d04bb72f",
+      "journal_id": "j14",
+      "source_journal_id": "j1",
+      "journal_name": "JOURNAL OF FINANCE",
+      "title": "Personal Costs of Executive Turnovers",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70064",
+      "official_url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70064",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "KASPER MEISNER NIELSEN",
+      "published_at": "2026-08-08",
+      "issue_date": "",
+      "first_seen_at": "2026-08-09",
+      "display_date": "2026-08-08",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "afa-forthcoming-doi",
+      "date_source": "context_published",
+      "abstract": "This study examines the income loss following forced CEO turnovers using income data from the official records at the Danish Tax Authority. We find that dismissed CEOs’ personal income is 40% lower in the five years following forced turnovers. The decline is driven by labor market outcomes: labor and entrepreneurial incomes decline, while other sources of income increase. We find larger declines in income for executives with poor performance during their tenures, consistent with the executive labor market being the main channel for the lower income. Overall, the findings suggest that executives face significant personal costs from forced turnovers."
+    },
     {
       "id": "3550ae8a1dab8913",
       "journal_id": "j16",
