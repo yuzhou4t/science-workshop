@@ -1,24 +1,117 @@
 {
   "version": 1,
-  "updated_at": "2026-08-14T03:00:16.466Z",
+  "updated_at": "2026-08-15T03:00:15.400Z",
   "summary": {
-    "checked_at": "2026-08-14T03:00:16.466Z",
+    "checked_at": "2026-08-15T03:00:15.400Z",
     "since": "2026-05-25",
-    "until": "2026-08-14",
+    "until": "2026-08-15",
     "sources_total": 22,
     "sources_ready": 21,
-    "history_articles": 857,
-    "push_queue_articles": 857,
-    "new_push_queue_articles": 11,
-    "last_workflow_file": "data/recent-articles-2026-08-14_2026-08-14.json",
+    "history_articles": 861,
+    "push_queue_articles": 861,
+    "new_push_queue_articles": 4,
+    "last_workflow_file": "data/recent-articles-2026-08-15_2026-08-15.json",
     "ingest_mode": "shared_feed",
     "upstream_contract_version": "metadata-feed/1.0.0",
-    "upstream_dataset_version": "395ae50724c33f9c57a90b42393bb51dc33c657874325cdef87bfffb74bc5911",
-    "upstream_data_updated_at": "2026-08-14T01:19:52.257Z",
-    "upstream_snapshot_at": "2026-08-14T03:00:16.174Z",
-    "sync_completed_at": "2026-08-14T03:00:16.466Z"
+    "upstream_dataset_version": "25a4f6c56aa43ee94945501448f9574b972bbff8340c15a8af268ffb843d78dd",
+    "upstream_data_updated_at": "2026-08-15T01:05:31.581Z",
+    "upstream_snapshot_at": "2026-08-15T03:00:15.057Z",
+    "sync_completed_at": "2026-08-15T03:00:15.400Z"
   },
   "articles": [
+    {
+      "id": "77e785c6eb56fd24",
+      "journal_id": "j16",
+      "source_journal_id": "j16",
+      "journal_name": "AMERICAN ECONOMIC REVIEW",
+      "title": "Patient Costs and Physicians’ Information",
+      "url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20231717",
+      "official_url": "https://www.aeaweb.org/articles?id=10.1257%2Faer.20231717",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Michael J. Dickstein, Jihye Jeon, Eduardo Morales",
+      "published_at": "",
+      "issue_date": "",
+      "first_seen_at": "2026-08-15",
+      "display_date": "2026-08-15",
+      "display_date_basis": "first_seen_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "shared-metadata-feed",
+      "date_source": "",
+      "keywords": []
+    },
+    {
+      "id": "7edee186959dea1c",
+      "journal_id": "j18",
+      "source_journal_id": "j18",
+      "journal_name": "QUARTERLY JOURNAL OF ECONOMICS",
+      "title": "The Employment Effects of a Guaranteed Income: Experimental Evidence from Two U.S. States",
+      "url": "https://doi.org/10.1093/qje/qjag042",
+      "official_url": "https://doi.org/10.1093/qje/qjag042",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Eva Vivalt, Elizabeth Rhodes, Alexander Bartik, David Broockman, Patrick Krause",
+      "published_at": "2026-08-14",
+      "issue_date": "",
+      "first_seen_at": "2026-08-15",
+      "display_date": "2026-08-14",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "shared-metadata-feed",
+      "date_source": "",
+      "keywords": []
+    },
+    {
+      "id": "6c45709741230a26",
+      "journal_id": "j13",
+      "source_journal_id": "j13",
+      "journal_name": "ACADEMY OF MANAGEMENT REVIEW",
+      "title": "Attribution Error in Mutual Learning: Noise Versus Systematic Bias—A Reply to “Copying the Wrong Winner? When Noisy Attribution Reverses Mutual Learning Prescriptions”",
+      "url": "https://journals.aom.org/doi/abs/10.5465/amr.2026.0577",
+      "official_url": "https://journals.aom.org/doi/abs/10.5465/amr.2026.0577",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Jerker Denrell, Michael Christensen, Thorbjørn Knudsen, Chengwei Liu",
+      "published_at": "2026-08-13",
+      "issue_date": "",
+      "first_seen_at": "2026-08-15",
+      "display_date": "2026-08-13",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "shared-metadata-feed",
+      "date_source": "",
+      "keywords": []
+    },
+    {
+      "id": "442351d4fd2a2100",
+      "journal_id": "j17",
+      "source_journal_id": "j17",
+      "journal_name": "JOURNAL OF POLITICAL ECONOMY",
+      "title": "From Doubt to Devotion: Trials and Learning-Based Pricing",
+      "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/742434",
+      "official_url": "https://www.journals.uchicago.edu/doi/abs/10.1086/742434",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Tan GanNicholas WuLondon School of EconomicsYale University",
+      "published_at": "2026-08-13",
+      "issue_date": "",
+      "first_seen_at": "2026-08-15",
+      "display_date": "2026-08-13",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "shared-metadata-feed",
+      "date_source": "",
+      "abstract": "An informed seller designs a dynamic mechanism to sell an experience good. The seller has partial information about the product match, which affects the buyer's private consumption experience. We characterize equilibrium mechanisms of this dynamic informed principal problem. The belief gap between the informed seller and the uninformed buyer, coupled with the buyer's learning, gives rise to mechanisms that provide the skeptical buyer with limited access to the product and an option to upgrade if the buyer is swayed by a good experience. Depending on the seller's screening technology, this takes the form of free/discounted trials or tiered pricing, which are prevalent in digital markets. In contrast to static environments, having consumer data can reduce sellers' revenue in equilibrium, as they fine-tune the dynamic design with their data forecasting the buyer's learning process.",
+      "keywords": []
+    },
     {
       "id": "b9b9df1e6813f585",
       "journal_id": "j19",
@@ -40,7 +133,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "bfa0499cf41ac017",
@@ -63,7 +157,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "ee9ce3d7482e8e47",
@@ -86,7 +181,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "bd7f0ff04bd847d2",
@@ -109,7 +205,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "417b4aa169bf371e",
@@ -132,7 +229,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "530614f14b908db0",
@@ -155,7 +253,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "93c634dccc493da6",
@@ -178,7 +277,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "0d07dca41f41ac63",
@@ -201,7 +301,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "23141d75c8a06629",
@@ -224,7 +325,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "eb718dcb792ebe40",
@@ -247,7 +349,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "cd1acf072a047262",
@@ -270,7 +373,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "9fdcd7f5c83e1993",
