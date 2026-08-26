@@ -1,24 +1,140 @@
 {
   "version": 1,
-  "updated_at": "2026-08-25T03:00:18.575Z",
+  "updated_at": "2026-08-26T03:00:17.700Z",
   "summary": {
-    "checked_at": "2026-08-25T03:00:18.575Z",
+    "checked_at": "2026-08-26T03:00:17.700Z",
     "since": "2026-05-25",
-    "until": "2026-08-25",
+    "until": "2026-08-26",
     "sources_total": 22,
     "sources_ready": 20,
-    "history_articles": 911,
-    "push_queue_articles": 911,
-    "new_push_queue_articles": 12,
-    "last_workflow_file": "data/recent-articles-2026-08-25_2026-08-25.json",
+    "history_articles": 916,
+    "push_queue_articles": 916,
+    "new_push_queue_articles": 5,
+    "last_workflow_file": "data/recent-articles-2026-08-26_2026-08-26.json",
     "ingest_mode": "shared_feed",
     "upstream_contract_version": "metadata-feed/1.0.0",
-    "upstream_dataset_version": "1e7db5d39153ebb836807216cffc72a7ded05e68209881d70fe2356cd1654beb",
-    "upstream_data_updated_at": "2026-08-25T01:06:42.907Z",
-    "upstream_snapshot_at": "2026-08-25T03:00:17.827Z",
-    "sync_completed_at": "2026-08-25T03:00:18.575Z"
+    "upstream_dataset_version": "f07ae8e29202c0a221ae51f3d7174c0f51cbdaca69959feea1eae95adbacecc7",
+    "upstream_data_updated_at": "2026-08-26T01:05:46.850Z",
+    "upstream_snapshot_at": "2026-08-26T03:00:17.263Z",
+    "sync_completed_at": "2026-08-26T03:00:17.700Z"
   },
   "articles": [
+    {
+      "id": "82852f11f5764dea",
+      "journal_id": "j19",
+      "source_journal_id": "j19",
+      "journal_name": "REVIEW OF ECONOMIC STUDIES",
+      "title": "Early-Career Discrimination: Spiraling or Self-Correcting?",
+      "url": "https://doi.org/10.1093/restud/rdag092",
+      "official_url": "https://doi.org/10.1093/restud/rdag092",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Arjada Bardhi, Yingni Guo, Bruno Strulovici",
+      "published_at": "2026-08-25",
+      "issue_date": "",
+      "first_seen_at": "2026-08-26",
+      "display_date": "2026-08-25",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "shared-metadata-feed",
+      "date_source": "",
+      "keywords": []
+    },
+    {
+      "id": "6ecbb053d1b7667a",
+      "journal_id": "j19",
+      "source_journal_id": "j19",
+      "journal_name": "REVIEW OF ECONOMIC STUDIES",
+      "title": "Labor Supply and the Pension Contribution-Benefit Link",
+      "url": "https://doi.org/10.1093/restud/rdag082",
+      "official_url": "https://doi.org/10.1093/restud/rdag082",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Eric French, Attila Lindner, Cormac O’Dea, Tom Zawisza",
+      "published_at": "2026-08-25",
+      "issue_date": "",
+      "first_seen_at": "2026-08-26",
+      "display_date": "2026-08-25",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "shared-metadata-feed",
+      "date_source": "",
+      "keywords": []
+    },
+    {
+      "id": "ac386c22fbe26234",
+      "journal_id": "j19",
+      "source_journal_id": "j19",
+      "journal_name": "REVIEW OF ECONOMIC STUDIES",
+      "title": "Paying to Match: Decentralized Markets with Information Frictions",
+      "url": "https://doi.org/10.1093/restud/rdag094",
+      "official_url": "https://doi.org/10.1093/restud/rdag094",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Marina Agranov, Ahrash Dianat, Larry Samuelson, Leeat Yariv",
+      "published_at": "2026-08-25",
+      "issue_date": "",
+      "first_seen_at": "2026-08-26",
+      "display_date": "2026-08-25",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "shared-metadata-feed",
+      "date_source": "",
+      "keywords": []
+    },
+    {
+      "id": "4ae21bcfc93512f3",
+      "journal_id": "j14",
+      "source_journal_id": "j14",
+      "journal_name": "JOURNAL OF FINANCE",
+      "title": "The Market for ESG Ratings",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70078",
+      "official_url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70078",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "EHSAN AZARMSA, JOEL SHAPIRO",
+      "published_at": "2026-08-25",
+      "issue_date": "",
+      "first_seen_at": "2026-08-26",
+      "display_date": "2026-08-25",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "shared-metadata-feed",
+      "date_source": "",
+      "abstract": "We present a model of competition between environmental, social, and governance (ESG) raters who acquire information about multiple unrelated categories and sell ratings. Raters specializing in different categories maximize the amount of information transmitted and surplus, and can be an equilibrium outcome. When investors place a high value on ESG performance across multiple categories, the unique equilibrium is for the raters to generalize—splitting their effort among the categories, resulting in less informative ratings. Greenwashing by firms can make generalization the only equilibrium. We also demonstrate that specialization maximizes ratings disagreement, and thus empirical measures of disagreement may be poor measures of surplus.",
+      "keywords": []
+    },
+    {
+      "id": "8349710df11412c4",
+      "journal_id": "j19",
+      "source_journal_id": "j19",
+      "journal_name": "REVIEW OF ECONOMIC STUDIES",
+      "title": "Why Veil? Religious Headscarves and the Economic Role of Women",
+      "url": "https://doi.org/10.1093/restud/rdag093",
+      "official_url": "https://doi.org/10.1093/restud/rdag093",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Naila Maya Shofia",
+      "published_at": "2026-08-25",
+      "issue_date": "",
+      "first_seen_at": "2026-08-26",
+      "display_date": "2026-08-25",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "shared-metadata-feed",
+      "date_source": "",
+      "keywords": []
+    },
     {
       "id": "7b5ec1345d3f5722",
       "journal_id": "j19",
@@ -40,7 +156,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "dbb9ebbfd887703c",
@@ -63,7 +180,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "e79693158bd518e3",
@@ -86,7 +204,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "658f24bb4b00af6c",
@@ -109,7 +228,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "b09df506e973e443",
@@ -132,7 +252,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "14bce1237b4ba8e6",
@@ -155,7 +276,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "242c3f9beb5c14c7",
@@ -178,7 +300,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "07ec048ae697e56b",
@@ -201,7 +324,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "cc61bcfbea360cdf",
@@ -224,7 +348,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "46504ada4c10ac35",
@@ -247,7 +372,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "8f20dda83088e61b",
@@ -270,7 +396,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "a6a621f224169c7e",
@@ -293,7 +420,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "b9ae4610c7804ad0",
