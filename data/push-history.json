@@ -1,24 +1,47 @@
 {
   "version": 1,
-  "updated_at": "2026-08-27T03:00:17.899Z",
+  "updated_at": "2026-08-28T03:00:17.903Z",
   "summary": {
-    "checked_at": "2026-08-27T03:00:17.899Z",
+    "checked_at": "2026-08-28T03:00:17.903Z",
     "since": "2026-05-25",
-    "until": "2026-08-27",
+    "until": "2026-08-28",
     "sources_total": 22,
     "sources_ready": 20,
-    "history_articles": 925,
-    "push_queue_articles": 925,
-    "new_push_queue_articles": 9,
-    "last_workflow_file": "data/recent-articles-2026-08-27_2026-08-27.json",
+    "history_articles": 926,
+    "push_queue_articles": 926,
+    "new_push_queue_articles": 1,
+    "last_workflow_file": "data/recent-articles-2026-08-28_2026-08-28.json",
     "ingest_mode": "shared_feed",
     "upstream_contract_version": "metadata-feed/1.0.0",
-    "upstream_dataset_version": "58fe2c517fbc8f842ee022e6648db23df98c87311b2f44613b72eeee22d92152",
-    "upstream_data_updated_at": "2026-08-27T01:06:25.380Z",
-    "upstream_snapshot_at": "2026-08-27T03:00:17.435Z",
-    "sync_completed_at": "2026-08-27T03:00:17.899Z"
+    "upstream_dataset_version": "e292820afb25e7b773de0afdb1b9ee5c90e8deb2346282f0b094f70a4ddb89ff",
+    "upstream_data_updated_at": "2026-08-28T01:06:26.126Z",
+    "upstream_snapshot_at": "2026-08-28T03:00:17.454Z",
+    "sync_completed_at": "2026-08-28T03:00:17.903Z"
   },
   "articles": [
+    {
+      "id": "4d06e5c91ca94cf2",
+      "journal_id": "j15",
+      "source_journal_id": "j15",
+      "journal_name": "ACCOUNTING REVIEW",
+      "title": "Does Anti-Tax Avoidance Regulation Curb Industry Concentration?",
+      "url": "https://doi.org/10.2308/tar-2025-0338",
+      "official_url": "https://doi.org/10.2308/tar-2025-0338",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "John Gallemore, Martin Jacob, Jesse Marangoni, Christian P. H. Peters",
+      "published_at": "2026-08-27",
+      "issue_date": "",
+      "first_seen_at": "2026-08-28",
+      "display_date": "2026-08-27",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "shared-metadata-feed",
+      "date_source": "",
+      "keywords": []
+    },
     {
       "id": "d9cec6746f7665ba",
       "journal_id": "j8",
@@ -70,7 +93,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "64ccc9edd9eef0a2",
@@ -93,7 +117,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "cd6c6d16dd6fd592",
@@ -116,7 +141,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "8bdd6e514349b2f1",
@@ -139,7 +165,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "160e070f86667220",
@@ -162,7 +189,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "a1a13fbec0b43a00",
@@ -209,7 +237,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "87c508595b9149bd",
@@ -232,7 +261,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "82852f11f5764dea",
