@@ -1,21 +1,21 @@
 {
   "contract_version": "metadata-feed/1.0.0",
-  "dataset_version": "8acb04f0a2b9405a2a51cc6e30d3f4ab9b5e84b99cfcbdf7b10a1ad386567ee6",
-  "upstream_data_updated_at": "2026-09-07T01:05:51.704Z",
-  "upstream_snapshot_at": "2026-09-07T03:00:19.442Z",
-  "successful_sync_at": "2026-09-07T03:00:20.062Z",
+  "dataset_version": "d4133f4e8410e30599f5ffce9f050632a7a1f205b7081ce20cd7eaef5c0ad520",
+  "upstream_data_updated_at": "2026-09-08T01:05:08.026Z",
+  "upstream_snapshot_at": "2026-09-08T03:00:19.931Z",
+  "successful_sync_at": "2026-09-08T03:00:20.566Z",
   "fetch_attempt": 1,
   "counts": {
-    "received": 2101,
-    "relevant": 1023,
-    "inserted": 0,
+    "received": 2105,
+    "relevant": 1027,
+    "inserted": 3,
     "updated": 975,
     "preserved": 0,
-    "total": 975
+    "total": 978
   },
   "source_coverage": {
     "total": 22,
     "ready": 20,
-    "checked_at": "2026-09-07T01:05:27.566Z"
+    "checked_at": "2026-09-08T01:04:46.271Z"
   }
 }
