@@ -1,22 +1,22 @@
 {
   "version": 1,
-  "updated_at": "2026-09-12T03:00:20.569Z",
+  "updated_at": "2026-09-13T03:00:20.565Z",
   "summary": {
-    "checked_at": "2026-09-12T03:00:20.569Z",
+    "checked_at": "2026-09-13T03:00:20.565Z",
     "since": "2026-05-25",
     "until": "2026-09-12",
     "sources_total": 22,
     "sources_ready": 21,
     "history_articles": 1019,
     "push_queue_articles": 1019,
-    "new_push_queue_articles": 13,
-    "last_workflow_file": "data/recent-articles-2026-09-12_2026-09-12.json",
+    "new_push_queue_articles": 0,
+    "last_workflow_file": "data/recent-articles-2026-09-13_2026-09-13.json",
     "ingest_mode": "shared_feed",
     "upstream_contract_version": "metadata-feed/1.0.0",
-    "upstream_dataset_version": "63cf10c38d299ddb035759dd77f6703eb6844aa71f23408ff770e8680520b404",
-    "upstream_data_updated_at": "2026-09-12T01:05:55.718Z",
-    "upstream_snapshot_at": "2026-09-12T03:00:19.856Z",
-    "sync_completed_at": "2026-09-12T03:00:20.569Z"
+    "upstream_dataset_version": "b4392f35e9b99536a864e5e0bec7f74ad428475fc9e5f5d196d6ad311aab3913",
+    "upstream_data_updated_at": "2026-09-13T01:05:43.415Z",
+    "upstream_snapshot_at": "2026-09-13T03:00:19.841Z",
+    "sync_completed_at": "2026-09-13T03:00:20.565Z"
   },
   "articles": [
     {
@@ -40,7 +40,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "acf3e1f40b325a0c",
@@ -63,7 +64,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "749a0f0c18886427",
@@ -86,7 +88,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "939ecb0089abb23f",
@@ -109,7 +112,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "0dcb934344b17d37",
@@ -132,7 +136,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "11228dfb76c412e2",
@@ -155,7 +160,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "81dc4ad5e362accb",
@@ -178,7 +184,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "68bb5dfa271f6622",
@@ -201,7 +208,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "b059dc38858dc4f0",
@@ -224,7 +232,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "9df5b5968b0b6ac8",
@@ -247,7 +256,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "7f744f1ba4cbda75",
@@ -270,7 +280,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "694a1b3f267c9f93",
@@ -293,7 +304,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "631acb386e64137d",
