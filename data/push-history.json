@@ -1,24 +1,54 @@
 {
   "version": 1,
-  "updated_at": "2026-09-19T03:00:21.372Z",
+  "updated_at": "2026-09-20T03:00:20.689Z",
   "summary": {
-    "checked_at": "2026-09-19T03:00:21.372Z",
+    "checked_at": "2026-09-20T03:00:20.689Z",
     "since": "2026-05-25",
-    "until": "2026-09-19",
+    "until": "2026-09-20",
     "sources_total": 22,
     "sources_ready": 20,
-    "history_articles": 1087,
-    "push_queue_articles": 1087,
+    "history_articles": 1088,
+    "push_queue_articles": 1088,
     "new_push_queue_articles": 1,
-    "last_workflow_file": "data/recent-articles-2026-09-19_2026-09-19.json",
+    "last_workflow_file": "data/recent-articles-2026-09-20_2026-09-20.json",
     "ingest_mode": "shared_feed",
     "upstream_contract_version": "metadata-feed/1.0.0",
-    "upstream_dataset_version": "4971136332da573c56a82c9f2a56d23730cee152a3be1ab95fdd46697d7aea33",
-    "upstream_data_updated_at": "2026-09-19T01:11:20.504Z",
-    "upstream_snapshot_at": "2026-09-19T03:00:20.703Z",
-    "sync_completed_at": "2026-09-19T03:00:21.372Z"
+    "upstream_dataset_version": "6a075a023aa347cc7b4e2b4f5a96cc1e17625d35c969a030a1f8425af1c46f1c",
+    "upstream_data_updated_at": "2026-09-20T01:09:40.346Z",
+    "upstream_snapshot_at": "2026-09-20T03:00:20.009Z",
+    "sync_completed_at": "2026-09-20T03:00:20.689Z"
   },
   "articles": [
+    {
+      "id": "7e2b9e9964ad6d23",
+      "journal_id": "j8",
+      "source_journal_id": "j8",
+      "journal_name": "公共管理学报",
+      "title": "城市基础设施生命线安全工程的类型建构与优化路径——“技术-治理”适配视角下的多案例分析",
+      "url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/913a1430c6c338cb61d680f6d0d41430",
+      "official_url": "https://gggl.cbpt.cnki.net/portal/journal/portal/client/paper/913a1430c6c338cb61d680f6d0d41430",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "",
+      "published_at": "",
+      "issue_date": "2021-01",
+      "first_seen_at": "2026-09-20",
+      "display_date": "2021-01",
+      "display_date_basis": "issue_date",
+      "push_basis": "first_seen",
+      "extraction_rule": "shared-metadata-feed",
+      "date_source": "",
+      "abstract": "城市基础设施生命线安全工程是保障城市正常运行的关键防线，在韧性城市建设中发挥着基础性支撑作用。既有研究多聚焦单一场景优化或局部技术迭代，不仅存在重工程轻治理、重硬件轻系统的理论局限，也未能回应全国统一制度环境下各地工程实践形态显著分化的现实。基于此，本文立足韧性治理理论，构建城市生命线安全工程韧性提升分析框架，提炼技术应用形态和治理模式两个分类维度，逻辑推导出集成协同型、集成统筹型、基础协同型、基础统筹型四种理想类型，并结合合肥、青岛、沈阳、开封四地的多案例比较分析展开实证检验。研究发现：四种理想类型的差异化痛点与各自的“技术-治理”组合特征深度绑定，共性难题则集中于技术与治理适配性不高、跨系统协同机制不畅、全生命周期韧性设计不足等方面。对此，本文提出了分类型专属治理优化路径与跨类型通用韧性提升路径。研究结论不仅丰富了韧性治理理论在城市基础设施领域的应用场景，也可为“十五五”时期提升我国重要基础设施本质安全水平提供理论支撑和路径参考。",
+      "keywords": [
+        "城市基础设施生命线安全工程",
+        "韧性治理",
+        "技术应用形态",
+        "治理模式",
+        "类型建构"
+      ]
+    },
     {
       "id": "af653495da423371",
       "journal_id": "j17",
@@ -40,7 +70,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "8283859dfc0242c8",
