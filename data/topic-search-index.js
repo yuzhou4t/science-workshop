@@ -1,8 +1,8 @@
 window.TOPIC_SEARCH_INDEX = {
   "version": 1,
-  "updated_at": "2026-09-25T03:00:28.927Z",
+  "updated_at": "2026-09-26T03:00:29.523Z",
   "summary": {
-    "total_articles": 1132,
+    "total_articles": 1135,
     "matched_articles": 7,
     "topics": 1,
     "disciplines": 7,
