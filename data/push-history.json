@@ -1,22 +1,22 @@
 {
   "version": 1,
-  "updated_at": "2026-09-27T03:00:22.426Z",
+  "updated_at": "2026-09-28T03:00:22.965Z",
   "summary": {
-    "checked_at": "2026-09-27T03:00:22.426Z",
+    "checked_at": "2026-09-28T03:00:22.965Z",
     "since": "2026-05-25",
     "until": "2026-09-27",
     "sources_total": 22,
     "sources_ready": 21,
     "history_articles": 1137,
     "push_queue_articles": 1137,
-    "new_push_queue_articles": 2,
-    "last_workflow_file": "data/recent-articles-2026-09-27_2026-09-27.json",
+    "new_push_queue_articles": 0,
+    "last_workflow_file": "data/recent-articles-2026-09-28_2026-09-28.json",
     "ingest_mode": "shared_feed",
     "upstream_contract_version": "metadata-feed/1.0.0",
-    "upstream_dataset_version": "a8603d5d2624a6ce4c62775ec5b25abb3bfa53464506e475fb0aa8be9411fb87",
-    "upstream_data_updated_at": "2026-09-27T01:08:37.365Z",
-    "upstream_snapshot_at": "2026-09-27T03:00:21.637Z",
-    "sync_completed_at": "2026-09-27T03:00:22.426Z"
+    "upstream_dataset_version": "255f790ef8f48c513f233ab883fc499b75bb6511900b38d1705da7a215667eb0",
+    "upstream_data_updated_at": "2026-09-28T01:16:38.490Z",
+    "upstream_snapshot_at": "2026-09-28T03:00:22.182Z",
+    "sync_completed_at": "2026-09-28T03:00:22.965Z"
   },
   "articles": [
     {
@@ -40,7 +40,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "3741d974714a7003",
