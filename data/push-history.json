@@ -1,24 +1,48 @@
 {
   "version": 1,
-  "updated_at": "2026-09-29T03:00:22.665Z",
+  "updated_at": "2026-09-30T03:00:23.646Z",
   "summary": {
-    "checked_at": "2026-09-29T03:00:22.665Z",
+    "checked_at": "2026-09-30T03:00:23.646Z",
     "since": "2026-05-25",
-    "until": "2026-09-29",
+    "until": "2026-09-30",
     "sources_total": 22,
     "sources_ready": 20,
-    "history_articles": 1143,
-    "push_queue_articles": 1143,
-    "new_push_queue_articles": 6,
-    "last_workflow_file": "data/recent-articles-2026-09-29_2026-09-29.json",
+    "history_articles": 1144,
+    "push_queue_articles": 1144,
+    "new_push_queue_articles": 1,
+    "last_workflow_file": "data/recent-articles-2026-09-30_2026-09-30.json",
     "ingest_mode": "shared_feed",
     "upstream_contract_version": "metadata-feed/1.0.0",
-    "upstream_dataset_version": "ad05f511d5797cf31f3a562bd45e973eb8a7aa7450906ef4fafd86de6a497fc1",
-    "upstream_data_updated_at": "2026-09-29T01:15:58.743Z",
-    "upstream_snapshot_at": "2026-09-29T03:00:21.860Z",
-    "sync_completed_at": "2026-09-29T03:00:22.665Z"
+    "upstream_dataset_version": "b44a590fb50b4a5c3b073ba7f863535dcee7cec4514ca9ba204b9e771866e5a4",
+    "upstream_data_updated_at": "2026-09-30T01:10:10.708Z",
+    "upstream_snapshot_at": "2026-09-30T03:00:22.819Z",
+    "sync_completed_at": "2026-09-30T03:00:23.646Z"
   },
   "articles": [
+    {
+      "id": "907914618ffab0d4",
+      "journal_id": "j14",
+      "source_journal_id": "j14",
+      "journal_name": "JOURNAL OF FINANCE",
+      "title": "An IV Hazard Model of Loan Default with an Application to Subprime Mortgage Cohorts",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70088",
+      "official_url": "https://onlinelibrary.wiley.com/doi/10.1111/jofi.70088",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "CHRISTOPHER J. PALMER",
+      "published_at": "2026-09-28",
+      "issue_date": "",
+      "first_seen_at": "2026-09-30",
+      "display_date": "2026-09-28",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "shared-metadata-feed",
+      "date_source": "",
+      "abstract": "I develop a control function methodology robust to endogenous or mismeasured regressors in hazard models. Applying the estimator to the subprime mortgage crisis, I quantify what caused the foreclosure rate to triple across the 2003 to 2007 subprime cohorts. To identify the elasticity of default to housing prices, I use various home price instruments including historical variation in home price cyclicality. Loose credit played a significant role in the crisis, but much of the increase in defaults across cohorts was caused by price declines unrelated to lending standards, with a 10% price decline increasing subprime mortgage default rates by 50%.",
+      "keywords": []
+    },
     {
       "id": "e42bff7f1ed607d3",
       "journal_id": "j16",
@@ -40,7 +64,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "be5bf013799da8a9",
@@ -63,7 +88,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "961e50a92307e412",
@@ -86,7 +112,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "1d3ce4eaa1d2c26d",
@@ -109,7 +136,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "08d0f994a9c7e486",
@@ -132,7 +160,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "8fc448d427faaf20",
@@ -155,7 +184,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "724a4ccf9b3b8e21",
