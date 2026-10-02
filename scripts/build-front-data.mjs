@@ -109,8 +109,13 @@ function normalizedHistoryUrl(value = "") {
 
 function articleUrlHistoryKey(article) {
   const articleLink = normalizeArticleLink(article, article);
-  const url = normalizedHistoryUrl(articleLink.url || articleLink.official_url || articleLink.discovery_url);
-  return url ? `${article.journal_id || article.source_journal_id || ""}::url::${url}` : "";
+  const journalId = article.journal_id || article.source_journal_id || "";
+  const url = normalizedHistoryUrl(articleLink.url || articleLink.official_url);
+  if (url) return `${journalId}::url::${url}`;
+  // A shared directory is not an article identity without a matching title.
+  const discoveryUrl = normalizedHistoryUrl(articleLink.discovery_url);
+  const title = compactArticleTitle(article.title || "");
+  return discoveryUrl && title ? `${journalId}::discovery::${discoveryUrl}::title::${title}` : "";
 }
 
 function articleTitleHistoryKey(article) {
@@ -167,6 +172,7 @@ function mergeArticle(existing, incoming, options = {}) {
     ...incoming,
     id: existing.id || incoming.id,
     authors: incoming.authors || existing.authors || "",
+    discovery_url: incoming.discovery_url || existing.discovery_url || "",
     published_at: preserveExistingDates ? existing.published_at || "" : incoming.published_at || existing.published_at || "",
     issue_date: preserveExistingDates ? existing.issue_date || "" : incoming.issue_date || existing.issue_date || "",
     first_seen_at: firstSeenAt,

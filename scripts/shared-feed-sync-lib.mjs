@@ -41,7 +41,8 @@ function aliases(article) {
   return [
     article.id || article.article_id ? `id:${article.id || article.article_id}` : "",
     articleDoi(article) ? `doi:${articleDoi(article)}` : "",
-    ...[article.pdf_url, article.official_url, article.url, article.discovery_url]
+    // Several articles can share a discovery directory; it is provenance, not identity.
+    ...[article.pdf_url, article.official_url, article.url]
       .map(stableUrl)
       .filter(Boolean)
       .map((url) => `url:${url}`),
@@ -82,6 +83,7 @@ export function mapSharedFeedRecord(record) {
     url,
     official_url: officialUrl,
     pdf_url: pdfUrl,
+    discovery_url: String(record.discovery_url || ""),
     link_status: pdfUrl ? "official_pdf" : officialUrl ? "official_detail" : doi ? "doi_redirect" : "missing",
     link_note: "shared_metadata_feed",
     abstract: String(record.abstract || ""),
@@ -100,7 +102,8 @@ export function reconcileSharedFeed(existingArticles = [], records = []) {
     const existing = aliases(incoming).map((alias) => aliasesToExisting.get(alias)).find(Boolean);
     if (!existing) return incoming;
     representedIds.add(existing.id);
-    const canonical = { ...incoming, id: existing.id };
+    // Metadata-feed records may omit discovery URLs even when their click link improves.
+    const canonical = { ...incoming, id: existing.id, discovery_url: incoming.discovery_url || existing.discovery_url || "" };
     if (linkRank(existing) > linkRank(incoming)) {
       Object.assign(canonical, {
         url: existing.url || "",
