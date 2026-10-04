@@ -1,20 +1,20 @@
 window.RECENT_WORKFLOW_DATA = {
   "summary": {
-    "checked_at": "2026-10-03T03:00:23.115Z",
+    "checked_at": "2026-10-04T03:00:23.770Z",
     "since": "2026-05-25",
     "until": "2026-10-03",
     "sources_total": 22,
     "sources_ready": 20,
     "history_articles": 1167,
     "push_queue_articles": 1167,
-    "new_push_queue_articles": 12,
-    "last_workflow_file": "data/recent-articles-2026-10-03_2026-10-03.json",
+    "new_push_queue_articles": 0,
+    "last_workflow_file": "data/recent-articles-2026-10-04_2026-10-04.json",
     "ingest_mode": "shared_feed",
     "upstream_contract_version": "metadata-feed/1.0.0",
-    "upstream_dataset_version": "ea60dc13baf3977868a33b1c840a13d10aceae0026efa1947a6c95dd3b9a309f",
-    "upstream_data_updated_at": "2026-10-03T01:05:45.255Z",
-    "upstream_snapshot_at": "2026-10-03T03:00:22.290Z",
-    "sync_completed_at": "2026-10-03T03:00:23.115Z"
+    "upstream_dataset_version": "c86812dc7c2f6a269039bed92d7cf46c002145f3885e43f35ad13878c9f4da09",
+    "upstream_data_updated_at": "2026-10-04T01:05:46.668Z",
+    "upstream_snapshot_at": "2026-10-04T03:00:22.911Z",
+    "sync_completed_at": "2026-10-04T03:00:23.770Z"
   },
   "push_queue": [
     {
