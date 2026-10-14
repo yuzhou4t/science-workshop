@@ -1,9 +1,9 @@
 window.TOPIC_SEARCH_INDEX = {
   "version": 1,
-  "updated_at": "2026-10-13T03:00:33.601Z",
+  "updated_at": "2026-10-14T03:00:34.525Z",
   "summary": {
-    "total_articles": 1193,
-    "matched_articles": 7,
+    "total_articles": 1196,
+    "matched_articles": 8,
     "topics": 1,
     "disciplines": 7,
     "semantic_enabled": false
@@ -45,6 +45,41 @@ window.TOPIC_SEARCH_INDEX = {
     }
   ],
   "results": [
+    {
+      "article_id": "fcbd7b740cde7b3d",
+      "topic_id": "africa",
+      "topic_label": "非洲",
+      "title": "The Demand for Mobility: Evidence from an Experiment with Uber Riders",
+      "journal_id": "j17",
+      "source_journal_id": "j17",
+      "journal_name": "JOURNAL OF POLITICAL ECONOMY",
+      "authors": "Peter ChristensenGustavo NinoAdam OsmanUniversity of California, Santa CruzUniversidad de los AndesUniversity of Illinois Urbana-Champaign",
+      "url": "https://www.journals.uchicago.edu/doi/abs/10.1086/743387",
+      "official_url": "https://www.journals.uchicago.edu/doi/abs/10.1086/743387",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "published_at": "2026-10-13",
+      "issue_date": "",
+      "first_seen_at": "2026-10-14",
+      "display_date": "2026-10-13",
+      "abstract": "Optimal transportation policies depend on demand elasticities that interact across modes and vary across the population, but understanding how and why these elasticities vary has been an empirical challenge.Using an experiment with Uber in Egypt, we randomly assign large price discounts for transport services over a 3 month period to examine: (1) the demand for ride-hailing services, (2) the demand for total mobility (km/week), and (3) its contributions to external costs (e.g.congestion).A 50% discount more than quadruples Uber usage and induces an increase of nearly 49% in total mobility.These effects are stronger for women, who are less mobile at baseline and perceive public transit as unsafe.Technology-induced reductions in the price of ridehailing services could generate substantial benefits to users (4.3% of GDP) that would be accompanied by considerable increases in external costs (1% of GDP), with benefits accruing to the most affluent and costs being borne by the entire population.",
+      "keywords": [],
+      "match_mode": "rule",
+      "match_field": "abstract",
+      "match_keyword": "Egypt",
+      "match_reason": "abstract 命中 “Egypt”",
+      "confidence": 1,
+      "disciplines": [
+        {
+          "id": "population_development",
+          "label": "人口与发展",
+          "match_field": "abstract",
+          "match_keyword": "population",
+          "score": 1
+        }
+      ]
+    },
     {
       "article_id": "e5f57f18d3855ede",
       "topic_id": "africa",
