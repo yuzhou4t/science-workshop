@@ -1,9 +1,9 @@
 window.TOPIC_SEARCH_INDEX = {
   "version": 1,
-  "updated_at": "2026-10-15T03:00:35.340Z",
+  "updated_at": "2026-10-16T03:00:35.226Z",
   "summary": {
-    "total_articles": 1197,
-    "matched_articles": 8,
+    "total_articles": 1216,
+    "matched_articles": 9,
     "topics": 1,
     "disciplines": 7,
     "semantic_enabled": false
@@ -45,6 +45,48 @@ window.TOPIC_SEARCH_INDEX = {
     }
   ],
   "results": [
+    {
+      "article_id": "0793b453695ebde8",
+      "topic_id": "africa",
+      "topic_label": "非洲",
+      "title": "Beyond Greenwashing: Environmental Commitments and Gas Flaring in the African Oil Sector",
+      "journal_id": "j15",
+      "source_journal_id": "j15",
+      "journal_name": "ACCOUNTING REVIEW",
+      "authors": "Samuel Chang, Hans B. Christensen, Andrew McKinley",
+      "url": "https://doi.org/10.2308/tar-2025-0361",
+      "official_url": "https://doi.org/10.2308/tar-2025-0361",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "published_at": "2026-10-15",
+      "issue_date": "",
+      "first_seen_at": "2026-10-16",
+      "display_date": "2026-10-15",
+      "abstract": "",
+      "keywords": [],
+      "match_mode": "rule",
+      "match_field": "title",
+      "match_keyword": "Africa",
+      "match_reason": "title 命中 “Africa”",
+      "confidence": 1,
+      "disciplines": [
+        {
+          "id": "accounting",
+          "label": "会计",
+          "match_field": "journal",
+          "match_keyword": "ACCOUNTING",
+          "score": 3
+        },
+        {
+          "id": "environment_geography",
+          "label": "环境/地理",
+          "match_field": "title",
+          "match_keyword": "environment",
+          "score": 2
+        }
+      ]
+    },
     {
       "article_id": "fcbd7b740cde7b3d",
       "topic_id": "africa",
