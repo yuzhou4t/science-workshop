@@ -1,24 +1,70 @@
 {
   "version": 1,
-  "updated_at": "2026-10-20T03:00:30.107Z",
+  "updated_at": "2026-10-21T03:00:30.193Z",
   "summary": {
-    "checked_at": "2026-10-20T03:00:30.107Z",
+    "checked_at": "2026-10-21T03:00:30.193Z",
     "since": "2026-05-25",
-    "until": "2026-10-20",
+    "until": "2026-10-21",
     "sources_total": 22,
     "sources_ready": 21,
-    "history_articles": 1278,
-    "push_queue_articles": 1278,
-    "new_push_queue_articles": 46,
-    "last_workflow_file": "data/recent-articles-2026-10-20_2026-10-20.json",
+    "history_articles": 1280,
+    "push_queue_articles": 1280,
+    "new_push_queue_articles": 2,
+    "last_workflow_file": "data/recent-articles-2026-10-21_2026-10-21.json",
     "ingest_mode": "shared_feed",
     "upstream_contract_version": "metadata-feed/1.0.0",
-    "upstream_dataset_version": "faef1756133a55ddcd903989e1a1ee9be8e7a02ad731ef6c9dcca4fbcbedf897",
-    "upstream_data_updated_at": "2026-10-20T01:07:32.545Z",
-    "upstream_snapshot_at": "2026-10-20T03:00:29.045Z",
-    "sync_completed_at": "2026-10-20T03:00:30.107Z"
+    "upstream_dataset_version": "a9bc90827694f46b748377e7f843dc3e878b8deadefc2a1b31d5101038354904",
+    "upstream_data_updated_at": "2026-10-21T01:06:44.055Z",
+    "upstream_snapshot_at": "2026-10-21T03:00:29.143Z",
+    "sync_completed_at": "2026-10-21T03:00:30.193Z"
   },
   "articles": [
+    {
+      "id": "ddbbfb88963be219",
+      "journal_id": "j15",
+      "source_journal_id": "j15",
+      "journal_name": "ACCOUNTING REVIEW",
+      "title": "Balancing Act: How Unaffiliated Analysts Navigate Private Information Disadvantages",
+      "url": "https://doi.org/10.2308/tar-2025-0183",
+      "official_url": "https://doi.org/10.2308/tar-2025-0183",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Leila Peyravan, Brian Rountree, Konduru Sivaramakrishnan",
+      "published_at": "2026-10-20",
+      "issue_date": "",
+      "first_seen_at": "2026-10-21",
+      "display_date": "2026-10-20",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "shared-metadata-feed",
+      "date_source": "",
+      "keywords": []
+    },
+    {
+      "id": "2c167b2449fa8904",
+      "journal_id": "j15",
+      "source_journal_id": "j15",
+      "journal_name": "ACCOUNTING REVIEW",
+      "title": "IPOs and Foreign Tax Structures",
+      "url": "https://doi.org/10.2308/tar-2024-0048",
+      "official_url": "https://doi.org/10.2308/tar-2024-0048",
+      "pdf_url": "",
+      "discovery_url": "",
+      "link_status": "official_detail",
+      "link_note": "official_detail_page",
+      "authors": "Christine L. Dobridge, Rebecca Lester, Andrew Whitten",
+      "published_at": "2026-10-20",
+      "issue_date": "",
+      "first_seen_at": "2026-10-21",
+      "display_date": "2026-10-20",
+      "display_date_basis": "published_at",
+      "push_basis": "first_seen",
+      "extraction_rule": "shared-metadata-feed",
+      "date_source": "",
+      "keywords": []
+    },
     {
       "id": "9a1e6ec4f0a3d4cb",
       "journal_id": "j5",
@@ -356,7 +402,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "c7965f31430a4683",
@@ -379,7 +426,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "d89fd072df32322b",
@@ -901,7 +949,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "ncpssd_article_id",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "6b27672c974a3bad",
@@ -924,7 +973,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "08553252611161e2",
@@ -947,7 +997,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "ncpssd_article_id",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "65d4828b020d3a35",
@@ -970,7 +1021,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "ncpssd_article_id",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "2949fdc4e43db449",
@@ -993,7 +1045,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "f4824c2dd8413ed5",
@@ -1016,7 +1069,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "ncpssd_article_id",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "212ce62bb0588dee",
@@ -1039,7 +1093,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "ncpssd_article_id",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "9fde5065a9e3ed59",
@@ -1062,7 +1117,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "ncpssd_article_id",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "51ce2d429b0f0518",
@@ -1085,7 +1141,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "ncpssd_article_id",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "431bc4d1c5730584",
@@ -1108,7 +1165,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "ncpssd_article_id",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "a944712ed3622d83",
@@ -1131,7 +1189,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "ncpssd_article_id",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "9735a79c2dad6ced",
@@ -1154,7 +1213,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "ncpssd_article_id",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "c0130da2f1833fcd",
@@ -1177,7 +1237,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "ncpssd_article_id",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "a7d526560c5eb19c",
@@ -1200,7 +1261,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "ncpssd_article_id",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "b792131f592969b5",
@@ -1223,7 +1285,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "ncpssd_article_id",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "60af2dbe986fd8e6",
@@ -1246,7 +1309,8 @@
       "push_basis": "first_seen",
       "extraction_rule": "shared-metadata-feed",
       "date_source": "ncpssd_article_id",
-      "keywords": []
+      "keywords": [],
+      "abstract": ""
     },
     {
       "id": "a8acaf723163142c",
