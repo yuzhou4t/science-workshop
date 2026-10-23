@@ -1,9 +1,9 @@
 window.TOPIC_SEARCH_INDEX = {
   "version": 1,
-  "updated_at": "2026-10-22T03:00:38.310Z",
+  "updated_at": "2026-10-23T03:00:43.214Z",
   "summary": {
-    "total_articles": 1286,
-    "matched_articles": 9,
+    "total_articles": 1303,
+    "matched_articles": 10,
     "topics": 1,
     "disciplines": 7,
     "semantic_enabled": false
@@ -119,6 +119,55 @@ window.TOPIC_SEARCH_INDEX = {
           "match_field": "abstract",
           "match_keyword": "population",
           "score": 1
+        }
+      ]
+    },
+    {
+      "article_id": "edbd6e02d8406732",
+      "topic_id": "africa",
+      "topic_label": "非洲",
+      "title": "中国对外基础设施投资的经济效应与微观作用机制——来自非洲发展走廊项目的证据",
+      "journal_id": "j2",
+      "source_journal_id": "j2",
+      "journal_name": "经济研究",
+      "authors": "李涵，周倩，李超",
+      "url": "https://erj.ajcass.com/UploadFile/Issue/201803050001/2026/10//20261022041923675WU_FILE_0.pdf",
+      "official_url": "https://erj.ajcass.com/UploadFile/Issue/201803050001/2026/10//20261022041923675WU_FILE_0.pdf",
+      "pdf_url": "https://erj.ajcass.com/UploadFile/Issue/201803050001/2026/10//20261022041923675WU_FILE_0.pdf",
+      "discovery_url": "https://erj.ajcass.com/#/issueDetail?id=123748",
+      "link_status": "official_pdf",
+      "published_at": "",
+      "issue_date": "2026-09",
+      "first_seen_at": "2026-10-23",
+      "display_date": "2026-09",
+      "abstract": "",
+      "keywords": [],
+      "match_mode": "rule",
+      "match_field": "title",
+      "match_keyword": "非洲",
+      "match_reason": "title 命中 “非洲”",
+      "confidence": 1,
+      "disciplines": [
+        {
+          "id": "economics",
+          "label": "经济学",
+          "match_field": "journal",
+          "match_keyword": "经济",
+          "score": 3
+        },
+        {
+          "id": "finance",
+          "label": "金融",
+          "match_field": "title",
+          "match_keyword": "投资",
+          "score": 2
+        },
+        {
+          "id": "population_development",
+          "label": "人口与发展",
+          "match_field": "title",
+          "match_keyword": "发展",
+          "score": 2
         }
       ]
     },
